@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.job-bm-my-account{}
+
+
+.job-bm-my-account .register, 
+
+
+
+
+.job-bm-my-account .login {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+  width: 49%;
+}
+
+
+.job-bm-my-account .login .login-username,
+.job-bm-my-account .login .login-password{
+
+}
+
+.job-bm-my-account .login .login-username label,
+.job-bm-my-account .login .login-password label{
+display: block;
+}
+
+.job-bm-my-account .login .login-remember{
+
+}
+
+.job-bm-my-account .login .login-remember label{
+
+}
+
+
+.job-bm-my-account input[type="text"],  .job-bm-my-account input[type="password"]{
+  border-radius: 0;
+}
+
+
+.job-bm-my-account input[type="submit"] {
+
+}
+
+
+@media only screen and ( max-width: 767px ) {
+	
+.job-bm-my-account .register, .job-bm-my-account .login {
+  display: block;
+  width: 90%;
+}
+	
+	
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+.client-job-list {
+  line-height: normal;
+}
+
+.client-job-list .single {
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding: 10px 0;
+}
+
+
+.client-job-list .single .title {
+  display: inline-block;
+  font-size: 15px;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.client-job-list .single .meta {
+  display: inline-block;
+  font-size: 12px;
+  margin: 5px 15px 5px 0;
+  vertical-align: top;
+}
+
+.client-job-list .single .edit-link {
+  background: #37cd9d none repeat scroll 0 0;
+  color: #fff;
+  display: inline-block;
+  font-size: 12px;
+  line-height: normal;
+  margin-right: 10px;
+  margin-top: 5px;
+  padding: 2px 10px;
+  text-decoration: none;
+  vertical-align: top;
+}
+
+.client-job-list .single .delete-job {
+  background: #ff5d3d none repeat scroll 0 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  line-height: normal;
+  margin-top: 5px;
+  padding: 2px 10px;
+}
+
+
+
+.client-job-list .paginate {
+  margin: 30px 0;
+  text-align: center;
+}
+.client-job-list .paginate .page-numbers{
+  background: #f0f0f0 none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  color: #999;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.client-job-list .paginate .current {
+  border: medium none;
+}
+
+
+	
+	
+	
+	

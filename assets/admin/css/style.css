@@ -1,0 +1,182 @@
+/*
+Admin css
+*/
+
+
+#job_metabox {
+  background: rgb(241, 241, 241) none repeat scroll 0 0;
+  border: medium none !important;
+  box-shadow: none !important;
+}
+
+#job_metabox .hndle {
+  background: rgb(32, 168, 255) none repeat scroll 0 0;
+  color: rgb(255, 255, 255);
+}
+
+#job_metabox .handlediv {
+
+  color: rgb(255, 255, 255);
+}
+
+
+
+.job-bm-meta .salary_fixed, .job-bm-meta .salary_min, .job-bm-meta .salary_max{
+	display:none;
+	}
+	
+.job_type_bg_color{}
+.job_type_bg_color label{}	
+	
+	
+.job-bm-addons {
+  margin: 40px 0;
+}
+	
+.job-bm-addons .single {
+  background: none repeat scroll 0 0 rgb(255, 255, 255);
+  border: 1px solid rgb(221, 221, 221);
+  display: inline-block;
+  margin: 20px 10px;
+  overflow: hidden;
+  padding: 0 0 15px;
+  vertical-align: top;
+  width: 325px;
+}
+	
+.job-bm-addons .thumb {
+  max-height: 180px;
+  overflow: hidden;
+}
+.job-bm-addons .thumb img {
+  width: 100%;
+}
+.job-bm-addons .title {
+  font-size: 16px;
+  margin: 15px 0;
+  padding: 0 8px;
+}
+.job-bm-addons .title a{
+text-decoration:none;
+}
+
+
+.job-bm-addons .content {
+  font-size: 13px;
+  margin: 8px 0;
+  padding: 0 8px;
+}
+
+.job-bm-addons .meta {
+  display: inline-block;
+  margin: 0 10px;
+  vertical-align: top;
+}
+
+.job-bm-addons .meta a{
+	text-decoration:none;
+}
+
+.job-bm-addons .version {
+
+}
+	
+.job-bm-addons .download {
+  background: #42b1ff none repeat scroll 0 0;
+  border-radius: 2px;
+  float: right;
+  padding: 3px 10px;
+}	
+	
+
+.job-bm-addons .download a{
+  color: #fff;
+}
+	
+	
+.job-bm-emails-templates{}	
+.job-bm-emails-templates input[type="text"]{
+	width:70%;}		
+	
+	
+.job-bm-welcome{}
+
+.job-bm-welcome .changelog{}
+	
+.job-bm-welcome .changelog li {
+  list-style: inside none disc;
+}
+
+.job-bm-welcome .changelog li.version {
+  font-size: 16px;
+  font-weight: bold;
+  list-style: inside none none;
+  margin: 25px 0 10px;
+}
+
+
+
+
+.jbm-admin.field-set {}
+
+.jbm-admin.field-set .items-group .items {
+  padding-left: 20px;
+}
+
+.jbm-admin.field-set .items-group .items:hover {
+  background: #fff url("move.png") no-repeat scroll 8px 5px;
+}
+
+
+
+.job-bm-admin{
+	
+	}
+	
+	
+.job-bm-admin .reports{
+	
+	}	
+	
+	
+.job-bm-admin .reports .range {
+  clear: both;
+  display: block;
+  font-size: 14px;
+  margin: 6px 1px;
+  padding: 25px 10px;
+}	
+	
+.job-bm-admin .reports .range a {
+  font-size: 14px;
+  margin: 0 6px;
+  text-decoration: none;
+}		
+	
+
+.reset-email-templates{}
+	
+
+.job-bm-admin {}
+
+.job-bm-admin .faq{}
+.job-bm-admin .faq .group-title {
+  display: block;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+
+.job-bm-admin .faq .item {
+  padding-left: 20px;
+}
+.job-bm-admin .faq .item a {
+  display: block;
+  font-size: 14px;
+  padding: 4px 0;
+  text-decoration: none;
+}
+
+
+
+

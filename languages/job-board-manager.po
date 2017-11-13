@@ -1,0 +1,1789 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Job Board Manager\n"
+"POT-Creation-Date: 2017-04-02 16:51+0600\n"
+"PO-Revision-Date: 2017-04-02 16:51+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.12\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/class-emails.php:67
+msgid "New Job Submitted"
+msgstr ""
+
+#: includes/class-emails.php:68
+msgid "Notification email for admin when user submitted job."
+msgstr ""
+
+#: includes/class-emails.php:69
+msgid "New Job Submitted - {site_url}"
+msgstr ""
+
+#: includes/class-emails.php:77
+msgid "New Job Published"
+msgstr ""
+
+#: includes/class-emails.php:78
+msgid "Notification email for admin when someone published job."
+msgstr ""
+
+#: includes/class-emails.php:79
+msgid "New Job Published - {site_url}"
+msgstr ""
+
+#: includes/class-emails.php:87
+msgid "New Job Approved"
+msgstr ""
+
+#: includes/class-emails.php:88
+msgid "Notification email for job poster when admin published job."
+msgstr ""
+
+#: includes/class-emails.php:89
+msgid "New Job Approved - {site_url}"
+msgstr ""
+
+#: includes/class-emails.php:119
+msgid "Site Parameters"
+msgstr ""
+
+#: includes/class-emails.php:124
+msgid "Users Parameters"
+msgstr ""
+
+#: includes/class-emails.php:129
+msgid "Job Parameters"
+msgstr ""
+
+#: includes/class-emails.php:134
+msgid "Job application"
+msgstr ""
+
+#: includes/class-functions.php:30
+msgid "Job type"
+msgstr ""
+
+#: includes/class-functions.php:31 includes/class-functions.php:557
+msgid "Job status"
+msgstr ""
+
+#: includes/class-functions.php:32 includes/class-functions.php:469
+#: includes/functions/functions.php:171
+#: templates/job-archive/job-archive.php:349
+#: templates/job-archive/search.php:44 templates/job-list.php:218
+msgid "Location"
+msgstr ""
+
+#: includes/class-functions.php:33 includes/class-functions.php:443
+#: includes/functions/functions.php:172
+#: templates/job-archive/job-archive.php:350 templates/job-list.php:219
+msgid "Company name"
+msgstr ""
+
+#: includes/class-functions.php:34
+msgid "Total vacancies"
+msgstr ""
+
+#: includes/class-functions.php:35
+msgid "Expire date"
+msgstr ""
+
+#: includes/class-functions.php:36 templates/job-archive/job-archive.php:353
+msgid "View count"
+msgstr ""
+
+#: includes/class-functions.php:56
+msgid "Freelance"
+msgstr ""
+
+#: includes/class-functions.php:56
+msgid "Full Time"
+msgstr ""
+
+#: includes/class-functions.php:56
+msgid "Internship"
+msgstr ""
+
+#: includes/class-functions.php:56
+msgid "Part Time"
+msgstr ""
+
+#: includes/class-functions.php:56
+msgid "Temporary"
+msgstr ""
+
+#: includes/class-functions.php:67
+msgid "Open"
+msgstr ""
+
+#: includes/class-functions.php:67
+msgid "Closed"
+msgstr ""
+
+#: includes/class-functions.php:67
+msgid "Filled"
+msgstr ""
+
+#: includes/class-functions.php:67
+msgid "Re-Open"
+msgstr ""
+
+#: includes/class-functions.php:67
+msgid "Expired"
+msgstr ""
+
+#: includes/class-functions.php:77
+msgid "Any"
+msgstr ""
+
+#: includes/class-functions.php:77
+msgid "Entry level"
+msgstr ""
+
+#: includes/class-functions.php:77
+msgid "Mid level"
+msgstr ""
+
+#: includes/class-functions.php:77
+msgid "Top level"
+msgstr ""
+
+#: includes/class-functions.php:87
+msgid "Negotiable"
+msgstr ""
+
+#: includes/class-functions.php:87
+msgid "Fixed"
+msgstr ""
+
+#: includes/class-functions.php:87
+msgid "Min-Max"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "All"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "1,000-10,000"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "10,001-20,000"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "20,001-30,000"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "30,001-50,000"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "50,001-80,000"
+msgstr ""
+
+#: includes/class-functions.php:96
+msgid "80,001-1,00,000"
+msgstr ""
+
+#: includes/class-functions.php:108 includes/functions/functions.php:880
+msgid "None"
+msgstr ""
+
+#: includes/class-functions.php:108
+msgid "Direct Email"
+msgstr ""
+
+#: includes/class-functions.php:140 includes/class-post-types.php:26
+msgid "Jobs"
+msgstr ""
+
+#: includes/class-functions.php:162 templates/client-job-list.php:67
+msgid "My Jobs"
+msgstr ""
+
+#: includes/class-functions.php:196
+msgid "Job Board Manager - How to Install and Settings."
+msgstr ""
+
+#: includes/class-functions.php:202
+msgid "Job Board Manager - Create a job."
+msgstr ""
+
+#: includes/class-functions.php:221
+msgid "Core"
+msgstr ""
+
+#: includes/class-functions.php:225
+msgid "Single job page showing 404 error"
+msgstr ""
+
+#: includes/class-functions.php:231
+msgid "Single job page style broken, what should i do ?"
+msgstr ""
+
+#: includes/class-functions.php:236
+msgid "How can i change slug for Job ?"
+msgstr ""
+
+#: includes/class-functions.php:241
+msgid "How can remove any tabs on job submission form ?"
+msgstr ""
+
+#: includes/class-functions.php:247
+msgid "Remove input fields on job submission form."
+msgstr ""
+
+#: includes/class-functions.php:253
+msgid "How to add/remove job types"
+msgstr ""
+
+#: includes/class-functions.php:291
+msgid "Job Archive"
+msgstr ""
+
+#: includes/class-functions.php:297
+msgid "Job Submit"
+msgstr ""
+
+#: includes/class-functions.php:304
+msgid "Job Edit"
+msgstr ""
+
+#: includes/class-functions.php:311
+msgid "Job Account"
+msgstr ""
+
+#: includes/class-functions.php:339
+msgid "Write awesome title here"
+msgstr ""
+
+#: includes/class-functions.php:340
+msgid "Job Title"
+msgstr ""
+
+#: includes/class-functions.php:341
+msgid "Job title here"
+msgstr ""
+
+#: includes/class-functions.php:353
+msgid "Job Descriptions"
+msgstr ""
+
+#: includes/class-functions.php:354
+msgid "Write job descriptions here"
+msgstr ""
+
+#: includes/class-functions.php:368
+msgid "Thumbnail"
+msgstr ""
+
+#: includes/class-functions.php:369
+msgid "Job Featured Image, uplaod single image only"
+msgstr ""
+
+#: includes/class-functions.php:386 includes/class-post-types.php:76
+msgid "Job Category"
+msgstr ""
+
+#: includes/class-functions.php:387
+msgid "Select Job Category."
+msgstr ""
+
+#: includes/class-functions.php:419
+msgid "reCaptcha"
+msgstr ""
+
+#: includes/class-functions.php:420
+msgid "reCaptcha test."
+msgstr ""
+
+#: includes/class-functions.php:433
+msgid "Company info"
+msgstr ""
+
+#: includes/class-functions.php:434
+msgid "Company Information details"
+msgstr ""
+
+#: includes/class-functions.php:444
+msgid "Company name, ex: Google Inc."
+msgstr ""
+
+#: includes/class-functions.php:455
+msgid "Display company name ?"
+msgstr ""
+
+#: includes/class-functions.php:456
+msgid "Do you want to display company name"
+msgstr ""
+
+#: includes/class-functions.php:459 includes/class-functions.php:498
+#: includes/class-functions.php:663 includes/class-functions.php:1031
+#: includes/class-functions.php:1057 includes/class-functions.php:1071
+#: includes/class-functions.php:1149 includes/class-functions.php:1163
+#: includes/class-functions.php:1177 includes/class-functions.php:1239
+#: includes/class-functions.php:1253 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/client-job-list.php:100
+msgid "Yes"
+msgstr ""
+
+#: includes/class-functions.php:459 includes/class-functions.php:498
+#: includes/class-functions.php:663 includes/class-functions.php:1031
+#: includes/class-functions.php:1057 includes/class-functions.php:1071
+#: includes/class-functions.php:1149 includes/class-functions.php:1163
+#: includes/class-functions.php:1177 includes/class-functions.php:1239
+#: includes/class-functions.php:1253 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/client-job-list.php:103
+msgid "No"
+msgstr ""
+
+#: includes/class-functions.php:471
+msgid "Job location, ex: California (City or States)"
+msgstr ""
+
+#: includes/class-functions.php:482
+msgid "Address"
+msgstr ""
+
+#: includes/class-functions.php:483
+msgid "Full address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+msgstr ""
+
+#: includes/class-functions.php:494
+msgid "Display company address ?"
+msgstr ""
+
+#: includes/class-functions.php:495
+msgid "Do you want to display company address"
+msgstr ""
+
+#: includes/class-functions.php:508
+msgid "Company website"
+msgstr ""
+
+#: includes/class-functions.php:509
+msgid "Company website, ex: http://example.com"
+msgstr ""
+
+#: includes/class-functions.php:520
+msgid "Company logo"
+msgstr ""
+
+#: includes/class-functions.php:521
+msgid "Upload company logo."
+msgstr ""
+
+#: includes/class-functions.php:533
+msgid "Job link"
+msgstr ""
+
+#: includes/class-functions.php:534
+msgid ""
+"Job link at company website, ex: http://example.com/jobs/developer-wanted"
+msgstr ""
+
+#: includes/class-functions.php:548
+msgid " Job info"
+msgstr ""
+
+#: includes/class-functions.php:549
+msgid "Job Information details."
+msgstr ""
+
+#: includes/class-functions.php:558
+msgid "Select job status."
+msgstr ""
+
+#: includes/class-functions.php:569
+msgid "Short content"
+msgstr ""
+
+#: includes/class-functions.php:570
+msgid "Short job description write here."
+msgstr ""
+
+#: includes/class-functions.php:580
+msgid "Job responsibilities"
+msgstr ""
+
+#: includes/class-functions.php:581
+msgid "Responsibilities details."
+msgstr ""
+
+#: includes/class-functions.php:591
+msgid "Education requirements"
+msgstr ""
+
+#: includes/class-functions.php:592
+msgid "Education requirements details."
+msgstr ""
+
+#: includes/class-functions.php:602
+msgid "Experience requirements"
+msgstr ""
+
+#: includes/class-functions.php:603
+msgid "Experience requirements details."
+msgstr ""
+
+#: includes/class-functions.php:613
+msgid "Skills requirements"
+msgstr ""
+
+#: includes/class-functions.php:614
+msgid "Skills requirements details."
+msgstr ""
+
+#: includes/class-functions.php:624
+msgid "Qualifications"
+msgstr ""
+
+#: includes/class-functions.php:625
+msgid "Qualifications details."
+msgstr ""
+
+#: includes/class-functions.php:637
+msgid "No of vacancies"
+msgstr ""
+
+#: includes/class-functions.php:638
+msgid "Total number of vacancies."
+msgstr ""
+
+#: includes/class-functions.php:648
+msgid "Expiry date"
+msgstr ""
+
+#: includes/class-functions.php:649
+msgid "Job expiry date"
+msgstr ""
+
+#: includes/class-functions.php:659
+msgid "Featured job"
+msgstr ""
+
+#: includes/class-functions.php:660
+msgid "Want to get featured listing ?"
+msgstr ""
+
+#: includes/class-functions.php:671
+msgid "Job type ?"
+msgstr ""
+
+#: includes/class-functions.php:672
+msgid "Choose job type."
+msgstr ""
+
+#: includes/class-functions.php:683
+msgid "Job level ?"
+msgstr ""
+
+#: includes/class-functions.php:684
+msgid "Choose job level"
+msgstr ""
+
+#: includes/class-functions.php:695
+msgid "Years of experience ?"
+msgstr ""
+
+#: includes/class-functions.php:696
+msgid "Years of experience must have."
+msgstr ""
+
+#: includes/class-functions.php:750
+msgid "Salary info"
+msgstr ""
+
+#: includes/class-functions.php:751
+msgid "Salary Information details."
+msgstr ""
+
+#: includes/class-functions.php:760
+msgid "Salary range ?"
+msgstr ""
+
+#: includes/class-functions.php:761
+msgid "Salary range"
+msgstr ""
+
+#: includes/class-functions.php:773
+msgid "Salary fixed ?"
+msgstr ""
+
+#: includes/class-functions.php:774
+msgid "Salary fixed, ex: 1200"
+msgstr ""
+
+#: includes/class-functions.php:785
+msgid "Salary minimum ?"
+msgstr ""
+
+#: includes/class-functions.php:786
+msgid "Salary minimum, ex: 100"
+msgstr ""
+
+#: includes/class-functions.php:796
+msgid "Salary maximum ?"
+msgstr ""
+
+#: includes/class-functions.php:797
+msgid "Salary maximum, ex: 1000"
+msgstr ""
+
+#: includes/class-functions.php:807 includes/class-functions.php:1118
+#: includes/menu/settings.php:245
+msgid "Salary currency ?"
+msgstr ""
+
+#: includes/class-functions.php:808
+msgid "Salary currency(Optional)"
+msgstr ""
+
+#: includes/class-functions.php:826
+msgid "Application info"
+msgstr ""
+
+#: includes/class-functions.php:827
+msgid "Application Information details."
+msgstr ""
+
+#: includes/class-functions.php:836
+msgid "How to apply ?"
+msgstr ""
+
+#: includes/class-functions.php:837
+msgid "How to apply your job, instruction for applicant ?"
+msgstr ""
+
+#: includes/class-functions.php:847
+msgid "Contact email ?"
+msgstr ""
+
+#: includes/class-functions.php:848
+msgid "Contact email"
+msgstr ""
+
+#: includes/class-functions.php:891 includes/menu/settings.php:104
+msgid "Options"
+msgstr ""
+
+#: includes/class-functions.php:892
+msgid "General options."
+msgstr ""
+
+#: includes/class-functions.php:901
+msgid "Post Per Page"
+msgstr ""
+
+#: includes/class-functions.php:902
+msgid "Job list post per page."
+msgstr ""
+
+#: includes/class-functions.php:914 includes/menu/settings.php:56
+msgid "Excerpt display"
+msgstr ""
+
+#: includes/class-functions.php:915
+msgid "Display short content form following."
+msgstr ""
+
+#: includes/class-functions.php:918 includes/menu/settings.php:60
+msgid "From Content"
+msgstr ""
+
+#: includes/class-functions.php:918 includes/menu/settings.php:60
+msgid "Short Content"
+msgstr ""
+
+#: includes/class-functions.php:927
+msgid "Excerpt Word Count"
+msgstr ""
+
+#: includes/class-functions.php:928
+msgid "Excerpt display word count."
+msgstr ""
+
+#: includes/class-functions.php:946
+msgid "pages"
+msgstr ""
+
+#: includes/class-functions.php:947
+msgid "Options for pages."
+msgstr ""
+
+#: includes/class-functions.php:959
+msgid "Archive Page"
+msgstr ""
+
+#: includes/class-functions.php:960
+msgid "Archive page job list page where placed the short-code [job_list]."
+msgstr ""
+
+#: includes/class-functions.php:972
+msgid "Job Submit Page"
+msgstr ""
+
+#: includes/class-functions.php:973
+msgid "Job submission page id."
+msgstr ""
+
+#: includes/class-functions.php:985
+msgid "Job Edit Page"
+msgstr ""
+
+#: includes/class-functions.php:986
+msgid "Job edit page id."
+msgstr ""
+
+#: includes/class-functions.php:999
+msgid "My Account Page"
+msgstr ""
+
+#: includes/class-functions.php:1000
+msgid "My account page id."
+msgstr ""
+
+#: includes/class-functions.php:1013 includes/menu/settings.php:149
+msgid "Registration enable ?"
+msgstr ""
+
+#: includes/class-functions.php:1014
+msgid "Registration enable on my account page."
+msgstr ""
+
+#: includes/class-functions.php:1027 includes/menu/settings.php:159
+msgid "Login enable ?"
+msgstr ""
+
+#: includes/class-functions.php:1028
+msgid "Login enable on my account page."
+msgstr ""
+
+#: includes/class-functions.php:1043 includes/menu/settings.php:306
+#: includes/menu/welcome.php:143
+msgid "Job Post"
+msgstr ""
+
+#: includes/class-functions.php:1044
+msgid "Options for Job Post."
+msgstr ""
+
+#: includes/class-functions.php:1053
+msgid "Account Required ?"
+msgstr ""
+
+#: includes/class-functions.php:1054 includes/menu/settings.php:182
+msgid "Account required to post job."
+msgstr ""
+
+#: includes/class-functions.php:1067 includes/menu/settings.php:191
+msgid "reCAPTCHA enable ?"
+msgstr ""
+
+#: includes/class-functions.php:1068 includes/menu/settings.php:192
+msgid "Enable reCAPTCHA to protect spam."
+msgstr ""
+
+#: includes/class-functions.php:1080 includes/menu/settings.php:200
+msgid "reCAPTCHA site key"
+msgstr ""
+
+#: includes/class-functions.php:1081 includes/menu/settings.php:201
+msgid ""
+"reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get site key."
+msgstr ""
+
+#: includes/class-functions.php:1092 includes/menu/settings.php:208
+msgid "reCAPTCHA secret key"
+msgstr ""
+
+#: includes/class-functions.php:1093 includes/menu/settings.php:209
+msgid ""
+"reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get secret key."
+msgstr ""
+
+#: includes/class-functions.php:1104
+msgid "New Submitted Job Status ?"
+msgstr ""
+
+#: includes/class-functions.php:1105
+msgid "Submitted job status."
+msgstr ""
+
+#: includes/class-functions.php:1108 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Draft"
+msgstr ""
+
+#: includes/class-functions.php:1108 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Pending"
+msgstr ""
+
+#: includes/class-functions.php:1108 includes/menu/settings.php:220
+msgid "Published"
+msgstr ""
+
+#: includes/class-functions.php:1108 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Private"
+msgstr ""
+
+#: includes/class-functions.php:1108 includes/menu/settings.php:220
+msgid "Trash"
+msgstr ""
+
+#: includes/class-functions.php:1115
+msgid "$"
+msgstr ""
+
+#: includes/class-functions.php:1119 includes/menu/settings.php:246
+msgid "Salary currency display on job page."
+msgstr ""
+
+#: includes/class-functions.php:1131
+msgid "Apply Method ?"
+msgstr ""
+
+#: includes/class-functions.php:1132
+msgid "Enable apply methods."
+msgstr ""
+
+#: includes/class-functions.php:1145 includes/menu/settings.php:264
+msgid "Can user delete jobs ?"
+msgstr ""
+
+#: includes/class-functions.php:1146
+msgid "Can user delete their own jobs."
+msgstr ""
+
+#: includes/class-functions.php:1159
+msgid "Can user edit published jobs ?"
+msgstr ""
+
+#: includes/class-functions.php:1160
+msgid "Can user edit published jobs."
+msgstr ""
+
+#: includes/class-functions.php:1173
+msgid "Display preview after submitted job ?"
+msgstr ""
+
+#: includes/class-functions.php:1174 includes/menu/settings.php:284
+msgid "User can see the job preview after submitted."
+msgstr ""
+
+#: includes/class-functions.php:1195 includes/menu/settings.php:353
+msgid "Notification"
+msgstr ""
+
+#: includes/class-functions.php:1196
+msgid "Options for Notification."
+msgstr ""
+
+#: includes/class-functions.php:1205
+msgid "Email Logo URL"
+msgstr ""
+
+#: includes/class-functions.php:1206 includes/menu/settings.php:315
+msgid "Email logo URL to display on mail."
+msgstr ""
+
+#: includes/class-functions.php:1219
+msgid "From Email"
+msgstr ""
+
+#: includes/class-functions.php:1220
+msgid "From Email Address."
+msgstr ""
+
+#: includes/class-functions.php:1235
+msgid "Notify admin new job submit ?"
+msgstr ""
+
+#: includes/class-functions.php:1236
+msgid "Notify admin when new job submitted."
+msgstr ""
+
+#: includes/class-functions.php:1249 includes/menu/settings.php:339
+msgid "Notify email new job publish ?"
+msgstr ""
+
+#: includes/class-functions.php:1250 includes/menu/settings.php:340
+msgid "Notify email to admin when new job published."
+msgstr ""
+
+#: includes/class-functions.php:1267 includes/menu/settings.php:386
+msgid "Style"
+msgstr ""
+
+#: includes/class-functions.php:1268
+msgid "Options for style."
+msgstr ""
+
+#: includes/class-functions.php:1277
+msgid "Featured Job Background Color ?"
+msgstr ""
+
+#: includes/class-functions.php:1278 includes/menu/settings.php:360
+msgid "Featured job area background color."
+msgstr ""
+
+#: includes/class-functions.php:1291
+msgid "Job Type Background Color ?"
+msgstr ""
+
+#: includes/class-functions.php:1292
+msgid "Job types area background color."
+msgstr ""
+
+#: includes/class-functions.php:1304
+msgid "Job Status Background Color ?"
+msgstr ""
+
+#: includes/class-functions.php:1305
+msgid "Job status area background color."
+msgstr ""
+
+#: includes/class-import.php:45
+msgid "Is imported ?"
+msgstr ""
+
+#: includes/class-import.php:46
+msgid "Is imported"
+msgstr ""
+
+#: includes/class-import.php:55
+msgid "Import source ?"
+msgstr ""
+
+#: includes/class-import.php:56
+msgid "Import source"
+msgstr ""
+
+#: includes/class-import.php:65
+msgid "Import source jobid ?"
+msgstr ""
+
+#: includes/class-import.php:66
+msgid "Import source jobid"
+msgstr ""
+
+#: includes/class-post-meta.php:347
+msgid "job Data"
+msgstr ""
+
+#: includes/class-post-types.php:25
+msgid "Job"
+msgstr ""
+
+#: includes/class-post-types.php:35 includes/class-post-types.php:91
+#: includes/class-post-types.php:131
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: includes/class-post-types.php:36 includes/class-post-types.php:37
+#, php-format
+msgid "Add %s"
+msgstr ""
+
+#: includes/class-post-types.php:38 templates/client-job-list.php:132
+msgid "Edit"
+msgstr ""
+
+#: includes/class-post-types.php:39 includes/class-post-types.php:94
+#: includes/class-post-types.php:134
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/class-post-types.php:40
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/class-post-types.php:41 includes/class-post-types.php:42
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: includes/class-post-types.php:43 includes/class-post-types.php:90
+#: includes/class-post-types.php:130
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/class-post-types.php:44
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: includes/class-post-types.php:45
+#, php-format
+msgid "No %s found in trash"
+msgstr ""
+
+#: includes/class-post-types.php:46 includes/class-post-types.php:92
+#: includes/class-post-types.php:132
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/class-post-types.php:48
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr ""
+
+#: includes/class-post-types.php:77
+msgid "Job Categories"
+msgstr ""
+
+#: includes/class-post-types.php:93 includes/class-post-types.php:133
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: includes/class-post-types.php:95 includes/class-post-types.php:135
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: includes/class-post-types.php:96 includes/class-post-types.php:136
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: includes/class-post-types.php:97 includes/class-post-types.php:137
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+#: includes/class-post-types.php:116
+msgid "Job Tag"
+msgstr ""
+
+#: includes/class-post-types.php:117
+msgid "Job Tags"
+msgstr ""
+
+#: includes/class-settings.php:24
+msgid "Settings"
+msgstr ""
+
+#: includes/class-settings.php:25
+msgid "Reports"
+msgstr ""
+
+#: includes/class-settings.php:26
+msgid "Help"
+msgstr ""
+
+#: includes/class-settings.php:27
+msgid "Addons"
+msgstr ""
+
+#: includes/class-settings.php:28
+msgid "Emails Templates"
+msgstr ""
+
+#: includes/functions/account-registration.php:48
+msgid "Username"
+msgstr ""
+
+#: includes/functions/account-registration.php:54
+#: templates/account/my-account.php:66
+msgid "Password"
+msgstr ""
+
+#: includes/functions/account-registration.php:60
+msgid "Email"
+msgstr ""
+
+#: includes/functions/account-registration.php:75
+msgid "Required form field is missing"
+msgstr ""
+
+#: includes/functions/account-registration.php:79
+msgid "Username too short. At least 4 characters is required"
+msgstr ""
+
+#: includes/functions/account-registration.php:83
+msgid "Sorry, that username already exists!"
+msgstr ""
+
+#: includes/functions/account-registration.php:86
+msgid "Sorry, the username you entered is not valid"
+msgstr ""
+
+#: includes/functions/account-registration.php:90
+msgid "Password length must be greater than 5"
+msgstr ""
+
+#: includes/functions/account-registration.php:94
+msgid "Email is not valid"
+msgstr ""
+
+#: includes/functions/account-registration.php:98
+msgid "Email Already in use"
+msgstr ""
+
+#: includes/functions/account-registration.php:107
+msgid "ERROR"
+msgstr ""
+
+#: includes/functions/account-registration.php:125
+msgid "Registration complete."
+msgstr ""
+
+#: includes/functions/functions-reports.php:93
+msgid "Job posting last 7 days."
+msgstr ""
+
+#: includes/functions/functions-reports.php:229
+msgid "Custom:"
+msgstr ""
+
+#: includes/functions/functions-reports.php:237
+msgid "Go"
+msgstr ""
+
+#: includes/functions/functions.php:168
+#: templates/job-archive/job-archive.php:346 templates/job-list.php:215
+msgid "Job Type"
+msgstr ""
+
+#: includes/functions/functions.php:169
+#: templates/job-archive/job-archive.php:347 templates/job-list.php:216
+msgid "Job Status"
+msgstr ""
+
+#: includes/functions/functions.php:170
+#: templates/job-archive/job-archive.php:348 templates/job-list.php:217
+msgid "Category"
+msgstr ""
+
+#: includes/functions/functions.php:173
+#: templates/job-archive/job-archive.php:351 templates/job-list.php:220
+msgid "Total Vacancies"
+msgstr ""
+
+#: includes/functions/functions.php:174
+#: templates/job-archive/job-archive.php:352 templates/job-list.php:221
+msgid "Expire Date"
+msgstr ""
+
+#: includes/functions/functions.php:397
+msgid "You are not authorized"
+msgstr ""
+
+#: includes/functions/functions.php:461 templates/job-single-sidebar.php:180
+msgid "How to Apply ?<br> "
+msgstr ""
+
+#: includes/functions/functions.php:465 templates/job-single-sidebar.php:184
+msgid "Apply via email :"
+msgstr ""
+
+#: includes/functions/functions.php:506 templates/job-single-sidebar.php:225
+msgid "Apply on this job"
+msgstr ""
+
+#: includes/functions/functions.php:639
+msgid "Update Done"
+msgstr ""
+
+#: includes/functions/functions.php:660
+msgid "Reset Done"
+msgstr ""
+
+#: includes/functions/functions.php:682 includes/functions/functions.php:707
+msgid "You are not authorized to delete this job."
+msgstr ""
+
+#: includes/functions/functions.php:698
+msgid "Job Deleted."
+msgstr ""
+
+#: includes/functions/functions.php:701
+msgid "Something going wrong."
+msgstr ""
+
+#: includes/menu/addons.php:180
+msgid "Version:"
+msgstr ""
+
+#: includes/menu/addons.php:190
+msgid "Price:"
+msgstr ""
+
+#: includes/menu/addons.php:191
+msgid "Download"
+msgstr ""
+
+#: includes/menu/addons.php:223
+msgid " - Addons"
+msgstr ""
+
+#: includes/menu/emails-templates.php:109
+msgid "Enable ?"
+msgstr ""
+
+#: includes/menu/emails-templates.php:132
+msgid "Email To:"
+msgstr ""
+
+#: includes/menu/emails-templates.php:137
+msgid "Email from name:"
+msgstr ""
+
+#: includes/menu/emails-templates.php:141
+msgid "Email from:"
+msgstr ""
+
+#: includes/menu/emails-templates.php:150
+msgid "Email Subject:"
+msgstr ""
+
+#: includes/menu/emails-templates.php:159
+msgid "Email Body:"
+msgstr ""
+
+#: includes/menu/emails-templates.php:197 includes/menu/settings.php:738
+msgid "Changes Saved."
+msgstr ""
+
+#: includes/menu/emails-templates.php:212
+msgid " - Emails Templates"
+msgstr ""
+
+#: includes/menu/emails-templates.php:224 includes/menu/settings.php:778
+msgid "Save Changes"
+msgstr ""
+
+#: includes/menu/emails-templates.php:225
+msgid "Reset"
+msgstr ""
+
+#: includes/menu/help.php:27
+msgid "Ask any question"
+msgstr ""
+
+#: includes/menu/help.php:29
+msgid ""
+"Please feel free to contact for any question, ask via our forum <a href="
+"\"http://www.pickplugins.com/questions/\">http://www.pickplugins.com/"
+"questions/</a>"
+msgstr ""
+
+#: includes/menu/help.php:35
+msgid "Watch video tutorial"
+msgstr ""
+
+#: includes/menu/help.php:61
+msgid "FAQ"
+msgstr ""
+
+#: includes/menu/settings.php:48
+msgid "Post per page"
+msgstr ""
+
+#: includes/menu/settings.php:49
+msgid "Job list post per page"
+msgstr ""
+
+#: includes/menu/settings.php:57
+msgid "Display short content form following"
+msgstr ""
+
+#: includes/menu/settings.php:65
+msgid "Excerpt word count"
+msgstr ""
+
+#: includes/menu/settings.php:66
+msgid "Excerpt display word count"
+msgstr ""
+
+#: includes/menu/settings.php:74
+msgid "Archive load style"
+msgstr ""
+
+#: includes/menu/settings.php:75
+msgid "Set load more style ajax or pagination"
+msgstr ""
+
+#: includes/menu/settings.php:78 templates/job-edit.php:585
+#: templates/job-submit.php:493
+msgid "Pagination"
+msgstr ""
+
+#: includes/menu/settings.php:78 templates/job-archive/pagination.php:35
+msgid "Load more"
+msgstr ""
+
+#: includes/menu/settings.php:112
+msgid "Archive page"
+msgstr ""
+
+#: includes/menu/settings.php:113
+msgid "Archive page job list page where placed the short-code [job_list])"
+msgstr ""
+
+#: includes/menu/settings.php:120
+msgid "Job submit page"
+msgstr ""
+
+#: includes/menu/settings.php:121
+msgid "Job submission page id"
+msgstr ""
+
+#: includes/menu/settings.php:129
+msgid "Job edit page"
+msgstr ""
+
+#: includes/menu/settings.php:130
+msgid "Job edit page id"
+msgstr ""
+
+#: includes/menu/settings.php:139
+msgid "My account page"
+msgstr ""
+
+#: includes/menu/settings.php:140
+msgid "My account page id"
+msgstr ""
+
+#: includes/menu/settings.php:150
+msgid "Registration enable on my account page "
+msgstr ""
+
+#: includes/menu/settings.php:160
+msgid "Login enable on my account page "
+msgstr ""
+
+#: includes/menu/settings.php:174
+msgid "Pages"
+msgstr ""
+
+#: includes/menu/settings.php:181
+msgid "Account required ?"
+msgstr ""
+
+#: includes/menu/settings.php:216 includes/menu/welcome.php:125
+msgid "New submitted job status ?"
+msgstr ""
+
+#: includes/menu/settings.php:217
+msgid "Submitted job status"
+msgstr ""
+
+#: includes/menu/settings.php:254
+msgid "Apply method ?"
+msgstr ""
+
+#: includes/menu/settings.php:255
+msgid "Enable apply methods"
+msgstr ""
+
+#: includes/menu/settings.php:265
+msgid "Can user delete their own jobs"
+msgstr ""
+
+#: includes/menu/settings.php:274
+msgid "Can user edit jobs ?"
+msgstr ""
+
+#: includes/menu/settings.php:275
+msgid "Can user edit published jobs"
+msgstr ""
+
+#: includes/menu/settings.php:283
+msgid "Redirect preview link after job submit ?"
+msgstr ""
+
+#: includes/menu/settings.php:292
+msgid "Submission type ?"
+msgstr ""
+
+#: includes/menu/settings.php:293
+msgid "Submission type."
+msgstr ""
+
+#: includes/menu/settings.php:296
+msgid "Step by step"
+msgstr ""
+
+#: includes/menu/settings.php:296
+msgid "Accordion"
+msgstr ""
+
+#: includes/menu/settings.php:314
+msgid "Email logo URL"
+msgstr ""
+
+#: includes/menu/settings.php:322
+msgid "From email"
+msgstr ""
+
+#: includes/menu/settings.php:323
+msgid "From email address"
+msgstr ""
+
+#: includes/menu/settings.php:330
+msgid "Notify email new job submit ?"
+msgstr ""
+
+#: includes/menu/settings.php:331
+msgid "Notify admin when new job submitted"
+msgstr ""
+
+#: includes/menu/settings.php:359
+msgid "Featured job background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:367
+msgid "Job type background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:368
+msgid "Job types area background color"
+msgstr ""
+
+#: includes/menu/settings.php:376
+msgid "Job status background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:377
+msgid "Job status area background color"
+msgstr ""
+
+#: includes/menu/settings.php:756
+msgid " Settings"
+msgstr ""
+
+#: includes/menu/welcome.php:52
+#, php-format
+msgid "<strong>Welcome to %s</strong> &#8211; Please setup basic settings."
+msgstr ""
+
+#: includes/menu/welcome.php:54
+msgid "Run Wizard Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:55
+msgid "Skip Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:76
+msgid "General"
+msgstr ""
+
+#: includes/menu/welcome.php:84
+msgid "20"
+msgstr ""
+
+#: includes/menu/welcome.php:85
+msgid "Post per page ?"
+msgstr ""
+
+#: includes/menu/welcome.php:86
+msgid "Post per page on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:97 includes/menu/welcome.php:110
+#: includes/menu/welcome.php:123 includes/menu/welcome.php:151
+msgid "30"
+msgstr ""
+
+#: includes/menu/welcome.php:98
+msgid "Excerpt word count ?"
+msgstr ""
+
+#: includes/menu/welcome.php:99
+msgid "Excerpt word count on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:111
+msgid "Account required to post job ?"
+msgstr ""
+
+#: includes/menu/welcome.php:112
+msgid "Only logged-in user can post job"
+msgstr ""
+
+#: includes/menu/welcome.php:124
+msgid "New Submitted job status ?"
+msgstr ""
+
+#: includes/menu/welcome.php:128
+msgid "Publish"
+msgstr ""
+
+#: includes/menu/welcome.php:152 includes/menu/welcome.php:153
+msgid "Currency symbol ?"
+msgstr ""
+
+#: includes/menu/welcome.php:200
+msgid "Job Board Manager &rsaquo; Setup Wizard"
+msgstr ""
+
+#: includes/menu/welcome.php:276
+msgid "Options saved"
+msgstr ""
+
+#: includes/menu/welcome.php:308
+msgid "Page created."
+msgstr ""
+
+#: includes/menu/welcome.php:318
+msgid "Permissions saved."
+msgstr ""
+
+#: includes/menu/welcome.php:327
+msgid "Job posting saved."
+msgstr ""
+
+#: includes/menu/welcome.php:395
+msgid "Save options"
+msgstr ""
+
+#: includes/menu/welcome.php:398
+msgid "General options"
+msgstr ""
+
+#: includes/menu/welcome.php:424 includes/menu/welcome.php:428
+msgid "Create pages"
+msgstr ""
+
+#: includes/menu/welcome.php:453 includes/menu/welcome.php:461
+msgid "Save permissions"
+msgstr ""
+
+#: includes/menu/welcome.php:550 includes/menu/welcome.php:556
+msgid "Job posting"
+msgstr ""
+
+#: includes/menu/welcome.php:585
+msgid "Nothing to Save"
+msgstr ""
+
+#: includes/pickform/class-pickform-creator.php:381
+#: includes/pickform/class-pickform-creator.php:393
+#: includes/pickform/class-pickform-creator.php:403
+#: includes/pickform/class-pickform.php:556
+#: includes/pickform/class-pickform.php:568
+#: includes/pickform/class-pickform.php:578
+#: includes/pickform/class-pickformNew.php:478
+#: includes/pickform/class-pickformNew.php:490
+#: includes/pickform/class-pickformNew.php:500
+msgid "Remove"
+msgstr ""
+
+#: includes/pickform/class-pickform-creator.php:410
+#: includes/pickform/class-pickform.php:585
+#: includes/pickform/class-pickformNew.php:507
+msgid "Add more"
+msgstr ""
+
+#: includes/pickform/class-pickform-creator.php:567
+#: includes/pickform/class-pickform.php:816
+#: includes/pickform/class-pickformNew.php:738
+msgid "Drop files here"
+msgstr ""
+
+#: includes/pickform/class-pickform-creator.php:568
+#: includes/pickform/class-pickform.php:817
+#: includes/pickform/class-pickformNew.php:739
+msgid "Select Files"
+msgstr ""
+
+#: includes/pickform/class-pickform-creator.php:588
+#: includes/pickform/class-pickform.php:837
+#: includes/pickform/class-pickformNew.php:759
+msgid "Allowed Files"
+msgstr ""
+
+#: includes/shortcodes/class-shortcodes-pending-publish.php:77
+#: templates/job-archive/job-archive.php:434 templates/job-list.php:576
+msgid "No job found"
+msgstr ""
+
+#: templates/account/my-account.php:30
+msgid "Welcome"
+msgstr ""
+
+#: templates/account/my-account.php:30
+msgid "Logout"
+msgstr ""
+
+#: templates/account/my-account.php:44
+msgid "Register"
+msgstr ""
+
+#: templates/account/my-account.php:53
+msgid "Login"
+msgstr ""
+
+#: templates/account/my-account.php:65
+msgid "Username or email address"
+msgstr ""
+
+#: templates/account/my-account.php:67
+msgid "Remember Me"
+msgstr ""
+
+#: templates/account/my-account.php:68
+msgid "Log In"
+msgstr ""
+
+#: templates/client-job-list.php:109
+msgid "Job id."
+msgstr ""
+
+#: templates/client-job-list.php:109
+msgid "Job Title."
+msgstr ""
+
+#: templates/client-job-list.php:114
+msgid "Published:"
+msgstr ""
+
+#: templates/client-job-list.php:115
+msgid "Expiry:"
+msgstr ""
+
+#: templates/client-job-list.php:116
+msgid "Publish Status:"
+msgstr ""
+
+#: templates/client-job-list.php:119
+msgid "Job Status:"
+msgstr ""
+
+#: templates/client-job-list.php:121
+msgid "Featured:"
+msgstr ""
+
+#: templates/client-job-list.php:124
+msgid "Job Type:"
+msgstr ""
+
+#: templates/client-job-list.php:127
+msgid "Job Level:"
+msgstr ""
+
+#: templates/client-job-list.php:136
+msgid "Delete"
+msgstr ""
+
+#: templates/client-job-list.php:165
+msgid "No job found posted by you."
+msgstr ""
+
+#: templates/client-job-list.php:173
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to see your job list."
+msgstr ""
+
+#: templates/job-archive/filter.php:23
+msgid "Keyword:"
+msgstr ""
+
+#: templates/job-archive/filter.php:57 templates/job-list.php:235
+msgid "Job type:"
+msgstr ""
+
+#: templates/job-archive/filter.php:62 templates/job-list.php:240
+msgid "Job status:"
+msgstr ""
+
+#: templates/job-archive/filter.php:67
+msgid "Location:"
+msgstr ""
+
+#: templates/job-archive/filter.php:73 templates/job-list.php:245
+msgid "Expire date:"
+msgstr ""
+
+#: templates/job-archive/filter.php:82 templates/job-list.php:253
+msgid "Category:"
+msgstr ""
+
+#: templates/job-archive/search.php:38
+msgid "Keyword"
+msgstr ""
+
+#: templates/job-archive/search.php:70 templates/job-edit.php:569
+#: templates/job-submit.php:477
+msgid "Submit"
+msgstr ""
+
+#: templates/job-edit.php:21
+msgid "Invalid job id."
+msgstr ""
+
+#: templates/job-edit.php:28
+msgid "You are not authorized to edit this job."
+msgstr ""
+
+#: templates/job-edit.php:120 templates/job-edit.php:126
+#: templates/job-edit.php:133 templates/job-edit.php:141
+#: templates/job-submit.php:106 templates/job-submit.php:112
+#: templates/job-submit.php:119 templates/job-submit.php:128
+msgid "missing"
+msgstr ""
+
+#: templates/job-edit.php:187
+msgid "Job update successfully."
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "Cancel"
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "current step:"
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "Finish"
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "Next"
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "Previous"
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:493
+msgid "Loading ..."
+msgstr ""
+
+#: templates/job-edit.php:635
+#, php-format
+msgid ""
+"You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
+"page</b></a> to see your jobs."
+msgstr ""
+
+#: templates/job-edit.php:644
+#, php-format
+msgid "Please <a href=\"%s\"><b>login</b></a> to edit this job."
+msgstr ""
+
+#: templates/job-single-description.php:25
+msgid "Responsibilities:"
+msgstr ""
+
+#: templates/job-single-description.php:47
+msgid "Educational requirements:"
+msgstr ""
+
+#: templates/job-single-description.php:65
+msgid "Experience requirements:"
+msgstr ""
+
+#: templates/job-single-description.php:86
+msgid "Desired Skills:"
+msgstr ""
+
+#: templates/job-single-description.php:107
+msgid "Qualifications:"
+msgstr ""
+
+#: templates/job-single-sidebar.php:87
+msgid "Website"
+msgstr ""
+
+#: templates/job-single-sidebar.php:90
+msgid "Job Link"
+msgstr ""
+
+#: templates/job-single-sidebar.php:95
+msgid "About Company"
+msgstr ""
+
+#: templates/job-single-sidebar.php:106
+msgid "Job Status: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:109
+msgid "No of Vacancies: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:112
+msgid "Date Posted: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:115
+msgid "Expiry Date: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:118
+msgid "Job Type: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:121
+msgid "Job Level: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:124
+msgid "Years of Experience: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:128
+msgid "Job Info"
+msgstr ""
+
+#: templates/job-single-sidebar.php:146
+msgid "Salary Type: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:156 templates/job-single-sidebar.php:162
+msgid "Salary: "
+msgstr ""
+
+#: templates/job-single-sidebar.php:169
+msgid "Salary Info"
+msgstr ""
+
+#: templates/job-single-sidebar.php:255
+msgid "Share this job"
+msgstr ""
+
+#: templates/job-submit.php:37
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to submit job."
+msgstr ""
+
+#: templates/job-submit.php:182
+msgid "Job Submitted successfully."
+msgstr ""
+
+#: templates/job-submit.php:183
+msgid "Submission status:"
+msgstr ""

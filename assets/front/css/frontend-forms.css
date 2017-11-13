@@ -1,0 +1,126 @@
+@charset "utf-8";
+/* CSS Document */
+
+.frontend-forms {
+  background: rgb(244, 244, 244) none repeat scroll 0 0;
+  padding-top: 10px;
+}
+
+.frontend-forms .message, .submission-status {
+
+  background: rgb(255, 255, 255) none repeat scroll 0 0;
+  display: block;
+  font-size: 14px;
+  margin: 10px;
+  padding: 6px 10px;
+  position: relative;
+}
+
+.frontend-forms .message.green {
+  
+  border-left: 3px solid rgb(53, 202, 130);
+
+}
+
+.frontend-forms .message.warring {
+  border-left: 3px solid rgb(255, 102, 67);
+}
+
+
+
+.frontend-forms input[type="text"], .frontend-forms textarea {
+  width: 80%;
+}
+
+
+
+
+.frontend-forms ul.tab-nav {
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+
+.frontend-forms ul.tab-nav li {
+  border-right: 1px solid rgb(220, 220, 220);
+  cursor: pointer;
+  display: inline-block;
+  float: left;
+  margin: 0;
+  padding: 8px 15px;
+}
+
+.frontend-forms ul.tab-nav li.active {
+  background: rgb(237, 239, 238) none repeat scroll 0 0;
+}
+.frontend-forms ul.box {
+  border-top: 1px solid rgb(220, 220, 220);
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
+.frontend-forms ul.box li.tab-box {
+  background: rgb(237, 239, 238) none repeat scroll 0 0;
+  display: none;
+  margin: 0;
+  width: 100%;
+}
+
+.frontend-forms .option-box {
+  padding: 20px;
+}
+
+.frontend-forms .option-box.hidden {
+  display: none;
+}
+
+
+.frontend-forms .option-box .option-title {
+  font-size: 17px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.frontend-forms .option-box .option-info {
+  font-size: 13px;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+
+
+
+
+.frontend-forms .job-bm-submit {
+  font-size: 14px;
+  margin: 25px 30px;
+  padding: 6px 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+.job-submit-form .salary_fixed, .job-submit-form .salary_min, .job-submit-form .salary_max{
+	display:none;
+	}
+
+.job-submit-form .file-upload-container{}
+
+.job-submit-form .file-upload-container .loading{}
+
+.job-submit-form #uploaded-image-container {
+  margin: 10px 0 0;
+  max-height: 100px;
+  overflow: hidden;
+  width: 100px;
+}
+
+
+.job-submit-form #file-upload-container .loading{
+	display:none;
+	
+	}
+
+.job-submit-form #file-upload-container #file-uploader {
+  background: rgb(53, 202, 130) none repeat scroll 0 0;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin: 10px 0 0;
+  padding: 3px 12px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

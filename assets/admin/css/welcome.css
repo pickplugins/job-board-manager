@@ -1,0 +1,196 @@
+@charset "utf-8";
+/* CSS Document */
+
+.pp-admin.welcome {
+  background: rgba(0, 0, 0, 0.04) none repeat scroll 0 0;
+  border-radius: 5px;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.12);
+  font-family: open sans;
+  margin: 50px auto 0;
+  overflow: hidden;
+  padding: 0;
+  width: 520px;
+}
+
+.pp-admin.welcome .updated {
+  padding: 0 20px;
+}
+
+.pp-admin.welcome .updated p {
+  background: #fff none repeat scroll 0 0;
+  border-left: 3px solid #46b450;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.11);
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+.pp-admin.welcome .subscribe {
+  font-size: 13px;
+  margin: 40px 0;
+}
+
+.pp-admin.welcome .subscribe .message {
+  display: block;
+  font-size: 12px;
+  margin: 20px 0;
+}
+.pp-admin.welcome .subscribe .note {
+  display: block;
+  font-size: 12px;
+  margin: 20px 0;
+}
+
+
+.pp-admin.welcome .steps {
+  background: #ddd none repeat scroll 0 0;
+  height: 2px;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  width: 80%;
+}
+
+.pp-admin.welcome .step {
+  background: #46b450 none repeat scroll 0 0;
+  height: 2px;
+  width: 20%;
+}
+
+.pp-admin.welcome .step.active {
+  background: #46b450 none repeat scroll 0 0;
+}
+
+
+.pp-admin.welcome input[type="text"],
+.pp-admin.welcome input[type="search"],
+.pp-admin.welcome input[type="radio"],
+.pp-admin.welcome input[type="tel"],
+.pp-admin.welcome input[type="time"],
+.pp-admin.welcome input[type="url"], 
+.pp-admin.welcomeinput[type="week"],
+.pp-admin.welcome input[type="password"],
+.pp-admin.welcome input[type="checkbox"],
+.pp-admin.welcome input[type="color"],
+.pp-admin.welcome input[type="date"],
+.pp-admin.welcome input[type="datetime"],
+.pp-admin.welcome input[type="datetime-local"],
+.pp-admin.welcome input[type="email"],
+.pp-admin.welcome input[type="month"],
+.pp-admin.welcome input[type="number"],
+.pp-admin.welcome select,
+.pp-admin.welcome textarea {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07) inset;
+  color: #32373c;
+  outline: 0 none;
+  transition: border-color 50ms ease-in-out 0s;
+}
+
+
+.pp-admin .header {
+  background: #f00 none repeat scroll 0 0;
+  height: 200px;
+}
+
+.pp-admin .name {
+  background: rgba(0, 0, 0, 0.22) none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  font-size: 31px;
+  height: 118px;
+  padding: 50px 0 0;
+  text-align: center;
+  text-shadow: 0 0 14px rgba(0, 0, 0, 0.75);
+}
+
+.pp-admin form {
+  padding: 30px 25px;
+}
+
+
+
+
+.pp-admin {}
+
+.pp-admin .option {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  margin: 0;
+  padding: 15px 0;
+}
+.pp-admin .option .title {
+  font-size: 14px;
+  margin: 0 0 11px;
+}
+
+.pp-admin .option .details {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+
+
+
+
+.pp-admin .submit-welcome{}
+
+
+
+
+
+.wp-core-ui .button, .wp-core-ui .button-secondary {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border-color: #ccc;
+  box-shadow: 0 1px 0 #ccc;
+  color: #555;
+  vertical-align: top;
+}
+
+.wp-core-ui .button, .wp-core-ui .button-primary, .wp-core-ui .button-secondary {
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  height: 28px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0 10px 1px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+
+
+
+.pp-admin .go-dashborad {
+  display: block;
+  font-size: 13px;
+  margin: 50px 0 0;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

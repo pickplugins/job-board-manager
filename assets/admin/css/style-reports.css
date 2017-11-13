@@ -1,0 +1,27 @@
+/*
+Admin css
+*/
+
+.job-bm-admin{}
+
+.job-bm-admin .reports{}
+
+.job-bm-admin .reports .range{}
+
+.job-bm-admin .reports .range .active {
+  background: #f3f3f3 none repeat scroll 0 0;
+  font-weight: bold;
+  padding: 4px 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

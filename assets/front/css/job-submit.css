@@ -1,0 +1,160 @@
+@charset "utf-8";
+/* CSS Document */
+
+.job-submit{}
+.job-submit .validations{}
+.job-submit .validations .failed {
+  color: #f0611a;
+  font-size: 12px;
+  padding: 3px 1px;
+}
+
+.job-submit .validations .success {
+  color: #54c671;
+  font-size: 12px;
+  padding: 3px 1px;
+}
+
+
+
+
+
+
+
+.job-submit .steps{}
+
+.job-submit .steps ul, .job-submit .actions ul {
+  background: #f2f2f2 none repeat scroll 0 0;
+  margin: 0;
+  padding: 0;
+}
+
+.job-submit .steps ul li, .job-submit .actions ul li{
+  background: #f2f2f2 none repeat scroll 0 0;
+  border-right: 1px solid #ddd;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.job-submit .steps ul li:last-child, .job-submit .actions ul li:nth-child(2) {
+  border: medium none;
+}
+
+.job-submit .steps-title.title {
+  display: none;
+}
+
+
+.job-submit .steps ul li.current {
+  background: #e7e6e6 none repeat scroll 0 0;
+}
+
+.job-submit .steps ul li a, .job-submit .actions ul li a {
+  display: inline-block;
+  outline: medium none;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.job-submit .steps ul li .current-info,  .job-submit .steps ul li .number{
+  display: none;
+}
+
+.job-submit .actions {
+  margin-top: 20px;
+}
+
+.job-submit .job-submit-button {
+  /*display: none;*/
+}
+
+.job-submit .job-submit-button > input[type="submit"] {
+  font-size: 15px;
+  margin: 25px 0;
+  padding: 10px 32px;
+}
+
+.job-submit input[type="text"], .job-submit textarea {
+  font-size: 13px;
+  padding: 5px 10px;
+  width: 50%;
+}
+
+.job-submit label {
+  display: block;
+  font-size: 13px;
+}
+
+.job-submit #post_title {
+  width: 90%;
+}
+
+
+.meta-fields .steps-title{
+background: #f2f2f2 none repeat scroll 0 0;
+padding: 10px 20px;	
+	}
+
+
+
+/*
+
+
+.job-submit .job-cats, .job-submit .job-child-cats {
+  display: inline-block;
+  margin-right: 30px;
+  max-width: 270px;
+  vertical-align: top;
+}
+
+.job-submit .job-cats li, .job-submit .job-child-cats li {
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  max-width: 230px;
+  min-width: 225px;
+  padding: 5px 11px;
+}
+
+.job-submit .job-cats li.active,
+.job-submit .job-child-cats li.active {
+  background: #f0f0f0 none repeat scroll 0 0;
+
+}
+
+
+.job-submit .job-cats li .fa, .job-submit .job-child-cats li .fa {
+  display: none;
+  float: right;
+  margin-top: 5px;
+}
+
+.job-submit .job-cats li.active .fa, .job-submit .job-child-cats li.active .fa {
+  display: inline-block;
+}
+
+
+.job-submit .job-child-cats li .fa{
+
+}
+
+.job-submit .steps{
+  background: #84cbfd none repeat scroll 0 0;
+  border: 1px solid #47b1fb;
+  color: #fff;
+  display: inline-block;
+  padding: 3px 15px;
+  text-decoration: none;
+}
+
+
+
+*/
+
+
+
+
+
+
