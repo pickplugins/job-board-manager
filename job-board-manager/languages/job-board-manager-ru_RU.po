@@ -1,0 +1,1991 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Job Board Manager\n"
+"POT-Creation-Date: 2017-11-27 11:55+0600\n"
+"PO-Revision-Date: 2017-11-27 11:55+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/class-emails.php:67
+msgid "New Job Submitted"
+msgstr "Новая вакансия представлена"
+
+#: includes/class-emails.php:68
+msgid "Notification email for admin when user submitted job."
+msgstr ""
+"Уведомление по электронной почте для администратора, когда пользователь "
+"представил работу."
+
+#: includes/class-emails.php:69
+msgid "New Job Submitted - {site_url}"
+msgstr "Новая вакансия опубликована - {site_url}"
+
+#: includes/class-emails.php:77
+msgid "New Job Published"
+msgstr "Новая вакансия опубликована"
+
+#: includes/class-emails.php:78
+msgid "Notification email for admin when someone published job."
+msgstr ""
+"Уведомление по электронной почте для администратора, когда кто-то "
+"опубликовал работу."
+
+#: includes/class-emails.php:79
+msgid "New Job Published - {site_url}"
+msgstr "Новая работа опубликована - {site_url}"
+
+#: includes/class-emails.php:87
+msgid "New Job Approved"
+msgstr "Новая работа утверждена"
+
+#: includes/class-emails.php:88
+msgid "Notification email for job poster when admin published job."
+msgstr ""
+"Уведомление по электронной почте для работы , когда админ опубликовал работу."
+
+#: includes/class-emails.php:89
+msgid "New Job Approved - {site_url}"
+msgstr "Новая работа утверждена - {site_url}"
+
+#: includes/class-emails.php:119
+msgid "Site Parameters"
+msgstr "Параметры сайта"
+
+#: includes/class-emails.php:124
+msgid "Users Parameters"
+msgstr "Параметры пользователя"
+
+#: includes/class-emails.php:129
+msgid "Job Parameters"
+msgstr " Параметры работы"
+
+#: includes/class-emails.php:134
+msgid "Job application"
+msgstr "Заявка на работу"
+
+#: includes/class-functions.php:25
+#, fuzzy
+#| msgid "Job type:"
+msgid "Job type"
+msgstr "Тип вакансии:"
+
+#: includes/class-functions.php:26 includes/class-functions.php:318
+msgid "Job status"
+msgstr ""
+
+#: includes/class-functions.php:27 includes/class-functions.php:493
+#: includes/functions/functions.php:184
+#: templates/job-archive/job-archive.php:349
+#: templates/job-archive/search.php:44 templates/job-list.php:218
+msgid "Location"
+msgstr "Место нахождения"
+
+#: includes/class-functions.php:28 includes/class-functions.php:467
+#: includes/functions/functions.php:185
+#: templates/job-archive/job-archive.php:350 templates/job-list.php:219
+msgid "Company name"
+msgstr ""
+
+#: includes/class-functions.php:29
+#, fuzzy
+#| msgid "Total Vacancies"
+msgid "Total vacancies"
+msgstr "Всего вакансий"
+
+#: includes/class-functions.php:30
+#, fuzzy
+#| msgid "Expire date:"
+msgid "Expire date"
+msgstr "Актуально до:"
+
+#: includes/class-functions.php:31 templates/job-archive/job-archive.php:353
+msgid "View count"
+msgstr ""
+
+#: includes/class-functions.php:51
+msgid "Freelance"
+msgstr "Внештатно"
+
+#: includes/class-functions.php:51
+msgid "Full Time"
+msgstr "На постоянной основе"
+
+#: includes/class-functions.php:51
+msgid "Internship"
+msgstr "Интернатура"
+
+#: includes/class-functions.php:51
+msgid "Part Time"
+msgstr "Неполная занятость"
+
+#: includes/class-functions.php:51
+msgid "Temporary"
+msgstr "Временная"
+
+#: includes/class-functions.php:62
+msgid "Open"
+msgstr "Открыто"
+
+#: includes/class-functions.php:62
+msgid "Closed"
+msgstr "Закрыто"
+
+#: includes/class-functions.php:62
+msgid "Filled"
+msgstr "Заполненный"
+
+#: includes/class-functions.php:62
+msgid "Re-Open"
+msgstr "Возобновить"
+
+#: includes/class-functions.php:62
+msgid "Expired"
+msgstr "Истекший"
+
+#: includes/class-functions.php:72
+msgid "Any"
+msgstr "Любой"
+
+#: includes/class-functions.php:72
+msgid "Entry level"
+msgstr "Начальный уровень"
+
+#: includes/class-functions.php:72
+msgid "Mid level"
+msgstr "Средний уровень"
+
+#: includes/class-functions.php:72
+msgid "Top level"
+msgstr "Верхний уровень"
+
+#: includes/class-functions.php:82
+msgid "Negotiable"
+msgstr "Договорная"
+
+#: includes/class-functions.php:82
+msgid "Fixed"
+msgstr "Фиксированная"
+
+#: includes/class-functions.php:82
+msgid "Min-Max"
+msgstr "Мин - Макс"
+
+#: includes/class-functions.php:91
+msgid "All"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "1,000-10,000"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "10,001-20,000"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "20,001-30,000"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "30,001-50,000"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "50,001-80,000"
+msgstr ""
+
+#: includes/class-functions.php:91
+msgid "80,001-1,00,000"
+msgstr ""
+
+#: includes/class-functions.php:103 includes/functions/functions.php:1088
+msgid "None"
+msgstr "Нисколько"
+
+#: includes/class-functions.php:103
+msgid "Direct Email"
+msgstr "Прямой Email"
+
+#: includes/class-functions.php:135 includes/class-post-types.php:26
+msgid "Jobs"
+msgstr "Вакансии"
+
+#: includes/class-functions.php:154
+#: includes/shortcodes/class-shortcodes-dashboard.php:49
+#: templates/my-jobs/my-jobs.php:20
+msgid "My Jobs"
+msgstr "Мои вакансии"
+
+#: includes/class-functions.php:178
+msgid "Job Board Manager - How to Install and Settings."
+msgstr "Job Board Manage-Как установить и настройки."
+
+#: includes/class-functions.php:184
+msgid "Job Board Manager - Create a job."
+msgstr " Job Board Manager -Создание вакансии"
+
+#: includes/class-functions.php:203
+msgid "Core"
+msgstr "Ядро"
+
+#: includes/class-functions.php:207
+msgid "Single job page showing 404 error"
+msgstr "Одна страница задания показывает сообщение об ошибке 404"
+
+#: includes/class-functions.php:213
+msgid "Single job page style broken, what should i do ?"
+msgstr "Одно задание стиль страницы сломан, что я должен делать?"
+
+#: includes/class-functions.php:218
+msgid "How can i change slug for Job ?"
+msgstr "Как я могу изменить строку для работы?"
+
+#: includes/class-functions.php:223
+msgid "How can remove any tabs on job submission form ?"
+msgstr "Как можно удалить любые вкладки на форме представления работы?"
+
+#: includes/class-functions.php:229
+msgid "Remove input fields on job submission form."
+msgstr "Удалить поля ввода данных на форме представления задания."
+
+#: includes/class-functions.php:235
+msgid "How to add/remove job types"
+msgstr "Как добавить / удалить типы заданий"
+
+#: includes/class-functions.php:273
+msgid "Job Archive"
+msgstr "Архив вакансий"
+
+#: includes/class-functions.php:279
+msgid "Job Submit"
+msgstr "Отправить вакансию"
+
+#: includes/class-functions.php:286
+msgid "Job Edit"
+msgstr "Редактировать вакансию"
+
+#: includes/class-functions.php:293
+msgid "Job Dashboard"
+msgstr ""
+
+#: includes/class-functions.php:319
+msgid "Select job status."
+msgstr "Выберите статус вакансии"
+
+#: includes/class-functions.php:330
+msgid "Expiry date"
+msgstr ""
+
+#: includes/class-functions.php:331
+msgid "Job expiry date"
+msgstr "Срок годности вакансии"
+
+#: includes/class-functions.php:343
+msgid "Featured job"
+msgstr ""
+
+#: includes/class-functions.php:344
+msgid "Want to get featured listing ?"
+msgstr "Хотите получить  список по признакам?"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:107
+msgid "No"
+msgstr "Нет"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:104
+msgid "Yes"
+msgstr "Да"
+
+#: includes/class-functions.php:363
+msgid "Write awesome title here"
+msgstr "Написать удивительное название здесь"
+
+#: includes/class-functions.php:364
+msgid "Job Title"
+msgstr "Название работы"
+
+#: includes/class-functions.php:365
+msgid "Job title here"
+msgstr "Должность"
+
+#: includes/class-functions.php:377
+msgid "Job Descriptions"
+msgstr "Должностные инструкции"
+
+#: includes/class-functions.php:378
+msgid "Write job descriptions here"
+msgstr "Описания должностных функций;"
+
+#: includes/class-functions.php:392
+msgid "Thumbnail"
+msgstr "Изображение"
+
+#: includes/class-functions.php:393
+msgid "Job Featured Image, uplaod single image only"
+msgstr "Рекомендуемое одно изображение"
+
+#: includes/class-functions.php:410 includes/class-post-types.php:76
+msgid "Job Category"
+msgstr "Тип деятельности"
+
+#: includes/class-functions.php:411
+msgid "Select Job Category."
+msgstr "Выберите отрасль"
+
+#: includes/class-functions.php:443
+msgid "reCaptcha"
+msgstr ""
+
+#: includes/class-functions.php:444
+msgid "reCaptcha test."
+msgstr ""
+
+#: includes/class-functions.php:457
+msgid "Company info"
+msgstr ""
+
+#: includes/class-functions.php:458
+msgid "Company Information details"
+msgstr "Информация о компании подробнее"
+
+#: includes/class-functions.php:468
+msgid "Company name, ex: Google Inc."
+msgstr ""
+
+#: includes/class-functions.php:495
+msgid "Job location, ex: California (City or States)"
+msgstr ""
+
+#: includes/class-functions.php:506
+msgid "Address"
+msgstr "Адрес"
+
+#: includes/class-functions.php:507
+msgid "Full address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+msgstr ""
+
+#: includes/class-functions.php:532
+msgid "Company website"
+msgstr ""
+
+#: includes/class-functions.php:533
+msgid "Company website, ex: http://example.com"
+msgstr ""
+
+#: includes/class-functions.php:544
+msgid "Company logo"
+msgstr ""
+
+#: includes/class-functions.php:545
+msgid "Upload company logo."
+msgstr "Загрузить логотип компании."
+
+#: includes/class-functions.php:557
+msgid "Job link"
+msgstr ""
+
+#: includes/class-functions.php:558
+msgid ""
+"Job link at company website, ex: http://example.com/jobs/developer-wanted"
+msgstr ""
+
+#: includes/class-functions.php:572
+msgid " Job info"
+msgstr ""
+
+#: includes/class-functions.php:573
+msgid "Job Information details."
+msgstr "Детальнее"
+
+#: includes/class-functions.php:664
+msgid "No of vacancies"
+msgstr ""
+
+#: includes/class-functions.php:665
+msgid "Total number of vacancies."
+msgstr "Общее количество вакансий."
+
+#: includes/class-functions.php:702
+msgid "Job type ?"
+msgstr ""
+
+#: includes/class-functions.php:703
+msgid "Choose job type."
+msgstr "Выберите тип вакансии."
+
+#: includes/class-functions.php:714
+msgid "Job level ?"
+msgstr ""
+
+#: includes/class-functions.php:715
+msgid "Choose job level"
+msgstr "Выберите уровень работы"
+
+#: includes/class-functions.php:726
+msgid "Years of experience ?"
+msgstr ""
+
+#: includes/class-functions.php:727
+msgid "Years of experience must have."
+msgstr " Должен иметь многолетний опыт"
+
+#: includes/class-functions.php:781
+msgid "Salary info"
+msgstr ""
+
+#: includes/class-functions.php:782
+msgid "Salary Information details."
+msgstr "Детальнее о зарплате"
+
+#: includes/class-functions.php:791
+msgid "Salary range ?"
+msgstr ""
+
+#: includes/class-functions.php:792
+msgid "Salary range"
+msgstr ""
+
+#: includes/class-functions.php:804
+msgid "Salary fixed ?"
+msgstr ""
+
+#: includes/class-functions.php:805
+msgid "Salary fixed, ex: 1200"
+msgstr "Зарплата фиксированная, например: 1200"
+
+#: includes/class-functions.php:816
+msgid "Salary minimum ?"
+msgstr ""
+
+#: includes/class-functions.php:817
+msgid "Salary minimum, ex: 100"
+msgstr ""
+
+#: includes/class-functions.php:827
+msgid "Salary maximum ?"
+msgstr ""
+
+#: includes/class-functions.php:828
+msgid "Salary maximum, ex: 1000"
+msgstr ""
+
+#: includes/class-functions.php:838 includes/class-functions.php:1139
+#: includes/menu/settings.php:245
+msgid "Salary currency ?"
+msgstr "Валюта зарплаты?"
+
+#: includes/class-functions.php:839
+msgid "Salary currency(Optional)"
+msgstr " Валюта зарплаты (Необязательно)"
+
+#: includes/class-functions.php:857
+msgid "Application info"
+msgstr ""
+
+#: includes/class-functions.php:858
+msgid "Application Information details."
+msgstr "Детали заявки"
+
+#: includes/class-functions.php:867
+msgid "How to apply ?"
+msgstr "Как подать заявку ?"
+
+#: includes/class-functions.php:868
+msgid "How to apply your job, instruction for applicant ?"
+msgstr "Как подать свою работу, инструкции для заявителя?"
+
+#: includes/class-functions.php:878
+msgid "Contact email ?"
+msgstr ""
+
+#: includes/class-functions.php:879
+msgid "Contact email"
+msgstr "Почта для связи "
+
+#: includes/class-functions.php:912 includes/menu/settings.php:104
+msgid "Options"
+msgstr "Опции"
+
+#: includes/class-functions.php:913
+msgid "General options."
+msgstr ""
+
+#: includes/class-functions.php:922
+msgid "Post Per Page"
+msgstr "Сообщение на страницу"
+
+#: includes/class-functions.php:923
+msgid "Job list post per page."
+msgstr "Список вакансий на странице."
+
+#: includes/class-functions.php:935 includes/menu/settings.php:56
+msgid "Excerpt display"
+msgstr "Показать отрывок"
+
+#: includes/class-functions.php:936
+msgid "Display short content form following."
+msgstr "Показать короткую форму следующего содержимого "
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "From Content"
+msgstr "От содержания"
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "Short Content"
+msgstr "Краткое Содержание"
+
+#: includes/class-functions.php:948
+msgid "Excerpt Word Count"
+msgstr "Графа Отрывок Слово"
+
+#: includes/class-functions.php:949
+msgid "Excerpt display word count."
+msgstr "Показать отрывок количества слов."
+
+#: includes/class-functions.php:967
+msgid "pages"
+msgstr "страницы"
+
+#: includes/class-functions.php:968
+msgid "Options for pages."
+msgstr "Варианты страниц."
+
+#: includes/class-functions.php:980
+msgid "Archive Page"
+msgstr "Архив страниц"
+
+#: includes/class-functions.php:981
+msgid "Archive page job list page where placed the short-code [job_list]."
+msgstr ""
+"Архив страница списка вакансий страница, на которой размещены в шорт-код "
+"[job_list]."
+
+#: includes/class-functions.php:993
+msgid "Job Submit Page"
+msgstr "Работа Добавить страницу"
+
+#: includes/class-functions.php:994
+msgid "Job submission page id."
+msgstr " Представления  работы страница ID."
+
+#: includes/class-functions.php:1006
+msgid "Job Edit Page"
+msgstr "Работа Редактировать страницу"
+
+#: includes/class-functions.php:1007
+msgid "Job edit page id."
+msgstr "Работа редактировать ID страницы."
+
+#: includes/class-functions.php:1020
+msgid "My Account Page"
+msgstr "Моя учетная запись Страница"
+
+#: includes/class-functions.php:1021
+msgid "My account page id."
+msgstr "Моя учетная запись ID страницы."
+
+#: includes/class-functions.php:1034 includes/menu/settings.php:149
+msgid "Registration enable ?"
+msgstr "Регистрацию разрешить?"
+
+#: includes/class-functions.php:1035
+msgid "Registration enable on my account page."
+msgstr "Регистрация разрешить на моей странице учетной записи."
+
+#: includes/class-functions.php:1048 includes/menu/settings.php:159
+msgid "Login enable ?"
+msgstr "Вход включить?"
+
+#: includes/class-functions.php:1049
+msgid "Login enable on my account page."
+msgstr "Вход включить на моей странице учетной записи."
+
+#: includes/class-functions.php:1064 includes/menu/settings.php:306
+#: includes/menu/welcome.php:143
+msgid "Job Post"
+msgstr "Работа сообщение"
+
+#: includes/class-functions.php:1065
+msgid "Options for Job Post."
+msgstr "Варианты работы"
+
+#: includes/class-functions.php:1074
+msgid "Account Required ?"
+msgstr "Аккаунт Обязательно?"
+
+#: includes/class-functions.php:1075 includes/menu/settings.php:182
+msgid "Account required to post job."
+msgstr "Аккаунт требуется,чтобы размещать работу."
+
+#: includes/class-functions.php:1088 includes/menu/settings.php:191
+msgid "reCAPTCHA enable ?"
+msgstr ""
+
+#: includes/class-functions.php:1089 includes/menu/settings.php:192
+msgid "Enable reCAPTCHA to protect spam."
+msgstr ""
+
+#: includes/class-functions.php:1101 includes/menu/settings.php:200
+msgid "reCAPTCHA site key"
+msgstr ""
+
+#: includes/class-functions.php:1102 includes/menu/settings.php:201
+msgid ""
+"reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get site key."
+msgstr ""
+
+#: includes/class-functions.php:1113 includes/menu/settings.php:208
+msgid "reCAPTCHA secret key"
+msgstr ""
+
+#: includes/class-functions.php:1114 includes/menu/settings.php:209
+msgid ""
+"reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get secret key."
+msgstr ""
+
+#: includes/class-functions.php:1125
+msgid "New Submitted Job Status ?"
+msgstr "Новый Выполненый Статус работы?"
+
+#: includes/class-functions.php:1126
+msgid "Submitted job status."
+msgstr "Представлено состояние вакансии"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Draft"
+msgstr "Проект"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Pending"
+msgstr "в ожидании"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Published"
+msgstr "опубликованный"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Private"
+msgstr "Частный"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Trash"
+msgstr "Ерунда"
+
+#: includes/class-functions.php:1136
+msgid "$"
+msgstr ""
+
+#: includes/class-functions.php:1140 includes/menu/settings.php:246
+msgid "Salary currency display on job page."
+msgstr "Зарплатный дисплей валют на странице работы."
+
+#: includes/class-functions.php:1152
+msgid "Apply Method ?"
+msgstr "Применить метод?"
+
+#: includes/class-functions.php:1153
+msgid "Enable apply methods."
+msgstr "Включить применять методы."
+
+#: includes/class-functions.php:1166 includes/menu/settings.php:264
+msgid "Can user delete jobs ?"
+msgstr "Может ли пользователь удалить вакансии?"
+
+#: includes/class-functions.php:1167
+msgid "Can user delete their own jobs."
+msgstr "Может ли пользователь удалить свои собственные рабочие места."
+
+#: includes/class-functions.php:1180
+msgid "Can user edit published jobs ?"
+msgstr "Может ли пользователь редактировать опубликованные работы?"
+
+#: includes/class-functions.php:1181
+msgid "Can user edit published jobs."
+msgstr "Может ли пользователь редактировать опубликованные работы."
+
+#: includes/class-functions.php:1194
+msgid "Display preview after submitted job ?"
+msgstr "Дисплей предварительного просмотра после того, как представил работу?"
+
+#: includes/class-functions.php:1195 includes/menu/settings.php:284
+msgid "User can see the job preview after submitted."
+msgstr ""
+"Пользователь может видеть работу после того, как предварительный просмотр "
+"представил."
+
+#: includes/class-functions.php:1216 includes/menu/settings.php:353
+msgid "Notification"
+msgstr "Уведомление"
+
+#: includes/class-functions.php:1217
+msgid "Options for Notification."
+msgstr "Опции для отправки уведомления."
+
+#: includes/class-functions.php:1226
+msgid "Email Logo URL"
+msgstr "E-mail URL логотипа"
+
+#: includes/class-functions.php:1227 includes/menu/settings.php:315
+msgid "Email logo URL to display on mail."
+msgstr "E-mail URL логотипа для отображения на почту."
+
+#: includes/class-functions.php:1240
+msgid "From Email"
+msgstr "С адреса электронной почты"
+
+#: includes/class-functions.php:1241
+msgid "From Email Address."
+msgstr "От адреса электронной почты."
+
+#: includes/class-functions.php:1256
+msgid "Notify admin new job submit ?"
+msgstr ""
+"Поставить в известность администратора при представлении новой вакансии?"
+
+#: includes/class-functions.php:1257
+msgid "Notify admin when new job submitted."
+msgstr "Уведомить администратора при представлении нового задания."
+
+#: includes/class-functions.php:1270 includes/menu/settings.php:339
+msgid "Notify email new job publish ?"
+msgstr ""
+"Поставить в известность по электронной почте новое задание опубликовано?"
+
+#: includes/class-functions.php:1271 includes/menu/settings.php:340
+msgid "Notify email to admin when new job published."
+msgstr ""
+"Уведомить по электронной почте администратору, когда новая работа "
+"опубликована."
+
+#: includes/class-functions.php:1288 includes/menu/settings.php:386
+msgid "Style"
+msgstr "Стиль"
+
+#: includes/class-functions.php:1289
+msgid "Options for style."
+msgstr "Варианты стиля."
+
+#: includes/class-functions.php:1298
+msgid "Featured Job Background Color ?"
+msgstr "Рекомендуемые работы цвет фона?"
+
+#: includes/class-functions.php:1299 includes/menu/settings.php:360
+msgid "Featured job area background color."
+msgstr "Особая область задания цвета фона."
+
+#: includes/class-functions.php:1312
+msgid "Job Type Background Color ?"
+msgstr "Тип вакансии цвет фона?"
+
+#: includes/class-functions.php:1313
+msgid "Job types area background color."
+msgstr "Типы вакансий площадь цвет фона."
+
+#: includes/class-functions.php:1325
+msgid "Job Status Background Color ?"
+msgstr "Статус работы цвет фона?"
+
+#: includes/class-functions.php:1326
+msgid "Job status area background color."
+msgstr "Состояние вакансии площадь цвет фона."
+
+#: includes/class-import.php:45
+msgid "Is imported ?"
+msgstr "Импортируется?"
+
+#: includes/class-import.php:46
+msgid "Is imported"
+msgstr "Импортируется?"
+
+#: includes/class-import.php:55
+msgid "Import source ?"
+msgstr "Источник импорта?"
+
+#: includes/class-import.php:56
+msgid "Import source"
+msgstr "Источник импорта?"
+
+#: includes/class-import.php:65
+msgid "Import source jobid ?"
+msgstr "Импорт источник Job ID?"
+
+#: includes/class-import.php:66
+msgid "Import source jobid"
+msgstr "Импорт источник Job ID?"
+
+#: includes/class-post-meta.php:350
+#, fuzzy
+#| msgid "job Data"
+msgid "job data"
+msgstr "Данные о работе"
+
+#: includes/class-post-meta.php:361
+#, fuzzy
+#| msgid "Job Edit"
+msgid "Job Admin"
+msgstr "Редактировать вакансию"
+
+#: includes/class-post-types.php:25
+msgid "Job"
+msgstr "Вакансии"
+
+#: includes/class-post-types.php:35 includes/class-post-types.php:91
+#: includes/class-post-types.php:131
+#, php-format
+msgid "All %s"
+msgstr "Все %s"
+
+#: includes/class-post-types.php:36 includes/class-post-types.php:37
+#, php-format
+msgid "Add %s"
+msgstr "Добавить %s"
+
+#: includes/class-post-types.php:38 templates/my-jobs/my-jobs.php:136
+msgid "Edit"
+msgstr "Редактировать"
+
+#: includes/class-post-types.php:39 includes/class-post-types.php:94
+#: includes/class-post-types.php:134
+#, php-format
+msgid "Edit %s"
+msgstr "Редактировать %s"
+
+#: includes/class-post-types.php:40
+#, php-format
+msgid "New %s"
+msgstr "Новые %s"
+
+#: includes/class-post-types.php:41 includes/class-post-types.php:42
+#, php-format
+msgid "View %s"
+msgstr "Просмотреть %s"
+
+#: includes/class-post-types.php:43 includes/class-post-types.php:90
+#: includes/class-post-types.php:130
+#, php-format
+msgid "Search %s"
+msgstr "Искать  %s"
+
+#: includes/class-post-types.php:44
+#, php-format
+msgid "No %s found"
+msgstr "Нет %s не найдено"
+
+#: includes/class-post-types.php:45
+#, php-format
+msgid "No %s found in trash"
+msgstr "Нет %s не найдено в корзине"
+
+#: includes/class-post-types.php:46 includes/class-post-types.php:92
+#: includes/class-post-types.php:132
+#, php-format
+msgid "Parent %s"
+msgstr "Родительская %s"
+
+#: includes/class-post-types.php:48
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr "Здесь вы можете создавать и управлять  %s"
+
+#: includes/class-post-types.php:77
+msgid "Job Categories"
+msgstr "Отрасли работы"
+
+#: includes/class-post-types.php:93 includes/class-post-types.php:133
+#, php-format
+msgid "Parent %s:"
+msgstr "Родительская %s:"
+
+#: includes/class-post-types.php:95 includes/class-post-types.php:135
+#, php-format
+msgid "Update %s"
+msgstr "Обновить %s"
+
+#: includes/class-post-types.php:96 includes/class-post-types.php:136
+#, php-format
+msgid "Add New %s"
+msgstr "Добавить новую %s"
+
+#: includes/class-post-types.php:97 includes/class-post-types.php:137
+#, php-format
+msgid "New %s Name"
+msgstr "Новое %s имя"
+
+#: includes/class-post-types.php:116
+msgid "Job Tag"
+msgstr "Метка вакансии"
+
+#: includes/class-post-types.php:117
+msgid "Job Tags"
+msgstr "Метки вакансии"
+
+#: includes/class-settings.php:24
+msgid "Settings"
+msgstr "Настройки"
+
+#: includes/class-settings.php:25
+msgid "Reports"
+msgstr "Отчеты"
+
+#: includes/class-settings.php:26
+msgid "Help"
+msgstr "Помощь"
+
+#: includes/class-settings.php:27
+msgid "Addons"
+msgstr "Дополнения"
+
+#: includes/class-settings.php:28
+msgid "Emails Templates"
+msgstr "Электронные письма Шаблоны"
+
+#: includes/functions/account-registration.php:48
+msgid "Username"
+msgstr "Имя пользователя"
+
+#: includes/functions/account-registration.php:54
+#: includes/shortcodes/class-shortcodes-dashboard.php:193
+#: templates/account/my-account.php:66
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/functions/account-registration.php:60
+msgid "Email"
+msgstr "Email"
+
+#: includes/functions/account-registration.php:75
+msgid "Required form field is missing"
+msgstr "Обязательное поле формы отсутствует"
+
+#: includes/functions/account-registration.php:79
+msgid "Username too short. At least 4 characters is required"
+msgstr ""
+"Имя пользователя слишком короткое. По крайней мере, 4-х символов требуется"
+
+#: includes/functions/account-registration.php:83
+msgid "Sorry, that username already exists!"
+msgstr "К сожалению, это имя пользователя уже существует!"
+
+#: includes/functions/account-registration.php:86
+msgid "Sorry, the username you entered is not valid"
+msgstr ""
+"К сожалению, введенное Вами имя пользователя не является действительным"
+
+#: includes/functions/account-registration.php:90
+msgid "Password length must be greater than 5"
+msgstr "Длина пароля должна быть больше 5"
+
+#: includes/functions/account-registration.php:94
+msgid "Email is not valid"
+msgstr "Email не является допустимым"
+
+#: includes/functions/account-registration.php:98
+msgid "Email Already in use"
+msgstr "Этот электронный адрес уже занят"
+
+#: includes/functions/account-registration.php:107
+msgid "ERROR"
+msgstr ""
+
+#: includes/functions/account-registration.php:125
+msgid "Registration complete."
+msgstr "Регистрация завершена."
+
+#: includes/functions/functions-reports.php:93
+msgid "Job posting last 7 days."
+msgstr "Работа проводки за последние 7 дней."
+
+#: includes/functions/functions-reports.php:229
+msgid "Custom:"
+msgstr "Заявки:"
+
+#: includes/functions/functions-reports.php:237
+msgid "Go"
+msgstr "Идти"
+
+#: includes/functions/functions.php:181
+#: templates/job-archive/job-archive.php:346 templates/job-list.php:215
+msgid "Job Type"
+msgstr "Тип вакансии"
+
+#: includes/functions/functions.php:182
+#: templates/job-archive/job-archive.php:347 templates/job-list.php:216
+msgid "Job Status"
+msgstr "Статус вакансии"
+
+#: includes/functions/functions.php:183
+#: templates/job-archive/job-archive.php:348 templates/job-list.php:217
+msgid "Category"
+msgstr "Отрасль"
+
+#: includes/functions/functions.php:186
+#: templates/job-archive/job-archive.php:351 templates/job-list.php:220
+msgid "Total Vacancies"
+msgstr "Всего вакансий"
+
+#: includes/functions/functions.php:187
+#: templates/job-archive/job-archive.php:352 templates/job-list.php:221
+msgid "Expire Date"
+msgstr "Актуально до"
+
+#: includes/functions/functions.php:607
+msgid "You are not authorized"
+msgstr "Вы не авторизованы"
+
+#: includes/functions/functions.php:671
+#: templates/job-single/job-single-sidebar.php:193
+msgid "How to Apply ?<br> "
+msgstr "Как подать заявку ?"
+
+#: includes/functions/functions.php:675
+#: templates/job-single/job-single-sidebar.php:197
+msgid "Apply via email :"
+msgstr "Применить по электронной почте:"
+
+#: includes/functions/functions.php:714
+#: templates/job-single/job-single-sidebar.php:238
+msgid "Apply on this job"
+msgstr "Нанести на эту работу"
+
+#: includes/functions/functions.php:847
+msgid "Update Done"
+msgstr "Обновление Готово"
+
+#: includes/functions/functions.php:868
+msgid "Reset Done"
+msgstr "Сброс Готово"
+
+#: includes/functions/functions.php:890 includes/functions/functions.php:915
+msgid "You are not authorized to delete this job."
+msgstr "Вы не имеете права удалять эту работу."
+
+#: includes/functions/functions.php:906
+msgid "Job Deleted."
+msgstr "Работа удаляется."
+
+#: includes/functions/functions.php:909
+msgid "Something going wrong."
+msgstr "Что-то происходит не так."
+
+#: includes/menu/addons.php:180
+msgid "Version:"
+msgstr "Версия:"
+
+#: includes/menu/addons.php:190
+msgid "Price:"
+msgstr "Цена:"
+
+#: includes/menu/addons.php:191
+msgid "Download"
+msgstr "Скачать"
+
+#: includes/menu/addons.php:223
+msgid " - Addons"
+msgstr "- плагины"
+
+#: includes/menu/emails-templates.php:109
+msgid "Enable ?"
+msgstr "Включить ?"
+
+#: includes/menu/emails-templates.php:132
+msgid "Email To:"
+msgstr "E-mail кому:"
+
+#: includes/menu/emails-templates.php:137
+msgid "Email from name:"
+msgstr "Электронное письмо от имени:"
+
+#: includes/menu/emails-templates.php:141
+msgid "Email from:"
+msgstr "Электронная почта от:"
+
+#: includes/menu/emails-templates.php:150
+msgid "Email Subject:"
+msgstr "Тема письма:"
+
+#: includes/menu/emails-templates.php:159
+msgid "Email Body:"
+msgstr "Email сообщение:"
+
+#: includes/menu/emails-templates.php:197 includes/menu/settings.php:738
+msgid "Changes Saved."
+msgstr "Изменения сохранены."
+
+#: includes/menu/emails-templates.php:212
+msgid " - Emails Templates"
+msgstr "- Шаблоны сообщений электронной почты"
+
+#: includes/menu/emails-templates.php:224 includes/menu/settings.php:778
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#: includes/menu/emails-templates.php:225
+msgid "Reset"
+msgstr "Сброс"
+
+#: includes/menu/help.php:27
+msgid "Ask any question"
+msgstr "Задайте любой вопрос"
+
+#: includes/menu/help.php:29
+msgid ""
+"Please feel free to contact for any question, ask via our forum <a href="
+"\"http://www.pickplugins.com/questions/\">http://www.pickplugins.com/"
+"questions/</a>"
+msgstr ""
+
+#: includes/menu/help.php:35
+msgid "Watch video tutorial"
+msgstr "Смотреть видео-учебник"
+
+#: includes/menu/help.php:61
+msgid "FAQ"
+msgstr "FAQ"
+
+#: includes/menu/settings.php:48
+msgid "Post per page"
+msgstr ""
+
+#: includes/menu/settings.php:49
+msgid "Job list post per page"
+msgstr "Список вакансий  на странице"
+
+#: includes/menu/settings.php:57
+msgid "Display short content form following"
+msgstr "Дисплей короткая форма содержимого "
+
+#: includes/menu/settings.php:65
+msgid "Excerpt word count"
+msgstr ""
+
+#: includes/menu/settings.php:66
+msgid "Excerpt display word count"
+msgstr "Отрывок дисплей количество слов"
+
+#: includes/menu/settings.php:74
+msgid "Archive load style"
+msgstr ""
+
+#: includes/menu/settings.php:75
+msgid "Set load more style ajax or pagination"
+msgstr ""
+
+#: includes/menu/settings.php:78 templates/job-edit.php:585
+#: templates/job-submit.php:526
+msgid "Pagination"
+msgstr "Нумерация страниц"
+
+#: includes/menu/settings.php:78 templates/job-archive/pagination.php:35
+msgid "Load more"
+msgstr ""
+
+#: includes/menu/settings.php:112
+msgid "Archive page"
+msgstr ""
+
+#: includes/menu/settings.php:113
+msgid "Archive page job list page where placed the short-code [job_list])"
+msgstr ""
+"Архив страница списка заданий страница, на которой размещены в шорт-код "
+"[job_list])"
+
+#: includes/menu/settings.php:120
+msgid "Job submit page"
+msgstr ""
+
+#: includes/menu/settings.php:121
+msgid "Job submission page id"
+msgstr "Работа представления страницы ID"
+
+#: includes/menu/settings.php:129
+msgid "Job edit page"
+msgstr ""
+
+#: includes/menu/settings.php:130
+msgid "Job edit page id"
+msgstr "Работа редактировать идентификатор страницы"
+
+#: includes/menu/settings.php:139
+msgid "My account page"
+msgstr ""
+
+#: includes/menu/settings.php:140
+msgid "My account page id"
+msgstr "Моя учетная запись идентификатор страницы"
+
+#: includes/menu/settings.php:150
+msgid "Registration enable on my account page "
+msgstr "Регистрация позволит на моей странице учетной записи"
+
+#: includes/menu/settings.php:160
+msgid "Login enable on my account page "
+msgstr "Вход включить на моей странице учетной записи"
+
+#: includes/menu/settings.php:174
+msgid "Pages"
+msgstr "Страницы"
+
+#: includes/menu/settings.php:181
+msgid "Account required ?"
+msgstr ""
+
+#: includes/menu/settings.php:216 includes/menu/welcome.php:125
+msgid "New submitted job status ?"
+msgstr ""
+
+#: includes/menu/settings.php:217
+msgid "Submitted job status"
+msgstr "Представлено состояние задания"
+
+#: includes/menu/settings.php:254
+msgid "Apply method ?"
+msgstr ""
+
+#: includes/menu/settings.php:255
+msgid "Enable apply methods"
+msgstr "Включить применять методы"
+
+#: includes/menu/settings.php:265
+msgid "Can user delete their own jobs"
+msgstr "Может ли пользователь удалить свои собственные рабочие места"
+
+#: includes/menu/settings.php:274
+msgid "Can user edit jobs ?"
+msgstr "Может ли пользователь редактировать вакансии?"
+
+#: includes/menu/settings.php:275
+msgid "Can user edit published jobs"
+msgstr "Может ли пользователь редактировать опубликованные работы"
+
+#: includes/menu/settings.php:283
+msgid "Redirect preview link after job submit ?"
+msgstr ""
+"Перенаправление Предварительный ссылку после выполнения задания представить?"
+
+#: includes/menu/settings.php:292
+msgid "Submission type ?"
+msgstr "Тип Подача?"
+
+#: includes/menu/settings.php:293
+msgid "Submission type."
+msgstr "Тип Подача."
+
+#: includes/menu/settings.php:296
+msgid "Step by step"
+msgstr "Шаг за шагом"
+
+#: includes/menu/settings.php:296
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: includes/menu/settings.php:314
+msgid "Email logo URL"
+msgstr ""
+
+#: includes/menu/settings.php:322
+msgid "From email"
+msgstr ""
+
+#: includes/menu/settings.php:323
+msgid "From email address"
+msgstr ""
+
+#: includes/menu/settings.php:330
+msgid "Notify email new job submit ?"
+msgstr "Уведомить по электронной почте новое задание представить?"
+
+#: includes/menu/settings.php:331
+msgid "Notify admin when new job submitted"
+msgstr "Уведомить администратора при представлении нового задания"
+
+#: includes/menu/settings.php:359
+msgid "Featured job background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:367
+msgid "Job type background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:368
+msgid "Job types area background color"
+msgstr "Типы вакансий площадь цвет фона"
+
+#: includes/menu/settings.php:376
+msgid "Job status background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:377
+msgid "Job status area background color"
+msgstr "Работа область состояния цвет фона"
+
+#: includes/menu/settings.php:756
+msgid " Settings"
+msgstr "Настройки"
+
+#: includes/menu/welcome.php:52
+#, php-format
+msgid "<strong>Welcome to %s</strong> &#8211; Please setup basic settings."
+msgstr ""
+
+#: includes/menu/welcome.php:54
+msgid "Run Wizard Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:55
+msgid "Skip Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:76
+msgid "General"
+msgstr ""
+
+#: includes/menu/welcome.php:84
+msgid "20"
+msgstr ""
+
+#: includes/menu/welcome.php:85
+msgid "Post per page ?"
+msgstr ""
+
+#: includes/menu/welcome.php:86
+msgid "Post per page on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:97 includes/menu/welcome.php:110
+#: includes/menu/welcome.php:123 includes/menu/welcome.php:151
+msgid "30"
+msgstr ""
+
+#: includes/menu/welcome.php:98
+msgid "Excerpt word count ?"
+msgstr ""
+
+#: includes/menu/welcome.php:99
+msgid "Excerpt word count on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:111
+msgid "Account required to post job ?"
+msgstr ""
+
+#: includes/menu/welcome.php:112
+msgid "Only logged-in user can post job"
+msgstr ""
+
+#: includes/menu/welcome.php:124
+msgid "New Submitted job status ?"
+msgstr ""
+
+#: includes/menu/welcome.php:128
+msgid "Publish"
+msgstr ""
+
+#: includes/menu/welcome.php:152 includes/menu/welcome.php:153
+msgid "Currency symbol ?"
+msgstr ""
+
+#: includes/menu/welcome.php:200
+msgid "Job Board Manager &rsaquo; Setup Wizard"
+msgstr ""
+
+#: includes/menu/welcome.php:276
+msgid "Options saved"
+msgstr ""
+
+#: includes/menu/welcome.php:308
+msgid "Page created."
+msgstr ""
+
+#: includes/menu/welcome.php:318
+msgid "Permissions saved."
+msgstr ""
+
+#: includes/menu/welcome.php:327
+msgid "Job posting saved."
+msgstr ""
+
+#: includes/menu/welcome.php:395
+msgid "Save options"
+msgstr ""
+
+#: includes/menu/welcome.php:398
+msgid "General options"
+msgstr ""
+
+#: includes/menu/welcome.php:424 includes/menu/welcome.php:428
+msgid "Create pages"
+msgstr ""
+
+#: includes/menu/welcome.php:453 includes/menu/welcome.php:461
+msgid "Save permissions"
+msgstr ""
+
+#: includes/menu/welcome.php:550 includes/menu/welcome.php:556
+msgid "Job posting"
+msgstr ""
+
+#: includes/menu/welcome.php:585
+msgid "Nothing to Save"
+msgstr "Ничто не сэкономить"
+
+#: includes/pickform/class-pickform-creator.php:381
+#: includes/pickform/class-pickform-creator.php:393
+#: includes/pickform/class-pickform-creator.php:403
+#: includes/pickform/class-pickform.php:556
+#: includes/pickform/class-pickform.php:568
+#: includes/pickform/class-pickform.php:578
+#: includes/pickform/class-pickformNew.php:478
+#: includes/pickform/class-pickformNew.php:490
+#: includes/pickform/class-pickformNew.php:500
+msgid "Remove"
+msgstr "Удалить"
+
+#: includes/pickform/class-pickform-creator.php:410
+#: includes/pickform/class-pickform.php:585
+#: includes/pickform/class-pickformNew.php:507
+msgid "Add more"
+msgstr "Добавить больше"
+
+#: includes/pickform/class-pickform-creator.php:567
+#: includes/pickform/class-pickform.php:816
+#: includes/pickform/class-pickformNew.php:738
+msgid "Drop files here"
+msgstr "Перетащите сюда файлы"
+
+#: includes/pickform/class-pickform-creator.php:568
+#: includes/pickform/class-pickform.php:817
+#: includes/pickform/class-pickformNew.php:739
+msgid "Select Files"
+msgstr "Выбрать файлы"
+
+#: includes/pickform/class-pickform-creator.php:588
+#: includes/pickform/class-pickform.php:837
+#: includes/pickform/class-pickformNew.php:759
+msgid "Allowed Files"
+msgstr "Разрешенные файлы"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:42
+#, fuzzy
+#| msgid "Job Account"
+msgid "Account"
+msgstr "Учетные записи о вакансиях"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:172
+#: templates/account/my-account.php:44
+msgid "Register"
+msgstr "Регистрация"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:180
+#: templates/account/my-account.php:53
+msgid "Login"
+msgstr "Авторизоваться"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:192
+#: templates/account/my-account.php:65
+msgid "Username or email address"
+msgstr "Имя пользователя или адрес электронной почты"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:194
+#: templates/account/my-account.php:67
+msgid "Remember Me"
+msgstr "Запомни меня"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:195
+#: templates/account/my-account.php:68
+msgid "Log In"
+msgstr "Авторизоваться"
+
+#: includes/shortcodes/class-shortcodes-pending-publish.php:77
+#: templates/job-archive/job-archive.php:434 templates/job-list.php:576
+msgid "No job found"
+msgstr "Не найдена работа "
+
+#: templates/account/my-account.php:30
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: templates/account/my-account.php:30
+msgid "Logout"
+msgstr "Выйти"
+
+#: templates/job-archive/filter.php:24
+msgid "Keyword:"
+msgstr "Ключевое слово:"
+
+#: templates/job-archive/filter.php:63 templates/job-list.php:235
+msgid "Job type:"
+msgstr "Тип вакансии:"
+
+#: templates/job-archive/filter.php:68 templates/job-list.php:240
+msgid "Job status:"
+msgstr "Рабочий статус:"
+
+#: templates/job-archive/filter.php:72
+#, fuzzy
+#| msgid "Location"
+msgid "Location:"
+msgstr "Место нахождения"
+
+#: templates/job-archive/filter.php:76 templates/job-list.php:245
+msgid "Expire date:"
+msgstr "Актуально до:"
+
+#: templates/job-archive/filter.php:84 templates/job-list.php:253
+msgid "Category:"
+msgstr "Отрасль:"
+
+#: templates/job-archive/search.php:38
+#, fuzzy
+#| msgid "Keyword:"
+msgid "Keyword"
+msgstr "Ключевое слово:"
+
+#: templates/job-archive/search.php:70 templates/job-edit.php:569
+#: templates/job-submit.php:510
+msgid "Submit"
+msgstr "Отправить"
+
+#: templates/job-edit.php:21
+msgid "Invalid job id."
+msgstr "Неправильный ID вакансии"
+
+#: templates/job-edit.php:28
+msgid "You are not authorized to edit this job."
+msgstr "Вы не имеете права редактировать эту работу."
+
+#: templates/job-edit.php:120 templates/job-edit.php:126
+#: templates/job-edit.php:133 templates/job-edit.php:141
+#: templates/job-submit.php:108 templates/job-submit.php:114
+#: templates/job-submit.php:121 templates/job-submit.php:130
+msgid "missing"
+msgstr "отсутствует"
+
+#: templates/job-edit.php:187
+msgid "Job update successfully."
+msgstr ""
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Cancel"
+msgstr "Отмена"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "current step:"
+msgstr "текущий шаг:"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Finish"
+msgstr "Конец"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Next"
+msgstr "Следующая"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Previous"
+msgstr "Предыдущая"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Loading ..."
+msgstr "Загрузка..."
+
+#: templates/job-edit.php:635
+#, php-format
+msgid ""
+"You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
+"page</b></a> to see your jobs."
+msgstr ""
+
+#: templates/job-edit.php:644
+#, php-format
+msgid "Please <a href=\"%s\"><b>login</b></a> to edit this job."
+msgstr ""
+
+#: templates/job-single/job-single-sidebar.php:96
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: templates/job-single/job-single-sidebar.php:99
+msgid "Job Link"
+msgstr "Ссылка"
+
+#: templates/job-single/job-single-sidebar.php:104
+msgid "About Company"
+msgstr "О компании"
+
+#: templates/job-single/job-single-sidebar.php:115
+msgid "Job Status: "
+msgstr "Рабочий статус:"
+
+#: templates/job-single/job-single-sidebar.php:118
+msgid "No of Vacancies: "
+msgstr "Нет вакансий:"
+
+#: templates/job-single/job-single-sidebar.php:121
+msgid "Date Posted: "
+msgstr "Дата Отправки:"
+
+#: templates/job-single/job-single-sidebar.php:129
+msgid "Expiry Date: "
+msgstr "Срок актуальности::"
+
+#: templates/job-single/job-single-sidebar.php:134
+msgid "Job Type: "
+msgstr "Тип вакансии:"
+
+#: templates/job-single/job-single-sidebar.php:137
+msgid "Job Level: "
+msgstr "Уровень работы:"
+
+#: templates/job-single/job-single-sidebar.php:140
+msgid "Years of Experience: "
+msgstr "Годы опыта:"
+
+#: templates/job-single/job-single-sidebar.php:144
+msgid "Job Info"
+msgstr "Информация о вакансии"
+
+#: templates/job-single/job-single-sidebar.php:162
+msgid "Salary Type: "
+msgstr " Тип зарплаты:"
+
+#: templates/job-single/job-single-sidebar.php:169
+#: templates/job-single/job-single-sidebar.php:175
+msgid "Salary: "
+msgstr "Зарплата:"
+
+#: templates/job-single/job-single-sidebar.php:182
+msgid "Salary Info"
+msgstr " Информация о зарплате"
+
+#: templates/job-single/job-single-sidebar.php:268
+msgid "Share this job"
+msgstr "Установить ссылку на эту работу"
+
+#: templates/job-submit.php:37
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to submit job."
+msgstr ""
+
+#: templates/job-submit.php:184
+msgid "Job Submitted successfully."
+msgstr "Работа представлена успешно."
+
+#: templates/job-submit.php:185
+msgid "Submission status:"
+msgstr "Статус Подача конкурсных предложений:"
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job id."
+msgstr "ID вакансии."
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job Title."
+msgstr "Название работы."
+
+#: templates/my-jobs/my-jobs.php:118
+msgid "Published:"
+msgstr "Опубликовано:"
+
+#: templates/my-jobs/my-jobs.php:119
+msgid "Expiry:"
+msgstr "Срок действия:"
+
+#: templates/my-jobs/my-jobs.php:120
+msgid "Publish Status:"
+msgstr "Статус публикации:"
+
+#: templates/my-jobs/my-jobs.php:123
+msgid "Job Status:"
+msgstr "Рабочий статус:"
+
+#: templates/my-jobs/my-jobs.php:125
+msgid "Featured:"
+msgstr "Рекомендуемые:"
+
+#: templates/my-jobs/my-jobs.php:128
+msgid "Job Type:"
+msgstr "Тип вакансии:"
+
+#: templates/my-jobs/my-jobs.php:131
+msgid "Job Level:"
+msgstr "Уровень работы:"
+
+#: templates/my-jobs/my-jobs.php:140
+msgid "Delete"
+msgstr "Удалить"
+
+#: templates/my-jobs/my-jobs.php:169
+msgid "No job found posted by you."
+msgstr "Никакая работа  отправленная вами не найдена."
+
+#: templates/my-jobs/my-jobs.php:177
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to see your job list."
+msgstr ""
+
+#~ msgid "Company Name"
+#~ msgstr "Название компании"
+
+#~ msgid "Do you want to display company name"
+#~ msgstr "Вы хотите, чтобы отобразить название компании"
+
+#~ msgid "Do you want to display company address"
+#~ msgstr "Вы хотите, чтобы отобразить адрес компании"
+
+#~ msgid "Short job description write here."
+#~ msgstr "Краткое описание вакансии написать здесь."
+
+#~ msgid "Responsibilities details."
+#~ msgstr "Подробности обязанностей"
+
+#~ msgid "Education requirements"
+#~ msgstr "Требования к образованию"
+
+#~ msgid "Education requirements details."
+#~ msgstr "Подробнее о требованиях к образованиюю"
+
+#~ msgid "Experience requirements"
+#~ msgstr "Требования к опыту"
+
+#~ msgid "Experience requirements details."
+#~ msgstr "Подробнее о требованиях к опыту работы"
+
+#~ msgid "Skills requirements"
+#~ msgstr "Требования к навыкам"
+
+#~ msgid "Skills requirements details."
+#~ msgstr "Подробнее о требования к навыкам в работе"
+
+#~ msgid "Qualifications"
+#~ msgstr "Квалификация"
+
+#~ msgid "Qualifications details."
+#~ msgstr "Квалификационные подробности."
+
+#~ msgid "Company Name, ex: Google Inc."
+#~ msgstr "Название компании, например: Google Inc."
+
+#~ msgid "Display Company Name ?"
+#~ msgstr "Показать название компании?"
+
+#~ msgid "Display Company Name"
+#~ msgstr "Показать название компании"
+
+#~ msgid "Job Location, ex: California (City or States)"
+#~ msgstr "Работа Местоположение, например: Калифорния (город или государство)"
+
+#~ msgid "Full Address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+#~ msgstr ""
+#~ "Полный адрес, например: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+
+#~ msgid "Display Company Address ?"
+#~ msgstr "Показать адрес компании?"
+
+#~ msgid "Display Company Address"
+#~ msgstr "Показать  адрес компании"
+
+#~ msgid "Company Website"
+#~ msgstr "Веб-сайт компании"
+
+#~ msgid "Company Website, ex: http://pickplugins.com"
+#~ msgstr "Сайт компании, например: http://pickplugins.com"
+
+#~ msgid "Company Logo"
+#~ msgstr "Логотип компании"
+
+#~ msgid ""
+#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-"
+#~ "wanted"
+#~ msgstr ""
+#~ "Работа Ссылка на веб-сайте компании, например: http://pickplugins.com/"
+#~ "jobs/developer-wanted"
+
+#~ msgid "Job Responsibilities"
+#~ msgstr "Рабочие обязанности"
+
+#~ msgid "Responsibilities"
+#~ msgstr "Обязанности"
+
+#~ msgid "Education Requirements"
+#~ msgstr "Требования к образованию"
+
+#~ msgid "Experience Requirements"
+#~ msgstr "Опыт работы"
+
+#~ msgid "Skills Requirements"
+#~ msgstr "Навыки"
+
+#~ msgid "No of Vacancies"
+#~ msgstr "Нет вакансий"
+
+#~ msgid "Expiry Date"
+#~ msgstr "Срок годности"
+
+#~ msgid "Featured Job"
+#~ msgstr "Рекомендуемые вакансии"
+
+#~ msgid "Job Type ?"
+#~ msgstr "Тип вакансии?"
+
+#~ msgid "Job Level ?"
+#~ msgstr "Уровень работы ?"
+
+#~ msgid "Job Level"
+#~ msgstr "Уровень работы"
+
+#~ msgid "Years of Experience ?"
+#~ msgstr "Годы опыта ?"
+
+#~ msgid "Years of Experience"
+#~ msgstr "Годы опыта"
+
+#~ msgid "Salary Range ?"
+#~ msgstr "Уровень зарплаты?"
+
+#~ msgid "Salary Range"
+#~ msgstr "Шкала заработной платы"
+
+#~ msgid "Salary Fixed ?"
+#~ msgstr "Фиксированная зарплата?"
+
+#~ msgid "Salary fixed"
+#~ msgstr "Зарплата фиксированная"
+
+#~ msgid "Salary Min ?"
+#~ msgstr "Минимальная зарплата?"
+
+#~ msgid "Salary Min"
+#~ msgstr "Зарплата Мин"
+
+#~ msgid "Salary Max ?"
+#~ msgstr "Максимальная зарплата?"
+
+#~ msgid "Salary Max"
+#~ msgstr "Зарплата Макс"
+
+#~ msgid "Application"
+#~ msgstr "Заявка"
+
+#~ msgid "Contact Email ?"
+#~ msgstr "Почта для связи ?"
+
+#~ msgid "Contact Email"
+#~ msgstr "Почта для связи"
+
+#~ msgid "Responsibilities:"
+#~ msgstr "Обязанности:"
+
+#~ msgid "Educational requirements:"
+#~ msgstr "Образование:"
+
+#~ msgid "Experience requirements:"
+#~ msgstr "Опыт работы:"
+
+#~ msgid "Desired Skills:"
+#~ msgstr "Желаемые навыки:"
+
+#~ msgid "Qualifications:"
+#~ msgstr "Квалификация:"
+
+#~ msgid "Company Info"
+#~ msgstr "Информация о компании"
+
+#~ msgid " Job Info"
+#~ msgstr "Информация о вакансии"
+
+#~ msgid "Salary Min, ex: 100"
+#~ msgstr "Зарплата мин, например: 100"
+
+#~ msgid "Salary Max, ex: 1000"
+#~ msgstr "Зарплата мак., например: 1000"
+
+#~ msgid "Application Info"
+#~ msgstr "Информация о заявке"
+
+#~ msgid "general Options."
+#~ msgstr "Генеральные опции"
+
+#~ msgid "From Email Address"
+#~ msgstr "От адреса электронной почты"
+
+#~ msgid "welcome"
+#~ msgstr "добро пожаловать"
+
+#~ msgid " - Job Importer"
+#~ msgstr "- Работа Импортер"
+
+#~ msgid "Options Saved"
+#~ msgstr "Настройки сохранены"
+
+#~ msgid "Page Created."
+#~ msgstr "Страница создана."
+
+#~ msgid "Permissions Saved."
+#~ msgstr "Права доступа Сохраняется."
+
+#~ msgid "Job Posting Saved."
+#~ msgstr "Объявление о вакансии Сохраненные."
+
+#~ msgid "Changelog"
+#~ msgstr "Изменения"
+
+#~ msgid "Step 1: Save Options"
+#~ msgstr "Шаг 1: сохранить параметры"
+
+#~ msgid "#General Options"
+#~ msgstr "#Общие настройки"
+
+#~ msgid "#Create Pages"
+#~ msgstr "#Страницы Создать"
+
+#~ msgid "Step 2: Create Pages"
+#~ msgstr "Шаг 2: Создание страниц"
+
+#~ msgid "#Save Permissions"
+#~ msgstr "#права доступа Сохранять"
+
+#~ msgid "Step 3: Save Permissions"
+#~ msgstr "Шаг 3: Сохранение разрешений"
+
+#~ msgid "#Job Posting"
+#~ msgstr "#Объявление о вакансии"
+
+#~ msgid "Step 4: Job Posting"
+#~ msgstr "Шаг 4: Объявление о вакансии"
+
+#~ msgid "Please login to see your job list."
+#~ msgstr "Пожалуйста, войдите, чтобы увидеть список вакансий."

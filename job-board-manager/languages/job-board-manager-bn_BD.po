@@ -1,0 +1,1999 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Job Board Manager\n"
+"POT-Creation-Date: 2017-11-27 11:55+0600\n"
+"PO-Revision-Date: 2017-11-27 11:55+0600\n"
+"Last-Translator: \n"
+"Language-Team: pickplugins <support@pickplugins.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/class-emails.php:67
+msgid "New Job Submitted"
+msgstr "নতুন কাজ জমা হয়েছে"
+
+#: includes/class-emails.php:68
+msgid "Notification email for admin when user submitted job."
+msgstr ""
+
+#: includes/class-emails.php:69
+msgid "New Job Submitted - {site_url}"
+msgstr "নতুন কাজ জমা হয়েছে  - {site_url}"
+
+#: includes/class-emails.php:77
+msgid "New Job Published"
+msgstr "নতুন কাজ প্রকাশ হয়েছে"
+
+#: includes/class-emails.php:78
+msgid "Notification email for admin when someone published job."
+msgstr ""
+
+#: includes/class-emails.php:79
+msgid "New Job Published - {site_url}"
+msgstr "নতুন কাজ প্রকাশ হয়েছে - {site_url}"
+
+#: includes/class-emails.php:87
+msgid "New Job Approved"
+msgstr "নতুন কাজ অনুমোদন পেয়েছে"
+
+#: includes/class-emails.php:88
+msgid "Notification email for job poster when admin published job."
+msgstr ""
+
+#: includes/class-emails.php:89
+msgid "New Job Approved - {site_url}"
+msgstr ""
+
+#: includes/class-emails.php:119
+msgid "Site Parameters"
+msgstr "সাইট প্যারামিটার"
+
+#: includes/class-emails.php:124
+msgid "Users Parameters"
+msgstr "ব্যবহারকারী প্যারামিটার"
+
+#: includes/class-emails.php:129
+msgid "Job Parameters"
+msgstr "জব প্যারামিটার"
+
+#: includes/class-emails.php:134
+msgid "Job application"
+msgstr "জব আবেদন"
+
+#: includes/class-functions.php:25
+#, fuzzy
+#| msgid "Job type:"
+msgid "Job type"
+msgstr "কাজের ধরনঃ"
+
+#: includes/class-functions.php:26 includes/class-functions.php:318
+msgid "Job status"
+msgstr "কাজের অবস্থা"
+
+#: includes/class-functions.php:27 includes/class-functions.php:493
+#: includes/functions/functions.php:184 templates/job-archive/job-archive.php:349
+#: templates/job-archive/search.php:44 templates/job-list.php:218
+msgid "Location"
+msgstr "অবস্থান"
+
+#: includes/class-functions.php:28 includes/class-functions.php:467
+#: includes/functions/functions.php:185 templates/job-archive/job-archive.php:350
+#: templates/job-list.php:219
+msgid "Company name"
+msgstr ""
+
+#: includes/class-functions.php:29
+#, fuzzy
+#| msgid "Total Vacancies"
+msgid "Total vacancies"
+msgstr "মোট কর্মখালি"
+
+#: includes/class-functions.php:30
+#, fuzzy
+#| msgid "Expire date:"
+msgid "Expire date"
+msgstr "মেয়াদ শেষ"
+
+#: includes/class-functions.php:31 templates/job-archive/job-archive.php:353
+msgid "View count"
+msgstr ""
+
+#: includes/class-functions.php:51
+msgid "Freelance"
+msgstr "ফ্রিল্যান্স"
+
+#: includes/class-functions.php:51
+msgid "Full Time"
+msgstr "ফুল টাইম"
+
+#: includes/class-functions.php:51
+msgid "Internship"
+msgstr "ইন্টার্নশিপ"
+
+#: includes/class-functions.php:51
+msgid "Part Time"
+msgstr "পার্ট টাইম"
+
+#: includes/class-functions.php:51
+msgid "Temporary"
+msgstr "সাময়িক"
+
+#: includes/class-functions.php:62
+msgid "Open"
+msgstr "চালু আছে"
+
+#: includes/class-functions.php:62
+msgid "Closed"
+msgstr "বন্ধ"
+
+#: includes/class-functions.php:62
+msgid "Filled"
+msgstr "পুরন হয়েছে"
+
+#: includes/class-functions.php:62
+msgid "Re-Open"
+msgstr "পুনরায় চালু"
+
+#: includes/class-functions.php:62
+msgid "Expired"
+msgstr "মেয়াদোত্তীর্ণ"
+
+#: includes/class-functions.php:72
+msgid "Any"
+msgstr "যেকোন"
+
+#: includes/class-functions.php:72
+msgid "Entry level"
+msgstr "নতুন"
+
+#: includes/class-functions.php:72
+msgid "Mid level"
+msgstr "মধ্যম"
+
+#: includes/class-functions.php:72
+msgid "Top level"
+msgstr "অভিজ্ঞ"
+
+#: includes/class-functions.php:82
+msgid "Negotiable"
+msgstr "আলোচনাসূত্রে"
+
+#: includes/class-functions.php:82
+msgid "Fixed"
+msgstr "নির্দিষ্ট"
+
+#: includes/class-functions.php:82
+msgid "Min-Max"
+msgstr "সর্বোচ্ছ - সর্বনিম্ন"
+
+#: includes/class-functions.php:91
+msgid "All"
+msgstr "সবগুলো"
+
+#: includes/class-functions.php:91
+msgid "1,000-10,000"
+msgstr "১,০০০-১০,০০০"
+
+#: includes/class-functions.php:91
+msgid "10,001-20,000"
+msgstr "১০,০০১-২০,০০০"
+
+#: includes/class-functions.php:91
+msgid "20,001-30,000"
+msgstr "২০,০০১-৩০,০০০"
+
+#: includes/class-functions.php:91
+msgid "30,001-50,000"
+msgstr "৩০,০০১-৫০,০০০"
+
+#: includes/class-functions.php:91
+msgid "50,001-80,000"
+msgstr "৫০,০০১-৮০,০০০"
+
+#: includes/class-functions.php:91
+msgid "80,001-1,00,000"
+msgstr "৮০,০০১-১,০০,০০০"
+
+#: includes/class-functions.php:103 includes/functions/functions.php:1088
+msgid "None"
+msgstr "কোনটি নয়"
+
+#: includes/class-functions.php:103
+msgid "Direct Email"
+msgstr "সরাসরি ইমেল"
+
+#: includes/class-functions.php:135 includes/class-post-types.php:26
+msgid "Jobs"
+msgstr "কাজ গুলো"
+
+#: includes/class-functions.php:154
+#: includes/shortcodes/class-shortcodes-dashboard.php:49
+#: templates/my-jobs/my-jobs.php:20
+msgid "My Jobs"
+msgstr "আমার কাজ"
+
+#: includes/class-functions.php:178
+msgid "Job Board Manager - How to Install and Settings."
+msgstr "Job Board Manager - কিভাবে ইন্সটল ও সেটিংস "
+
+#: includes/class-functions.php:184
+msgid "Job Board Manager - Create a job."
+msgstr "Job Board Manager - নতুন কাজ তৈরি করুন"
+
+#: includes/class-functions.php:203
+msgid "Core"
+msgstr "মুল"
+
+#: includes/class-functions.php:207
+msgid "Single job page showing 404 error"
+msgstr ""
+
+#: includes/class-functions.php:213
+msgid "Single job page style broken, what should i do ?"
+msgstr ""
+
+#: includes/class-functions.php:218
+msgid "How can i change slug for Job ?"
+msgstr ""
+
+#: includes/class-functions.php:223
+msgid "How can remove any tabs on job submission form ?"
+msgstr ""
+
+#: includes/class-functions.php:229
+msgid "Remove input fields on job submission form."
+msgstr ""
+
+#: includes/class-functions.php:235
+msgid "How to add/remove job types"
+msgstr ""
+
+#: includes/class-functions.php:273
+msgid "Job Archive"
+msgstr "কাজের লিস্ট"
+
+#: includes/class-functions.php:279
+msgid "Job Submit"
+msgstr "কাজ জমা দিন"
+
+#: includes/class-functions.php:286
+msgid "Job Edit"
+msgstr "কাজ সম্পাদনা"
+
+#: includes/class-functions.php:293
+msgid "Job Dashboard"
+msgstr ""
+
+#: includes/class-functions.php:319
+msgid "Select job status."
+msgstr "কাজের অবস্থা নির্বাচন করুন"
+
+#: includes/class-functions.php:330
+msgid "Expiry date"
+msgstr ""
+
+#: includes/class-functions.php:331
+msgid "Job expiry date"
+msgstr "মেয়াদ-শেষ"
+
+#: includes/class-functions.php:343
+msgid "Featured job"
+msgstr ""
+
+#: includes/class-functions.php:344
+msgid "Want to get featured listing ?"
+msgstr "ফিচার্ড লিস্টে যুক্ত করতে চান ?"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:107
+msgid "No"
+msgstr "না"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:104
+msgid "Yes"
+msgstr "হা"
+
+#: includes/class-functions.php:363
+msgid "Write awesome title here"
+msgstr "সুন্দর একটি কাজের টাইটেল লিখুন"
+
+#: includes/class-functions.php:364
+msgid "Job Title"
+msgstr "কাজের শিরোনাম"
+
+#: includes/class-functions.php:365
+msgid "Job title here"
+msgstr "এখানে কাজের শিরোনাম "
+
+#: includes/class-functions.php:377
+msgid "Job Descriptions"
+msgstr "কাজের বিবরণ"
+
+#: includes/class-functions.php:378
+msgid "Write job descriptions here"
+msgstr "কাজের বিস্তারিত লিখুন"
+
+#: includes/class-functions.php:392
+msgid "Thumbnail"
+msgstr "থাম্বনাইল"
+
+#: includes/class-functions.php:393
+msgid "Job Featured Image, uplaod single image only"
+msgstr "কাজের ফিচার্ড ছবি, শুধুমাত্র একটি আপলোড করুন"
+
+#: includes/class-functions.php:410 includes/class-post-types.php:76
+msgid "Job Category"
+msgstr "কাজের বিভাগ"
+
+#: includes/class-functions.php:411
+msgid "Select Job Category."
+msgstr "কাজের বিভাগ নির্বাচন করুন"
+
+#: includes/class-functions.php:443
+msgid "reCaptcha"
+msgstr "রিক্যাপচা"
+
+#: includes/class-functions.php:444
+msgid "reCaptcha test."
+msgstr "রিক্যাপচা পরীক্ষা"
+
+#: includes/class-functions.php:457
+msgid "Company info"
+msgstr ""
+
+#: includes/class-functions.php:458
+msgid "Company Information details"
+msgstr "কোম্পানী বিস্তারিত বর্ননা"
+
+#: includes/class-functions.php:468
+msgid "Company name, ex: Google Inc."
+msgstr ""
+
+#: includes/class-functions.php:495
+msgid "Job location, ex: California (City or States)"
+msgstr ""
+
+#: includes/class-functions.php:506
+msgid "Address"
+msgstr "ঠিকানা"
+
+#: includes/class-functions.php:507
+msgid "Full address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+msgstr ""
+
+#: includes/class-functions.php:532
+msgid "Company website"
+msgstr ""
+
+#: includes/class-functions.php:533
+msgid "Company website, ex: http://example.com"
+msgstr ""
+
+#: includes/class-functions.php:544
+msgid "Company logo"
+msgstr ""
+
+#: includes/class-functions.php:545
+msgid "Upload company logo."
+msgstr "কোম্পানী লোগো আপলোড করুন"
+
+#: includes/class-functions.php:557
+msgid "Job link"
+msgstr ""
+
+#: includes/class-functions.php:558
+msgid "Job link at company website, ex: http://example.com/jobs/developer-wanted"
+msgstr ""
+
+#: includes/class-functions.php:572
+msgid " Job info"
+msgstr ""
+
+#: includes/class-functions.php:573
+msgid "Job Information details."
+msgstr "কাজের বিস্তারিত তথ্য"
+
+#: includes/class-functions.php:664
+msgid "No of vacancies"
+msgstr ""
+
+#: includes/class-functions.php:665
+msgid "Total number of vacancies."
+msgstr "মোট কর্মখালি"
+
+#: includes/class-functions.php:702
+msgid "Job type ?"
+msgstr ""
+
+#: includes/class-functions.php:703
+msgid "Choose job type."
+msgstr "কাজের ধরন নির্বাচন করুন"
+
+#: includes/class-functions.php:714
+msgid "Job level ?"
+msgstr ""
+
+#: includes/class-functions.php:715
+msgid "Choose job level"
+msgstr "কাজের লেভেল নির্বাচন করুন"
+
+#: includes/class-functions.php:726
+msgid "Years of experience ?"
+msgstr ""
+
+#: includes/class-functions.php:727
+msgid "Years of experience must have."
+msgstr "কত বছর কাজের অভিজ্ঞতা থাকতে হবে"
+
+#: includes/class-functions.php:781
+msgid "Salary info"
+msgstr ""
+
+#: includes/class-functions.php:782
+msgid "Salary Information details."
+msgstr "বেতন এর তথ্য"
+
+#: includes/class-functions.php:791
+msgid "Salary range ?"
+msgstr ""
+
+#: includes/class-functions.php:792
+msgid "Salary range"
+msgstr ""
+
+#: includes/class-functions.php:804
+msgid "Salary fixed ?"
+msgstr ""
+
+#: includes/class-functions.php:805
+msgid "Salary fixed, ex: 1200"
+msgstr "স্থায়ী বেতন, উদাঃ ১২০০"
+
+#: includes/class-functions.php:816
+msgid "Salary minimum ?"
+msgstr ""
+
+#: includes/class-functions.php:817
+msgid "Salary minimum, ex: 100"
+msgstr ""
+
+#: includes/class-functions.php:827
+msgid "Salary maximum ?"
+msgstr ""
+
+#: includes/class-functions.php:828
+msgid "Salary maximum, ex: 1000"
+msgstr ""
+
+#: includes/class-functions.php:838 includes/class-functions.php:1139
+#: includes/menu/settings.php:245
+msgid "Salary currency ?"
+msgstr "বেতন মুদ্রা ?"
+
+#: includes/class-functions.php:839
+msgid "Salary currency(Optional)"
+msgstr "বেতন মুদ্রা (আবশ্যিক নয়)"
+
+#: includes/class-functions.php:857
+msgid "Application info"
+msgstr ""
+
+#: includes/class-functions.php:858
+msgid "Application Information details."
+msgstr "আবেদন তথ্য বিস্তারিত"
+
+#: includes/class-functions.php:867
+msgid "How to apply ?"
+msgstr "কিভাবে আবেদন করবেন ?"
+
+#: includes/class-functions.php:868
+msgid "How to apply your job, instruction for applicant ?"
+msgstr "আপনার কাজে কিভাবে আবেদন করবে ?"
+
+#: includes/class-functions.php:878
+msgid "Contact email ?"
+msgstr ""
+
+#: includes/class-functions.php:879
+msgid "Contact email"
+msgstr "যোগাযোগ ইমেইল"
+
+#: includes/class-functions.php:912 includes/menu/settings.php:104
+msgid "Options"
+msgstr "অপশন"
+
+#: includes/class-functions.php:913
+msgid "General options."
+msgstr "সাধারন অপশন"
+
+#: includes/class-functions.php:922
+msgid "Post Per Page"
+msgstr "প্রতি পেজ সংখ্যা"
+
+#: includes/class-functions.php:923
+msgid "Job list post per page."
+msgstr "প্রতি পাতায় কাজের সংখ্যা"
+
+#: includes/class-functions.php:935 includes/menu/settings.php:56
+msgid "Excerpt display"
+msgstr "সংক্ষিপ্ত দেখান"
+
+#: includes/class-functions.php:936
+msgid "Display short content form following."
+msgstr ""
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "From Content"
+msgstr "কনটেন্ট হতে"
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "Short Content"
+msgstr "সংক্ষিপ্ত বর্ননা"
+
+#: includes/class-functions.php:948
+msgid "Excerpt Word Count"
+msgstr "সংক্ষিপ্ত শব্দের সংখ্যা"
+
+#: includes/class-functions.php:949
+msgid "Excerpt display word count."
+msgstr ""
+
+#: includes/class-functions.php:967
+msgid "pages"
+msgstr "পাতাগুলো"
+
+#: includes/class-functions.php:968
+msgid "Options for pages."
+msgstr ""
+
+#: includes/class-functions.php:980
+msgid "Archive Page"
+msgstr "আরকাইভ পেইজ"
+
+#: includes/class-functions.php:981
+msgid "Archive page job list page where placed the short-code [job_list]."
+msgstr ""
+
+#: includes/class-functions.php:993
+msgid "Job Submit Page"
+msgstr "নতুন কাজ জমা পেইজ"
+
+#: includes/class-functions.php:994
+msgid "Job submission page id."
+msgstr ""
+
+#: includes/class-functions.php:1006
+msgid "Job Edit Page"
+msgstr "কাজ সম্পাদনা পেইজ"
+
+#: includes/class-functions.php:1007
+msgid "Job edit page id."
+msgstr ""
+
+#: includes/class-functions.php:1020
+msgid "My Account Page"
+msgstr "একাউন্ট পেইজ"
+
+#: includes/class-functions.php:1021
+msgid "My account page id."
+msgstr ""
+
+#: includes/class-functions.php:1034 includes/menu/settings.php:149
+msgid "Registration enable ?"
+msgstr "রেজিস্ট্রেশন সক্রিয়"
+
+#: includes/class-functions.php:1035
+msgid "Registration enable on my account page."
+msgstr ""
+
+#: includes/class-functions.php:1048 includes/menu/settings.php:159
+msgid "Login enable ?"
+msgstr "লগিন সক্রিয়"
+
+#: includes/class-functions.php:1049
+msgid "Login enable on my account page."
+msgstr ""
+
+#: includes/class-functions.php:1064 includes/menu/settings.php:306
+#: includes/menu/welcome.php:143
+msgid "Job Post"
+msgstr "কাজ প্রকাশ"
+
+#: includes/class-functions.php:1065
+msgid "Options for Job Post."
+msgstr ""
+
+#: includes/class-functions.php:1074
+msgid "Account Required ?"
+msgstr "একাউন্ট আবশ্যক"
+
+#: includes/class-functions.php:1075 includes/menu/settings.php:182
+msgid "Account required to post job."
+msgstr "কাজ জমাদানের জন্যে একাউন্ট আবশ্যক"
+
+#: includes/class-functions.php:1088 includes/menu/settings.php:191
+msgid "reCAPTCHA enable ?"
+msgstr "রিক্যাপচা সক্রিয়"
+
+#: includes/class-functions.php:1089 includes/menu/settings.php:192
+msgid "Enable reCAPTCHA to protect spam."
+msgstr "স্প্যাম প্রতিরোধ করার জন্যে রিক্যাপচা সক্রিয়"
+
+#: includes/class-functions.php:1101 includes/menu/settings.php:200
+msgid "reCAPTCHA site key"
+msgstr "রিক্যাপচা সাইট কী"
+
+#: includes/class-functions.php:1102 includes/menu/settings.php:201
+msgid ""
+"reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get site key."
+msgstr ""
+"রিক্যাপচা সাইট কী, দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/"
+"recaptcha\">google.com/reCAPTCHA</a>  এবং আপনার সাইট কি বুঝে নিন"
+
+#: includes/class-functions.php:1113 includes/menu/settings.php:208
+msgid "reCAPTCHA secret key"
+msgstr "রিক্যাপচা গোপন কী"
+
+#: includes/class-functions.php:1114 includes/menu/settings.php:209
+msgid ""
+"reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get secret key."
+msgstr ""
+"রিক্যাপচা গোপন কী দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/"
+"recaptcha\">google.com/reCAPTCHA</a>  এবং আপনার গোপন কী বুঝে নিন"
+
+#: includes/class-functions.php:1125
+msgid "New Submitted Job Status ?"
+msgstr "নতুন জমাকৃত কাজের অবস্থা"
+
+#: includes/class-functions.php:1126
+msgid "Submitted job status."
+msgstr ""
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Draft"
+msgstr "খসড়া"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Pending"
+msgstr "অপেক্ষমান"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Published"
+msgstr "প্রকাশিত"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Private"
+msgstr "গোপন"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Trash"
+msgstr "ট্রাশ"
+
+#: includes/class-functions.php:1136
+msgid "$"
+msgstr "৳"
+
+#: includes/class-functions.php:1140 includes/menu/settings.php:246
+msgid "Salary currency display on job page."
+msgstr "বেতন এর মুদ্রা কাজের পেজ এ দেখান"
+
+#: includes/class-functions.php:1152
+msgid "Apply Method ?"
+msgstr "আবেদনের পদ্ধতি ?"
+
+#: includes/class-functions.php:1153
+msgid "Enable apply methods."
+msgstr ""
+
+#: includes/class-functions.php:1166 includes/menu/settings.php:264
+msgid "Can user delete jobs ?"
+msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
+
+#: includes/class-functions.php:1167
+msgid "Can user delete their own jobs."
+msgstr ""
+
+#: includes/class-functions.php:1180
+msgid "Can user edit published jobs ?"
+msgstr ""
+
+#: includes/class-functions.php:1181
+msgid "Can user edit published jobs."
+msgstr ""
+
+#: includes/class-functions.php:1194
+msgid "Display preview after submitted job ?"
+msgstr ""
+
+#: includes/class-functions.php:1195 includes/menu/settings.php:284
+msgid "User can see the job preview after submitted."
+msgstr ""
+
+#: includes/class-functions.php:1216 includes/menu/settings.php:353
+msgid "Notification"
+msgstr "নোটিফিকেশন "
+
+#: includes/class-functions.php:1217
+msgid "Options for Notification."
+msgstr ""
+
+#: includes/class-functions.php:1226
+msgid "Email Logo URL"
+msgstr "ইমেইল লোগো ঠিকানা"
+
+#: includes/class-functions.php:1227 includes/menu/settings.php:315
+msgid "Email logo URL to display on mail."
+msgstr "লোগো ঠিকানা ইমেইল এ দেখানোর জন্যে"
+
+#: includes/class-functions.php:1240
+msgid "From Email"
+msgstr "ইমেইল হতে"
+
+#: includes/class-functions.php:1241
+msgid "From Email Address."
+msgstr ""
+
+#: includes/class-functions.php:1256
+msgid "Notify admin new job submit ?"
+msgstr ""
+
+#: includes/class-functions.php:1257
+msgid "Notify admin when new job submitted."
+msgstr ""
+
+#: includes/class-functions.php:1270 includes/menu/settings.php:339
+msgid "Notify email new job publish ?"
+msgstr "নতুন কাজ প্রকাশ এর জন্যে নোটিফিকেশন"
+
+#: includes/class-functions.php:1271 includes/menu/settings.php:340
+msgid "Notify email to admin when new job published."
+msgstr "নতুন কাজ প্রকাশ হলে এডমিন কে মেইল করুন"
+
+#: includes/class-functions.php:1288 includes/menu/settings.php:386
+msgid "Style"
+msgstr "স্টাইল"
+
+#: includes/class-functions.php:1289
+msgid "Options for style."
+msgstr ""
+
+#: includes/class-functions.php:1298
+msgid "Featured Job Background Color ?"
+msgstr "ফিচার্ড কাজের ব্যাকগ্রাউন্ড রঙ "
+
+#: includes/class-functions.php:1299 includes/menu/settings.php:360
+msgid "Featured job area background color."
+msgstr "ফিচার্ড কাজের ব্যাকগ্রাউন্ড রঙ "
+
+#: includes/class-functions.php:1312
+msgid "Job Type Background Color ?"
+msgstr "কাজের ধরন ব্যাকগ্রাউন্ড রঙ ?"
+
+#: includes/class-functions.php:1313
+msgid "Job types area background color."
+msgstr ""
+
+#: includes/class-functions.php:1325
+msgid "Job Status Background Color ?"
+msgstr "কাজের অবস্থা ব্যাকগ্রাউন্ড রঙ ? "
+
+#: includes/class-functions.php:1326
+msgid "Job status area background color."
+msgstr ""
+
+#: includes/class-import.php:45
+msgid "Is imported ?"
+msgstr "ইম্পোর্ট করা ?"
+
+#: includes/class-import.php:46
+msgid "Is imported"
+msgstr "ইম্পোর্ট করা"
+
+#: includes/class-import.php:55
+msgid "Import source ?"
+msgstr "ইম্পোর্ট সুত্র ?"
+
+#: includes/class-import.php:56
+msgid "Import source"
+msgstr "ইম্পোর্ট সুত্র"
+
+#: includes/class-import.php:65
+msgid "Import source jobid ?"
+msgstr "ইম্পোর্ট সুত্র আইডি"
+
+#: includes/class-import.php:66
+msgid "Import source jobid"
+msgstr "ইম্পোর্ট সুত্র আইডি"
+
+#: includes/class-post-meta.php:350
+#, fuzzy
+#| msgid "job Data"
+msgid "job data"
+msgstr "কাজের তথ্য"
+
+#: includes/class-post-meta.php:361
+#, fuzzy
+#| msgid "Job Edit"
+msgid "Job Admin"
+msgstr "কাজ সম্পাদনা"
+
+#: includes/class-post-types.php:25
+msgid "Job"
+msgstr "কাজ"
+
+#: includes/class-post-types.php:35 includes/class-post-types.php:91
+#: includes/class-post-types.php:131
+#, php-format
+msgid "All %s"
+msgstr "সব %s"
+
+#: includes/class-post-types.php:36 includes/class-post-types.php:37
+#, php-format
+msgid "Add %s"
+msgstr "যুক্ত করুন %s"
+
+#: includes/class-post-types.php:38 templates/my-jobs/my-jobs.php:136
+msgid "Edit"
+msgstr "সম্পাদনা"
+
+#: includes/class-post-types.php:39 includes/class-post-types.php:94
+#: includes/class-post-types.php:134
+#, php-format
+msgid "Edit %s"
+msgstr "সম্পাদনা %s"
+
+#: includes/class-post-types.php:40
+#, php-format
+msgid "New %s"
+msgstr "নতুন %s"
+
+#: includes/class-post-types.php:41 includes/class-post-types.php:42
+#, php-format
+msgid "View %s"
+msgstr "দেখুন %s"
+
+#: includes/class-post-types.php:43 includes/class-post-types.php:90
+#: includes/class-post-types.php:130
+#, php-format
+msgid "Search %s"
+msgstr "খুজুন %s"
+
+#: includes/class-post-types.php:44
+#, php-format
+msgid "No %s found"
+msgstr "%s পাওয়া যায়নি "
+
+#: includes/class-post-types.php:45
+#, php-format
+msgid "No %s found in trash"
+msgstr "ট্রাশে %s পাওয়া যায়নি"
+
+#: includes/class-post-types.php:46 includes/class-post-types.php:92
+#: includes/class-post-types.php:132
+#, php-format
+msgid "Parent %s"
+msgstr "প্যারেন্ট %s"
+
+#: includes/class-post-types.php:48
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr "এই খানে আপনি %s নতুন তৈরী এবং নিয়ন্ত্রণ করতে পারেন"
+
+#: includes/class-post-types.php:77
+msgid "Job Categories"
+msgstr "কাজের বিভাগ"
+
+#: includes/class-post-types.php:93 includes/class-post-types.php:133
+#, php-format
+msgid "Parent %s:"
+msgstr "পারেন্ট %sঃ"
+
+#: includes/class-post-types.php:95 includes/class-post-types.php:135
+#, php-format
+msgid "Update %s"
+msgstr "হাল নাগাদ %s"
+
+#: includes/class-post-types.php:96 includes/class-post-types.php:136
+#, php-format
+msgid "Add New %s"
+msgstr "নতুন যুক্ত %s"
+
+#: includes/class-post-types.php:97 includes/class-post-types.php:137
+#, php-format
+msgid "New %s Name"
+msgstr "নতুন %s নাম"
+
+#: includes/class-post-types.php:116
+msgid "Job Tag"
+msgstr "কাজের ট্যাগ"
+
+#: includes/class-post-types.php:117
+msgid "Job Tags"
+msgstr "কাজের ট্যাগ সমুহ"
+
+#: includes/class-settings.php:24
+msgid "Settings"
+msgstr "সেটিংস"
+
+#: includes/class-settings.php:25
+msgid "Reports"
+msgstr "প্রতিবেদন"
+
+#: includes/class-settings.php:26
+msgid "Help"
+msgstr "সাহায্য"
+
+#: includes/class-settings.php:27
+msgid "Addons"
+msgstr "এডঅন্স"
+
+#: includes/class-settings.php:28
+msgid "Emails Templates"
+msgstr "ইমেইল টেম্পলেট গুলো"
+
+#: includes/functions/account-registration.php:48
+msgid "Username"
+msgstr "ইউসারনেম"
+
+#: includes/functions/account-registration.php:54
+#: includes/shortcodes/class-shortcodes-dashboard.php:193
+#: templates/account/my-account.php:66
+msgid "Password"
+msgstr "পাসোয়ার্ড"
+
+#: includes/functions/account-registration.php:60
+msgid "Email"
+msgstr "ইমেইল"
+
+#: includes/functions/account-registration.php:75
+msgid "Required form field is missing"
+msgstr "অবশ্যক তথ্য এড়িয়ে গেসেন"
+
+#: includes/functions/account-registration.php:79
+msgid "Username too short. At least 4 characters is required"
+msgstr "ইউসারনেম খুবই সংক্ষিপ্ত"
+
+#: includes/functions/account-registration.php:83
+msgid "Sorry, that username already exists!"
+msgstr "দুঃখিত, এই ইউসারনেম আগেই ব্যবহার করা হয়েছে"
+
+#: includes/functions/account-registration.php:86
+msgid "Sorry, the username you entered is not valid"
+msgstr "দুঃখিত, ইউসারনেম টি সুযুক্তিপূর্ণ নয়"
+
+#: includes/functions/account-registration.php:90
+msgid "Password length must be greater than 5"
+msgstr "পাসওর্য়াড অবশ্যই ৫ অক্ষরের বেশি হতে হবে"
+
+#: includes/functions/account-registration.php:94
+msgid "Email is not valid"
+msgstr "ইমেইল টি সঠিক নয়"
+
+#: includes/functions/account-registration.php:98
+msgid "Email Already in use"
+msgstr "ইমেইল আগেই ব্যবহার করা হয়েছে"
+
+#: includes/functions/account-registration.php:107
+msgid "ERROR"
+msgstr "ভুল দেখাছে"
+
+#: includes/functions/account-registration.php:125
+msgid "Registration complete."
+msgstr "রেজিষ্ট্রেশন সম্পুর্ন হয়েছে"
+
+#: includes/functions/functions-reports.php:93
+msgid "Job posting last 7 days."
+msgstr "গত ৭ দিনের কাজ"
+
+#: includes/functions/functions-reports.php:229
+msgid "Custom:"
+msgstr ""
+
+#: includes/functions/functions-reports.php:237
+msgid "Go"
+msgstr ""
+
+#: includes/functions/functions.php:181 templates/job-archive/job-archive.php:346
+#: templates/job-list.php:215
+msgid "Job Type"
+msgstr "কাজের ধরন"
+
+#: includes/functions/functions.php:182 templates/job-archive/job-archive.php:347
+#: templates/job-list.php:216
+msgid "Job Status"
+msgstr "কাজের অবস্থা"
+
+#: includes/functions/functions.php:183 templates/job-archive/job-archive.php:348
+#: templates/job-list.php:217
+msgid "Category"
+msgstr "বিভাগ"
+
+#: includes/functions/functions.php:186 templates/job-archive/job-archive.php:351
+#: templates/job-list.php:220
+msgid "Total Vacancies"
+msgstr "মোট কর্মখালি"
+
+#: includes/functions/functions.php:187 templates/job-archive/job-archive.php:352
+#: templates/job-list.php:221
+msgid "Expire Date"
+msgstr "মেয়াদ শেষ"
+
+#: includes/functions/functions.php:607
+msgid "You are not authorized"
+msgstr ""
+
+#: includes/functions/functions.php:671
+#: templates/job-single/job-single-sidebar.php:193
+msgid "How to Apply ?<br> "
+msgstr "কিভাবে আবেদন করবেন"
+
+#: includes/functions/functions.php:675
+#: templates/job-single/job-single-sidebar.php:197
+msgid "Apply via email :"
+msgstr "ইমেল দিয়ে আবেদন"
+
+#: includes/functions/functions.php:714
+#: templates/job-single/job-single-sidebar.php:238
+msgid "Apply on this job"
+msgstr "এই কাজে আবেদন করুন"
+
+#: includes/functions/functions.php:847
+msgid "Update Done"
+msgstr "হালনাগাত সম্পুর্ন হয়েছে"
+
+#: includes/functions/functions.php:868
+msgid "Reset Done"
+msgstr "রিসেট সম্পুর্ন হয়েছে"
+
+#: includes/functions/functions.php:890 includes/functions/functions.php:915
+msgid "You are not authorized to delete this job."
+msgstr "আপনার এই কাজ টি মুছে ফেলার অধিকার নাই"
+
+#: includes/functions/functions.php:906
+msgid "Job Deleted."
+msgstr "কাজটি মুছে ফেলা হয়েছে"
+
+#: includes/functions/functions.php:909
+msgid "Something going wrong."
+msgstr "কিছু একটা ভুল দেখাচ্ছে"
+
+#: includes/menu/addons.php:180
+msgid "Version:"
+msgstr "সংস্করণঃ"
+
+#: includes/menu/addons.php:190
+msgid "Price:"
+msgstr "মুল্যঃ"
+
+#: includes/menu/addons.php:191
+msgid "Download"
+msgstr "ডাউনলোড"
+
+#: includes/menu/addons.php:223
+msgid " - Addons"
+msgstr "- এডওন্স"
+
+#: includes/menu/emails-templates.php:109
+msgid "Enable ?"
+msgstr "সচল ?"
+
+#: includes/menu/emails-templates.php:132
+msgid "Email To:"
+msgstr "প্রাপক"
+
+#: includes/menu/emails-templates.php:137
+msgid "Email from name:"
+msgstr "প্রেরক এর নামঃ"
+
+#: includes/menu/emails-templates.php:141
+msgid "Email from:"
+msgstr "প্রেরকঃ"
+
+#: includes/menu/emails-templates.php:150
+msgid "Email Subject:"
+msgstr "ইমেইল শিরনামঃ"
+
+#: includes/menu/emails-templates.php:159
+msgid "Email Body:"
+msgstr "ইমেইল বিস্তারিতঃ "
+
+#: includes/menu/emails-templates.php:197 includes/menu/settings.php:738
+msgid "Changes Saved."
+msgstr "পরিবর্তন গুলো সংরক্ষন হয়েছে"
+
+#: includes/menu/emails-templates.php:212
+msgid " - Emails Templates"
+msgstr "- ইমেইল টেমপ্লেট"
+
+#: includes/menu/emails-templates.php:224 includes/menu/settings.php:778
+msgid "Save Changes"
+msgstr "পরিবর্তন গুলো সংরক্ষন হয়েছে"
+
+#: includes/menu/emails-templates.php:225
+msgid "Reset"
+msgstr "নতুন করে"
+
+#: includes/menu/help.php:27
+msgid "Ask any question"
+msgstr "যেকোন প্রশ্ন করুন"
+
+#: includes/menu/help.php:29
+msgid ""
+"Please feel free to contact for any question, ask via our forum <a href="
+"\"http://www.pickplugins.com/questions/\">http://www.pickplugins.com/questions/"
+"</a>"
+msgstr ""
+"দয়া করে নিসংকোচে যোগাযোগ করুন , আমাদের ফোরামে প্রশ্ন করুন <a href=\"http://www."
+"pickplugins.com/questions/\">http://www.pickplugins.com/questions/</a>"
+
+#: includes/menu/help.php:35
+msgid "Watch video tutorial"
+msgstr "ভিডিও টিউটোরিয়াল দেখুন"
+
+#: includes/menu/help.php:61
+msgid "FAQ"
+msgstr "প্রশ্ন-উত্তর"
+
+#: includes/menu/settings.php:48
+msgid "Post per page"
+msgstr ""
+
+#: includes/menu/settings.php:49
+msgid "Job list post per page"
+msgstr "প্রতি পেইজ এ কাজের সংখ্যা"
+
+#: includes/menu/settings.php:57
+msgid "Display short content form following"
+msgstr "এইগুলো থেকে সংক্ষিপ্ত দেখান"
+
+#: includes/menu/settings.php:65
+msgid "Excerpt word count"
+msgstr ""
+
+#: includes/menu/settings.php:66
+msgid "Excerpt display word count"
+msgstr "সংক্ষিপ্ত শব্দের সংখ্যা"
+
+#: includes/menu/settings.php:74
+msgid "Archive load style"
+msgstr ""
+
+#: includes/menu/settings.php:75
+msgid "Set load more style ajax or pagination"
+msgstr ""
+
+#: includes/menu/settings.php:78 templates/job-edit.php:585
+#: templates/job-submit.php:526
+msgid "Pagination"
+msgstr "পেজিনেশন"
+
+#: includes/menu/settings.php:78 templates/job-archive/pagination.php:35
+msgid "Load more"
+msgstr "আরো দেখান"
+
+#: includes/menu/settings.php:112
+msgid "Archive page"
+msgstr ""
+
+#: includes/menu/settings.php:113
+msgid "Archive page job list page where placed the short-code [job_list])"
+msgstr "আরকাইভ পেইজ যেখানে সর্টকোডটি আছে [job_list]"
+
+#: includes/menu/settings.php:120
+msgid "Job submit page"
+msgstr ""
+
+#: includes/menu/settings.php:121
+msgid "Job submission page id"
+msgstr "নতুন কাজ জমা পেইজ আইডি"
+
+#: includes/menu/settings.php:129
+msgid "Job edit page"
+msgstr ""
+
+#: includes/menu/settings.php:130
+msgid "Job edit page id"
+msgstr "কাজ সম্পাদনা পেইজ আইডি"
+
+#: includes/menu/settings.php:139
+msgid "My account page"
+msgstr ""
+
+#: includes/menu/settings.php:140
+msgid "My account page id"
+msgstr "একাউন্ট পেইজ আইডি"
+
+#: includes/menu/settings.php:150
+msgid "Registration enable on my account page "
+msgstr "একাউন্ট পেইজ এ রেজিস্ট্রেশন সক্রিয়"
+
+#: includes/menu/settings.php:160
+msgid "Login enable on my account page "
+msgstr "একাউন্ট পেইজ এ লগিন সক্রিয়"
+
+#: includes/menu/settings.php:174
+msgid "Pages"
+msgstr "পেইজ গুলো"
+
+#: includes/menu/settings.php:181
+msgid "Account required ?"
+msgstr ""
+
+#: includes/menu/settings.php:216 includes/menu/welcome.php:125
+msgid "New submitted job status ?"
+msgstr ""
+
+#: includes/menu/settings.php:217
+msgid "Submitted job status"
+msgstr "জমাকৃত কাজের অবস্থা"
+
+#: includes/menu/settings.php:254
+msgid "Apply method ?"
+msgstr ""
+
+#: includes/menu/settings.php:255
+msgid "Enable apply methods"
+msgstr "আবেদনের পদ্ধতি সক্রিয় করুন"
+
+#: includes/menu/settings.php:265
+msgid "Can user delete their own jobs"
+msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন"
+
+#: includes/menu/settings.php:274
+msgid "Can user edit jobs ?"
+msgstr "ব্যবহার কারীগন কাজ সম্পাদন করতে পারবেন ?"
+
+#: includes/menu/settings.php:275
+msgid "Can user edit published jobs"
+msgstr "ব্যবহার কারীগন কাজ সম্পাদন করতে পারবেন"
+
+#: includes/menu/settings.php:283
+msgid "Redirect preview link after job submit ?"
+msgstr ""
+
+#: includes/menu/settings.php:292
+msgid "Submission type ?"
+msgstr ""
+
+#: includes/menu/settings.php:293
+msgid "Submission type."
+msgstr ""
+
+#: includes/menu/settings.php:296
+msgid "Step by step"
+msgstr ""
+
+#: includes/menu/settings.php:296
+msgid "Accordion"
+msgstr ""
+
+#: includes/menu/settings.php:314
+msgid "Email logo URL"
+msgstr ""
+
+#: includes/menu/settings.php:322
+msgid "From email"
+msgstr ""
+
+#: includes/menu/settings.php:323
+msgid "From email address"
+msgstr ""
+
+#: includes/menu/settings.php:330
+msgid "Notify email new job submit ?"
+msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
+
+#: includes/menu/settings.php:331
+msgid "Notify admin when new job submitted"
+msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
+
+#: includes/menu/settings.php:359
+msgid "Featured job background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:367
+msgid "Job type background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:368
+msgid "Job types area background color"
+msgstr "কাজের ধরন ব্যাকগ্রাউন্ড রঙ "
+
+#: includes/menu/settings.php:376
+msgid "Job status background color ?"
+msgstr ""
+
+#: includes/menu/settings.php:377
+msgid "Job status area background color"
+msgstr "কাজের অবস্থা ব্যাকগ্রাউন্ড রঙ"
+
+#: includes/menu/settings.php:756
+msgid " Settings"
+msgstr "সেটিংস"
+
+#: includes/menu/welcome.php:52
+#, php-format
+msgid "<strong>Welcome to %s</strong> &#8211; Please setup basic settings."
+msgstr ""
+
+#: includes/menu/welcome.php:54
+msgid "Run Wizard Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:55
+msgid "Skip Setup"
+msgstr ""
+
+#: includes/menu/welcome.php:76
+msgid "General"
+msgstr ""
+
+#: includes/menu/welcome.php:84
+msgid "20"
+msgstr ""
+
+#: includes/menu/welcome.php:85
+msgid "Post per page ?"
+msgstr ""
+
+#: includes/menu/welcome.php:86
+msgid "Post per page on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:97 includes/menu/welcome.php:110
+#: includes/menu/welcome.php:123 includes/menu/welcome.php:151
+msgid "30"
+msgstr ""
+
+#: includes/menu/welcome.php:98
+msgid "Excerpt word count ?"
+msgstr ""
+
+#: includes/menu/welcome.php:99
+msgid "Excerpt word count on archive page"
+msgstr ""
+
+#: includes/menu/welcome.php:111
+msgid "Account required to post job ?"
+msgstr ""
+
+#: includes/menu/welcome.php:112
+msgid "Only logged-in user can post job"
+msgstr ""
+
+#: includes/menu/welcome.php:124
+msgid "New Submitted job status ?"
+msgstr ""
+
+#: includes/menu/welcome.php:128
+msgid "Publish"
+msgstr ""
+
+#: includes/menu/welcome.php:152 includes/menu/welcome.php:153
+msgid "Currency symbol ?"
+msgstr ""
+
+#: includes/menu/welcome.php:200
+msgid "Job Board Manager &rsaquo; Setup Wizard"
+msgstr ""
+
+#: includes/menu/welcome.php:276
+msgid "Options saved"
+msgstr ""
+
+#: includes/menu/welcome.php:308
+msgid "Page created."
+msgstr ""
+
+#: includes/menu/welcome.php:318
+msgid "Permissions saved."
+msgstr ""
+
+#: includes/menu/welcome.php:327
+msgid "Job posting saved."
+msgstr ""
+
+#: includes/menu/welcome.php:395
+msgid "Save options"
+msgstr ""
+
+#: includes/menu/welcome.php:398
+msgid "General options"
+msgstr ""
+
+#: includes/menu/welcome.php:424 includes/menu/welcome.php:428
+msgid "Create pages"
+msgstr ""
+
+#: includes/menu/welcome.php:453 includes/menu/welcome.php:461
+msgid "Save permissions"
+msgstr ""
+
+#: includes/menu/welcome.php:550 includes/menu/welcome.php:556
+msgid "Job posting"
+msgstr ""
+
+#: includes/menu/welcome.php:585
+msgid "Nothing to Save"
+msgstr "সেভ করার কিছু নাই"
+
+#: includes/pickform/class-pickform-creator.php:381
+#: includes/pickform/class-pickform-creator.php:393
+#: includes/pickform/class-pickform-creator.php:403
+#: includes/pickform/class-pickform.php:556
+#: includes/pickform/class-pickform.php:568
+#: includes/pickform/class-pickform.php:578
+#: includes/pickform/class-pickformNew.php:478
+#: includes/pickform/class-pickformNew.php:490
+#: includes/pickform/class-pickformNew.php:500
+msgid "Remove"
+msgstr "মুছে ফেলুন"
+
+#: includes/pickform/class-pickform-creator.php:410
+#: includes/pickform/class-pickform.php:585
+#: includes/pickform/class-pickformNew.php:507
+msgid "Add more"
+msgstr "আরো যুক্ত করুন"
+
+#: includes/pickform/class-pickform-creator.php:567
+#: includes/pickform/class-pickform.php:816
+#: includes/pickform/class-pickformNew.php:738
+msgid "Drop files here"
+msgstr "এইখান ফাইল দিন"
+
+#: includes/pickform/class-pickform-creator.php:568
+#: includes/pickform/class-pickform.php:817
+#: includes/pickform/class-pickformNew.php:739
+msgid "Select Files"
+msgstr "ফাইল নির্বাচন করুন"
+
+#: includes/pickform/class-pickform-creator.php:588
+#: includes/pickform/class-pickform.php:837
+#: includes/pickform/class-pickformNew.php:759
+msgid "Allowed Files"
+msgstr "অনুমিত ফাইল সমুহ"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:42
+#, fuzzy
+#| msgid "Job Account"
+msgid "Account"
+msgstr "কাজের একাউন্ট"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:172
+#: templates/account/my-account.php:44
+msgid "Register"
+msgstr "রেজিস্টার"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:180
+#: templates/account/my-account.php:53
+msgid "Login"
+msgstr "লগিন"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:192
+#: templates/account/my-account.php:65
+msgid "Username or email address"
+msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:194
+#: templates/account/my-account.php:67
+msgid "Remember Me"
+msgstr "আমাকে মনে রখুন"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:195
+#: templates/account/my-account.php:68
+msgid "Log In"
+msgstr "লগিন"
+
+#: includes/shortcodes/class-shortcodes-pending-publish.php:77
+#: templates/job-archive/job-archive.php:434 templates/job-list.php:576
+msgid "No job found"
+msgstr "জব নাই"
+
+#: templates/account/my-account.php:30
+msgid "Welcome"
+msgstr "স্বাগতম"
+
+#: templates/account/my-account.php:30
+msgid "Logout"
+msgstr "লগআউট"
+
+#: templates/job-archive/filter.php:24
+msgid "Keyword:"
+msgstr "শব্দঃ"
+
+#: templates/job-archive/filter.php:63 templates/job-list.php:235
+msgid "Job type:"
+msgstr "কাজের ধরনঃ"
+
+#: templates/job-archive/filter.php:68 templates/job-list.php:240
+msgid "Job status:"
+msgstr "কাজের অবস্থাঃ"
+
+#: templates/job-archive/filter.php:72
+#, fuzzy
+#| msgid "Location"
+msgid "Location:"
+msgstr "অবস্থান"
+
+#: templates/job-archive/filter.php:76 templates/job-list.php:245
+msgid "Expire date:"
+msgstr "মেয়াদ শেষ"
+
+#: templates/job-archive/filter.php:84 templates/job-list.php:253
+msgid "Category:"
+msgstr "বিভাগঃ"
+
+#: templates/job-archive/search.php:38
+#, fuzzy
+#| msgid "Keyword:"
+msgid "Keyword"
+msgstr "শব্দঃ"
+
+#: templates/job-archive/search.php:70 templates/job-edit.php:569
+#: templates/job-submit.php:510
+msgid "Submit"
+msgstr "জমা দিন"
+
+#: templates/job-edit.php:21
+msgid "Invalid job id."
+msgstr "কাজের নাম্বার সঠিক নয়"
+
+#: templates/job-edit.php:28
+msgid "You are not authorized to edit this job."
+msgstr "এই কাজ সম্পাদন করার অধিকার নাই"
+
+#: templates/job-edit.php:120 templates/job-edit.php:126
+#: templates/job-edit.php:133 templates/job-edit.php:141
+#: templates/job-submit.php:108 templates/job-submit.php:114
+#: templates/job-submit.php:121 templates/job-submit.php:130
+msgid "missing"
+msgstr "বাদ গেছে"
+
+#: templates/job-edit.php:187
+msgid "Job update successfully."
+msgstr "কাজটি সফল ভাবে হালনাগাদ হয়েছে"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Cancel"
+msgstr "বাতিল"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "current step:"
+msgstr "বর্তমান ধাপঃ"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Finish"
+msgstr "শেষ"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Next"
+msgstr "পরবর্তী"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Previous"
+msgstr "পুর্বে"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Loading ..."
+msgstr "লোড হচ্ছে..."
+
+#: templates/job-edit.php:635
+#, php-format
+msgid ""
+"You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
+"page</b></a> to see your jobs."
+msgstr ""
+"এই কাজটি সম্পাদনা করার অধিকার নাই, দয়া করে <a href=\"%s\"><b>একাউন্ট</b></a> যান "
+"আপনার কাজ গুলো দেখার জন্যে"
+
+#: templates/job-edit.php:644
+#, php-format
+msgid "Please <a href=\"%s\"><b>login</b></a> to edit this job."
+msgstr "দয়া করে <a href=\"%s\"><b>লগিন</b></a> করুন কাজটি সম্পাদনা করার জন্যে"
+
+#: templates/job-single/job-single-sidebar.php:96
+msgid "Website"
+msgstr "ওয়েবসাইট"
+
+#: templates/job-single/job-single-sidebar.php:99
+msgid "Job Link"
+msgstr "কাজের লিংক"
+
+#: templates/job-single/job-single-sidebar.php:104
+msgid "About Company"
+msgstr "কোম্পানী সম্পর্কে"
+
+#: templates/job-single/job-single-sidebar.php:115
+msgid "Job Status: "
+msgstr "কাজের অবস্থা"
+
+#: templates/job-single/job-single-sidebar.php:118
+msgid "No of Vacancies: "
+msgstr "কর্মখালি সংখ্যা"
+
+#: templates/job-single/job-single-sidebar.php:121
+msgid "Date Posted: "
+msgstr "কাজ প্রকাশ এর তারিখ"
+
+#: templates/job-single/job-single-sidebar.php:129
+msgid "Expiry Date: "
+msgstr "মেয়াদ-শেষ"
+
+#: templates/job-single/job-single-sidebar.php:134
+msgid "Job Type: "
+msgstr "কাজের ধরনঃ"
+
+#: templates/job-single/job-single-sidebar.php:137
+msgid "Job Level: "
+msgstr "কাজের লেভেলঃ"
+
+#: templates/job-single/job-single-sidebar.php:140
+msgid "Years of Experience: "
+msgstr "অভিজ্ঞতা বছর"
+
+#: templates/job-single/job-single-sidebar.php:144
+msgid "Job Info"
+msgstr "কাজের তথ্য"
+
+#: templates/job-single/job-single-sidebar.php:162
+msgid "Salary Type: "
+msgstr "বেতনের ধরনঃ "
+
+#: templates/job-single/job-single-sidebar.php:169
+#: templates/job-single/job-single-sidebar.php:175
+msgid "Salary: "
+msgstr "বেতনঃ"
+
+#: templates/job-single/job-single-sidebar.php:182
+msgid "Salary Info"
+msgstr "বেতন তথ্য"
+
+#: templates/job-single/job-single-sidebar.php:268
+msgid "Share this job"
+msgstr "শেয়ার করুন"
+
+#: templates/job-submit.php:37
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to submit job."
+msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
+
+#: templates/job-submit.php:184
+msgid "Job Submitted successfully."
+msgstr "কাজটি সফল ভাবে জমা হয়েছে । "
+
+#: templates/job-submit.php:185
+msgid "Submission status:"
+msgstr "জমাদানের অবস্থাঃ"
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job id."
+msgstr "কাজের নাম্বার"
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job Title."
+msgstr "কাজের শিরোনাম"
+
+#: templates/my-jobs/my-jobs.php:118
+msgid "Published:"
+msgstr "প্রকাশিতঃ"
+
+#: templates/my-jobs/my-jobs.php:119
+msgid "Expiry:"
+msgstr "মেয়াদ শেষঃ"
+
+#: templates/my-jobs/my-jobs.php:120
+msgid "Publish Status:"
+msgstr "প্রকাশ অবস্থাঃ"
+
+#: templates/my-jobs/my-jobs.php:123
+msgid "Job Status:"
+msgstr "কাজের অবস্থাঃ"
+
+#: templates/my-jobs/my-jobs.php:125
+msgid "Featured:"
+msgstr "ফিচার্ডঃ"
+
+#: templates/my-jobs/my-jobs.php:128
+msgid "Job Type:"
+msgstr "কাজের ধরন"
+
+#: templates/my-jobs/my-jobs.php:131
+msgid "Job Level:"
+msgstr "কাজের লেভেলঃ"
+
+#: templates/my-jobs/my-jobs.php:140
+msgid "Delete"
+msgstr "মুছে ফেলুন"
+
+#: templates/my-jobs/my-jobs.php:169
+msgid "No job found posted by you."
+msgstr "আপনার কোন জব নাই"
+
+#: templates/my-jobs/my-jobs.php:177
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to see your job list."
+msgstr "কাজের লিস্ট দেখতে দয়া করে <a href=\"%s\">লগিন</a> করুন"
+
+#~ msgid "Company Name"
+#~ msgstr "প্রতিষ্ঠানের নাম"
+
+#~ msgid "Do you want to display company name"
+#~ msgstr "কোম্পানী নাম দেখাতে চান ? "
+
+#~ msgid "Do you want to display company address"
+#~ msgstr "কোম্পানী ঠিকানা দেখাতে চান "
+
+#~ msgid "Short job description write here."
+#~ msgstr "কাজের সংক্ষিপ্ত বর্ননা"
+
+#~ msgid "Responsibilities details."
+#~ msgstr "দায়িত্ব সমূহ"
+
+#~ msgid "Education requirements"
+#~ msgstr "শিক্ষাগত যোগ্যতা"
+
+#~ msgid "Education requirements details."
+#~ msgstr "শিক্ষাগত যোগ্যতা বিস্তারিত"
+
+#~ msgid "Experience requirements"
+#~ msgstr "অভিজ্ঞতা যোগ্যতা"
+
+#~ msgid "Experience requirements details."
+#~ msgstr "প্রয়োজনীয় অভিজ্ঞতা সমুহ"
+
+#~ msgid "Skills requirements"
+#~ msgstr "দক্ষতা শর্ত"
+
+#~ msgid "Skills requirements details."
+#~ msgstr "প্রয়োজনীয় দক্ষতা সমুহ"
+
+#~ msgid "Qualifications"
+#~ msgstr "যোগ্যতা সমুহ"
+
+#~ msgid "Qualifications details."
+#~ msgstr "যোগ্যতা বিস্তারিত"
+
+#~ msgid "Company Name, ex: Google Inc."
+#~ msgstr "প্রতিষ্ঠানের নাম, উদাঃ Google Inc."
+
+#~ msgid "Display Company Name ?"
+#~ msgstr "কোম্পানী নাম দেখাতে চান ?"
+
+#~ msgid "Display Company Name"
+#~ msgstr "কোম্পানী নাম দেখাতে চান "
+
+#~ msgid "Job Location, ex: California (City or States)"
+#~ msgstr "কাজে স্থান, উদাঃ ক্যালিফোরনিয়া (শহর অথবা স্টেট)"
+
+#~ msgid "Full Address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+#~ msgstr "পুর্ন ঠিকানা, উদাঃ ১৬০০ পার্কওয়ে, মাউন্টেন ভিউ, ক্যালিফোরনিয়া ৯৪০৪৩"
+
+#~ msgid "Display Company Address ?"
+#~ msgstr "কোম্পানী ঠিকানা দেখাতে চান ?"
+
+#~ msgid "Display Company Address"
+#~ msgstr "কোম্পানী ঠিকানা দেখাতে চান "
+
+#~ msgid "Company Website"
+#~ msgstr "কোম্পানী ওয়েবসাইট"
+
+#~ msgid "Company Website, ex: http://pickplugins.com"
+#~ msgstr "কোম্পানী ওয়েবসাইট, উদাঃ http://pickplugins.com"
+
+#~ msgid "Company Logo"
+#~ msgstr "কোম্পানী লোগো"
+
+#~ msgid ""
+#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-"
+#~ "wanted"
+#~ msgstr ""
+#~ "কাজের অফিসিয়াল লিংক, উদাঃ http://pickplugins.com/jobs/developer-wanted"
+
+#~ msgid "Job Responsibilities"
+#~ msgstr "কাজের দায়িত্ব"
+
+#~ msgid "Responsibilities"
+#~ msgstr "দায়িত্ব সমুহ"
+
+#~ msgid "Education Requirements"
+#~ msgstr "শিক্ষাগত যোগ্যতা"
+
+#~ msgid "Experience Requirements"
+#~ msgstr "অভিজ্ঞতা যোগ্যতা"
+
+#~ msgid "Skills Requirements"
+#~ msgstr "দক্ষতা শর্ত"
+
+#~ msgid "No of Vacancies"
+#~ msgstr "কর্মখালি সংখা"
+
+#~ msgid "Expiry Date"
+#~ msgstr "মেয়াদ-শেষ"
+
+#~ msgid "Featured Job"
+#~ msgstr "ফিচার্ড কাজ"
+
+#~ msgid "Job Type ?"
+#~ msgstr "কাজের ধরন"
+
+#~ msgid "Job Level ?"
+#~ msgstr "কাজের লেভেল"
+
+#~ msgid "Job Level"
+#~ msgstr "কাজের লেভেল"
+
+#~ msgid "Years of Experience ?"
+#~ msgstr "অভিজ্ঞতা বছর ?"
+
+#~ msgid "Years of Experience"
+#~ msgstr "অভিজ্ঞতা বছর"
+
+#~ msgid "Salary Range ?"
+#~ msgstr "বেতন শ্রেণী ? "
+
+#~ msgid "Salary Range"
+#~ msgstr "বেতন শ্রেণী "
+
+#~ msgid "Salary Fixed ?"
+#~ msgstr "স্থায়ী বেতন ?"
+
+#~ msgid "Salary fixed"
+#~ msgstr "স্থায়ী বেতন"
+
+#~ msgid "Salary Min ?"
+#~ msgstr "সর্বনিম্ন বেতন ?"
+
+#~ msgid "Salary Min"
+#~ msgstr "সর্বনিম্ন বেতন"
+
+#~ msgid "Salary Max ?"
+#~ msgstr "সর্বোচ্ছ বেতন ?"
+
+#~ msgid "Salary Max"
+#~ msgstr "সর্বোচ্ছ বেতন"
+
+#~ msgid "Application"
+#~ msgstr "আবেদন"
+
+#~ msgid "Contact Email ?"
+#~ msgstr "যোগাযোগ ইমেইল ?"
+
+#~ msgid "Contact Email"
+#~ msgstr "যোগাযোগ ইমেইল"
+
+#~ msgid "Responsibilities:"
+#~ msgstr "দায়িত্বঃ"
+
+#~ msgid "Educational requirements:"
+#~ msgstr "শিক্ষাগত যোগ্যতাঃ"
+
+#~ msgid "Experience requirements:"
+#~ msgstr "অভিজ্ঞতাঃ"
+
+#~ msgid "Desired Skills:"
+#~ msgstr "দক্ষতাঃ"
+
+#~ msgid "Qualifications:"
+#~ msgstr "যোগ্যতাঃ"
+
+#~ msgid "Company Info"
+#~ msgstr "প্রতিষ্ঠানের তথ্য"
+
+#~ msgid " Job Info"
+#~ msgstr "কাজের তথ্য"
+
+#~ msgid "Salary Min, ex: 100"
+#~ msgstr "সর্বনিম্ন বেতন, উদাঃ ১০০"
+
+#~ msgid "Salary Max, ex: 1000"
+#~ msgstr "সর্বোচ্ছ বেতন, উদাঃ ১২০০"
+
+#~ msgid "Application Info"
+#~ msgstr "আবেদন তথ্য"
+
+#~ msgid "From Email Address"
+#~ msgstr "ইমেইল এড্রেস হতে"
+
+#~ msgid " - Job Importer"
+#~ msgstr "জব ইম্পোর্টার"
+
+#~ msgid "welcome"
+#~ msgstr "স্বাগতম"
+
+#~ msgid "Options Saved"
+#~ msgstr "অপশন সংরক্ষন হয়েছে"
+
+#~ msgid "Page Created."
+#~ msgstr "পেজ গুলো তৈরী হয়েছে"
+
+#~ msgid "Permissions Saved."
+#~ msgstr "অনুমতি সমুহ সংরক্ষন করা হয়েছে"
+
+#~ msgid "Job Posting Saved."
+#~ msgstr "কাজের তথ্য সংরক্ষন হয়েছে"
+
+#~ msgid "Changelog"
+#~ msgstr "পরিবর্তন সমুহ"
+
+#~ msgid "Step 1: Save Options"
+#~ msgstr "ধাপ ১ - সাধারন অপশন"
+
+#~ msgid "#General Options"
+#~ msgstr "# সাধারন অপশন"
+
+#~ msgid "#Create Pages"
+#~ msgstr "পেজ তৈরী করুন"
+
+#~ msgid "Step 2: Create Pages"
+#~ msgstr "ধাপ ২ - পেজ তৈরী করুন"
+
+#~ msgid "#Save Permissions"
+#~ msgstr "# অনুমতি সমুহ"
+
+#~ msgid "Step 3: Save Permissions"
+#~ msgstr "ধাপ ৩ - অনুমতি সমুহ"
+
+#~ msgid "#Job Posting"
+#~ msgstr "# কাজের তথ্য"
+
+#~ msgid "Step 4: Job Posting"
+#~ msgstr "ধাপ ৪- কাজে তথ্য"
+
+#~ msgid "Please login to see your job list."
+#~ msgstr "কাজের লিস্ট দেখতে দয়া করে লগিন করুন"
+
+#~ msgid "Field Editor"
+#~ msgstr "ফিল্ড সম্পানা"
+
+#~ msgid "Short Description"
+#~ msgstr "সংক্ষিপ্ত বর্ননা"
+
+#~ msgid "Job short content"
+#~ msgstr "কাজের সংক্ষিপ্ত বর্ননা"
+
+#~ msgid ""
+#~ "reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
+#~ "\">google.com/reCAPTCHA</a> and register your site to get secret key."
+#~ msgstr "রিক্যাপচা গোপন কী"
+
+#~ msgid "Something error"
+#~ msgstr "সমস্যা হচ্ছে"
+
+#~ msgid "Job Content"
+#~ msgstr "জব বর্ননা"
+
+#~ msgid "Upload"
+#~ msgstr "আপলোড"
+
+#~ msgid "loading"
+#~ msgstr "লোড হচ্ছে"

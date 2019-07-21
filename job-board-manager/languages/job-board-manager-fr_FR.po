@@ -1,0 +1,1934 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Job Board Manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-27 11:55+0600\n"
+"PO-Revision-Date: 2017-11-27 11:55+0600\n"
+"Last-Translator: Amaury <amaury.bargibant@premiumpeers.com>\n"
+"Language-Team: French (France)\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-SearchPath-1: templates\n"
+
+#: includes/class-emails.php:67
+msgid "New Job Submitted"
+msgstr "Nouvelle mission publiée"
+
+#: includes/class-emails.php:68
+msgid "Notification email for admin when user submitted job."
+msgstr ""
+"Notifier l'administrateur par email lorsqu'un un utilisateur soumet une "
+"mission"
+
+#: includes/class-emails.php:69
+msgid "New Job Submitted - {site_url}"
+msgstr "Nouvelle mission envoyée"
+
+#: includes/class-emails.php:77
+msgid "New Job Published"
+msgstr "Nouvelle mission publiée"
+
+#: includes/class-emails.php:78
+msgid "Notification email for admin when someone published job."
+msgstr ""
+"Notifier l'administrateur par email lorsque quelqu'un mission est soumise."
+
+#: includes/class-emails.php:79
+msgid "New Job Published - {site_url}"
+msgstr "Nouvelle mission publiée"
+
+#: includes/class-emails.php:87
+msgid "New Job Approved"
+msgstr "Nouvelle mission approuvée"
+
+#: includes/class-emails.php:88
+msgid "Notification email for job poster when admin published job."
+msgstr "Notifier par email lorsqu'un administrateur publie une mission"
+
+#: includes/class-emails.php:89
+msgid "New Job Approved - {site_url}"
+msgstr "Nouvelle mission approuvée"
+
+#: includes/class-emails.php:119
+msgid "Site Parameters"
+msgstr "Paramètres du site"
+
+#: includes/class-emails.php:124
+msgid "Users Parameters"
+msgstr "Paramètres utilisateurs"
+
+#: includes/class-emails.php:129
+msgid "Job Parameters"
+msgstr "Paramètres des missions"
+
+#: includes/class-emails.php:134
+msgid "Job application"
+msgstr "Candidatures"
+
+#: includes/class-functions.php:25
+msgid "Job type"
+msgstr ""
+
+#: includes/class-functions.php:26 includes/class-functions.php:318
+msgid "Job status"
+msgstr "Statut de la mission"
+
+#: includes/class-functions.php:27 includes/class-functions.php:493
+#: includes/functions/functions.php:184
+#: templates/job-archive/job-archive.php:349
+#: templates/job-archive/search.php:44 templates/job-list.php:218
+msgid "Location"
+msgstr "Localisation"
+
+#: includes/class-functions.php:28 includes/class-functions.php:467
+#: includes/functions/functions.php:185
+#: templates/job-archive/job-archive.php:350 templates/job-list.php:219
+msgid "Company name"
+msgstr "Nom de la société "
+
+#: includes/class-functions.php:29
+msgid "Total vacancies"
+msgstr ""
+
+#: includes/class-functions.php:30
+msgid "Expire date"
+msgstr ""
+
+#: includes/class-functions.php:31 templates/job-archive/job-archive.php:353
+msgid "View count"
+msgstr "Voir"
+
+#: includes/class-functions.php:51
+msgid "Freelance"
+msgstr "Freelance"
+
+#: includes/class-functions.php:51
+msgid "Full Time"
+msgstr "Temps plein"
+
+#: includes/class-functions.php:51
+msgid "Internship"
+msgstr "Interne"
+
+#: includes/class-functions.php:51
+msgid "Part Time"
+msgstr "Mi-temps"
+
+#: includes/class-functions.php:51
+msgid "Temporary"
+msgstr "Temporaire"
+
+#: includes/class-functions.php:62
+msgid "Open"
+msgstr "Ouvert"
+
+#: includes/class-functions.php:62
+msgid "Closed"
+msgstr "Fermé"
+
+#: includes/class-functions.php:62
+msgid "Filled"
+msgstr "Complet"
+
+#: includes/class-functions.php:62
+msgid "Re-Open"
+msgstr "Réouvert"
+
+#: includes/class-functions.php:62
+msgid "Expired"
+msgstr "Expiré"
+
+#: includes/class-functions.php:72
+msgid "Any"
+msgstr "Tous"
+
+#: includes/class-functions.php:72
+msgid "Entry level"
+msgstr "Niveau minimum"
+
+#: includes/class-functions.php:72
+msgid "Mid level"
+msgstr "Niveau moyen"
+
+#: includes/class-functions.php:72
+msgid "Top level"
+msgstr "Niveau élevé"
+
+#: includes/class-functions.php:82
+msgid "Negotiable"
+msgstr "Négociable"
+
+#: includes/class-functions.php:82
+msgid "Fixed"
+msgstr "Fixe"
+
+#: includes/class-functions.php:82
+msgid "Min-Max"
+msgstr "Min-Max"
+
+#: includes/class-functions.php:91
+msgid "All"
+msgstr "Tous"
+
+#: includes/class-functions.php:91
+msgid "1,000-10,000"
+msgstr "1 000-10 000"
+
+#: includes/class-functions.php:91
+msgid "10,001-20,000"
+msgstr "10 001-20 000"
+
+#: includes/class-functions.php:91
+msgid "20,001-30,000"
+msgstr "20 001-30 000"
+
+#: includes/class-functions.php:91
+msgid "30,001-50,000"
+msgstr "30 001-50 000"
+
+#: includes/class-functions.php:91
+msgid "50,001-80,000"
+msgstr "50 001-80 000"
+
+#: includes/class-functions.php:91
+msgid "80,001-1,00,000"
+msgstr "80 001-100 000+"
+
+#: includes/class-functions.php:103 includes/functions/functions.php:1088
+msgid "None"
+msgstr "Aucun"
+
+#: includes/class-functions.php:103
+msgid "Direct Email"
+msgstr "Email direct"
+
+#: includes/class-functions.php:135 includes/class-post-types.php:26
+msgid "Jobs"
+msgstr "Missions"
+
+#: includes/class-functions.php:154
+#: includes/shortcodes/class-shortcodes-dashboard.php:49
+#: templates/my-jobs/my-jobs.php:20
+msgid "My Jobs"
+msgstr "Mes missions"
+
+#: includes/class-functions.php:178
+msgid "Job Board Manager - How to Install and Settings."
+msgstr "Job Board Manager - Comment installer et configurer"
+
+#: includes/class-functions.php:184
+msgid "Job Board Manager - Create a job."
+msgstr "Job Board Manager - Créer une mission"
+
+#: includes/class-functions.php:203
+msgid "Core"
+msgstr "Core"
+
+#: includes/class-functions.php:207
+msgid "Single job page showing 404 error"
+msgstr "La page de mission montre une erreur 404"
+
+#: includes/class-functions.php:213
+msgid "Single job page style broken, what should i do ?"
+msgstr "Page de mission toujours cassée. Qu'est-ce que je dois faire ?"
+
+#: includes/class-functions.php:218
+msgid "How can i change slug for Job ?"
+msgstr "Comment changer le permalien d'une mission ?"
+
+#: includes/class-functions.php:223
+msgid "How can remove any tabs on job submission form ?"
+msgstr ""
+"Comment je peux supprimer les onglets du formulaire de soumission de "
+"mission ?"
+
+#: includes/class-functions.php:229
+msgid "Remove input fields on job submission form."
+msgstr "Supprimer des champs de saisie du formulaire de soumission de mission"
+
+#: includes/class-functions.php:235
+msgid "How to add/remove job types"
+msgstr "Comment ajouter/retirer des types de mission"
+
+#: includes/class-functions.php:273
+msgid "Job Archive"
+msgstr "Archive des missions"
+
+#: includes/class-functions.php:279
+msgid "Job Submit"
+msgstr "Soumettre une mission"
+
+#: includes/class-functions.php:286
+msgid "Job Edit"
+msgstr "Editer une mission"
+
+#: includes/class-functions.php:293
+msgid "Job Dashboard"
+msgstr ""
+
+#: includes/class-functions.php:319
+msgid "Select job status."
+msgstr "Sélectionnez un statut"
+
+#: includes/class-functions.php:330
+msgid "Expiry date"
+msgstr "Date d'expiration"
+
+#: includes/class-functions.php:331
+msgid "Job expiry date"
+msgstr "date d'expiration de la mission"
+
+#: includes/class-functions.php:343
+msgid "Featured job"
+msgstr "Mission mise en avant"
+
+#: includes/class-functions.php:344
+msgid "Want to get featured listing ?"
+msgstr "Voulez vous mettre cette mission en avant ?"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:107
+msgid "No"
+msgstr "Non"
+
+#: includes/class-functions.php:347 includes/class-functions.php:1052
+#: includes/class-functions.php:1078 includes/class-functions.php:1092
+#: includes/class-functions.php:1170 includes/class-functions.php:1184
+#: includes/class-functions.php:1198 includes/class-functions.php:1260
+#: includes/class-functions.php:1274 includes/menu/settings.php:153
+#: includes/menu/settings.php:163 includes/menu/settings.php:185
+#: includes/menu/settings.php:195 includes/menu/settings.php:268
+#: includes/menu/settings.php:278 includes/menu/settings.php:287
+#: includes/menu/settings.php:334 includes/menu/settings.php:343
+#: includes/menu/welcome.php:115 templates/my-jobs/my-jobs.php:104
+msgid "Yes"
+msgstr "Oui"
+
+#: includes/class-functions.php:363
+msgid "Write awesome title here"
+msgstr "Entrez un titre ici"
+
+#: includes/class-functions.php:364
+msgid "Job Title"
+msgstr "Titre de la mission"
+
+#: includes/class-functions.php:365
+msgid "Job title here"
+msgstr "Entrez le titre de la mission ici"
+
+#: includes/class-functions.php:377
+msgid "Job Descriptions"
+msgstr "Description de la mission"
+
+#: includes/class-functions.php:378
+msgid "Write job descriptions here"
+msgstr "Ecrivez la description de la mission ici"
+
+#: includes/class-functions.php:392
+msgid "Thumbnail"
+msgstr "Miniature"
+
+#: includes/class-functions.php:393
+msgid "Job Featured Image, uplaod single image only"
+msgstr "Image de mission mise en avant, uploadez une seule image"
+
+#: includes/class-functions.php:410 includes/class-post-types.php:76
+msgid "Job Category"
+msgstr "Catégorie de mission"
+
+#: includes/class-functions.php:411
+msgid "Select Job Category."
+msgstr "Sélectionnez une catégorie de mission"
+
+#: includes/class-functions.php:443
+msgid "reCaptcha"
+msgstr "reCaptcha"
+
+#: includes/class-functions.php:444
+msgid "reCaptcha test."
+msgstr "reCaptcha test."
+
+#: includes/class-functions.php:457
+msgid "Company info"
+msgstr "Information sur la société"
+
+#: includes/class-functions.php:458
+msgid "Company Information details"
+msgstr "Détails de la société"
+
+#: includes/class-functions.php:468
+msgid "Company name, ex: Google Inc."
+msgstr "Nom de la société , ex: Google Inc."
+
+#: includes/class-functions.php:495
+msgid "Job location, ex: California (City or States)"
+msgstr "Lieux de la mission, ex: Californie (Ville ou Département)"
+
+#: includes/class-functions.php:506
+msgid "Address"
+msgstr "Adresse"
+
+#: includes/class-functions.php:507
+msgid "Full address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+msgstr ""
+"Adresse complète, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+
+#: includes/class-functions.php:532
+msgid "Company website"
+msgstr "Site web de la société"
+
+#: includes/class-functions.php:533
+msgid "Company website, ex: http://example.com"
+msgstr "Site web de la société, ex http://exemple.com"
+
+#: includes/class-functions.php:544
+msgid "Company logo"
+msgstr "Logo de la société"
+
+#: includes/class-functions.php:545
+msgid "Upload company logo."
+msgstr "Envoyer le logo de la société"
+
+#: includes/class-functions.php:557
+msgid "Job link"
+msgstr "Lien vers la mission"
+
+#: includes/class-functions.php:558
+msgid ""
+"Job link at company website, ex: http://example.com/jobs/developer-wanted"
+msgstr ""
+"Lien vers la mission du site de la société, ex : http://example.com/jobs/"
+"developer-wanted"
+
+#: includes/class-functions.php:572
+msgid " Job info"
+msgstr "Information sur la mission"
+
+#: includes/class-functions.php:573
+msgid "Job Information details."
+msgstr "Détail de la mission"
+
+#: includes/class-functions.php:664
+msgid "No of vacancies"
+msgstr "Nb de postes disponibles"
+
+#: includes/class-functions.php:665
+msgid "Total number of vacancies."
+msgstr "Nombre total de postes disponibles."
+
+#: includes/class-functions.php:702
+msgid "Job type ?"
+msgstr "Type de mission"
+
+#: includes/class-functions.php:703
+msgid "Choose job type."
+msgstr "Choisissez votre type de mission"
+
+#: includes/class-functions.php:714
+msgid "Job level ?"
+msgstr "Niveau de la mission"
+
+#: includes/class-functions.php:715
+msgid "Choose job level"
+msgstr "Choisissez le niveau de la mission"
+
+#: includes/class-functions.php:726
+msgid "Years of experience ?"
+msgstr "Années d'experience ?"
+
+#: includes/class-functions.php:727
+msgid "Years of experience must have."
+msgstr "Années d'expérience minimum."
+
+#: includes/class-functions.php:781
+msgid "Salary info"
+msgstr "Information sur la rémunération"
+
+#: includes/class-functions.php:782
+msgid "Salary Information details."
+msgstr "Détails des informations sur la rémunération"
+
+#: includes/class-functions.php:791
+msgid "Salary range ?"
+msgstr "Fourchette de rémunération ?"
+
+#: includes/class-functions.php:792
+msgid "Salary range"
+msgstr "Fourchette de rémunération"
+
+#: includes/class-functions.php:804
+msgid "Salary fixed ?"
+msgstr "Rémunération fixe ?"
+
+#: includes/class-functions.php:805
+msgid "Salary fixed, ex: 1200"
+msgstr "Rémunération fixe, ex: 1200"
+
+#: includes/class-functions.php:816
+msgid "Salary minimum ?"
+msgstr "Rémunération minimum ?"
+
+#: includes/class-functions.php:817
+msgid "Salary minimum, ex: 100"
+msgstr "Rémunération minimum, ex: 100"
+
+#: includes/class-functions.php:827
+msgid "Salary maximum ?"
+msgstr "Rémunération maximum ?"
+
+#: includes/class-functions.php:828
+msgid "Salary maximum, ex: 1000"
+msgstr "Rémunération maximum, ex: 1000"
+
+#: includes/class-functions.php:838 includes/class-functions.php:1139
+#: includes/menu/settings.php:245
+msgid "Salary currency ?"
+msgstr "Devise de la rémunération ?"
+
+#: includes/class-functions.php:839
+msgid "Salary currency(Optional)"
+msgstr "Devise de la rémunération (optionnel)"
+
+#: includes/class-functions.php:857
+msgid "Application info"
+msgstr "Information de candidature"
+
+#: includes/class-functions.php:858
+msgid "Application Information details."
+msgstr "Détails des informations de candidature"
+
+#: includes/class-functions.php:867
+msgid "How to apply ?"
+msgstr "Comment postuler ?"
+
+#: includes/class-functions.php:868
+msgid "How to apply your job, instruction for applicant ?"
+msgstr "Instruction pour postuler à votre mission ?"
+
+#: includes/class-functions.php:878
+msgid "Contact email ?"
+msgstr "Contact email ?"
+
+#: includes/class-functions.php:879
+msgid "Contact email"
+msgstr "Contact email"
+
+#: includes/class-functions.php:912 includes/menu/settings.php:104
+msgid "Options"
+msgstr "Options"
+
+#: includes/class-functions.php:913
+msgid "General options."
+msgstr "Options générales."
+
+#: includes/class-functions.php:922
+msgid "Post Per Page"
+msgstr "Mission par page"
+
+#: includes/class-functions.php:923
+msgid "Job list post per page."
+msgstr "Liste de mission par page."
+
+#: includes/class-functions.php:935 includes/menu/settings.php:56
+msgid "Excerpt display"
+msgstr "Afficher l'extrait"
+
+#: includes/class-functions.php:936
+msgid "Display short content form following."
+msgstr "Afficher le contenu court du formulaire suivant."
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "From Content"
+msgstr "Depuis le contenu"
+
+#: includes/class-functions.php:939 includes/menu/settings.php:60
+msgid "Short Content"
+msgstr "Description courte"
+
+#: includes/class-functions.php:948
+msgid "Excerpt Word Count"
+msgstr "Nombre de lettre pour l'extrait"
+
+#: includes/class-functions.php:949
+msgid "Excerpt display word count."
+msgstr "Afficher le nombre de lettre de l'extrait"
+
+#: includes/class-functions.php:967
+msgid "pages"
+msgstr "pages"
+
+#: includes/class-functions.php:968
+msgid "Options for pages."
+msgstr "Options des pages."
+
+#: includes/class-functions.php:980
+msgid "Archive Page"
+msgstr "Page d'archive"
+
+#: includes/class-functions.php:981
+msgid "Archive page job list page where placed the short-code [job_list]."
+msgstr ""
+"La page de liste de mission archivée est affiché avec le short-code "
+"[job_list]."
+
+#: includes/class-functions.php:993
+msgid "Job Submit Page"
+msgstr "Page de soumission de mission"
+
+#: includes/class-functions.php:994
+msgid "Job submission page id."
+msgstr "ID de la page de soumission de mission"
+
+#: includes/class-functions.php:1006
+msgid "Job Edit Page"
+msgstr "Page d'édition des missions"
+
+#: includes/class-functions.php:1007
+msgid "Job edit page id."
+msgstr "ID de la page d'édition des missions"
+
+#: includes/class-functions.php:1020
+msgid "My Account Page"
+msgstr "Page \"Mon Compte\""
+
+#: includes/class-functions.php:1021
+msgid "My account page id."
+msgstr "ID de la page \"Mon Compte\""
+
+#: includes/class-functions.php:1034 includes/menu/settings.php:149
+msgid "Registration enable ?"
+msgstr "Inscription activée ?"
+
+#: includes/class-functions.php:1035
+msgid "Registration enable on my account page."
+msgstr "Inscription activée sur la page \"Mon Compte\""
+
+#: includes/class-functions.php:1048 includes/menu/settings.php:159
+msgid "Login enable ?"
+msgstr "Connexion activée ?"
+
+#: includes/class-functions.php:1049
+msgid "Login enable on my account page."
+msgstr "Connexion activée sur la page \"Mon Compte\""
+
+#: includes/class-functions.php:1064 includes/menu/settings.php:306
+#: includes/menu/welcome.php:143
+msgid "Job Post"
+msgstr "Poster une mission"
+
+#: includes/class-functions.php:1065
+msgid "Options for Job Post."
+msgstr "Option pour poster une mission."
+
+#: includes/class-functions.php:1074
+msgid "Account Required ?"
+msgstr "Compte requis ?"
+
+#: includes/class-functions.php:1075 includes/menu/settings.php:182
+msgid "Account required to post job."
+msgstr "Compte requis pour poster une mission."
+
+#: includes/class-functions.php:1088 includes/menu/settings.php:191
+msgid "reCAPTCHA enable ?"
+msgstr "reCAPTCHA activé ?"
+
+#: includes/class-functions.php:1089 includes/menu/settings.php:192
+msgid "Enable reCAPTCHA to protect spam."
+msgstr "Activer reCAPTCHA pour protéger des spam."
+
+#: includes/class-functions.php:1101 includes/menu/settings.php:200
+msgid "reCAPTCHA site key"
+msgstr "Clé reCAPTCHA"
+
+#: includes/class-functions.php:1102 includes/menu/settings.php:201
+msgid ""
+"reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get site key."
+msgstr ""
+"Clé reCAPTCHA, s'il vous plait rendez-vous sur <a href=\"https://www.google."
+"com/recaptcha\">google.com/reCAPTCHA</a> et enregistrez votre site pour "
+"recevoir votre clé."
+
+#: includes/class-functions.php:1113 includes/menu/settings.php:208
+msgid "reCAPTCHA secret key"
+msgstr "reCAPTCHA clé secrète"
+
+#: includes/class-functions.php:1114 includes/menu/settings.php:209
+msgid ""
+"reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a> and register your site to get secret key."
+msgstr ""
+"reCAPTCHA clé secrète, s'il vous plait rendez-vous sur <a href=\"https://www."
+"google.com/recaptcha\">google.com/reCAPTCHA</a> et enregistrez votre site "
+"pour obtenir votre clé secrète"
+
+#: includes/class-functions.php:1125
+msgid "New Submitted Job Status ?"
+msgstr "Statut des nouvelles missions ?"
+
+#: includes/class-functions.php:1126
+msgid "Submitted job status."
+msgstr "Statut des missions soumises"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Draft"
+msgstr "Brouillon"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Pending"
+msgstr "En attente"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Published"
+msgstr "Publiée"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+#: includes/menu/welcome.php:128
+msgid "Private"
+msgstr "Privée"
+
+#: includes/class-functions.php:1129 includes/menu/settings.php:220
+msgid "Trash"
+msgstr "Corbeille"
+
+#: includes/class-functions.php:1136
+msgid "$"
+msgstr "$"
+
+#: includes/class-functions.php:1140 includes/menu/settings.php:246
+msgid "Salary currency display on job page."
+msgstr "Afficher la devise de la rémunération sur la page."
+
+#: includes/class-functions.php:1152
+msgid "Apply Method ?"
+msgstr "Mode de candidature ?"
+
+#: includes/class-functions.php:1153
+msgid "Enable apply methods."
+msgstr "Activer le mode de candidature."
+
+#: includes/class-functions.php:1166 includes/menu/settings.php:264
+msgid "Can user delete jobs ?"
+msgstr "L'utilisateur peut supprimer des missions ?"
+
+#: includes/class-functions.php:1167
+msgid "Can user delete their own jobs."
+msgstr "L'utilisateur peut supprimer ses propres missions."
+
+#: includes/class-functions.php:1180
+msgid "Can user edit published jobs ?"
+msgstr "L'utilisateur peut éditer des missions publiées ?"
+
+#: includes/class-functions.php:1181
+msgid "Can user edit published jobs."
+msgstr "L'utilisateur peut éditer des missions publiées."
+
+#: includes/class-functions.php:1194
+msgid "Display preview after submitted job ?"
+msgstr "Afficher une prévisualisation après l'envoi de la mission ?"
+
+#: includes/class-functions.php:1195 includes/menu/settings.php:284
+msgid "User can see the job preview after submitted."
+msgstr "L'utilisateur peut voir la prévisualisation après avoir envoyé."
+
+#: includes/class-functions.php:1216 includes/menu/settings.php:353
+msgid "Notification"
+msgstr "Notification"
+
+#: includes/class-functions.php:1217
+msgid "Options for Notification."
+msgstr "Options de notification."
+
+#: includes/class-functions.php:1226
+msgid "Email Logo URL"
+msgstr "URL du logo de l'email"
+
+#: includes/class-functions.php:1227 includes/menu/settings.php:315
+msgid "Email logo URL to display on mail."
+msgstr "URL du logo affiché dans l'email."
+
+#: includes/class-functions.php:1240
+msgid "From Email"
+msgstr "Expéditeur :"
+
+#: includes/class-functions.php:1241
+msgid "From Email Address."
+msgstr "Envoyé depuis l'email."
+
+#: includes/class-functions.php:1256
+msgid "Notify admin new job submit ?"
+msgstr "Notifier l'administrateur lors de la soumission d'une mission ?"
+
+#: includes/class-functions.php:1257
+msgid "Notify admin when new job submitted."
+msgstr "Notifier l'administrateur lors de la soumission d'une mission."
+
+#: includes/class-functions.php:1270 includes/menu/settings.php:339
+msgid "Notify email new job publish ?"
+msgstr ""
+"Envoyer une notification par email lors de la publication d'une mission ?"
+
+#: includes/class-functions.php:1271 includes/menu/settings.php:340
+msgid "Notify email to admin when new job published."
+msgstr "L'administrateur est notifié par email lorsqu'une mission est publiée."
+
+#: includes/class-functions.php:1288 includes/menu/settings.php:386
+msgid "Style"
+msgstr "Style"
+
+#: includes/class-functions.php:1289
+msgid "Options for style."
+msgstr "Options de style."
+
+#: includes/class-functions.php:1298
+msgid "Featured Job Background Color ?"
+msgstr "Couleur de fond des missions mises en avant ?"
+
+#: includes/class-functions.php:1299 includes/menu/settings.php:360
+msgid "Featured job area background color."
+msgstr "Couleur de fond des missions mises en avant."
+
+#: includes/class-functions.php:1312
+msgid "Job Type Background Color ?"
+msgstr "Couleur de fond des types de mission ?"
+
+#: includes/class-functions.php:1313
+msgid "Job types area background color."
+msgstr "Couleur de fond des types de mission."
+
+#: includes/class-functions.php:1325
+msgid "Job Status Background Color ?"
+msgstr "Couleur de fond des statut de mission ?"
+
+#: includes/class-functions.php:1326
+msgid "Job status area background color."
+msgstr "Couleur de fond des types de mission."
+
+#: includes/class-import.php:45
+msgid "Is imported ?"
+msgstr "Est importé ?"
+
+#: includes/class-import.php:46
+msgid "Is imported"
+msgstr "Est importé"
+
+#: includes/class-import.php:55
+msgid "Import source ?"
+msgstr "Source d'importation ?"
+
+#: includes/class-import.php:56
+msgid "Import source"
+msgstr "Source d'importation"
+
+#: includes/class-import.php:65
+msgid "Import source jobid ?"
+msgstr "Importer la source jobid ?"
+
+#: includes/class-import.php:66
+msgid "Import source jobid"
+msgstr "Importer la source jobid"
+
+#: includes/class-post-meta.php:350
+#, fuzzy
+#| msgid "job Data"
+msgid "job data"
+msgstr "Données des missions"
+
+#: includes/class-post-meta.php:361
+#, fuzzy
+#| msgid "Job Edit"
+msgid "Job Admin"
+msgstr "Editer une mission"
+
+#: includes/class-post-types.php:25
+msgid "Job"
+msgstr "Mission"
+
+#: includes/class-post-types.php:35 includes/class-post-types.php:91
+#: includes/class-post-types.php:131
+#, php-format
+msgid "All %s"
+msgstr "Toutes les %s"
+
+#: includes/class-post-types.php:36 includes/class-post-types.php:37
+#, php-format
+msgid "Add %s"
+msgstr "Ajouter une %s"
+
+#: includes/class-post-types.php:38 templates/my-jobs/my-jobs.php:136
+msgid "Edit"
+msgstr "Editer"
+
+#: includes/class-post-types.php:39 includes/class-post-types.php:94
+#: includes/class-post-types.php:134
+#, php-format
+msgid "Edit %s"
+msgstr "Editer %s"
+
+#: includes/class-post-types.php:40
+#, php-format
+msgid "New %s"
+msgstr "Nouveau %s"
+
+#: includes/class-post-types.php:41 includes/class-post-types.php:42
+#, php-format
+msgid "View %s"
+msgstr "Voir %s"
+
+#: includes/class-post-types.php:43 includes/class-post-types.php:90
+#: includes/class-post-types.php:130
+#, php-format
+msgid "Search %s"
+msgstr "Rechercher %s"
+
+#: includes/class-post-types.php:44
+#, php-format
+msgid "No %s found"
+msgstr "Aucune %s trouvé"
+
+#: includes/class-post-types.php:45
+#, php-format
+msgid "No %s found in trash"
+msgstr "Aucune %s trouvé dans la corbeille"
+
+#: includes/class-post-types.php:46 includes/class-post-types.php:92
+#: includes/class-post-types.php:132
+#, php-format
+msgid "Parent %s"
+msgstr "Parent %s"
+
+#: includes/class-post-types.php:48
+#, php-format
+msgid "This is where you can create and manage %s."
+msgstr "C'est ici que vous pouvez créé et manager %s"
+
+#: includes/class-post-types.php:77
+msgid "Job Categories"
+msgstr "Catégories de mission"
+
+#: includes/class-post-types.php:93 includes/class-post-types.php:133
+#, php-format
+msgid "Parent %s:"
+msgstr "Parent %s:"
+
+#: includes/class-post-types.php:95 includes/class-post-types.php:135
+#, php-format
+msgid "Update %s"
+msgstr "Mettre à jour %s"
+
+#: includes/class-post-types.php:96 includes/class-post-types.php:136
+#, php-format
+msgid "Add New %s"
+msgstr "Ajouter nouveau %s"
+
+#: includes/class-post-types.php:97 includes/class-post-types.php:137
+#, php-format
+msgid "New %s Name"
+msgstr "Nouveau %s nom"
+
+#: includes/class-post-types.php:116
+msgid "Job Tag"
+msgstr "Tag de mission"
+
+#: includes/class-post-types.php:117
+msgid "Job Tags"
+msgstr "Tags de mission"
+
+#: includes/class-settings.php:24
+msgid "Settings"
+msgstr "Paramètres"
+
+#: includes/class-settings.php:25
+msgid "Reports"
+msgstr "Rapports"
+
+#: includes/class-settings.php:26
+msgid "Help"
+msgstr "Aide"
+
+#: includes/class-settings.php:27
+msgid "Addons"
+msgstr "Addons"
+
+#: includes/class-settings.php:28
+msgid "Emails Templates"
+msgstr "Templates d'emails"
+
+#: includes/functions/account-registration.php:48
+msgid "Username"
+msgstr "Nom de compte"
+
+#: includes/functions/account-registration.php:54
+#: includes/shortcodes/class-shortcodes-dashboard.php:193
+#: templates/account/my-account.php:66
+msgid "Password"
+msgstr "Mot de passe"
+
+#: includes/functions/account-registration.php:60
+msgid "Email"
+msgstr "Email"
+
+#: includes/functions/account-registration.php:75
+msgid "Required form field is missing"
+msgstr "Requis pour les champs manquants"
+
+#: includes/functions/account-registration.php:79
+msgid "Username too short. At least 4 characters is required"
+msgstr "Nom de compte trop court. Au moins 4 caractères sont requis"
+
+#: includes/functions/account-registration.php:83
+msgid "Sorry, that username already exists!"
+msgstr "Désolé, ce nom de compte existe déjà !"
+
+#: includes/functions/account-registration.php:86
+msgid "Sorry, the username you entered is not valid"
+msgstr "Désolé, le nom de compte que vous avez entré n'est pas valide."
+
+#: includes/functions/account-registration.php:90
+msgid "Password length must be greater than 5"
+msgstr "La taille du mot de passe doit être supérieure à 5 caractères."
+
+#: includes/functions/account-registration.php:94
+msgid "Email is not valid"
+msgstr "Adresse email non valide"
+
+#: includes/functions/account-registration.php:98
+msgid "Email Already in use"
+msgstr "Adresse email déjà utilisée"
+
+#: includes/functions/account-registration.php:107
+msgid "ERROR"
+msgstr "ERREUR"
+
+#: includes/functions/account-registration.php:125
+msgid "Registration complete."
+msgstr "Enregistrement complété."
+
+#: includes/functions/functions-reports.php:93
+msgid "Job posting last 7 days."
+msgstr "Missions postées ces 7 derniers jours."
+
+#: includes/functions/functions-reports.php:229
+msgid "Custom:"
+msgstr "Personnalisé :"
+
+#: includes/functions/functions-reports.php:237
+msgid "Go"
+msgstr "Envoyer"
+
+#: includes/functions/functions.php:181
+#: templates/job-archive/job-archive.php:346 templates/job-list.php:215
+msgid "Job Type"
+msgstr "Type de mission"
+
+#: includes/functions/functions.php:182
+#: templates/job-archive/job-archive.php:347 templates/job-list.php:216
+msgid "Job Status"
+msgstr "Statut de la mission"
+
+#: includes/functions/functions.php:183
+#: templates/job-archive/job-archive.php:348 templates/job-list.php:217
+msgid "Category"
+msgstr "Catégorie"
+
+#: includes/functions/functions.php:186
+#: templates/job-archive/job-archive.php:351 templates/job-list.php:220
+msgid "Total Vacancies"
+msgstr "Places disponibles"
+
+#: includes/functions/functions.php:187
+#: templates/job-archive/job-archive.php:352 templates/job-list.php:221
+msgid "Expire Date"
+msgstr "Date d'expiration"
+
+#: includes/functions/functions.php:607
+msgid "You are not authorized"
+msgstr "Vous n'êtes pas autorisé"
+
+#: includes/functions/functions.php:671
+#: templates/job-single/job-single-sidebar.php:193
+msgid "How to Apply ?<br> "
+msgstr "Comment postuler ?<br>"
+
+#: includes/functions/functions.php:675
+#: templates/job-single/job-single-sidebar.php:197
+msgid "Apply via email :"
+msgstr "Postuler par email :"
+
+#: includes/functions/functions.php:714
+#: templates/job-single/job-single-sidebar.php:238
+msgid "Apply on this job"
+msgstr "Postuler pour cette mission"
+
+#: includes/functions/functions.php:847
+msgid "Update Done"
+msgstr "Mise à jour effectuée"
+
+#: includes/functions/functions.php:868
+msgid "Reset Done"
+msgstr "Réinitialisation effectuée"
+
+#: includes/functions/functions.php:890 includes/functions/functions.php:915
+msgid "You are not authorized to delete this job."
+msgstr "Vous n'êtes pas autorisé à supprimer cette missions."
+
+#: includes/functions/functions.php:906
+msgid "Job Deleted."
+msgstr "Mission supprimée."
+
+#: includes/functions/functions.php:909
+msgid "Something going wrong."
+msgstr "Une erreur s'est produite."
+
+#: includes/menu/addons.php:180
+msgid "Version:"
+msgstr "Version :"
+
+#: includes/menu/addons.php:190
+msgid "Price:"
+msgstr "Prix :"
+
+#: includes/menu/addons.php:191
+msgid "Download"
+msgstr "Télécharger"
+
+#: includes/menu/addons.php:223
+msgid " - Addons"
+msgstr "- Addons"
+
+#: includes/menu/emails-templates.php:109
+msgid "Enable ?"
+msgstr "Activé ?"
+
+#: includes/menu/emails-templates.php:132
+msgid "Email To:"
+msgstr "Email à :"
+
+#: includes/menu/emails-templates.php:137
+msgid "Email from name:"
+msgstr "Email de (nom) :"
+
+#: includes/menu/emails-templates.php:141
+msgid "Email from:"
+msgstr "Email de :"
+
+#: includes/menu/emails-templates.php:150
+msgid "Email Subject:"
+msgstr "Objet de l'email :"
+
+#: includes/menu/emails-templates.php:159
+msgid "Email Body:"
+msgstr "Message de l'email :"
+
+#: includes/menu/emails-templates.php:197 includes/menu/settings.php:738
+msgid "Changes Saved."
+msgstr "Changement sauvegardés."
+
+#: includes/menu/emails-templates.php:212
+msgid " - Emails Templates"
+msgstr "- Templates d'emails"
+
+#: includes/menu/emails-templates.php:224 includes/menu/settings.php:778
+msgid "Save Changes"
+msgstr "Sauvegarder les changements"
+
+#: includes/menu/emails-templates.php:225
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: includes/menu/help.php:27
+msgid "Ask any question"
+msgstr "Posez vos questions"
+
+#: includes/menu/help.php:29
+msgid ""
+"Please feel free to contact for any question, ask via our forum <a href="
+"\"http://www.pickplugins.com/questions/\">http://www.pickplugins.com/"
+"questions/</a>"
+msgstr ""
+"N'hésitez pas à nous contacter pour toutes questions via notre forum <a href="
+"\"http://www.pickplugins.com/questions/\">http://www.pickplugins.com/"
+"questions/</a>"
+
+#: includes/menu/help.php:35
+msgid "Watch video tutorial"
+msgstr "Regarder le tutoriel vidéo"
+
+#: includes/menu/help.php:61
+msgid "FAQ"
+msgstr "FAQ"
+
+#: includes/menu/settings.php:48
+msgid "Post per page"
+msgstr "Post par page"
+
+#: includes/menu/settings.php:49
+msgid "Job list post per page"
+msgstr "Liste de mission par page"
+
+#: includes/menu/settings.php:57
+msgid "Display short content form following"
+msgstr "Afficher le contenu court du formulaire suivant"
+
+#: includes/menu/settings.php:65
+msgid "Excerpt word count"
+msgstr "Nombre de caractères de l'extrait"
+
+#: includes/menu/settings.php:66
+msgid "Excerpt display word count"
+msgstr "Afficher le nombre de caractère de l'extrait"
+
+#: includes/menu/settings.php:74
+msgid "Archive load style"
+msgstr "Style de chargement de l'archive"
+
+#: includes/menu/settings.php:75
+msgid "Set load more style ajax or pagination"
+msgstr "Définir le style du \"afficher plus\", ajax ou pagination"
+
+#: includes/menu/settings.php:78 templates/job-edit.php:585
+#: templates/job-submit.php:526
+msgid "Pagination"
+msgstr "Pagination"
+
+#: includes/menu/settings.php:78 templates/job-archive/pagination.php:35
+msgid "Load more"
+msgstr "Afficher plus"
+
+#: includes/menu/settings.php:112
+msgid "Archive page"
+msgstr "Page d'archive"
+
+#: includes/menu/settings.php:113
+msgid "Archive page job list page where placed the short-code [job_list])"
+msgstr ""
+"La page de liste de mission archivée est affiché avec le short-code "
+"[job_list]."
+
+#: includes/menu/settings.php:120
+msgid "Job submit page"
+msgstr "Page de soumission de mission"
+
+#: includes/menu/settings.php:121
+msgid "Job submission page id"
+msgstr "ID de la page de soumission de mission"
+
+#: includes/menu/settings.php:129
+msgid "Job edit page"
+msgstr "Page d'édition de mission"
+
+#: includes/menu/settings.php:130
+msgid "Job edit page id"
+msgstr "ID de la page d'édition de mission"
+
+#: includes/menu/settings.php:139
+msgid "My account page"
+msgstr "Page \"Mon Compte\""
+
+#: includes/menu/settings.php:140
+msgid "My account page id"
+msgstr "ID de la page \"Mon Compte\""
+
+#: includes/menu/settings.php:150
+msgid "Registration enable on my account page "
+msgstr "Inscription activée sur la page \"Mon Compte\""
+
+#: includes/menu/settings.php:160
+msgid "Login enable on my account page "
+msgstr "Connexion activée sur la page \"Mon Compte\""
+
+#: includes/menu/settings.php:174
+msgid "Pages"
+msgstr "Pages"
+
+#: includes/menu/settings.php:181
+msgid "Account required ?"
+msgstr "Compte requis ?"
+
+#: includes/menu/settings.php:216 includes/menu/welcome.php:125
+msgid "New submitted job status ?"
+msgstr "Statut des nouvelles missions ?"
+
+#: includes/menu/settings.php:217
+msgid "Submitted job status"
+msgstr "Statut des missions soumises."
+
+#: includes/menu/settings.php:254
+msgid "Apply method ?"
+msgstr "Mode de candidature ?"
+
+#: includes/menu/settings.php:255
+msgid "Enable apply methods"
+msgstr "Activer le mode de candidature"
+
+#: includes/menu/settings.php:265
+msgid "Can user delete their own jobs"
+msgstr "L'utilisateur peut supprimer ses propres missions"
+
+#: includes/menu/settings.php:274
+msgid "Can user edit jobs ?"
+msgstr "L'utilisateur peut éditer des missions"
+
+#: includes/menu/settings.php:275
+msgid "Can user edit published jobs"
+msgstr "L'utilisateur peut publier des missions"
+
+#: includes/menu/settings.php:283
+msgid "Redirect preview link after job submit ?"
+msgstr ""
+"Rediriger vers la page de prévisualisation après la soumission d'une "
+"mission ?"
+
+#: includes/menu/settings.php:292
+msgid "Submission type ?"
+msgstr "type de soumission ?"
+
+#: includes/menu/settings.php:293
+msgid "Submission type."
+msgstr "Type de soumission."
+
+#: includes/menu/settings.php:296
+msgid "Step by step"
+msgstr "Etape par étape"
+
+#: includes/menu/settings.php:296
+msgid "Accordion"
+msgstr "Accordéon"
+
+#: includes/menu/settings.php:314
+msgid "Email logo URL"
+msgstr "URL du logo de l'email"
+
+#: includes/menu/settings.php:322
+msgid "From email"
+msgstr "Expéditeur :"
+
+#: includes/menu/settings.php:323
+msgid "From email address"
+msgstr "Envoyé depuis l'email."
+
+#: includes/menu/settings.php:330
+msgid "Notify email new job submit ?"
+msgstr "Notifier par email lorsqu'une nouvelle mission est envoyée ?"
+
+#: includes/menu/settings.php:331
+msgid "Notify admin when new job submitted"
+msgstr "Notifier l'administrateur lorsqu'une nouvelle mission est envoyée ?"
+
+#: includes/menu/settings.php:359
+msgid "Featured job background color ?"
+msgstr "Couleur de fond des missions mises en avant ?"
+
+#: includes/menu/settings.php:367
+msgid "Job type background color ?"
+msgstr "Couleur de fond des types de mission ?"
+
+#: includes/menu/settings.php:368
+msgid "Job types area background color"
+msgstr "Couleur de fond des types de mission"
+
+#: includes/menu/settings.php:376
+msgid "Job status background color ?"
+msgstr "Couleur de fond des statut de mission ?"
+
+#: includes/menu/settings.php:377
+msgid "Job status area background color"
+msgstr "Couleur de fond des statut de mission"
+
+#: includes/menu/settings.php:756
+msgid " Settings"
+msgstr "Paramètres"
+
+#: includes/menu/welcome.php:52
+#, php-format
+msgid "<strong>Welcome to %s</strong> &#8211; Please setup basic settings."
+msgstr ""
+"<strong>Bienvenue à %s</strong> &#8211; Effectuez les paramètres de base "
+"s'il vous plait."
+
+#: includes/menu/welcome.php:54
+msgid "Run Wizard Setup"
+msgstr "Démarrer l'assistant de configuration"
+
+#: includes/menu/welcome.php:55
+msgid "Skip Setup"
+msgstr "Passer la configuration"
+
+#: includes/menu/welcome.php:76
+msgid "General"
+msgstr "Général"
+
+#: includes/menu/welcome.php:84
+msgid "20"
+msgstr "20"
+
+#: includes/menu/welcome.php:85
+msgid "Post per page ?"
+msgstr "Post par page ?"
+
+#: includes/menu/welcome.php:86
+msgid "Post per page on archive page"
+msgstr "Post par page sur la page d'archive"
+
+#: includes/menu/welcome.php:97 includes/menu/welcome.php:110
+#: includes/menu/welcome.php:123 includes/menu/welcome.php:151
+msgid "30"
+msgstr "30"
+
+#: includes/menu/welcome.php:98
+msgid "Excerpt word count ?"
+msgstr "Nombre de mot dans l'extrait"
+
+#: includes/menu/welcome.php:99
+msgid "Excerpt word count on archive page"
+msgstr "Nombre de mots dans l'extrait de la page d'archive."
+
+#: includes/menu/welcome.php:111
+msgid "Account required to post job ?"
+msgstr "Compte requis pour créer une mission ?"
+
+#: includes/menu/welcome.php:112
+msgid "Only logged-in user can post job"
+msgstr "Seuls les utilisateurs connectés peuvent créer une mission ?"
+
+#: includes/menu/welcome.php:124
+msgid "New Submitted job status ?"
+msgstr "Statut des missions publiées ?"
+
+#: includes/menu/welcome.php:128
+msgid "Publish"
+msgstr "Publier"
+
+#: includes/menu/welcome.php:152 includes/menu/welcome.php:153
+msgid "Currency symbol ?"
+msgstr "Symbole de la devise ?"
+
+#: includes/menu/welcome.php:200
+msgid "Job Board Manager &rsaquo; Setup Wizard"
+msgstr "Job Board Manager &rsaquo; Assistant de configuration"
+
+#: includes/menu/welcome.php:276
+msgid "Options saved"
+msgstr "Options sauvegardées"
+
+#: includes/menu/welcome.php:308
+msgid "Page created."
+msgstr "Page créée."
+
+#: includes/menu/welcome.php:318
+msgid "Permissions saved."
+msgstr "Permissions sauvegardées."
+
+#: includes/menu/welcome.php:327
+msgid "Job posting saved."
+msgstr "Soumission des missions sauvées."
+
+#: includes/menu/welcome.php:395
+msgid "Save options"
+msgstr "Enregistrer les options"
+
+#: includes/menu/welcome.php:398
+msgid "General options"
+msgstr "Options générales"
+
+#: includes/menu/welcome.php:424 includes/menu/welcome.php:428
+msgid "Create pages"
+msgstr "Créer les pages"
+
+#: includes/menu/welcome.php:453 includes/menu/welcome.php:461
+msgid "Save permissions"
+msgstr "Sauvegarder les permissions"
+
+#: includes/menu/welcome.php:550 includes/menu/welcome.php:556
+msgid "Job posting"
+msgstr "Soumission de mission"
+
+#: includes/menu/welcome.php:585
+msgid "Nothing to Save"
+msgstr "Aucun changement a sauvegarder"
+
+#: includes/pickform/class-pickform-creator.php:381
+#: includes/pickform/class-pickform-creator.php:393
+#: includes/pickform/class-pickform-creator.php:403
+#: includes/pickform/class-pickform.php:556
+#: includes/pickform/class-pickform.php:568
+#: includes/pickform/class-pickform.php:578
+#: includes/pickform/class-pickformNew.php:478
+#: includes/pickform/class-pickformNew.php:490
+#: includes/pickform/class-pickformNew.php:500
+msgid "Remove"
+msgstr "Retirer"
+
+#: includes/pickform/class-pickform-creator.php:410
+#: includes/pickform/class-pickform.php:585
+#: includes/pickform/class-pickformNew.php:507
+msgid "Add more"
+msgstr "Ajouter plus"
+
+#: includes/pickform/class-pickform-creator.php:567
+#: includes/pickform/class-pickform.php:816
+#: includes/pickform/class-pickformNew.php:738
+msgid "Drop files here"
+msgstr "Déposez vos fichier ici"
+
+#: includes/pickform/class-pickform-creator.php:568
+#: includes/pickform/class-pickform.php:817
+#: includes/pickform/class-pickformNew.php:739
+msgid "Select Files"
+msgstr "Sélectionner les fichiers"
+
+#: includes/pickform/class-pickform-creator.php:588
+#: includes/pickform/class-pickform.php:837
+#: includes/pickform/class-pickformNew.php:759
+msgid "Allowed Files"
+msgstr "Fichiers autorisés"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:42
+#, fuzzy
+#| msgid "Job Account"
+msgid "Account"
+msgstr "Compte"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:172
+#: templates/account/my-account.php:44
+msgid "Register"
+msgstr "Inscription"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:180
+#: templates/account/my-account.php:53
+msgid "Login"
+msgstr "Connexion"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:192
+#: templates/account/my-account.php:65
+msgid "Username or email address"
+msgstr "Nom de compte ou adresse email"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:194
+#: templates/account/my-account.php:67
+msgid "Remember Me"
+msgstr "Se souvenir de moi"
+
+#: includes/shortcodes/class-shortcodes-dashboard.php:195
+#: templates/account/my-account.php:68
+msgid "Log In"
+msgstr "Connecté"
+
+#: includes/shortcodes/class-shortcodes-pending-publish.php:77
+#: templates/job-archive/job-archive.php:434 templates/job-list.php:576
+msgid "No job found"
+msgstr "Aucune mission trouvée"
+
+#: templates/account/my-account.php:30
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: templates/account/my-account.php:30
+msgid "Logout"
+msgstr "Deconnexion"
+
+#: templates/job-archive/filter.php:24
+msgid "Keyword:"
+msgstr "Mots clés :"
+
+#: templates/job-archive/filter.php:63 templates/job-list.php:235
+msgid "Job type:"
+msgstr "Type de mission : "
+
+#: templates/job-archive/filter.php:68 templates/job-list.php:240
+msgid "Job status:"
+msgstr "Statut de la mission : "
+
+#: templates/job-archive/filter.php:72
+msgid "Location:"
+msgstr ""
+
+#: templates/job-archive/filter.php:76 templates/job-list.php:245
+msgid "Expire date:"
+msgstr "Date d'expiration : "
+
+#: templates/job-archive/filter.php:84 templates/job-list.php:253
+msgid "Category:"
+msgstr "Catégorie :"
+
+#: templates/job-archive/search.php:38
+msgid "Keyword"
+msgstr ""
+
+#: templates/job-archive/search.php:70 templates/job-edit.php:569
+#: templates/job-submit.php:510
+msgid "Submit"
+msgstr "Envoyer"
+
+#: templates/job-edit.php:21
+msgid "Invalid job id."
+msgstr "ID de mission invalide."
+
+#: templates/job-edit.php:28
+msgid "You are not authorized to edit this job."
+msgstr "Vous n'êtes pas autorisé à éditer cette mission."
+
+#: templates/job-edit.php:120 templates/job-edit.php:126
+#: templates/job-edit.php:133 templates/job-edit.php:141
+#: templates/job-submit.php:108 templates/job-submit.php:114
+#: templates/job-submit.php:121 templates/job-submit.php:130
+msgid "missing"
+msgstr "manquant"
+
+#: templates/job-edit.php:187
+msgid "Job update successfully."
+msgstr "Mission mise à jour avec succès."
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Cancel"
+msgstr "Annuler"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "current step:"
+msgstr "étape actuelle :"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Finish"
+msgstr "Terminé"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Next"
+msgstr "Suivant"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Previous"
+msgstr "Précédent"
+
+#: templates/job-edit.php:585 templates/job-submit.php:526
+msgid "Loading ..."
+msgstr "Chargement..."
+
+#: templates/job-edit.php:635
+#, php-format
+msgid ""
+"You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
+"page</b></a> to see your jobs."
+msgstr ""
+"Vous n’êtes pas autorisé à éditer cette mission. Affichez la page de <a href="
+"\"%s\">votre compte</a> pour voir vos missions."
+
+#: templates/job-edit.php:644
+#, php-format
+msgid "Please <a href=\"%s\"><b>login</b></a> to edit this job."
+msgstr "<a href=\"%s\"><b>Connectez-vous</b></a> pour éditer cette mission."
+
+#: templates/job-single/job-single-sidebar.php:96
+msgid "Website"
+msgstr "Site web"
+
+#: templates/job-single/job-single-sidebar.php:99
+msgid "Job Link"
+msgstr "Lien vers la mission"
+
+#: templates/job-single/job-single-sidebar.php:104
+msgid "About Company"
+msgstr "A propos de la société"
+
+#: templates/job-single/job-single-sidebar.php:115
+msgid "Job Status: "
+msgstr "Statut de la mission : "
+
+#: templates/job-single/job-single-sidebar.php:118
+msgid "No of Vacancies: "
+msgstr "Postes disponibles : "
+
+#: templates/job-single/job-single-sidebar.php:121
+msgid "Date Posted: "
+msgstr "Date de publication : "
+
+#: templates/job-single/job-single-sidebar.php:129
+msgid "Expiry Date: "
+msgstr "Date d'expiration : "
+
+#: templates/job-single/job-single-sidebar.php:134
+msgid "Job Type: "
+msgstr "Type de mission : "
+
+#: templates/job-single/job-single-sidebar.php:137
+msgid "Job Level: "
+msgstr "Niveau de la mission : "
+
+#: templates/job-single/job-single-sidebar.php:140
+msgid "Years of Experience: "
+msgstr "Années d'expérience : "
+
+#: templates/job-single/job-single-sidebar.php:144
+msgid "Job Info"
+msgstr "Informations sur la mission"
+
+#: templates/job-single/job-single-sidebar.php:162
+msgid "Salary Type: "
+msgstr "Type de rémunération : "
+
+#: templates/job-single/job-single-sidebar.php:169
+#: templates/job-single/job-single-sidebar.php:175
+msgid "Salary: "
+msgstr "Rémunération"
+
+#: templates/job-single/job-single-sidebar.php:182
+msgid "Salary Info"
+msgstr "Information sur la rémunération"
+
+#: templates/job-single/job-single-sidebar.php:268
+msgid "Share this job"
+msgstr "Partager cette mission"
+
+#: templates/job-submit.php:37
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to submit job."
+msgstr "<a href=\"%s\">Connectez-vous</a> pour publier une mission."
+
+#: templates/job-submit.php:184
+msgid "Job Submitted successfully."
+msgstr "Mission envoyée avec succès."
+
+#: templates/job-submit.php:185
+msgid "Submission status:"
+msgstr "Statut de soumission de la mission : "
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job id."
+msgstr "ID mission."
+
+#: templates/my-jobs/my-jobs.php:113
+msgid "Job Title."
+msgstr "Titre de la mission."
+
+#: templates/my-jobs/my-jobs.php:118
+msgid "Published:"
+msgstr "Publiée :"
+
+#: templates/my-jobs/my-jobs.php:119
+msgid "Expiry:"
+msgstr "Expire le :"
+
+#: templates/my-jobs/my-jobs.php:120
+msgid "Publish Status:"
+msgstr "Statut de publication :"
+
+#: templates/my-jobs/my-jobs.php:123
+msgid "Job Status:"
+msgstr "Statut de la mission : "
+
+#: templates/my-jobs/my-jobs.php:125
+msgid "Featured:"
+msgstr "Mise en avant :"
+
+#: templates/my-jobs/my-jobs.php:128
+msgid "Job Type:"
+msgstr "Type de mission : "
+
+#: templates/my-jobs/my-jobs.php:131
+msgid "Job Level:"
+msgstr "Niveau de la mission : "
+
+#: templates/my-jobs/my-jobs.php:140
+msgid "Delete"
+msgstr "Supprimer "
+
+#: templates/my-jobs/my-jobs.php:169
+msgid "No job found posted by you."
+msgstr "Vous n'avez publié aucune mission."
+
+#: templates/my-jobs/my-jobs.php:177
+#, php-format
+msgid "Please <a href=\"%s\">login</a> to see your job list."
+msgstr "<a href=\"%s\">Connectez-vous</a> pour voir la liste des missions."
+
+#~ msgid "Display company name ?"
+#~ msgstr "Afficher le nom de société ?"
+
+#~ msgid "Do you want to display company name"
+#~ msgstr "Voulez-vous afficher le nom de la société ?"
+
+#~ msgid "Display company address ?"
+#~ msgstr "Afficher l'adresse de la société ?"
+
+#~ msgid "Do you want to display company address"
+#~ msgstr "Voulez-vous afficher l'adresse de la société"
+
+#~ msgid "Short content"
+#~ msgstr "Description courte"
+
+#~ msgid "Short job description write here."
+#~ msgstr "Ecrivez la description courte ici"
+
+#~ msgid "Job responsibilities"
+#~ msgstr "Responsabilités"
+
+#~ msgid "Responsibilities details."
+#~ msgstr "détail des responsabilités"
+
+#~ msgid "Education requirements"
+#~ msgstr "Enseignement requis"
+
+#~ msgid "Education requirements details."
+#~ msgstr "Détails des enseignements requis"
+
+#~ msgid "Experience requirements"
+#~ msgstr "Expérience requise"
+
+#~ msgid "Experience requirements details."
+#~ msgstr "Détail de l’expérience requise"
+
+#~ msgid "Skills requirements"
+#~ msgstr "Compétences requises"
+
+#~ msgid "Skills requirements details."
+#~ msgstr "Détail des compétences requises"
+
+#~ msgid "Qualifications"
+#~ msgstr "Qualifications"
+
+#~ msgid "Qualifications details."
+#~ msgstr "Détail des qualifications"
+
+#~ msgid "Responsibilities:"
+#~ msgstr "résponsabilités :"
+
+#~ msgid "Educational requirements:"
+#~ msgstr "Enseignement requis :"
+
+#~ msgid "Experience requirements:"
+#~ msgstr "Expérience requise :"
+
+#~ msgid "Desired Skills:"
+#~ msgstr "Compétences souhaitées :"
+
+#~ msgid "Qualifications:"
+#~ msgstr "Qualifications :"
+
+#~ msgid "Company Name"
+#~ msgstr "Nom de l'entreprise"
+
+#~ msgid "Company Name, ex: Google Inc."
+#~ msgstr "Nom de la société, ex: Google Inc."
+
+#~ msgid "Display Company Name ?"
+#~ msgstr "Afficher le nom de la société"
+
+#~ msgid "Display Company Name"
+#~ msgstr "Afficher le nom de la société"
+
+#~ msgid "Job Location, ex: California (City or States)"
+#~ msgstr "Lieu de la mission, ex: Californie (Ville ou Département)"
+
+#~ msgid "Full Address, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+#~ msgstr ""
+#~ "Adresse complète, ex: 1600 Amphitheatre Parkway, Mountain View, CA 94043"
+
+#~ msgid "Display Company Address ?"
+#~ msgstr "Afficher l'adresse de la société ?"
+
+#~ msgid "Display Company Address"
+#~ msgstr "Adresse de la société"
+
+#~ msgid "Company Website"
+#~ msgstr "Site web de la société"
+
+#~ msgid "Company Website, ex: http://pickplugins.com"
+#~ msgstr "Site web de la société, ex: http://pickplugins.com"
+
+#~ msgid "Company Logo"
+#~ msgstr "Logo de la société"
+
+#~ msgid ""
+#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-"
+#~ "wanted"
+#~ msgstr ""
+#~ "Lien vers la mission sur le site de la société, ex: http://pickplugins."
+#~ "com/jobs/developer-wanted"
+
+#~ msgid "Job Responsibilities"
+#~ msgstr "Responsabilités"
+
+#~ msgid "Responsibilities"
+#~ msgstr "Responsabilités"
+
+#~ msgid "Education Requirements"
+#~ msgstr "Enseignement requis"
+
+#~ msgid "Experience Requirements"
+#~ msgstr "Expérience requise"
+
+#~ msgid "Skills Requirements"
+#~ msgstr "Compétences requises"
+
+#~ msgid "No of Vacancies"
+#~ msgstr "Nb de postes disponibles"
+
+#~ msgid "Expiry Date"
+#~ msgstr "Date d'expiration"
+
+#~ msgid "Featured Job"
+#~ msgstr "Mission en avant"
+
+#~ msgid "Job Type ?"
+#~ msgstr "Type de mission ?"
+
+#~ msgid "Job Level ?"
+#~ msgstr "Niveau de la mission ?"
+
+#~ msgid "Job Level"
+#~ msgstr "Niveau de la mission"
+
+#~ msgid "Years of Experience ?"
+#~ msgstr "Années d'expérience ?"
+
+#~ msgid "Years of Experience"
+#~ msgstr "Années d'expérience"
+
+#~ msgid "Salary Range ?"
+#~ msgstr "Fourchette de rémunération ?"
+
+#~ msgid "Salary Range"
+#~ msgstr "Fourchette de rémunération"
+
+#~ msgid "Salary Fixed ?"
+#~ msgstr "Rémunération fixe ?"
+
+#~ msgid "Salary fixed"
+#~ msgstr "Rémunération fixe"
+
+#~ msgid "Salary Min ?"
+#~ msgstr "Rémunération Min ?"
+
+#~ msgid "Salary Min"
+#~ msgstr "Rémunération Min"
+
+#~ msgid "Salary Max ?"
+#~ msgstr "Rémunération Max ?"
+
+#~ msgid "Salary Max"
+#~ msgstr "Rémunération Max"
+
+#~ msgid "Application"
+#~ msgstr "Candidature"
+
+#~ msgid "Contact Email ?"
+#~ msgstr "Contact email ?"
+
+#~ msgid "Contact Email"
+#~ msgstr "Contact email"

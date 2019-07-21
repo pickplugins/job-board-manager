@@ -1,0 +1,184 @@
+@charset "utf-8";
+/* CSS Document */
+
+.job-single{}
+
+.job-single .single-job-title {
+  font-size: 28px;
+  line-height: normal;
+  margin: 30px 0;
+}
+
+.job-single .job-metas {
+  margin: 20px 0;
+}
+
+.job-single .job-metas .job-meta {
+  display: inline-block;
+  font-size: 13px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  line-height: normal;
+  border-radius: 3px;
+}
+
+.job-single .job-metas .job-meta.job_type a, .job-single .job-metas .job-meta.job_type i, .job-single .job-metas .job-meta.job_status a{
+  color: #fff;
+}
+
+
+
+
+.job-single .job-metas .job-meta a {
+  text-decoration: none;
+}
+
+
+
+
+.job-single .single-job-sidebar .section {
+  clear: both;
+  margin-bottom: 30px;
+}
+
+.job-single .single-job-sidebar .section .title {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.job-single .single-job-sidebar .section .side-meta {
+  font-size: 14px;
+  line-height: normal;
+  margin: 12px 0;
+}
+
+
+
+.job-single .single-job-sidebar .section .side-meta.company_name {
+  font-size: 17px;
+  margin-bottom: 15px;
+}
+
+.job-single .single-job-sidebar .section .side-meta.company_name img {
+  border-radius: 0;
+  box-shadow: none;
+  float: left;
+  height: auto;
+  margin-right: 15px;
+  vertical-align: top;
+  width: 50px;
+}
+
+.job-single .apply-job {
+  background: rgb(87, 178, 255) none repeat scroll 0 0;
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 4px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+
+.job-single .single-job-details {
+  margin-right: 350px;
+}
+
+.job-single .single-job-details h3 {
+  clear: none;
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+.job-single .single-job-sidebar {
+  float: right;
+  width: 300px;
+}
+
+
+
+
+.job-single .single-job-sidebar .social-share .share-button {
+  background: #f2f2f2 none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  color: #999;
+  display: inline-block;
+  font-size: 20px;
+  height: 30px;
+  line-height: normal;
+  margin: 0 5px;
+  text-align: center;
+  width: 30px;
+}
+
+.job-single .single-job-sidebar .social-share .facebook {
+
+}
+
+.job-single .single-job-sidebar .social-share .twitter  {
+
+}
+
+.job-single .single-job-sidebar .social-share .google-plus  {
+
+}
+
+
+
+
+
+.job-single .clear {
+  clear: both;
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1024px ) {
+	
+
+	
+}
+
+
+@media only screen and ( min-width: 300px ) and ( max-width: 1023px ){
+	
+.job-single .single-job-sidebar {
+  float: none;
+  width: 100%;
+}
+	
+.job-single .single-job-details {
+  margin-right: 0;
+}	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

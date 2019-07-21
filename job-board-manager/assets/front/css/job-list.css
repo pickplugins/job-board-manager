@@ -1,0 +1,223 @@
+@charset "utf-8";
+/* CSS Document */
+
+.job-list {
+
+}
+
+.job-list .search-input {
+	margin-bottom: 25px;
+	background: #f2f2f2;
+	padding: 10px;
+}
+
+.job-list .search-input .option {
+	padding: 10px 0px;
+}
+
+.job-list .search-input .option.half {
+	display: inline-block;
+	width: 49%;
+}
+
+.job-list .search-input .option.half input[type="search"] {
+	width: 90%;
+	border-radius: 0;
+	border-bottom: 3px solid #ddd;
+}
+
+.job-list .search-input .option label {
+	display: inline-block;
+	padding: 0 5px;
+}
+
+
+.job-list .list-filter  {
+
+}
+
+.job-list .list-filter .filter {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	border-color: #ddd;
+	border-image: none;
+	border-style: solid;
+	border-width: 1px 1px 1px 5px;
+	display: inline-block;
+	margin: 5px 5px;
+	padding: 3px 20px;
+}
+
+.job-list .single {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 15px;
+  padding: 10px 10px 15px;
+}
+
+.job-list .single.featured {
+  background: none repeat scroll 0 0 rgb(255, 248, 191);
+}
+
+
+.job-list .title {
+
+  margin: 0 0 0 70px;
+}
+
+.job-list .title a {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.job-list .short_content {
+  font-size: 13px;
+  margin: 0 0 0 70px;
+  text-align: left;
+}
+
+
+.job-list .meta-list {
+  margin-top: 20px;
+}
+
+.job-list .job-meta {
+    display: inline-block;
+    font-size: 13px;
+    margin: 5px 10px 5px 0;
+    padding: 5px 10px;
+    line-height: normal;
+    border-radius: 3px;
+}
+
+.job-list .job-meta a{
+  text-decoration: none;
+  
+}
+
+.job-list .job_type a:visited{
+color: rgb(255, 255, 255);
+}
+
+
+.job-list .job_type a, .job-list .job_type i {
+color: rgb(255, 255, 255);
+}
+.job-list .job_type.freelance {
+  background: none repeat scroll 0 0 rgb(70, 166, 255);
+  
+}
+.job-list .job_type.full-time {
+  background: none repeat scroll 0 0 rgb(46, 194, 116);
+
+}
+
+.job-list .job_type.internship {
+  background: none repeat scroll 0 0 rgb(160, 102, 255);
+
+}
+.job-list .job_type.part-time {
+  background: none repeat scroll 0 0 rgb(255, 194, 77);
+
+}
+
+.job-list .job_type.temporary {
+  background: none repeat scroll 0 0 rgb(255, 87, 65);
+}
+
+.job-list .job_status, .job-list .job_status a:visited{
+  color: rgb(255, 255, 255);
+
+}
+
+.job-list .job_status a, .job-list .job_status a:visited {
+	color: rgb(255, 255, 255);
+}
+
+.job-list .job_status.open {
+  background: none repeat scroll 0 0 rgb(58, 193, 112);
+}
+
+.job-list .job_status.closed {
+  background: none repeat scroll 0 0 rgb(250, 50, 24);
+  
+}
+
+.job-list .job_status.filled {
+  background: none repeat scroll 0 0 rgb(73, 162, 237);
+}
+
+.job-list .job_status.re-open {
+  background: none repeat scroll 0 0 rgb(47, 194, 249);
+}
+
+.job-list .job_status.expired {
+  background: rgb(255, 65, 21) none repeat scroll 0 0;
+}
+
+
+
+.job-list .company_logo {
+  display: inline-block;
+  float: left;
+  height: 50px;
+  overflow: hidden;
+  vertical-align: top;
+  width: 50px;
+}
+
+.job-list .company_logo img {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+
+
+.job-list .fa {
+  padding-right: 5px;
+}
+
+
+
+
+
+
+.job-list .paginate {
+  margin: 30px 0;
+  text-align: center;
+}
+.job-list .paginate .page-numbers,
+.job-list .paginate .page-numbers {
+  background: #f0f0f0 none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  color: #999;
+  font-size: 17px;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.job-list .paginate .current {
+  border: medium none;
+}
+
+.job-list .paginate-ajax {
+    background: #f0f0f0 none repeat scroll 0 0;
+    border: 1px solid #ddd;
+    color: #999;
+    font-size: 17px;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
