@@ -67,12 +67,12 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			}			
 			
 			
-			
+
 		elseif($meta_key== 'job_bm_company_name'){
-			
+
 			//var_dump('Hello');
 			$job_bm_company_name = get_post_meta(get_the_ID(), $meta_key, true);
-			
+
 			if(post_type_exists('company')){
 				$company_data = get_page_by_title( $job_bm_company_name, 'OBJECT', 'company' );
 				}
@@ -80,73 +80,73 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 				$company_data = '';
 				}
 
-			
+
 			if(!empty($company_data)){
-				
+
 				$company_link = get_post_permalink($company_data->ID);
-				
+
 				$job_bm_link_to_company_single_page = get_option('job_bm_link_to_company_single_page');
-				
-				
+
+
 					if(empty($company_link) || $job_bm_link_to_company_single_page=='no'){
-					
+
 						$company_link = '#';
-						
+
 					}
 				}
 			else{
-				
+
 					$company_link = '#';
 				}
-				
-				
+
+
 			if(!empty($job_bm_company_name)){
 				echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$company_link.'">'.$job_bm_company_name.'</a></div>';
 				}
-				
-				
 
-			}			
-			
-			
-			
-			
-			
-			
-			
+
+
+			}
+
+
+
+
+
+
+
 		elseif($meta_key== 'job_bm_location'){
-			
+
 			//var_dump('Hello');
 			$job_bm_location = get_post_meta(get_the_ID(), $meta_key, true);
-			
+
 				if(!empty($job_bm_location)){
-					
-					
+
+
 				if(post_type_exists('location')){
 					$location_data = get_page_by_title( $job_bm_location, 'OBJECT', 'location' );
 					}
 				else{
 					$location_data = '';
 					}
-					
+
 				if(!empty($location_data)){
-					
+
 					$location_link = get_post_permalink($location_data->ID);
 						if(empty($location_link)){
-						
+
 							$location_link = '#';
-							
+
 						}
 					}
 				else{
-					
+
 						$location_link = '#';
 					}
-	
+
 				if(!empty($job_bm_location)){
 					echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$location_link.'">'.$job_bm_location.'</a></div>';
 					}
-	
+
 				}
 
 

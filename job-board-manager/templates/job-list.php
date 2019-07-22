@@ -26,8 +26,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 
 	$job_bm_list_per_page = get_option('job_bm_list_per_page');
-	$job_bm_list_excerpt_display = get_option('job_bm_list_excerpt_display');
-	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');	
+	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');
 	$job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');	
 	$job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');	
 	$job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');		
@@ -204,13 +203,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	
 	$job_list_grid_items = array(
-/*
 
-		'job_bm_company_logo'=>array('class'=>'company_logo','fa'=>'','title'=>''),
-		'title'=>array('class'=>'title','fa'=>'title','title'=>''),
-		'job_bm_short_content'=>array('class'=>'short_content','fa'=>'','title'=>__('Short Description','job-board-manager')),
-
-*/							
 		'clear'=>array('class'=>'clear','fa'=>'','title'=>''),
 		'job_bm_job_type'=>array('class'=>'job_type','fa'=>'briefcase','title'=>__('Job Type','job-board-manager')),
 		'job_bm_job_status'=>array('class'=>'job_status','fa'=>'eye','title'=>__('Job Status','job-board-manager')),
@@ -281,8 +274,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	$job_bm_featured = get_post_meta(get_the_ID(), 'job_bm_featured', true);	
 	$job_bm_company_logo = get_post_meta(get_the_ID(),'job_bm_company_logo', true);
-	$job_bm_short_content = get_post_meta(get_the_ID(),'job_bm_short_content', true);
-	
+
 	
 	if(($job_bm_featured=='yes') ){
 		
@@ -308,48 +300,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	echo '<div title="" class="title"><a href="'.get_permalink().'">'.get_the_title().'</a></div>';
 	
 	
-	
-	if($job_bm_list_excerpt_display=='from_content'){
-		
-		$the_excerpt = get_the_excerpt();
-		
-		
-		if(!empty($the_excerpt)){
-			echo '<div title="" class="short_content">'.get_the_excerpt().'</div>';
-			}
-		else{
-			echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-		
-		}
-	elseif($job_bm_list_excerpt_display=='short_content'){
-		
-		if(!empty($job_bm_short_content)){
-			echo '<div title="" class="short_content">'.$job_bm_short_content.'</div>';
-			}
-		else{
-			echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-		}
-	else{
-		
-		$the_excerpt = get_the_excerpt();
-		
-		
-		if(!empty($the_excerpt)){
-			echo '<div title="" class="short_content">'.get_the_excerpt().'</div>';
-			}
-		else{
-			echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-		}
-	
-	
 
-
-	
-
-	
 	
 	//echo '<div class="clear"></div>';
 	
@@ -360,52 +311,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	
 	foreach($job_list_grid_items as $meta_key=>$grid_data){
-		
-	/*
-	
-	if($meta_key== 'job_bm_company_logo'){
-			
 
-
-			if(!empty($meta_key_values[$meta_key])){
-				echo '<div class="'.$grid_data['class'].'">';
-				echo '<img src="'.$meta_key_values[$meta_key].'" />';	
-				echo '</div>';					
-				}
-
-	
-			
-			
-			}
-		elseif($meta_key== 'title'){
-			echo '<div title="'.$grid_data['title'].'" class="'.$grid_data['class'].'"><a href="'.get_permalink().'">'.get_the_title().'</a></div>';
-			}
-
-		elseif($meta_key== 'job_bm_short_content'){
-			
-
-
-			if($job_bm_list_excerpt_display=='from_content'){
-				
-				echo '<div title="'.$grid_data['title'].'" class="'.$grid_data['class'].'">'.get_the_excerpt().'</div>';
-				}
-			elseif($job_bm_list_excerpt_display=='short_content'){
-				
-				if(!empty($meta_key_values[$meta_key])){
-					echo '<div title="'.$grid_data['title'].'" class="'.$grid_data['class'].'">'.$meta_key_values[$meta_key].'</div>';
-					}
-				}
-			else{
-				
-				echo '<div title="'.$grid_data['title'].'" class="'.$grid_data['class'].'">'.get_the_excerpt().'</div>';
-				}
-
-
-
-			}
-
-	
-	*/
 		
 
 		

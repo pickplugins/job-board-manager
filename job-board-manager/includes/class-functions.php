@@ -22,8 +22,8 @@ class class_job_bm_functions{
 	public function job_single_meta_items(){
 		
 		$job_single_meta_items = array(
-								'job_bm_job_type'=>array('class'=>'job_type','fa'=>'briefcase','title'=>__('Job type', 'job-board-manager')),
-								'job_bm_job_status'=>array('class'=>'job_status','fa'=>'','title'=>__('Job status', 'job-board-manager')),															
+								//'job_bm_job_type'=>array('class'=>'job_type','fa'=>'briefcase','title'=>__('Job type', 'job-board-manager')),
+								//'job_bm_job_status'=>array('class'=>'job_status','fa'=>'','title'=>__('Job status', 'job-board-manager')),
 								'job_bm_location'=>array('class'=>'location','fa'=>'map-marker','title'=>__('Location', 'job-board-manager')),
 								'job_bm_company_name'=>array('class'=>'company_name','fa'=>'briefcase','title'=>__('Company name', 'job-board-manager')),							
 								'job_bm_total_vacancies'=>array('class'=>'total_vacancies','fa'=>'user-plus','title'=>__('Total vacancies', 'job-board-manager')),								
@@ -543,7 +543,7 @@ class class_job_bm_functions{
 																		'display'=>'yes', // (yes, no)		
 																		'title'=>__('Company logo', 'job-board-manager'),
 																		'option_details'=>__('Upload company logo.', 'job-board-manager'),						
-																		'input_type'=>'file', // text, radio, checkbox, select, 
+																		'input_type'=>'text', // text, radio, checkbox, select,
 																		'input_values'=>'', // could be array
 																		),
 
@@ -572,89 +572,7 @@ class class_job_bm_functions{
 												'title'=>__(' Job info', 'job-board-manager'),
 												'details'=>__('Job Information details.', 'job-board-manager'),
 												'meta_fields'=> array(
-												
-/*
-												 *
- * 																	'job_bm_job_status'=>array(
-																		'meta_key'=>'job_bm_job_status',
-																		'css_class'=>'job_status',
-																		'required'=>'yes', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)
-																		'title'=>__('Job status', 'job-board-manager'),
-																		'option_details'=>__('Select job status.', 'job-board-manager'),
-																		'input_type'=>'select', // text, radio, checkbox, select,
-																		'input_values'=> '', // could be array
-																		'input_args'=> $this->job_status_list(),
-																		),
-												 * */
-												
-																	/* 'job_bm_short_content'=>array(
-																		'meta_key'=>'job_bm_short_content',
-																		'css_class'=>'short_content',		
-																		'required'=>'no', // (yes, no) is this field required.	
-																		'display'=>'yes', // (yes, no)		
-																		'title'=>__('Short content','job-board-manager'),
-																		'option_details'=>__('Short job description write here.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),
-																		 */
-																	/* 'job_bm_responsibilities'=>array(
-																		'meta_key'=>'job_bm_responsibilities',
-																		'css_class'=>'responsibilities',
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)
-																		'title'=>__('Job responsibilities', 'job-board-manager'),
-																		'option_details'=>__('Responsibilities details.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),
-																		
-																	'job_bm_education_requirements'=>array(
-																		'meta_key'=>'job_bm_education_requirements',
-																		'css_class'=>'education_requirements',	
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)			
-																		'title'=>__('Education requirements', 'job-board-manager'),
-																		'option_details'=>__('Education requirements details.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),
-																		
-																	'job_bm_experience_requirements'=>array(
-																		'meta_key'=>'job_bm_experience_requirements',
-																		'css_class'=>'experience_requirements',		
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)		
-																		'title'=>__('Experience requirements', 'job-board-manager'),
-																		'option_details'=>__('Experience requirements details.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),	
-																		
-																	'job_bm_skills_requirements'=>array(
-																		'meta_key'=>'job_bm_skills_requirements',
-																		'css_class'=>'skills_requirements',	
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)			
-																		'title'=>__('Skills requirements', 'job-board-manager'),
-																		'option_details'=>__('Skills requirements details.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),																									
-																		
-																	'job_bm_qualifications'=>array(
-																		'meta_key'=>'job_bm_qualifications',
-																		'css_class'=>'qualifications',	
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)			
-																		'title'=>__('Qualifications', 'job-board-manager'),
-																		'option_details'=>__('Qualifications details.', 'job-board-manager'),						
-																		'input_type'=>'wp_editor', // text, radio, checkbox, select, 
-																		'input_values'=>'', // could be array
-																		),										
-																		 */
-																		
+
 																			
 																	'job_bm_total_vacancies'=>array(
 																		'meta_key'=>'job_bm_total_vacancies',
@@ -666,34 +584,7 @@ class class_job_bm_functions{
 																		'input_type'=>'text', // text, radio, checkbox, select, 
 																		'input_values'=>'3', // could be array
 																		),			
-												
-/*
- * 																	'job_bm_expire_date'=>array(
-																		'meta_key'=>'job_bm_expire_date',
-																		'css_class'=>'expire_date',
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)
-																		'title'=>__('Expiry date', 'job-board-manager'),
-																		'option_details'=>__('Job expiry date', 'job-board-manager'),
-																		'input_type'=>'text', // text, radio, checkbox, select,
-																		'input_values'=> job_bm_get_date(), // could be array
-																		),*/
-																		
-/*
 
-																	'job_bm_featured'=>array(
-																		'meta_key'=>'job_bm_featured',
-																		'css_class'=>'featured',
-																		'required'=>'no', // (yes, no) is this field required.
-																		'display'=>'yes', // (yes, no)
-																		'title'=>__('Featured job', 'job-board-manager'),
-																		'option_details'=>__('Want to get featured listing ?', 'job-board-manager'),
-																		'input_type'=>'select', // text, radio, checkbox, select,
-																		'input_values'=>'no', // could be array
-																		'input_args'=> array('no'=>__('No', 'job-board-manager'),'yes'=>__('Yes', 'job-board-manager')),
-																		),
-																		*/
-																		
 																	'job_bm_job_type'=>array(
 																		'meta_key'=>'job_bm_job_type',
 																		'css_class'=>'job_type',	
@@ -729,43 +620,7 @@ class class_job_bm_functions{
 																		'input_values'=> '2', // could be array
 																		),
 																		
-																		
-																	// Import Source	
-																		
-/*
 
-																	array(
-																		'meta_key'=>'job_bm_is_imported',
-																		'css_class'=>'is_imported hidden',					
-																		'title'=>__('Is imported ?','job-board-manager'),
-																		'option_details'=>__('Is imported','job-board-manager'),						
-																		'input_type'=>'hidden', // text, radio, checkbox, select, 
-																		'input_values'=> 'no', // could be array
-																		),		
-																		
-																		
-																	array(
-																		'meta_key'=>'job_bm_import_source',
-																		'css_class'=>'import_source hidden',					
-																		'title'=>__('Import source ?','job-board-manager'),
-																		'option_details'=>__('Import source','job-board-manager'),						
-																		'input_type'=>'hidden', // text, radio, checkbox, select, 
-																		'input_values'=> '', // could be array
-																		),																	
-																										
-																		
-																	array(
-																		'meta_key'=>'job_bm_import_source_jobid',
-																		'css_class'=>'import_source_jobid hidden',					
-																		'title'=>__('Import source jobid ?','job-board-manager'),
-																		'option_details'=>__('Import source jobid','job-board-manager'),						
-																		'input_type'=>'hidden', // text, radio, checkbox, select, 
-																		'input_values'=> '', // could be array
-																		),
-
-*/		
-																										
-																										
 																										
 																	
 																	
@@ -926,30 +781,9 @@ class class_job_bm_functions{
 															),
 															
 															
-														'job_bm_list_excerpt_display'=>array(
-															'option_id'=>'job_bm_list_excerpt_display',
-															'css_class'=>'excerpt_display',
-															//'placeholder'=>__('Write Company Name Here.','job-board-manager'),
-															'required'=>'yes', // (yes, no) is this field required.
-															'display'=>'yes', // (yes, no)
-															'title'=>__('Excerpt display', 'job-board-manager'),
-															'option_details'=>__('Display short content form following.', 'job-board-manager'),						
-															'input_type'=>'select', // text, radio, checkbox, select, 
-															'input_values'=>'from_content', // could be array
-															'input_args'=> array( 'from_content'=>__('From Content', 'job-board-manager'), 'short_content'=>__('Short Content', 'job-board-manager'),),
-															),	
+
 																													
-														'job_bm_list_excerpt_word_count'=>array(
-															'option_id'=>'job_bm_list_excerpt_word_count',
-															'css_class'=>'excerpt_word_count',
-															//'placeholder'=>__('Write Company Name Here.','job-board-manager'),
-															'required'=>'yes', // (yes, no) is this field required.
-															'display'=>'yes', // (yes, no)
-															'title'=>__('Excerpt Word Count', 'job-board-manager'),
-															'option_details'=>__('Excerpt display word count.', 'job-board-manager'),						
-															'input_type'=>'text', // text, radio, checkbox, select, 
-															'input_values'=>'20', // could be array
-															),															
+
 															
 															
 															

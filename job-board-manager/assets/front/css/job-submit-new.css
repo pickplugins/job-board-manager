@@ -5,16 +5,22 @@
 .job-bm-job-submit .errors{
   margin-bottom: 30px;
 }
-.job-bm-job-submit .errors .error {
+.job-bm-job-submit .errors .job-bm-error {
   color: #f0611a;
-  font-size: 12px;
-  padding: 3px 1px;
+  /* font-size: 12px; */
+  padding: 3px 10px;
+  border-left: 3px solid #f0611a;
 }
 
-.job-bm-job-submit .errors .success {
+
+.job-bm-job-submit .job-submitted{
+  margin-bottom: 30px;
+}
+
+.job-bm-job-submit .success {
   color: #54c671;
-  font-size: 12px;
-  padding: 3px 1px;
+  padding: 3px 10px;
+  border-left: 3px solid #54c671;
 }
 
 

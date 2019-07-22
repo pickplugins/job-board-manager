@@ -18,20 +18,34 @@ class class_job_bm_shortcodes_job_submit{
 
 	public function job_bm_post_job_display($atts, $content = null ) {
 
+
+        $job_bm_account_required_post_job = get_option('job_bm_account_required_post_job');
+        $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
+        $dashboard_page_url = get_permalink($job_bm_job_login_page_id);
+
+
+        if($job_bm_account_required_post_job == 'yes' && !is_user_logged_in()){
+
+            do_action('job_bm_job_submit_login_required');
+
+            return apply_filters('job_bm_job_submit_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit job.', 'job-board-manager'), $dashboard_page_url));
+
+        }
+
+
+
         include( job_bm_plugin_dir . 'templates/job-submit/job-submit-hook.php');
 
 		ob_start();
-		//include( job_bm_plugin_dir . 'templates/job-submit.php');
         include( job_bm_plugin_dir . 'templates/job-submit/job-submit.php');
 
+        // CSS & JS for sob submission form
         wp_enqueue_style('job-bm-job-submit');
-        //wp_enqueue_script('plupload-all');
         wp_enqueue_script('job-bm-job-submit');
-        wp_enqueue_media();
-       // wp_enqueue_style('media');
-       // wp_enqueue_style('media-upload');
-        //wp_enqueue_script('media-upload');
 
+        // For media uploader in front-end
+        wp_enqueue_media();
+        wp_enqueue_style('common');
 
 
 		return ob_get_clean();

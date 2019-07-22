@@ -74,15 +74,13 @@
   text-decoration: none;
 }
 
-.job-list .short_content {
-  font-size: 13px;
-  margin: 0 0 0 70px;
-  text-align: left;
-}
+
 
 
 .job-list .meta-list {
-  margin-top: 20px;
+    margin-top: 40px;
+    clear: both;
+    display: block;
 }
 
 .job-list .job-meta {

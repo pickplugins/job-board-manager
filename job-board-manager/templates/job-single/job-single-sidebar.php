@@ -77,7 +77,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		$html_about_company .= '</div>';		
 		
 		
-		$html_about_company .= '<div class="clear"></div>';
+		//$html_about_company .= '<div class="clear"></div>';
 		
 	if(!empty($job_bm_location)){
 		$html_about_company .= '<div itemprop="jobLocation" itemscope itemtype="http://schema.org/Place"  class="side-meta location"><i class="fa fa-map-marker"></i> '.$job_bm_location.'</div>';
@@ -190,7 +190,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$html_apply_method = '';				
 						
 	if(!empty($job_bm_how_to_apply)){
-		$html_apply_method .= '<div class="side-meta"><i class="fa fa-trophy"></i> '.__('How to Apply ?<br> ','job-board-manager').$job_bm_how_to_apply.'</div>';
+		//$html_apply_method .= '<div class="side-meta"><i class="fa fa-trophy"></i> '.__('How to Apply ?<br> ','job-board-manager').$job_bm_how_to_apply.'</div>';
 		
 		}
 
@@ -264,11 +264,11 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	$html_share_job.= '</div>';
 						
-	$sections['share_job'] = array(
-						'title'=>__('Share this job','job-board-manager'),
-						'html'=> $html_share_job,						
-						
-						);							
+//	$sections['share_job'] = array(
+//						'title'=>__('Share this job','job-board-manager'),
+//						'html'=> $html_share_job,
+//
+//						);
 						
 						
 						

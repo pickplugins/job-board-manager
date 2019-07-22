@@ -50,24 +50,8 @@ class class_job_bm_settings_page  {
 									'input_type'=>'text', // text, radio, checkbox, select, 
 									'input_values'=>'20', // could be array
 									),
-									
-								'job_bm_list_excerpt_display'=>array(
-									'css_class'=>'excerpt_display',					
-									'title'=>__('Excerpt display','job-board-manager'),
-									'option_details'=>__('Display short content form following','job-board-manager'),						
-									'input_type'=>'select', // text, radio, checkbox, select, 
-									'input_values'=>'from_content', // could be array
-									'input_args'=> array( 'from_content'=>__('From Content','job-board-manager'), 'short_content'=>__('Short Content','job-board-manager'),),
-									),
-									
-								'job_bm_list_excerpt_word_count'=>array(
-									'css_class'=>'excerpt_word_count',					
-									'title'=>__('Excerpt word count','job-board-manager'),
-									'option_details'=>__('Excerpt display word count','job-board-manager'),						
-									'input_type'=>'text', // text, radio, checkbox, select, 
-									'input_values'=>'20', // could be array
-									
-									),									
+
+
 									
 								'job_bm_list_archive_more_style'=>array(
 									'css_class'=>'job_bm_list_archive_more_style',					

@@ -15,7 +15,7 @@ function job_bm_single_job_view_count(){
 	if ( is_singular( 'job' )){
 		$cookie_name = 'job_bm_view';
 		$job_id = get_the_ID();
-		$job_bm_view_count = get_post_meta(get_the_ID(),'job_bm_view_count', true);
+		$job_bm_view_count = (int) get_post_meta(get_the_ID(),'job_bm_view_count', true);
 		update_post_meta(get_the_ID(), 'job_bm_view_count', ($job_bm_view_count+1));
 
 /*
@@ -57,13 +57,11 @@ function job_bm_ajax_paginate_load_more(){
 	
 	
 	$job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
-	$job_bm_list_excerpt_word_count = get_option('job_bm_list_excerpt_word_count',25);
-	$job_bm_login_enable = get_option('job_bm_login_enable');	
+	$job_bm_login_enable = get_option('job_bm_login_enable');
 	$job_bm_registration_enable = get_option('job_bm_registration_enable');
 	$date_format = get_option( 'date_format' );
 	$job_bm_list_per_page = get_option('job_bm_list_per_page');
-	$job_bm_list_excerpt_display = get_option('job_bm_list_excerpt_display');
-	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');	
+	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');
 	$job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');	
 	$job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');	
 	$job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');			
@@ -198,8 +196,7 @@ function job_bm_ajax_paginate_load_more(){
 	
 		$job_bm_featured = get_post_meta(get_the_ID(), 'job_bm_featured', true);	
 		$job_bm_company_logo = get_post_meta(get_the_ID(),'job_bm_company_logo', true);
-		$job_bm_short_content = get_post_meta(get_the_ID(),'job_bm_short_content', true);
-	
+
 		foreach($job_list_grid_items as $meta_key=>$grid_data){
 			$meta_key_values[$meta_key] = get_post_meta(get_the_ID(),$meta_key, true);
 		}
@@ -241,40 +238,7 @@ function job_bm_ajax_paginate_load_more(){
 		echo '<img src="'.$job_bm_company_logo.'" />';
 		echo '</div>';
 		echo '<div title="" class="title"><a href="'.get_permalink().'">'.get_the_title().'</a></div>';
-		if($job_bm_list_excerpt_display=='from_content'){
 
-			$the_excerpt = wp_trim_words(get_the_content($job_id), $job_bm_list_excerpt_word_count);
-
-
-			if(!empty($the_excerpt)){
-				echo '<div title="" class="short_content">'.$the_excerpt.'</div>';
-			}
-			else{
-				echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-
-		}
-		elseif($job_bm_list_excerpt_display=='short_content'){
-
-			if(!empty($job_bm_short_content)){
-				echo '<div title="" class="short_content">'.wp_trim_words($job_bm_short_content, $job_bm_list_excerpt_word_count).'</div>';
-			}
-			else{
-				echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-		}
-		else{
-
-			$the_excerpt = wp_trim_words(get_the_content($job_id), $job_bm_list_excerpt_word_count);
-
-
-			if(!empty($the_excerpt)){
-				echo '<div title="" class="short_content">'.$the_excerpt.'</div>';
-			}
-			else{
-				echo '<div title="" class="short_content">&nbsp;</div>';
-			}
-		}
 
 		echo '<div class="meta-list">';
 
@@ -1068,7 +1032,9 @@ function job_bm_sanitize_data($input_type, $input_values){
 					) );
 					
 			$pages_ids = array();
-					
+
+            $pages_ids[''] = __('None','job-board-manager');
+
 			if ( $wp_query->have_posts() ) :
 			
 	

@@ -35,7 +35,9 @@ class JobBoardManager{
 
 		// Class
 
-        //require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings-tabs.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings-tabs.php');
+
+
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');
 
@@ -56,7 +58,7 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-edit-account.php');
 
 
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-list.php');
+		//require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-list.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-pending-publish.php');
 
@@ -239,12 +241,10 @@ class JobBoardManager{
 
 		wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
 		wp_enqueue_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
-		wp_enqueue_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single.css');		
 		//wp_enqueue_style('job_bm_account', job_bm_plugin_url.'assets/front/css/account.css');
-		wp_enqueue_style('job_bm_job_list', job_bm_plugin_url.'assets/front/css/job-list.css');		
+
 		
-		
-		wp_enqueue_style('font-awesome.min', job_bm_plugin_url.'assets/global/css/font-awesome.min.css');
+		//wp_enqueue_style('font-awesome.min', job_bm_plugin_url.'assets/global/css/font-awesome.min.css');
 		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
 		
 		
@@ -264,6 +264,10 @@ class JobBoardManager{
 
 		// Register CSS & Style
         wp_register_style('job-bm-job-submit', job_bm_plugin_url.'assets/front/css/job-submit-new.css');
+        wp_register_style('job_bm_job_archive', job_bm_plugin_url.'assets/front/css/job-archive.css');
+        wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
+        wp_register_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single-new.css');
+
 
         // Register CSS & Style
         wp_register_script('job-bm-job-submit', job_bm_plugin_url.'assets/front/js/scripts-job-submit.js');
@@ -272,11 +276,13 @@ class JobBoardManager{
 
 
 
-
 		}
 
 	public function job_bm_admin_scripts(){
-		
+
+        $screen = get_current_screen();
+
+
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-core');
 		wp_enqueue_script('jquery-ui-sortable');
@@ -289,8 +295,8 @@ class JobBoardManager{
 		wp_enqueue_style('job_bm_admin_style', job_bm_plugin_url.'assets/admin/css/style.css');
 		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
 
-		wp_enqueue_style('font-awesome.min', job_bm_plugin_url.'assets/global/css/font-awesome.min.css');
-        wp_enqueue_style('fontawesome-5.min', job_bm_plugin_url.'assets/global/css/fontawesome-5.min.css');
+		//wp_enqueue_style('font-awesome.min', job_bm_plugin_url.'assets/global/css/font-awesome.min.css');
+        //wp_enqueue_style('fontawesome-5.min', job_bm_plugin_url.'assets/global/css/fontawesome-5.min.css');
 
 		wp_enqueue_style('style-reports', job_bm_plugin_url.'assets/admin/css/style-reports.css');		
 		
@@ -300,8 +306,7 @@ class JobBoardManager{
 		wp_enqueue_style('ParaAdmin', job_bm_plugin_url.'assets/admin/ParaAdmin/css/ParaAdmin.css');		
 		wp_enqueue_script('ParaAdmin', plugins_url( 'assets/admin/ParaAdmin/js/ParaAdmin.js' , __FILE__ ) , array( 'jquery' ));
 
-        //wp_enqueue_style('settings-tabs', job_bm_plugin_url.'assets/admin/css/settings-tabs.css');
-        //wp_enqueue_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
+
 
 		
 		wp_enqueue_script('jquery.canvasjs.min', plugins_url( '/assets/global/js/jquery.canvasjs.min.js' , __FILE__ ) , array( 'jquery' ));		
@@ -309,8 +314,42 @@ class JobBoardManager{
 		
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'job_bm_color_picker', plugins_url('/assets/admin/js/color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-		
-		}
+
+
+
+		// Register Scripts
+        wp_register_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
+
+
+        // Register CSS & Style
+        wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
+        wp_register_style('settings-tabs', job_bm_plugin_url.'assets/admin/css/settings-tabs.css');
+
+
+        //echo '<pre>'.var_export($screen, true).'</pre>';
+
+
+        if ($screen->id == 'job_page_job_bm_settings'){
+
+            wp_enqueue_style( 'font-awesome-5' );
+            wp_enqueue_style( 'settings-tabs' );
+            wp_enqueue_script( 'settings-tabs' );
+
+        }
+
+
+        if ($screen->id == 'job_page_emails_templates'){
+
+            wp_enqueue_style( 'font-awesome-5' );
+            //wp_enqueue_style( 'settings-tabs' );
+            //wp_enqueue_script( 'settings-tabs' );
+
+        }
+
+
+
+
+    }
 	
 	
 	

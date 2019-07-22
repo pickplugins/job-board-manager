@@ -11,9 +11,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$job_bm_registration_enable = get_option('job_bm_registration_enable');
 	$date_format = get_option( 'date_format' );
 	$job_bm_list_per_page = get_option('job_bm_list_per_page');
-	$job_bm_list_excerpt_word_count = get_option('job_bm_list_excerpt_word_count');	
-	$job_bm_list_excerpt_display = get_option('job_bm_list_excerpt_display');
-	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');	
+	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');
 	$job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');	
 	$job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');	
 	$job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');			
@@ -210,113 +208,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		}		
 		
 		
-	
 
-	//echo '<pre>'.var_export($meta_query, true).'</pre>';	
-	
-	
-	
-/*
-
-
-	if(!empty($_GET['job_type'])){
-		
-		$job_type = sanitize_text_field($_GET['job_type']);
-		$meta_keys = 'job_bm_job_type';
-		$meta_keys = explode(',',$meta_keys);
-		
-		//echo '<pre>'.var_export($_GET['job_type'], true).'</pre>';
-		
-		
-		
-		}
-		
-	elseif(!empty($_GET['job_status'])){
-		
-		$job_status = sanitize_text_field($_GET['job_status']);
-		$meta_keys = 'job_bm_job_status';
-		$meta_keys = explode(',',$meta_keys);
-
-		}		
-	elseif(!empty($_GET['expire_date'])){
-		
-		$expire_date = sanitize_text_field($_GET['expire_date']);
-		$meta_keys = 'job_bm_expire_date';
-		$meta_keys = explode(',',$meta_keys);
-
-		}		
-		
-		
-		
-	else{
-		
-		$meta_keys = explode(',',$meta_keys);
-		
-		}
-
-
-	
-
-	foreach($meta_keys as $key){
-		
-		if($key=='job_bm_location'){
-			$meta_query[] = array(
-			
-								'key' => $key,
-								'value' => $location,
-								'compare' => '=',
-								
-									);
-			}
-		elseif($key=='job_bm_job_status'){
-			$meta_query[] = array(
-			
-								'key' => $key,
-								'value' => $job_status,
-								'compare' => '=',
-								
-									);
-			}
-			
-		elseif($key=='job_bm_job_type'){
-			$meta_query[] = array(
-			
-								'key' => $key,
-								'value' => $job_type,
-								'compare' => '=',
-								
-									);
-			}			
-			
-		elseif($key=='job_bm_company_name'){
-			$meta_query[] = array(
-			
-								'key' => $key,
-								'value' => $company_name,
-								'compare' => '=',
-								
-									);
-			}			
-			
-		elseif($key=='job_bm_expire_date'){
-			$meta_query[] = array(
-			
-								'key' => $key,
-								'value' => $expire_date,
-								'compare' => '=',
-								
-									);
-			}
-		else{
-			$meta_query[] = array();
-			
-			}			
-			
-		
-		}
-
-
-*/
 
 
 	$wp_query = new WP_Query(
@@ -335,13 +227,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	
 	$job_list_grid_items = array(
-/*
 
-		'job_bm_company_logo'=>array('class'=>'company_logo','fa'=>'','title'=>''),
-		'title'=>array('class'=>'title','fa'=>'title','title'=>''),
-		'job_bm_short_content'=>array('class'=>'short_content','fa'=>'','title'=>__('Short Description','job-board-manager')),
-
-*/							
 		'clear'=>array('class'=>'clear','fa'=>'','title'=>''),
 		'job_bm_job_type'=>array('class'=>'job_type','fa'=>'briefcase','title'=>__('Job Type','job-board-manager')),
 		'job_bm_job_status'=>array('class'=>'job_status','fa'=>'eye','title'=>__('Job Status','job-board-manager')),
@@ -384,7 +270,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	$job_bm_featured = get_post_meta(get_the_ID(), 'job_bm_featured', true);	
 	$job_bm_company_logo = get_post_meta(get_the_ID(),'job_bm_company_logo', true);
-	$job_bm_short_content = get_post_meta(get_the_ID(),'job_bm_short_content', true);
 
 	foreach($job_list_grid_items as $meta_key=>$grid_data){
 		$meta_key_values[$meta_key] = get_post_meta(get_the_ID(),$meta_key, true);

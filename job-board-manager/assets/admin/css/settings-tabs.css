@@ -67,7 +67,7 @@
 .settings-tabs .tab-nav{
     width: 200px;
     padding: 12px 10px;
-    background: #fff;
+    background: #f1f1f1;
     margin: 0;
     border-bottom: 1px solid #eee;
     cursor: pointer;
@@ -80,7 +80,7 @@
 
 .settings-tabs .tab-content{
     margin-left: 220px;
-    padding: 0;
+    padding: 20px 0;
     background: #f1f1f159;
     display: none;
 }
@@ -167,11 +167,14 @@
     width: 270px;
     float: left;
     font-size: 14px;
+    word-break: break-word;
 }
 .settings-tabs .setting-field .field-input{
     margin-left: 270px;
 }
-.settings-tabs .setting-field .description{}
+.settings-tabs .setting-field .description{
+    word-break: break-word;
+}
 
 
 
@@ -200,10 +203,16 @@
 
 .settings-tabs input[type="text"], .settings-tabs textarea, .settings-tabs select, .settings-tabs input[type="range"]{
     width: 360px;
+    background: #f1f1f1;
 }
 
 
+@media (max-width: 1170px){
+    .settings-tabs input[type="text"], .settings-tabs textarea, .settings-tabs select, .settings-tabs input[type="range"], .settings-tabs .select2{
+        width: 100% !important;
 
+    }
+}
 
 
 @media (max-width: 1440px){
@@ -219,6 +228,21 @@
     .settings-tabs .setting-field .description{}
 
 }
+
+@media (max-width: 1700px){
+
+    .settings-tabs .setting-field .setting-field .field-lable{
+        width: auto;
+        float: none;
+        font-size: 14px;
+    }
+    .settings-tabs .setting-field .setting-field .field-input{
+        margin-left: 0px;
+    }
+
+
+}
+
 
 
 
@@ -316,4 +340,18 @@
     margin-right: 10px;
     padding: 2px 7px;
     border-radius: 3px;
+}
+
+
+.settings-tabs .pro-feature{
+    background: #ffd87f;
+    padding: 0 5px;
+}
+
+
+
+/*3rd Party*/
+
+.settings-tabs .field-input .CodeMirror{
+    background: #f1f1f1;
 }

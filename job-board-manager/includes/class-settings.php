@@ -23,9 +23,9 @@ class class_job_bm_settings{
 
 		add_submenu_page( 'edit.php?post_type=job', __( 'Settings', 'job-board-manager' ), __( 'Settings', 'job-board-manager' ), 'manage_options', 'job_bm_settings', array( $this, 'settings_page' ) );
 		add_submenu_page( 'edit.php?post_type=job', __( 'Reports', 'job-board-manager' ), __( 'Reports', 'job-board-manager' ), 'manage_options', 'job_bm_reports', array( $this, 'reports_page' ) );		
-		add_submenu_page( 'edit.php?post_type=job', __( 'Help', 'job-board-manager' ), __( 'Help', 'job-board-manager' ), 'manage_options', 'job_bm-help', array( $this, 'help_page' ) );		
+		//add_submenu_page( 'edit.php?post_type=job', __( 'Help', 'job-board-manager' ), __( 'Help', 'job-board-manager' ), 'manage_options', 'job_bm-help', array( $this, 'help_page' ) );
 		add_submenu_page( 'edit.php?post_type=job', __( 'Addons', 'job-board-manager' ), __( 'Addons', 'job-board-manager' ), 'manage_options', 'job_bm_addons', array( $this, 'addons_page' ) );
-		add_submenu_page( 'edit.php?post_type=job', __( 'Emails Templates', 'job-board-manager' ), __( 'Emails Templates', 'job-board-manager' ), 'manage_options', 'emails_templates', array( $this, 'emails_templates' ) );		
+		//add_submenu_page( 'edit.php?post_type=job', __( 'Emails Templates', 'job-board-manager' ), __( 'Emails Templates', 'job-board-manager' ), 'manage_options', 'emails_templates', array( $this, 'emails_templates' ) );
 
 		do_action( 'job_bm_action_admin_menus' );
 		
@@ -33,7 +33,7 @@ class class_job_bm_settings{
 	
 	public function settings_page(){
 		
-		include( 'menu/settings.php' );
+		include( 'menu/settings-new.php' );
 		}
 	
 	public function help_page(){

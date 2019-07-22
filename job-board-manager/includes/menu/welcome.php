@@ -83,18 +83,7 @@ class job_bm_setup_wizard {
 									'input_values'=>'20', // could be array	
 									),
 										
-										
-								'job_bm_list_excerpt_word_count' => array(
-									
-									'id'=>'job_bm_list_excerpt_word_count',
-									'css_class'=>'list_excerpt_word_count',
-									'required'=>'no', // (yes, no) is this field required.
-									'placeholder'=>__('30','job-board-manager'),
-									'title'=>__('Excerpt word count ?', 'job-board-manager'),
-									'option_details'=>__('Excerpt word count on archive page', 'job-board-manager'),					
-									'input_type'=>'text', // text, radio, checkbox, select,
-									'input_values'=>'30', // could be array	
-									),										
+
 										
 										
 								'job_bm_account_required_post_job' => array(
@@ -266,8 +255,7 @@ class job_bm_setup_wizard {
 		if($step==1){
 			
 			update_option('job_bm_list_per_page', sanitize_text_field($_POST['job_bm_list_per_page']));
-			update_option('job_bm_list_excerpt_word_count', sanitize_text_field($_POST['job_bm_list_excerpt_word_count']));			
-			
+
 			echo '<div class="updated"><p>'.__('Options saved', 'job-board-manager' ).'</p></div>';
 			
 			
@@ -402,13 +390,8 @@ class job_bm_setup_wizard {
 				echo '</div>';				
 				
 				
-				$job_bm_list_excerpt_word_count = get_option('job_bm_list_excerpt_word_count');
-				if(empty($job_bm_list_excerpt_word_count)){$job_bm_list_excerpt_word_count = 25; }
-				
-				echo '<div class="option">';
-				echo '<p class="title">Excerpt word count ?</p>';				
-				echo '<input type="text" name="job_bm_list_excerpt_word_count" value="'.$job_bm_list_excerpt_word_count.'" />';
-				echo '</div>';					
+
+
 				
 				}
 			
