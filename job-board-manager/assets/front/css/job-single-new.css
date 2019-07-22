@@ -15,10 +15,12 @@
 }
 
 
-.job-meta-company{}
+.job-meta-company{
+  margin-top: 45px;
+}
 .job-meta-company .company-logo{
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   overflow: hidden;
   float: left;
   margin-right: 20px;
@@ -32,7 +34,18 @@
 
 
 
+.job-single .job-meta-info{
+  margin-bottom: 30px;
+  margin-top: 45px;
+}
 
+.job-single .job-meta-info .meta-item{
+  margin-right: 20px;
+  font-size: 16px;
+  width: 45%;
+  display: inline-block;
+  margin: 5px 0;
+}
 
 
 

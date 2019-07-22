@@ -35,91 +35,36 @@ add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_meta_start'
 if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
     function job_bm_single_job_main_meta_start() {
 
+        $post_id = get_the_id();
+
+        $job_bm_location = get_post_meta($post_id, 'job_bm_location', true);
+        $post_date = get_the_date();
+        $post_id = get_the_id();
+        $category = get_the_terms($post_id, 'job_category');
         ?>
         <div class="job-meta-top">
+            <span class="post-date meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+            <span class="post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
+
             <?php
 
-            do_action('job_bm_single_job_meta_top');
+            if(!empty($category[0]->name)):
+                ?>
+
+                <span class="post-date meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?></span>
+
+            <?php
+            endif;
 
             ?>
+
+
         </div>
         <?php
 
 
     }
 }
-
-
-
-
-
-
-
-
-add_action( 'job_bm_single_job_meta_top', 'job_bm_single_job_meta_top_location', 20 );
-
-if ( ! function_exists( 'job_bm_single_job_meta_top_location' ) ) {
-    function job_bm_single_job_meta_top_location() {
-
-        $post_id = get_the_id();
-
-        $job_bm_location = get_post_meta($post_id, 'job_bm_location', true);
-
-        ?>
-
-        <span class="post-date meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
-
-        <?php
-
-
-    }
-}
-
-
-
-
-add_action( 'job_bm_single_job_meta_top', 'job_bm_single_job_meta_top_post_date', 20 );
-
-if ( ! function_exists( 'job_bm_single_job_meta_top_post_date' ) ) {
-    function job_bm_single_job_meta_top_post_date() {
-
-        $post_date = get_the_date();
-
-        ?>
-
-        <span class="post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
-
-        <?php
-
-
-    }
-}
-
-
-add_action( 'job_bm_single_job_meta_top', 'job_bm_single_job_meta_top_category', 20 );
-
-if ( ! function_exists( 'job_bm_single_job_meta_top_category' ) ) {
-    function job_bm_single_job_meta_top_category() {
-
-        $post_id = get_the_id();
-        $category = get_the_terms($post_id, 'job_category');
-
-        if(!empty($category[0]->name)):
-            ?>
-
-            <span class="post-date meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?></span>
-
-        <?php
-        endif;
-
-
-
-
-    }
-}
-
-
-
 
 
 
@@ -142,46 +87,13 @@ if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_company', 300 );
+add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_company', 20 );
 if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
     function job_bm_single_job_main_company() {
 
-        ?>
-        <div class="job-meta-company">
-            <?php
-
-            do_action('job_bm_single_job_company');
-
-            ?>
-        </div>
-        <?php
-
-
-    }
-}
 
 
 
-add_action( 'job_bm_single_job_company', 'job_bm_single_job_company_title', 20 );
-
-if ( ! function_exists( 'job_bm_single_job_company_title' ) ) {
-    function job_bm_single_job_company_title() {
-
-        ?>
-
-        <h2>About Company</h2>
-
-        <?php
-
-
-    }
-}
-
-
-add_action( 'job_bm_single_job_company', 'job_bm_single_job_company_logo', 20 );
-
-if ( ! function_exists( 'job_bm_single_job_company_logo' ) ) {
-    function job_bm_single_job_company_logo() {
 
         $job_bm_address = get_post_meta(get_the_ID(), 'job_bm_address', true);
         $job_bm_company_name = get_post_meta(get_the_ID(), 'job_bm_company_name', true);
@@ -209,23 +121,85 @@ if ( ! function_exists( 'job_bm_single_job_company_logo' ) ) {
             $job_bm_company_logo = $job_bm_default_company_logo;
         }
 
-
-        //var_dump($job_bm_company_logo);
-
         ?>
+        <div class="job-meta-company">
+            <h2>About Company</h2>
+            <div class="company-logo">
+                <img src="<?php echo $job_bm_company_logo; ?>">
+            </div>
 
-        <div class="company-logo">
-            <img src="<?php echo $job_bm_company_logo; ?>">
+            <div class="company-name"><?php echo $job_bm_company_name; ?></div>
+            <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
+            <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>">Website</a> </div>
         </div>
-
-        <div class="company-name"><?php echo $job_bm_company_name; ?></div>
-        <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
-        <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>">Website</a> </div>
         <?php
 
 
     }
 }
+
+
+
+
+
+
+add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_job_info', 30 );
+if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
+    function job_bm_single_job_main_job_info() {
+
+
+        $class_job_bm_functions = new class_job_bm_functions();
+
+
+        $salary_type_list = $class_job_bm_functions->salary_type_list();
+        $job_status_list = $class_job_bm_functions->job_status_list();
+        $job_type_list = $class_job_bm_functions->job_type_list();
+        $job_level_list = $class_job_bm_functions->job_level_list();
+
+
+        $post_id = get_the_id();
+
+        $job_bm_total_vacancies = get_post_meta($post_id, 'job_bm_total_vacancies', true);
+        $job_bm_job_level = get_post_meta($post_id, 'job_bm_job_level', true);
+        $job_bm_job_type = get_post_meta($post_id, 'job_bm_job_type', true);
+        $job_bm_years_experience = get_post_meta($post_id, 'job_bm_years_experience', true);
+        $job_bm_salary_fixed = get_post_meta($post_id, 'job_bm_salary_fixed', true);
+        $job_bm_salary_currency = get_post_meta($post_id, 'job_bm_salary_currency', true);
+        $job_bm_job_status = get_post_meta($post_id, 'job_bm_job_status', true);
+
+
+
+        $post_date = get_the_date();
+        $post_id = get_the_id();
+        $category = get_the_terms($post_id, 'job_category');
+        ?>
+        <div class="job-meta-info">
+            <h2>Job Information</h2>
+            <span class="post-date meta-item"><i class="fas fa-traffic-light"></i> Status: <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+            <span class="post-date meta-item"><i class="fas fa-user-friends"></i> No of vacancies: <?php echo $job_bm_total_vacancies; ?></span>
+            <span class="post-date meta-item"><i class="fas fa-bullseye"></i> <?php echo 'Job type: '.$job_type_list[$job_bm_job_type]; ?></span>
+            <span class="post-date meta-item"><i class="fab fa-algolia"></i> <?php echo 'Job level: '.$job_level_list[$job_bm_job_level]; ?></span>
+            <span class="post-date meta-item"><i class="fas fa-crosshairs"></i> <?php echo 'Years of experience: '.$job_bm_years_experience; ?></span>
+            <span class="post-date meta-item"><i class="fas fa-pizza-slice"></i> <?php echo 'Salary: '.$job_bm_salary_currency.$job_bm_salary_fixed; ?></span>
+
+
+
+
+        </div>
+        <?php
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 

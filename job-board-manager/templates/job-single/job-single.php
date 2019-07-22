@@ -12,7 +12,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
     do_action('job_bm_action_before_single_job');
 
     ?>
-    <div itemscope itemtype="http://schema.org/JobPosting" id="job-<?php $job_id; ?>" <?php post_class('job-single entry-content'); ?>>
+    <div itemscope itemtype="http://schema.org/JobPosting" id="job-<?php $job_id; ?>" class="job-single">
 
     <?php do_action('job_bm_action_single_job_main'); ?>
 
