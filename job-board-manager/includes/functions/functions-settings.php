@@ -209,7 +209,7 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
                 'id'		=> 'job_bm_registration_enable',
                 //'parent'		=> 'post_grid_meta_options',
                 'title'		=> __('Registration enable?','post-grid'),
-                'details'	=> __('Registration enable on my dashboard page.','post-grid'),
+                'details'	=> __('Registration enable on dashboard page.','post-grid'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_registration_enable,
@@ -224,7 +224,7 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
                 'id'		=> 'job_bm_login_enable',
                 //'parent'		=> 'post_grid_meta_options',
                 'title'		=> __('Login enable?','post-grid'),
-                'details'	=> __('Login enable on my account page.','post-grid'),
+                'details'	=> __('Login enable on dashboard page.','post-grid'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_login_enable,
@@ -408,7 +408,7 @@ if(!function_exists('job_bm_settings_tabs_content_job_post')) {
             $page_list = job_bm_page_list_id();
             //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
 
-            $page_list['job_preview'] = __('Job Preview');
+            $page_list['job_preview'] = __('-- Job Preview --');
 
 
             $args = array(
@@ -758,10 +758,114 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
 
 
 
+            ?>
+
+
+        </div>
+        <?php
+
+
+    }
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+add_action('job_bm_settings_tabs_content_expiry', 'job_bm_settings_tabs_content_expiry');
+
+if(!function_exists('job_bm_settings_tabs_content_expiry')) {
+    function job_bm_settings_tabs_content_expiry($tab){
+
+        $settings_tabs_field = new settings_tabs_field();
+        $class_job_bm_functions = new class_job_bm_functions();
+
+
+
+
+        $job_bm_enable_expiry = get_option('job_bm_enable_expiry');
+        $job_bm_experied_jobs_post_status = get_option('job_bm_experied_jobs_post_status');
+        $job_bm_experied_check_recurrance = get_option('job_bm_experied_check_recurrance');
+        $job_bm_job_expiry_days = get_option('job_bm_job_expiry_days');
+
+
+
+
+
+
+        ?>
+        <div class="section">
+            <div class="section-title">Job expire settings</div>
+            <p class="description section-description">Customize job expire settings.</p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_enable_expiry',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Enable job expiry','post-grid'),
+                'details'	=> __('You can enable or disable job expiry.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_enable_expiry,
+                'default'		=> 'no',
+                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_experied_jobs_post_status',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Expired jobs status','post-grid'),
+                'details'	=> __('Set post status for expired jobs.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_experied_jobs_post_status,
+                'default'		=> 'trash',
+                'args'		=> array('publish'=>__('Publish', 'job-board-manager'), 'draft'=>__('Draft', 'job-board-manager'), 'pending'=>__('Pending', 'job-board-manager'),'private'=>__('Private', 'job-board-manager'), 'trash'=>__('Trash', 'job-board-manager')),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_experied_check_recurrance',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Expired check recurrence','post-grid'),
+                'details'	=> __('Set recurrence for checking expired jobs.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_experied_check_recurrance,
+                'default'		=> 'daily',
+                'args'		=> array('hourly'=>__('Hourly', 'job-board-manager'), 'twicedaily'=>__('Twicedaily', 'job-board-manager'), 'daily'=>__('Daily', 'job-board-manager')),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_job_expiry_days',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Expire days','post-grid'),
+                'details'	=> __('Set custom value for expire in.','post-grid'),
+                'type'		=> 'text',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_job_expiry_days,
+                'default'		=> '30',
+                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+            );
+
+            $settings_tabs_field->generate_field($args);
 
 
 

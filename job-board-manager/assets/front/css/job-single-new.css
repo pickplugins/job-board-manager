@@ -13,6 +13,14 @@
   margin-right: 20px;
   font-size: 16px;
 }
+.job-single .job-meta-top .featured{
+  background: #fff8bf;
+  padding: 4px 9px;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+}
+
+
 
 
 .job-meta-company{

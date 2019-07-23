@@ -10,36 +10,44 @@ $testimonial_settings_tab[] = array(
     'id' => 'general',
     'title' => __('<i class="fas fa-laptop-code"></i> General','testimonial'),
     'priority' => 1,
-    'active' => true,
+    'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'pages',
-    'title' => __('<i class="fas fa-palette"></i> Pages','testimonial'),
+    'title' => __('<i class="far fa-copy"></i> Pages','testimonial'),
     'priority' => 2,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'job_post',
-    'title' => __('<i class="fas fa-qrcode"></i> Job Post','testimonial'),
+    'title' => __('<i class="fas fa-pencil-ruler"></i> Job Post','testimonial'),
     'priority' => 3,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'email',
-    'title' => __('<i class="fas fa-map"></i> Email','testimonial'),
+    'title' => __('<i class="far fa-envelope"></i> Email','testimonial'),
     'priority' => 4,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'style',
-    'title' => __('<i class="fas fa-map"></i> Style','testimonial'),
+    'title' => __('<i class="fas fa-palette"></i> Style','testimonial'),
     'priority' => 5,
     'active' => false,
 );
+
+$testimonial_settings_tab[] = array(
+    'id' => 'expiry',
+    'title' => __('<i class="fas fa-calendar-alt"></i> Expiry','testimonial'),
+    'priority' => 5,
+    'active' => true,
+);
+
 
 
 $testimonial_settings_tabs = apply_filters('job_bm_settings_tabs', $testimonial_settings_tab);

@@ -8,7 +8,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_title', 0);
 
 function job_bm_job_submit_form_title(){
 
-    $post_title = isset($_POST['post_title']) ? sanitize_text_field($_POST['post_title']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_post = get_post($job_id);
+
+    $post_title = isset($_POST['post_title']) ? sanitize_text_field($_POST['post_title']) : $job_post->post_title;
 
     ?>
     <div class="form-field-wrap">
@@ -29,9 +32,12 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_content', 10);
 
 function job_bm_job_submit_form_content(){
 
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_post = get_post($job_id);
+
     $field_id = 'post_content';
     $allowed_html = apply_filters('job_bm_job_submit_allowed_html_tags', array());
-    $post_content = isset($_POST['post_content']) ? wp_kses($_POST['post_content'], $allowed_html) : "";
+    $post_content = isset($_POST['post_content']) ? wp_kses($_POST['post_content'], $allowed_html) : $job_post->post_content;
 
 
     ?>
@@ -62,7 +68,11 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_categories', 20);
 
 function job_bm_job_submit_form_categories(){
 
-    $job_category = isset($_POST['job_category']) ? sanitize_text_field($_POST['job_category']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_categories = get_the_terms($job_id, 'job_category');
+
+    $job_category_id = isset($job_categories[0]->term_id) ? $job_categories[0]->term_id : '';
+    $job_category = isset($_POST['job_category']) ? sanitize_text_field($_POST['job_category']) : $job_category_id;
 
     $categories = get_terms( array(
         'taxonomy' => 'job_category',
@@ -70,10 +80,6 @@ function job_bm_job_submit_form_categories(){
     ) );
 
     $terms = array();
-
-    //var_dump($categories);
-
-
 
     if(!empty($categories)) {
         foreach ($categories as $category) {
@@ -145,7 +151,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_total_vacancies', 3
 
 function job_bm_job_submit_form_total_vacancies(){
 
-    $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_total_vacancies = get_post_meta($job_id,'job_bm_total_vacancies', true);
+
+    $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : $job_bm_total_vacancies;
 
     ?>
     <div class="form-field-wrap">
@@ -170,7 +179,10 @@ function job_bm_job_submit_form_job_type(){
     $class_job_bm_functions = new class_job_bm_functions();
     $job_type_list = $class_job_bm_functions->job_type_list();
 
-    $job_bm_job_type = isset($_POST['job_bm_job_type']) ? sanitize_text_field($_POST['job_bm_job_type']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_job_type = get_post_meta($job_id,'job_bm_job_type', true);
+
+    $job_bm_job_type = isset($_POST['job_bm_job_type']) ? sanitize_text_field($_POST['job_bm_job_type']) : $job_bm_job_type;
 
 
     ?>
@@ -210,7 +222,10 @@ function job_bm_job_submit_form_job_level(){
     $class_job_bm_functions = new class_job_bm_functions();
     $job_level_list = $class_job_bm_functions->job_level_list();
 
-    $job_bm_job_level = isset($_POST['job_bm_job_level']) ? sanitize_text_field($_POST['job_bm_job_level']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_job_level = get_post_meta($job_id,'job_bm_job_level', true);
+
+    $job_bm_job_level = isset($_POST['job_bm_job_level']) ? sanitize_text_field($_POST['job_bm_job_level']) : $job_bm_job_level;
 
 
     ?>
@@ -249,7 +264,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_years_experience', 
 
 function job_bm_job_submit_form_years_experience(){
 
-    $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_years_experience = get_post_meta($job_id,'job_bm_years_experience', true);
+
+    $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : $job_bm_years_experience;
 
     ?>
     <div class="form-field-wrap">
@@ -277,7 +295,10 @@ function job_bm_job_submit_form_salary_type(){
     $class_job_bm_functions = new class_job_bm_functions();
     $salary_type_list = $class_job_bm_functions->salary_type_list();
 
-    $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
+
+    $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : $job_bm_salary_type;
 
 
     ?>
@@ -315,8 +336,11 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_salary_fixed', 30);
 
 function job_bm_job_submit_form_salary_fixed(){
 
-    $job_bm_salary_fixed = isset($_POST['job_bm_salary_fixed']) ? sanitize_text_field($_POST['job_bm_salary_fixed']) : "";
-    $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
+    $job_bm_salary_fixed = get_post_meta($job_id,'job_bm_salary_fixed', true);
+
+    $job_bm_salary_fixed = isset($_POST['job_bm_salary_fixed']) ? sanitize_text_field($_POST['job_bm_salary_fixed']) : $job_bm_salary_fixed;
 
     ?>
     <div class="form-field-wrap salary_fixed" <?php if($job_bm_salary_type =='fixed'): ?> style="display: block" <?php endif; ?>>
@@ -335,8 +359,11 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_salary_min', 30);
 
 function job_bm_job_submit_form_salary_min(){
 
-    $job_bm_salary_min = isset($_POST['job_bm_salary_min']) ? sanitize_text_field($_POST['job_bm_salary_min']) : "";
-    $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
+    $job_bm_salary_min = get_post_meta($job_id,'job_bm_salary_min', true);
+
+    $job_bm_salary_min = isset($_POST['job_bm_salary_min']) ? sanitize_text_field($_POST['job_bm_salary_min']) : $job_bm_salary_min;
 
     ?>
     <div class="form-field-wrap salary_min" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
@@ -356,8 +383,11 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_salary_max', 30);
 
 function job_bm_job_submit_form_salary_max(){
 
-    $job_bm_salary_max = isset($_POST['job_bm_salary_max']) ? sanitize_text_field($_POST['job_bm_salary_max']) : "";
-    $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
+    $job_bm_salary_max = get_post_meta($job_id,'job_bm_salary_max', true);
+
+    $job_bm_salary_max = isset($_POST['job_bm_salary_max']) ? sanitize_text_field($_POST['job_bm_salary_max']) : $job_bm_salary_max;
 
     ?>
     <div class="form-field-wrap salary_max" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
@@ -377,7 +407,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_contact_email', 30)
 
 function job_bm_job_submit_form_contact_email(){
 
-    $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_contact_email = get_post_meta($job_id,'job_bm_contact_email', true);
+
+    $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : $job_bm_contact_email;
 
     ?>
     <div class="form-field-wrap">
@@ -416,7 +449,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_company_name', 45);
 
 function job_bm_job_submit_form_company_name(){
 
-    $job_bm_company_name = isset($_POST['job_bm_company_name']) ? sanitize_text_field($_POST['job_bm_company_name']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_company_name = get_post_meta($job_id,'job_bm_company_name', true);
+
+    $job_bm_company_name = isset($_POST['job_bm_company_name']) ? sanitize_text_field($_POST['job_bm_company_name']) : $job_bm_company_name;
 
     ?>
     <div class="form-field-wrap">
@@ -436,7 +472,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_location', 45);
 
 function job_bm_job_submit_form_location(){
 
-    $job_bm_location = isset($_POST['job_bm_location']) ? sanitize_text_field($_POST['job_bm_location']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_location = get_post_meta($job_id,'job_bm_location', true);
+
+    $job_bm_location = isset($_POST['job_bm_location']) ? sanitize_text_field($_POST['job_bm_location']) : $job_bm_location;
 
     ?>
     <div class="form-field-wrap">
@@ -455,7 +494,10 @@ function job_bm_job_submit_form_location(){
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_address', 45);
 function job_bm_job_submit_form_address(){
 
-    $job_bm_address = isset($_POST['job_bm_address']) ? sanitize_text_field($_POST['job_bm_address']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_address = get_post_meta($job_id,'job_bm_address', true);
+
+    $job_bm_address = isset($_POST['job_bm_address']) ? sanitize_text_field($_POST['job_bm_address']) : $job_bm_address;
 
     ?>
     <div class="form-field-wrap">
@@ -475,7 +517,10 @@ function job_bm_job_submit_form_address(){
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_company_website', 45);
 function job_bm_job_submit_form_company_website(){
 
-    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? sanitize_text_field($_POST['job_bm_company_website']) : "";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_company_website = get_post_meta($job_id,'job_bm_company_website', true);
+
+    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? sanitize_text_field($_POST['job_bm_company_website']) : $job_bm_company_website;
 
     ?>
     <div class="form-field-wrap">
@@ -495,7 +540,11 @@ function job_bm_job_submit_form_company_website(){
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_company_logo', 45);
 function job_bm_job_submit_form_company_logo(){
 
-    $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : job_bm_plugin_url."assets/front/images/placeholder.png";
+    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+    $job_bm_company_logo = get_post_meta($job_id,'job_bm_company_logo', true);
+    $job_bm_company_logo = !empty($job_bm_company_logo) ? $job_bm_company_logo : job_bm_plugin_url."assets/front/images/placeholder.png";
+
+    $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : $job_bm_company_logo;
 
     ?>
     <div class="form-field-wrap ">

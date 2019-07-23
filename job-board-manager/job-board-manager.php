@@ -71,6 +71,7 @@ class JobBoardManager{
 		//require_once( plugin_dir_path( __FILE__ ) . 'includes/pickform/class-pickform-creator.php');
 		//require_once( plugin_dir_path( __FILE__ ) . 'includes/pickform/class-pickformNew.php');
 
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-crons.php');
 
 
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions.php');
@@ -102,10 +103,17 @@ class JobBoardManager{
 
 		//session_start();
 		register_activation_hook( __FILE__, array( $this, 'job_bm_activation' ) );
-		add_filter('widget_text', 'do_shortcode');
+        //register_activation_hook(__FILE__, array( $this, 'job_bm_cron_experied_check_init' ));
+        register_deactivation_hook(__FILE__, array( $this, 'job_bm_cron_expired_check_deactivation' ));
+
+        add_filter('widget_text', 'do_shortcode');
 
 
 		add_action( 'init', array( $this, 'textdomain' ));
+
+
+
+
 	
 	}
 	
@@ -167,10 +175,17 @@ class JobBoardManager{
 			}
 
 
+        $job_bm_experied_check_recurrance = get_option(  'job_bm_experied_check_recurrance','daily');
+
+        wp_schedule_event(time(), $job_bm_experied_check_recurrance, 'job_bm_cron_expired_check');
 
 		
 	}
-	
+
+    function job_bm_cron_expired_check_deactivation() {
+        wp_clear_scheduled_hook('job_bm_cron_expired_check');
+    }
+
 	
 	public function job_bm_install(){
 		

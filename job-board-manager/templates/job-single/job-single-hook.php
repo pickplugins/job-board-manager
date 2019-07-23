@@ -38,11 +38,22 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
         $post_id = get_the_id();
 
         $job_bm_location = get_post_meta($post_id, 'job_bm_location', true);
+        $job_bm_featured = get_post_meta($post_id, 'job_bm_featured', true);
         $post_date = get_the_date();
         $post_id = get_the_id();
         $category = get_the_terms($post_id, 'job_category');
         ?>
         <div class="job-meta-top">
+
+
+
+
+            <?php if($job_bm_featured =='yes'):?>
+                <span class="post-date meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured'); ?></span>
+            <?php endif; ?>
+
+
+
             <span class="post-date meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
             <span class="post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
 
@@ -175,13 +186,30 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         ?>
         <div class="job-meta-info">
             <h2>Job Information</h2>
-            <span class="post-date meta-item"><i class="fas fa-traffic-light"></i> Status: <?php echo $job_status_list[$job_bm_job_status]; ?></span>
-            <span class="post-date meta-item"><i class="fas fa-user-friends"></i> No of vacancies: <?php echo $job_bm_total_vacancies; ?></span>
-            <span class="post-date meta-item"><i class="fas fa-bullseye"></i> <?php echo 'Job type: '.$job_type_list[$job_bm_job_type]; ?></span>
-            <span class="post-date meta-item"><i class="fab fa-algolia"></i> <?php echo 'Job level: '.$job_level_list[$job_bm_job_level]; ?></span>
-            <span class="post-date meta-item"><i class="fas fa-crosshairs"></i> <?php echo 'Years of experience: '.$job_bm_years_experience; ?></span>
-            <span class="post-date meta-item"><i class="fas fa-pizza-slice"></i> <?php echo 'Salary: '.$job_bm_salary_currency.$job_bm_salary_fixed; ?></span>
 
+            <?php if(isset($job_status_list[$job_bm_job_status])):?>
+            <span class="post-date meta-item"><i class="fas fa-traffic-light"></i> Status: <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+            <?php endif; ?>
+
+            <?php if($job_bm_total_vacancies):?>
+            <span class="post-date meta-item"><i class="fas fa-user-friends"></i> No of vacancies: <?php echo $job_bm_total_vacancies; ?></span>
+            <?php endif; ?>
+
+            <?php if(isset($job_type_list[$job_bm_job_type])):?>
+            <span class="post-date meta-item"><i class="fas fa-bullseye"></i> <?php echo 'Job type: '.$job_type_list[$job_bm_job_type]; ?></span>
+            <?php endif; ?>
+
+            <?php if(isset($job_level_list[$job_bm_job_level])):?>
+            <span class="post-date meta-item"><i class="fas fa-users"></i> <?php echo 'Job level: '.$job_level_list[$job_bm_job_level]; ?></span>
+            <?php endif; ?>
+
+            <?php if($job_bm_years_experience):?>
+            <span class="post-date meta-item"><i class="fas fa-crosshairs"></i> <?php echo 'Years of experience: '.$job_bm_years_experience; ?></span>
+            <?php endif; ?>
+
+            <?php if($job_bm_salary_fixed):?>
+            <span class="post-date meta-item"><i class="fas fa-pizza-slice"></i> <?php echo 'Salary: '.$job_bm_salary_currency.$job_bm_salary_fixed; ?></span>
+            <?php endif; ?>
 
 
 
