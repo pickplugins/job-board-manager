@@ -42,7 +42,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			if(!empty($job_bm_job_type) && !empty($job_type_list[$job_bm_job_type])){
 				
 				?>
-                <div title="<?php echo $item_data['title']; ?>" class="job-meta job-bm-tooltip <?php echo $item_data['class'].' '.$job_bm_job_type; ?>"><i class="fa fa-<?php echo $item_data['fa']; ?>"></i> <a href="<?php echo $job_bm_archive_page_link.$permalink_joint.'job_type='.$job_bm_job_type; ?>"><?php echo $job_type_list[$job_bm_job_type]; ?></a></div>
+                <div title="<?php echo $item_data['title']; ?>" class="job-meta  <?php echo $item_data['class'].' '.$job_bm_job_type; ?>"><i class="fa fa-<?php echo $item_data['fa']; ?>"></i> <a href="<?php echo $job_bm_archive_page_link.$permalink_joint.'job_type='.$job_bm_job_type; ?>"><?php echo $job_type_list[$job_bm_job_type]; ?></a></div>
 				<?php
 
 				
@@ -58,7 +58,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			if(!empty($job_bm_job_status)){
 				
 				?>
-                <div title="<?php echo $item_data['title']; ?>" class="job-meta job-bm-tooltip <?php echo $item_data['class'].' '.$job_bm_job_status; ?>"> <a href="<?php echo $job_bm_archive_page_link.$permalink_joint.'job_status='.$job_bm_job_status; ?>"><?php echo $job_status_list[$job_bm_job_status]; ?></a></div>
+                <div title="<?php echo $item_data['title']; ?>" class="job-meta  <?php echo $item_data['class'].' '.$job_bm_job_status; ?>"> <a href="<?php echo $job_bm_archive_page_link.$permalink_joint.'job_status='.$job_bm_job_status; ?>"><?php echo $job_status_list[$job_bm_job_status]; ?></a></div>
 				<?php
 
 				
@@ -101,7 +101,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 			if(!empty($job_bm_company_name)){
-				echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$company_link.'">'.$job_bm_company_name.'</a></div>';
+				echo '<div title="'.$item_data['title'].'" class="job-meta  '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$company_link.'">'.$job_bm_company_name.'</a></div>';
 				}
 
 
@@ -144,7 +144,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 					}
 
 				if(!empty($job_bm_location)){
-					echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$location_link.'">'.$job_bm_location.'</a></div>';
+					echo '<div title="'.$item_data['title'].'" class="job-meta  '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="'.$location_link.'">'.$job_bm_location.'</a></div>';
 					}
 
 				}
@@ -162,7 +162,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
             $date = new DateTime($meta_key_value);
 	        $date = $date->format('d M, Y');
 			if(!empty($meta_key_value)){
-				echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="#">'.$date.'</a></div>';
+				echo '<div title="'.$item_data['title'].'" class="job-meta  '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="#">'.$date.'</a></div>';
 			}
 
 		}
@@ -175,7 +175,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			//var_dump('Hello');
 			
 			if(!empty($meta_key_value)){
-				echo '<div title="'.$item_data['title'].'" class="job-meta job-bm-tooltip '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="#">'.$meta_key_value.'</a></div>';
+				echo '<div title="'.$item_data['title'].'" class="job-meta  '.$item_data['class'].'"><i class="fa fa-'.$item_data['fa'].'"></i> <a href="#">'.$meta_key_value.'</a></div>';
 				}
 
 			}

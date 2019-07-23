@@ -542,6 +542,11 @@ function job_bm_job_submit_form_company_logo(){
 
     $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_company_logo = get_post_meta($job_id,'job_bm_company_logo', true);
+
+    //var_dump($job_bm_company_logo);
+
+
+
     $job_bm_company_logo = !empty($job_bm_company_logo) ? $job_bm_company_logo : job_bm_plugin_url."assets/front/images/placeholder.png";
 
     $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : $job_bm_company_logo;

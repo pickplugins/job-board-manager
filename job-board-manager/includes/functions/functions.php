@@ -253,7 +253,7 @@ function job_bm_ajax_paginate_load_more(){
 
 				if(!empty($meta_key_values[$meta_key]) && !empty($job_type_list[$meta_key_values[$meta_key]])){
 
-					echo '<div  title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$grid_data['class'].' '.$meta_key_values[$meta_key].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'job_type='.$meta_key_values[$meta_key].'">'.$job_type_list[$meta_key_values[$meta_key]].'</a></div>';
+					echo '<div  title="'.$grid_data['title'].'" class="job-meta  '.$grid_data['class'].' '.$meta_key_values[$meta_key].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'job_type='.$meta_key_values[$meta_key].'">'.$job_type_list[$meta_key_values[$meta_key]].'</a></div>';
 				}
 
 			}
@@ -261,7 +261,7 @@ function job_bm_ajax_paginate_load_more(){
 			elseif($meta_key== 'job_bm_job_status'){
 
 				if(!empty($meta_key_values[$meta_key])){
-					echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$meta_key_values[$meta_key].' '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'job_status='.$meta_key_values[$meta_key].'">'.$job_status_list[$meta_key_values[$meta_key]].'</a></div>';
+					echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$meta_key_values[$meta_key].' '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'job_status='.$meta_key_values[$meta_key].'">'.$job_status_list[$meta_key_values[$meta_key]].'</a></div>';
 
 				}
 
@@ -275,7 +275,7 @@ function job_bm_ajax_paginate_load_more(){
 
 				if(!empty($category)){
 					//$html.=	'<span><i class="fa fa-folder-open"></i> <a href="'.$archive_page_url.'?category='.$category[0]->slug.'">'.$category[0]->name.'</a></span>';
-					echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$meta_key_values[$meta_key].' '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.'?job_cat='.$category[0]->slug.'">'.$category[0]->name.'</a></div>';
+					echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$meta_key_values[$meta_key].' '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.'?job_cat='.$category[0]->slug.'">'.$category[0]->name.'</a></div>';
 
 				}
 
@@ -287,7 +287,7 @@ function job_bm_ajax_paginate_load_more(){
 
 			elseif($meta_key== 'job_bm_expire_date'){
 
-				echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'expire_date='.$meta_key_values[$meta_key].'">'.date_i18n($date_format,strtotime($meta_key_values[$meta_key])).'</a></div>';
+				echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$job_bm_archive_page_link.$permalink_joint.'expire_date='.$meta_key_values[$meta_key].'">'.date_i18n($date_format,strtotime($meta_key_values[$meta_key])).'</a></div>';
 
 
 			}
@@ -323,7 +323,7 @@ function job_bm_ajax_paginate_load_more(){
 				}
 
 				if(!empty($meta_key_values[$meta_key])){
-					echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$company_link.'">'.$meta_key_values[$meta_key].'</a></div>';
+					echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$company_link.'">'.$meta_key_values[$meta_key].'</a></div>';
 				}
 			}
 
@@ -354,7 +354,7 @@ function job_bm_ajax_paginate_load_more(){
 
 
 				if(!empty($meta_key_values[$meta_key])){
-					echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$location_link.'">'.$meta_key_values[$meta_key].'</a></div>';
+					echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="'.$location_link.'">'.$meta_key_values[$meta_key].'</a></div>';
 				}
 
 			}
@@ -362,7 +362,7 @@ function job_bm_ajax_paginate_load_more(){
 
 			else{
 				if(!empty($meta_key_values[$meta_key])){
-					echo '<div title="'.$grid_data['title'].'" class="job-meta job-bm-tooltip '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="#">'.$meta_key_values[$meta_key].'</a></div>';
+					echo '<div title="'.$grid_data['title'].'" class="job-meta  '.$grid_data['class'].'"><i class="fa fa-'.$grid_data['fa'].'"></i><a href="#">'.$meta_key_values[$meta_key].'</a></div>';
 				}
 
 			}

@@ -1,14 +1,5 @@
 jQuery(document).ready(function($) {
-		
-		
-		
-	$('.job-bm-tooltip').tooltipster();
-		
-		
-		
-		
-		
-		
+
 		
 	$(document).on('click', '.paginate .paginate-ajax', function() {
 
@@ -65,10 +56,10 @@ jQuery(document).ready(function($) {
 				$( data ).insertBefore( $(this).parent() );
 				$('.paginate .paginate-ajax .fa-eercast').removeClass('fa-spin');
 
-
-				 $('html, body').stop().animate({
-					 scrollTop: $("#paged-" + paged).offset().top - 50
-				 }, 1000);
+				 //
+				 // $('html, body').stop().animate({
+					//  scrollTop: $("#paged-" + paged).offset().top - 50
+				 // }, 1000);
 
 				
 				
