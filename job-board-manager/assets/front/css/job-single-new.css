@@ -4,6 +4,12 @@
 .job-single{}
 
 
+.job-single .job-preview-notice{
+  background: #ffefbf;
+  padding: 10px;
+  margin-bottom: 30px;
+  border-left: 3px solid #fdc51c;
+}
 
 .job-single .job-meta-top{
   margin-bottom: 30px;

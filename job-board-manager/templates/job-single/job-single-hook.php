@@ -26,7 +26,18 @@ add_filter( 'the_content', 'job_bmpost_type_template_job' );
 
 
 
+add_action( 'job_bm_action_single_job_main', 'job_bm_action_before_single_job_preview', 5 );
+if ( ! function_exists( 'job_bm_action_before_single_job_preview' ) ) {
+    function job_bm_action_before_single_job_preview(){
 
+        if(is_preview()):
+            ?>
+            <div class="job-preview-notice">This is preview of your job, please do not share link.</div>
+        <?php
+        endif;
+
+    }
+}
 
 
 
