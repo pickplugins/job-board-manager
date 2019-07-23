@@ -23,6 +23,12 @@ class class_job_bm_shortcodes_job_edit{
         $dashboard_page_url = get_permalink($job_bm_job_login_page_id);
 
         $userid = get_current_user_id();
+
+
+        if(!isset($_GET['job_id'])):
+            return apply_filters('job_bm_job_edit_invalid_job_id_text', __('Job id is invalid.', 'job-board-manager'));
+        endif;
+
         $job_id = sanitize_text_field($_GET['job_id']);
 
         // job poster auhtor id.

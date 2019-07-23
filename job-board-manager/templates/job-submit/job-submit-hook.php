@@ -704,8 +704,6 @@ function job_bm_job_submit_data($post_data){
         $post_title = isset($post_data['post_title']) ? $post_data['post_title'] :'';
         $post_content = isset($post_data['post_content']) ? wp_kses($post_data['post_content'], $allowed_html) : "";
 
-        $post_status = isset($post_data['post_status']) ? $post_data['post_status'] :'';
-
 
         $job_ID = wp_insert_post(
             array(
@@ -834,7 +832,11 @@ function job_bm_job_submitted_redirect($job_ID, $post_data){
 
         if($job_bm_redirect_preview_link =='job_preview'){
             $redirect_page_url = get_preview_post_link($job_ID);
-        }else{
+        }
+        elseif($job_bm_redirect_preview_link =='job_link'){
+            $redirect_page_url = get_permalink($job_ID);
+        }
+        else{
             $job_bm_job_login_page_id 	= get_option('job_bm_job_login_page_id');
             $redirect_page_url 					= get_permalink($job_bm_job_login_page_id);
         }

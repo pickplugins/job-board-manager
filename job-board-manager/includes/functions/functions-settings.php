@@ -19,7 +19,6 @@ if(!function_exists('job_bm_settings_tabs_content_general')) {
     $job_bm_list_archive_more_style = get_option('job_bm_list_archive_more_style');
     $job_bm_salary_currency = get_option('job_bm_salary_currency');
     $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
-    $job_bm_can_user_edit_published_jobs = get_option('job_bm_can_user_edit_published_jobs');
 
 
     ?>
@@ -86,19 +85,7 @@ if(!function_exists('job_bm_settings_tabs_content_general')) {
         $settings_tabs_field->generate_field($args);
 
 
-        $args = array(
-            'id'		=> 'job_bm_can_user_edit_published_jobs',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Allow edit jobs?','post-grid'),
-            'details'	=> __('Allow user edit their own jobs','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_can_user_edit_published_jobs,
-            'default'		=> 'no',
-            'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
-        );
 
-        $settings_tabs_field->generate_field($args);
 
 
 
@@ -249,10 +236,10 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
 
 
 
-add_action('job_bm_settings_tabs_content_job_post', 'job_bm_settings_tabs_content_job_post');
+add_action('job_bm_settings_tabs_content_job_submit', 'job_bm_settings_tabs_content_job_submit');
 
-if(!function_exists('job_bm_settings_tabs_content_job_post')) {
-    function job_bm_settings_tabs_content_job_post($tab){
+if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
+    function job_bm_settings_tabs_content_job_submit($tab){
 
         $settings_tabs_field = new settings_tabs_field();
         $class_job_bm_functions = new class_job_bm_functions();
@@ -409,7 +396,7 @@ if(!function_exists('job_bm_settings_tabs_content_job_post')) {
             //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
 
             $page_list['job_preview'] = __('-- Job Preview --');
-
+            $page_list['job_link'] = __('-- Job Link --');
 
             $args = array(
                 'id'		=> 'job_bm_redirect_preview_link',
@@ -445,6 +432,91 @@ if(!function_exists('job_bm_settings_tabs_content_job_post')) {
 
 
 
+add_action('job_bm_settings_tabs_content_job_edit', 'job_bm_settings_tabs_content_job_edit');
+
+if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
+    function job_bm_settings_tabs_content_job_edit($tab){
+
+        $settings_tabs_field = new settings_tabs_field();
+
+
+        $job_bm_can_user_edit_published_jobs = get_option('job_bm_can_user_edit_published_jobs');
+        $job_bm_edited_job_status = get_option('job_bm_edited_job_status');
+        $job_bm_edited_redirect_link = get_option('job_bm_edited_redirect_link');
+        $job_bm_job_edit_notify_email = get_option('job_bm_job_edit_notify_email');
+
+
+
+
+        $args = array(
+            'id'		=> 'job_bm_can_user_edit_published_jobs',
+            //'parent'		=> 'post_grid_meta_options',
+            'title'		=> __('Allow edit jobs?','post-grid'),
+            'details'	=> __('Allow user edit their own jobs','post-grid'),
+            'type'		=> 'select',
+            //'multiple'		=> true,
+            'value'		=> $job_bm_can_user_edit_published_jobs,
+            'default'		=> 'no',
+            'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+        );
+
+        $settings_tabs_field->generate_field($args);
+
+
+        $args = array(
+            'id'		=> 'job_bm_edited_job_status',
+            //'parent'		=> 'post_grid_meta_options',
+            'title'		=> __('Edited job status','post-grid'),
+            'details'	=> __('Choose job status for newly edited jobs.','post-grid'),
+            'type'		=> 'select',
+            //'multiple'		=> true,
+            'value'		=> $job_bm_edited_job_status,
+            'default'		=> '',
+            'args'		=> array( 'draft'=>__('Draft','job-board-manager'), 'pending'=>__('Pending','job-board-manager'), 'publish'=>__('Published','job-board-manager'), 'private'=>__('Private','job-board-manager'), 'trash'=>__('Trash','job-board-manager')),
+        );
+
+        $settings_tabs_field->generate_field($args);
+
+
+        $page_list = job_bm_page_list_id();
+        //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
+
+        $page_list['job_preview'] = __('-- Job Preview --');
+        $page_list['job_link'] = __('-- Job Link --');
+
+
+        $args = array(
+            'id'		=> 'job_bm_edited_redirect_link',
+            //'parent'		=> 'post_grid_meta_options',
+            'title'		=> __('Redirect after job edit','post-grid'),
+            'details'	=> __('Redirect other link after job edited','post-grid'),
+            'type'		=> 'select',
+            //'multiple'		=> true,
+            'value'		=> $job_bm_edited_redirect_link,
+            'default'		=> '',
+            'args'		=> $page_list,
+        );
+
+        $settings_tabs_field->generate_field($args);
+
+
+        $args = array(
+            'id'		=> 'job_bm_job_edit_notify_email',
+            //'parent'		=> 'post_grid_meta_options',
+            'title'		=> __('Notify email on job edited?','post-grid'),
+            'details'	=> __('Notify admin when new job edited.','post-grid'),
+            'type'		=> 'select',
+            //'multiple'		=> true,
+            'value'		=> $job_bm_job_edit_notify_email,
+            'default'		=> '',
+            'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+        );
+
+        $settings_tabs_field->generate_field($args);
+
+
+    }
+}
 
 
 

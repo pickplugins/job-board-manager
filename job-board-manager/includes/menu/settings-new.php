@@ -21,31 +21,38 @@ $testimonial_settings_tab[] = array(
 );
 
 $testimonial_settings_tab[] = array(
-    'id' => 'job_post',
-    'title' => __('<i class="fas fa-pencil-ruler"></i> Job Post','testimonial'),
+    'id' => 'job_submit',
+    'title' => __('<i class="fas fa-pencil-ruler"></i> Job Submit','testimonial'),
     'priority' => 3,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
+    'id' => 'job_edit',
+    'title' => __('<i class="fas fa-pencil-ruler"></i> Job Edit','testimonial'),
+    'priority' => 4,
+    'active' => true,
+);
+
+$testimonial_settings_tab[] = array(
     'id' => 'email',
     'title' => __('<i class="far fa-envelope"></i> Email','testimonial'),
-    'priority' => 4,
+    'priority' => 5,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'style',
     'title' => __('<i class="fas fa-palette"></i> Style','testimonial'),
-    'priority' => 5,
+    'priority' => 6,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'expiry',
     'title' => __('<i class="fas fa-calendar-alt"></i> Expiry','testimonial'),
-    'priority' => 5,
-    'active' => true,
+    'priority' => 7,
+    'active' => false,
 );
 
 
@@ -100,6 +107,14 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     $job_bm_notify_email_job_publish = isset($_POST['job_bm_notify_email_job_publish']) ?  sanitize_text_field($_POST['job_bm_notify_email_job_publish']) : '';
                     $job_bm_apply_method = isset($_POST['job_bm_apply_method']) ?  stripslashes_deep($_POST['job_bm_apply_method']) : array('none');
                     $job_bm_redirect_preview_link = isset($_POST['job_bm_redirect_preview_link']) ?  sanitize_text_field($_POST['job_bm_redirect_preview_link']) : '';
+                    $job_bm_edited_job_status = isset($_POST['job_bm_edited_job_status']) ?  sanitize_text_field($_POST['job_bm_edited_job_status']) : '';
+                    $job_bm_edited_redirect_link = isset($_POST['job_bm_edited_redirect_link']) ?  sanitize_text_field($_POST['job_bm_edited_redirect_link']) : '';
+                    $job_bm_job_edit_notify_email = isset($_POST['job_bm_job_edit_notify_email']) ?  sanitize_text_field($_POST['job_bm_job_edit_notify_email']) : '';
+
+
+
+
+
                     $job_bm_logo_url = isset($_POST['job_bm_logo_url']) ?  sanitize_text_field($_POST['job_bm_logo_url']) : '';
                     $job_bm_from_email = isset($_POST['job_bm_from_email']) ?  sanitize_text_field($_POST['job_bm_from_email']) : '';
                     $job_bm_featured_bg_color = isset($_POST['job_bm_featured_bg_color']) ?  sanitize_text_field($_POST['job_bm_featured_bg_color']) : '';
@@ -131,6 +146,13 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     update_option('job_bm_notify_email_job_publish', $job_bm_notify_email_job_publish);
                     update_option('job_bm_apply_method', $job_bm_apply_method);
                     update_option('job_bm_redirect_preview_link', $job_bm_redirect_preview_link);
+                    update_option('job_bm_edited_job_status', $job_bm_edited_job_status);
+                    update_option('job_bm_edited_redirect_link', $job_bm_edited_redirect_link);
+                    update_option('job_bm_job_edit_notify_email', $job_bm_job_edit_notify_email);
+
+
+
+
                     update_option('job_bm_logo_url', $job_bm_logo_url);
                     update_option('job_bm_from_email', $job_bm_from_email);
                     update_option('job_bm_featured_bg_color', $job_bm_featured_bg_color);
