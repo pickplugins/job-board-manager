@@ -32,7 +32,7 @@ if ( ! function_exists( 'job_bm_action_before_single_job_preview' ) ) {
 
         if(is_preview()):
             ?>
-            <div class="job-preview-notice">This is preview of your job, please do not share link.</div>
+            <div class="job-preview-notice"><?php echo __('This is preview of your job, please do not share link.','job-board-manager'); ?></div>
         <?php
         endif;
 
@@ -56,16 +56,12 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
         ?>
         <div class="job-meta-top">
 
-
-
-
             <?php if($job_bm_featured =='yes'):?>
                 <span class="post-date meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured'); ?></span>
             <?php endif; ?>
 
-
-
             <span class="post-date meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+
             <span class="post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
 
             <?php
@@ -145,15 +141,27 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
         ?>
         <div class="job-meta-company">
-            <h2>About Company</h2>
+            <h2><?php echo __('About Company','job-board-manager'); ?></h2>
             <div class="company-logo">
                 <img src="<?php echo $job_bm_company_logo; ?>">
             </div>
 
+            <?php if($job_bm_company_name):?>
             <div class="company-name"><?php echo $job_bm_company_name; ?></div>
+            <?php endif; ?>
+
+            <?php if($job_bm_address):?>
             <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
+            <?php endif; ?>
+
+
+            <?php if($job_bm_company_website):?>
             <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>">Website</a> </div>
+            <?php endif; ?>
+
+
         </div>
+        <div class="clear"></div>
         <?php
 
 
@@ -196,30 +204,32 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         $category = get_the_terms($post_id, 'job_category');
         ?>
         <div class="job-meta-info">
-            <h2>Job Information</h2>
+            <h2><?php echo __('Job Information','job-board-manager'); ?></h2>
 
             <?php if(isset($job_status_list[$job_bm_job_status])):?>
-            <span class="post-date meta-item"><i class="fas fa-traffic-light"></i> Status: <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+            <span class="post-date meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas 
+            fa-traffic-light"></i>', $job_status_list[$job_bm_job_status])?></span>
             <?php endif; ?>
 
             <?php if($job_bm_total_vacancies):?>
-            <span class="post-date meta-item"><i class="fas fa-user-friends"></i> No of vacancies: <?php echo $job_bm_total_vacancies; ?></span>
+                <span class="post-date meta-item"><?php echo sprintf(__('%s No of vacancies: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_bm_total_vacancies)?></span>
             <?php endif; ?>
 
             <?php if(isset($job_type_list[$job_bm_job_type])):?>
-            <span class="post-date meta-item"><i class="fas fa-bullseye"></i> <?php echo 'Job type: '.$job_type_list[$job_bm_job_type]; ?></span>
+                <span class="post-date meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_type_list[$job_bm_job_type])?></span>
             <?php endif; ?>
 
             <?php if(isset($job_level_list[$job_bm_job_level])):?>
-            <span class="post-date meta-item"><i class="fas fa-users"></i> <?php echo 'Job level: '.$job_level_list[$job_bm_job_level]; ?></span>
+                <span class="post-date meta-item"><?php echo sprintf(__('%s Job level: %s','job-board-manager'),'<i class="fas fa-users"></i>', $job_level_list[$job_bm_job_level])?></span>
             <?php endif; ?>
 
             <?php if($job_bm_years_experience):?>
-            <span class="post-date meta-item"><i class="fas fa-crosshairs"></i> <?php echo 'Years of experience: '.$job_bm_years_experience; ?></span>
+                <span class="post-date meta-item"><?php echo sprintf(__('%s Years of experience: %s',
+                        'job-board-manager'),'<i class="fas fa-crosshairs"></i>', $job_bm_years_experience)?></span>
             <?php endif; ?>
 
             <?php if($job_bm_salary_fixed):?>
-            <span class="post-date meta-item"><i class="fas fa-pizza-slice"></i> <?php echo 'Salary: '.$job_bm_salary_currency.$job_bm_salary_fixed; ?></span>
+                <span class="post-date meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $job_bm_salary_currency.$job_bm_salary_fixed)?></span>
             <?php endif; ?>
 
 

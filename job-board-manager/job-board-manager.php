@@ -251,7 +251,6 @@ class JobBoardManager{
 			
 		wp_enqueue_style('frontend-forms', job_bm_plugin_url.'assets/front/css/frontend-forms.css');
 		wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
-		wp_enqueue_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
 		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
 		wp_enqueue_style('pickform', job_bm_plugin_url.'assets/front/css/pickform.css');
 				
@@ -262,6 +261,7 @@ class JobBoardManager{
         wp_register_style('job_bm_job_archive', job_bm_plugin_url.'assets/front/css/job-archive.css');
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
         wp_register_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single-new.css');
+        wp_register_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
 
 
         // Register CSS & Style

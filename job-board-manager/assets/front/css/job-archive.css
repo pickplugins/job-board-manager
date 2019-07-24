@@ -17,18 +17,23 @@
 
 .job-list .search-input .option.half {
 	display: inline-block;
-	width: 49%;
+    width: 49.5%;
+    text-align: center;
 }
 
 .job-list .search-input .option.half input[type="search"] {
-	width: 90%;
-	border-radius: 0;
-	border-bottom: 3px solid #ddd;
+    width: 97%;
 }
 
 .job-list .search-input .option label {
 	display: inline-block;
 	padding: 0 5px;
+}
+
+.job-list .search-input input[type="submit"]{
+    width: 98%;
+    margin: 0 auto;
+    display: inherit;
 }
 
 
@@ -61,6 +66,15 @@
 }
 
 
+.job-list .single .job-meta{}
+
+.job-list .single .job-meta .meta-item{
+    margin-right: 15px;
+    padding: 6px 10px;
+    border-radius: 3px;
+}
+
+
 .job-list .title {
 
   margin: 0 0 0 70px;
@@ -86,7 +100,7 @@
 .job-list .job-meta {
     display: inline-block;
     font-size: 13px;
-    margin: 5px 10px 5px 0;
+    margin: 15px 10px 5px 0;
     padding: 5px 10px;
     line-height: normal;
     border-radius: 3px;
@@ -98,12 +112,10 @@
 }
 
 .job-list .job_type a:visited{
-color: rgb(255, 255, 255);
 }
 
 
 .job-list .job_type a, .job-list .job_type i {
-color: rgb(255, 255, 255);
 }
 .job-list .job_type.freelance {
   background: none repeat scroll 0 0 rgb(70, 166, 255);
@@ -128,12 +140,11 @@ color: rgb(255, 255, 255);
 }
 
 .job-list .job_status, .job-list .job_status a:visited{
-  color: rgb(255, 255, 255);
 
 }
 
 .job-list .job_status a, .job-list .job_status a:visited {
-	color: rgb(255, 255, 255);
+
 }
 
 .job-list .job_status.open {

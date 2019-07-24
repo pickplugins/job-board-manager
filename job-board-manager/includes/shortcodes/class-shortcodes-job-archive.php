@@ -37,12 +37,15 @@ class class_job_bm_shortcodes_job_archive{
 		$job_status = $atts['job_status'];			
 		$job_type = $atts['job_type'];	
 		$company_name = $atts['company_name'];
-		$display_search = $atts['display_search'];		
+		$display_search = $atts['display_search'];
+
+        include( job_bm_plugin_dir . 'templates/job-archive/job-archive-hook.php');
 
 
-		ob_start();
+
+        ob_start();
 		
-		include( job_bm_plugin_dir . 'templates/job-archive/job-archive.php');
+		include( job_bm_plugin_dir . 'templates/job-archive/job-archive-new.php');
 
         wp_enqueue_style('job_bm_job_archive');
         wp_enqueue_style('font-awesome-5');

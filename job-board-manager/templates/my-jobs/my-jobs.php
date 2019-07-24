@@ -133,11 +133,11 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			echo '<div >';
 			
 			if($display_edit == 'yes'){
-				echo '<a target="_blank" class="edit-link" href="'.$job_bm_job_edit_page_url.'?job_id='.get_the_ID().'" >'.__('Edit', 'job-board-manager').'</a>';
+				echo '<a target="_blank" class="edit-link" href="'.$job_bm_job_edit_page_url.'?job_id='.get_the_ID().'" ><i class="fas fa-pen"></i> '.__('Edit', 'job-board-manager').'</a>';
 				}
 			
 			if($display_delete == 'yes'){
-				echo '<span job-id="'.get_the_ID().'" class="delete-job" href="" >'.__('Delete', 'job-board-manager').'</span>';
+				echo '<span job-id="'.get_the_ID().'" class="delete-job" href="" ><i class="fas fa-trash"></i> '.__('Delete', 'job-board-manager').'</span>';
 				}
 			
 									
