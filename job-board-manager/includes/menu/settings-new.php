@@ -10,7 +10,7 @@ $testimonial_settings_tab[] = array(
     'id' => 'general',
     'title' => __('<i class="fas fa-laptop-code"></i> General','testimonial'),
     'priority' => 1,
-    'active' => false,
+    'active' => true,
 );
 
 $testimonial_settings_tab[] = array(
@@ -31,27 +31,35 @@ $testimonial_settings_tab[] = array(
     'id' => 'job_edit',
     'title' => __('<i class="fas fa-pencil-alt"></i> Job Edit','testimonial'),
     'priority' => 4,
-    'active' => true,
+    'active' => false,
 );
+
+$testimonial_settings_tab[] = array(
+    'id' => 'dashboard',
+    'title' => __('<i class="fas fa-tachometer-alt"></i> Dashboard','testimonial'),
+    'priority' => 5,
+    'active' => false,
+);
+
 
 $testimonial_settings_tab[] = array(
     'id' => 'email',
     'title' => __('<i class="far fa-envelope"></i> Email','testimonial'),
-    'priority' => 5,
+    'priority' => 6,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'style',
     'title' => __('<i class="fas fa-palette"></i> Style','testimonial'),
-    'priority' => 6,
+    'priority' => 7,
     'active' => false,
 );
 
 $testimonial_settings_tab[] = array(
     'id' => 'expiry',
     'title' => __('<i class="fas fa-calendar-alt"></i> Expiry','testimonial'),
-    'priority' => 7,
+    'priority' => 8,
     'active' => false,
 );
 
@@ -112,6 +120,8 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     $job_bm_job_edit_notify_email = isset($_POST['job_bm_job_edit_notify_email']) ?  sanitize_text_field($_POST['job_bm_job_edit_notify_email']) : '';
 
 
+                    $job_bm_redirect_login = isset($_POST['job_bm_redirect_login']) ?  sanitize_text_field($_POST['job_bm_redirect_login']) : '';
+                    $job_bm_redirect_logout = isset($_POST['job_bm_redirect_logout']) ?  sanitize_text_field($_POST['job_bm_redirect_logout']) : '';
 
 
 
@@ -154,6 +164,8 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     update_option('job_bm_edited_redirect_link', $job_bm_edited_redirect_link);
                     update_option('job_bm_job_edit_notify_email', $job_bm_job_edit_notify_email);
 
+                    update_option('job_bm_redirect_login', $job_bm_redirect_login);
+                    update_option('job_bm_redirect_logout', $job_bm_redirect_logout);
 
 
 

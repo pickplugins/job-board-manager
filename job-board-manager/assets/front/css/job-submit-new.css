@@ -87,3 +87,38 @@
 .salary_max, .salary_min, .salary_fixed{
   display: none;
 }
+
+
+
+
+
+
+@media only screen and (max-width: 992px ) {
+
+  .job-bm-job-submit .form-field-wrap .field-title {
+    width: 100%;
+    float: none;
+  }
+
+  .job-bm-job-submit .form-field-wrap .field-input {
+    margin-left: 0px;
+  }
+
+  .job-bm-job-submit .form-field-wrap .field-title {
+    width: 100%;
+    float: none;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+

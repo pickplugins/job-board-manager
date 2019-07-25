@@ -94,7 +94,7 @@ function job_bm_job_edit_form_categories(){
     <div class="form-field-wrap">
         <div class="field-title"><?php esc_html_e('Job category','job-board-manager'); ?></div>
         <div class="field-input">
-            <select name="job_category" >
+            <select name="job_category">
                 <?php
                 if(!empty($terms)):
                     foreach ($terms as $term_id => $term_name){
@@ -109,7 +109,7 @@ function job_bm_job_edit_form_categories(){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select question category.','job-board-manager'); ?></p>
+            <p class="field-details"><?php esc_html_e('Select job category.','job-board-manager'); ?></p>
 
         </div>
     </div>

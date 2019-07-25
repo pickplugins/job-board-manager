@@ -16,8 +16,9 @@
 }
 
 .job-single .job-meta-top .meta-item{
-  margin-right: 20px;
+  margin: 5px 10px;
   font-size: 16px;
+  display: inline-block;
 }
 .job-single .job-meta-top .featured{
   background: #fff8bf;
@@ -203,37 +204,23 @@
 
 
 
+@media only screen and (max-width: 768px ) {
 
+  .job-single .job-meta-info .meta-item{
+    width: 100%;
+  }
 
-
-@media only screen and (min-width: 1024px ) {
-	
-
-	
 }
 
 
-@media only screen and ( min-width: 300px ) and ( max-width: 1023px ){
-	
-.job-single .single-job-sidebar {
-  float: none;
-  width: 100%;
+@media only screen and (max-width: 576px ) {
+
+  .job-meta-company .company-logo {
+    float: none;
+    margin-bottom: 15px;
+  }
+
 }
-	
-.job-single .single-job-details {
-  margin-right: 0;
-}	
-	
-	
-}
-
-
-
-
-
-
-
-
 
 
 

@@ -16,6 +16,7 @@ class class_job_bm_shortcodes_dashboard{
 		add_filter('job_bm_dashboard_account', array( $this, 'my_account_html' ));
 	    add_filter('job_bm_dashboard_account_edit', array( $this, 'edit_account_html' ));
 		add_filter('job_bm_dashboard_my_jobs', array( $this, 'my_jobs_html' ));
+        add_filter('job_bm_dashboard_logout', array( $this, 'dashboard_logout' ));
 
 
 
@@ -34,8 +35,18 @@ class class_job_bm_shortcodes_dashboard{
 		
 		return do_shortcode('[job_bm_my_jobs]');
 		
-		}		
-		
+		}
+
+    function dashboard_logout(){
+        wp_destroy_current_session();
+        wp_clear_auth_cookie();
+        do_action( 'wp_logout' );
+        return '';
+
+    }
+
+
+
 	function dashboard_tabs(){
 		
 		$tabs['account'] =array(
@@ -48,6 +59,14 @@ class class_job_bm_shortcodes_dashboard{
 		$tabs['my_jobs'] =array(
             'title'=>__('My Jobs', 'job-board-manager'),
             'html'=>apply_filters('job_bm_dashboard_my_jobs',''),
+
+        );
+
+
+        $tabs['logout'] =array(
+            'title'=>__('Logout!', 'job-board-manager'),
+            'html'=>apply_filters('job_bm_dashboard_logout',''),
+            'link'=>'#',
 
         );
 
@@ -88,8 +107,9 @@ class class_job_bm_shortcodes_dashboard{
 
 		foreach($dashboard_tabs as $tabs_key=>$tabs){
 			
-			$title = $tabs['title'];
-			$html = $tabs['html'];			
+			$title = isset($tabs['title']) ? $tabs['title'] : '';
+			$html = isset($tabs['html']) ? $tabs['html'] : '';
+            //$link = isset($tabs['link']) ? $tabs['link'] : '';
 			
 			
 			?>
@@ -119,8 +139,7 @@ class class_job_bm_shortcodes_dashboard{
 	 	if(!empty($_GET['tabs'])){
 			$current_tabs = sanitize_text_field($_GET['tabs']);
 			
-			//echo '<pre>'.var_export($current_tabs, true).'</pre>';
-			
+
 			}
 		else{
 			$current_tabs = 'account';
@@ -131,9 +150,9 @@ class class_job_bm_shortcodes_dashboard{
 		foreach($dashboard_tabs as $tabs_key=>$tabs){
 			
 			$title = $tabs['title'];
-			$html = $tabs['html'];			
+			$html = $tabs['html'];
 			
-			if($current_tabs==$tabs_key):
+			if($current_tabs == $tabs_key):
 			
 			?>
             <div class="<?php echo $tabs_key; ?>">

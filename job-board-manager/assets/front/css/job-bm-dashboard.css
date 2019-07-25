@@ -25,19 +25,12 @@
 
 
 
-
-
-/* job-bm-my-account */
-
-.job-bm-my-account{}
-
-
-.job-bm-my-account .register,
+.job-bm-dashboard .register,
 
 
 
 
-.job-bm-my-account .login {
+.job-bm-dashboard .login {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -46,39 +39,39 @@
 }
 
 
-.job-bm-my-account .login .login-username,
-.job-bm-my-account .login .login-password{
+.job-bm-dashboard .login .login-username,
+.job-bm-dashboard .login .login-password{
 
 }
 
-.job-bm-my-account .login .login-username label,
-.job-bm-my-account .login .login-password label{
+.job-bm-dashboard .login .login-username label,
+.job-bm-dashboard .login .login-password label{
     display: block;
 }
 
-.job-bm-my-account .login .login-remember{
+.job-bm-dashboard .login .login-remember{
 
 }
 
-.job-bm-my-account .login .login-remember label{
+.job-bm-dashboard .login .login-remember label{
 
 }
 
 
-.job-bm-my-account input[type="text"],  .job-bm-my-account input[type="password"]{
+.job-bm-dashboard input[type="text"],  .job-bm-dashboard input[type="password"]{
 
     width: 230px;
 }
 
 
-.job-bm-my-account input[type="submit"] {
+.job-bm-dashboard input[type="submit"] {
 
 }
 
 
 @media only screen and ( max-width: 767px ) {
 
-    .job-bm-my-account .register, .job-bm-my-account .login {
+    .job-bm-dashboard .register, .job-bm-dashboard .login {
         display: block;
         width: 90%;
     }
@@ -166,6 +159,19 @@
 
 
 
+@media only screen and (max-width: 992px ) {
+    .job-bm-dashboard .navs {
+        width: 100%;
+        float: none;
+    }
+
+    .job-bm-dashboard .navs-content {
+        margin-left: 0px;
+        border-left: 0px solid #ddd;
+
+    }
+
+}
 
 
 

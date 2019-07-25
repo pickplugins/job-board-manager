@@ -27,12 +27,19 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		
 		global $current_user;
 		
-		echo '<div class="welcome">'.__('Welcome', 'job-board-manager').' <b>'.$current_user->display_name.'</b>! <a href="'.wp_logout_url(get_permalink($job_bm_job_login_page_id)).'">'.__('Logout','job-board-manager').'</a>';
+		?>
+        <div class="welcome">
+            <?php echo sprintf(__('Welcome %s', 'job-board-manager'), $current_user->display_name); ?>
+            <a href="<?php echo wp_logout_url(get_permalink($job_bm_job_login_page_id)); ?>">
+                <?php echo __('Logout','job-board-manager'); ?>
+            </a>
+        </div>
+        <?php
 		
 		
 		//echo do_shortcode('[client_job_list]');
 		
-		echo '</div>';	
+
 
 		}
 	else{

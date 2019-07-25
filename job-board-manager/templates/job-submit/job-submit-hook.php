@@ -103,7 +103,7 @@ function job_bm_job_submit_form_categories(){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select question category.','job-board-manager'); ?></p>
+            <p class="field-details"><?php esc_html_e('Select job category.','job-board-manager'); ?></p>
 
         </div>
     </div>

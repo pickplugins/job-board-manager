@@ -118,8 +118,7 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
         $job_bm_job_submit_page_id = get_option('job_bm_job_submit_page_id');
         $job_bm_job_edit_page_id = get_option('job_bm_job_edit_page_id');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
-        $job_bm_registration_enable = get_option('job_bm_registration_enable');
-        $job_bm_login_enable = get_option('job_bm_login_enable');
+
 
 
 
@@ -191,35 +190,6 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
 
 
 
-
-            $args = array(
-                'id'		=> 'job_bm_registration_enable',
-                //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Registration enable?','post-grid'),
-                'details'	=> __('Registration enable on dashboard page.','post-grid'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_registration_enable,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-            $args = array(
-                'id'		=> 'job_bm_login_enable',
-                //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Login enable?','post-grid'),
-                'details'	=> __('Login enable on dashboard page.','post-grid'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_login_enable,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
 
 
 
@@ -447,72 +417,195 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
 
 
 
+        ?>
+        <div class="section">
+            <div class="section-title">Job edit settings</div>
+            <p class="description section-description">Customize the job edit.</p>
 
-        $args = array(
-            'id'		=> 'job_bm_can_user_edit_published_jobs',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Allow edit jobs?','post-grid'),
-            'details'	=> __('Allow user edit their own jobs','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_can_user_edit_published_jobs,
-            'default'		=> 'no',
-            'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
-        );
-
-        $settings_tabs_field->generate_field($args);
+            <?php
 
 
-        $args = array(
-            'id'		=> 'job_bm_edited_job_status',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Edited job status','post-grid'),
-            'details'	=> __('Choose job status for newly edited jobs.','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_edited_job_status,
-            'default'		=> '',
-            'args'		=> array( 'draft'=>__('Draft','job-board-manager'), 'pending'=>__('Pending','job-board-manager'), 'publish'=>__('Published','job-board-manager'), 'private'=>__('Private','job-board-manager'), 'trash'=>__('Trash','job-board-manager')),
-        );
+            $args = array(
+                'id'		=> 'job_bm_can_user_edit_published_jobs',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Allow edit jobs?','post-grid'),
+                'details'	=> __('Allow user edit their own jobs','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_can_user_edit_published_jobs,
+                'default'		=> 'no',
+                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+            );
 
-        $settings_tabs_field->generate_field($args);
+            $settings_tabs_field->generate_field($args);
 
+
+            $args = array(
+                'id'		=> 'job_bm_edited_job_status',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Edited job status','post-grid'),
+                'details'	=> __('Choose job status for newly edited jobs.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_edited_job_status,
+                'default'		=> '',
+                'args'		=> array( 'draft'=>__('Draft','job-board-manager'), 'pending'=>__('Pending','job-board-manager'), 'publish'=>__('Published','job-board-manager'), 'private'=>__('Private','job-board-manager'), 'trash'=>__('Trash','job-board-manager')),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $page_list = job_bm_page_list_id();
+            //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
+
+            $page_list['job_preview'] = __('-- Job Preview --');
+            $page_list['job_link'] = __('-- Job Link --');
+
+
+            $args = array(
+                'id'		=> 'job_bm_edited_redirect_link',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Redirect after job edit','post-grid'),
+                'details'	=> __('Redirect other link after job edited','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_edited_redirect_link,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_job_edit_notify_email',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Notify email on job edited?','post-grid'),
+                'details'	=> __('Notify admin when new job edited.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_job_edit_notify_email,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            ?>
+
+        </div>
+        <?php
+
+
+
+    }
+}
+
+
+add_action('job_bm_settings_tabs_content_dashboard', 'job_bm_settings_tabs_content_dashboard');
+
+if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
+    function job_bm_settings_tabs_content_dashboard($tab){
+
+        $settings_tabs_field = new settings_tabs_field();
+
+
+        $job_bm_redirect_login = get_option('job_bm_redirect_login');
+        $job_bm_redirect_logout = get_option('job_bm_redirect_logout');
+        $job_bm_registration_enable = get_option('job_bm_registration_enable');
+        $job_bm_login_enable = get_option('job_bm_login_enable');
 
         $page_list = job_bm_page_list_id();
         //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
 
-        $page_list['job_preview'] = __('-- Job Preview --');
-        $page_list['job_link'] = __('-- Job Link --');
+        ?>
+        <div class="section">
+            <div class="section-title">Dashboard settings</div>
+            <p class="description section-description">Customize the dashboard.</p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_redirect_login',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Redirect after login','post-grid'),
+                'details'	=> __('Redirect other link after logged.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_redirect_login,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
 
 
-        $args = array(
-            'id'		=> 'job_bm_edited_redirect_link',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Redirect after job edit','post-grid'),
-            'details'	=> __('Redirect other link after job edited','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_edited_redirect_link,
-            'default'		=> '',
-            'args'		=> $page_list,
-        );
+            $args = array(
+                'id'		=> 'job_bm_redirect_logout',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Redirect after logged out','post-grid'),
+                'details'	=> __('Redirect other link after logged out.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_redirect_logout,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
 
-        $settings_tabs_field->generate_field($args);
+            $settings_tabs_field->generate_field($args);
 
 
-        $args = array(
-            'id'		=> 'job_bm_job_edit_notify_email',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Notify email on job edited?','post-grid'),
-            'details'	=> __('Notify admin when new job edited.','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_job_edit_notify_email,
-            'default'		=> '',
-            'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-        );
 
-        $settings_tabs_field->generate_field($args);
+
+            $args = array(
+                'id'		=> 'job_bm_registration_enable',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Registration enable?','post-grid'),
+                'details'	=> __('Registration enable on dashboard page.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_registration_enable,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_login_enable',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Login enable?','post-grid'),
+                'details'	=> __('Login enable on dashboard page.','post-grid'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_login_enable,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+
+
+            ?>
+
+        </div>
+        <?php
+
+
+
+
+
+
+
+
+
 
 
     }

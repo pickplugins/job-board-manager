@@ -49,27 +49,20 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-import.php');
 
 		// ShortCodes
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes.php');
+		//require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-submit.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-edit.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-account.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard-new.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-edit-account.php');
 
 
-		//require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-list.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-pending-publish.php');
 
-		//require_once( plugin_dir_path( __FILE__ ) . 'templates/account/my-account-hook.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-submit-hook.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-edit-hook.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-single/job-single-hook.php');
 
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/pickform/class-pickform.php');
-		//require_once( plugin_dir_path( __FILE__ ) . 'includes/pickform/class-pickform-creator.php');
-		//require_once( plugin_dir_path( __FILE__ ) . 'includes/pickform/class-pickformNew.php');
 
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-crons.php');
 
@@ -252,8 +245,7 @@ class JobBoardManager{
 		wp_enqueue_style('frontend-forms', job_bm_plugin_url.'assets/front/css/frontend-forms.css');
 		wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
 		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
-		wp_enqueue_style('pickform', job_bm_plugin_url.'assets/front/css/pickform.css');
-				
+
 
 
 		// Register CSS & Style
