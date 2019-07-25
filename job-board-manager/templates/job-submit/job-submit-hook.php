@@ -443,7 +443,7 @@ function job_bm_job_submit_form_location(){
         <div class="field-title"><?php esc_html_e('Location','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="Mountain View" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
-            <p class="field-details"><?php esc_html_e('Write company location','job-board-manager');
+            <p class="field-details"><?php esc_html_e('Write company location, use city or state. ex: New Work','job-board-manager');
                 ?></p>
         </div>
     </div>

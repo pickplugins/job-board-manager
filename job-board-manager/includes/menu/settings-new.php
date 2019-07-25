@@ -29,7 +29,7 @@ $testimonial_settings_tab[] = array(
 
 $testimonial_settings_tab[] = array(
     'id' => 'job_edit',
-    'title' => __('<i class="fas fa-pencil-ruler"></i> Job Edit','testimonial'),
+    'title' => __('<i class="fas fa-pencil-alt"></i> Job Edit','testimonial'),
     'priority' => 4,
     'active' => true,
 );
@@ -119,7 +119,11 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     $job_bm_from_email = isset($_POST['job_bm_from_email']) ?  sanitize_text_field($_POST['job_bm_from_email']) : '';
                     $job_bm_featured_bg_color = isset($_POST['job_bm_featured_bg_color']) ?  sanitize_text_field($_POST['job_bm_featured_bg_color']) : '';
                     $job_bm_job_type_bg_color = isset($_POST['job_bm_job_type_bg_color']) ?  stripslashes_deep($_POST['job_bm_job_type_bg_color']) : array();
+                    $job_bm_job_type_text_color = isset($_POST['job_bm_job_type_text_color']) ?  stripslashes_deep($_POST['job_bm_job_type_text_color']) : array();
+
                     $job_bm_job_status_bg_color = isset($_POST['job_bm_job_status_bg_color']) ?  stripslashes_deep($_POST['job_bm_job_status_bg_color']) : array();
+                    $job_bm_job_status_text_color = isset($_POST['job_bm_job_status_text_color']) ?  stripslashes_deep($_POST['job_bm_job_status_text_color']) : array();
+
                     $job_bm_email_templates_data = isset($_POST['job_bm_email_templates_data']) ?  stripslashes_deep($_POST['job_bm_email_templates_data']) : array();
 
 
@@ -157,7 +161,11 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     update_option('job_bm_from_email', $job_bm_from_email);
                     update_option('job_bm_featured_bg_color', $job_bm_featured_bg_color);
                     update_option('job_bm_job_type_bg_color', $job_bm_job_type_bg_color);
+                    update_option('job_bm_job_type_text_color', $job_bm_job_type_text_color);
+
                     update_option('job_bm_job_status_bg_color', $job_bm_job_status_bg_color);
+                    update_option('job_bm_job_status_text_color', $job_bm_job_status_text_color);
+
                     update_option('job_bm_email_templates_data', $job_bm_email_templates_data);
 
 

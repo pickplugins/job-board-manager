@@ -341,6 +341,15 @@ class JobBoardManager{
         }
 
 
+        if ($screen->id == 'job'){
+
+            wp_enqueue_style( 'font-awesome-5' );
+            wp_enqueue_style( 'settings-tabs' );
+            wp_enqueue_script( 'settings-tabs' );
+
+        }
+
+
 
 
     }

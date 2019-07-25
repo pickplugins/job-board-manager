@@ -771,8 +771,10 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
 
         $job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');
         $job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');
-
+        $job_bm_job_type_text_color = get_option('job_bm_job_type_text_color');
         $job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');
+        $job_bm_job_status_text_color = get_option('job_bm_job_status_text_color');
+
 
 
 
@@ -814,6 +816,20 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
 
             $settings_tabs_field->generate_field($args);
 
+            $args = array(
+                'id'		=> 'job_bm_job_type_text_color',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Job type text color','post-grid'),
+                'details'	=> __('Job types area text color.','post-grid'),
+                'type'		=> 'colorpicker_multi',
+                'value'		=> $job_bm_job_type_text_color,
+                'args'		=> $class_job_bm_functions->job_type_text_color(),
+
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
 
             $args = array(
                 'id'		=> 'job_bm_job_status_bg_color',
@@ -823,6 +839,20 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
                 'type'		=> 'colorpicker_multi',
                 'value'		=> $job_bm_job_status_bg_color,
                 'args'		=> $class_job_bm_functions->job_status_bg_color(),
+
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_job_status_text_color',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Job status text color','post-grid'),
+                'details'	=> __('Job status area text color.','post-grid'),
+                'type'		=> 'colorpicker_multi',
+                'value'		=> $job_bm_job_status_text_color,
+                'args'		=> $class_job_bm_functions->job_status_text_color(),
 
             );
 

@@ -26,7 +26,7 @@ add_filter( 'the_content', 'job_bmpost_type_template_job' );
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_action_before_single_job_preview', 5 );
+add_action( 'job_bm_single_job_main', 'job_bm_action_before_single_job_preview', 5 );
 if ( ! function_exists( 'job_bm_action_before_single_job_preview' ) ) {
     function job_bm_action_before_single_job_preview(){
 
@@ -42,7 +42,7 @@ if ( ! function_exists( 'job_bm_action_before_single_job_preview' ) ) {
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_meta_start', 10 );
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_meta_start', 10 );
 if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
     function job_bm_single_job_main_meta_start() {
 
@@ -86,7 +86,7 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_template_single_job_description', 20 );
+add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_description', 20 );
 
 if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 	function job_bm_template_single_job_description() {
@@ -105,7 +105,7 @@ if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_company', 20 );
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_company', 20 );
 if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
     function job_bm_single_job_main_company() {
 
@@ -173,7 +173,7 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
 
 
-add_action( 'job_bm_action_single_job_main', 'job_bm_single_job_main_job_info', 30 );
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_info', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
     function job_bm_single_job_main_job_info() {
 
@@ -247,20 +247,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
 
 
-
-
-
-
-
-//add_action( 'job_bm_action_single_job_main', 'job_bm_template_single_job_sidebar', 20 );
-if ( ! function_exists( 'job_bm_template_single_job_sidebar' ) ) {
-	function job_bm_template_single_job_sidebar() {
-		include( job_bm_plugin_dir. 'templates/job-single/job-single-sidebar.php');
-	}
-}
-
-
-add_action( 'job_bm_action_single_job_main', 'job_bm_template_single_job_css', 20 );
+//add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_css', 20 );
 
 if ( ! function_exists( 'job_bm_template_single_job_css' ) ) {
 	function job_bm_template_single_job_css() {

@@ -2,6 +2,91 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
 
+
+
+
+
+
+add_action('job_bm_job_archive_before', 'job_bm_job_archive_before_search');
+
+if(!function_exists('job_bm_job_archive_before_search')){
+    function job_bm_job_archive_before_search($wp_query){
+
+
+        $job_bm_archive_page_id = get_option('job_bm_archive_page_id');
+        $job_bm_archive_page_url = get_permalink($job_bm_archive_page_id);
+
+
+        $class_job_bm_functions = new class_job_bm_functions();
+        $job_type_list = array_filter($class_job_bm_functions->job_type_list());
+
+
+        if(!empty($_GET['job_type'])){
+
+            $job_type = stripslashes_deep($_GET['job_type']);
+
+            if(!is_array($job_type)){
+
+                $job_type = array($job_type);
+
+            }
+
+        }
+
+
+        //echo '<pre>'.var_export($job_type_list, true).'</pre>';
+
+        ?>
+
+        <form class="search-input" method="get" action="<?php echo $job_bm_archive_page_url; ?>">
+
+            <div class="option half">
+                <input placeholder="<?php echo __('Keyword', 'job-board-manager'); ?>" name="keywords" type="search" value="<?php if(!empty($_GET['keywords'])) echo sanitize_text_field($_GET['keywords']) ?>" />
+
+            </div>
+
+            <div class="option half">
+
+                <input placeholder="<?php echo __('Location', 'job-board-manager'); ?>" name="locations" type="search" value="<?php if(!empty($_GET['locations'])) echo sanitize_text_field($_GET['locations']) ?>" />
+            </div>
+
+
+
+            <div class="option">
+                <?php
+
+                foreach($job_type_list as $job_type_key=>$job_type_name){
+
+                    if(!empty($job_type_key)):
+                        ?>
+                        <label>
+                            <input type="checkbox" <?php if( !empty($job_type) && in_array($job_type_key, $job_type) ) echo 'checked'; ?>  name="job_type[]" value="<?php echo $job_type_key; ?>" /> <?php echo $job_type_name; ?>
+                        </label>
+                    <?php
+                    endif;
+
+                }
+
+
+                ?>
+
+
+            </div>
+
+            <input type="submit" value="<?php echo __('Submit', 'job-board-manager'); ?>" />
+
+        </form> <!-- .search-input -->
+        <?php
+
+    }
+}
+
+
+
+
+
+
+
 add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_items');
 
 if(!function_exists('job_bm_job_archive_loop_items')):
@@ -16,6 +101,7 @@ if(!function_exists('job_bm_job_archive_loop_items')):
         $job_type_list = $class_job_bm_functions->job_type_list();
         $job_level_list = $class_job_bm_functions->job_level_list();
 
+        $job_bm_company_name = get_post_meta(get_the_ID(), 'job_bm_company_name', true);
 
         $job_bm_default_company_logo = get_option('job_bm_default_company_logo');
 
@@ -64,13 +150,10 @@ if(!function_exists('job_bm_job_archive_loop_items')):
             </div>
 
             <div title="" class="title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
+            <div class="company-name"><?php echo $job_bm_company_name; ?></div>
 
             <div class="clear"></div>
             <div class="job-meta">
-
-                <?php if($job_bm_featured =='yes'):?>
-                    <span class="post-date meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured'); ?></span>
-                <?php endif; ?>
 
                 <span class="meta-item job_type <?php echo $job_bm_job_type; ?>"><i class="fas
                 fa-briefcase"></i>  <?php echo
@@ -106,3 +189,52 @@ if(!function_exists('job_bm_job_archive_loop_items')):
 
     }
 endif;
+
+
+
+
+
+
+
+add_action('job_bm_job_archive_after', 'job_bm_job_archive_after_pagination',1,90);
+
+if(!function_exists('job_bm_job_archive_after_pagination')){
+    function job_bm_job_archive_after_pagination($wp_query){
+
+        if ( get_query_var('paged') ) {$paged = get_query_var('paged');}
+        elseif ( get_query_var('page') ) {$paged = get_query_var('page');}
+        else {$paged = 1;}
+
+        //global $wp_query;
+        //var_dump($wp_query->max_num_pages);
+
+        ?>
+        <div class="paginate">
+        <?php
+        $big = 999999999; // need an unlikely integer
+        echo paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, $paged ),
+            'total' => $wp_query->max_num_pages
+        ) );
+
+        ?>
+        </div>
+        <?php
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

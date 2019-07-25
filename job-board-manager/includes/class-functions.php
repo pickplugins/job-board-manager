@@ -114,8 +114,19 @@ class class_job_bm_functions{
 
 		return $job_type_color;
 
-		}		
-	
+		}
+
+    public function job_type_text_color(){
+
+        $job_type_color = array('freelance'=>'#ffffff','full-time'=>'#ffffff','internship'=>'#ffffff','part-time'=>'#ffffff','temporary'=>'#ffffff');
+        $job_type_color = apply_filters('job_bm_filters_job_type_text_color', $job_type_color);
+
+        return $job_type_color;
+
+    }
+
+
+
 	public function job_status_bg_color(){
 
 		$job_status_color = array('open'=>'#3ac170','closed'=>'#fa3218','filled'=>'#49a2ed','re-open'=>'#2fc2f9' ,'expired'=>'#ff4115');
@@ -123,8 +134,18 @@ class class_job_bm_functions{
 
 		return $job_status_color;
 
-		}	
-	
+		}
+
+
+    public function job_status_text_color(){
+
+        $job_status_color = array('open'=>'#ffffff','closed'=>'#ffffff','filled'=>'#ffffff','re-open'=>'#ffffff' ,'expired'=>'#ffffff');
+        $job_status_color = apply_filters('job_bm_filters_job_status_text_color', $job_status_color);
+
+        return $job_status_color;
+
+    }
+
 	
 	
 	public function reports_tabs(){

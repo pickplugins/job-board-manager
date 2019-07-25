@@ -45,7 +45,7 @@ class class_job_bm_shortcodes_job_archive{
 
         ob_start();
 		
-		include( job_bm_plugin_dir . 'templates/job-archive/job-archive-new.php');
+		include( job_bm_plugin_dir . 'templates/job-archive/job-archive.php');
 
         wp_enqueue_style('job_bm_job_archive');
         wp_enqueue_style('font-awesome-5');

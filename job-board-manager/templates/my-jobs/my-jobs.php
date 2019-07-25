@@ -116,7 +116,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 			
 			echo '<span class="post-date meta"><b>'.__('Published:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';
-			echo '<span class="expiry-date meta"><b>'.__('Expiry:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($expiry_date)).'</span>';
+			//echo '<span class="expiry-date meta"><b>'.__('Expiry:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($expiry_date)).'</span>';
 			echo '<span class="publish-status meta"><b>'.__('Publish Status:', 'job-board-manager').'</b> '.$publish_status.'</span>';
 			
 			if(!empty($job_status_filters[$job_status]))
