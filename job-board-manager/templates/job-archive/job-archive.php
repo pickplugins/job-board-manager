@@ -12,14 +12,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$date_format = get_option( 'date_format' );
 	$job_bm_list_per_page = get_option('job_bm_list_per_page');
 	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');
-	$job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');
-    $job_bm_job_type_text_color = get_option('job_bm_job_type_text_color');
-
-    $job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');
-    $job_bm_job_status_text_color = get_option('job_bm_job_status_text_color');
 
 
-    $job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');
+
 	$job_bm_archive_page_id = get_option('job_bm_archive_page_id');
 	$job_bm_archive_page_link = get_permalink($job_bm_archive_page_id);
 	$permalink_structure = get_option('permalink_structure');
@@ -43,12 +38,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-
-	if(empty($keywords) && !empty($_GET['keywords'])){
-		
-		$keywords = sanitize_text_field($_GET['keywords']);
-
-		}
+$keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : '';
 
 
 
@@ -229,7 +219,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
         <div class="job-list">
         <?php
 
-        do_action('job_bm_job_archive_before', $wp_query);
+        do_action('job_bm_job_archive_loop_before', $wp_query);
 
         if ( $wp_query->have_posts() ) :
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
@@ -240,7 +230,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
         endwhile;
-            do_action('job_bm_job_archive_after', $wp_query);
+            do_action('job_bm_job_archive_loop_after', $wp_query);
             wp_reset_query();
         else:
 
@@ -251,41 +241,5 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 	
         ?>
-        <style type="text/css">
-        <?php
 
-        echo '.job-list .single.featured{background:'.$job_bm_featured_bg_color.'}';
-
-        if(!empty($job_bm_job_type_bg_color)){
-            foreach($job_bm_job_type_bg_color as $job_type_key=>$job_type_color){
-
-                echo '.job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.'}';
-            }
-        }
-
-        if(!empty($job_bm_job_type_text_color)){
-            foreach($job_bm_job_type_text_color as $job_type_key=>$job_type_color){
-
-                echo '.job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.'}';
-            }
-        }
-
-
-
-        if(!empty($job_bm_job_status_bg_color)){
-            foreach($job_bm_job_status_bg_color as $job_status_key=>$job_status_color){
-                echo '.job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.'}';
-            }
-        }
-
-        if(!empty($job_bm_job_status_text_color)){
-            foreach($job_bm_job_status_text_color as $job_status_key=>$job_status_color){
-                echo '.job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.'}';
-            }
-        }
-
-
-
-        ?>
-        </style>
 	</div>	

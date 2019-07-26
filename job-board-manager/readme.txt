@@ -19,122 +19,15 @@
 ### Job Board Manager by [http://pickplugins.com](http://pickplugins.com)
 
 * [Live Demo](https://www.pickplugins.com/demo/job-board-manager/?ref=wordpress.org)
-* [Add-on Bundle](https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=wordpress.org)
 * [Documentation](https://www.pickplugins.com/documentation/job-board-manager/?ref=wordpress.org)
 * [Support](https://www.pickplugins.com/support/?ref=wordpress.org)
 
 
-##Video tutorial
+**Advance Job Archive**
 
-* [How to Install and Settings](https://www.youtube.com/watch?v=avfOO82Kz2g)
-* [Create a job](https://www.youtube.com/watch?v=KZygrlmNrE8)
-
-
-## Ready Add-on
-
-**Free**
-
-* [Locations](https://wordpress.org/plugins/job-board-manager-locations/)
-* [Company Profile](https://wordpress.org/plugins/job-board-manager-company-profile/)
-* [Expired Check](https://wordpress.org/plugins/job-board-manager-expired-check/)
-* [Widgets](https://wordpress.org/plugins/job-board-manager-widgets/)
-* [Breadcrumb](https://wordpress.org/plugins/job-board-manager-breadcrumb/)
+You can display list of jobs via shortcode `[job_bm_archive]` you can display job list by filtering query arguments via filter hook, this can help you to build external search form to apply form data to filter jobs. you can also remove existing job list elements and add your own elements via action hook.
 
 
-**Premium**
-
-* [Job Alerts](https://www.pickplugins.com/product/job-board-manager-saved-jobs/)
-* [Saved Jobs](https://www.pickplugins.com/product/job-board-manager-job-alerts/)
-* [Application Manager](https://www.pickplugins.com/product/job-board-manager-application-manager/)
-* [WooCommerce Paid Listing](https://www.pickplugins.com/product/job-board-manager-woocommerce-paid-listing/)
-* [Stats](https://www.pickplugins.com/product/job-board-manager-stats/)
-* [Job List Ads](https://www.pickplugins.com/product/job-board-manager-job-list-ads/)
-* [Search & Filter](https://www.pickplugins.com/product/job-board-manager-search/)
-* [Job Feed](https://www.pickplugins.com/product/job-board-manager-job-feed/)
-* [Report Job](https://www.pickplugins.com/product/job-board-manager-report-job/)
-
-
-# Plugin Features
-
-* Schema.org support.
-* Job list with pagination support via short-codes.
-* Job single page.
-* Extensible supported setting page by filter hook.
-* reCAPTCHA for job submission form.
-* Notification email for new job posted, published.
-* Extensible supported job meta input by filter hook.
-* Front-End job submission form via short-codes
-* Featured job marker.
-
-**Job List page**
-
-Use following short-code to display job archive with pagination.
-`
-[job_list]
-`
-
-**Front-End Job submit form**
-
-Use following short-code to display new job submission form.
-`
-[job_submit_form]
-`
-
-
-**Front-End Job edit form**
-
-Use following short-code to display new job edit page.
-`
-[job_bm_job_edit]
-`
-
-**Front-End My Account form**
-
-Use following short-code  to display new account page for login & register form.
-`
-[job_bm_my_account]
-`
-
-**Client job list**
-
-Display list of jobs posted by logged in clients/employer by using following short-code.
-`
-[client_job_list]
-`
-
-
-
-**Filters job type**
-
-you can add your job type by filter hook as following example bellow.
-
-`
-function job_bm_filters_job_type_extra($job_type){
-
-	$job_type_new = array('job_type_1'=>'Job Type 1','job_type_2'=>'Job Type 2');
-	$job_type = array_merge($job_type,$job_type_new);
-
-	return $job_type;
-
-	}
-add_filter('job_bm_filters_job_type','job_bm_filters_job_type_extra');
-`
-
-**Filters salary type**
-
-you can add your salary type by filter hook as following example bellow.
-
-`
-function job_bm_filters_salary_type_extra($salary_type){
-
-	$salary_type_new = array('salary_type_1'=>'Salary Type 1','salary_type_1'=>'Salary Type 2',);
-	$salary_type = array_merge($salary_type,$salary_type_new);
-
-	return $salary_type;
-
-	}
-add_filter('job_bm_filters_salary_type','job_bm_filters_salary_type_extra');
-`
 
 
 
@@ -173,26 +66,7 @@ Contributors
 
 = Single job page showing 404 error , how to solve ? =
 
-Pelase go "Settings > Permalink Settings" and save again to reset permalink.
-
-
-= Single job page style broken, what should i do ? =
-
-you nedd to define container for single job page as come with your theme, please add following code to your theme functions.php file
-`
-add_action('job_bm_action_before_single_job', 'job_bm_action_before_single_job', 10);
-add_action('job_bm_action_after_single_job', 'job_bm_action_after_single_job', 10);
-
-function job_bm_action_before_single_job() {
-  echo '<div class="content-wrapper ">';
-}
-
-function job_bm_action_after_single_job() {
-  echo '</div>';
-}
-`
-
-
+Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 

@@ -49,11 +49,9 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-import.php');
 
 		// ShortCodes
-		//require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-submit.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-edit.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-account.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard-new.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-edit-account.php');
 
@@ -182,17 +180,17 @@ class JobBoardManager{
 	
 	public function job_bm_install(){
 		
-		do_action( 'job_bm_action_install' );
+		do_action( 'job_bm_install' );
 		}		
 		
 	public function job_bm_uninstall(){
 		
-		do_action( 'job_bm_action_uninstall' );
+		do_action( 'job_bm_uninstall' );
 		}		
 		
 	public function job_bm_deactivation(){
 		
-		do_action( 'job_bm_action_deactivation' );
+		do_action( 'job_bm_deactivation' );
 		}
 		
 		

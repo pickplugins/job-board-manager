@@ -26,9 +26,17 @@ add_filter( 'the_content', 'job_bmpost_type_template_job' );
 
 
 
-add_action( 'job_bm_single_job_main', 'job_bm_action_before_single_job_preview', 5 );
-if ( ! function_exists( 'job_bm_action_before_single_job_preview' ) ) {
-    function job_bm_action_before_single_job_preview(){
+
+
+
+
+
+
+
+
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_preview', 5 );
+if ( ! function_exists( 'job_bm_single_job_main_preview' ) ) {
+    function job_bm_single_job_main_preview(){
 
         if(is_preview()):
             ?>

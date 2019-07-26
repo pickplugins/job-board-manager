@@ -7,7 +7,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-add_action('job_bm_job_archive_before', 'job_bm_job_archive_before_search');
+add_action('job_bm_job_archive_loop_before', 'job_bm_job_archive_before_search');
 
 if(!function_exists('job_bm_job_archive_before_search')){
     function job_bm_job_archive_before_search($wp_query){
@@ -196,7 +196,7 @@ endif;
 
 
 
-add_action('job_bm_job_archive_after', 'job_bm_job_archive_after_pagination',1,90);
+add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_pagination',1,90);
 
 if(!function_exists('job_bm_job_archive_after_pagination')){
     function job_bm_job_archive_after_pagination($wp_query){
@@ -229,7 +229,61 @@ if(!function_exists('job_bm_job_archive_after_pagination')){
 
 
 
+add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_style',1,90);
 
+if(!function_exists('job_bm_job_archive_after_style')){
+    function job_bm_job_archive_after_style($wp_query){
+
+        $job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');
+        $job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');
+        $job_bm_job_type_text_color = get_option('job_bm_job_type_text_color');
+        $job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');
+        $job_bm_job_status_text_color = get_option('job_bm_job_status_text_color');
+
+
+
+        ?>
+        <style type="text/css">
+            <?php
+
+            echo '.job-list .single.featured{background:'.$job_bm_featured_bg_color.'}';
+
+            if(!empty($job_bm_job_type_bg_color)){
+                foreach($job_bm_job_type_bg_color as $job_type_key=>$job_type_color){
+
+                    echo '.job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.'}';
+                }
+            }
+
+            if(!empty($job_bm_job_type_text_color)){
+                foreach($job_bm_job_type_text_color as $job_type_key=>$job_type_color){
+
+                    echo '.job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.'}';
+                }
+            }
+
+
+
+            if(!empty($job_bm_job_status_bg_color)){
+                foreach($job_bm_job_status_bg_color as $job_status_key=>$job_status_color){
+                    echo '.job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.'}';
+                }
+            }
+
+            if(!empty($job_bm_job_status_text_color)){
+                foreach($job_bm_job_status_text_color as $job_status_key=>$job_status_color){
+                    echo '.job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.'}';
+                }
+            }
+
+
+
+            ?>
+        </style>
+        <?php
+
+    }
+}
 
 
 
