@@ -21,12 +21,14 @@ class class_job_bm_shortcodes_job_edit{
         $job_bm_can_user_edit_published_jobs = get_option('job_bm_can_user_edit_published_jobs');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
         $dashboard_page_url = get_permalink($job_bm_job_login_page_id);
+        $dashboard_page_title = get_the_title($job_bm_job_login_page_id);
+
 
         $userid = get_current_user_id();
 
 
         if(!isset($_GET['job_id'])):
-            return apply_filters('job_bm_job_edit_invalid_job_id_text', __('Job id is invalid.', 'job-board-manager'));
+            return apply_filters('job_bm_job_edit_invalid_job_id_text', sprintf(__('Job id is invalid. please go to %s » <a href="%s">My Jobs</a> see your jobs.', 'job-board-manager'), '<strong>'.$dashboard_page_title.'</strong>',$dashboard_page_url.'?tabs=my_jobs'));
         endif;
 
         $job_id = sanitize_text_field($_GET['job_id']);

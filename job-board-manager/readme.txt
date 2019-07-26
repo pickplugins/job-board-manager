@@ -136,44 +136,6 @@ function job_bm_filters_salary_type_extra($salary_type){
 add_filter('job_bm_filters_salary_type','job_bm_filters_salary_type_extra');
 `
 
-**Extend meta fields**
-
-If you need some extra input fields under job post type you can use filter hook as following, currently support input fileds are text, textarea, radio, select, checkbox, multi-text,
-
-Please see the file <strong>includes/class-post-meta.php</strong> for example option input by array.
-
-`
-function job_bm_filter_job_input_fields_extra($input_fields){
-
-
-	$meta_fields = $input_fields['meta_fields'];
-
-	// Add new fields in company tab , default meta group is company_info, job_info, salary_info, application
-
-	$company_info = $meta_fields['company_info']['meta_fields'];
-
-    $company_field_extra[] = array(
-									'meta_key'=>'job_bm_company_extra',
-									'css_class'=>'company_extra',
-									'placeholder'=>__('Write Company Name Extra.','job-board-manager'),
-									'title'=>__('Company Extra','job-board-manager'),
-									'option_details'=>__('Company Extra, ex: Google Inc.','job-board-manager'),
-									'input_type'=>'text', // text, radio, checkbox, select,
-									'input_values'=>'', // could be array
-									);
-
-
-	$company_info = array_merge($company_info, $company_field_extra);
-
-	$input_fields['meta_fields']['company_info']['meta_fields'] = 	$company_info;
-
-
-	return $input_fields;
-
-    }
-
-add_filter('job_bm_filter_job_input_fields','job_bm_filter_job_input_fields_extra');
-`
 
 
 # Translation
