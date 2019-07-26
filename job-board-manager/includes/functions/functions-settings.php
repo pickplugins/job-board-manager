@@ -7,94 +7,41 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 	
 
-add_action('job_bm_settings_tabs_content_general', 'job_bm_settings_tabs_content_general');
+add_action('job_bm_settings_tabs_content_archive', 'job_bm_settings_tabs_content_archive');
 
-if(!function_exists('job_bm_settings_tabs_content_general')) {
-    function job_bm_settings_tabs_content_general($tab){
+if(!function_exists('job_bm_settings_tabs_content_archive')) {
+    function job_bm_settings_tabs_content_archive($tab){
 
     $settings_tabs_field = new settings_tabs_field();
 
-
     $job_bm_list_per_page = get_option('job_bm_list_per_page');
-    $job_bm_list_archive_more_style = get_option('job_bm_list_archive_more_style');
-    $job_bm_salary_currency = get_option('job_bm_salary_currency');
-    $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
-
-
-    ?>
-    <div class="section">
-        <div class="section-title">General settings</div>
-        <p class="description section-description">Choose some basic setting to get started.</p>
-
-        <?php
-
-        $args = array(
-            'id'		=> 'job_bm_list_per_page',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Job per page','post-grid'),
-            'details'	=> __('Set custom number of job per page on job archive','post-grid'),
-            'type'		=> 'text',
-            'value'		=> $job_bm_list_per_page,
-            'default'		=> '',
-            'placeholder'		=> '',
-        );
-
-        $settings_tabs_field->generate_field($args);
-
-        $args = array(
-            'id'		=> 'job_bm_list_archive_more_style',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Pagination style','post-grid'),
-            'details'	=> __('Select post query orderby','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_list_archive_more_style,
-            'default'		=> 'pagination',
-            'args'		=> array( 'pagination'=>__('Pagination','job-board-manager'), 'ajax'=>__('Load more','job-board-manager'),),
-        );
-
-        $settings_tabs_field->generate_field($args);
-
-
-        $args = array(
-            'id'		=> 'job_bm_salary_currency',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Salary currency','post-grid'),
-            'details'	=> __('Salary currency display on job page.','job-board-manager'),
-            'type'		=> 'text',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_salary_currency,
-            'default'		=> '',
-        );
-
-        $settings_tabs_field->generate_field($args);
-
-
-        $args = array(
-            'id'		=> 'job_bm_can_user_delete_jobs',
-            //'parent'		=> 'post_grid_meta_options',
-            'title'		=> __('Allow delete jobs?','post-grid'),
-            'details'	=> __('Allow user delete their own jobs','post-grid'),
-            'type'		=> 'select',
-            //'multiple'		=> true,
-            'value'		=> $job_bm_can_user_delete_jobs,
-            'default'		=> '',
-            'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-        );
-
-        $settings_tabs_field->generate_field($args);
-
-
-
-
-
 
 
 
         ?>
+        <div class="section">
+            <div class="section-title"><?php echo __('Archive settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Choose option for archive.', 'job-board-manager'); ?></p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_list_per_page',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Job per page','job-board-manager'),
+                'details'	=> __('Set custom number of job per page on job archive','job-board-manager'),
+                'type'		=> 'text',
+                'value'		=> $job_bm_list_per_page,
+                'default'		=> '',
+                'placeholder'		=> '',
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+            ?>
 
 
-    </div>
+        </div>
     <?php
 
 
@@ -118,22 +65,23 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
         $job_bm_job_submit_page_id = get_option('job_bm_job_submit_page_id');
         $job_bm_job_edit_page_id = get_option('job_bm_job_edit_page_id');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
+        $job_bm_salary_currency = get_option('job_bm_salary_currency');
 
 
 
 
         ?>
         <div class="section">
-            <div class="section-title">Pages settings</div>
-            <p class="description section-description">Choose option for pages.</p>
+            <div class="section-title"><?php echo __('Pages settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Choose option for pages.', 'job-board-manager'); ?></p>
 
             <?php
 
             $args = array(
                 'id'		=> 'job_bm_job_login_page_id',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Dashboard page','post-grid'),
-                'details'	=> __('Choose the page for dashboard page, where the shortcode <code>[job_bm_dashboard]</code> used.','post-grid'),
+                'title'		=> __('Dashboard page','job-board-manager'),
+                'details'	=> __('Choose the page for dashboard page, where the shortcode <code>[job_bm_dashboard]</code> used.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_login_page_id,
@@ -147,8 +95,8 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
             $args = array(
                 'id'		=> 'job_bm_archive_page_id',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job archive page','post-grid'),
-                'details'	=> __('Choose the page for job archive page, where the shortcode <code>[job_list]</code> used.','post-grid'),
+                'title'		=> __('Job archive page','job-board-manager'),
+                'details'	=> __('Choose the page for job archive page, where the shortcode <code>[job_list]</code> used.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_archive_page_id,
@@ -161,8 +109,8 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
             $args = array(
                 'id'		=> 'job_bm_job_submit_page_id',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job submission page','post-grid'),
-                'details'	=> __('Choose the page for job submission page, where the shortcode <code>[job_submit_form]</code> used.','post-grid'),
+                'title'		=> __('Job submission page','job-board-manager'),
+                'details'	=> __('Choose the page for job submission page, where the shortcode <code>[job_submit_form]</code> used.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_submit_page_id,
@@ -176,8 +124,8 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
             $args = array(
                 'id'		=> 'job_bm_job_edit_page_id',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job edit page','post-grid'),
-                'details'	=> __('Choose the page for job edit page, where the shortcode <code>[job_bm_job_edit]</code> used.','post-grid'),
+                'title'		=> __('Job edit page','job-board-manager'),
+                'details'	=> __('Choose the page for job edit page, where the shortcode <code>[job_bm_job_edit]</code> used.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_edit_page_id,
@@ -188,7 +136,18 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
             $settings_tabs_field->generate_field($args);
 
 
+            $args = array(
+                'id'		=> 'job_bm_salary_currency',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Salary currency','job-board-manager'),
+                'details'	=> __('Salary currency display on job page.','job-board-manager'),
+                'type'		=> 'text',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_salary_currency,
+                'default'		=> '',
+            );
 
+            $settings_tabs_field->generate_field($args);
 
 
 
@@ -233,16 +192,16 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
 
         ?>
         <div class="section">
-            <div class="section-title">Job posting settings</div>
-            <p class="description section-description">Choose option for posting.</p>
+            <div class="section-title"><?php echo __('Job posting settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Choose option for posting.', 'job-board-manager'); ?></p>
 
             <?php
 
             $args = array(
                 'id'		=> 'job_bm_account_required_post_job',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Account required?','post-grid'),
-                'details'	=> __('Account required to post job.','post-grid'),
+                'title'		=> __('Account required','job-board-manager'),
+                'details'	=> __('Account required to post job.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_account_required_post_job,
@@ -256,8 +215,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_reCAPTCHA_enable',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('reCAPTCHA enable?','post-grid'),
-                'details'	=> __('Enable reCAPTCHA to protect spam.','post-grid'),
+                'title'		=> __('reCAPTCHA enable','job-board-manager'),
+                'details'	=> __('Enable reCAPTCHA to protect spam.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_reCAPTCHA_enable,
@@ -272,7 +231,7 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_reCAPTCHA_site_key',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('reCAPTCHA site key','post-grid'),
+                'title'		=> __('reCAPTCHA site key','job-board-manager'),
                 'details'	=> __('reCAPTCHA site key, please go <a href="https://www.google.com/recaptcha">google.com/reCAPTCHA</a> and register your site to get site key.','job-board-manager'),
                 'type'		=> 'text',
                 //'multiple'		=> true,
@@ -286,7 +245,7 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_reCAPTCHA_secret_key',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('reCAPTCHA secret key','post-grid'),
+                'title'		=> __('reCAPTCHA secret key','job-board-manager'),
                 'details'	=> __('reCAPTCHA secret key, please go <a href="https://www.google.com/recaptcha">google.com/reCAPTCHA</a> and register your site to get site key.','job-board-manager'),
                 'type'		=> 'text',
                 //'multiple'		=> true,
@@ -300,8 +259,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_submitted_job_status',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Submitted job status','post-grid'),
-                'details'	=> __('Choose job status for newly submitted jobs.','post-grid'),
+                'title'		=> __('Submitted job status','job-board-manager'),
+                'details'	=> __('Choose job status for newly submitted jobs.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_submitted_job_status,
@@ -316,8 +275,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_notify_email_job_submit',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Notify email on job submit?','post-grid'),
-                'details'	=> __('Notify admin when new job submitted.','post-grid'),
+                'title'		=> __('Notify email on job submit','job-board-manager'),
+                'details'	=> __('Notify admin when new job submitted.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_notify_email_job_submit,
@@ -331,8 +290,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_notify_email_job_publish',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Notify email on job published?','post-grid'),
-                'details'	=> __('Notify email to admin when new job published.','post-grid'),
+                'title'		=> __('Notify email on job published','job-board-manager'),
+                'details'	=> __('Notify email to admin when new job published.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_notify_email_job_publish,
@@ -349,8 +308,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_apply_method',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Apply method','post-grid'),
-                'details'	=> __('Choose aplication method on job post.','post-grid'),
+                'title'		=> __('Apply method','job-board-manager'),
+                'details'	=> __('Choose aplication method on job post.','job-board-manager'),
                 'type'		=> 'select',
                 'multiple'		=> true,
                 'value'		=> $job_bm_apply_method,
@@ -371,8 +330,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             $args = array(
                 'id'		=> 'job_bm_redirect_preview_link',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Redirect after job submit','post-grid'),
-                'details'	=> __('Redirect other link after job submitted','post-grid'),
+                'title'		=> __('Redirect after job submit','job-board-manager'),
+                'details'	=> __('Redirect other link after job submitted','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_redirect_preview_link,
@@ -419,8 +378,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
 
         ?>
         <div class="section">
-            <div class="section-title">Job edit settings</div>
-            <p class="description section-description">Customize the job edit.</p>
+            <div class="section-title"><?php echo __('Job edit settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize the job edit.', 'job-board-manager'); ?></p>
 
             <?php
 
@@ -428,8 +387,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
             $args = array(
                 'id'		=> 'job_bm_can_user_edit_published_jobs',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Allow edit jobs?','post-grid'),
-                'details'	=> __('Allow user edit their own jobs','post-grid'),
+                'title'		=> __('Allow edit jobs','job-board-manager'),
+                'details'	=> __('Allow user edit their own jobs','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_can_user_edit_published_jobs,
@@ -443,8 +402,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
             $args = array(
                 'id'		=> 'job_bm_edited_job_status',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Edited job status','post-grid'),
-                'details'	=> __('Choose job status for newly edited jobs.','post-grid'),
+                'title'		=> __('Edited job status','job-board-manager'),
+                'details'	=> __('Choose job status for newly edited jobs.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_edited_job_status,
@@ -465,8 +424,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
             $args = array(
                 'id'		=> 'job_bm_edited_redirect_link',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Redirect after job edit','post-grid'),
-                'details'	=> __('Redirect other link after job edited','post-grid'),
+                'title'		=> __('Redirect after job edit','job-board-manager'),
+                'details'	=> __('Redirect other link after job edited','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_edited_redirect_link,
@@ -480,8 +439,8 @@ if(!function_exists('job_bm_settings_tabs_content_job_edit')) {
             $args = array(
                 'id'		=> 'job_bm_job_edit_notify_email',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Notify email on job edited?','post-grid'),
-                'details'	=> __('Notify admin when new job edited.','post-grid'),
+                'title'		=> __('Notify email on job edited','job-board-manager'),
+                'details'	=> __('Notify admin when new job edited.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_edit_notify_email,
@@ -515,22 +474,27 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
         $job_bm_redirect_logout = get_option('job_bm_redirect_logout');
         $job_bm_registration_enable = get_option('job_bm_registration_enable');
         $job_bm_login_enable = get_option('job_bm_login_enable');
+        $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
+
 
         $page_list = job_bm_page_list_id();
         //$page_list = array_merge($page_list, array('job_preview'=>'Job Preview'));
 
         ?>
         <div class="section">
-            <div class="section-title">Dashboard settings</div>
-            <p class="description section-description">Customize the dashboard.</p>
+            <div class="section-title"><?php echo __('Dashboard settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize the dashboard.', 'job-board-manager'); ?></p>
 
             <?php
+
+
+
 
             $args = array(
                 'id'		=> 'job_bm_redirect_login',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Redirect after login','post-grid'),
-                'details'	=> __('Redirect other link after logged.','post-grid'),
+                'title'		=> __('Redirect after login','job-board-manager'),
+                'details'	=> __('Redirect other link after logged.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_redirect_login,
@@ -544,8 +508,8 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
             $args = array(
                 'id'		=> 'job_bm_redirect_logout',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Redirect after logged out','post-grid'),
-                'details'	=> __('Redirect other link after logged out.','post-grid'),
+                'title'		=> __('Redirect after logged out','job-board-manager'),
+                'details'	=> __('Redirect other link after logged out.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_redirect_logout,
@@ -561,8 +525,8 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
             $args = array(
                 'id'		=> 'job_bm_registration_enable',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Registration enable?','post-grid'),
-                'details'	=> __('Registration enable on dashboard page.','post-grid'),
+                'title'		=> __('Registration enable','job-board-manager'),
+                'details'	=> __('Registration enable on dashboard page.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_registration_enable,
@@ -576,8 +540,8 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
             $args = array(
                 'id'		=> 'job_bm_login_enable',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Login enable?','post-grid'),
-                'details'	=> __('Login enable on dashboard page.','post-grid'),
+                'title'		=> __('Login enable','job-board-manager'),
+                'details'	=> __('Login enable on dashboard page.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_login_enable,
@@ -587,8 +551,19 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
 
             $settings_tabs_field->generate_field($args);
 
+            $args = array(
+                'id'		=> 'job_bm_can_user_delete_jobs',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Allow delete jobs','job-board-manager'),
+                'details'	=> __('Allow user delete their own jobs','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_can_user_delete_jobs,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
 
-
+            $settings_tabs_field->generate_field($args);
 
 
 
@@ -632,16 +607,16 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
         ?>
         <div class="section">
-            <div class="section-title">Email settings</div>
-            <p class="description section-description">Customize email settings.</p>
+            <div class="section-title"><?php echo __('Email settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize email settings.', 'job-board-manager'); ?></p>
 
             <?php
 
             $args = array(
                 'id'		=> 'job_bm_logo_url',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Email logo','post-grid'),
-                'details'	=> __('Email logo URL to display on mail.','post-grid'),
+                'title'		=> __('Email logo','job-board-manager'),
+                'details'	=> __('Email logo URL to display on mail.','job-board-manager'),
                 'type'		=> 'media',
                 'value'		=> $job_bm_logo_url,
                 'default'		=> '',
@@ -655,7 +630,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
             $args = array(
                 'id'		=> 'job_bm_from_email',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('From email address','post-grid'),
+                'title'		=> __('From email address','job-board-manager'),
                 'details'	=> __('Write from email address.','job-board-manager'),
                 'type'		=> 'text',
                 //'multiple'		=> true,
@@ -824,7 +799,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
             $args = array(
                 'id'		=> 'job_bm_email_templates',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Email templates','post-grid'),
+                'title'		=> __('Email templates','job-board-manager'),
                 'details'	=> __('Customize email templates.','job-board-manager'),
                 'type'		=> 'custom_html',
                 //'multiple'		=> true,
@@ -876,16 +851,16 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
 
         ?>
         <div class="section">
-            <div class="section-title">Style settings</div>
-            <p class="description section-description">Customize the style.</p>
+            <div class="section-title"><?php echo __('Style settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize the style.', 'job-board-manager'); ?></p>
 
             <?php
 
             $args = array(
                 'id'		=> 'job_bm_featured_bg_color',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Featured job background color','post-grid'),
-                'details'	=> __('Choose custom background color featured job.','post-grid'),
+                'title'		=> __('Featured job background color','job-board-manager'),
+                'details'	=> __('Choose custom background color featured job.','job-board-manager'),
                 'type'		=> 'colorpicker',
                 'value'		=> $job_bm_featured_bg_color,
                 'default'		=> '#fff8bf',
@@ -899,8 +874,8 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
             $args = array(
                 'id'		=> 'job_bm_job_type_bg_color',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job type background color','post-grid'),
-                'details'	=> __('Job types area background color.','post-grid'),
+                'title'		=> __('Job type background color','job-board-manager'),
+                'details'	=> __('Job types area background color.','job-board-manager'),
                 'type'		=> 'colorpicker_multi',
                 'value'		=> $job_bm_job_type_bg_color,
                 'args'		=> $class_job_bm_functions->job_type_bg_color(),
@@ -912,8 +887,8 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
             $args = array(
                 'id'		=> 'job_bm_job_type_text_color',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job type text color','post-grid'),
-                'details'	=> __('Job types area text color.','post-grid'),
+                'title'		=> __('Job type text color','job-board-manager'),
+                'details'	=> __('Job types area text color.','job-board-manager'),
                 'type'		=> 'colorpicker_multi',
                 'value'		=> $job_bm_job_type_text_color,
                 'args'		=> $class_job_bm_functions->job_type_text_color(),
@@ -927,8 +902,8 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
             $args = array(
                 'id'		=> 'job_bm_job_status_bg_color',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job status background color','post-grid'),
-                'details'	=> __('Job status area background color.','post-grid'),
+                'title'		=> __('Job status background color','job-board-manager'),
+                'details'	=> __('Job status area background color.','job-board-manager'),
                 'type'		=> 'colorpicker_multi',
                 'value'		=> $job_bm_job_status_bg_color,
                 'args'		=> $class_job_bm_functions->job_status_bg_color(),
@@ -941,8 +916,8 @@ if(!function_exists('job_bm_settings_tabs_content_style')) {
             $args = array(
                 'id'		=> 'job_bm_job_status_text_color',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Job status text color','post-grid'),
-                'details'	=> __('Job status area text color.','post-grid'),
+                'title'		=> __('Job status text color','job-board-manager'),
+                'details'	=> __('Job status area text color.','job-board-manager'),
                 'type'		=> 'colorpicker_multi',
                 'value'		=> $job_bm_job_status_text_color,
                 'args'		=> $class_job_bm_functions->job_status_text_color(),
@@ -998,16 +973,16 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
 
         ?>
         <div class="section">
-            <div class="section-title">Job expire settings</div>
-            <p class="description section-description">Customize job expire settings.</p>
+            <div class="section-title"><?php echo __('Job expire settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize job expire settings.', 'job-board-manager'); ?></p>
 
             <?php
 
             $args = array(
                 'id'		=> 'job_bm_enable_expiry',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Enable job expiry','post-grid'),
-                'details'	=> __('You can enable or disable job expiry.','post-grid'),
+                'title'		=> __('Enable job expiry','job-board-manager'),
+                'details'	=> __('You can enable or disable job expiry.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_enable_expiry,
@@ -1021,8 +996,8 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
             $args = array(
                 'id'		=> 'job_bm_experied_jobs_post_status',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Expired jobs status','post-grid'),
-                'details'	=> __('Set post status for expired jobs.','post-grid'),
+                'title'		=> __('Expired jobs status','job-board-manager'),
+                'details'	=> __('Set post status for expired jobs.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_experied_jobs_post_status,
@@ -1036,8 +1011,8 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
             $args = array(
                 'id'		=> 'job_bm_experied_check_recurrance',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Expired check recurrence','post-grid'),
-                'details'	=> __('Set recurrence for checking expired jobs.','post-grid'),
+                'title'		=> __('Expired check recurrence','job-board-manager'),
+                'details'	=> __('Set recurrence for checking expired jobs.','job-board-manager'),
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_experied_check_recurrance,
@@ -1051,8 +1026,8 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
             $args = array(
                 'id'		=> 'job_bm_job_expiry_days',
                 //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Expire days','post-grid'),
-                'details'	=> __('Set custom value for expire in.','post-grid'),
+                'title'		=> __('Expire days','job-board-manager'),
+                'details'	=> __('Set custom value for expire in.','job-board-manager'),
                 'type'		=> 'text',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_expiry_days,

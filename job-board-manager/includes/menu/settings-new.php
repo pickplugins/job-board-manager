@@ -5,10 +5,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 $testimonial_settings_tab = array();
 
-
 $testimonial_settings_tab[] = array(
-    'id' => 'general',
-    'title' => __('<i class="fas fa-laptop-code"></i> General','testimonial'),
+    'id' => 'archive',
+    'title' => __('<i class="fas fa-list-ul"></i> Archive','testimonial'),
     'priority' => 1,
     'active' => true,
 );
@@ -96,7 +95,6 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                 if(wp_verify_nonce( $nonce, 'job_bm_nonce' ) && $_POST['job_bm_hidden'] == 'Y') {
 
                     $job_bm_list_per_page = isset($_POST['job_bm_list_per_page']) ?  sanitize_text_field($_POST['job_bm_list_per_page']) : '';
-                    $job_bm_list_archive_more_style = isset($_POST['job_bm_list_archive_more_style']) ?  sanitize_text_field($_POST['job_bm_list_archive_more_style']) : '';
                     $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ?  sanitize_text_field($_POST['job_bm_salary_currency']) : '';
                     $job_bm_can_user_delete_jobs = isset($_POST['job_bm_can_user_delete_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_delete_jobs']) : '';
                     $job_bm_can_user_edit_published_jobs = isset($_POST['job_bm_can_user_edit_published_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_edit_published_jobs']) : '';
@@ -142,7 +140,6 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
 
 
                     update_option('job_bm_list_per_page', $job_bm_list_per_page);
-                    update_option('job_bm_list_archive_more_style', $job_bm_list_archive_more_style);
                     update_option('job_bm_salary_currency', $job_bm_salary_currency);
                     update_option('job_bm_can_user_delete_jobs', $job_bm_can_user_delete_jobs);
                     update_option('job_bm_can_user_edit_published_jobs', $job_bm_can_user_edit_published_jobs);

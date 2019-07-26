@@ -159,20 +159,20 @@ if(!function_exists('job_bm_job_archive_loop_items')):
                 fa-briefcase"></i>  <?php echo
                     $job_type_list[$job_bm_job_type]; ?></span>
 
-                <span class="post-date meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
+                <span class=" meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
             fa-traffic-light"></i> <?php echo $job_status_list[$job_bm_job_status]; ?></span>
 
 
-                <span class="post-date meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+                <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
 
-                <span class="post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
+                <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
 
                 <?php
 
                 if(!empty($category[0]->name)):
                     ?>
 
-<!--                    <span class="post-date meta-item"><i class="fas fa-code-branch"></i> --><?php //echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?><!--</span>-->
+<!--                    <span class=" meta-item"><i class="fas fa-code-branch"></i> --><?php //echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?><!--</span>-->
 
                 <?php
                 endif;

@@ -30,11 +30,9 @@ class JobBoardManager{
 		define('job_bm_plugin_version', '2.0.31' );
 		define('job_bm_customer_type', 'free' );
 		define('job_bm_share_url', 'https://wordpress.org/plugins/job-board-manager/' );
-		//define('job_bm_tutorial_video_url', '//www.youtube.com/embed/Z-ZzJiyVNJ4?rel=0' );
 
 
 		// Class
-
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings-tabs.php');
 
 
