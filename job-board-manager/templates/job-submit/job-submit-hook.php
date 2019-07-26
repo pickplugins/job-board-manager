@@ -409,6 +409,32 @@ function job_bm_job_submit_form_salary_max(){
 }
 
 
+
+add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_salary_currency', 30);
+
+function job_bm_job_submit_form_salary_currency(){
+
+    $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ? sanitize_text_field($_POST['job_bm_salary_currency']) : "";
+
+    ?>
+    <div class="form-field-wrap" >
+        <div class="field-title"><?php esc_html_e('Salary currency','job-board-manager'); ?></div>
+        <div class="field-input">
+            <input placeholder="$" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <p class="field-details"><?php esc_html_e('Write salary currency, ex: $','job-board-manager');
+                ?></p>
+        </div>
+    </div>
+    <?php
+}
+
+
+
+
+
+
+
+
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_contact_email', 30);
 
 
@@ -795,6 +821,8 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
     $job_bm_salary_fixed = isset($post_data['job_bm_salary_fixed']) ? sanitize_text_field($post_data['job_bm_salary_fixed']) : "";
     $job_bm_salary_min = isset($post_data['job_bm_salary_min']) ? sanitize_text_field($post_data['job_bm_salary_min']) : "";
     $job_bm_salary_max = isset($post_data['job_bm_salary_max']) ? sanitize_text_field($post_data['job_bm_salary_max']) : "";
+    $job_bm_salary_currency = isset($post_data['job_bm_salary_currency']) ? sanitize_text_field($post_data['job_bm_salary_currency']) : "";
+
     $job_bm_contact_email = isset($post_data['job_bm_contact_email']) ? sanitize_text_field($post_data['job_bm_contact_email']) : "";
     $job_bm_company_name = isset($post_data['job_bm_company_name']) ? sanitize_text_field($post_data['job_bm_company_name']) : "";
     $job_bm_location = isset($post_data['job_bm_location']) ? sanitize_text_field($post_data['job_bm_location']) : "";
@@ -815,6 +843,8 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
     update_post_meta($job_ID, 'job_bm_salary_fixed', $job_bm_salary_fixed);
     update_post_meta($job_ID, 'job_bm_salary_min', $job_bm_salary_min);
     update_post_meta($job_ID, 'job_bm_salary_max', $job_bm_salary_max);
+    update_post_meta($job_ID, 'job_bm_salary_currency', $job_bm_salary_currency);
+
     update_post_meta($job_ID, 'job_bm_contact_email', $job_bm_contact_email);
 
     update_post_meta($job_ID, 'job_bm_company_name', $job_bm_company_name);

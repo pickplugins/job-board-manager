@@ -95,6 +95,13 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                 if(wp_verify_nonce( $nonce, 'job_bm_nonce' ) && $_POST['job_bm_hidden'] == 'Y') {
 
                     $job_bm_list_per_page = isset($_POST['job_bm_list_per_page']) ?  sanitize_text_field($_POST['job_bm_list_per_page']) : '';
+                    $job_bm_pagination_bg_color = isset($_POST['job_bm_pagination_bg_color']) ?  sanitize_text_field($_POST['job_bm_pagination_bg_color']) : '';
+                    $job_bm_pagination_active_bg_color = isset($_POST['job_bm_pagination_active_bg_color']) ?  sanitize_text_field($_POST['job_bm_pagination_active_bg_color']) : '';
+                    $job_bm_pagination_text_color = isset($_POST['job_bm_pagination_text_color']) ?  sanitize_text_field($_POST['job_bm_pagination_text_color']) : '';
+
+
+
+
                     $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ?  sanitize_text_field($_POST['job_bm_salary_currency']) : '';
                     $job_bm_can_user_delete_jobs = isset($_POST['job_bm_can_user_delete_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_delete_jobs']) : '';
                     $job_bm_can_user_edit_published_jobs = isset($_POST['job_bm_can_user_edit_published_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_edit_published_jobs']) : '';
@@ -140,6 +147,13 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
 
 
                     update_option('job_bm_list_per_page', $job_bm_list_per_page);
+                    update_option('job_bm_pagination_bg_color', $job_bm_pagination_bg_color);
+                    update_option('job_bm_pagination_active_bg_color', $job_bm_pagination_active_bg_color);
+                    update_option('job_bm_pagination_text_color', $job_bm_pagination_text_color);
+
+
+
+
                     update_option('job_bm_salary_currency', $job_bm_salary_currency);
                     update_option('job_bm_can_user_delete_jobs', $job_bm_can_user_delete_jobs);
                     update_option('job_bm_can_user_edit_published_jobs', $job_bm_can_user_edit_published_jobs);

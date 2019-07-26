@@ -240,6 +240,9 @@ if(!function_exists('job_bm_job_archive_after_style')){
         $job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');
         $job_bm_job_status_text_color = get_option('job_bm_job_status_text_color');
 
+        $job_bm_pagination_bg_color = get_option('job_bm_pagination_bg_color');
+        $job_bm_pagination_active_bg_color = get_option('job_bm_pagination_active_bg_color');
+        $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
 
 
         ?>
@@ -278,7 +281,19 @@ if(!function_exists('job_bm_job_archive_after_style')){
 
 
 
+
+
             ?>
+
+            .job-list .paginate .page-numbers.current{
+                background: <?php echo $job_bm_pagination_active_bg_color; ?>;
+                color: <?php echo $job_bm_pagination_text_color; ?> ;
+            }
+            .job-list .paginate a.page-numbers{
+                background: <?php echo $job_bm_pagination_bg_color; ?>;
+                color: <?php echo $job_bm_pagination_text_color; ?> ;
+            }
+
         </style>
         <?php
 

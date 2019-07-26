@@ -200,6 +200,57 @@
   clear: both;
 }
 
+.apply-methods{}
+.apply-methods .item{}
+.apply-methods .method-header{
+
+border-radius: 3px;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+}
+.apply-methods .method-header .method-name{
+  background: #ececec;
+  padding: 8px 20px;
+  display: inline-block;
+  border-radius: 3px;
+  margin: 10px 0 0 0;
+}
+
+
+.apply-methods .method-form{
+  padding: 15px 20px;
+  margin: 0px 0 0px 0;
+}
+
+
+
+.apply-methods .form-field-wrap{}
+.apply-methods .form-field-wrap input[type="email"],
+.apply-methods .form-field-wrap input[type="text"], .apply-methods .form-field-wrap textarea, .apply-methods .form-field-wrap select{
+  width: 91%;
+}
+
+.apply-methods .form-field-wrap select, .apply-methods .form-field-wrap .wp-editor-wrap, .apply-methods .form-field-wrap input[type="submit"]{
+  width: 93%;
+}
+
+.apply-methods .form-field-wrap .field-title{
+  width: 250px;
+  float: left;
+}
+
+.apply-methods .form-field-wrap .field-input{
+  margin-left: 250px;
+}
+.apply-methods .form-field-wrap .field-details{
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+
+
 
 
 

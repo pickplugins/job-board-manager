@@ -365,8 +365,7 @@ class job_bm_setup_wizard {
             
             <form  method="post" action="<?php echo str_replace( '%7E', '~', $action_url); ?>">
                 <input type="hidden" name="job_bm_hidden" value="Y">
-                <?php settings_fields( 'job_bm_plugin_options' );
-                        do_settings_sections( 'job_bm_plugin_options' );
+                <?php
         
         
 

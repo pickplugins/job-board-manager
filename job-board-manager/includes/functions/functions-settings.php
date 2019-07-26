@@ -12,9 +12,12 @@ add_action('job_bm_settings_tabs_content_archive', 'job_bm_settings_tabs_content
 if(!function_exists('job_bm_settings_tabs_content_archive')) {
     function job_bm_settings_tabs_content_archive($tab){
 
-    $settings_tabs_field = new settings_tabs_field();
+        $settings_tabs_field = new settings_tabs_field();
 
-    $job_bm_list_per_page = get_option('job_bm_list_per_page');
+        $job_bm_list_per_page = get_option('job_bm_list_per_page');
+        $job_bm_pagination_bg_color = get_option('job_bm_pagination_bg_color');
+        $job_bm_pagination_active_bg_color = get_option('job_bm_pagination_active_bg_color');
+        $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
 
 
 
@@ -37,6 +40,54 @@ if(!function_exists('job_bm_settings_tabs_content_archive')) {
             );
 
             $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_pagination_bg_color',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Pagination background color','job-board-manager'),
+                'details'	=> __('Choose pagination custom background color.','job-board-manager'),
+                'type'		=> 'colorpicker',
+                'value'		=> $job_bm_pagination_bg_color,
+                'default'		=> '#656565',
+                'placeholder'		=> '',
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+            $args = array(
+                'id'		=> 'job_bm_pagination_active_bg_color',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Pagination active background color','job-board-manager'),
+                'details'	=> __('Choose pagination active custom background color.','job-board-manager'),
+                'type'		=> 'colorpicker',
+                'value'		=> $job_bm_pagination_active_bg_color,
+                'default'		=> '#949494',
+                'placeholder'		=> '',
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_pagination_text_color',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Pagination text color','job-board-manager'),
+                'details'	=> __('Choose pagination custom text color.','job-board-manager'),
+                'type'		=> 'colorpicker',
+                'value'		=> $job_bm_pagination_text_color,
+                'default'		=> '#ffffff',
+                'placeholder'		=> '',
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+
+
 
             ?>
 

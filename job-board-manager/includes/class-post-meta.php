@@ -43,7 +43,6 @@ class class_job_bm_post_meta{
 		//$job_bm_field_editor = get_option( 'job_bm_field_editor' );
 		
 		$class_job_bm_functions = new class_job_bm_functions();
-		$post_type_input_fields = $class_job_bm_functions->post_type_input_fields();
 
         $settings_tabs_field = new settings_tabs_field();
 
@@ -66,9 +65,6 @@ class class_job_bm_post_meta{
 
 		$html_box = '';
 		$class_job_bm_functions = new class_job_bm_functions();
-		$post_type_input_fields_admin = $class_job_bm_functions->post_type_input_fields_admin();
-
-		//$job_bm_field_editor = get_option( 'job_bm_field_editor' );
 
 
 
@@ -134,8 +130,6 @@ class class_job_bm_post_meta{
         //$job_bm_field_editor = get_option( 'job_bm_field_editor' );
 
         $class_job_bm_functions = new class_job_bm_functions();
-        $post_type_input_fields = $class_job_bm_functions->post_type_input_fields();
-		$post_type_input_fields_admin = $class_job_bm_functions->post_type_input_fields_admin();
 
 
 

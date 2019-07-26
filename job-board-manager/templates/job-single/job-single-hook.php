@@ -14,6 +14,7 @@ function job_bmpost_type_template_job($content) {
 
         wp_enqueue_style('job_bm_job_single');
         wp_enqueue_style('font-awesome-5');
+        wp_enqueue_script('jquery-ui-accordion');
 
 		return ob_get_clean();
 	}
@@ -187,6 +188,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
 
         $class_job_bm_functions = new class_job_bm_functions();
+        $salary_currency = get_option( 'job_bm_salary_currency');
 
 
         $salary_type_list = $class_job_bm_functions->salary_type_list();
@@ -204,11 +206,14 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         $job_bm_salary_type = get_post_meta($post_id, 'job_bm_salary_type', true);
 
         $job_bm_salary_fixed = get_post_meta($post_id, 'job_bm_salary_fixed', true);
+        $job_bm_salary_min = get_post_meta($post_id, 'job_bm_salary_min', true);
+        $job_bm_salary_max = get_post_meta($post_id, 'job_bm_salary_max', true);
 
         $job_bm_salary_currency = get_post_meta($post_id, 'job_bm_salary_currency', true);
         $job_bm_job_status = get_post_meta($post_id, 'job_bm_job_status', true);
 
 
+        $job_bm_salary_currency = !empty($job_bm_salary_currency) ? $job_bm_salary_currency : $salary_currency;
 
         $post_date = get_the_date();
         $post_id = get_the_id();
@@ -239,9 +244,20 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
                         'job-board-manager'),'<i class="fas fa-crosshairs"></i>', $job_bm_years_experience)?></span>
             <?php endif; ?>
 
+            <?php
+            if($job_bm_salary_type == 'fixed'):
+                $salary_html = $job_bm_salary_currency.$job_bm_salary_fixed;
+            elseif($job_bm_salary_type == 'negotiable'):
+                $salary_html = __('Negotiable', 'job-board-manager');
+            elseif($job_bm_salary_type == 'min-max'):
+                $salary_html = $job_bm_salary_currency.$job_bm_salary_min.' - '.$job_bm_salary_currency.$job_bm_salary_max;
+
+            endif;
+
+            ?>
 
             <?php if($job_bm_salary_fixed):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $job_bm_salary_currency.$job_bm_salary_fixed)?></span>
+                <span class=" meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html)?></span>
             <?php endif; ?>
 
 
@@ -261,82 +277,58 @@ add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_apply', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
     function job_bm_single_job_main_job_apply() {
 
+        $class_job_bm_functions = new class_job_bm_functions();
 
         $sections = array();
         $job_post_data = get_post(get_the_ID());
         $job_bm_contact_email = get_post_meta(get_the_ID(), 'job_bm_contact_email', true);
         $job_bm_job_status = get_post_meta(get_the_ID(), 'job_bm_job_status', true);
+        $job_bm_apply_methods = get_option('job_bm_apply_method', array('direct_email'));
 
 
-        $html_apply_method = '';
-
-        if(!empty($job_bm_how_to_apply)){
-            $html_apply_method .= '<div class="side-meta"><i class="fa fa-trophy"></i> '.__('How to Apply ?<br> ','job-board-manager').$job_bm_how_to_apply.'</div>';
-
-        }
-
-        $apply_method_html['direct_email'] = '<div class="side-meta"><i class="fa fa-envelope-o"></i> '.__('Apply via email :','job-board-manager').'<a class="apply-job" href="mailto:'.$job_bm_contact_email.'?subject='.$job_post_data->post_title.'">Send Email</a></div>';
-
-
-
-        $apply_method_html = apply_filters('job_bm_filters_apply_method_html',$apply_method_html);
-
-
-        $job_bm_apply_method = get_option('job_bm_apply_method', array('direct_email'));
-
-
-
-        if(!empty($job_bm_apply_method)){
-
-            foreach($job_bm_apply_method as $key=>$method){
-
-                if(!empty($apply_method_html[$method]))
-                    $html_apply_method .= $apply_method_html[$method];
-
-            }
-
-        }
-
-
-        $apply_allowed_job_status = array('open','re-open');
-        $apply_not_allowed_job_status = apply_filters('job_bm_filters_apply_allowed_job_status',$apply_allowed_job_status);
-
-
-        if(!in_array($job_bm_job_status, $apply_not_allowed_job_status)){
-
-            if(!empty($job_status_list[$job_bm_job_status]))
-                $html_apply_method = '<i class="fa fa-exclamation-triangle"></i> This job already <b>'.$job_status_list[$job_bm_job_status].'</b>, <br> Application not allowed this job status.';
-
-        }
-
-
-        $sections['apply_methods'] = array(
-            'title'=>__('Apply on this job','job-board-manager'),
-            'html'=> $html_apply_method,
-        );
-
-        $sections = apply_filters('job_bm_filter_sidebar_sections',$sections);
-
-
+        $job_id = get_the_id();
 
         ?>
-        <div class="job-apply-job">
-            <h2><?php echo __('Apply on this job','job-board-manager'); ?></h2>
+        <div class="job-apply">
+            <h2><?php echo __('Apply for job','job-board-manager'); ?></h2>
 
-            <div class="single-job-sidebar">
-                <div class="inner">
-                    <?php
 
-                    if(!empty($sections))
-                        foreach($sections as $section){
-                            echo '<div class="section">';
-                            echo $section['html'];
-                            echo '</div>';	// .section
+            <div class="apply-methods">
 
-                        }
+                <?php
 
-                    ?>
-                </div>
+                $apply_method_list = $class_job_bm_functions->apply_method_list();
+
+
+
+                if(!empty($job_bm_apply_methods)):
+                    foreach ($job_bm_apply_methods as $method):
+
+                        //echo '<pre>'.var_export($method, true).'</pre>';
+
+
+
+                        $method_name = isset($apply_method_list[$method]) ? $apply_method_list[$method] : '';
+
+                        ?>
+                        <div class="method-header"><div class="method-name"><?php echo $method_name; ?></div></div>
+                        <div class="method-form">
+
+                            <?php
+                            do_action('job_bm_apply_method_'.$method, $job_id);
+                            ?>
+
+                        </div>
+                        <?php
+
+
+
+                    endforeach;
+                endif;
+
+
+                ?>
+
 
             </div>
 
@@ -344,12 +336,153 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
 
         </div>
+
+        <script>
+            jQuery( function($) {
+                $( ".apply-methods" ).accordion({
+                    active: 99999,
+                    collapsible: true,
+                    icons : false,
+                });
+            } );
+        </script>
+
+
         <div class="clear"></div>
         <?php
 
 
     }
 }
+
+
+
+
+
+add_action('job_bm_apply_method_direct_email','job_bm_apply_method_direct_email');
+
+function job_bm_apply_method_direct_email($job_id){
+
+    ?>
+    <form method="post" action="#" class="apply-method-form">
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your name</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_name">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your email</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_email">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-field-wrap">
+            <div class="field-title"></div>
+            <div class="field-input">
+                <input placeholder="" type="submit"  name="Submit">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+    </form>
+    <?php
+
+}
+
+
+add_action('job_bm_apply_method_saved_cv','job_bm_apply_method_saved_cv');
+
+function job_bm_apply_method_saved_cv($job_id){
+
+    ?>
+    <form method="post" action="#" class="apply-method-form">
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your name</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_name">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your email</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_email">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-field-wrap">
+            <div class="field-title"></div>
+            <div class="field-input">
+                <input placeholder="" type="submit"  name="Submit">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+    </form>
+    <?php
+
+}
+
+
+
+add_action('job_bm_apply_method_upload_cv','job_bm_apply_method_upload_cv');
+
+function job_bm_apply_method_upload_cv($job_id){
+
+    ?>
+    <form method="post" action="#" class="apply-method-form">
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your name</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_name">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your email</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="" name="application_email">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+        <div class="form-field-wrap">
+            <div class="field-title"></div>
+            <div class="field-input">
+                <input placeholder="" type="submit"  name="Submit">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+
+
+    </form>
+    <?php
+
+}
+
+
 
 
 

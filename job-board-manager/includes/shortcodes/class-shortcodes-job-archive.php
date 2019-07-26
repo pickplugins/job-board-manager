@@ -21,13 +21,13 @@ class class_job_bm_shortcodes_job_archive{
 
         include( job_bm_plugin_dir . 'templates/job-archive/job-archive-hook.php');
 
+
         ob_start();
 		
 		include( job_bm_plugin_dir . 'templates/job-archive/job-archive.php');
 
         wp_enqueue_style('job_bm_job_archive');
         wp_enqueue_style('font-awesome-5');
-
 		return ob_get_clean();
 		
 		}

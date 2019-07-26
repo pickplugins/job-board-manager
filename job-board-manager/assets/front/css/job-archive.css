@@ -209,11 +209,9 @@
 }
 .job-list .paginate .page-numbers,
 .job-list .paginate .page-numbers {
-  background: #f0f0f0 none repeat scroll 0 0;
-  border: 1px solid #ddd;
   color: #999;
   font-size: 17px;
-  padding: 5px 10px;
+  padding: 7px 13px;
   text-decoration: none;
 }
 
@@ -221,16 +219,7 @@
   border: medium none;
 }
 
-.job-list .paginate-ajax {
-    background: #f0f0f0 none repeat scroll 0 0;
-    border: 1px solid #ddd;
-    color: #999;
-    font-size: 17px;
-    padding: 5px 10px;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-}
+
 
 
 

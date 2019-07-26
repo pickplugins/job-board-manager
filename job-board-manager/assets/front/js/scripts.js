@@ -86,37 +86,7 @@ jQuery(document).ready(function($) {
 		
 		
 		
-		
-		$(document).on('click', '.job-submit .plupload-upload-ui .delete', function()
-			{
 
-				var attach_id = $(this).attr('attach_id');
-				
-				//alert(attach_id);
-				if(confirm('Do you really want to delete ?')){
-					
-					$.ajax(
-						{
-					type: 'POST',
-					context: this,
-					url:job_bm_ajax.job_bm_ajaxurl,
-					data: {"action": "job_bm_ajax_delete_attachment", "attach_id":attach_id,},
-					success: function(data)
-							{	
-								//alert('Hello');
-								//$('#classified_maker_ads_thumbs').val(data);
-								
-								$(this).parent().fadeOut()
-		
-							}
-						});	
-					
-					}
-				
-
-				
-				
-				})
 		
 		
 		

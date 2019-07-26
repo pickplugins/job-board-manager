@@ -44,7 +44,6 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-emails.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-error-log.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-import.php');
 
 		// ShortCodes
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-submit.php');
@@ -239,8 +238,8 @@ class JobBoardManager{
 		wp_enqueue_script('job_bm_scripts-form', plugins_url( '/assets/front/js/scripts-form.js' , __FILE__ ) , array( 'jquery' ));	
 			
 		wp_enqueue_style('frontend-forms', job_bm_plugin_url.'assets/front/css/frontend-forms.css');
-		wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
-		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
+		//wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
+		//wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
 
 
 
