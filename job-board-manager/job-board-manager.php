@@ -38,6 +38,7 @@ class JobBoardManager{
 
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-application.php');
 
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-functions.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-roles.php');
@@ -45,6 +46,7 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-emails.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-error-log.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-application.php');
+
 
 
 		// ShortCodes
@@ -313,6 +315,16 @@ class JobBoardManager{
 
 
         if ($screen->id == 'job'){
+
+            wp_enqueue_style( 'font-awesome-5' );
+            wp_enqueue_style( 'settings-tabs' );
+            wp_enqueue_script( 'settings-tabs' );
+
+        }
+
+
+
+        if ($screen->id == 'application'){
 
             wp_enqueue_style( 'font-awesome-5' );
             wp_enqueue_style( 'settings-tabs' );
