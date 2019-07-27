@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Awesome Job Board Manager.
-Version: 2.0.31
+Version: 2.1.0
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -27,7 +27,7 @@ class JobBoardManager{
 		define('job_bm_conatct_url', 'https://www.pickplugins.com/contact/?ref=dashboard' );
 		define('job_bm_qa_url', 'https://www.pickplugins.com/questions/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.0.31' );
+		define('job_bm_plugin_version', '2.1.0' );
 		define('job_bm_customer_type', 'free' );
 		define('job_bm_share_url', 'https://wordpress.org/plugins/job-board-manager/' );
 
@@ -44,17 +44,15 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-emails.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-error-log.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-application.php');
+
 
 		// ShortCodes
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-submit.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-edit.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-edit-account.php');
-
-
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-pending-publish.php');
 
 		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-single/job-single-hook.php');
 
@@ -227,21 +225,6 @@ class JobBoardManager{
 	public function job_bm_front_scripts(){
 		
 		wp_enqueue_script('jquery');
-		
-		wp_enqueue_script( 'jquery-ui-core' );
-		wp_enqueue_script('jquery-ui-accordion');
-		wp_enqueue_script('jquery-ui-datepicker');
-		
-		wp_enqueue_script('job_bm_front_js', plugins_url( '/assets/front/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
-		wp_localize_script('job_bm_front_js', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
-		
-		wp_enqueue_script('job_bm_scripts-form', plugins_url( '/assets/front/js/scripts-form.js' , __FILE__ ) , array( 'jquery' ));	
-			
-		wp_enqueue_style('frontend-forms', job_bm_plugin_url.'assets/front/css/frontend-forms.css');
-		//wp_enqueue_style('job_bm_style', job_bm_plugin_url.'assets/front/css/style.css');
-		//wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
-
-
 
 		// Register CSS & Style
         wp_register_style('job-bm-job-submit', job_bm_plugin_url.'assets/front/css/job-submit-new.css');
@@ -249,13 +232,12 @@ class JobBoardManager{
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
         wp_register_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single-new.css');
         wp_register_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
+        wp_register_style('job-bm-my-jobs', job_bm_plugin_url.'assets/front/css/job-bm-my-jobs.css');
 
 
         // Register CSS & Style
         wp_register_script('job-bm-job-submit', job_bm_plugin_url.'assets/front/js/scripts-job-submit.js');
-
-
-
+        wp_register_script('job-bm-my-jobs', job_bm_plugin_url.'assets/front/js/scripts-my-jobs.js');
 
 
 		}

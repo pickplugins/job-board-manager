@@ -18,8 +18,6 @@ class class_job_bm_shortcodes_dashboard{
 
         include( job_bm_plugin_dir . 'templates/job-dashboard/job-dashboard.php');
 
-        //echo 'Helllo';
-
         wp_enqueue_style( 'font-awesome-5' );
         wp_enqueue_style( 'job-bm-dashboard' );
 

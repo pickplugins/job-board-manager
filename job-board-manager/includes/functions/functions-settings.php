@@ -222,8 +222,7 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
     function job_bm_settings_tabs_content_job_submit($tab){
 
         $settings_tabs_field = new settings_tabs_field();
-        $class_job_bm_functions = new class_job_bm_functions();
-        $apply_method_list = $class_job_bm_functions->apply_method_list();
+
 
 
 
@@ -233,7 +232,6 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
         $job_bm_reCAPTCHA_site_key = get_option('job_bm_reCAPTCHA_site_key');
         $job_bm_reCAPTCHA_secret_key = get_option('job_bm_reCAPTCHA_secret_key');
         $job_bm_submitted_job_status = get_option('job_bm_submitted_job_status');
-        $job_bm_apply_method = get_option('job_bm_apply_method');
         $job_bm_redirect_preview_link = get_option('job_bm_redirect_preview_link');
         $job_bm_notify_email_job_submit = get_option('job_bm_notify_email_job_submit');
         $job_bm_notify_email_job_publish = get_option('job_bm_notify_email_job_publish');
@@ -355,20 +353,6 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
 
 
 
-
-            $args = array(
-                'id'		=> 'job_bm_apply_method',
-                //'parent'		=> 'post_grid_meta_options',
-                'title'		=> __('Apply method','job-board-manager'),
-                'details'	=> __('Choose aplication method on job post.','job-board-manager'),
-                'type'		=> 'select',
-                'multiple'		=> true,
-                'value'		=> $job_bm_apply_method,
-                'default'		=> array('none'),
-                'args'		=> $apply_method_list,
-            );
-
-            $settings_tabs_field->generate_field($args);
 
 
 
@@ -1083,13 +1067,94 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
                 //'multiple'		=> true,
                 'value'		=> $job_bm_job_expiry_days,
                 'default'		=> '30',
-                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
             );
 
             $settings_tabs_field->generate_field($args);
 
 
 
+
+            ?>
+
+
+        </div>
+        <?php
+
+
+    }
+}
+
+
+
+add_action('job_bm_settings_tabs_content_applications', 'job_bm_settings_tabs_content_applications');
+
+if(!function_exists('job_bm_settings_tabs_content_applications')) {
+    function job_bm_settings_tabs_content_applications($tab){
+
+        $settings_tabs_field = new settings_tabs_field();
+        $class_job_bm_functions = new class_job_bm_functions();
+        $apply_method_list = $class_job_bm_functions->apply_method_list();
+
+
+        $job_bm_apply_method = get_option('job_bm_apply_method');
+        $job_bm_login_required_on_apply = get_option('job_bm_login_required_on_apply');
+        $job_bm_apply_enable_recaptcha = get_option('job_bm_apply_enable_recaptcha');
+
+
+
+
+
+
+
+        ?>
+        <div class="section">
+            <div class="section-title"><?php echo __('Job expire settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize job expire settings.', 'job-board-manager'); ?></p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_login_required_on_apply',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Login required for application','job-board-manager'),
+                'details'	=> __('Login is required or not for submit application.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_login_required_on_apply,
+                'default'		=> 'yes',
+                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+            $args = array(
+                'id'		=> 'job_bm_apply_enable_recaptcha',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Enable recaptcha','job-board-manager'),
+                'details'	=> __('Enable recaptcha on submit application.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_apply_enable_recaptcha,
+                'default'		=> 'yes',
+                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_apply_method',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Apply method','job-board-manager'),
+                'details'	=> __('Choose aplication method on job post.','job-board-manager'),
+                'type'		=> 'select',
+                'multiple'		=> true,
+                'value'		=> $job_bm_apply_method,
+                'default'		=> array('none'),
+                'args'		=> $apply_method_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
 
             ?>
 

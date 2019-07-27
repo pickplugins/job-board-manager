@@ -100,7 +100,7 @@ class class_job_bm_functions{
 
 	public function apply_method_list(){
 
-		$apply_method_list = array('none'=>__('None', 'job-board-manager'), 'direct_email'=>__('Direct Email', 'job-board-manager'));
+		$apply_method_list = array('none'=>__('None', 'job-board-manager'), 'direct_email'=>__('By Email', 'job-board-manager'));
 		$apply_method_list = apply_filters('job_bm_filters_apply_method', $apply_method_list);		
 
 		return $apply_method_list;

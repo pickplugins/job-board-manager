@@ -284,9 +284,17 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
         $job_bm_contact_email = get_post_meta(get_the_ID(), 'job_bm_contact_email', true);
         $job_bm_job_status = get_post_meta(get_the_ID(), 'job_bm_job_status', true);
         $job_bm_apply_methods = get_option('job_bm_apply_method', array('direct_email'));
+        $job_bm_login_required_on_apply = get_option('job_bm_login_required_on_apply', 'yes');
+        $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
+        $job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
 
 
         $job_id = get_the_id();
+
+
+        $application_method_id = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : '';
+
+        //var_dump($application_method_id);
 
         ?>
         <div class="job-apply">
@@ -302,27 +310,45 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
 
                 if(!empty($job_bm_apply_methods)):
+
+                    $active_id = 9999;
+                    $i = 0;
                     foreach ($job_bm_apply_methods as $method):
 
-                        //echo '<pre>'.var_export($method, true).'</pre>';
 
 
+                        if(($application_method_id == $method)){
+                            $active_id = $i;
+                        }
 
                         $method_name = isset($apply_method_list[$method]) ? $apply_method_list[$method] : '';
 
+                        //echo '<pre>'.var_export($active_id, true).'</pre>';
+
                         ?>
-                        <div class="method-header"><div class="method-name"><?php echo $method_name; ?></div></div>
-                        <div class="method-form">
+                        <div class="method-header <?php //echo $header_active_class; ?>"><div class="method-name"><?php echo $method_name; ?></div></div>
+                        <div class="method-form ">
 
                             <?php
-                            do_action('job_bm_apply_method_'.$method, $job_id);
+
+                            if(!is_user_logged_in() && $job_bm_login_required_on_apply =='yes'){
+
+                                $login_required = apply_filters('job_bm_application_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit application','job-board-manager'), $job_bm_job_login_page_url));
+                                echo $login_required;
+
+                            }else{
+                                do_action('job_bm_apply_method_form_'.$method, $job_id);
+                            }
+
+
+
                             ?>
 
                         </div>
                         <?php
 
 
-
+                        $i++;
                     endforeach;
                 endif;
 
@@ -340,7 +366,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
         <script>
             jQuery( function($) {
                 $( ".apply-methods" ).accordion({
-                    active: 99999,
+                    active: <?php echo $active_id; ?>,
                     collapsible: true,
                     icons : false,
                 });
@@ -359,12 +385,176 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
 
 
-add_action('job_bm_apply_method_direct_email','job_bm_apply_method_direct_email');
+add_action('job_bm_apply_method_form_direct_email','job_bm_apply_method_form_direct_email');
 
-function job_bm_apply_method_direct_email($job_id){
+function job_bm_apply_method_form_direct_email($job_id){
+
+    $job_bm_apply_enable_recaptcha		= get_option('job_bm_apply_enable_recaptcha');
+    $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
+    if ( is_user_logged_in() ) {
+        $user_id = get_current_user_id();
+    } else {
+        $user_id = 0;
+    }
+
+    $class_job_bm_applications = new class_job_bm_applications();
+
+    if(!empty($_POST)){
+
+        //var_dump($_POST);
+
+
+        $error = new WP_Error();
+
+        if(empty($_POST['applicant_name'])){
+
+            $error->add( 'applicant_name', __( '<strong>ERROR</strong>: Applicant name is empty.', 'job-board-manager' ) );
+        }
+
+        if(empty($_POST['application_email'])){
+
+            $error->add( 'application_email', __( '<strong>ERROR</strong>: Email is empty.', 'job-board-manager' ) );
+        }
+
+
+        if($job_bm_apply_enable_recaptcha == 'yes' && empty($_POST['g-recaptcha-response'])){
+
+            $error->add( 'recaptcha', __( '<strong>ERROR</strong>: reCaptcha test failed', 'job-board-manager' ) );
+        }
+
+        $errors = apply_filters( 'job_bm_application_submit_errors', $error, $_POST );
+
+
+        if ( !$error->has_errors() ) {
+
+            $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
+            $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
+            $post_content = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
+            $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
+
+
+            $is_applied_before = $class_job_bm_applications->is_applied_before($job_id, $email);
+
+            $application_ID = wp_insert_post(
+                array(
+                    'post_title'    => '',
+                    'post_content'  => $post_content,
+                    'post_status'   => 'publish',
+                    'post_type'   	=> 'application',
+                    'post_author'   => $user_id,
+                )
+            );
+
+            update_post_meta($application_ID, 'job_bm_am_user_email', $email);
+            update_post_meta($application_ID, 'job_bm_am_job_id', $application_ID);
+            update_post_meta($application_ID, 'job_bm_am_apply_method', $application_method);
+
+
+
+            do_action('job_bm_application_submitted', $application_ID, $_POST);
+
+
+
+            ?>
+            <div class="success">Your application has sent.</div>
+            <?php
+
+
+
+        }
+        else{
+
+            $error_messages = $error->get_error_messages();
+
+            ?>
+            <div class="errors">
+                <?php
+
+                if(!empty($error_messages))
+                    foreach ($error_messages as $message){
+                        ?>
+                        <div class="job-bm-error"><?php echo $message; ?></div>
+                        <?php
+                    }
+                ?>
+            </div>
+            <?php
+        }
+
+    }
+
+
+    $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
+    $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
+
 
     ?>
     <form method="post" action="#" class="apply-method-form">
+
+        <input type="hidden" name="application_method" value="direct_email">
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your name</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="<?php echo $applicant_name; ?>" name="applicant_name">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+        <div class="form-field-wrap">
+            <div class="field-title">Your email</div>
+            <div class="field-input">
+                <input placeholder="" type="text" value="<?php echo $email; ?>" name="application_email">
+                <p class="field-details">Write your name</p>
+            </div>
+        </div>
+
+        <?php
+        if($job_bm_apply_enable_recaptcha == 'yes'):
+            ?>
+            <div class="form-field-wrap">
+                <div class="field-title"></div>
+                <div class="field-input">
+                    <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
+                    <script src="https://www.google.com/recaptcha/api.js"></script>
+                    <p class="field-details"><?php esc_html_e('Please prove you are human.','job-board-manager'); ?></p>
+
+                </div>
+            </div>
+            <?php
+        endif;
+        ?>
+
+
+
+        <?php wp_nonce_field( 'job_bm_application_nonce','job_bm_application_nonce' ); ?>
+
+        <div class="form-field-wrap">
+            <div class="field-title"></div>
+            <div class="field-input">
+                <input placeholder="" type="submit"  name="Submit">
+                <p class="field-details"></p>
+            </div>
+        </div>
+
+
+
+
+    </form>
+    <?php
+
+}
+
+
+add_action('job_bm_apply_method_form_saved_cv','job_bm_apply_method_form_saved_cv');
+
+function job_bm_apply_method_form_saved_cv($job_id){
+
+    ?>
+    <form method="post" action="#" class="apply-method-form">
+
+        <input type="hidden" name="application_method" value="saved_cv">
+
 
         <div class="form-field-wrap">
             <div class="field-title">Your name</div>
@@ -400,54 +590,16 @@ function job_bm_apply_method_direct_email($job_id){
 }
 
 
-add_action('job_bm_apply_method_saved_cv','job_bm_apply_method_saved_cv');
 
-function job_bm_apply_method_saved_cv($job_id){
+add_action('job_bm_apply_method_form_upload_cv','job_bm_apply_method_form_upload_cv');
 
-    ?>
-    <form method="post" action="#" class="apply-method-form">
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your name</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_name">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your email</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_email">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-        <div class="form-field-wrap">
-            <div class="field-title"></div>
-            <div class="field-input">
-                <input placeholder="" type="submit"  name="Submit">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-    </form>
-    <?php
-
-}
-
-
-
-add_action('job_bm_apply_method_upload_cv','job_bm_apply_method_upload_cv');
-
-function job_bm_apply_method_upload_cv($job_id){
+function job_bm_apply_method_form_upload_cv($job_id){
 
     ?>
     <form method="post" action="#" class="apply-method-form">
+
+        <input type="hidden" name="application_method" value="upload_cv">
+
 
         <div class="form-field-wrap">
             <div class="field-title">Your name</div>

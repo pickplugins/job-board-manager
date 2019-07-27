@@ -3,8 +3,8 @@
 	Donate link: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=wordpress.org
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 5.1
-	Stable tag: 2.0.31
+	Tested up to: 5.2
+	Stable tag: 2.1.0
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,45 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.0 =
+    * 27/07/2019 - update - action hook job_bm_action_before_job_list removed and alter by job_bm_job_archive_loop_before
+    * 27/07/2019 - update - action hook job_bm_action_after_job_list removed and alter by job_bm_job_archive_loop_after
+    * 27/07/2019 - add - action hook job_bm_job_archive_loop added
+    * 27/07/2019 - add - action hook job_bm_job_archive_loop_no_post added
+    * 27/07/2019 - add - action hook job_bm_dashboard added
+    * 27/07/2019 - add - action hook job_bm_dashboard_logged_in added
+    * 27/07/2019 - add - action hook job_bm_dashboard_logged_out added
+    * 27/07/2019 - add - action hook job_bm_dashboard_tabs_content_$id added
+    * 27/07/2019 - update - action hook job_bm_action_before_single_job removed and alter by job_bm_before_single_job
+    * 27/07/2019 - update - action hook job_bm_action_after_single_job removed and alter by job_bm_after_single_job
+    * 27/07/2019 - update - action hook job_bm_action_single_job_main removed and alter by job_bm_single_job_main
+    * 27/07/2019 - add - action hook job_bm_apply_method_$id added
+    * 27/07/2019 - add - action hook job_bm_job_edit_before added
+    * 27/07/2019 - add - action hook job_bm_job_edit_form added
+    * 27/07/2019 - add - action hook job_bm_job_edit_after added
+    * 27/07/2019 - add - action hook job_bm_job_edit_data added
+    * 27/07/2019 - add - action hook job_bm_job_edit_login_required added
+    * 27/07/2019 - add - filter hook job_bm_job_edit_invalid_job_id_text added
+    * 27/07/2019 - add - filter hook job_bm_job_edit_login_required_text added
+    * 27/07/2019 - add - filter hook job_bm_job_edit_unauthorized_text added
+    * 27/07/2019 - add - action hook job_bm_job_edited added
+    * 27/07/2019 - update - action hook job_bm_action_before_job_submit removed and alter by job_bm_job_submit_before
+    * 27/07/2019 - update - action hook job_bm_action_job_submit_main removed and alter by job_bm_job_submit_form
+    * 27/07/2019 - update - action hook job_bm_action_after_job_submit removed and alter by job_bm_job_submit_after
+    * 27/07/2019 - add - action hook job_bm_job_submitted added
+    * 27/07/2019 - add - action hook job_bm_job_submit_login_required added
+    * 27/07/2019 - add - filter hook job_bm_job_submit_login_required_text added
+
+
+    * 27/07/2019 - update - action hook job_bm_action_before_client_job_list removed and alter by job_bm_my_jobs_before
+    * 27/07/2019 - update - action hook job_bm_action_after_client_job_list removed and alter by job_bm_my_jobs_after
+    * 27/07/2019 - update - optimize CSS and Scripts file load where the shrotcode loaded.
+    * 27/07/2019 - add - filter hook job_bm_apply_method_form_$id added
+
+
+
+
 
 	= 2.0.31 =
     * 22/04/2019 - fix - settings page php error issue fixed

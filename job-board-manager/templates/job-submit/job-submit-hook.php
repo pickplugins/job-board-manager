@@ -3,42 +3,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-add_action( 'job_bm_job_submit_data', 'job_bm_job_submit_data_26072019', 15 );
-if ( ! function_exists( 'job_bm_job_submit_data_26072019' ) ) {
-    function job_bm_job_submit_data_26072019($post_data){
-
-        ?>
-        <pre>After form submit.</pre>
-        <?php
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Display question title field */
 
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_title', 0);

@@ -224,7 +224,7 @@ $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : 
         if ( $wp_query->have_posts() ) :
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
-        $job_id = get_the_ID();
+            $job_id = get_the_ID();
 
             do_action('job_bm_job_archive_loop', $job_id);
 

@@ -63,6 +63,14 @@ $testimonial_settings_tab[] = array(
 );
 
 
+$testimonial_settings_tab[] = array(
+    'id' => 'applications',
+    'title' => __('<i class="fas fa-envelope-open-text"></i> Applications','testimonial'),
+    'priority' => 9,
+    'active' => false,
+);
+
+
 
 $testimonial_settings_tabs = apply_filters('job_bm_settings_tabs', $testimonial_settings_tab);
 
@@ -119,6 +127,9 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     $job_bm_notify_email_job_submit = isset($_POST['job_bm_notify_email_job_submit']) ?  sanitize_text_field($_POST['job_bm_notify_email_job_submit']) : '';
                     $job_bm_notify_email_job_publish = isset($_POST['job_bm_notify_email_job_publish']) ?  sanitize_text_field($_POST['job_bm_notify_email_job_publish']) : '';
                     $job_bm_apply_method = isset($_POST['job_bm_apply_method']) ?  stripslashes_deep($_POST['job_bm_apply_method']) : array('none');
+                    $job_bm_apply_enable_recaptcha = isset($_POST['job_bm_apply_enable_recaptcha']) ?  stripslashes_deep($_POST['job_bm_apply_enable_recaptcha']) : '';
+                    $job_bm_login_required_on_apply = isset($_POST['job_bm_login_required_on_apply']) ?  stripslashes_deep($_POST['job_bm_login_required_on_apply']) : '';
+
                     $job_bm_redirect_preview_link = isset($_POST['job_bm_redirect_preview_link']) ?  sanitize_text_field($_POST['job_bm_redirect_preview_link']) : '';
                     $job_bm_edited_job_status = isset($_POST['job_bm_edited_job_status']) ?  sanitize_text_field($_POST['job_bm_edited_job_status']) : '';
                     $job_bm_edited_redirect_link = isset($_POST['job_bm_edited_redirect_link']) ?  sanitize_text_field($_POST['job_bm_edited_redirect_link']) : '';
@@ -170,6 +181,10 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
                     update_option('job_bm_notify_email_job_submit', $job_bm_notify_email_job_submit);
                     update_option('job_bm_notify_email_job_publish', $job_bm_notify_email_job_publish);
                     update_option('job_bm_apply_method', $job_bm_apply_method);
+                    update_option('job_bm_apply_enable_recaptcha', $job_bm_apply_enable_recaptcha);
+
+                    update_option('job_bm_login_required_on_apply', $job_bm_login_required_on_apply);
+
                     update_option('job_bm_redirect_preview_link', $job_bm_redirect_preview_link);
                     update_option('job_bm_edited_job_status', $job_bm_edited_job_status);
                     update_option('job_bm_edited_redirect_link', $job_bm_edited_redirect_link);

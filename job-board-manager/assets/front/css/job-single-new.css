@@ -221,8 +221,26 @@ border-radius: 3px;
 .apply-methods .method-form{
   padding: 15px 20px;
   margin: 0px 0 0px 0;
+  border: 1px solid #ececec;
+  background: #ececec96;
 }
 
+.apply-methods .errors{
+  margin-bottom: 30px;
+}
+.apply-methods .errors .job-bm-error{
+  color: #f0611a;
+  /* font-size: 12px; */
+  padding: 3px 10px;
+  border-left: 3px solid #f0611a;
+}
+
+.apply-methods .success {
+  color: #54c671;
+  padding: 3px 10px;
+  border-left: 3px solid #54c671;
+  margin-bottom: 30px;
+}
 
 
 .apply-methods .form-field-wrap{}

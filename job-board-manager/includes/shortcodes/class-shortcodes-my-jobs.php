@@ -24,8 +24,6 @@ class class_job_bm_shortcodes_my_jobs{
 				'display_delete' => 'yes',
 				), $atts);
 
-		
-		//$job_bm_themes = $atts['themes'];
 		$display_edit = $atts['display_edit'];
 		$display_delete = $atts['display_delete'];		
 		
@@ -34,7 +32,10 @@ class class_job_bm_shortcodes_my_jobs{
 		
 		include( job_bm_plugin_dir . 'templates/my-jobs/my-jobs.php');
 
-		return ob_get_clean();
+        wp_enqueue_script('job-bm-my-jobs');
+        wp_enqueue_style('job-bm-my-jobs');
+
+        return ob_get_clean();
 		
 		}
 	

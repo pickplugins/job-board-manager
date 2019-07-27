@@ -1,10 +1,5 @@
 <?php
-/*
-* @Author 		PickPlugins
-* Copyright: 	2016 PickPlugins.com
-*/
-
-if ( ! defined('ABSPATH')) exit;  // if direct access 
+if ( ! defined('ABSPATH')) exit;  // if direct access
 
 	$job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
 	$job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
@@ -22,7 +17,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	<div class="job-bm-my-jobs">
 	<?php
 	
-	do_action('job_bm_action_before_client_job_list');
+	do_action('job_bm_my_jobs_before');
 	
 
 
@@ -178,6 +173,26 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		
 		}
 
-	do_action('job_bm_action_after_client_job_list');		
+	do_action('job_bm_my_jobs_after');
 	?>
-	</div>	
+	</div>
+
+    <?php
+
+    $job_bm_pagination_bg_color = get_option('job_bm_pagination_bg_color');
+    $job_bm_pagination_active_bg_color = get_option('job_bm_pagination_active_bg_color');
+    $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
+
+    ?>
+
+    <style type="text/css">
+        .job-list .paginate .page-numbers.current{
+            background: <?php echo $job_bm_pagination_active_bg_color; ?>;
+            color: <?php echo $job_bm_pagination_text_color; ?> ;
+        }
+        .job-list .paginate a.page-numbers{
+            background: <?php echo $job_bm_pagination_bg_color; ?>;
+            color: <?php echo $job_bm_pagination_text_color; ?> ;
+        }
+    </style>
+

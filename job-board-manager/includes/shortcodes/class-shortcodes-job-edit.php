@@ -48,9 +48,9 @@ class class_job_bm_shortcodes_job_edit{
 
         if($job_bm_can_user_edit_published_jobs != 'yes' || $userid != $author_id){
 
-            do_action('job_bm_job_submit_login_required');
+            do_action('job_bm_job_edit_login_required');
 
-            return apply_filters('job_bm_job_submit_login_required_text', __('Sorry! you are not authorized to edit this job.', 'job-board-manager'));
+            return apply_filters('job_bm_job_edit_unauthorized_text', __('Sorry! you are not authorized to edit this job.', 'job-board-manager'));
 
         }
 
