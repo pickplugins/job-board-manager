@@ -112,6 +112,8 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
 
                     $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ?  sanitize_text_field($_POST['job_bm_salary_currency']) : '';
                     $job_bm_can_user_delete_jobs = isset($_POST['job_bm_can_user_delete_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_delete_jobs']) : '';
+                    $job_bm_can_user_delete_application = isset($_POST['job_bm_can_user_delete_application']) ?  sanitize_text_field($_POST['job_bm_can_user_delete_application']) : '';
+
                     $job_bm_can_user_edit_published_jobs = isset($_POST['job_bm_can_user_edit_published_jobs']) ?  sanitize_text_field($_POST['job_bm_can_user_edit_published_jobs']) : '';
                     $job_bm_job_login_page_id = isset($_POST['job_bm_job_login_page_id']) ?  sanitize_text_field($_POST['job_bm_job_login_page_id']) : '';
                     $job_bm_archive_page_id = isset($_POST['job_bm_archive_page_id']) ?  sanitize_text_field($_POST['job_bm_archive_page_id']) : '';
@@ -167,6 +169,8 @@ array_multisort($tabs_sorted, SORT_ASC, $testimonial_settings_tabs);
 
                     update_option('job_bm_salary_currency', $job_bm_salary_currency);
                     update_option('job_bm_can_user_delete_jobs', $job_bm_can_user_delete_jobs);
+                    update_option('job_bm_can_user_delete_application', $job_bm_can_user_delete_application);
+
                     update_option('job_bm_can_user_edit_published_jobs', $job_bm_can_user_edit_published_jobs);
                     update_option('job_bm_job_login_page_id', $job_bm_job_login_page_id);
                     update_option('job_bm_archive_page_id', $job_bm_archive_page_id);

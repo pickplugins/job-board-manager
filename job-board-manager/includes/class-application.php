@@ -9,18 +9,55 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 class class_job_bm_applications{
 
-    public $jobId;
+    public $job_id;
 	
-	public function __construct($jobId = 0){
+	public function __construct($job_id = 0){
 
 
 		}
 		
 		
 		
-	public function is_applied_before($jobId = 0, $email = '', $userId = 0){
+	public function has_applied($job_id = 0, $email = ''){
 
-	    return true;
+
+        $meta_query = array();
+
+        $meta_query[] = array(
+            'key' => 'job_bm_am_job_id',
+            'value' => $job_id,
+            'compare' => '=',
+        );
+
+
+        $meta_query[] = array(
+            'key' => 'job_bm_am_user_email',
+            'value' => $email,
+            'compare' => '=',
+        );
+
+
+        $wp_query = new WP_Query(
+            array (
+                'post_type' => 'application',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'meta_query' => $meta_query,
+                'posts_per_page' => -1,
+
+            ) );
+
+        if ( $wp_query->have_posts() ) :
+            $has_post = true;
+
+            wp_reset_query();
+        else:
+            $has_post = false;
+        endif;
+
+
+
+	    return $has_post;
 
 		
 		}	

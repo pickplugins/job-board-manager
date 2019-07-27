@@ -53,6 +53,8 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-applications.php');
+
 
 		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-single/job-single-hook.php');
 

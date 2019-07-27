@@ -510,6 +510,7 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
         $job_bm_registration_enable = get_option('job_bm_registration_enable');
         $job_bm_login_enable = get_option('job_bm_login_enable');
         $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
+        $job_bm_can_user_delete_application = get_option('job_bm_can_user_delete_application');
 
 
         $page_list = job_bm_page_list_id();
@@ -594,6 +595,21 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
                 'type'		=> 'select',
                 //'multiple'		=> true,
                 'value'		=> $job_bm_can_user_delete_jobs,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_can_user_delete_application',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Allow delete application','job-board-manager'),
+                'details'	=> __('Allow user delete their own application','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_can_user_delete_application,
                 'default'		=> '',
                 'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
             );

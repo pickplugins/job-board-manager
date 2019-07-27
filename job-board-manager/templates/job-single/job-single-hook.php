@@ -416,6 +416,12 @@ function job_bm_apply_method_form_direct_email($job_id){
             $error->add( 'application_email', __( '<strong>ERROR</strong>: Email is empty.', 'job-board-manager' ) );
         }
 
+        if(!is_email($_POST['application_email'])){
+
+            $error->add( 'application_email', __( '<strong>ERROR</strong>: '.sanitize_email($_POST['application_email']).' is not valid email address.', 'job-board-manager' ) );
+        }
+
+
 
         if($job_bm_apply_enable_recaptcha == 'yes' && empty($_POST['g-recaptcha-response'])){
 
@@ -433,31 +439,48 @@ function job_bm_apply_method_form_direct_email($job_id){
             $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
 
 
-            $is_applied_before = $class_job_bm_applications->is_applied_before($job_id, $email);
+            $has_applied = $class_job_bm_applications->has_applied($job_id, $email);
 
-            $application_ID = wp_insert_post(
-                array(
-                    'post_title'    => '',
-                    'post_content'  => $post_content,
-                    'post_status'   => 'publish',
-                    'post_type'   	=> 'application',
-                    'post_author'   => $user_id,
-                )
-            );
-
-            update_post_meta($application_ID, 'job_bm_am_user_email', $email);
-            update_post_meta($application_ID, 'job_bm_am_job_id', $application_ID);
-            update_post_meta($application_ID, 'job_bm_am_apply_method', $application_method);
+            //var_dump($has_applied);
 
 
+            if(!$has_applied){
+                $application_ID = wp_insert_post(
+                    array(
+                        'post_title'    => '',
+                        'post_content'  => $post_content,
+                        'post_status'   => 'publish',
+                        'post_type'   	=> 'application',
+                        'post_author'   => $user_id,
+                    )
+                );
 
-            do_action('job_bm_application_submitted', $application_ID, $_POST);
+                update_post_meta($application_ID, 'job_bm_am_user_email', $email);
+                update_post_meta($application_ID, 'job_bm_am_job_id', $job_id);
+                update_post_meta($application_ID, 'job_bm_am_apply_method', $application_method);
 
 
 
-            ?>
-            <div class="success">Your application has sent.</div>
-            <?php
+                do_action('job_bm_application_submitted', $application_ID, $_POST);
+
+                ?>
+                <div class="success">Your application has sent.</div>
+                <?php
+
+            }else{
+                ?>
+                <div class="errors">
+                    <div class="job-bm-error">You already applied.</div>
+                </div>
+
+                <?php
+            }
+
+
+
+
+
+
 
 
 

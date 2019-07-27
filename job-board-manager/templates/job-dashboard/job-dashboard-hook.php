@@ -33,8 +33,13 @@ if(!function_exists('job_bm_dashboard_logged_in')){
         );
 
         $tabs['my_jobs'] =array(
-            'title'=>__('My Jobs', 'job-board-manager'),
+            'title'=>__('My jobs', 'job-board-manager'),
         );
+
+        $tabs['my_applications'] =array(
+            'title'=>__('My applications', 'job-board-manager'),
+        );
+
 
         $tabs['logout'] =array(
             'title'=>__('Logout!', 'job-board-manager'),
@@ -128,7 +133,15 @@ if(!function_exists('job_bm_dashboard_tabs_content_logout')){
 }
 
 
+add_action('job_bm_dashboard_tabs_content_my_applications', 'job_bm_dashboard_tabs_content_my_applications');
 
+if(!function_exists('job_bm_dashboard_tabs_content_my_applications')){
+    function job_bm_dashboard_tabs_content_my_applications(){
+
+        echo do_shortcode('[job_bm_my_applications]');
+
+    }
+}
 
 
 
