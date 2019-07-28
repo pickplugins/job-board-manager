@@ -181,11 +181,11 @@ class class_job_bm_post_types{
                     'parent' 				=> sprintf( __( 'Parent %s', 'job-board-manager' ), $singular )
                 ),
                 'description' => sprintf( __( 'This is where you can create and manage %s.', 'job-board-manager' ), $plural ),
-                'public' 				=> true,
+                'public' 				=> false,
                 'show_ui' 				=> true,
                 'capability_type' 		=> 'post',
                 'map_meta_cap'          => true,
-                'publicly_queryable' 	=> true,
+                'publicly_queryable' 	=> false,
                 'exclude_from_search' 	=> false,
                 'hierarchical' 			=> false,
                 'rewrite' 				=> true,

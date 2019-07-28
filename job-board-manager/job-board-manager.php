@@ -246,6 +246,8 @@ class JobBoardManager{
         // Register CSS & Style
         wp_register_script('job-bm-job-submit', job_bm_plugin_url.'assets/front/js/scripts-job-submit.js');
         wp_register_script('job-bm-my-jobs', job_bm_plugin_url.'assets/front/js/scripts-my-jobs.js');
+        wp_register_script('job-bm-applications', job_bm_plugin_url.'assets/front/js/scripts-applications.js');
+
 
 
 		}

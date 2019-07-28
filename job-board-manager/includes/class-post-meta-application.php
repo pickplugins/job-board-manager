@@ -42,6 +42,7 @@ class class_job_bm_post_meta_application{
         $settings_tabs_field = new settings_tabs_field();
 
 		$user_id = get_post_meta($post->ID, 'user_id', true);
+        $applicant_name = get_post_meta($post->ID, 'applicant_name', true);
 
         $job_bm_am_user_email = get_post_meta($post->ID, 'job_bm_am_user_email', true);
 		$job_bm_am_job_id = get_post_meta($post->ID, 'job_bm_am_job_id', true);
@@ -77,6 +78,20 @@ class class_job_bm_post_meta_application{
 			);
 
 			$settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'applicant_name',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Applicant name','job-board-manager'),
+                'details'	=> __('Applicant name','job-board-manager'),
+                'type'		=> 'text',
+                'value'		=> $applicant_name,
+                'default'		=> '',
+                'placeholder'		=> '',
+            );
+
+            $settings_tabs_field->generate_field($args);
 
 			$args = array(
 				'id'		=> 'job_bm_am_user_email',
@@ -214,6 +229,7 @@ class class_job_bm_post_meta_application{
 
 
 		$user_id = sanitize_text_field($_POST['user_id']);
+        $applicant_name = sanitize_text_field($_POST['applicant_name']);
 
 		$job_bm_am_user_email = sanitize_text_field($_POST['job_bm_am_user_email']);
 		$job_bm_am_job_id = sanitize_text_field($_POST['job_bm_am_job_id']);
@@ -225,6 +241,7 @@ class class_job_bm_post_meta_application{
 
 
 		update_post_meta($post_id, 'user_id', $user_id);
+        update_post_meta($post_id, 'applicant_name', $applicant_name);
 
 		update_post_meta($post_id, 'job_bm_am_user_email', $job_bm_am_user_email);
 		update_post_meta($post_id, 'job_bm_am_job_id', $job_bm_am_job_id);

@@ -32,7 +32,7 @@ class class_job_bm_shortcodes_applications{
 		
 		include( job_bm_plugin_dir . 'templates/applications/applications.php');
 
-        wp_enqueue_script('job-bm-my-jobs');
+        wp_enqueue_script('job-bm-applications');
         wp_enqueue_style('job-bm-applications');
 
 
