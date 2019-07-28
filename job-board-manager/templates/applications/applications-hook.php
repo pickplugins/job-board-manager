@@ -12,7 +12,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 	?>
 
-    <div class="nav-head"><?php echo __('My Jobs', 'job-board-manager'); ?></div>
+    <div class="nav-head"><?php echo __('Applications', 'job-board-manager'); ?></div>
 
 	<div class="job-bm-my-jobs">
 	<?php
@@ -54,7 +54,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 		$wp_query = new WP_Query(
 			array (
-				'post_type' => 'job',
+				'post_type' => 'application',
 				'orderby' => 'Date',
 				'order' => 'DESC',
 				'author' => $userid,
@@ -70,8 +70,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 			
 		$class_job_bm_functions = new class_job_bm_functions();
-        $class_job_bm_applications = new class_job_bm_applications();
-
 
 		$job_type_filters = $class_job_bm_functions->job_type_list();
 		$job_level_filters = $class_job_bm_functions->job_level_list();
@@ -84,7 +82,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();	
 
 
-		    $job_id = get_the_id();
 			$job_title = get_the_title();
 			$post_date = get_the_date('Y-m-d');
 			$expiry_date = get_post_meta(get_the_ID(), 'job_bm_expire_date',true);
@@ -92,12 +89,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			$job_status = get_post_meta(get_the_ID(), 'job_bm_job_status',true);
 			$featured = get_post_meta(get_the_ID(), 'job_bm_featured',true);
 			$job_type = get_post_meta(get_the_ID(), 'job_bm_job_type',true);
-
-
-            $application_count = $class_job_bm_applications->application_count_by_job_id($job_id);
-
-            //var_dump($application_count);
-
+			
+			
+			
 			
 			$job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
 
@@ -113,7 +107,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 			echo '<span title="'.__('Job id.', 'job-board-manager').'">#'.get_the_ID().'</span> - <a title="'.__('Job Title.', 'job-board-manager').'" class="title" href="'.get_permalink().'">'.$job_title.'</a>';
 			
-			//echo '<div class="clear" ></div>';
+			echo '<div class="clear" ></div>';
 
 			
 			echo '<span class="post-date meta"><b>'.__('Published:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';
@@ -130,11 +124,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 			if(!empty($job_level_filters[$job_label]))
 			echo '<span class="level meta"><b>'.__('Job Level:', 'job-board-manager').'</b> '.$job_level_filters[$job_label].'</span>';
-
-
-            ?>
-            <span class="applications meta"><b><?php echo __('Applications:', 'job-board-manager'); ?></b> <a href="#"><?php echo $application_count; ?></a> </span>
-            <?php
 
 			echo '<div >';
 			

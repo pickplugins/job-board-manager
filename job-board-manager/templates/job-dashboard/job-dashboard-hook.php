@@ -40,6 +40,10 @@ if(!function_exists('job_bm_dashboard_logged_in')){
             'title'=>__('My applications', 'job-board-manager'),
         );
 
+        $tabs['applications'] =array(
+            'title'=>__('Applications', 'job-board-manager'),
+        );
+
 
         $tabs['logout'] =array(
             'title'=>__('Logout!', 'job-board-manager'),
@@ -118,17 +122,17 @@ if(!function_exists('job_bm_dashboard_tabs_content_my_jobs')){
     }
 }
 
+
+
+
+
 add_action('job_bm_dashboard_tabs_content_logout', 'job_bm_dashboard_tabs_content_logout');
 
 if(!function_exists('job_bm_dashboard_tabs_content_logout')){
     function job_bm_dashboard_tabs_content_logout(){
 
         echo wp_logout_url();
-        ?>
 
-        Hello 3
-
-        <?php
     }
 }
 
@@ -139,6 +143,17 @@ if(!function_exists('job_bm_dashboard_tabs_content_my_applications')){
     function job_bm_dashboard_tabs_content_my_applications(){
 
         echo do_shortcode('[job_bm_my_applications]');
+
+    }
+}
+
+
+add_action('job_bm_dashboard_tabs_content_applications', 'job_bm_dashboard_tabs_content_applications');
+
+if(!function_exists('job_bm_dashboard_tabs_content_applications')){
+    function job_bm_dashboard_tabs_content_applications(){
+
+        echo do_shortcode('[job_bm_applications]');
 
     }
 }

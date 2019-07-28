@@ -767,8 +767,8 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
 
 
-                $html.= '<div class="items template '.$key.'">';
-                $html.= '<div class="header"><span class="remove"><i class="fa fa-times"></i></span>'.$templates['name'].'</div>';
+                $html.= '<div class="item template '.$key.'">';
+                $html.= '<div class="header">'.$templates['name'].'</div>';
                 $html.= '<input type="hidden" name="job_bm_email_templates_data['.$key.'][name]" value="'.$templates['name'].'" />';
 
                 $html.= '<div class="options">';

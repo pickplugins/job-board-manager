@@ -56,6 +56,8 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-applications.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-applications.php');
+
 
 
 		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-single/job-single-hook.php');
@@ -237,6 +239,8 @@ class JobBoardManager{
         wp_register_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single-new.css');
         wp_register_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
         wp_register_style('job-bm-my-jobs', job_bm_plugin_url.'assets/front/css/job-bm-my-jobs.css');
+        wp_register_style('job-bm-applications', job_bm_plugin_url.'assets/front/css/job-bm-applications.css');
+
 
 
         // Register CSS & Style

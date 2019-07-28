@@ -60,12 +60,51 @@ class class_job_bm_applications{
 	    return $has_post;
 
 		
-		}	
-		
-		
-		
-		
-		
+		}
 
 
-	}
+    public function application_count_by_job_id($job_id = 0){
+
+
+        $meta_query = array();
+
+        if(!empty($job_id)){
+            $meta_query[] = array(
+                'key' => 'job_bm_am_job_id',
+                'value' => $job_id,
+                'compare' => '=',
+            );
+        }
+
+
+        $wp_query = new WP_Query(
+            array (
+                'post_type' => 'application',
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'meta_query' => $meta_query,
+                'posts_per_page' => -1,
+
+            ) );
+
+        if ( $wp_query->have_posts() ) :
+            $found_posts = $wp_query->found_posts;
+
+            wp_reset_query();
+        else:
+            $found_posts = 0;
+        endif;
+
+
+
+        return $found_posts;
+
+
+    }
+
+
+
+
+
+
+}

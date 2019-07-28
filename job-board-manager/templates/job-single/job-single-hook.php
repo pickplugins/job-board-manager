@@ -326,7 +326,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
                         //echo '<pre>'.var_export($active_id, true).'</pre>';
 
                         ?>
-                        <div class="method-header <?php //echo $header_active_class; ?>"><div class="method-name"><?php echo $method_name; ?></div></div>
+                        <div id="<?php echo 'apply-method-'.$method; ?>" class="method-header "><div class="method-name"><?php echo $method_name; ?></div></div>
                         <div class="method-form ">
 
                             <?php
@@ -418,7 +418,7 @@ function job_bm_apply_method_form_direct_email($job_id){
 
         if(!is_email($_POST['application_email'])){
 
-            $error->add( 'application_email', __( '<strong>ERROR</strong>: '.sanitize_email($_POST['application_email']).' is not valid email address.', 'job-board-manager' ) );
+            $error->add( 'application_email', __( '<strong>ERROR</strong>: '.sanitize_text_field($_POST['application_email']).' is not valid email address.', 'job-board-manager' ) );
         }
 
 
@@ -435,7 +435,7 @@ function job_bm_apply_method_form_direct_email($job_id){
 
             $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
             $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
-            $post_content = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
+            $post_content = isset($_POST['application_message']) ? sanitize_text_field($_POST['application_message']) : "";
             $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
 
 
@@ -455,6 +455,7 @@ function job_bm_apply_method_form_direct_email($job_id){
                     )
                 );
 
+                update_post_meta($application_ID, 'user_id', $user_id);
                 update_post_meta($application_ID, 'job_bm_am_user_email', $email);
                 update_post_meta($application_ID, 'job_bm_am_job_id', $job_id);
                 update_post_meta($application_ID, 'job_bm_am_apply_method', $application_method);
@@ -470,7 +471,7 @@ function job_bm_apply_method_form_direct_email($job_id){
             }else{
                 ?>
                 <div class="errors">
-                    <div class="job-bm-error">You already applied.</div>
+                    <div class="job-bm-error">You already sent an application.</div>
                 </div>
 
                 <?php
@@ -508,11 +509,12 @@ function job_bm_apply_method_form_direct_email($job_id){
 
 
     $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
-    $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
+    $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : "";
+    $application_message = isset($_POST['application_message']) ? sanitize_text_field($_POST['application_message']) : "";
 
 
     ?>
-    <form method="post" action="#" class="apply-method-form">
+    <form method="post" action="#apply-method-direct_email" class="apply-method-form">
 
         <input type="hidden" name="application_method" value="direct_email">
 
@@ -528,9 +530,18 @@ function job_bm_apply_method_form_direct_email($job_id){
             <div class="field-title">Your email</div>
             <div class="field-input">
                 <input placeholder="" type="text" value="<?php echo $email; ?>" name="application_email">
-                <p class="field-details">Write your name</p>
+                <p class="field-details">Write your email address</p>
             </div>
         </div>
+
+        <div class="form-field-wrap">
+            <div class="field-title">Message</div>
+            <div class="field-input">
+                <textarea placeholder="" name="application_message"><?php echo $application_message; ?></textarea>
+                <p class="field-details">Write your message</p>
+            </div>
+        </div>
+
 
         <?php
         if($job_bm_apply_enable_recaptcha == 'yes'):
@@ -568,94 +579,6 @@ function job_bm_apply_method_form_direct_email($job_id){
 
 }
 
-
-add_action('job_bm_apply_method_form_saved_cv','job_bm_apply_method_form_saved_cv');
-
-function job_bm_apply_method_form_saved_cv($job_id){
-
-    ?>
-    <form method="post" action="#" class="apply-method-form">
-
-        <input type="hidden" name="application_method" value="saved_cv">
-
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your name</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_name">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your email</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_email">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-        <div class="form-field-wrap">
-            <div class="field-title"></div>
-            <div class="field-input">
-                <input placeholder="" type="submit"  name="Submit">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-    </form>
-    <?php
-
-}
-
-
-
-add_action('job_bm_apply_method_form_upload_cv','job_bm_apply_method_form_upload_cv');
-
-function job_bm_apply_method_form_upload_cv($job_id){
-
-    ?>
-    <form method="post" action="#" class="apply-method-form">
-
-        <input type="hidden" name="application_method" value="upload_cv">
-
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your name</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_name">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-        <div class="form-field-wrap">
-            <div class="field-title">Your email</div>
-            <div class="field-input">
-                <input placeholder="" type="text" value="" name="application_email">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-        <div class="form-field-wrap">
-            <div class="field-title"></div>
-            <div class="field-input">
-                <input placeholder="" type="submit"  name="Submit">
-                <p class="field-details">Write your name</p>
-            </div>
-        </div>
-
-
-
-    </form>
-    <?php
-
-}
 
 
 
