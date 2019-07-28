@@ -64,6 +64,7 @@ class JobBoardManager{
 
 
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-crons.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-applications.php');
 
 
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions.php');

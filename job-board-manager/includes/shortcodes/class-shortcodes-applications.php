@@ -15,7 +15,7 @@ class class_job_bm_shortcodes_applications{
 
    		}
 
-	public function job_bm_applications_display($atts, $content = null ) {
+	public function job_bm_applications_display($atts, $content = null ){
 		
 		$atts = shortcode_atts(
 			array(
@@ -32,7 +32,9 @@ class class_job_bm_shortcodes_applications{
 		
 		include( job_bm_plugin_dir . 'templates/applications/applications.php');
 
+        wp_localize_script('job-bm-applications', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
         wp_enqueue_script('job-bm-applications');
+
         wp_enqueue_style('job-bm-applications');
 
 

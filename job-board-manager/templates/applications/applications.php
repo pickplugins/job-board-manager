@@ -105,7 +105,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	if ( is_user_logged_in() ){
 
 
-		
+        $meta_query = array();
 		$job_bm_list_per_page = get_option('job_bm_list_per_page');
 		$job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');	
 		$job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');	
@@ -131,13 +131,23 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 				$paged = 1;
 			}
-			
-			
+
+
+        $meta_query[] = array(
+            'key' => 'application_trash',
+            'value' => 'yes',
+            'compare' => '!=',
+        );
+
+
+
+
 		$wp_query = new WP_Query(
 			array (
 				'post_type' => 'application',
 				'orderby' => 'date',
 				'order' => 'DESC',
+                'meta_query' => $meta_query,
 				'author' => $userid,
 				'posts_per_page' => $job_bm_list_per_page,
 				'paged' => $paged,
@@ -180,6 +190,11 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
             $job_bm_am_attachment = get_post_meta($application_id, 'job_bm_am_attachment', true);
             $job_bm_am_resume_id = get_post_meta($application_id, 'job_bm_am_resume_id', true);
 
+            $application_hired = get_post_meta($application_id, 'application_hired', true);
+            $application_trash = get_post_meta($application_id, 'application_trash', true);
+
+            //var_dump($application_hired);
+
             $applicant_name = !empty($applicant_name) ? $applicant_name : __('Anonymous','job-board-manager');
 
 
@@ -191,8 +206,8 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                 <div class="card-top">
                     <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                     <div class="application-action">
-                        <span class="hired"><i class="fas fa-medal"></i></span>
-                        <span class="trash"><i class="far fa-trash-alt"></i></span>
+                        <span class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
+                        <span class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
                         <span class="comments"><i class="far fa-comments"></i></span>
                     </div>
 
@@ -259,7 +274,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			
 			else:
 			
-			echo '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> '.__('No job found posted by you.', 'job-board-manager');
+			echo '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> '.__('No application found.', 'job-board-manager');
 			
 			endif;
 	

@@ -96,10 +96,20 @@
 }
 
 
-.hired{
+.hire{
 
     margin-left: 15px;
+}
 
+
+.hire.hired{
+    background: #FF9800;
+    color: #fff;
+}
+
+.application-action span.trashed{
+    background: #f96767;
+    color: #fff;
 }
 
 
