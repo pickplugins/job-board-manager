@@ -17,7 +17,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	<div class="job-bm-my-jobs">
 	<?php
 	
-	do_action('job_bm_my_jobs_before');
+	do_action('job_bm_my_applications_before');
 	
 
 
@@ -173,7 +173,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		
 		}
 
-	do_action('job_bm_my_jobs_after');
+	do_action('job_bm_my_applications_after');
 	?>
 	</div>
 

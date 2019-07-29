@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.0
+	Stable tag: 2.1.1
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,7 +27,8 @@
 
 You can display list of jobs via shortcode `[job_bm_archive]` you can display job list by filtering query arguments via filter hook, this can help you to build external search form to apply form data to filter jobs. you can also remove existing job list elements and add your own elements via action hook.
 
-
+**Advance Dashboard**
+Account dashboard is based on tabs navs and content, tabs can be added via filter hooks and tab content can be displayed via action hook based on each tab. you can display custom code or HTML via action hook.
 
 
 
@@ -53,13 +54,13 @@ Contributors
 
 == Screenshots ==
 
-1. List of latest job with pagination.
-2. Single job page.
-3. Job submit input admin side.
-4. Settings page style tab
-5. Client job list
-6. Front-end Job Submission form.
-7. Ready addons for Job Board Manager.
+1. Screenshot 1
+2. Screenshot 2
+3. Screenshot 3
+4. Screenshot 4
+5. Screenshot 5
+6. Screenshot 6
+7. Screenshot 7
 
 
 == Frequently Asked Questions ==
@@ -72,6 +73,14 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.2 =
+    * 29/07/2019 - add - job_bm_my_jobs action hook added.
+    * 29/07/2019 - update - trash job instead of delete when user click delete button on "My Jobs"
+    * 29/07/2019 - add - Dashboard user stats added on account tab.
+
+	= 2.1.1 =
+    * 29/07/2019 - fix - application access issue fixed.
+
 	= 2.1.0 =
     * 27/07/2019 - update - action hook job_bm_action_before_job_list removed and alter by job_bm_job_archive_loop_before
     * 27/07/2019 - update - action hook job_bm_action_after_job_list removed and alter by job_bm_job_archive_loop_after
@@ -81,10 +90,14 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 27/07/2019 - add - action hook job_bm_dashboard_logged_in added
     * 27/07/2019 - add - action hook job_bm_dashboard_logged_out added
     * 27/07/2019 - add - action hook job_bm_dashboard_tabs_content_$id added
+    * 27/07/2019 - add - Logout menu added on dashboard menus
+    * 27/07/2019 - add - My applications menu added on dashboard menus
+    * 27/07/2019 - add - Applications menu added on dashboard menus
+    * 27/07/2019 - add - Applications features added, Hire, Trash, Star rating added.
     * 27/07/2019 - update - action hook job_bm_action_before_single_job removed and alter by job_bm_before_single_job
     * 27/07/2019 - update - action hook job_bm_action_after_single_job removed and alter by job_bm_after_single_job
     * 27/07/2019 - update - action hook job_bm_action_single_job_main removed and alter by job_bm_single_job_main
-    * 27/07/2019 - add - action hook job_bm_apply_method_$id added
+    * 27/07/2019 - add - action hook job_bm_application_methods_$id added
     * 27/07/2019 - add - action hook job_bm_job_edit_before added
     * 27/07/2019 - add - action hook job_bm_job_edit_form added
     * 27/07/2019 - add - action hook job_bm_job_edit_after added
@@ -100,12 +113,36 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 27/07/2019 - add - action hook job_bm_job_submitted added
     * 27/07/2019 - add - action hook job_bm_job_submit_login_required added
     * 27/07/2019 - add - filter hook job_bm_job_submit_login_required_text added
-
-
     * 27/07/2019 - update - action hook job_bm_action_before_client_job_list removed and alter by job_bm_my_jobs_before
     * 27/07/2019 - update - action hook job_bm_action_after_client_job_list removed and alter by job_bm_my_jobs_after
     * 27/07/2019 - update - optimize CSS and Scripts file load where the shrotcode loaded.
-    * 27/07/2019 - add - filter hook job_bm_apply_method_form_$id added
+    * 27/07/2019 - add - filter hook job_bm_application_methods_form_$id added
+    * 27/07/2019 - update - filter hook job_bm_filters_apply_method removed and alter by job_bm_application_methods
+    * 27/07/2019 - update - filter hook job_bm_filters_salary_range removed and alter by job_bm_salary_range
+    * 27/07/2019 - update - filter hook job_bm_filters_job_status removed and alter by job_bm_job_status
+    * 27/07/2019 - update - filter hook job_bm_filters_job_level removed and alter by job_bm_job_level
+    * 27/07/2019 - update - filter hook job_bm_filters_job_type_bg_color removed and alter by job_bm_job_type_bg_color
+    * 27/07/2019 - update - filter hook job_bm_filters_job_status_bg_color removed and alter by job_bm_job_status_bg_color
+    * 27/07/2019 - update - filter hook job_bm_filter_create_pages removed and alter by job_bm_create_pages
+    * 27/07/2019 - update - action hook job_bm_filters_tutorials removed and alter by job_bm_tutorials
+    * 27/07/2019 - update - filter hook job_bm_filters_email_templates_data removed and alter by job_bm_email_templates_data
+    * 27/07/2019 - update - filter hook job_bm_filters_salary_type removed and alter by job_bm_salary_type
+    * 27/07/2019 - update - filter hook job_bm_filters_report_html_job removed and alter by job_bm_report_html_job
+    * 27/07/2019 - update - filter hook job_bm_filters_reports_tabs removed and alter by job_bm_reports_tabs
+    * 27/07/2019 - update - filter hook job_bm_filters_faq removed and alter by job_bm_faqs
+    * 27/07/2019 - update - action hook job_bm_emails_templates_parameters removed and alter by job_bm_emails_templates_param
+    * 27/07/2019 - remove - filter hook job_bm_settings_section_options removed
+    * 27/07/2019 - remove - filter hook job_bm_filter_sidebar_sections removed
+    * 27/07/2019 - remove - filter hook job_bm_settings_section_pages removed
+    * 27/07/2019 - remove - filter hook job_single_meta_items removed
+    * 27/07/2019 - remove - filter hook job_bm_filters_apply_method_html removed
+    * 27/07/2019 - remove - filter hook job_list_item_end removed
+    * 27/07/2019 - remove - filter hook job_bm_filters_job_list_grid_items removed
+    * 27/07/2019 - remove - filter hook job_bm_settings_section_notification removed
+    * 27/07/2019 - remove - filter hook job_bm_settings_section_job_post removed
+    * 27/07/2019 - remove - filter hook job_bm_filters_apply_allowed_job_status removed
+    * 27/07/2019 - remove - filter hook job_bm_filters_account_tab_my_jobs removed
+    * 27/07/2019 - remove - filter hook job_bm_job_meta_scripts removed
 
 
 

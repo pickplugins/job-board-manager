@@ -104,7 +104,7 @@ class class_job_bm_emails{
 
 		);
 		
-		$templates_data = apply_filters('job_bm_filters_email_templates_data', $templates_data);
+		$templates_data = apply_filters('job_bm_email_templates_data', $templates_data);
 		
 		return $templates_data;
 
@@ -136,7 +136,7 @@ class class_job_bm_emails{
 												);																
 		
 												
-			$parameters = apply_filters('job_bm_emails_templates_parameters',$parameters);
+			$parameters = apply_filters('job_bm_emails_templates_param',$parameters);
 		
 		
 			return $parameters;

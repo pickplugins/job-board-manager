@@ -32,7 +32,7 @@ class class_job_bm_post_meta_application{
 	public function meta_box_application_data($post) {
  
         // Add an nonce field so we can check for it later.
-        wp_nonce_field('job_nonce_check', 'job_nonce_check_value');
+        wp_nonce_field('application_nonce_check', 'application_nonce_check_value');
  
         // Use get_post_meta to retrieve an existing value from the database.
        // $job_bm_data = get_post_meta($post -> ID, 'job_bm_data', true);
@@ -49,6 +49,7 @@ class class_job_bm_post_meta_application{
 		$job_bm_am_apply_method = get_post_meta($post->ID, 'job_bm_am_apply_method', true);
 		$job_bm_am_attachment = get_post_meta($post->ID, 'job_bm_am_attachment', true);
 		$job_bm_am_resume_id = get_post_meta($post->ID, 'job_bm_am_resume_id', true);
+        $application_trash = get_post_meta($post->ID, 'application_trash', true);
 
 
 
@@ -65,6 +66,19 @@ class class_job_bm_post_meta_application{
 		<div class="settings-tabs vertical">
 
 			<?php
+//            $args = array(
+//                'id'		=> 'application_trash',
+//                //'parent'		=> 'post_grid_meta_options',
+//                'title'		=> __('Trash','job-board-manager'),
+//                'details'	=> __('Application trash','job-board-manager'),
+//                'type'		=> 'select',
+//                'value'		=> $application_trash,
+//                'default'		=> '',
+//                'args'		=> array(''=>'No','yes'=>'Yes'),
+//            );
+//
+//            $settings_tabs_field->generate_field($args);
+
 
 			$args = array(
 				'id'		=> 'user_id',
@@ -96,8 +110,8 @@ class class_job_bm_post_meta_application{
 			$args = array(
 				'id'		=> 'job_bm_am_user_email',
 				//'parent'		=> 'post_grid_meta_options',
-				'title'		=> __('User email','job-board-manager'),
-				'details'	=> __('User application email address','job-board-manager'),
+				'title'		=> __('Applicant email','job-board-manager'),
+				'details'	=> __('Applicant email address','job-board-manager'),
 				'type'		=> 'text',
 				'value'		=> $job_bm_am_user_email,
 				'default'		=> '',
@@ -111,7 +125,7 @@ class class_job_bm_post_meta_application{
 				'id'		=> 'job_bm_am_job_id',
 				//'parent'		=> 'post_grid_meta_options',
 				'title'		=> __('Job id','job-board-manager'),
-				'details'	=> __('','job-board-manager'),
+				'details'	=> __('Application job id','job-board-manager'),
 				'type'		=> 'text',
 				'value'		=> $job_bm_am_job_id,
 				'default'		=> '',
@@ -192,13 +206,13 @@ class class_job_bm_post_meta_application{
          */
 
         // Check if our nonce is set.
-        if (!isset($_POST['job_nonce_check_value']))
+        if (!isset($_POST['application_nonce_check_value']))
             return $post_id;
 
-        $nonce = $_POST['job_nonce_check_value'];
+        $nonce = $_POST['application_nonce_check_value'];
 
         // Verify that the nonce is valid.
-        if (!wp_verify_nonce($nonce, 'job_nonce_check'))
+        if (!wp_verify_nonce($nonce, 'application_nonce_check'))
             return $post_id;
 
         // If this is an autosave, our form has not been submitted,
@@ -227,25 +241,21 @@ class class_job_bm_post_meta_application{
         // Update the meta field.
         //update_post_meta($post_id, 'job_bm_data', $job_bm_data);
 
-
-		$user_id = sanitize_text_field($_POST['user_id']);
-        $applicant_name = sanitize_text_field($_POST['applicant_name']);
-
-		$job_bm_am_user_email = sanitize_text_field($_POST['job_bm_am_user_email']);
-		$job_bm_am_job_id = sanitize_text_field($_POST['job_bm_am_job_id']);
-
-		$job_bm_am_apply_method = sanitize_text_field($_POST['job_bm_am_apply_method']);
-		$job_bm_am_attachment = sanitize_text_field($_POST['job_bm_am_attachment']);
-		$job_bm_am_resume_id = sanitize_text_field($_POST['job_bm_am_resume_id']);
+        //$application_trash = isset($_POST['application_trash']) ? sanitize_text_field($_POST['application_trash']) : '';
+		$user_id = isset($_POST['user_id']) ? sanitize_text_field($_POST['user_id']) : '';
+        $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : '';
+		$job_bm_am_user_email = isset($_POST['job_bm_am_user_email']) ? sanitize_text_field($_POST['job_bm_am_user_email']) : '';
+		$job_bm_am_job_id = isset($_POST['job_bm_am_job_id']) ? sanitize_text_field($_POST['job_bm_am_job_id']) : '';
+		$job_bm_am_apply_method = isset($_POST['job_bm_am_apply_method']) ? sanitize_text_field($_POST['job_bm_am_apply_method']) : '';
+		$job_bm_am_attachment = isset($_POST['job_bm_am_attachment']) ?  sanitize_text_field($_POST['job_bm_am_attachment']) : '';
+		$job_bm_am_resume_id = isset($_POST['job_bm_am_resume_id']) ? sanitize_text_field($_POST['job_bm_am_resume_id']) : '';
 
 
-
+        //update_post_meta($post_id, 'application_trash', $application_trash);
 		update_post_meta($post_id, 'user_id', $user_id);
         update_post_meta($post_id, 'applicant_name', $applicant_name);
-
 		update_post_meta($post_id, 'job_bm_am_user_email', $job_bm_am_user_email);
 		update_post_meta($post_id, 'job_bm_am_job_id', $job_bm_am_job_id);
-
 		update_post_meta($post_id, 'job_bm_am_apply_method', $job_bm_am_apply_method);
 		update_post_meta($post_id, 'job_bm_am_attachment', $job_bm_am_attachment);
 		update_post_meta($post_id, 'job_bm_am_resume_id', $job_bm_am_resume_id);

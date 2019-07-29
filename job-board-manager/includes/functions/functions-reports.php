@@ -542,5 +542,5 @@ jQuery(function () {
 	return $html;
 	}
 	
-add_filter('job_bm_filters_report_html_job','job_bm_report_html_job_display');
+add_filter('job_bm_report_html_job','job_bm_report_html_job_display');
 

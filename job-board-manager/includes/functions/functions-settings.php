@@ -1112,7 +1112,7 @@ if(!function_exists('job_bm_settings_tabs_content_applications')) {
         $apply_method_list = $class_job_bm_functions->apply_method_list();
 
 
-        $job_bm_apply_method = get_option('job_bm_apply_method');
+        $job_bm_application_methods = get_option('job_bm_application_methods');
         $job_bm_login_required_on_apply = get_option('job_bm_login_required_on_apply');
         $job_bm_apply_enable_recaptcha = get_option('job_bm_apply_enable_recaptcha');
 
@@ -1159,13 +1159,13 @@ if(!function_exists('job_bm_settings_tabs_content_applications')) {
 
 
             $args = array(
-                'id'		=> 'job_bm_apply_method',
+                'id'		=> 'job_bm_application_methods',
                 //'parent'		=> 'post_grid_meta_options',
                 'title'		=> __('Apply method','job-board-manager'),
                 'details'	=> __('Choose aplication method on job post.','job-board-manager'),
                 'type'		=> 'select',
                 'multiple'		=> true,
-                'value'		=> $job_bm_apply_method,
+                'value'		=> $job_bm_application_methods,
                 'default'		=> array('none'),
                 'args'		=> $apply_method_list,
             );

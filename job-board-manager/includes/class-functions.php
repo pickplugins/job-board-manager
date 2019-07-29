@@ -12,45 +12,21 @@ class class_job_bm_functions{
 	
 	public function __construct(){
 
-		//add_action('add_meta_boxes', array($this, 'meta_boxes_job'));
-		//add_action('save_post', array($this, 'meta_boxes_job_save'));
 
 		}
-	
 
-	
-	public function job_single_meta_items(){
-		
-		$job_single_meta_items = array(
-								//'job_bm_job_type'=>array('class'=>'job_type','fa'=>'briefcase','title'=>__('Job type', 'job-board-manager')),
-								//'job_bm_job_status'=>array('class'=>'job_status','fa'=>'','title'=>__('Job status', 'job-board-manager')),
-								'job_bm_location'=>array('class'=>'location','fa'=>'map-marker','title'=>__('Location', 'job-board-manager')),
-								'job_bm_company_name'=>array('class'=>'company_name','fa'=>'briefcase','title'=>__('Company name', 'job-board-manager')),							
-								'job_bm_total_vacancies'=>array('class'=>'total_vacancies','fa'=>'user-plus','title'=>__('Total vacancies', 'job-board-manager')),								
-								'job_bm_expire_date'=>array('class'=>'expire_date','fa'=>'calendar-o','title'=>__('Expire date', 'job-board-manager')),
-								'job_bm_view_count'=>array('class'=>'view_count','fa'=>'eye','title'=>__('View count', 'job-board-manager')),
-								);
-		
-		
-		$job_single_meta_items = apply_filters('job_single_meta_items', $job_single_meta_items);
-		return $job_single_meta_items;
-		
-	}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	public function job_type_list(){
 
-		$job_type_list = array('full-time'=>__('Full Time', 'job-board-manager'), 'freelance'=>__('Freelance', 'job-board-manager'), 'internship'=>__('Internship', 'job-board-manager'),'part-time'=>__('Part Time', 'job-board-manager'),'temporary'=>__('Temporary', 'job-board-manager'));
+		$job_type_list = array(
+		    'full-time'=>__('Full Time', 'job-board-manager'),
+            'freelance'=>__('Freelance', 'job-board-manager'),
+            'internship'=>__('Internship', 'job-board-manager'),
+            'part-time'=>__('Part Time', 'job-board-manager'),
+            'temporary'=>__('Temporary', 'job-board-manager')
+        );
 		
-		$job_type_list = apply_filters('job_bm_filters_job_type', $job_type_list);		
+		$job_type_list = apply_filters('job_bm_job_type', $job_type_list);
 
 		return $job_type_list;
 
@@ -59,8 +35,15 @@ class class_job_bm_functions{
 		
 	public function job_status_list(){
 
-		$job_status_list = array('open'=>__('Open', 'job-board-manager'),'closed'=>__('Closed', 'job-board-manager'),'filled'=>__('Filled', 'job-board-manager'),'re-open'=>__('Re-Open', 'job-board-manager'),'expired'=>__('Expired', 'job-board-manager'));
-		$job_status_list = apply_filters('job_bm_filters_job_status', $job_status_list);		
+		$job_status_list = array(
+		    'open'=>__('Open', 'job-board-manager'),
+            'closed'=>__('Closed', 'job-board-manager'),
+            'filled'=>__('Filled', 'job-board-manager'),
+            're-open'=>__('Re-Open', 'job-board-manager'),
+            'expired'=>__('Expired', 'job-board-manager')
+        );
+
+		$job_status_list = apply_filters('job_bm_job_status', $job_status_list);
 
 		return $job_status_list;
 
@@ -69,8 +52,13 @@ class class_job_bm_functions{
 	
 	public function job_level_list(){
 
-		$job_level_list = array('any'=>__('Any', 'job-board-manager'),'entry_level'=>__('Entry level', 'job-board-manager'),'mid_level'=>__('Mid level', 'job-board-manager'),'top_level'=>__('Top level', 'job-board-manager'));
-		$job_level_list = apply_filters('job_bm_filters_job_level', $job_level_list);		
+		$job_level_list = array(
+		    'any'=>__('Any', 'job-board-manager'),
+            'entry_level'=>__('Entry level', 'job-board-manager'),
+            'mid_level'=>__('Mid level', 'job-board-manager'),
+            'top_level'=>__('Top level', 'job-board-manager')
+        );
+		$job_level_list = apply_filters('job_bm_job_level', $job_level_list);
 
 		return $job_level_list;
 
@@ -79,8 +67,12 @@ class class_job_bm_functions{
 	
 	public function salary_type_list(){
 
-		$salary_type_list = array('negotiable'=>__('Negotiable', 'job-board-manager'),'fixed'=>__('Fixed', 'job-board-manager'),'min-max'=>__('Salary range', 'job-board-manager'));
-		$salary_type_list = apply_filters('job_bm_filters_salary_type', $salary_type_list);		
+		$salary_type_list = array(
+		    'negotiable'=>__('Negotiable', 'job-board-manager'),
+            'fixed'=>__('Fixed', 'job-board-manager'),
+            'min-max'=>__('Salary range', 'job-board-manager')
+        );
+		$salary_type_list = apply_filters('job_bm_salary_type', $salary_type_list);
 
 		return $salary_type_list;
 
@@ -88,8 +80,16 @@ class class_job_bm_functions{
 	
 	public function salary_range_list(){
 
-		$salary_range_list = array( ''=>__('All', 'job-board-manager'), '1000-10000'=>__('1,000-10,000', 'job-board-manager') ,'10001-20000'=>__('10,001-20,000', 'job-board-manager') ,'20001-30000'=>__('20,001-30,000', 'job-board-manager') ,'30001-50000'=>__('30,001-50,000', 'job-board-manager') ,'50001-80000'=>__('50,001-80,000', 'job-board-manager'), '80001-100000'=>__('80,001-1,00,000', 'job-board-manager'));
-		$salary_range_list = apply_filters('job_bm_filters_salary_range', $salary_range_list);		
+		$salary_range_list = array(
+		    ''=>__('All', 'job-board-manager'),
+            '1000-10000'=>__('1,000-10,000', 'job-board-manager'),
+            '10001-20000'=>__('10,001-20,000', 'job-board-manager'),
+            '20001-30000'=>__('20,001-30,000', 'job-board-manager'),
+            '30001-50000'=>__('30,001-50,000', 'job-board-manager'),
+            '50001-80000'=>__('50,001-80,000', 'job-board-manager'),
+            '80001-100000'=>__('80,001-1,00,000', 'job-board-manager')
+        );
+		$salary_range_list = apply_filters('job_bm_salary_range', $salary_range_list);
 
 		return $salary_range_list;
 
@@ -100,8 +100,11 @@ class class_job_bm_functions{
 
 	public function apply_method_list(){
 
-		$apply_method_list = array('none'=>__('None', 'job-board-manager'), 'direct_email'=>__('By Email', 'job-board-manager'));
-		$apply_method_list = apply_filters('job_bm_filters_apply_method', $apply_method_list);		
+		$apply_method_list = array(
+		    'none'=>__('None', 'job-board-manager'),
+            'direct_email'=>__('By Email', 'job-board-manager')
+        );
+		$apply_method_list = apply_filters('job_bm_application_methods', $apply_method_list);
 
 		return $apply_method_list;
 
@@ -109,8 +112,14 @@ class class_job_bm_functions{
 	
 	public function job_type_bg_color(){
 
-		$job_type_color = array('freelance'=>'#46a6ff','full-time'=>'#2ec274','internship'=>'#a066ff','part-time'=>'#ffc24d','temporary'=>'#ff5741');
-		$job_type_color = apply_filters('job_bm_filters_job_type_bg_color', $job_type_color);		
+		$job_type_color = array(
+		    'freelance'=>'#46a6ff',
+            'full-time'=>'#2ec274',
+            'internship'=>'#a066ff',
+            'part-time'=>'#ffc24d',
+            'temporary'=>'#ff5741',
+        );
+		$job_type_color = apply_filters('job_bm_job_type_bg_color', $job_type_color);
 
 		return $job_type_color;
 
@@ -118,8 +127,14 @@ class class_job_bm_functions{
 
     public function job_type_text_color(){
 
-        $job_type_color = array('freelance'=>'#ffffff','full-time'=>'#ffffff','internship'=>'#ffffff','part-time'=>'#ffffff','temporary'=>'#ffffff');
-        $job_type_color = apply_filters('job_bm_filters_job_type_text_color', $job_type_color);
+        $job_type_color = array(
+            'freelance'=>'#ffffff',
+            'full-time'=>'#ffffff',
+            'internship'=>'#ffffff',
+            'part-time'=>'#ffffff',
+            'temporary'=>'#ffffff',
+        );
+        $job_type_color = apply_filters('job_bm_job_type_text_color', $job_type_color);
 
         return $job_type_color;
 
@@ -129,8 +144,14 @@ class class_job_bm_functions{
 
 	public function job_status_bg_color(){
 
-		$job_status_color = array('open'=>'#3ac170','closed'=>'#fa3218','filled'=>'#49a2ed','re-open'=>'#2fc2f9' ,'expired'=>'#ff4115');
-		$job_status_color = apply_filters('job_bm_filters_job_status_bg_color', $job_status_color);		
+		$job_status_color = array(
+		    'open'=>'#3ac170',
+            'closed'=>'#fa3218',
+            'filled'=>'#49a2ed',
+            're-open'=>'#2fc2f9',
+            'expired'=>'#ff4115',
+        );
+		$job_status_color = apply_filters('job_bm_job_status_bg_color', $job_status_color);
 
 		return $job_status_color;
 
@@ -139,8 +160,14 @@ class class_job_bm_functions{
 
     public function job_status_text_color(){
 
-        $job_status_color = array('open'=>'#ffffff','closed'=>'#ffffff','filled'=>'#ffffff','re-open'=>'#ffffff' ,'expired'=>'#ffffff');
-        $job_status_color = apply_filters('job_bm_filters_job_status_text_color', $job_status_color);
+        $job_status_color = array(
+            'open'=>'#ffffff',
+            'closed'=>'#ffffff',
+            'filled'=>'#ffffff',
+            're-open'=>'#ffffff',
+            'expired'=>'#ffffff',
+        );
+        $job_status_color = apply_filters('job_bm_job_status_text_color', $job_status_color);
 
         return $job_status_color;
 
@@ -154,11 +181,11 @@ class class_job_bm_functions{
 		$reports_tabs = array(
 					'job'=>array(
 								'title'=>__('Jobs', 'job-board-manager'),
-								'html'=>apply_filters('job_bm_filters_report_html_job', ''),
+								'html'=>apply_filters('job_bm_report_html_job', ''),
 								),
 					);
 		
-		$reports_tabs = apply_filters('job_bm_filters_reports_tabs', $reports_tabs);
+		$reports_tabs = apply_filters('job_bm_reports_tabs', $reports_tabs);
 		
 		return $reports_tabs;
 		
@@ -167,26 +194,7 @@ class class_job_bm_functions{
 		}	
 	
 	
-	public function account_tabs(){
-		
-		
-		$account_tabs = array(
-					'my_jobs'=>array(
-								'title'=>__('My Jobs', 'job-board-manager'),
-								'html'=>apply_filters('job_bm_filters_account_tab_my_jobs', ''),								
-								
-								),
 
-					
-					);
-		
-		$account_tabs = apply_filters('job_bm_filters_account_tabs', $account_tabs);
-		
-		return $account_tabs;
-		
-		
-		
-		}	
 	
 	
 	
@@ -209,7 +217,7 @@ class class_job_bm_functions{
 							
 		
 		
-		$tutorials = apply_filters('job_bm_filters_tutorials', $tutorials);		
+		$tutorials = apply_filters('job_bm_tutorials', $tutorials);
 
 		return $tutorials;
 
@@ -266,7 +274,7 @@ class class_job_bm_functions{
 					
 		
 		
-		$faq = apply_filters('job_bm_filters_faq', $faq);		
+		$faq = apply_filters('job_bm_faqs', $faq);
 
 		return $faq;
 
@@ -320,7 +328,7 @@ class class_job_bm_functions{
 		);
 																					
 							
-			$page_data = apply_filters( 'job_bm_filter_create_pages', $page_data );
+			$page_data = apply_filters( 'job_bm_create_pages', $page_data );
 			
 			return $page_data;			
 		

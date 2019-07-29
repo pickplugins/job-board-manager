@@ -12,6 +12,29 @@
     float: left;
 }
 
+.job-bm-dashboard .navs .current {
+
+
+}
+
+.job-bm-dashboard .navs .current a{
+    font-weight: bold;
+    /*text-decoration: underline;*/
+}
+
+.job-bm-dashboard .navs a {
+    text-decoration: none;
+}
+.job-bm-dashboard .navs li {
+}
+
+.user-stats{
+    margin: 15px 0;
+}
+
+
+
+
 .job-bm-dashboard .navs-content {
     margin-left: 210px;
     border-left: 1px solid #ddd;

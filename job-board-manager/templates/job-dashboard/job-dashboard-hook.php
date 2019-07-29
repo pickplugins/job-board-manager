@@ -51,6 +51,8 @@ if(!function_exists('job_bm_dashboard_logged_in')){
         );
 
         $dashboard_tabs = apply_filters('job_bm_dashboard_tabs', $tabs);
+        $current_tabs = isset($_GET['tabs']) ? sanitize_text_field($_GET['tabs']) : 'account';
+
 
         ?>
         <ul class="navs">
@@ -62,9 +64,8 @@ if(!function_exists('job_bm_dashboard_logged_in')){
                     $title = isset($tabs['title']) ? $tabs['title'] : '';
                     $link = isset($tabs['link']) ? $tabs['link'] : $job_bm_account_page_url.'?tabs='.$tabs_key;
 
-
                     ?>
-                    <li>
+                    <li class="<?php if($current_tabs == $tabs_key) echo 'current';?>">
                         <a href="<?php echo $link; ?>">
                             <?php echo $title; ?>
                         </a>
@@ -75,8 +76,6 @@ if(!function_exists('job_bm_dashboard_logged_in')){
         </ul>
         <div class="navs-content">
             <?php
-
-            $current_tabs = isset($_GET['tabs']) ? sanitize_text_field($_GET['tabs']) : 'account';
 
             do_action('job_bm_dashboard_tabs_content_'.$current_tabs);
             ?>
@@ -100,10 +99,42 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
 
             global $current_user;
 
+            //var_dump(job_bm_user_job_count());
+
+            $user_job_count = job_bm_user_job_count();
+            $user_application_count = job_bm_user_application_count();
+            $user_application_hired_count = job_bm_user_application_hired_count();
+            $user_application_received_count = job_bm_user_application_received_count();
+
+
+
             ?>
             <div class="welcome">
-                <?php echo sprintf(__('Welcome <strong>%s</strong>', 'job-board-manager'), $current_user->display_name); ?>
+                <?php echo sprintf(__('Welcome! %s', 'job-board-manager'), '<strong>'.$current_user->display_name.'</strong>'); ?>
             </div>
+
+            <div class="user-stats">
+                <div class="">
+                    <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo $user_job_count; ?></span>
+                </div>
+
+                <div class="">
+                    <span><?php echo __('Total hire by:', 'job-board-manager'); ?></span> <span><?php echo $user_application_hired_count; ?></span>
+                </div>
+
+                <div class="">
+                    <span><?php echo __('Application submit:', 'job-board-manager'); ?></span> <span><?php echo $user_application_count; ?></span>
+                </div>
+
+                <div class="">
+                    <span><?php echo __('Application received:', 'job-board-manager'); ?></span> <span><?php echo $user_application_received_count; ?></span>
+                </div>
+
+
+
+
+            </div>
+
             <?php
 
         }
@@ -168,20 +199,16 @@ if(!function_exists('job_bm_dashboard_logged_out')){
         $job_bm_login_enable = get_option('job_bm_login_enable');
         $job_bm_registration_enable = get_option('job_bm_registration_enable');
 
+
+
         if($job_bm_registration_enable=='yes'){
 
             ?>
             <div class="register">
                 <h3><?php echo __('Register', 'job-board-manager'); ?></h3>
                 <?php echo do_shortcode('[job_bm_registration_form]'); ?>
-
             </div>
             <?php
-
-
-
-
-
         }
 
 
@@ -214,7 +241,6 @@ if(!function_exists('job_bm_dashboard_logged_out')){
 
             wp_login_form($args);
 
-            //echo ob_get_clean();
             ?>
             </div>
             <?php

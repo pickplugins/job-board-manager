@@ -65,7 +65,9 @@
     line-height: 20px;
 }
 
-
+.application-rate i{
+    cursor: pointer;
+}
 
 
 .application-list .paginate {

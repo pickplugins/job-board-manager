@@ -283,7 +283,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
         $job_post_data = get_post(get_the_ID());
         $job_bm_contact_email = get_post_meta(get_the_ID(), 'job_bm_contact_email', true);
         $job_bm_job_status = get_post_meta(get_the_ID(), 'job_bm_job_status', true);
-        $job_bm_apply_methods = get_option('job_bm_apply_method', array('direct_email'));
+        $job_bm_application_methods = get_option('job_bm_application_methods', array('direct_email'));
         $job_bm_login_required_on_apply = get_option('job_bm_login_required_on_apply', 'yes');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
         $job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
@@ -309,11 +309,11 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
 
 
-                if(!empty($job_bm_apply_methods)):
+                if(!empty($job_bm_application_methods)):
 
                     $active_id = 9999;
                     $i = 0;
-                    foreach ($job_bm_apply_methods as $method):
+                    foreach ($job_bm_application_methods as $method):
 
 
 
@@ -337,7 +337,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
                                 echo $login_required;
 
                             }else{
-                                do_action('job_bm_apply_method_form_'.$method, $job_id);
+                                do_action('job_bm_application_methods_form_'.$method, $job_id);
                             }
 
 
@@ -385,9 +385,9 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
 
 
-add_action('job_bm_apply_method_form_direct_email','job_bm_apply_method_form_direct_email');
+add_action('job_bm_application_methods_form_direct_email','job_bm_application_methods_form_direct_email');
 
-function job_bm_apply_method_form_direct_email($job_id){
+function job_bm_application_methods_form_direct_email($job_id){
 
     $job_bm_apply_enable_recaptcha		= get_option('job_bm_apply_enable_recaptcha');
     $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
