@@ -232,7 +232,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
             <?php endif; ?>
 
             <?php if(isset($job_type_list[$job_bm_job_type])):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_type_list[$job_bm_job_type])?></span>
+                <span class=" meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-swatchbook"></i>', $job_type_list[$job_bm_job_type])?></span>
             <?php endif; ?>
 
             <?php if(isset($job_level_list[$job_bm_job_level])):?>

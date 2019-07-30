@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Awesome Job Board Manager.
-Version: 2.1.2
+Version: 2.1.3
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.2' );
+		define('job_bm_plugin_version', '2.1.3' );
 
 
 		// Class
@@ -33,6 +33,12 @@ class JobBoardManager{
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-application.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job.php');
+        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job-hook.php');
+
+
+
+
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-functions.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-roles.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');

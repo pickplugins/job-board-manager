@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.1
+	Stable tag: 2.1.3
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,8 +28,22 @@
 You can display list of jobs via shortcode `[job_bm_archive]` you can display job list by filtering query arguments via filter hook, this can help you to build external search form to apply form data to filter jobs. you can also remove existing job list elements and add your own elements via action hook.
 
 **Advance Dashboard**
-Account dashboard is based on tabs navs and content, tabs can be added via filter hooks and tab content can be displayed via action hook based on each tab. you can display custom code or HTML via action hook.
 
+This plugin has account dashboard is based on tabs and content, you can display any where via shortcode `[job_bm_dashboard]`, tabs can be added via filter hooks and tab content can be displayed via action hook based on each tab. you can display custom code or HTML via action hook.
+
+**Job Submit form**
+
+you can display job submit form via shortcode `[job_submit_form]` anywhere, you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data.
+
+
+**Job Edit form**
+
+Alow, user to edit their own job after publish the job, you can display job edit form any where via shortcode `[job_bm_job_edit]` you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data.
+
+
+**Application**
+
+User can apply for the jobs, job poster can see application from dashboard, can give star ratings, make trash, hire applicant, and communicate via email, application also display resume or attachment if available.
 
 
 # Translation
@@ -73,10 +87,15 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.3 =
+    * 30/07/2019 - add - My Jobs content redesigned, display featured icon, application count icon, hired count icons
+
 	= 2.1.2 =
     * 29/07/2019 - add - job_bm_my_jobs action hook added.
     * 29/07/2019 - update - trash job instead of delete when user click delete button on "My Jobs"
     * 29/07/2019 - add - Dashboard user stats added on account tab.
+    * 29/07/2019 - add - My Jobs content redesigned, display featured icon, application count icon, hired count icons
+
 
 	= 2.1.1 =
     * 29/07/2019 - fix - application access issue fixed.

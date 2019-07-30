@@ -85,76 +85,9 @@ if(!function_exists('job_bm_my_jobs_list')):
                         while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
                             $job_id         = get_the_id();
-                            $job_title      = get_the_title();
-                            $post_date      = get_the_date('Y-m-d');
-                            $expiry_date    = get_post_meta(get_the_ID(), 'job_bm_expire_date',true);
-                            $publish_status = get_post_status(get_the_ID());
-                            $job_status     = get_post_meta(get_the_ID(), 'job_bm_job_status',true);
-                            $featured       = get_post_meta(get_the_ID(), 'job_bm_featured',true);
-                            $job_type       = get_post_meta(get_the_ID(), 'job_bm_job_type',true);
-                            $job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
-
-                            $application_count = $class_job_bm_applications->application_count_by_job_id($job_id);
-
-                            $featured = ($featured == 'yes') ? __('Yes', 'job-board-manager') : __('No', 'job-board-manager');
-
 
                             do_action('job_bm_my_jobs_loop', $job_id);
 
-
-                            ?>
-                            <div class="single">
-                                <span title="<?php echo __('Job id.', 'job-board-manager'); ?>">#<?php echo get_the_ID(); ?></span> - <a title="<?php echo __('Job Title.', 'job-board-manager'); ?>" class="title" href="<?php echo get_permalink(); ?>"><?php echo $job_title; ?></a>
-                                <span class="post-date meta"><b><?php echo __('Published:', 'job-board-manager'); ?></b> <?php echo date_i18n($date_format,strtotime($post_date)); ?></span>
-                                <span class="publish-status meta"><b><?php echo __('Publish Status:', 'job-board-manager'); ?></b> <?php echo $publish_status; ?></span>
-                                <span class="featured meta"><b><?php echo __('Featured:', 'job-board-manager'); ?></b> <?php echo $featured; ?></span>
-                                <?php
-
-
-                                if(!empty($job_status_filters[$job_status])):
-                                    ?>
-                                    <span class="job-status meta"><b><?php echo __('Job Status:', 'job-board-manager'); ?></b> <?php echo $job_status_filters[$job_status]; ?></span>
-                                <?php
-                                endif;
-
-
-
-
-                                if(!empty($job_type_filters[$job_type])):
-                                    ?>
-                                    <span class="type meta"><b><?php echo __('Job Type:', 'job-board-manager'); ?></b> <?php echo $job_type_filters[$job_type]; ?></span>
-                                <?php
-                                endif;
-
-
-                                if(!empty($job_level_filters[$job_label])):
-                                    ?>
-                                    <span class="level meta"><b><?php echo __('Job Level:', 'job-board-manager'); ?></b> <?php echo $job_level_filters[$job_label]; ?></span>
-                                <?php
-                                endif;
-
-                                ?>
-                                <span class="applications meta"><b><?php echo __('Applications:', 'job-board-manager'); ?></b> <a href="#"><?php echo $application_count; ?></a> </span>
-
-                                <div>
-                                    <?php
-
-                                    if($job_bm_can_user_edit_published_jobs == 'yes'){
-                                        ?>
-                                        <a target="_blank" class="edit-link" href="<?php echo $job_bm_job_edit_page_url; ?>?job_id='.get_the_ID().'" ><i class="fas fa-pen"></i> <?php echo __('Edit', 'job-board-manager'); ?></a>
-                                        <?php
-                                    }
-
-                                    if($job_bm_can_user_delete_jobs == 'yes'){
-                                        ?>
-                                        <span job-id="<?php echo get_the_ID(); ?>" class="delete-job" href="" ><i class="fas fa-trash"></i> <?php echo __('Delete', 'job-board-manager'); ?></span>
-                                        <?php
-                                    }
-
-                                    ?>
-                                </div>
-                            </div>
-                        <?php
 
                         endwhile;
 
@@ -225,21 +158,27 @@ add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_header');
 if(!function_exists('job_bm_my_jobs_loop_header')){
     function job_bm_my_jobs_loop_header($job_id){
 
+        $class_job_bm_applications = new class_job_bm_applications();
+
+        $job_bm_job_edit_page_id    = get_option('job_bm_job_edit_page_id');
+        $job_bm_job_edit_page_url   = get_permalink($job_bm_job_edit_page_id);
+
+        $featured       = get_post_meta($job_id, 'job_bm_featured',true);
+        $featured_class = ($featured == 'yes') ? 'featured' : '';
+        $application_count = $class_job_bm_applications->application_count_by_job_id($job_id);
+        $application_hired_count = job_bm_job_application_hired_count($job_id);
 
         ?>
         <div class="card-top">
-
             <div class="card-action">
                 <span class="job-id" title="<?php echo __('Job id.', 'job-board-manager'); ?>">#<?php echo $job_id; ?></span>
-                <span class="job-edit" title="<?php echo __('Job edit.', 'job-board-manager'); ?>"><i class="fas fa-pencil-alt"></i></span>
+                <a class="job-edit" title="<?php echo __('Job edit.', 'job-board-manager'); ?>" href="<?php echo $job_bm_job_edit_page_url; ?>?job_id=<?php echo $job_id; ?>" target="_blank"><i class="fas fa-pencil-alt"></i></a>
                 <span class="job-delete delete-job" job-id="<?php echo $job_id; ?>" title="<?php echo __('Job trash.', 'job-board-manager'); ?>"><i class="far fa-trash-alt"></i></span>
-                <span class="job-featured" title="<?php echo __('Request for featured.', 'job-board-manager'); ?>"><i class="fas fa-star"></i></span>
-                <span class="job-application" title="<?php echo __('Total application.', 'job-board-manager'); ?>"><i class="fas fa-user-clock"></i> 56</span>
-                <span class="job-hired" title="<?php echo __('Total hired.', 'job-board-manager'); ?>"><i class="fas fa-user-tie"></i> 3</span>
-
+                <span class="job-featured <?php echo $featured_class; ?>" title="<?php echo ($featured=='yes') ?  __('Featured job.', 'job-board-manager') : 'Not featured'; ?>"><i class="fas fa-star"></i></span>
+                <span class="job-application" title="<?php echo __('Total application.', 'job-board-manager'); ?>"><i class="fas fa-user-clock"></i> <?php echo $application_count; ?></span>
+                <span class="job-hired" title="<?php echo __('Total hired.', 'job-board-manager'); ?>"><i class="fas fa-user-tie"></i> <?php echo $application_hired_count; ?></span>
 
             </div>
-
 
         </div>
 
@@ -249,6 +188,93 @@ if(!function_exists('job_bm_my_jobs_loop_header')){
 
     }
 }
+
+
+
+add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_body');
+
+if(!function_exists('job_bm_my_jobs_loop_body')){
+    function job_bm_my_jobs_loop_body($job_id){
+
+        $class_job_bm_functions = new class_job_bm_functions();
+        $class_job_bm_applications = new class_job_bm_applications();
+
+        $job_type_filters = $class_job_bm_functions->job_type_list();
+        $job_level_filters = $class_job_bm_functions->job_level_list();
+        $job_status_filters = $class_job_bm_functions->job_status_list();
+        $application_count = $class_job_bm_applications->application_count_by_job_id($job_id);
+
+
+        $job_bm_job_edit_page_id    = get_option('job_bm_job_edit_page_id');
+        $job_bm_job_edit_page_url   = get_permalink($job_bm_job_edit_page_id);
+
+        $job_title = get_the_title($job_id);
+        $post_date      = get_the_date('Y-m-d');
+        $date_format                        = get_option( 'date_format' );
+
+        $expiry_date    = get_post_meta($job_id, 'job_bm_expire_date',true);
+        $publish_status = get_post_status($job_id);
+        $job_status     = get_post_meta($job_id, 'job_bm_job_status',true);
+        $featured       = get_post_meta($job_id, 'job_bm_featured',true);
+        $job_type       = get_post_meta($job_id, 'job_bm_job_type',true);
+        $job_label = get_post_meta($job_id, 'job_bm_job_level',true);
+
+        ?>
+        <div class="card-body">
+
+            <a title="<?php echo __('Job link.', 'job-board-manager'); ?>" class="job-link meta" href="<?php echo get_permalink($job_id); ?>"><i class="fas fa-external-link-square-alt"></i> <?php echo $job_title; ?></a>
+
+            <span class="post-date meta"><b><?php echo __('Published:', 'job-board-manager'); ?></b> <?php echo date_i18n($date_format,strtotime($post_date)); ?></span>
+            <span class="publish-status meta"><b><?php echo __('Publish Status:', 'job-board-manager'); ?></b> <?php echo $publish_status; ?></span>
+            <span class="featured meta"><b><?php echo __('Featured:', 'job-board-manager'); ?></b> <?php echo $featured; ?></span>
+            <?php
+
+
+            if(!empty($job_status_filters[$job_status])):
+                ?>
+                <span class="job-status meta"><b><?php echo __('Job Status:', 'job-board-manager'); ?></b> <?php echo $job_status_filters[$job_status]; ?></span>
+            <?php
+            endif;
+
+
+
+
+            if(!empty($job_type_filters[$job_type])):
+                ?>
+                <span class="type meta"><b><?php echo __('Job Type:', 'job-board-manager'); ?></b> <?php echo $job_type_filters[$job_type]; ?></span>
+            <?php
+            endif;
+
+
+            if(!empty($job_level_filters[$job_label])):
+                ?>
+                <span class="level meta"><b><?php echo __('Job Level:', 'job-board-manager'); ?></b> <?php echo $job_level_filters[$job_label]; ?></span>
+            <?php
+            endif;
+
+            ?>
+            <span class="applications meta"><b><?php echo __('Applications:', 'job-board-manager'); ?></b> <a href="#"><?php echo $application_count; ?></a> </span>
+
+        </div>
+
+
+
+        <?php
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

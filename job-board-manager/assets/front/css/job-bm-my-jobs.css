@@ -10,9 +10,15 @@
 .job-bm-my-jobs {
 
 }
+.job-bm-my-jobs .nav-head{
+    margin-bottom: 20px;
+}
 
-
-.my-job-card{}
+.my-job-card{
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
 .my-job-card .card-top{
     background: #436affa8;
     padding: 10px 10px;
@@ -65,12 +71,12 @@
     cursor: pointer;
 }
 
-.my-job-card .job-featured:hover{
+.my-job-card .job-featured.featured{
     background: #f9a913;
     color: #fff;
-
-
 }
+
+
 
 
 .my-job-card .job-application{
@@ -96,11 +102,19 @@
 
 
 
+.my-job-card .card-body{
+    padding: 10px;
+    background: #f5f5f5;
+}
 
+.my-job-card .card-body .meta{
+    display: block;
+}
 
-
-
-
+.my-job-card .card-body .job-link{
+    display: block;
+    text-decoration: none;
+}
 
 
 

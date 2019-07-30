@@ -66,18 +66,18 @@ class class_job_bm_post_meta_application{
 		<div class="settings-tabs vertical">
 
 			<?php
-//            $args = array(
-//                'id'		=> 'application_trash',
-//                //'parent'		=> 'post_grid_meta_options',
-//                'title'		=> __('Trash','job-board-manager'),
-//                'details'	=> __('Application trash','job-board-manager'),
-//                'type'		=> 'select',
-//                'value'		=> $application_trash,
-//                'default'		=> '',
-//                'args'		=> array(''=>'No','yes'=>'Yes'),
-//            );
-//
-//            $settings_tabs_field->generate_field($args);
+            $args = array(
+                'id'		=> 'application_trash',
+                //'parent'		=> 'post_grid_meta_options',
+                'title'		=> __('Trash','job-board-manager'),
+                'details'	=> __('Application trash','job-board-manager'),
+                'type'		=> 'select',
+                'value'		=> $application_trash,
+                'default'		=> '',
+                'args'		=> array(''=>'No','yes'=>'Yes'),
+            );
+
+            $settings_tabs_field->generate_field($args);
 
 
 			$args = array(
@@ -241,7 +241,7 @@ class class_job_bm_post_meta_application{
         // Update the meta field.
         //update_post_meta($post_id, 'job_bm_data', $job_bm_data);
 
-        //$application_trash = isset($_POST['application_trash']) ? sanitize_text_field($_POST['application_trash']) : '';
+        $application_trash = isset($_POST['application_trash']) ? sanitize_text_field($_POST['application_trash']) : '';
 		$user_id = isset($_POST['user_id']) ? sanitize_text_field($_POST['user_id']) : '';
         $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : '';
 		$job_bm_am_user_email = isset($_POST['job_bm_am_user_email']) ? sanitize_text_field($_POST['job_bm_am_user_email']) : '';
@@ -251,7 +251,9 @@ class class_job_bm_post_meta_application{
 		$job_bm_am_resume_id = isset($_POST['job_bm_am_resume_id']) ? sanitize_text_field($_POST['job_bm_am_resume_id']) : '';
 
 
-        //update_post_meta($post_id, 'application_trash', $application_trash);
+		if($application_trash =='yes')
+        update_post_meta($post_id, 'application_trash', $application_trash);
+
 		update_post_meta($post_id, 'user_id', $user_id);
         update_post_meta($post_id, 'applicant_name', $applicant_name);
 		update_post_meta($post_id, 'job_bm_am_user_email', $job_bm_am_user_email);

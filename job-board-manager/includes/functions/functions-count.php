@@ -150,10 +150,81 @@ function job_bm_user_application_received_count($user_id=0){
 }
 
 
+function job_bm_job_application_count($job_id=0){
+
+    $meta_query = array();
+
+    $meta_query[] = array(
+        'key' => 'job_bm_am_job_id',
+        'value' => $job_id,
+        'compare' => '=',
+        //'type' => 'CHAR',
+    );
 
 
+    $wp_query = new WP_Query(
+        array (
+            'post_type' => 'application',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'meta_query' => $meta_query,
+            'posts_per_page' => -1,
+        )
+    );
 
 
+    if ( $wp_query->have_posts() ) :
+
+        $post_count = $wp_query->found_posts;
+    else:
+        $post_count = 0;
+    endif;
+
+
+    return $post_count;
+}
+
+
+function job_bm_job_application_hired_count($job_id=0){
+
+    $meta_query = array();
+
+    $meta_query[] = array(
+        'key' => 'job_bm_am_job_id',
+        'value' => $job_id,
+        'compare' => '=',
+        //'type' => 'CHAR',
+    );
+
+
+    $meta_query[] = array(
+        'key' => 'application_hired',
+        'value' => 'yes',
+        'compare' => '=',
+        //'type' => 'CHAR',
+    );
+
+    $wp_query = new WP_Query(
+        array (
+            'post_type' => 'application',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'meta_query' => $meta_query,
+            'posts_per_page' => -1,
+        )
+    );
+
+
+    if ( $wp_query->have_posts() ) :
+
+        $post_count = $wp_query->found_posts;
+    else:
+        $post_count = 0;
+    endif;
+
+
+    return $post_count;
+}
 
 
 

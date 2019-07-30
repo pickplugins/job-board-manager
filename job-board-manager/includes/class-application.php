@@ -99,7 +99,6 @@ class class_job_bm_applications{
 
         return $found_posts;
 
-
     }
 
 

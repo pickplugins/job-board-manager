@@ -6,8 +6,8 @@ class class_job_bm_post_meta{
 	public function __construct(){
 
 		//meta box action for "job"
-		add_action('add_meta_boxes', array($this, 'job_bm_meta_box'));
-		add_action('save_post', array($this, 'meta_boxes_job_save'));
+		//add_action('add_meta_boxes', array($this, 'job_bm_meta_box'));
+		//add_action('save_post', array($this, 'meta_boxes_job_save'));
 
 
 
