@@ -29,7 +29,7 @@ class class_job_bm_post_types{
 	 
 	 
 		register_post_type( "job",
-			apply_filters( "register_post_type_job", array(
+			apply_filters( "job_bm_post_type_job", array(
 				'labels' => array(
 					'name' 					=> $plural,
 					'singular_name' 		=> $singular,
@@ -79,8 +79,8 @@ class class_job_bm_post_types{
 			$plural    = __( 'Job Categories', 'job-board-manager' );
 	 
 			register_taxonomy( "job_category",
-				apply_filters( 'register_taxonomy_job_category_object_type', array( 'job' ) ),
-				apply_filters( 'register_taxonomy_job_category_args', array(
+				apply_filters( 'job_bm_job_category_object_type', array( 'job' ) ),
+				apply_filters( 'job_bm_job_category_args', array(
 					'hierarchical' 			=> true,
 					'show_admin_column' 	=> true,					
 					'update_count_callback' => '_update_post_term_count',
@@ -119,8 +119,8 @@ class class_job_bm_post_types{
 			$plural    = __( 'Job Tags', 'job-board-manager' );
 	 
 			register_taxonomy( "job_tag",
-				apply_filters( 'register_taxonomy_job_tag_object_type', array( 'job' ) ),
-				apply_filters( 'register_taxonomy_job_tag_args', array(
+				apply_filters( 'job_bm_job_tag_object_type', array( 'job' ) ),
+				apply_filters( 'job_bm_job_tag_args', array(
 					'hierarchical' 			=> false,
 					'show_admin_column' 	=> true,					
 					'update_count_callback' => '_update_post_term_count',
@@ -162,7 +162,7 @@ class class_job_bm_post_types{
 
 
         register_post_type( "application",
-            apply_filters( "register_post_type_application", array(
+            apply_filters( "job_bm_post_type_application", array(
                 'labels' => array(
                     'name' 					=> $plural,
                     'singular_name' 		=> $singular,
@@ -202,12 +202,7 @@ class class_job_bm_post_types{
 
 
 
-
-
-
-
-
-
-	}
+}
 	
-	new class_job_bm_post_types();
+
+new class_job_bm_post_types();

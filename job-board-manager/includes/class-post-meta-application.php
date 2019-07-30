@@ -68,7 +68,7 @@ class class_job_bm_post_meta_application{
 			<?php
             $args = array(
                 'id'		=> 'application_trash',
-                //'parent'		=> 'post_grid_meta_options',
+                //'parent'		=> '',
                 'title'		=> __('Trash','job-board-manager'),
                 'details'	=> __('Application trash','job-board-manager'),
                 'type'		=> 'select',
@@ -82,7 +82,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'user_id',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('User id','job-board-manager'),
 				'details'	=> __('User id','job-board-manager'),
 				'type'		=> 'text',
@@ -96,7 +96,7 @@ class class_job_bm_post_meta_application{
 
             $args = array(
                 'id'		=> 'applicant_name',
-                //'parent'		=> 'post_grid_meta_options',
+                //'parent'		=> '',
                 'title'		=> __('Applicant name','job-board-manager'),
                 'details'	=> __('Applicant name','job-board-manager'),
                 'type'		=> 'text',
@@ -109,7 +109,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'job_bm_am_user_email',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('Applicant email','job-board-manager'),
 				'details'	=> __('Applicant email address','job-board-manager'),
 				'type'		=> 'text',
@@ -123,7 +123,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'job_bm_am_job_id',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('Job id','job-board-manager'),
 				'details'	=> __('Application job id','job-board-manager'),
 				'type'		=> 'text',
@@ -137,7 +137,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'job_bm_am_apply_method',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('Application method','job-board-manager'),
 				'details'	=> __('Application method used by user.','job-board-manager'),
 				'type'		=> 'text',
@@ -150,7 +150,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'job_bm_am_attachment',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('Attachment url','job-board-manager'),
 				'details'	=> __('Application method used by user.','job-board-manager'),
 				'type'		=> 'text',
@@ -164,7 +164,7 @@ class class_job_bm_post_meta_application{
 
 			$args = array(
 				'id'		=> 'job_bm_am_resume_id',
-				//'parent'		=> 'post_grid_meta_options',
+				//'parent'		=> '',
 				'title'		=> __('Resume id ','job-board-manager'),
 				'details'	=> __('Application method used by user.','job-board-manager'),
 				'type'		=> 'text',

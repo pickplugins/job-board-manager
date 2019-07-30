@@ -31,7 +31,6 @@ class JobBoardManager{
 		// Class
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings-tabs.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-application.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job-hook.php');
@@ -68,16 +67,10 @@ class JobBoardManager{
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-count.php');
 
 
-
-		require_once( job_bm_plugin_dir . 'includes/menu/welcome.php');
-	
-
 		add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
 		add_action( 'wp_enqueue_scripts', array( $this, 'job_bm_front_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'job_bm_admin_scripts' ) );
         add_action( 'init', array( $this, 'textdomain' ));
-		add_action( 'activated_plugin', array( $this, 'redirect_welcome' ));
-		//add_action( 'admin_head', array( $this, 'remove_welcome_menu' ));
 
 		//session_start();
 		register_activation_hook( __FILE__, array( $this, 'job_bm_activation' ) );
@@ -99,17 +92,7 @@ class JobBoardManager{
 	
 
 	
-	public function redirect_welcome($plugin){
 
-		$job_bm_welcome = get_option('job_bm_welcome');
-
-		if( empty($job_bm_welcome) ) {
-			if( $plugin == 'job-board-manager/job-board-manager.php' ) {
-				wp_safe_redirect( admin_url( 'index.php?page=job_bm_welcome' ) );
-				exit;
-			}
-		}
-	}
 	
 	
 	
@@ -173,12 +156,6 @@ class JobBoardManager{
 		
 
 		
-	public function remove_welcome_menu(){
-		remove_submenu_page( 'edit.php?post_type=job', 'job_bm_welcome' );
-	}
-		
-
-		
 	public function job_bm_front_scripts(){
 		
 		wp_enqueue_script('jquery');
@@ -206,76 +183,56 @@ class JobBoardManager{
 	public function job_bm_admin_scripts(){
 
         $screen = get_current_screen();
+       //echo '<pre>'.var_export($screen, true).'</pre>';
 
+		//wp_enqueue_script('jquery');
+		//wp_enqueue_script('jquery-ui-core');
+		//wp_enqueue_script('jquery-ui-sortable');
+		//wp_enqueue_script('jquery-ui-datepicker');
 
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('jquery-ui-core');
-		wp_enqueue_script('jquery-ui-sortable');
-		wp_enqueue_script('jquery-ui-datepicker');
 		wp_enqueue_script('job_bm_admin_js', plugins_url( '/assets/admin/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
 		wp_localize_script('job_bm_admin_js', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
-		
-
-		wp_enqueue_style('job_bm_admin_style', job_bm_plugin_url.'assets/admin/css/style.css');
-		wp_enqueue_style('jquery-ui', job_bm_plugin_url.'assets/admin/css/jquery-ui.css');
-
-		//wp_enqueue_style('font-awesome.min', job_bm_plugin_url.'assets/global/css/font-awesome.min.css');
-        //wp_enqueue_style('fontawesome-5.min', job_bm_plugin_url.'assets/global/css/fontawesome-5.min.css');
-
-		wp_enqueue_style('style-reports', job_bm_plugin_url.'assets/admin/css/style-reports.css');		
-		
-		//wp_enqueue_style('pp-admin-welcome', job_bm_plugin_url.'assets/admin/css/welcome.css');		
-		
-		//ParaAdmin
-		wp_enqueue_style('ParaAdmin', job_bm_plugin_url.'assets/admin/ParaAdmin/css/ParaAdmin.css');		
-		wp_enqueue_script('ParaAdmin', plugins_url( 'assets/admin/ParaAdmin/js/ParaAdmin.js' , __FILE__ ) , array( 'jquery' ));
-
-
-
-		
-		wp_enqueue_script('jquery.canvasjs.min', plugins_url( '/assets/global/js/jquery.canvasjs.min.js' , __FILE__ ) , array( 'jquery' ));		
-		
-		
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'job_bm_color_picker', plugins_url('/assets/admin/js/color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
-
-
 
 		// Register Scripts
         wp_register_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
 
 
+
+
         // Register CSS & Style
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
         wp_register_style('settings-tabs', job_bm_plugin_url.'assets/admin/css/settings-tabs.css');
+        wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
 
 
-        //echo '<pre>'.var_export($screen, true).'</pre>';
 
 
         if ($screen->id == 'job_page_job_bm_settings'){
 
             wp_enqueue_style( 'font-awesome-5' );
-            wp_enqueue_style( 'settings-tabs' );
             wp_enqueue_script( 'settings-tabs' );
+            wp_enqueue_style( 'settings-tabs' );
+            wp_enqueue_script( 'wp-color-picker' );
+            wp_enqueue_style( 'wp-color-picker' );
 
-        }
 
-
-        if ($screen->id == 'job_page_emails_templates'){
-
-            wp_enqueue_style( 'font-awesome-5' );
-            //wp_enqueue_style( 'settings-tabs' );
-            //wp_enqueue_script( 'settings-tabs' );
 
         }
 
 
         if ($screen->id == 'job'){
 
+            wp_enqueue_script('jquery');
+            wp_enqueue_script('jquery-ui-core');
+            wp_enqueue_script('jquery-ui-sortable');
+
+            wp_enqueue_style( 'jquery-ui');
             wp_enqueue_style( 'font-awesome-5' );
             wp_enqueue_style( 'settings-tabs' );
             wp_enqueue_script( 'settings-tabs' );
+
+
+
 
         }
 

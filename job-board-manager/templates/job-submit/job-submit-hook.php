@@ -323,7 +323,7 @@ function job_bm_job_submit_form_salary_fixed(){
     <div class="form-field-wrap salary_fixed" <?php if($job_bm_salary_type =='fixed'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php esc_html_e('Fixed salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="50000" type="text" value="<?php echo $job_bm_salary_fixed; ?>" name="job_bm_salary_fixed">
+            <input placeholder="<?php echo __('50000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_fixed; ?>" name="job_bm_salary_fixed">
             <p class="field-details"><?php esc_html_e('Salary fixed, ex: 1200','job-board-manager');
                 ?></p>
         </div>
@@ -343,7 +343,7 @@ function job_bm_job_submit_form_salary_min(){
     <div class="form-field-wrap salary_min" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php esc_html_e('Minimum salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="5000" type="text" value="<?php echo $job_bm_salary_min; ?>" name="job_bm_salary_min">
+            <input placeholder="<?php echo __('5000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_min; ?>" name="job_bm_salary_min">
             <p class="field-details"><?php esc_html_e('Minimum salary amount, ex: 5000','job-board-manager');
                 ?></p>
         </div>
@@ -364,7 +364,7 @@ function job_bm_job_submit_form_salary_max(){
     <div class="form-field-wrap salary_max" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php esc_html_e('Maximum salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="10000" type="text" value="<?php echo $job_bm_salary_max; ?>" name="job_bm_salary_max">
+            <input placeholder="<?php echo __('10000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_max; ?>" name="job_bm_salary_max">
             <p class="field-details"><?php esc_html_e('Maximum salary amount, ex: 1000','job-board-manager');
                 ?></p>
         </div>
@@ -384,7 +384,7 @@ function job_bm_job_submit_form_salary_currency(){
     <div class="form-field-wrap" >
         <div class="field-title"><?php esc_html_e('Salary currency','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="$" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <input placeholder="<?php echo __('$','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
             <p class="field-details"><?php esc_html_e('Write salary currency, ex: $','job-board-manager');
                 ?></p>
         </div>
@@ -427,7 +427,7 @@ function job_bm_job_submit_form_company_info(){
 
     ?>
     <div class="form-field-wrap ">
-        <div class="field-separator">Company Information</div>
+        <div class="field-separator"><?php echo __('Company Information','job-board-manager'); ?></div>
     </div>
     <?php
 }
@@ -638,33 +638,33 @@ function job_bm_job_submit_data($post_data){
 
     if(empty($post_data['post_title'])){
 
-        $error->add( 'post_title', __( '<strong>ERROR</strong>: Job title is empty.', 'job-board-manager' ) );
+        $error->add( 'post_title', __( 'ERROR: Job title is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['post_content'])){
 
-        $error->add( 'post_content', __( '<strong>ERROR</strong>: Job details is empty.', 'job-board-manager' ) );
+        $error->add( 'post_content', __( 'ERROR: Job details is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_total_vacancies'])){
 
-        $error->add( 'job_bm_total_vacancies', __( '<strong>ERROR</strong>: Total vacancies is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_total_vacancies', __( 'ERROR: Total vacancies is empty.', 'job-board-manager' ) );
     }
 
 
     if(($post_data['job_bm_salary_type'] == 'fixed')){
         if(empty($post_data['job_bm_salary_fixed'])){
-            $error->add( 'job_bm_salary_fixed', __( '<strong>ERROR</strong>: Salary fixed is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_fixed', __( 'ERROR: Salary fixed is empty.', 'job-board-manager' ) );
         }
     }
 
     if(($post_data['job_bm_salary_type'] == 'min-max')){
         if(empty($post_data['job_bm_salary_min'])){
-            $error->add( 'job_bm_salary_min', __( '<strong>ERROR</strong>: Salary minimum is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_min', __( 'ERROR: Salary minimum is empty.', 'job-board-manager' ) );
         }
 
         if(empty($post_data['job_bm_salary_max'])){
-            $error->add( 'job_bm_salary_max', __( '<strong>ERROR</strong>: Salary maximum is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_max', __( 'ERROR: Salary maximum is empty.', 'job-board-manager' ) );
         }
 
     }
@@ -675,44 +675,44 @@ function job_bm_job_submit_data($post_data){
 
     if(empty($post_data['job_bm_contact_email'])){
 
-        $error->add( 'job_bm_contact_email', __( '<strong>ERROR</strong>: Contact email is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_contact_email', __( 'ERROR: Contact email is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_company_name'])){
 
-        $error->add( 'job_bm_company_name', __( '<strong>ERROR</strong>: Company name is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_company_name', __( 'ERROR: Company name is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_location'])){
 
-        $error->add( 'job_bm_location', __( '<strong>ERROR</strong>: Location is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_location', __( 'ERROR: Location is empty.', 'job-board-manager' ) );
     }
 
 
     if(empty($post_data['job_bm_address'])){
 
-        $error->add( 'job_bm_address', __( '<strong>ERROR</strong>: Address is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_address', __( 'ERROR: Address is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_company_logo'])){
 
-        $error->add( 'job_bm_company_logo', __( '<strong>ERROR</strong>: Company logo is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_company_logo', __( 'ERROR: Company logo is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['g-recaptcha-response']) && $job_bm_reCAPTCHA_enable =='yes'){
 
-        $error->add( 'g-recaptcha-response', __( '<strong>ERROR</strong>: reCaptcha test failed.', 'job-board-manager' ) );
+        $error->add( 'g-recaptcha-response', __( 'ERROR: reCaptcha test failed.', 'job-board-manager' ) );
     }
 
     if($job_bm_account_required_post_job == 'yes' && !is_user_logged_in()){
 
-        $error->add( 'login',  sprintf (__('<strong>ERROR</strong>: Please <a target="_blank" href="%s">login</a> to submit question.',
+        $error->add( 'login',  sprintf (__('ERROR: Please <a target="_blank" href="%s">login</a> to submit question.',
             'job-board-manager'), $dashboard_page_url ));
     }
 
     if(! isset( $_POST['job_bm_job_submit_nonce'] ) || ! wp_verify_nonce( $_POST['job_bm_job_submit_nonce'], 'job_bm_job_submit_nonce' ) ){
 
-        $error->add( '_wpnonce', __( '<strong>ERROR</strong>: security test failed.', 'job-board-manager' ) );
+        $error->add( '_wpnonce', __( 'ERROR: security test failed.', 'job-board-manager' ) );
     }
 
 
@@ -890,22 +890,4 @@ function job_bm_job_submitted_redirect($job_ID, $post_data){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

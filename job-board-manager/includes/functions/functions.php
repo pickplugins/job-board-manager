@@ -200,31 +200,36 @@ add_action('wp_ajax_nopriv_job_bm_ajax_reset_email_templates_data', 'job_bm_ajax
 	
 	
 	
-add_filter( 'add_menu_classes', 'show_pending_number');
-function show_pending_number( $menu ) {
-    $type = "job";
-    $status = "pending";
-    $num_posts = wp_count_posts( $type, 'readable' );
-    $pending_count = 0;
-    if ( !empty($num_posts->$status) )
-        $pending_count = $num_posts->$status;
+add_filter( 'add_menu_classes', 'job_bm_show_pending_number');
 
-    // build string to match in $menu array
-    if ($type == 'post') {
-        $menu_str = 'edit.php';
-    // support custom post types
-    } else {
-        $menu_str = 'edit.php?post_type=' . $type;
+if(!function_exists('job_bm_show_pending_number')){
+    function job_bm_show_pending_number( $menu ) {
+        $type = "job";
+        $status = "pending";
+        $num_posts = wp_count_posts( $type, 'readable' );
+        $pending_count = 0;
+        if ( !empty($num_posts->$status) )
+            $pending_count = $num_posts->$status;
+
+        // build string to match in $menu array
+        if ($type == 'post') {
+            $menu_str = 'edit.php';
+            // support custom post types
+        } else {
+            $menu_str = 'edit.php?post_type=' . $type;
+        }
+
+        // loop through $menu items, find match, add indicator
+        foreach( $menu as $menu_key => $menu_data ) {
+            if( $menu_str != $menu_data[2] )
+                continue;
+            $menu[$menu_key][0] .= " <span class='update-plugins count-$pending_count'><span class='plugin-count'>" . number_format_i18n($pending_count) . '</span></span>';
+        }
+        return $menu;
     }
 
-    // loop through $menu items, find match, add indicator
-    foreach( $menu as $menu_key => $menu_data ) {
-        if( $menu_str != $menu_data[2] )
-            continue;
-        $menu[$menu_key][0] .= " <span class='update-plugins count-$pending_count'><span class='plugin-count'>" . number_format_i18n($pending_count) . '</span></span>';
-    }
-    return $menu;
 }
+
 	
 	
 	
@@ -293,76 +298,7 @@ function show_pending_number( $menu ) {
 	add_action('wp_ajax_nopriv_job_bm_ajax_delete_job_by_id', 'job_bm_ajax_delete_job_by_id');
 
 	
-	
-	
-	
-	
-	
 
-add_action('wp_ajax_photo_gallery_upload', function(){
-
-  check_ajax_referer('photo-upload');
-
-  // you can use WP's wp_handle_upload() function:
-		$file = $_FILES['async-upload'];
-
-		$status = wp_handle_upload($file, array('action' => 'photo_gallery_upload'));
-
-		$file_loc = $status['file'];
-		$file_name = basename($status['name']);
-		$file_type = wp_check_filetype($file_name);
-	
-		$attachment = array(
-			'post_mime_type' => $status['type'],
-			'post_title' => preg_replace('/\.[^.]+$/', '', basename($file['name'])),
-			'post_content' => '',
-			'post_status' => 'inherit'
-		);
-	
-		$attach_id = wp_insert_attachment($attachment, $file_loc);
-		$attach_data = wp_generate_attachment_metadata($attach_id, $file_loc);
-		wp_update_attachment_metadata($attach_id, $attach_data);
-		//echo $attach_id;
-	
-		$attach_title = get_the_title($attach_id);
-	
-		$html['attach_url'] = wp_get_attachment_url($attach_id);
-		$html['attach_id'] = $attach_id;
-		$html['attach_title'] = get_the_title($attach_id);	
-	
-		$response = array(
-							'status'=>'ok',
-							'html'=>$html,
-							
-							
-							);
-	
-		echo json_encode($response);
-
-  exit;
-});
-
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 	
 	
 //add_action( 'init', 'job_bm_revoke_admin_access' );
@@ -453,29 +389,13 @@ function job_bm_list_user_roles(){
 
 
 	
-function job_bm_sanitize_data($input_type, $input_values){
 
-	if($input_type=='text' or $input_type=='textarea' or $input_type=='select' or $input_type=='radio' ){
-		
-		$input_values = sanitize_text_field($input_values);
-		}
-	elseif($input_type=='file'){
-		
-		$input_values = esc_url($input_values);
-		}
-	else{
-		
-		$input_values = $input_values;
-		}	
+	
+	
+	
+	
+	function job_bm_page_list_id(){
 
-	return $input_values;
-	}
-	
-	
-	
-	
-	function job_bm_page_list_id()
-		{	
 			$wp_query = new WP_Query(
 				array (
 					'post_type' => 'page',
@@ -519,33 +439,12 @@ function job_bm_sanitize_data($input_type, $input_values){
 		}
 
 
-/*### Extend job meta options sample ###*/
-
-
-/*
-
-function job_list_item_start_extra($content=''){
-	
-
-	$content = '<br >Hello<br >';
-
-
-	return $content;
-		
-	}
-
-*/
-
-
-
-
 
 
 function job_bm_get_terms($taxonomy){
 
-		
-		//$cat_id = (int)sanitize_text_field($_POST['cat_id']);
-		if(!isset($taxonomy)){
+
+    if(!isset($taxonomy)){
 			$taxonomy = 'job_category';
 			}
 		

@@ -58,6 +58,20 @@ class class_job_bm_post_meta_job{
             'active' => false,
         );
 
+        if(current_user_can('manage_options')):
+            $job_bm_settings_tab[] = array(
+                'id' => 'admin',
+                'title' => sprintf(__('%s Admin action','job-board-manager'),'<i class="fas fa-tools"></i>'),
+                'priority' => 3,
+                'active' => false,
+            );
+        endif;
+
+
+
+
+
+
         $job_bm_settings_tab = apply_filters('job_bm_metabox_job_navs', $job_bm_settings_tab);
 
         $tabs_sorted = array();
@@ -100,24 +114,7 @@ class class_job_bm_post_meta_job{
         </div>
         <div class="clear clearfix"></div>
 
-
-
-
-
-
-		<div class="settings-tabs vertical">
-
-			<?php
-
-            //do_action('job_bm_meta_box_job', $post_id);
-
-
-			?>
-
-
-		</div>
-		<div class="clear clearfix"></div>
-<?php
+        <?php
 
 
 
@@ -179,18 +176,6 @@ class class_job_bm_post_meta_job{
         do_action('job_bm_meta_box_save_job', $post_id);
 
 
-
-
-
-
-
-
-
-
-
-
-
-			
 					
 		}
 	

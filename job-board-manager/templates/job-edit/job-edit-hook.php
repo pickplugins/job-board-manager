@@ -433,7 +433,7 @@ function job_bm_job_edit_form_company_info(){
 
     ?>
     <div class="form-field-wrap ">
-        <div class="field-separator">Company Information</div>
+        <div class="field-separator"><?php esc_html_e('Company Information','job-board-manager'); ?></div>
     </div>
     <?php
 }
@@ -665,33 +665,33 @@ function job_bm_job_edit_data($post_data){
 
     if(empty($post_data['post_title'])){
 
-        $error->add( 'post_title', __( '<strong>ERROR</strong>: Job title is empty.', 'job-board-manager' ) );
+        $error->add( 'post_title', __( 'ERROR: Job title is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['post_content'])){
 
-        $error->add( 'post_content', __( '<strong>ERROR</strong>: Job details is empty.', 'job-board-manager' ) );
+        $error->add( 'post_content', __( 'ERROR: Job details is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_total_vacancies'])){
 
-        $error->add( 'job_bm_total_vacancies', __( '<strong>ERROR</strong>: Total vacancies is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_total_vacancies', __( 'ERROR: Total vacancies is empty.', 'job-board-manager' ) );
     }
 
 
     if(($post_data['job_bm_salary_type'] == 'fixed')){
         if(empty($post_data['job_bm_salary_fixed'])){
-            $error->add( 'job_bm_salary_fixed', __( '<strong>ERROR</strong>: Salary fixed is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_fixed', __( 'ERROR: Salary fixed is empty.', 'job-board-manager' ) );
         }
     }
 
     if(($post_data['job_bm_salary_type'] == 'min-max')){
         if(empty($post_data['job_bm_salary_min'])){
-            $error->add( 'job_bm_salary_min', __( '<strong>ERROR</strong>: Salary minimum is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_min', __( 'ERROR: Salary minimum is empty.', 'job-board-manager' ) );
         }
 
         if(empty($post_data['job_bm_salary_max'])){
-            $error->add( 'job_bm_salary_max', __( '<strong>ERROR</strong>: Salary maximum is empty.', 'job-board-manager' ) );
+            $error->add( 'job_bm_salary_max', __( 'ERROR: Salary maximum is empty.', 'job-board-manager' ) );
         }
 
     }
@@ -702,39 +702,39 @@ function job_bm_job_edit_data($post_data){
 
     if(empty($post_data['job_bm_contact_email'])){
 
-        $error->add( 'job_bm_contact_email', __( '<strong>ERROR</strong>: Contact email is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_contact_email', __( 'ERROR: Contact email is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_company_name'])){
 
-        $error->add( 'job_bm_company_name', __( '<strong>ERROR</strong>: Company name is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_company_name', __( 'ERROR: Company name is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_location'])){
 
-        $error->add( 'job_bm_location', __( '<strong>ERROR</strong>: Location is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_location', __( 'ERROR: Location is empty.', 'job-board-manager' ) );
     }
 
 
     if(empty($post_data['job_bm_address'])){
 
-        $error->add( 'job_bm_address', __( '<strong>ERROR</strong>: Address is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_address', __( 'ERROR: Address is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['job_bm_company_logo'])){
 
-        $error->add( 'job_bm_company_logo', __( '<strong>ERROR</strong>: Company logo is empty.', 'job-board-manager' ) );
+        $error->add( 'job_bm_company_logo', __( 'ERROR: Company logo is empty.', 'job-board-manager' ) );
     }
 
     if(empty($post_data['g-recaptcha-response']) && $job_bm_reCAPTCHA_enable =='yes'){
 
-        $error->add( 'g-recaptcha-response', __( '<strong>ERROR</strong>: reCaptcha test failed.', 'job-board-manager' ) );
+        $error->add( 'g-recaptcha-response', __( 'ERROR: reCaptcha test failed.', 'job-board-manager' ) );
     }
 
 
     if(! isset( $_POST['job_bm_job_edit_nonce'] ) || ! wp_verify_nonce( $_POST['job_bm_job_edit_nonce'], 'job_bm_job_edit_nonce' ) ){
 
-        $error->add( '_wpnonce', __( '<strong>ERROR</strong>: security test failed.', 'job-board-manager' ) );
+        $error->add( '_wpnonce', __( 'ERROR: security test failed.', 'job-board-manager' ) );
     }
 
 
@@ -902,22 +902,3 @@ function job_bm_job_edited_redirect($job_ID, $post_data){
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

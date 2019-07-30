@@ -105,13 +105,12 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 			echo '<div class="single">';
 			
-			echo '<span title="'.__('Job id.', 'job-board-manager').'">#'.get_the_ID().'</span> - <a title="'.__('Job Title.', 'job-board-manager').'" class="title" href="'.get_permalink().'">'.$job_title.'</a>';
+			echo '<span title="'.__('Job id.', 'job-board-manager').'">#'.get_the_ID().'</span> - <a title="'.__('Job link.', 'job-board-manager').'" class="title" href="'.get_permalink().'">'.$job_title.'</a>';
 			
 			echo '<div class="clear" ></div>';
 
 			
 			echo '<span class="post-date meta"><b>'.__('Published:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';
-			//echo '<span class="expiry-date meta"><b>'.__('Expiry:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($expiry_date)).'</span>';
 			echo '<span class="publish-status meta"><b>'.__('Publish Status:', 'job-board-manager').'</b> '.$publish_status.'</span>';
 			
 			if(!empty($job_status_filters[$job_status]))

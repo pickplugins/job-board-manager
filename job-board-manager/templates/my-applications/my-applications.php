@@ -103,7 +103,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 			echo '<a title="'.__('Application ID.', 'job-board-manager').'" class="title" href="'.get_permalink().'">#'.$application_id.'</a>';
 
 			?>
-            <span class="post-date meta"><b>Job link:</b> <a href="<?php echo get_permalink($job_bm_am_job_id); ?>"><?php echo get_the_title($job_bm_am_job_id); ?></a> </span>
+            <span class="post-date meta"><b><?php echo __('Job link:','job-board-manager'); ?></b> <a href="<?php echo get_permalink($job_bm_am_job_id); ?>"><?php echo get_the_title($job_bm_am_job_id); ?></a> </span>
             <?php
 
 			echo '<span class="post-date meta"><b>'.__('Date:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';

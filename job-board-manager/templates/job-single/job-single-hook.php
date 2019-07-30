@@ -165,7 +165,7 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
 
             <?php if($job_bm_company_website):?>
-            <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>">Website</a> </div>
+            <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>"><?php echo __('Website','job-board-manager'); ?></a> </div>
             <?php endif; ?>
 
 
@@ -257,7 +257,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
             ?>
 
             <?php if($job_bm_salary_fixed):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html)?></span>
+                <span class="meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html)?></span>
             <?php endif; ?>
 
 
@@ -408,24 +408,24 @@ function job_bm_application_methods_form_direct_email($job_id){
 
         if(empty($_POST['applicant_name'])){
 
-            $error->add( 'applicant_name', __( '<strong>ERROR</strong>: Applicant name is empty.', 'job-board-manager' ) );
+            $error->add( 'applicant_name', __( 'ERROR: Applicant name is empty.', 'job-board-manager' ) );
         }
 
         if(empty($_POST['application_email'])){
 
-            $error->add( 'application_email', __( '<strong>ERROR</strong>: Email is empty.', 'job-board-manager' ) );
+            $error->add( 'application_email', __( 'ERROR: Email is empty.', 'job-board-manager' ) );
         }
 
         if(!is_email($_POST['application_email'])){
 
-            $error->add( 'application_email', __( '<strong>ERROR</strong>: '.sanitize_text_field($_POST['application_email']).' is not valid email address.', 'job-board-manager' ) );
+            $error->add( 'application_email', __( 'ERROR: '.sanitize_text_field($_POST['application_email']).' is not valid email address.', 'job-board-manager' ) );
         }
 
 
 
         if($job_bm_apply_enable_recaptcha == 'yes' && empty($_POST['g-recaptcha-response'])){
 
-            $error->add( 'recaptcha', __( '<strong>ERROR</strong>: reCaptcha test failed', 'job-board-manager' ) );
+            $error->add( 'recaptcha', __( 'ERROR: reCaptcha test failed', 'job-board-manager' ) );
         }
 
         $errors = apply_filters( 'job_bm_application_submit_errors', $error, $_POST );
@@ -466,13 +466,13 @@ function job_bm_application_methods_form_direct_email($job_id){
                 do_action('job_bm_application_submitted', $application_ID, $_POST);
 
                 ?>
-                <div class="success">Your application has sent.</div>
+                <div class="success"><?php echo __('Your application has sent.','job-board-manager'); ?></div>
                 <?php
 
             }else{
                 ?>
                 <div class="errors">
-                    <div class="job-bm-error">You already sent an application.</div>
+                    <div class="job-bm-error"><?php echo __('You already sent an application.','job-board-manager'); ?></div>
                 </div>
 
                 <?php
@@ -520,26 +520,26 @@ function job_bm_application_methods_form_direct_email($job_id){
         <input type="hidden" name="application_method" value="direct_email">
 
         <div class="form-field-wrap">
-            <div class="field-title">Your name</div>
+            <div class="field-title"><?php echo __('Your name','job-board-manager'); ?></div>
             <div class="field-input">
                 <input placeholder="" type="text" value="<?php echo $applicant_name; ?>" name="applicant_name">
-                <p class="field-details">Write your name</p>
+                <p class="field-details"><?php echo __('Write your name','job-board-manager'); ?></p>
             </div>
         </div>
 
         <div class="form-field-wrap">
-            <div class="field-title">Your email</div>
+            <div class="field-title"><?php echo __('Your email','job-board-manager'); ?></div>
             <div class="field-input">
                 <input placeholder="" type="text" value="<?php echo $email; ?>" name="application_email">
-                <p class="field-details">Write your email address</p>
+                <p class="field-details"><?php echo __('Write your email address','job-board-manager'); ?></p>
             </div>
         </div>
 
         <div class="form-field-wrap">
-            <div class="field-title">Message</div>
+            <div class="field-title"><?php echo __('Message','job-board-manager'); ?></div>
             <div class="field-input">
                 <textarea placeholder="" name="application_message"><?php echo $application_message; ?></textarea>
-                <p class="field-details">Write your message</p>
+                <p class="field-details"><?php echo __('Write your message','job-board-manager'); ?></p>
             </div>
         </div>
 
@@ -567,7 +567,7 @@ function job_bm_application_methods_form_direct_email($job_id){
         <div class="form-field-wrap">
             <div class="field-title"></div>
             <div class="field-input">
-                <input placeholder="" type="submit"  name="Submit">
+                <input placeholder="" type="submit"  name="<?php echo __('Submit','job-board-manager'); ?>">
                 <p class="field-details"></p>
             </div>
         </div>

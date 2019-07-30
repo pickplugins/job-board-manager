@@ -21,50 +21,43 @@ function job_bm_registration_function() {
 
 		// call @function complete_registration to create the user
 		// only when no WP_error is found
-        job_bm_complete_registration(
-        $username,
-        $password,
-        $email
-
-		);
+        job_bm_complete_registration($username, $password, $email);
     }
-else{
-	global $username, $password, $email;
-	}
+    else{
+        global $username, $password, $email;
+    }
 
-    job_bm_registration_form(
-    	$username,
-        $password,
-        $email
-		);
+    job_bm_registration_form($username, $password, $email);
 }
 
 function job_bm_registration_form( $username, $password, $email) {
 	
 
-    echo '
-    <form action="' . $_SERVER['REQUEST_URI'] . '" method="post">
-	<p>
-	<label for="username">'.__('Username','job-board-manager').' <strong>*</strong><br>
-	<input type="text" name="username" value="' . (isset($_POST['username']) ? $username : null) . '">
-	</label>
-	</p>
-	
-	<p>
-	<label for="password">'.__('Password','job-board-manager').' <strong>*</strong><br>
-	<input type="password" name="password" value="' . (isset($_POST['password']) ? $password : null) . '">
-	</label>
-	</p>
-	
-	<p>
-	<label for="email">'.__('Email','job-board-manager').' <strong>*</strong><br>
-	<input type="text" name="email" value="' . (isset($_POST['email']) ? $email : null) . '">
-	</label>
-	</p>
-	
-	<input type="submit" name="submit" value="Register"/>
-	</form>
-	';
+    ?>
+    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+        <p>
+            <label for="username"><?php echo __('Username','job-board-manager');  ?> <br>
+                <input type="text" name="username" value="<?php echo (isset($_POST['username']) ? $username : null);  ?>">
+            </label>
+        </p>
+
+        <p>
+            <label for="password"><?php echo __('Password','job-board-manager'); ?> <br>
+                <input type="password" name="password" value="<?php echo (isset($_POST['password']) ? $password : null); ?>">
+            </label>
+        </p>
+
+        <p>
+            <label for="email"><?php echo __('Email','job-board-manager'); ?> <br>
+                <input type="text" name="email" value="<?php echo (isset($_POST['email']) ? $email : '');  ?>">
+            </label>
+        </p>
+
+        <input type="submit" name="submit" value="<?php echo __('Register','job-board-manager'); ?>"/>
+    </form>
+
+    <?php
+
 }
 
 function job_bm_registration_validation( $username, $password, $email )  {
@@ -103,11 +96,14 @@ function job_bm_registration_validation( $username, $password, $email )  {
     if ( is_wp_error( $reg_errors ) ) {
 
         foreach ( $reg_errors->get_error_messages() as $error ) {
-            echo '<div>';
-            echo '<strong>'.__('ERROR','job-board-manager').'</strong>:';
-            echo $error . '<br/>';
 
-            echo '</div>';
+            ?>
+            <div>
+                <?php echo __('ERROR:','job-board-manager'); ?>
+                <?php echo $error; ?>
+            </div>
+            <?php
+
         }
     }
 }

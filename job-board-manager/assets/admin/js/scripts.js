@@ -4,9 +4,7 @@ jQuery(document).ready(function($)
 
 		$(document).on('click', '.reset-email-templates', function()
 			{
-				
-				//alert('Hello');
-				
+
 				var is_confirm = $(this).attr('confirm');
 				if(is_confirm=='ok'){
 					
@@ -35,103 +33,6 @@ jQuery(document).ready(function($)
 					}
 
 				})
-
-
-		$(document).on('click', '.jbm-admin.field-set .update-fields', function()
-			{
-				
-				var is_confirm = $(this).attr('confirm');
-				if(is_confirm=='ok'){
-					
-					$.ajax(
-						{
-					type: 'POST',
-					context: this,
-					url:job_bm_ajax.job_bm_ajaxurl,
-					data: {"action": "job_bm_ajax_update_fields",},
-					success: function(data)
-							{	
-								//alert(data);
-								$(this).html(data);
-								//$(this).parent().parent().remove();
-								//$('.see-phone-number .phone-number').html(data);
-								location.reload(true);
-							}
-						});
-					
-					}
-				else{
-					$(this).attr('confirm','ok');
-					$(this).html('Confirm');
-					
-					
-					}
-
-				})
-
-
-
-
-
-		$(document).on('click', '.jbm-admin.field-set .reset-fields', function()
-			{
-				
-				var is_confirm = $(this).attr('confirm');
-				if(is_confirm=='ok'){
-					
-					$.ajax(
-						{
-					type: 'POST',
-					context: this,
-					url:job_bm_ajax.job_bm_ajaxurl,
-					data: {"action": "job_bm_ajax_reset_fields",},
-					success: function(data)
-							{	
-								//alert(data);
-								$(this).html(data);
-								//$(this).parent().parent().remove();
-								//$('.see-phone-number .phone-number').html(data);
-								location.reload(true);
-								
-		
-							}
-						});
-					
-					}
-				else{
-					$(this).attr('confirm','ok');
-					$(this).html('Confirm');
-					
-					
-					}
-				
-				
-				
-				})
-
-
-
-
-
-
-
-
-
-        $('#job_bm_expire_date, .job_bm_date').datepicker({
-            dateFormat : 'yy-mm-dd'
-        });
-
-
-
-		$(document).on('click', '.job-bm-emails-templates .remove', function()
-			{
-				if(confirm('Do you really want to remove ?' )){
-					$(this).parent().parent().remove();
-					}
-				
-				
-				})
-
 
 
 

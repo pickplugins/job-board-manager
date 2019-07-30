@@ -1,11 +1,5 @@
 <?php
-
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
-
-if ( ! defined('ABSPATH')) exit;  // if direct access 
+if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 class class_job_bm_functions{
@@ -296,44 +290,34 @@ class class_job_bm_functions{
 	public function create_pages(){
 		
 		$page_data = array(
-		
-							array(
-									'id'=>'job_bm_archive_page_id',		
-									'title'=>__('Job Archive', 'job-board-manager'),
-									'shortcode'=>'[job_list]',							
-									
-									),
-							array(
-									'id'=>'job_bm_job_submit_page_id',		
-									'title'=>__('Job Submit', 'job-board-manager'),
-									'shortcode'=>'[job_submit_form]',							
-									
-									),
-									
-							array(
-									'id'=>'job_bm_job_edit_page_id',		
-									'title'=>__('Job Edit', 'job-board-manager'),
-									'shortcode'=>'[job_bm_job_edit]',							
-									
-									),									
-									
-							array(
-									'id'=>'job_bm_job_login_page_id',
-									'title'=>__('Job Dashboard', 'job-board-manager'),
-									'shortcode'=>'[job_bm_dashboard] ',
-									
-									),						
-					
-		
+            array(
+                'id'=>'job_bm_archive_page_id',
+                'title'=>__('Job Archive', 'job-board-manager'),
+                'shortcode'=>'[job_bm_archive]',
+            ),
+            array(
+                'id'=>'job_bm_job_submit_page_id',
+                'title'=>__('Job Submit', 'job-board-manager'),
+                'shortcode'=>'[job_submit_form]',
+            ),
+            array(
+                'id'=>'job_bm_job_edit_page_id',
+                'title'=>__('Job Edit', 'job-board-manager'),
+                'shortcode'=>'[job_bm_job_edit]',
+            ),
+            array(
+                'id'=>'job_bm_job_login_page_id',
+                'title'=>__('Job Dashboard', 'job-board-manager'),
+                'shortcode'=>'[job_bm_dashboard] ',
+            ),
 		);
 																					
 							
-			$page_data = apply_filters( 'job_bm_create_pages', $page_data );
-			
-			return $page_data;			
-		
-		
-		}
+        $page_data = apply_filters( 'job_bm_create_pages', $page_data );
+
+        return $page_data;
+
+	}
 
 
 	public function post_type_input_fields_admin(){
