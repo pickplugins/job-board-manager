@@ -8,6 +8,8 @@ jQuery(document).ready(function($) {
 			if(is_confirm=='ok'){
 
 				var job_id = $(this).attr('job-id');
+				$(this).html('<i class="fas fa-spinner fa-spin"></i>');
+
 
 				$.ajax(
 					{
@@ -22,6 +24,8 @@ jQuery(document).ready(function($) {
                             var is_deleted	= data['is_deleted'];
 							//alert(data);
 							$(this).html(html);
+
+							$(this).html('<i class="far fa-trash-alt"></i>');
 
 							if(is_deleted=='yes'){
                                 $(this).parent().parent().fadeOut(2000);

@@ -11,6 +11,105 @@
 
 }
 
+
+.my-job-card{}
+.my-job-card .card-top{
+    background: #436affa8;
+    padding: 10px 10px;
+}
+
+.my-job-card .job-id{
+    margin-right: 20px;
+    min-width: 50px;
+    display: inline-block;
+    color: #fff;
+}
+
+
+.my-job-card .job-edit{
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0 7px;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.my-job-card .job-edit:hover{
+    background: #37cd9d;
+    color: #fff;
+}
+
+
+
+.my-job-card .job-delete{
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0 7px;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.my-job-card .job-delete:hover{
+    background: #ff5d3d;
+    color: #fff;
+
+
+}
+
+.my-job-card .job-featured{
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0 7px;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.my-job-card .job-featured:hover{
+    background: #f9a913;
+    color: #fff;
+
+
+}
+
+
+.my-job-card .job-application{
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0 7px;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+
+
+.my-job-card .job-hired{
+    display: inline-block;
+    margin: 0 2px;
+    padding: 0 7px;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    float: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .job-bm-my-jobs .single {
     border-bottom: 1px solid rgb(221, 221, 221);
     padding: 10px 0;

@@ -60,7 +60,7 @@ if(!function_exists('job_bm_my_jobs_list')):
                 $wp_query = new WP_Query(
                     array (
                         'post_type' => 'job',
-                        'post_status' => 'publish',
+                        'post_status' => 'any',
                         'orderby' => 'date',
                         'order' => 'DESC',
                         'author' => $userid,
@@ -98,6 +98,8 @@ if(!function_exists('job_bm_my_jobs_list')):
 
                             $featured = ($featured == 'yes') ? __('Yes', 'job-board-manager') : __('No', 'job-board-manager');
 
+
+                            do_action('job_bm_my_jobs_loop', $job_id);
 
 
                             ?>
@@ -200,11 +202,90 @@ endif;
 
 
 
+add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_wrap_start');
+
+if(!function_exists('job_bm_my_jobs_loop_wrap_start')){
+    function job_bm_my_jobs_loop_wrap_start(){
+
+
+        ?>
+        <div class="my-job-card">
+
+
+
+        <?php
+
+    }
+}
+
+
+
+add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_header');
+
+if(!function_exists('job_bm_my_jobs_loop_header')){
+    function job_bm_my_jobs_loop_header($job_id){
+
+
+        ?>
+        <div class="card-top">
+
+            <div class="card-action">
+                <span class="job-id" title="<?php echo __('Job id.', 'job-board-manager'); ?>">#<?php echo $job_id; ?></span>
+                <span class="job-edit" title="<?php echo __('Job edit.', 'job-board-manager'); ?>"><i class="fas fa-pencil-alt"></i></span>
+                <span class="job-delete delete-job" job-id="<?php echo $job_id; ?>" title="<?php echo __('Job trash.', 'job-board-manager'); ?>"><i class="far fa-trash-alt"></i></span>
+                <span class="job-featured" title="<?php echo __('Request for featured.', 'job-board-manager'); ?>"><i class="fas fa-star"></i></span>
+                <span class="job-application" title="<?php echo __('Total application.', 'job-board-manager'); ?>"><i class="fas fa-user-clock"></i> 56</span>
+                <span class="job-hired" title="<?php echo __('Total hired.', 'job-board-manager'); ?>"><i class="fas fa-user-tie"></i> 3</span>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <?php
+
+    }
+}
+
+
+
+
+
+
+
+add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_wrap_end');
+
+if(!function_exists('job_bm_my_jobs_loop_wrap_end')){
+    function job_bm_my_jobs_loop_wrap_end(){
+
+
+        ?>
+
+        </div>
+
+        <?php
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 add_action('job_bm_my_jobs','job_bm_my_jobs_style');
 
-if(!function_exists('job_bm_my_jobs_style')):
-
+if(!function_exists('job_bm_my_jobs_style')){
     function job_bm_my_jobs_style(){
 
         $job_bm_pagination_bg_color         = get_option('job_bm_pagination_bg_color');
@@ -225,8 +306,13 @@ if(!function_exists('job_bm_my_jobs_style')):
         <?php
 
     }
+}
 
-endif;
+
+
+
+
+
 
 
 
