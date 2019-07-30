@@ -501,6 +501,12 @@ function job_bm_metabox_job_content_admin_expire_date($job_id){
     $settings_tabs_field = new settings_tabs_field();
     $job_bm_expire_date = get_post_meta($job_id, 'job_bm_expire_date', true);
 
+    $job_bm_job_expiry_days = (int) get_option('job_bm_job_expiry_days', 30);
+    $current_date = date('Y-m-d');
+    $expiry_date = strtotime($current_date. ' + '.$job_bm_job_expiry_days.' days');
+    $expiry_date = date('Y-m-d', $expiry_date);
+
+
     $args = array(
         'id'		=> 'job_bm_expire_date',
         //'parent'		=> '',
@@ -509,7 +515,7 @@ function job_bm_metabox_job_content_admin_expire_date($job_id){
         'type'		=> 'datepicker',
         'format'		=> 'yy-mm-dd',
         'value'		=> $job_bm_expire_date,
-        'default'		=> '',
+        'default'		=> $expiry_date,
         'placeholder'		=> '',
     );
 

@@ -818,10 +818,15 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
 
 
     update_post_meta($job_ID, 'job_bm_job_status', 'open');
-    update_post_meta($job_ID, 'job_bm_expire_date', '');
     update_post_meta($job_ID, 'job_bm_featured', 'no');
 
+    $job_bm_job_expiry_days = (int) get_option('job_bm_job_expiry_days', 30);
+    $current_date = date('Y-m-d');
+    $expiry_date = strtotime($current_date. ' + '.$job_bm_job_expiry_days.' days');
+    $expiry_date = date('Y-m-d', $expiry_date);
 
+
+    update_post_meta($job_ID, 'job_bm_expire_date', $expiry_date);
 }
 
 

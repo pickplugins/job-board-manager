@@ -126,6 +126,9 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     $job_bm_email_templates_data = isset($_POST['job_bm_email_templates_data']) ?  stripslashes_deep($_POST['job_bm_email_templates_data']) : array();
 
 
+
+
+
                     update_option('job_bm_list_per_page', $job_bm_list_per_page);
                     update_option('job_bm_pagination_bg_color', $job_bm_pagination_bg_color);
                     update_option('job_bm_pagination_active_bg_color', $job_bm_pagination_active_bg_color);
@@ -163,6 +166,21 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     update_option('job_bm_job_status_bg_color', $job_bm_job_status_bg_color);
                     update_option('job_bm_job_status_text_color', $job_bm_job_status_text_color);
                     update_option('job_bm_email_templates_data', $job_bm_email_templates_data);
+
+
+                    $job_bm_enable_expiry = isset($_POST['job_bm_enable_expiry']) ?  sanitize_text_field($_POST['job_bm_enable_expiry']) : '';
+                    update_option('job_bm_enable_expiry', $job_bm_enable_expiry);
+
+                    $job_bm_experied_jobs_post_status = isset($_POST['job_bm_experied_jobs_post_status']) ?  sanitize_text_field($_POST['job_bm_experied_jobs_post_status']) : '';
+                    update_option('job_bm_experied_jobs_post_status', $job_bm_experied_jobs_post_status);
+
+                    $job_bm_experied_check_recurrance = isset($_POST['job_bm_experied_check_recurrance']) ?  sanitize_text_field($_POST['job_bm_experied_check_recurrance']) : '';
+                    update_option('job_bm_experied_check_recurrance', $job_bm_experied_check_recurrance);
+
+                    $job_bm_job_expiry_days = isset($_POST['job_bm_job_expiry_days']) ?  sanitize_text_field($_POST['job_bm_job_expiry_days']) : '';
+                    update_option('job_bm_job_expiry_days', $job_bm_job_expiry_days);
+
+
 
                     ?>
                     <div class="updated notice  is-dismissible"><p><strong><?php _e('Changes Saved.', 'job-board-manager' ); ?></strong></p></div>
