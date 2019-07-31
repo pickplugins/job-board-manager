@@ -12,14 +12,6 @@ add_action('job_bm_welcome_tabs_content_start', 'job_bm_welcome_tabs_content_sta
 if(!function_exists('job_bm_welcome_tabs_content_start')) {
     function job_bm_welcome_tabs_content_start($tab){
 
-        $settings_tabs_field = new settings_tabs_field();
-
-        $job_bm_list_per_page = get_option('job_bm_list_per_page');
-        $job_bm_pagination_bg_color = get_option('job_bm_pagination_bg_color');
-        $job_bm_pagination_active_bg_color = get_option('job_bm_pagination_active_bg_color');
-        $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
-
-
 
         ?>
 
@@ -302,16 +294,6 @@ add_action('job_bm_welcome_tabs_content_done', 'job_bm_welcome_tabs_content_done
 if(!function_exists('job_bm_welcome_tabs_content_done')) {
     function job_bm_welcome_tabs_content_done($tab){
 
-        $settings_tabs_field = new settings_tabs_field();
-
-
-
-
-        $page_list = job_bm_page_list_id();
-
-        $page_list = array_merge($page_list, array('create_new'=> '-- Create new page --'))
-
-
         ?>
         <div class="section">
 
@@ -329,4 +311,53 @@ if(!function_exists('job_bm_welcome_tabs_content_done')) {
 
     }
 }
+
+
+
+
+add_action('job_bm_welcome_submit', 'job_bm_welcome_submit');
+
+if(!function_exists('job_bm_welcome_submit')) {
+    function job_bm_welcome_submit($form_data){
+
+
+        $job_bm_list_per_page = isset($form_data['job_bm_list_per_page']) ? $form_data['job_bm_list_per_page'] : '';
+        $job_bm_account_required_post_job = isset($form_data['job_bm_account_required_post_job']) ? $form_data['job_bm_account_required_post_job'] : '';
+        $job_bm_submitted_job_status = isset($form_data['job_bm_submitted_job_status']) ? $form_data['job_bm_submitted_job_status'] : '';
+        $job_bm_can_user_edit_published_jobs = isset($form_data['job_bm_can_user_edit_published_jobs']) ? $form_data['job_bm_can_user_edit_published_jobs'] : '';
+        $job_bm_can_user_delete_jobs = isset($form_data['job_bm_can_user_delete_jobs']) ? $form_data['job_bm_can_user_delete_jobs'] : '';
+        $job_bm_can_user_delete_application = isset($form_data['job_bm_can_user_delete_application']) ? $form_data['job_bm_can_user_delete_application'] : '';
+        $job_bm_application_methods = isset($form_data['job_bm_application_methods']) ? $form_data['job_bm_application_methods'] : '';
+        $job_bm_salary_currency = isset($form_data['job_bm_salary_currency']) ? $form_data['job_bm_salary_currency'] : '';
+
+        $job_bm_archive_page_id = isset($form_data['job_bm_archive_page_id']) ? $form_data['job_bm_archive_page_id'] : '';
+        $job_bm_job_submit_page_id = isset($form_data['job_bm_job_submit_page_id']) ? $form_data['job_bm_job_submit_page_id'] : '';
+        $job_bm_job_edit_page_id = isset($form_data['job_bm_job_edit_page_id']) ? $form_data['job_bm_job_edit_page_id'] : '';
+        $job_bm_job_login_page_id = isset($form_data['job_bm_job_login_page_id']) ? $form_data['job_bm_job_login_page_id'] : '';
+
+
+
+
+        update_option('job_bm_list_per_page', $job_bm_list_per_page);
+        update_option('job_bm_account_required_post_job', $job_bm_account_required_post_job);
+        update_option('job_bm_submitted_job_status', $job_bm_submitted_job_status);
+        update_option('job_bm_submitted_job_status', $job_bm_submitted_job_status);
+        update_option('job_bm_can_user_edit_published_jobs', $job_bm_can_user_edit_published_jobs);
+        update_option('job_bm_can_user_delete_jobs', $job_bm_can_user_delete_jobs);
+        update_option('job_bm_can_user_delete_application', $job_bm_can_user_delete_application);
+        update_option('job_bm_application_methods', $job_bm_application_methods);
+        update_option('job_bm_salary_currency', $job_bm_salary_currency);
+
+
+
+
+
+
+
+    }
+}
+
+
+
+
 
