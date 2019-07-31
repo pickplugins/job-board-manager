@@ -18,8 +18,12 @@ class class_job_bm_shortcodes_dashboard{
 
         include( job_bm_plugin_dir . 'templates/job-dashboard/job-dashboard.php');
 
+        wp_enqueue_script( 'job-bm-notice' );
         wp_enqueue_style( 'font-awesome-5' );
         wp_enqueue_style( 'job-bm-dashboard' );
+        wp_enqueue_style( 'job-bm-notice' );
+
+
 
         return ob_get_clean();
     }

@@ -23,8 +23,11 @@ jQuery(document).ready(function($) {
 						if(hired =='no'){
 
 							$(this).removeClass('hired');
+							job_bm_notice('fail', 'Applicant not hired');
 						}else{
 							$(this).addClass('hired');
+							job_bm_notice('success', 'Applicant hired');
+
 						}
 
 						$(this).html('<i class="fas fa-medal"></i>');
@@ -56,9 +59,12 @@ jQuery(document).ready(function($) {
 
 						$(this).removeClass('trashed');
 						$(this).fadeIn();
+
+						job_bm_notice('fail', 'Application not trashed');
 					}else{
 						$(this).addClass('trashed');
 						$(this).parent().parent().parent().fadeOut();
+						job_bm_notice('fail', 'Application trashed');
 					}
 
 					$(this).html('<i class="far fa-trash-alt"></i>');

@@ -23,6 +23,8 @@ class class_job_bm_settings{
 
 		add_submenu_page( 'edit.php?post_type=job', __( 'Settings', 'job-board-manager' ), __( 'Settings', 'job-board-manager' ), 'manage_options', 'job_bm_settings', array( $this, 'settings_page' ) );
 
+        add_submenu_page( 'edit.php?post_type=job', __( 'Welcome', 'job-board-manager' ), __( 'Welcome', 'job-board-manager' ), 'manage_options', 'job_bm_welcome', array( $this, 'job_bm_welcome' ) );
+
 		do_action( 'job_bm_action_admin_menus' );
 		
 	}
@@ -37,9 +39,9 @@ class class_job_bm_settings{
 		include( 'menu/help.php' );
 		}	
 
-	public function addons_page(){
+	public function job_bm_welcome(){
 		
-		include( 'menu/addons.php' );
+		include( 'menu/welcome.php' );
 		}
 	
 	public function emails_templates(){

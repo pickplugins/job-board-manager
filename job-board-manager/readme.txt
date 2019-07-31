@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.4
+	Stable tag: 2.1.5
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,16 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.5 =
+    * 31/07/2019 - update - My applications redesigned.
+    * 31/07/2019 - add - User can trash their own application,
+    * 31/07/2019 - add - User can see application ratings.
+    * 31/07/2019 - add - User can see application hired or not hired.
+    * 31/07/2019 - add - added dashboard notice.
+    * 31/07/2019 - add - filter hook job_bm_notice_message added.
+    * 31/07/2019 - add - filter hook job_bm_notice_classes added.
+
 
 	= 2.1.4 =
     * 31/07/2019 - add - admin metabox added for job.

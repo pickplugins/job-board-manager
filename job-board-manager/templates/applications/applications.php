@@ -184,6 +184,7 @@ $current_user_job_ids =job_ids_by_user();
 
 
                 $applicant_name = !empty($applicant_name) ? $applicant_name : __('Anonymous','job-board-manager');
+                $application_hired_text = ($application_hired =='yes') ?__('Hired','job-board-manager') : __('Hire','job-board-manager');
 
 
                 $job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
@@ -194,7 +195,7 @@ $current_user_job_ids =job_ids_by_user();
                     <div class="card-top">
                         <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                         <div class="application-action">
-                            <span title="<?php echo __('Hire','job-board-manager'); ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
+                            <span title="<?php echo $application_hired_text; ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
                             <span title="<?php echo __('Trash','job-board-manager'); ?>" class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
                             <span title="<?php echo __('Comments','job-board-manager'); ?>" class="comments"><i class="far fa-comments"></i></span>
                         </div>

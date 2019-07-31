@@ -129,21 +129,13 @@ $current_user_job_ids =job_ids_by_user();
             'type' => 'CHAR',
         );
 
-        $meta_query[] = array(
-            'key' => 'job_bm_am_job_id',
-            'value' => $current_user_job_ids,
-            'compare' => 'IN',
-            //'type' => 'CHAR',
-        );
-
-
 		$wp_query = new WP_Query(
 			array (
 				'post_type' => 'application',
 				'orderby' => 'date',
 				'order' => 'DESC',
                 'meta_query' => $meta_query,
-				//'author' => $userid,
+				'author' => $userid,
 				'posts_per_page' => $job_bm_list_per_page,
 				'paged' => $paged,
                 )
@@ -188,18 +180,20 @@ $current_user_job_ids =job_ids_by_user();
 
                 $job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
 
+                $application_hired_text = ($application_hired =='yes') ?__('Hired','job-board-manager') : __('Not hired','job-board-manager');
+
 
                 ?>
                 <div class="application-card">
                     <div class="card-top">
                         <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                         <div class="application-action">
-                            <span title="<?php echo __('Hire','job-board-manager'); ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
+                            <span title="<?php  echo $application_hired_text; ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
                             <span title="<?php echo __('Trash','job-board-manager'); ?>" class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
                             <span title="<?php echo __('Comments','job-board-manager'); ?>" class="comments"><i class="far fa-comments"></i></span>
                         </div>
 
-                        <div current-rate="<?php echo $application_rating; ?>" application_id="<?php echo $application_id; ?>" title="<?php echo __('Ratings','job-board-manager'); ?>"  class="application-rate star">
+                        <div current-rate="<?php echo $application_rating; ?>" application_id="<?php echo $application_id; ?>" title="<?php echo sprintf(__('Job poster ratings: %s','job-board-manager'), $application_rating); ?>"  class="application-rate star">
 
                             <?php
 

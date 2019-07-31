@@ -2,6 +2,60 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
 
+
+add_action('job_bm_dashboard', 'job_bm_dashboard_notice');
+
+if(!function_exists('job_bm_dashboard_notice')){
+    function job_bm_dashboard_notice(){
+
+        /**
+         * by default "job-bm-notice" class hidden
+         * add class "has-notice" to display
+         * status class:  success, fail, error
+         */
+        ?>
+        <div id="job-bm-notice" class="job-bm-notice <?php echo apply_filters('job_bm_notice_classes',''); ?>"><?php echo apply_filters('job_bm_notice_message',''); ?></div>
+
+        <?php
+    }
+}
+
+
+
+add_filter('job_bm_notice_message','job_bm_notice_message_permalink');
+
+function job_bm_notice_message_permalink(){
+
+    $permalink_structure = get_option('permalink_structure');
+
+    if(empty($permalink_structure)):
+        return __('you are using plain permalink, please go <b>Permalink Settings</b> and update.', 'job-board-manager');
+    endif;
+
+}
+
+
+add_filter('job_bm_notice_classes','job_bm_notice_classes_permalink');
+
+function job_bm_notice_classes_permalink($classes){
+
+    $permalink_structure = get_option('permalink_structure');
+
+    if(empty($permalink_structure)):
+        return 'has-notice error';
+    endif;
+
+
+}
+
+
+
+
+
+
+
+
+
 add_action('job_bm_dashboard', 'job_bm_dashboard');
 
 if(!function_exists('job_bm_dashboard')){
