@@ -251,8 +251,12 @@ class class_job_bm_post_meta_application{
 		$job_bm_am_resume_id = isset($_POST['job_bm_am_resume_id']) ? sanitize_text_field($_POST['job_bm_am_resume_id']) : '';
 
 
-		if($application_trash =='yes')
-        update_post_meta($post_id, 'application_trash', $application_trash);
+		if($application_trash =='yes'){
+            update_post_meta($post_id, 'application_trash', $application_trash);
+        }else{
+            delete_post_meta($post_id, 'application_trash');
+        }
+
 
 		update_post_meta($post_id, 'user_id', $user_id);
         update_post_meta($post_id, 'applicant_name', $applicant_name);

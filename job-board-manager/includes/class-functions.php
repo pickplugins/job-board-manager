@@ -320,59 +320,6 @@ class class_job_bm_functions{
 	}
 
 
-	public function post_type_input_fields_admin(){
-
-
-		$input_fields['job_bm_job_status']=array(
-			'meta_key'=>'job_bm_job_status',
-			'css_class'=>'job_status',
-			'required'=>'yes', // (yes, no) is this field required.
-			'display'=>'yes', // (yes, no)
-			'title'=>__('Job status', 'job-board-manager'),
-			'option_details'=>__('Select job status.', 'job-board-manager'),
-			'input_type'=>'select', // text, radio, checkbox, select,
-			'input_values'=> '', // could be array
-			'input_args'=> $this->job_status_list(),
-		);
-
-		$input_fields['job_bm_expire_date']=array(
-			'meta_key'=>'job_bm_expire_date',
-			'css_class'=>'expire_date',
-			'required'=>'no', // (yes, no) is this field required.
-			'display'=>'yes', // (yes, no)
-			'title'=>__('Expiry date', 'job-board-manager'),
-			'option_details'=>__('Job expiry date', 'job-board-manager'),
-			'input_type'=>'text', // text, radio, checkbox, select,
-			'input_values'=> job_bm_get_date(), // could be array
-		);
-
-
-
-		$input_fields['job_bm_featured']=array(
-			'meta_key'=>'job_bm_featured',
-			'css_class'=>'featured',
-			'required'=>'no', // (yes, no) is this field required.
-			'display'=>'yes', // (yes, no)
-			'title'=>__('Featured job', 'job-board-manager'),
-			'option_details'=>__('Want to get featured listing ?', 'job-board-manager'),
-			'input_type'=>'select', // text, radio, checkbox, select,
-			'input_values'=>'no', // could be array
-			'input_args'=> array('no'=>__('No', 'job-board-manager'),'yes'=>__('Yes', 'job-board-manager')),
-		);
-
-		return $input_fields;
-
-    }
-
-
-	
-	
-
-	
-
-		
-	
-
 		
 		
 	

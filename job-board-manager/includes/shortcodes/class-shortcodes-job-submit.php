@@ -12,6 +12,7 @@ class class_job_bm_shortcodes_job_submit{
     public function __construct(){
 		
 		add_shortcode( 'job_submit_form', array( $this, 'job_bm_post_job_display' ) );
+        add_shortcode( 'job_bm_job_submit', array( $this, 'job_bm_post_job_display' ) );
 
 
    		}

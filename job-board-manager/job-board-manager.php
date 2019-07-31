@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Awesome Job Board Manager.
-Version: 2.1.3
+Version: 2.1.4
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.3' );
+		define('job_bm_plugin_version', '2.1.4' );
 
 
 		// Class
@@ -67,7 +67,7 @@ class JobBoardManager{
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-count.php');
 
 
-		add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
+		//add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
 		add_action( 'wp_enqueue_scripts', array( $this, 'job_bm_front_scripts' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'job_bm_admin_scripts' ) );
         add_action( 'init', array( $this, 'textdomain' ));
@@ -168,6 +168,8 @@ class JobBoardManager{
         wp_register_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
         wp_register_style('job-bm-my-jobs', job_bm_plugin_url.'assets/front/css/job-bm-my-jobs.css');
         wp_register_style('job-bm-applications', job_bm_plugin_url.'assets/front/css/job-bm-applications.css');
+        wp_register_style('job-bm-my-applications', job_bm_plugin_url.'assets/front/css/my-applications.css');
+
 
 
 
@@ -175,6 +177,7 @@ class JobBoardManager{
         wp_register_script('job-bm-job-submit', job_bm_plugin_url.'assets/front/js/scripts-job-submit.js');
         wp_register_script('job-bm-my-jobs', job_bm_plugin_url.'assets/front/js/scripts-my-jobs.js');
         wp_register_script('job-bm-applications', job_bm_plugin_url.'assets/front/js/scripts-applications.js');
+        wp_register_script('scripts-my-applications', job_bm_plugin_url.'assets/front/js/scripts-my-applications.js');
 
 
 
@@ -185,18 +188,17 @@ class JobBoardManager{
         $screen = get_current_screen();
        //echo '<pre>'.var_export($screen, true).'</pre>';
 
-		//wp_enqueue_script('jquery');
+		wp_enqueue_script('jquery');
 		//wp_enqueue_script('jquery-ui-core');
 		//wp_enqueue_script('jquery-ui-sortable');
 		//wp_enqueue_script('jquery-ui-datepicker');
+        //wp_enqueue_media();
 
 		wp_enqueue_script('job_bm_admin_js', plugins_url( '/assets/admin/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
 		wp_localize_script('job_bm_admin_js', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
 
 		// Register Scripts
         wp_register_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
-
-
 
 
         // Register CSS & Style

@@ -20,7 +20,7 @@ $current_user_job_ids =job_ids_by_user();
 ?>
 
 <div class="nav-head"><?php echo __('Applications', 'job-board-manager'); ?></div>
-<div class="job-bm-application-list">
+<div class="job-bm-application-list job-bm-applications">
 <!--    <form class="application-search" method="get" action="--><?php //echo $_SERVER['HTTP_REFERER'];?><!--">-->
 <!---->
 <!--        --><?php

@@ -172,6 +172,64 @@ function job_bm_meta_box_salary_type($job_id){
 
     $settings_tabs_field->generate_field($args);
 
+    ?>
+    <script>
+        jQuery(document).ready(function($) {
+
+            $('#job_bm_salary_fixed').parent().parent().fadeOut();
+            $('#job_bm_salary_min').parent().parent().fadeOut();
+            $('#job_bm_salary_max').parent().parent().fadeOut();
+
+            <?php
+            if($job_bm_salary_type == 'fixed'):
+                ?>
+                $('#job_bm_salary_fixed').parent().parent().fadeIn();
+                $('#job_bm_salary_min').parent().parent().fadeOut();
+                $('#job_bm_salary_max').parent().parent().fadeOut();
+                <?php
+
+            elseif ($job_bm_salary_type == 'min-max'):
+                ?>
+                $('#job_bm_salary_min').parent().parent().fadeIn();
+                $('#job_bm_salary_max').parent().parent().fadeIn();
+                $('#job_bm_salary_fixed').parent().parent().fadeOut();
+                <?php
+            else:
+                ?>
+                $('#job_bm_salary_fixed').parent().parent().fadeOut();
+                $('#job_bm_salary_min').parent().parent().fadeOut();
+                $('#job_bm_salary_max').parent().parent().fadeOut();
+                <?php
+            endif;
+            ?>
+
+            $(document).on('change', '#job_bm_salary_type', function(){
+                var salary_type = $(this).val();
+                //alert(salary_type);
+
+                if(salary_type=='fixed'){
+
+                    $('#job_bm_salary_fixed').parent().parent().fadeIn();
+                    $('#job_bm_salary_min').parent().parent().fadeOut();
+                    $('#job_bm_salary_max').parent().parent().fadeOut();
+                }
+                else if(salary_type=='min-max'){
+
+                    $('#job_bm_salary_min').parent().parent().fadeIn();
+                    $('#job_bm_salary_max').parent().parent().fadeIn();
+                    $('#job_bm_salary_fixed').parent().parent().fadeOut();
+                }
+                else{
+                    $('#job_bm_salary_fixed').parent().parent().fadeOut();
+                    $('#job_bm_salary_min').parent().parent().fadeOut();
+                    $('#job_bm_salary_max').parent().parent().fadeOut();
+                }
+
+            })
+        })
+    </script>
+    <?php
+
 }
 
 
@@ -331,7 +389,7 @@ function job_bm_metabox_job_content_company_info_company_name($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_company_name,
         'default'		=> '',
-        'placeholder'		=> 'Google Inc',
+        'placeholder'		=> '',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -355,7 +413,7 @@ function job_bm_metabox_job_content_company_info_location($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_location,
         'default'		=> '',
-        'placeholder'		=> 'Mountain View',
+        'placeholder'		=> 'New York',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -379,7 +437,7 @@ function job_bm_metabox_job_content_company_info_address($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_address,
         'default'		=> '',
-        'placeholder'		=> '1600 Amphitheatre Parkway, Mountain View, CA',
+        'placeholder'		=> '4549 Godfrey Road',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -402,7 +460,7 @@ function job_bm_metabox_job_content_company_info_website($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_company_website,
         'default'		=> '',
-        'placeholder'		=> '',
+        'placeholder'		=> 'http://companywebsite',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -425,7 +483,7 @@ function job_bm_metabox_job_content_company_info_logo($job_id){
         //'parent'		=> '',
         'title'		=> __('Company logo','job-board-manager'),
         'details'	=> __('Upload company logo','job-board-manager'),
-        'type'		=> 'media',
+        'type'		=> 'media_url',
         'value'		=> $job_bm_company_logo,
         'default'		=> '',
         'placeholder'		=> '',

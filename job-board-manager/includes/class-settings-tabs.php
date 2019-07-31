@@ -65,7 +65,7 @@ class settings_tabs_field{
         elseif( isset($option['type']) && $option['type'] === 'custom_html')	$this->field_custom_html( $option );
         elseif( isset($option['type']) && $option['type'] === 'repeatable')	    $this->field_repeatable( $option );
         elseif( isset($option['type']) && $option['type'] === 'media')	        $this->field_media( $option );
-
+        elseif( isset($option['type']) && $option['type'] === 'media_url')	        $this->field_media_url( $option );
 
 
 
@@ -113,9 +113,10 @@ class settings_tabs_field{
         $field_name = !empty($parent) ? $parent.'['.$field_name.']' : $field_name;
 
 
+        wp_enqueue_media();
 
         ob_start();
-        //wp_enqueue_media();
+
 
         ?>
         <div id="input-wrapper-<?php echo $css_id; ?>" class="input-wrapper field-media-wrapper
@@ -162,6 +163,85 @@ class settings_tabs_field{
 
     }
 
+
+
+    public function field_media_url( $option ){
+
+
+
+        $id			= isset( $option['id'] ) ? $option['id'] : "";
+        if(empty($id)) return;
+        $css_id 			= isset( $option['css_id'] ) ? $option['css_id'] : $id;
+        $field_name 	= isset( $option['field_name'] ) ? $option['field_name'] : $id;
+        $parent 			= isset( $option['parent'] ) ? $option['parent'] : "";
+        $placeholder	= isset( $option['placeholder'] ) ? $option['placeholder'] : "";
+        $field_template 	= isset( $option['field_template'] ) ? $option['field_template'] : $this->field_template();
+        $title			= isset( $option['title'] ) ? $option['title'] : "";
+        $details 			= isset( $option['details'] ) ? $option['details'] : "";
+
+        $is_pro 	= isset( $option['is_pro'] ) ? $option['is_pro'] : false;
+        $pro_text 	= isset( $option['pro_text'] ) ? $option['pro_text'] : '';
+
+        $default			= isset( $option['default'] ) ? $option['default'] : '';
+        $value			= isset( $option['value'] ) ? $option['value'] : '';
+        $value          = !empty($value) ?  $value : $default;
+
+        $media_url	= $value;
+        $media_type	= get_post_mime_type( $value );
+        $media_title= get_the_title( $value );
+        $media_url = !empty($media_url) ? $media_url : '';
+
+        $field_name     = !empty( $field_name ) ? $field_name : $id;
+        $field_name = !empty($parent) ? $parent.'['.$field_name.']' : $field_name;
+
+
+        wp_enqueue_media();
+        ob_start();
+
+
+        ?>
+        <div id="input-wrapper-<?php echo $css_id; ?>" class="input-wrapper field-media-url-wrapper
+            field-media-wrapper-<?php echo $css_id; ?>">
+            <div class="media-preview-wrap" style="width: 150px;margin-bottom: 10px;background: #eee;padding: 5px;    text-align: center;">
+                <?php
+
+                if( "audio/mpeg" == $media_type ){
+                    ?>
+                    <div class="media-preview" class="dashicons dashicons-format-audio" style="font-size: 70px;display: inline;"></div>
+
+                    <?php
+                }
+                elseif( "images/png" == $media_type || "images/jpg" == $media_type || "images/jpeg" == $media_type ||
+                    "images/gif" == $media_type  ||
+                    "images/ico" == $media_type){
+                    ?>
+                    <img class="media-preview" src="<?php echo $media_url; ?>" style="width:100%"/>
+
+                    <?php
+                }
+
+                else {
+                    ?>
+                    <img class="media-preview" src="<?php echo $media_url; ?>" style="width:100%"/>
+
+                    <?php
+                }
+                ?>
+            </div>
+            <input type="text" placeholder="<?php echo $placeholder; ?>" name="<?php echo $field_name; ?>" id="media_input_<?php echo $css_id; ?>" value="<?php echo $value; ?>" />
+            <div class="media-upload button" id="media_upload_<?php echo $css_id; ?>"><?php echo __('Upload','job-board-manager');?></div>
+            <div class="clear button" id="media_clear_<?php echo $css_id; ?>"><?php echo __('Clear','job-board-manager');?></div>
+            <div class="error-mgs"></div>
+        </div>
+
+        <?php
+
+
+        $input_html = ob_get_clean();
+
+        echo sprintf($field_template, $title, $input_html, $details);
+
+    }
 
 
 

@@ -5,14 +5,17 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
 	$job_bm_login_enable = get_option('job_bm_login_enable');	
 	$job_bm_registration_enable = get_option('job_bm_registration_enable');
-	
+    $job_bm_can_user_delete_application = get_option('job_bm_can_user_delete_application');
+
+
+
 	$date_format = get_option( 'date_format' );
 
 
 
 	?>
 
-    <div class="nav-head"><?php echo __('Applications', 'job-board-manager'); ?></div>
+    <div class="nav-head"><?php echo __('My Application', 'job-board-manager'); ?></div>
 
 	<div class="job-bm-my-jobs">
 	<?php
@@ -81,56 +84,42 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		if ( $wp_query->have_posts() ) :
 		while ( $wp_query->have_posts() ) : $wp_query->the_post();	
 
+		    $application_id = get_the_ID();
 
 			$job_title = get_the_title();
 			$post_date = get_the_date('Y-m-d');
-			$expiry_date = get_post_meta(get_the_ID(), 'job_bm_expire_date',true);
-			$publish_status = get_post_status(get_the_ID());
-			$job_status = get_post_meta(get_the_ID(), 'job_bm_job_status',true);
-			$featured = get_post_meta(get_the_ID(), 'job_bm_featured',true);
-			$job_type = get_post_meta(get_the_ID(), 'job_bm_job_type',true);
-			
-			
-			
-			
-			$job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
 
-			if($featured=='yes'){
-				$featured = __('Yes', 'job-board-manager');
-				}
-			else{
-				$featured = __('No', 'job-board-manager');
-				}
+            $job_bm_am_job_id = get_post_meta($application_id, 'job_bm_am_job_id',true);
+
+
+
+            $job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
+
+
 
 
 			echo '<div class="single">';
 			
-			echo '<span title="'.__('Job id.', 'job-board-manager').'">#'.get_the_ID().'</span> - <a title="'.__('Job link.', 'job-board-manager').'" class="title" href="'.get_permalink().'">'.$job_title.'</a>';
-			
-			echo '<div class="clear" ></div>';
+			echo '<a title="'.__('Application ID.', 'job-board-manager').'" class="title" href="'.get_permalink().'">#'.$application_id.'</a>';
+
+			?>
+            <span class="post-date meta"><b><?php echo __('Job link:','job-board-manager'); ?></b> <a href="<?php echo get_permalink($job_bm_am_job_id); ?>"><?php echo get_the_title($job_bm_am_job_id); ?></a> </span>
+            <?php
+
+			echo '<span class="post-date meta"><b>'.__('Date:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';
+
 
 			
-			echo '<span class="post-date meta"><b>'.__('Published:', 'job-board-manager').'</b> '.date_i18n($date_format,strtotime($post_date)).'</span>';
-			echo '<span class="publish-status meta"><b>'.__('Publish Status:', 'job-board-manager').'</b> '.$publish_status.'</span>';
+
+
 			
-			if(!empty($job_status_filters[$job_status]))
-			echo '<span class="job-status meta"><b>'.__('Job Status:', 'job-board-manager').'</b> '.$job_status_filters[$job_status].'</span>';
-			
-			echo '<span class="featured meta"><b>'.__('Featured:', 'job-board-manager').'</b> '.$featured.'</span>';
-			
-			if(!empty($job_type_filters[$job_type]))
-			echo '<span class="type meta"><b>'.__('Job Type:', 'job-board-manager').'</b> '.$job_type_filters[$job_type].'</span>';
-			
-			if(!empty($job_level_filters[$job_label]))
-			echo '<span class="level meta"><b>'.__('Job Level:', 'job-board-manager').'</b> '.$job_level_filters[$job_label].'</span>';
+
 
 			echo '<div >';
 			
-			if($display_edit == 'yes'){
-				echo '<a target="_blank" class="edit-link" href="'.$job_bm_job_edit_page_url.'?job_id='.get_the_ID().'" ><i class="fas fa-pen"></i> '.__('Edit', 'job-board-manager').'</a>';
-				}
+
 			
-			if($display_delete == 'yes'){
+			if($job_bm_can_user_delete_application == 'yes'){
 				echo '<span job-id="'.get_the_ID().'" class="delete-job" href="" ><i class="fas fa-trash"></i> '.__('Delete', 'job-board-manager').'</span>';
 				}
 			
@@ -168,7 +157,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 		
 		}
 	else{
-		echo sprintf(__('Please <a href="%s">login</a> to see your job list.', 'job-board-manager' ), $job_bm_job_login_page_url );
+		echo sprintf(__('Please <a href="%s">login</a> to see your application list.', 'job-board-manager' ), $job_bm_job_login_page_url );
 		
 		}
 

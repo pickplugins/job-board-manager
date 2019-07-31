@@ -4,11 +4,11 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.3
+	Stable tag: 2.1.4
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	Awesome Job Board Manager
+	Job Board Manager create advance job site.
 
 == Description ==
 
@@ -46,9 +46,9 @@ Alow, user to edit their own job after publish the job, you can display job edit
 User can apply for the jobs, job poster can see application from dashboard, can give star ratings, make trash, hire applicant, and communicate via email, application also display resume or attachment if available.
 
 
-# Translation
+**Translation**
 
-Plugin is translation ready , please find the 'en.po' for default transaltion file under 'languages' folder and add your own translation. you can also contribute in translation, please contact us http://www.pickplugins.com/contact/
+Please contribute here [https://translate.wordpress.org/projects/wp-plugins/job-board-manager/](https://translate.wordpress.org/projects/wp-plugins/job-board-manager/)
 
 
 Contributors 
@@ -86,6 +86,15 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.4 =
+    * 31/07/2019 - add - admin metabox added for job.
+    * 31/07/2019 - add - filter hook job_bm_metabox_job_navs added
+    * 31/07/2019 - add - action hook job_bm_metabox_job_content_$id added
+    * 31/07/2019 - add - action hook job_bm_meta_box_save_job added
+    * 31/07/2019 - fix - translation issue fixed for missed string.
+
+
 
 	= 2.1.3 =
     * 30/07/2019 - add - My Jobs content redesigned, display featured icon, application count icon, hired count icons

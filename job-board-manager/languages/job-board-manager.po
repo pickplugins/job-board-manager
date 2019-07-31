@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-07-30 23:48+0600\n"
-"PO-Revision-Date: 2019-07-30 23:48+0600\n"
+"POT-Creation-Date: 2019-07-31 10:16+0600\n"
+"PO-Revision-Date: 2019-07-31 10:16+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -164,8 +164,8 @@ msgstr ""
 msgid "80,001-1,00,000"
 msgstr ""
 
-#: includes/class-functions.php:98 includes/functions/functions.php:386
-#: includes/functions/functions.php:407
+#: includes/class-functions.php:98 includes/functions/functions.php:313
+#: includes/functions/functions.php:334
 msgid "None"
 msgstr ""
 
@@ -227,70 +227,6 @@ msgstr ""
 
 #: includes/class-functions.php:310
 msgid "Job Dashboard"
-msgstr ""
-
-#: includes/class-functions.php:331 includes/class-post-meta-job-hook.php:452
-msgid "Job status"
-msgstr ""
-
-#: includes/class-functions.php:332 includes/class-post-meta-job-hook.php:453
-msgid "Select job status."
-msgstr ""
-
-#: includes/class-functions.php:343 includes/class-post-meta-job-hook.php:503
-msgid "Expiry date"
-msgstr ""
-
-#: includes/class-functions.php:344
-msgid "Job expiry date"
-msgstr ""
-
-#: includes/class-functions.php:356 includes/class-post-meta-job-hook.php:478
-msgid "Featured job"
-msgstr ""
-
-#: includes/class-functions.php:357
-msgid "Want to get featured listing ?"
-msgstr ""
-
-#: includes/class-functions.php:360 includes/class-post-meta-job-hook.php:483
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:570
-#: includes/functions/functions-settings.php:585
-#: includes/functions/functions-settings.php:599
-#: includes/functions/functions-settings.php:614
-#: includes/functions/functions-settings.php:795
-#: includes/functions/functions-settings.php:800
-#: includes/functions/functions-settings.php:1045
-#: includes/functions/functions-settings.php:1145
-#: includes/functions/functions-settings.php:1159
-#: templates/applications/applications-hook.php:102
-msgid "No"
-msgstr ""
-
-#: includes/class-functions.php:360 includes/class-post-meta-job-hook.php:483
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:570
-#: includes/functions/functions-settings.php:585
-#: includes/functions/functions-settings.php:599
-#: includes/functions/functions-settings.php:614
-#: includes/functions/functions-settings.php:783
-#: includes/functions/functions-settings.php:788
-#: includes/functions/functions-settings.php:1045
-#: includes/functions/functions-settings.php:1145
-#: includes/functions/functions-settings.php:1159
-#: templates/applications/applications-hook.php:99
-msgid "Yes"
 msgstr ""
 
 #: includes/class-post-meta-application.php:23
@@ -401,92 +337,154 @@ msgstr ""
 msgid "Select salary type."
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:192
+#: includes/class-post-meta-job-hook.php:250
 msgid "Fixed salary"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:193
+#: includes/class-post-meta-job-hook.php:251
 msgid "Salary fixed, ex: 1200"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:217
+#: includes/class-post-meta-job-hook.php:275
 msgid "Minimum salary"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:218
+#: includes/class-post-meta-job-hook.php:276
 msgid "Minimum salary amount, ex: 5000"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:242
+#: includes/class-post-meta-job-hook.php:300
 msgid "Maximum salary"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:243
+#: includes/class-post-meta-job-hook.php:301
 msgid "Maximum salary amount, ex: 1000"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:267
-#: includes/class-post-meta-job-hook.php:290
+#: includes/class-post-meta-job-hook.php:325
 #: includes/functions/functions-settings.php:193
 msgid "Salary currency"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:268
-#: includes/class-post-meta-job-hook.php:291
+#: includes/class-post-meta-job-hook.php:326
 msgid "Write salary currency, ex: $"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:310
+#: includes/class-post-meta-job-hook.php:348
+msgid "Contact email"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:349
+msgid "Write your contact email"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:368
 #: templates/job-submit/job-submit-hook.php:430
 msgid "Company Information"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:329
+#: includes/class-post-meta-job-hook.php:387
 msgid "Company name"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:330
+#: includes/class-post-meta-job-hook.php:388
 msgid "Write your company name"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:353
+#: includes/class-post-meta-job-hook.php:411
 #: templates/job-archive/job-archive-hook.php:50
 msgid "Location"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:354
+#: includes/class-post-meta-job-hook.php:412
 msgid "Write company location, use city or state. ex: New Work"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:377
+#: includes/class-post-meta-job-hook.php:435
 msgid "Address"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:378
+#: includes/class-post-meta-job-hook.php:436
 msgid "Write company address"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:400
+#: includes/class-post-meta-job-hook.php:458
 msgid "Company website"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:401
+#: includes/class-post-meta-job-hook.php:459
 msgid "Write company website"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:422
+#: includes/class-post-meta-job-hook.php:484
 msgid "Company logo"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:423
+#: includes/class-post-meta-job-hook.php:485
 msgid "Upload company logo"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:479
+#: includes/class-post-meta-job-hook.php:514
+msgid "Job status"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:515
+msgid "Select job status."
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:540
+msgid "Featured job"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:541
 msgid "Choose job as featured"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:504
+#: includes/class-post-meta-job-hook.php:545
+#: includes/functions/functions-settings.php:258
+#: includes/functions/functions-settings.php:273
+#: includes/functions/functions-settings.php:333
+#: includes/functions/functions-settings.php:348
+#: includes/functions/functions-settings.php:431
+#: includes/functions/functions-settings.php:483
+#: includes/functions/functions-settings.php:570
+#: includes/functions/functions-settings.php:585
+#: includes/functions/functions-settings.php:599
+#: includes/functions/functions-settings.php:614
+#: includes/functions/functions-settings.php:795
+#: includes/functions/functions-settings.php:800
+#: includes/functions/functions-settings.php:1045
+#: includes/functions/functions-settings.php:1145
+#: includes/functions/functions-settings.php:1159
+#: templates/applications/applications-hook.php:102
+msgid "No"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:545
+#: includes/functions/functions-settings.php:258
+#: includes/functions/functions-settings.php:273
+#: includes/functions/functions-settings.php:333
+#: includes/functions/functions-settings.php:348
+#: includes/functions/functions-settings.php:431
+#: includes/functions/functions-settings.php:483
+#: includes/functions/functions-settings.php:570
+#: includes/functions/functions-settings.php:585
+#: includes/functions/functions-settings.php:599
+#: includes/functions/functions-settings.php:614
+#: includes/functions/functions-settings.php:783
+#: includes/functions/functions-settings.php:788
+#: includes/functions/functions-settings.php:1045
+#: includes/functions/functions-settings.php:1145
+#: includes/functions/functions-settings.php:1159
+#: templates/applications/applications-hook.php:99
+msgid "Yes"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:571
+msgid "Expiry date"
+msgstr ""
+
+#: includes/class-post-meta-job-hook.php:572
 msgid "Choose custom job expiry date"
 msgstr ""
 
@@ -504,7 +502,7 @@ msgstr ""
 msgid "%s Company"
 msgstr ""
 
-#: includes/class-post-meta-job.php:63
+#: includes/class-post-meta-job.php:64
 #, php-format
 msgid "%s Admin action"
 msgstr ""
@@ -625,17 +623,17 @@ msgstr ""
 msgid "Add New"
 msgstr ""
 
-#: includes/class-settings-tabs.php:151
+#: includes/class-settings-tabs.php:152 includes/class-settings-tabs.php:232
 #: templates/job-edit/job-edit-hook.php:563
 #: templates/job-submit/job-submit-hook.php:536
 msgid "Upload"
 msgstr ""
 
-#: includes/class-settings-tabs.php:152
+#: includes/class-settings-tabs.php:153 includes/class-settings-tabs.php:233
 msgid "Clear"
 msgstr ""
 
-#: includes/class-settings-tabs.php:265 includes/class-settings-tabs.php:521
+#: includes/class-settings-tabs.php:345 includes/class-settings-tabs.php:601
 msgid "Add"
 msgstr ""
 
@@ -1039,32 +1037,26 @@ msgid "Write from email address."
 msgstr ""
 
 #: includes/functions/functions-settings.php:775
-#: includes/menu/emails-templates.php:109
 msgid "Enable ?"
 msgstr ""
 
 #: includes/functions/functions-settings.php:808
-#: includes/menu/emails-templates.php:132
 msgid "Email To:"
 msgstr ""
 
 #: includes/functions/functions-settings.php:812
-#: includes/menu/emails-templates.php:137
 msgid "Email from name:"
 msgstr ""
 
 #: includes/functions/functions-settings.php:816
-#: includes/menu/emails-templates.php:141
 msgid "Email from:"
 msgstr ""
 
 #: includes/functions/functions-settings.php:820
-#: includes/menu/emails-templates.php:150
 msgid "Email Subject:"
 msgstr ""
 
 #: includes/functions/functions-settings.php:828
-#: includes/menu/emails-templates.php:159
 msgid "Email Body:"
 msgstr ""
 
@@ -1206,48 +1198,16 @@ msgstr ""
 msgid "Choose aplication method on job post."
 msgstr ""
 
-#: includes/functions/functions.php:256 includes/functions/functions.php:283
+#: includes/functions/functions.php:183 includes/functions/functions.php:210
 msgid "You are not authorized to delete this job."
 msgstr ""
 
-#: includes/functions/functions.php:272
+#: includes/functions/functions.php:199
 msgid "Job Deleted."
 msgstr ""
 
-#: includes/functions/functions.php:276
+#: includes/functions/functions.php:203
 msgid "Something going wrong."
-msgstr ""
-
-#: includes/menu/addons.php:180
-msgid "Version:"
-msgstr ""
-
-#: includes/menu/addons.php:190
-msgid "Price:"
-msgstr ""
-
-#: includes/menu/addons.php:191
-msgid "Download"
-msgstr ""
-
-#: includes/menu/addons.php:223
-msgid " - Addons"
-msgstr ""
-
-#: includes/menu/emails-templates.php:197 includes/menu/settings-new.php:168
-msgid "Changes Saved."
-msgstr ""
-
-#: includes/menu/emails-templates.php:212
-msgid " - Emails Templates"
-msgstr ""
-
-#: includes/menu/emails-templates.php:224 includes/menu/settings-new.php:208
-msgid "Save Changes"
-msgstr ""
-
-#: includes/menu/emails-templates.php:225
-msgid "Reset"
 msgstr ""
 
 #: includes/menu/help.php:27
@@ -1317,6 +1277,14 @@ msgstr ""
 #: includes/menu/settings-new.php:79
 #, php-format
 msgid "%s Settings"
+msgstr ""
+
+#: includes/menu/settings-new.php:186
+msgid "Changes Saved."
+msgstr ""
+
+#: includes/menu/settings-new.php:226
+msgid "Save Changes"
 msgstr ""
 
 #: includes/shortcodes/class-shortcodes-job-edit.php:31
@@ -1712,7 +1680,7 @@ msgid ""
 "ERROR: Please <a target=\"_blank\" href=\"%s\">login</a> to submit question."
 msgstr ""
 
-#: templates/job-submit/job-submit-hook.php:840
+#: templates/job-submit/job-submit-hook.php:845
 msgid "Thanks for submit your job, we will review soon."
 msgstr ""
 

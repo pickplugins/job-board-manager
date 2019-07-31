@@ -237,9 +237,11 @@ $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : 
             do_action('job_bm_job_archive_loop_no_post');
 
         endif;
-		
 
-	
+
+
+
+
         ?>
 
 	</div>	

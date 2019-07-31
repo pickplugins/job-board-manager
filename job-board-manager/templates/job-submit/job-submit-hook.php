@@ -449,7 +449,7 @@ function job_bm_job_submit_form_company_name(){
     <div class="form-field-wrap">
         <div class="field-title"><?php esc_html_e('Company name','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="Google Inc" type="text" value="<?php echo $job_bm_company_name; ?>" name="job_bm_company_name">
+            <input placeholder="" type="text" value="<?php echo $job_bm_company_name; ?>" name="job_bm_company_name">
             <p class="field-details"><?php esc_html_e('Write your company name','job-board-manager');
                 ?></p>
         </div>
@@ -469,7 +469,7 @@ function job_bm_job_submit_form_location(){
     <div class="form-field-wrap">
         <div class="field-title"><?php esc_html_e('Location','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="Mountain View" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
+            <input placeholder="New York" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
             <p class="field-details"><?php esc_html_e('Write company location, use city or state. ex: New Work','job-board-manager');
                 ?></p>
         </div>
@@ -488,7 +488,7 @@ function job_bm_job_submit_form_address(){
     <div class="form-field-wrap">
         <div class="field-title"><?php esc_html_e('Address','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="1600 Amphitheatre Parkway, Mountain View, CA" type="text" value="<?php echo $job_bm_address; ?>" name="job_bm_address">
+            <input placeholder="4549 Godfrey Road" type="text" value="<?php echo $job_bm_address; ?>" name="job_bm_address">
             <p class="field-details"><?php esc_html_e('Write company address','job-board-manager');
                 ?></p>
         </div>
@@ -508,7 +508,7 @@ function job_bm_job_submit_form_company_website(){
     <div class="form-field-wrap">
         <div class="field-title"><?php esc_html_e('Company website','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="http://domain.com" type="text" value="<?php echo $job_bm_company_website; ?>" name="job_bm_company_website">
+            <input placeholder="http://companywebsite.com" type="text" value="<?php echo $job_bm_company_website; ?>" name="job_bm_company_website">
             <p class="field-details"><?php esc_html_e('Write company website','job-board-manager');
                 ?></p>
         </div>
