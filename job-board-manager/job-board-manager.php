@@ -60,7 +60,7 @@ class JobBoardManager{
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-crons.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-applications.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-reports.php');
+		//require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-reports.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/account-registration.php');
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-emails.php');
         require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-settings.php');
@@ -69,6 +69,7 @@ class JobBoardManager{
 
 
 
+        add_action( 'activated_plugin', array( $this, 'redirect_welcome' ));
 
 		//add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
 		add_action( 'wp_enqueue_scripts', array( $this, 'job_bm_front_scripts' ) );
@@ -155,8 +156,19 @@ class JobBoardManager{
 		
 		do_action( 'job_bm_deactivation' );
 		}
-		
-		
+
+    public function redirect_welcome($plugin){
+
+        $job_bm_welcome = get_option('job_bm_welcome');
+
+
+        if( empty($job_bm_welcome) ) {
+            if( $plugin == 'job-board-manager/job-board-manager.php' ) {
+                wp_safe_redirect( admin_url( 'edit.php?post_type=job&page=job_bm_welcome' ) );
+                exit;
+            }
+        }
+    }
 
 		
 	public function job_bm_front_scripts(){

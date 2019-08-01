@@ -20,6 +20,16 @@
     font-size: 20px;
 }
 
+
+
+
+
+
+
+
+
+
+
 .welcome-tabs .float-right{
     float: right;
 }
@@ -70,7 +80,7 @@ text-align: center;
 
 .welcome-tabs .tab-nav:after {
     content: "";
-    width: 65%;
+    width: 60px;
     height: 2px;
     /* background: #ddd; */
     top: 40%;
@@ -84,6 +94,9 @@ text-align: center;
     width: 0%;
 }
 
+.welcome-tabs .tab-nav.done:after{
+    border-bottom: 2px dashed #2fbd1a;
+}
 
 
 .welcome-tabs .tab-content{

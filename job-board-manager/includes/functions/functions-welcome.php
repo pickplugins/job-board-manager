@@ -5,7 +5,41 @@
 */
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
-	
+
+
+
+function job_bm_review_new_settings() {
+
+    $job_bm_review_settings = get_option('job_bm_review_settings');
+
+    var_dump($job_bm_review_settings);
+
+    if(empty($job_bm_review_settings)):
+        $class = 'notice notice-error';
+        $message = __( '<b>Job Board Manager</b> has redesigned, please review <a href="'.admin_url('edit.php?post_type=job&page=job_bm_settings').'">settings</a> .', 'job-board-manager' );
+
+        printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), ( $message ) );
+    endif;
+
+
+
+
+
+}
+//add_action( 'admin_notices', 'job_bm_review_new_settings' );
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 add_action('job_bm_welcome_tabs_content_start', 'job_bm_welcome_tabs_content_start');
 
@@ -18,10 +52,10 @@ if(!function_exists('job_bm_welcome_tabs_content_start')) {
         <h2>Welcome to Job Board Manager Setup</h2>
         <p>Thanks for choosing Job Board Manager for your job site, Please go step by step and choose some options to get started.</p>
         <p>If you have any issue during setup please contact us for help and you can post on our forum by creating support tickets.</p>
-        <p><a class="button" href="#">Create Ticket</a></p>
+        <p><a target="_blank" class="button" href="https://www.pickplugins.com/forum/">Create Ticket</a></p>
 
-        <p>We spend thousand hours to build this plugin for you, continuously updating, fixing bugs, add new features, creating add-ons, solving user issues and many more. we do live by creating plugin like Job Board Manager, we hope your wise feedback and reviews on plugin page. </p>
-        <p>  <a class="button" href="#">Write a reviews</a></p>
+        <p>We spend thousand hours to build this plugin for you, continuously updating, fixing bugs, add new features, creating add-ons, solving user issues and many more. we do live by creating plugin like Job Board Manager, we hope your wise feedback and reviews on plugin page. Give us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+        <p><a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Write a reviews</a></p>
     <?php
 
 
@@ -349,7 +383,91 @@ if(!function_exists('job_bm_welcome_submit')) {
         update_option('job_bm_salary_currency', $job_bm_salary_currency);
 
 
+        if($job_bm_archive_page_id =='create_new'){
 
+            $page_id = wp_insert_post(
+                array(
+                    'post_title'    => __('Job Archive','job-board-manager'),
+                    'post_content'  => '[job_bm_archive]',
+                    'post_status'   => 'publish',
+                    'post_type'   	=> 'page',
+
+                )
+            );
+
+            update_option('job_bm_archive_page_id', $page_id);
+
+        }else{
+            update_option('job_bm_archive_page_id', $job_bm_archive_page_id);
+
+        }
+
+
+        if($job_bm_job_submit_page_id =='create_new'){
+
+            $page_id = wp_insert_post(
+                array(
+                    'post_title'    => __('Job Submit','job-board-manager'),
+                    'post_content'  => '[job_submit_form]',
+                    'post_status'   => 'publish',
+                    'post_type'   	=> 'page',
+
+                )
+            );
+
+            update_option('job_bm_job_submit_page_id', $page_id);
+
+        }else{
+            update_option('job_bm_job_submit_page_id', $job_bm_job_submit_page_id);
+
+        }
+
+
+
+        if($job_bm_job_edit_page_id =='create_new'){
+
+            $page_id = wp_insert_post(
+                array(
+                    'post_title'    => __('Job Edit','job-board-manager'),
+                    'post_content'  => '[job_bm_job_edit]',
+                    'post_status'   => 'publish',
+                    'post_type'   	=> 'page',
+
+                )
+            );
+
+            update_option('job_bm_job_edit_page_id', $page_id);
+
+        }else{
+            update_option('job_bm_job_edit_page_id', $job_bm_job_edit_page_id);
+
+        }
+
+
+
+        if($job_bm_job_login_page_id =='create_new'){
+
+            $page_id = wp_insert_post(
+                array(
+                    'post_title'    => __('Job Dashboard','job-board-manager'),
+                    'post_content'  => '[job_bm_dashboard]',
+                    'post_status'   => 'publish',
+                    'post_type'   	=> 'page',
+
+                )
+            );
+
+            update_option('job_bm_job_login_page_id', $page_id);
+
+        }else{
+            update_option('job_bm_job_login_page_id', $job_bm_job_login_page_id);
+
+        }
+
+
+
+
+        update_option('job_bm_welcome', 'done');
 
 
 

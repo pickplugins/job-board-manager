@@ -34,7 +34,19 @@ jQuery(document).ready(function($){
                 tab.classList.remove('active');
                 content.classList.remove('active');
             }
+
+
+
+
         }
+
+        for(j=0; j <= currentTabIndex; j++){
+            tab = welcomeTabs[j];
+            tab.classList.add('done');
+        }
+
+
+
 
         if(typeof welcomeTabs[currentTabIndex+1] != 'undefined'){
             welcomeTabs[currentTabIndex+1].classList.add('active');
@@ -62,6 +74,9 @@ jQuery(document).ready(function($){
                 content.classList.remove('active');
             }
         }
+
+        welcomeTabs[currentTabIndex-1].classList.remove('done');
+
 
         if(typeof welcomeTabs[currentTabIndex-1] != 'undefined'){
             welcomeTabs[currentTabIndex-1].classList.add('active');
