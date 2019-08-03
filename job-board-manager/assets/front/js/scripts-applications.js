@@ -1,6 +1,21 @@
 jQuery(document).ready(function($) {
 
 
+	$(document).on('click', '.job-bm-applications .application-card .comments', function(){
+
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$('.comment-list').fadeOut();
+			$('.comment-form-wrap').fadeOut();
+		}else{
+			$(this).addClass('active');
+			$('.comment-list').fadeIn();
+			$('.comment-form-wrap').fadeIn();
+		}
+
+
+	})
+
 		$(document).on('click', '.job-bm-applications .application-card .hire', function(){
 
 			var application_id = $(this).attr('application-id');

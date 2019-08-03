@@ -313,9 +313,18 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
                     $active_id = 9999;
                     $i = 0;
+
                     foreach ($job_bm_application_methods as $method):
 
 
+                        if($method == 'none'){
+                            ?>
+                            <div class=""><?php echo apply_filters('job_bm_application_method_none_text', __('Sorry! 
+                            application is not available.')); ?></div>
+                            <?php
+
+                            return;
+                        }
 
                         if(($application_method_id == $method)){
                             $active_id = $i;
@@ -323,7 +332,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
                         $method_name = isset($apply_method_list[$method]) ? $apply_method_list[$method] : '';
 
-                        //echo '<pre>'.var_export($active_id, true).'</pre>';
+                        //echo '<pre>'.var_export($method, true).'</pre>';
 
                         ?>
                         <div id="<?php echo 'apply-method-'.$method; ?>" class="method-header "><div class="method-name"><?php echo $method_name; ?></div></div>
@@ -397,6 +406,8 @@ function job_bm_application_methods_form_direct_email($job_id){
         $user_id = 0;
     }
 
+    global $current_user;
+
     $class_job_bm_applications = new class_job_bm_applications();
 
     if(!empty($_POST)){
@@ -435,7 +446,7 @@ function job_bm_application_methods_form_direct_email($job_id){
 
             $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
             $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
-            $post_content = isset($_POST['application_message']) ? sanitize_text_field($_POST['application_message']) : "";
+            $post_content = isset($_POST['application_message']) ? wp_kses($_POST['application_message'], array()) : "";
             $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
 
 
@@ -509,9 +520,14 @@ function job_bm_application_methods_form_direct_email($job_id){
     }
 
 
-    $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
-    $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : "";
-    $application_message = isset($_POST['application_message']) ? sanitize_text_field($_POST['application_message']) : "";
+
+    $current_user_name = isset($current_user->display_name) ? $current_user->display_name : '';
+    $current_user_email = isset($current_user->user_email) ? $current_user->user_email : '';
+
+
+    $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : $current_user_name;
+    $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : $current_user_email;
+    $application_message = isset($_POST['application_message']) ? wp_kses($_POST['application_message'], array()) : "";
 
 
     ?>
@@ -538,7 +554,8 @@ function job_bm_application_methods_form_direct_email($job_id){
         <div class="form-field-wrap">
             <div class="field-title"><?php echo __('Message','job-board-manager'); ?></div>
             <div class="field-input">
-                <textarea placeholder="" name="application_message"><?php echo $application_message; ?></textarea>
+                <textarea placeholder="" name="application_message"><?php echo esc_attr($application_message);
+                ?></textarea>
                 <p class="field-details"><?php echo __('Write your message','job-board-manager'); ?></p>
             </div>
         </div>

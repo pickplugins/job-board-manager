@@ -234,7 +234,12 @@ if(!function_exists('job_bm_welcome_tabs_content_create_pages')) {
 
         $page_list = job_bm_page_list_id();
 
-        $page_list = array_merge($page_list, array('create_new'=> '-- Create new page --'))
+        $page_list['create_new'] = __('-- Create new page --', 'job-board-manager');
+
+        //$page_list = array_merge($page_list, array('create_new'=> '-- Create new page --'));
+
+
+        //echo '<pre>'.var_export($page_list, true).'</pre>';
 
 
         ?>

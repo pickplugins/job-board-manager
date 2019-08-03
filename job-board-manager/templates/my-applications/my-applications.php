@@ -255,6 +255,7 @@ $current_user_job_ids =job_ids_by_user();
             <?php
 	
 			wp_reset_query();
+            wp_reset_postdata();
 			
 			else:
 			    echo sprintf(__('%s No application found.', 'job-board-manager'), '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>');

@@ -31,7 +31,11 @@
 }
 
 
+.job-bm-applications .application-action .comments.active{
+    background: #737373;
+    color: #fff;
 
+}
 
 
 .job-bm-applications .application-link{
@@ -124,4 +128,45 @@
     width: 48%;
     vertical-align: top;
     text-align: right;
+}
+
+.comment-form-wrap{
+    /*display: none;*/
+}
+.comment-form-wrap .comment-text{
+    width: 94%;
+    margin: 0 auto;
+    display: block;
+
+}
+
+
+
+.comment-form-wrap .comment-submit{
+    width: 98%;
+    margin: 10px auto;
+    display: block;
+
+}
+.comment-list{
+    /*display: none;*/
+}
+.comment-author{
+    font-weight: bold;
+    float: left;}
+
+.comment-date{
+    float: right;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.comment-content{
+    display: block;
+    clear: both;
+}
+.comment-list .comment{
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
 }

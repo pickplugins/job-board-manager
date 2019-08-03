@@ -87,6 +87,10 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.6 =
+    * 02/08/2019 - add - filter hook job_bm_application_method_none_text added.
+
+
 	= 2.1.5 =
     * 31/07/2019 - update - My applications redesigned.
     * 31/07/2019 - add - User can trash their own application,

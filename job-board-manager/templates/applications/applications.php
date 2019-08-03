@@ -13,9 +13,36 @@ $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
 $date_format = get_option( 'date_format' );
 $userid = get_current_user_id();
 
-$current_user_job_ids =job_ids_by_user();
+$current_user_job_ids = job_ids_by_user();
 
-//var_dump($current_user_job_ids);
+if(empty($current_user_job_ids)):
+    echo sprintf(__('%s No application found.', 'job-board-manager'), '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>');
+
+    return;
+endif;
+
+if(isset($_POST['comment_submit_hidden'])){
+    $comment_text = isset($_POST['comment_text']) ? sanitize_text_field($_POST['comment_text']) : '';
+    $application_id = isset($_POST['application_id']) ? sanitize_text_field($_POST['application_id']) : '';
+
+    $time = current_time('mysql');
+
+    $data = array(
+        'comment_post_ID' => $application_id,
+//        'comment_author' => '',
+//        'comment_author_email' => '',
+//        'comment_author_url' => '',
+        'comment_content' => $comment_text,
+        'user_id' => $userid,
+        'comment_date' => $time,
+    );
+
+    wp_insert_comment($data);
+
+}
+
+
+
 
 ?>
 
@@ -122,32 +149,51 @@ $current_user_job_ids =job_ids_by_user();
 
         //$meta_query['relation'] = 'OR';
 
-        $meta_query[] = array(
-            'key' => 'application_trash',
-            'value' => 'yes',
-            'compare' => 'NOT EXISTS',
-            'type' => 'CHAR',
-        );
-
-        $meta_query[] = array(
-            'key' => 'job_bm_am_job_id',
-            'value' => $current_user_job_ids,
-            'compare' => 'IN',
-            //'type' => 'CHAR',
-        );
+    //        $meta_query[] = array(
+    //            'key' => 'application_trash',
+    //            'value' => 'yes',
+    //            'compare' => 'NOT EXISTS',
+    //            'type' => 'CHAR',
+    //        );
 
 
-		$wp_query = new WP_Query(
-			array (
-				'post_type' => 'application',
-				'orderby' => 'date',
-				'order' => 'DESC',
-                'meta_query' => $meta_query,
-				//'author' => $userid,
-				'posts_per_page' => $job_bm_list_per_page,
-				'paged' => $paged,
-                )
-        );
+        $meta_query['relation'] = 'OR';
+
+			foreach ($current_user_job_ids as $job_id){
+                $meta_query[] = array(
+                    'key'	 	=> 'job_bm_am_job_id',
+                    'value'	  	=> $job_id,
+                    'compare' 	=> '=',
+                );
+            }
+
+
+
+
+
+    //    $meta_query[] = array(
+    //        'key'	 	=> 'job_bm_am_job_id',
+    //        'compare' 	=> 'EXISTS',
+    //    );
+
+
+
+
+        //echo '<pre>'.var_export(($current_user_job_ids), true).'</pre>';
+
+
+        $wp_query_args['post_type'] = 'application';
+        $wp_query_args['orderby'] = 'date';
+        $wp_query_args['order'] = 'DESC';
+        $wp_query_args['posts_per_page'] = $job_bm_list_per_page;
+        $wp_query_args['paged'] = $paged;
+        $wp_query_args['meta_query'] = $meta_query;
+
+
+        //echo '<pre>'.var_export(($wp_query_args), true).'</pre>';
+
+
+        $wp_query = new WP_Query($wp_query_args);
 
 		?>
         <div class="application-list">
@@ -178,6 +224,8 @@ $current_user_job_ids =job_ids_by_user();
                 $job_bm_am_attachment = get_post_meta($application_id, 'job_bm_am_attachment', true);
                 $job_bm_am_resume_id = get_post_meta($application_id, 'job_bm_am_resume_id', true);
 
+
+
                 $application_hired = get_post_meta($application_id, 'application_hired', true);
                 $application_trash = get_post_meta($application_id, 'application_trash', true);
                 $application_rating = (int) get_post_meta($application_id, 'application_rating', true);
@@ -189,6 +237,7 @@ $current_user_job_ids =job_ids_by_user();
 
                 $job_label = get_post_meta(get_the_ID(), 'job_bm_job_level',true);
 
+                //var_dump($job_bm_am_job_id);
 
                 ?>
                 <div class="application-card">
@@ -220,7 +269,58 @@ $current_user_job_ids =job_ids_by_user();
                         </div>
                     </div>
                     <div class="card-body">
+                        ###### <?php echo $job_bm_am_job_id; ?> ######
                         <div class="applicant-content"><?php echo $content; ?></div>
+                        <div class="applicant-comments">
+
+                            <div class="comment-list">
+                                <?php
+                                $args = array(
+                                    'post_id' => $application_id, // use post_id, not post_ID
+                                    //'count' => true //return only the count
+                                    'number' => '2',
+
+                                );
+                                $comments = get_comments($args);
+
+
+                                foreach ($comments as $comment){
+                                    $user_id = $comment->user_id;
+                                    $comment_content = $comment->comment_content;
+                                    $comment_date = $comment->comment_date;
+
+
+                                    $comment_author = get_user_by("ID", $user_id);
+
+                                    //echo '<pre>'.var_export($current_user_job_ids, true).'</pre>';
+
+                                    ?>
+                                    <div class="comment">
+                                        <div class="comment-author"><?php echo $comment_author->display_name; ?></div>
+                                        <div class="comment-date"><?php echo $comment_date; ?></div>
+
+                                        <div class="comment-content"><?php echo $comment_content; ?></div>
+
+                                    </div>
+                                    <?php
+                                }
+
+                                ?>
+
+                            </div>
+                            <div class="comment-form-wrap">
+                                <form method="post" action="#">
+                                    <textarea class="comment-text" name="comment_text"></textarea>
+                                    <input class="comment-submit" type="submit" value="Submit" >
+                                    <input class="comment-submit-hidden" name="comment_submit_hidden" type="hidden" value="Y" >
+                                    <input class="comment-application-id" name="application_id" type="hidden"
+                                           value="<?php echo $application_id; ?>" >
+
+                                </form>
+                            </div>
+
+                        </div>
+
                         <div title="<?php echo __('Applicant name','job-board-manager'); ?>" class="applicant-name"><i class="fas fa-user-graduate"></i> <?php echo $applicant_name; ?></div>
                         <div class="applicant-assets">
                             <?php if(!empty($job_bm_am_user_email)):?>
@@ -262,6 +362,7 @@ $current_user_job_ids =job_ids_by_user();
             <?php
 	
 			wp_reset_query();
+            wp_reset_postdata();
 			
 			else:
 			    echo sprintf(__('%s No application found.', 'job-board-manager'), '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>');

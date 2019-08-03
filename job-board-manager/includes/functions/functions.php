@@ -24,7 +24,7 @@ function job_ids_by_user($user_id=0){
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
             $job_id = get_the_id();
 
-            $job_ids[] = $job_id;
+            $job_ids[] = (int)$job_id;
 
         endwhile;
 
