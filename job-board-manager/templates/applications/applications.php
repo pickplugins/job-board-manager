@@ -3,6 +3,10 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
 $job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
+
+$job_bm_job_submit_page_id = get_option('job_bm_job_submit_page_id');
+$job_bm_job_submit_page_url = get_permalink($job_bm_job_submit_page_id);
+
 $job_bm_login_enable = get_option('job_bm_login_enable');
 $job_bm_registration_enable = get_option('job_bm_registration_enable');
 $job_bm_can_user_delete_application = get_option('job_bm_can_user_delete_application');
@@ -15,8 +19,11 @@ $userid = get_current_user_id();
 
 $current_user_job_ids = job_ids_by_user();
 
+//var_dump($current_user_job_ids);
+
 if(empty($current_user_job_ids)):
-    echo sprintf(__('%s No application found.', 'job-board-manager'), '<i class="fa fa-exclamation-circle" aria-hidden="true"></i>');
+    echo sprintf(__('%s You haven\'t posted any jobs, please <a href="%s">post a job</a>', 'job-board-manager'), '<i class="fa fa-exclamation-circle" 
+    aria-hidden="true"></i>', $job_bm_job_submit_page_url);
 
     return;
 endif;
@@ -269,7 +276,6 @@ if(isset($_POST['comment_submit_hidden'])){
                         </div>
                     </div>
                     <div class="card-body">
-                        ###### <?php echo $job_bm_am_job_id; ?> ######
                         <div class="applicant-content"><?php echo $content; ?></div>
                         <div class="applicant-comments">
 

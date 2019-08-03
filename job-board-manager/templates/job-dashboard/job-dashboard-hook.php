@@ -173,7 +173,8 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
                 </div>
 
                 <div class="">
-                    <span><?php echo __('Total hire by:', 'job-board-manager'); ?></span> <span><?php echo $user_application_hired_count; ?></span>
+                    <span><?php echo __('Total hire by:', 'job-board-manager'); ?></span> <span><?php echo
+                        $user_application_hired_count; ?></span>
                 </div>
 
                 <div class="">

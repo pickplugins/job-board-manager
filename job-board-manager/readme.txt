@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.5
+	Stable tag: 2.1.6
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,9 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 	= 2.1.6 =
     * 02/08/2019 - add - filter hook job_bm_application_method_none_text added.
+    * 03/08/2019 - fix - application access issue fixed.
+    * 03/08/2019 - fix - application received count access issue fixed.
+
 
 
 	= 2.1.5 =
