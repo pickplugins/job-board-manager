@@ -44,7 +44,9 @@ if(isset($_POST['comment_submit_hidden'])){
         'comment_date' => $time,
     );
 
-    wp_insert_comment($data);
+    $comment_id = wp_insert_comment($data);
+
+    do_action('job_bm_application_post_comment', $comment_id);
 
 }
 

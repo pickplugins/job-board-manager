@@ -4,12 +4,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 ob_start();
 ?>
-    <div style="background: #f5f5f5; color: #333; font-size: 14px; line-height: 20px; font-family: Arial, sans-serif;">
+    <div style="background: #f5f5f5; color: #333; font-size: 14px; line-height: 20px; font-family: Arial, sans-serif;margin: 0 auto;">
         <div style="width: 600px; margin: 0 auto;">
-
             <div class="header" style="border-bottom: 1px solid #ddd; padding: 20px 0; text-align: center;"><img src="{site_logo_url}"/></div>
-
-
             <div class="content" style="padding: 10px 0 40px;">
                 <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;"><?php echo __('{user_name} Your application hired.', 'job-board-manager'); ?></p>
                 <table width="100%" cellspacing="0" cellpadding="0">

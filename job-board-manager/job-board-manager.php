@@ -69,6 +69,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-settings.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-notification-email.php');
 
 
 

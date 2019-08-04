@@ -730,6 +730,8 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                 $email_from_name = isset($templates['email_from_name']) ? $templates['email_from_name'] : '';
                 $enable = isset($templates['enable']) ? $templates['enable'] : '';
                 $description = isset($templates['description']) ? $templates['description'] : '';
+                $parameters = isset($templates['parameters']) ? $templates['parameters'] : array();
+
 
                 ?>
                 <div class="item template <?php echo $key; ?>">
@@ -758,7 +760,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
 
                         <div class="setting-field">
-                            <div class="field-lable"><?php echo __('Email To', 'job-board-manager'); ?></div>
+                            <div class="field-lable"><?php echo __('Email To(Bcc)', 'job-board-manager'); ?></div>
                             <div class="field-input">
                                 <input placeholder="hello_1@hello.com,hello_2@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_to]" value="<?php echo $email_to; ?>" />
                                 <p class="description"><?php echo __('Email send to(copy)', 'job-board-manager'); ?></p>
@@ -801,14 +803,28 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                             </div>
                         </div>
 
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Parameter', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+
+                                <ul>
 
 
-                <?php
+                                <?php
 
+                                if(!empty($parameters)):
+                                    foreach ($parameters as $parameterId=>$parameter):
+                                        ?>
+                                        <li><code><?php echo $parameterId; ?></code> => <?php echo $parameter; ?></li>
+                                        <?php
+                                    endforeach;
+                                endif;
+                                ?>
+                                </ul>
 
-
-                ?>
-
+                                <p class="description"><?php echo __('Available parameter for this email template', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
 
                     </div>
                      

@@ -102,10 +102,3 @@ add_action('wp_ajax_job_bm_ajax_application_rate', 'job_bm_ajax_application_rate
 
 
 
-
-
-
-
-
-
-
