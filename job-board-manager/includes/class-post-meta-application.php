@@ -45,7 +45,6 @@ class class_job_bm_post_meta_application{
         $applicant_name = get_post_meta($post->ID, 'applicant_name', true);
 
         $job_bm_am_user_email = get_post_meta($post->ID, 'job_bm_am_user_email', true);
-		$job_bm_am_job_id = get_post_meta($post->ID, 'job_bm_am_job_id', true);
 		$job_bm_am_apply_method = get_post_meta($post->ID, 'job_bm_am_apply_method', true);
 		$job_bm_am_attachment = get_post_meta($post->ID, 'job_bm_am_attachment', true);
 		$job_bm_am_resume_id = get_post_meta($post->ID, 'job_bm_am_resume_id', true);
@@ -68,19 +67,6 @@ class class_job_bm_post_meta_application{
 
 			<?php
 
-
-            $args = array(
-                'id'		=> 'job_bm_am_job_id',
-                //'parent'		=> '',
-                'title'		=> __('job_bm_am_job_id','job-board-manager'),
-                'details'	=> __('job_bm_am_job_id','job-board-manager'),
-                'type'		=> 'text',
-                'value'		=> $job_bm_am_job_id,
-                'default'		=> '',
-                'placeholder'		=> '',
-            );
-
-            $settings_tabs_field->generate_field($args);
 
 
             $args = array(

@@ -63,9 +63,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-crons.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-applications.php');
 		require_once( job_bm_plugin_dir . 'includes/functions/functions.php');
-		//require_once( job_bm_plugin_dir . 'includes/functions/functions-reports.php');
 		require_once( job_bm_plugin_dir . 'includes/functions/account-registration.php');
-		require_once( job_bm_plugin_dir . 'includes/functions/functions-emails.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-settings.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');

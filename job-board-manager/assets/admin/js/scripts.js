@@ -5,6 +5,8 @@ jQuery(document).ready(function($) {
 			{
 
 				var is_confirm = $(this).attr('confirm');
+				$(this).text('Confirm');
+
 				if(is_confirm=='ok'){
 					
 					$.ajax(

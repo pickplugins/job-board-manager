@@ -205,8 +205,8 @@ if(!function_exists('job_bm_my_jobs_loop_body')){
         $application_count = $class_job_bm_applications->application_count_by_job_id($job_id);
 
 
-        $job_bm_job_edit_page_id    = get_option('job_bm_job_edit_page_id');
-        $job_bm_job_edit_page_url   = get_permalink($job_bm_job_edit_page_id);
+        $job_bm_job_login_page_id    = get_option('job_bm_job_login_page_id');
+        $job_bm_job_login_page_url   = get_permalink($job_bm_job_login_page_id);
 
         $job_title = get_the_title($job_id);
         $post_date      = get_the_date('Y-m-d');
@@ -253,7 +253,7 @@ if(!function_exists('job_bm_my_jobs_loop_body')){
             endif;
 
             ?>
-            <span class="applications meta"><b><?php echo __('Applications:', 'job-board-manager'); ?></b> <a href="#"><?php echo $application_count; ?></a> </span>
+            <span class="applications meta"><b><?php echo __('Applications:', 'job-board-manager'); ?></b> <a href="<?php echo $job_bm_job_login_page_url; ?>?tabs=applications"><?php echo $application_count; ?></a> </span>
 
         </div>
 

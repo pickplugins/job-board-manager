@@ -692,31 +692,20 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
             $settings_tabs_field->generate_field($args);
 
 
-
-            $job_bm_email_templates_data = get_option( 'job_bm_email_templates_data' );
-
-            if(empty($job_bm_email_templates_data)){
-
-                $class_job_bm_emails = new class_job_bm_emails();
-                $templates_data = $class_job_bm_emails->job_bm_email_templates_data();
+            $class_job_bm_emails = new class_job_bm_emails();
+            $templates_data_default = $class_job_bm_emails->job_bm_email_templates_data();
 
 
-            }
-            else{
+            $templates_data = get_option( 'job_bm_email_templates_data', $templates_data_default );
 
-
-                $class_job_bm_emails = new class_job_bm_emails();
-                $templates_data = $class_job_bm_emails->job_bm_email_templates_data();
-
-                $templates_data =array_merge($templates_data, $job_bm_email_templates_data);
-
-            }
 
 
             ob_start();
 
 
             ?>
+            <div class="reset-email-templates button">Reset</div>
+            <br><br>
             <div class="templates_editor expandable">
             <?php
 
@@ -730,16 +719,37 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                 $email_from_name = isset($templates['email_from_name']) ? $templates['email_from_name'] : '';
                 $enable = isset($templates['enable']) ? $templates['enable'] : '';
                 $description = isset($templates['description']) ? $templates['description'] : '';
-                $parameters = isset($templates['parameters']) ? $templates['parameters'] : array();
 
+                $parameters = isset($templates_data_default[$key]['parameters']) ? $templates_data_default[$key]['parameters'] : array();
+
+
+                //var_dump($parameters);
 
                 ?>
                 <div class="item template <?php echo $key; ?>">
                     <div class="header">
-                        <span class="expand ">
+                        <span title="<?php echo __('Click to expand', 'job-board-manager'); ?>" class="expand ">
                             <i class="fa fa-expand"></i>
                             <i class="fa fa-compress"></i>
                         </span>
+
+                        <?php
+                        if($enable =='yes'):
+                            ?>
+                            <span title="<?php echo __('Enable', 'job-board-manager'); ?>" class="is-enable ">
+                            <i class="fa fa-check-square"></i>
+                            </span>
+                            <?php
+                        else:
+                            ?>
+                            <span title="<?php echo __('Disabled', 'job-board-manager'); ?>" class="is-enable ">
+                            <i class="fa fa-times-circle"></i>
+                            </span>
+                        <?php
+                        endif;
+                        ?>
+
+
                         <?php echo $templates['name']; ?>
                     </div>
                     <input type="hidden" name="job_bm_email_templates_data[<?php echo $key; ?>][name]" value="<?php echo $templates['name']; ?>" />

@@ -15,7 +15,9 @@ class class_job_bm_emails{
 		//add_action('save_post', array($this, 'meta_boxes_job_save'));
 
 		}
-		
+
+
+
 		
 		
 	public function job_bm_send_email($email_data){
@@ -92,8 +94,20 @@ class class_job_bm_emails{
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
                 ),
 
             ),

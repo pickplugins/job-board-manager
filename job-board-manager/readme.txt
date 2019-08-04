@@ -91,6 +91,7 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 02/08/2019 - add - filter hook job_bm_application_method_none_text added.
     * 03/08/2019 - fix - application access issue fixed.
     * 03/08/2019 - fix - application received count access issue fixed.
+    * 03/08/2019 - add - application comments added.
     * 04/08/2019 - add - email notification "Application hire" added
     * 04/08/2019 - add - email notification "New comment on application" added
     * 04/08/2019 - add - email notification "Your application hire removed" added
@@ -100,11 +101,6 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 04/08/2019 - add - email notification "Job Edited" added
     * 04/08/2019 - add - email notification "Job featured" added
     * 04/08/2019 - add - email notification "Job trashed" added
-
-
-
-
-
 
 
 	= 2.1.5 =

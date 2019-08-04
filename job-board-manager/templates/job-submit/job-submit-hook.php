@@ -744,8 +744,6 @@ function job_bm_job_submit_data($post_data){
 
         do_action('job_bm_job_submitted', $job_ID, $post_data);
 
-        job_bm_email_job_submitted($job_ID);
-
     }
     else{
 
