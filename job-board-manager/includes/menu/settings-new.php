@@ -8,7 +8,7 @@ $job_bm_settings_tab[] = array(
     'id' => 'archive',
     'title' => sprintf(__('%s Archive','job-board-manager'),'<i class="fas fa-list-ul"></i>'),
     'priority' => 1,
-    'active' => true,
+    'active' => false,
 );
 
 $job_bm_settings_tab[] = array(
@@ -44,7 +44,7 @@ $job_bm_settings_tab[] = array(
     'id' => 'email',
     'title' => sprintf(__('%s Email','job-board-manager'),'<i class="far fa-envelope"></i>'),
     'priority' => 6,
-    'active' => false,
+    'active' => true,
 );
 
 $job_bm_settings_tab[] = array(

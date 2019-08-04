@@ -57,48 +57,150 @@ class class_job_bm_emails{
 		
 		$templates_data_html = array();
 		
-		include( 'emails-templates-part/new_job_submitted.php');	
-		include( 'emails-templates-part/new_job_published.php');
-		include( 'emails-templates-part/new_job_approved.php');		
-					
+		include( job_bm_plugin_dir.'templates/emails-templates/application_hire.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/application_new_comment.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/application_not_hire.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/application_rate.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/application_submitted.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/application_trash.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/job_edited.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/job_featured.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/job_published.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/job_submitted.php');
+        include( job_bm_plugin_dir.'templates/emails-templates/job_trash.php');
+
+
+
+
+
 		
 		$templates_data = array(
-							
-			'new_job_submitted'=>array(	'name'=>__('New Job Submitted', 'job-board-manager'),
-										'description'=>__('Notification email for admin when user submitted job.', 'job-board-manager'),			
-										'subject'=>__('New Job Submitted - {site_url}', 'job-board-manager'),
-										'html'=>$templates_data_html['new_job_submitted'],
-										'email_to'=>get_option('admin_email'),
-										'email_from'=>get_option('admin_email'),
-										'email_from_name'=> get_bloginfo('name'),																		
-										'enable'=> 'yes',										
-									),
-									
-			'new_job_published'=>array(	'name'=>__('New Job Published', 'job-board-manager'),
-										'description'=>__('Notification email for admin when someone published job.', 'job-board-manager'),
-										'subject'=>__('New Job Published - {site_url}', 'job-board-manager'),
-										'html'=>$templates_data_html['new_job_published'],
-										'email_to'=>get_option('admin_email'),
-										'email_from'=>get_option('admin_email'),
-										'email_from_name'=> get_bloginfo('name'),										
-										'enable'=> 'yes',
-									),									
-			
-			'new_job_approved'=>array(	'name'=>__('New Job Approved', 'job-board-manager'),
-										'description'=>__('Notification email for job poster when admin published job.', 'job-board-manager'),
-										'subject'=>__('New Job Approved - {site_url}','job-board-manager'),
-										'html'=>$templates_data_html['new_job_approved'],
-										'email_to'=>'',
-										'email_from'=>get_option('admin_email'),
-										'email_from_name'=> get_bloginfo('name'),										
-										'enable'=> 'yes',
-						
-									),				
-			
-			
-			
-			
-			
+
+            'application_hire'=>array(
+                'name'=>__('Application hire', 'job-board-manager'),
+                'description'=>__('Notification email for when application hired.', 'job-board-manager'),
+                'subject'=>__('Your application hired - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_hire'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'application_new_comment'=>array(
+                'name'=>__('New comment on application', 'job-board-manager'),
+                'description'=>__('Notification email for when new comment posted on application.', 'job-board-manager'),
+                'subject'=>__('New comment on application - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_new_comment'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'application_not_hire'=>array(
+                'name'=>__('Your application hire removed', 'job-board-manager'),
+                'description'=>__('Notification email for application hire removed.', 'job-board-manager'),
+                'subject'=>__('Application hire removed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_not_hire'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'application_rate'=>array(
+                'name'=>__('Your application rated', 'job-board-manager'),
+                'description'=>__('Notification email for application rated.', 'job-board-manager'),
+                'subject'=>__('Application rated - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_rate'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'application_submitted'=>array(
+                'name'=>__('Application submitted', 'job-board-manager'),
+                'description'=>__('Notification email for application submitted.', 'job-board-manager'),
+                'subject'=>__('Application submitted - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_submitted'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+
+            'application_trash'=>array(
+                'name'=>__('Application trashed', 'job-board-manager'),
+                'description'=>__('Notification email for application trashed.', 'job-board-manager'),
+                'subject'=>__('Application trashed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_trash'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+
+
+            'job_edited'=>array(
+                'name'=>__('Job Edited', 'job-board-manager'),
+                'description'=>__('Notification email for admin when user edited job.', 'job-board-manager'),
+                'subject'=>__('Job Edited - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_edited'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+
+            'job_featured'=>array(
+                'name'=>__('Job featured', 'job-board-manager'),
+                'description'=>__('Notification email for admin featured a job.', 'job-board-manager'),
+                'subject'=>__('Job featured - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_featured'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'job_published'=>array(
+                'name'=>__('Job published', 'job-board-manager'),
+                'description'=>__('Notification email for admin published a job.', 'job-board-manager'),
+                'subject'=>__('Job published - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_published'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+
+            'job_submitted'=>array(
+                'name'=>__('New Job Submitted', 'job-board-manager'),
+                'description'=>__('Notification email for user submitted job.', 'job-board-manager'),
+                'subject'=>__('New Job Submitted - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_submitted'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
+
+            'job_trash'=>array(
+                'name'=>__('New Job trashed', 'job-board-manager'),
+                'description'=>__('Notification email for trash job.', 'job-board-manager'),
+                'subject'=>__('Job trashed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_trash'],
+                'email_to'=>get_option('admin_email'),
+                'email_from'=>get_option('admin_email'),
+                'email_from_name'=> get_bloginfo('name'),
+                'enable'=> 'yes',
+            ),
 			
 			
 

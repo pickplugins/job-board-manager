@@ -725,115 +725,94 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
             foreach($templates_data as $key=>$templates){
 
-                if(!empty($templates['email_to'])){
-                    $email_to = $templates['email_to'];
-                }
-                else{
-                    $email_to = '';
-                }
-
-                if(!empty($templates['email_from'])){
-                    $email_from = $templates['email_from'];
-                }
-                else{
-                    $email_from = '';
-                }
-
-
-                if(!empty($templates['email_from_name'])){
-                    $email_from_name = $templates['email_from_name'];
-                }
-                else{
-                    $email_from_name = '';
-                }
-
-
-                if(!empty($templates['enable'])){
-                    $enable = $templates['enable'];
-                }
-                else{
-                    $enable = '';
-                }
-
-
-
-                if(!empty($templates['description'])){
-                    $description = $templates['description'];
-                }
-                else{
-                    $description = '';
-                }
-
-
+                $email_to = isset($templates['email_to']) ? $templates['email_to'] : '';
+                $email_from = isset($templates['email_from']) ? $templates['email_from'] : '';
+                $email_from_name = isset($templates['email_from_name']) ? $templates['email_from_name'] : '';
+                $enable = isset($templates['enable']) ? $templates['enable'] : '';
+                $description = isset($templates['description']) ? $templates['description'] : '';
 
                 ?>
                 <div class="item template <?php echo $key; ?>">
-                    <div class="header"><?php echo $templates['name']; ?></div>
+                    <div class="header">
+                        <span class="expand ">
+                            <i class="fa fa-expand"></i>
+                            <i class="fa fa-compress"></i>
+                        </span>
+                        <?php echo $templates['name']; ?>
+                    </div>
                     <input type="hidden" name="job_bm_email_templates_data[<?php echo $key; ?>][name]" value="<?php echo $templates['name']; ?>" />
                     <div class="options">
                         <div class="description"><?php echo $description; ?></div><br/><br/>
-                        <label><?php echo __('Enable ?', 'job-board-manager'); ?><br/>
-                        <select name="job_bm_email_templates_data[<?php echo $key; ?>][enable]" >
+
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Enable?', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <select name="job_bm_email_templates_data[<?php echo $key; ?>][enable]" >
+                                    <option <?php echo selected($enable,'yes'); ?> value="yes" ><?php echo __('Yes', 'job-board-manager'); ?></option>
+                                    <option <?php echo selected($enable,'no'); ?>  value="no" ><?php echo __('No', 'job-board-manager'); ?></option>
+                                </select>
+                                <p class="description"><?php echo __('Enable or disable this email notification.', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Email To', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <input placeholder="hello_1@hello.com,hello_2@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_to]" value="<?php echo $email_to; ?>" />
+                                <p class="description"><?php echo __('Email send to(copy)', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Email from name', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from_name]" value="<?php echo $email_from_name; ?>" />
+                                <p class="description"><?php echo __('Email send from name', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Email from', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from]" value="<?php echo $email_from; ?>" />
+                                <p class="description"><?php echo __('Email send from', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Email Subject', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <input type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][subject]" value="<?php echo $templates['subject']; ?>" />
+                                <p class="description"><?php echo __('Write email subject', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+                        <div class="setting-field">
+                            <div class="field-lable"><?php echo __('Email Body', 'job-board-manager'); ?></div>
+                            <div class="field-input">
+                                <?php
+
+                                wp_editor( $templates['html'], $key, $settings = array('textarea_name'=>'job_bm_email_templates_data['.$key.'][html]','media_buttons'=>false,'wpautop'=>true,'teeny'=>true,'editor_height'=>'400px', ) );
+
+                                ?>
+                                <p class="description"><?php echo __('Write email body', 'job-board-manager'); ?></p>
+                            </div>
+                        </div>
+
+
 
                 <?php
 
-                if($enable=='yes'){
-
-                    ?>
-                    <option selected  value="yes" ><?php echo __('Yes', 'job-board-manager'); ?></option>
-                    <?php
-                }
-                else{
-                    ?>
-                    <option value="yes" ><?php echo __('Yes', 'job-board-manager'); ?></option>
-                    <?php
-                }
-
-                if($enable=='no'){
-
-                    ?>
-                    <option selected value="no" ><?php echo __('No', 'job-board-manager'); ?></option>
-                    <?php
-                }
-                else{
-                    ?>
-                    <option value="no" ><?php echo __('No', 'job-board-manager'); ?></option>
-                    <?php
-                }
-
-                ?>
-                     </select>
-                     </label><br /><br />
-
-                     <label><?php echo __('Email To:', 'job-board-manager'); ?><br/>
-                     <input placeholder="hello_1@hello.com,hello_2@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_to]" value="<?php echo $email_to; ?>" />
-                     </label><br /><br />
-
-                     <label><?php echo __('Email from name:', 'job-board-manager'); ?><br/>
-                     <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from_name]" value="<?php echo $email_from_name; ?>" />
-                     </label><br /><br />
-
-                     <label><?php echo __('Email from:', 'job-board-manager'); ?><br/>
-                     <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from]" value="<?php echo $email_from; ?>" />
-                     </label><br /><br />
-
-                     <label><?php echo __('Email Subject:','job-board-manager'); ?><br/>
-                     <input type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][subject]" value="<?php echo $templates['subject']; ?>" />
-                     </label>
-                <?php
-
 
 
                 ?>
-                    <br/><label><?php echo __('Email Body:','job-board-manager'); ?><br/>
-                <?php
 
-                wp_editor( $templates['html'], $key, $settings = array('textarea_name'=>'job_bm_email_templates_data['.$key.'][html]','media_buttons'=>false,'wpautop'=>true,'teeny'=>true,'editor_height'=>'400px', ) );
 
-                ?>
-                     </label>
-                     </div>
-                     </div>
+                    </div>
+                     
+                </div>
                 <?php
 
             }

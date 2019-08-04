@@ -130,10 +130,8 @@
     text-align: right;
 }
 
-.comment-form-wrap{
-    /*display: none;*/
-}
-.comment-form-wrap .comment-text{
+
+.job-bm-applications .comment-form-wrap .comment-text{
     width: 94%;
     margin: 0 auto;
     display: block;
@@ -142,29 +140,46 @@
 
 
 
-.comment-form-wrap .comment-submit{
+.job-bm-applications .comment-form-wrap .comment-submit{
     width: 98%;
     margin: 10px auto;
     display: block;
 
 }
-.comment-list{
-    /*display: none;*/
+.job-bm-applications .application-comments{
+    display: none;
 }
-.comment-author{
+
+.job-bm-applications .write-reply{
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.job-bm-applications .replies{
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 15px;
+}
+
+.job-bm-applications .comment-author{
     font-weight: bold;
     float: left;}
 
-.comment-date{
+.job-bm-applications .comment-date{
     float: right;
     margin-bottom: 10px;
     font-style: italic;
 }
-.comment-content{
+.job-bm-applications .comment-content{
     display: block;
     clear: both;
+    background: #eaeaea;
+    padding: 010px;
+    border-radius: 30px;
+    border-top-left-radius: 0;
 }
-.comment-list .comment{
+.job-bm-applications .comment-list .comment{
     font-size: 12px;
     margin-bottom: 10px;
     padding-bottom: 10px;

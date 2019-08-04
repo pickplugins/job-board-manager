@@ -466,6 +466,11 @@ function job_bm_application_methods_form_direct_email($job_id){
                     )
                 );
 
+                $update_args = array('ID'=>$application_ID,'post_title'=>'#'.$application_ID);
+
+                wp_update_post($update_args);
+
+
                 update_post_meta($application_ID, 'user_id', $user_id);
                 update_post_meta($application_ID, 'applicant_name', $applicant_name);
                 update_post_meta($application_ID, 'job_bm_am_user_email', $email);

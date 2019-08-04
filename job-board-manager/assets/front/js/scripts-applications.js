@@ -2,15 +2,16 @@ jQuery(document).ready(function($) {
 
 
 	$(document).on('click', '.job-bm-applications .application-card .comments', function(){
+		var application_id = $(this).attr('application-id');
+
+
 
 		if($(this).hasClass('active')){
 			$(this).removeClass('active');
-			$('.comment-list').fadeOut();
-			$('.comment-form-wrap').fadeOut();
+			$('.application-card-'+application_id+' .application-comments').fadeOut();
 		}else{
 			$(this).addClass('active');
-			$('.comment-list').fadeIn();
-			$('.comment-form-wrap').fadeIn();
+			$('.application-card-'+application_id+' .application-comments').fadeIn();
 		}
 
 

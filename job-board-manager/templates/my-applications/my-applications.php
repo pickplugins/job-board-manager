@@ -17,6 +17,32 @@ $current_user_job_ids =job_ids_by_user();
 
 //var_dump($current_user_job_ids);
 
+
+if(isset($_POST['comment_submit_hidden'])){
+    $comment_text = isset($_POST['comment_text']) ? sanitize_text_field($_POST['comment_text']) : '';
+    $application_id = isset($_POST['application_id']) ? sanitize_text_field($_POST['application_id']) : '';
+
+    $time = current_time('mysql');
+
+    $data = array(
+        'comment_post_ID' => $application_id,
+//        'comment_author' => '',
+//        'comment_author_email' => '',
+//        'comment_author_url' => '',
+        'comment_content' => $comment_text,
+        'user_id' => $userid,
+        'comment_date' => $time,
+    );
+
+    wp_insert_comment($data);
+
+}
+
+
+
+
+
+
 ?>
 
 <div class="nav-head"><?php echo __('My Applications', 'job-board-manager'); ?></div>
@@ -184,13 +210,13 @@ $current_user_job_ids =job_ids_by_user();
 
 
                 ?>
-                <div class="application-card">
+                <div class="application-card application-card-<?php echo $application_id; ?>">
                     <div class="card-top">
                         <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                         <div class="application-action">
                             <span title="<?php  echo $application_hired_text; ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
                             <span title="<?php echo __('Trash','job-board-manager'); ?>" class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
-                            <span title="<?php echo __('Comments','job-board-manager'); ?>" class="comments"><i class="far fa-comments"></i></span>
+                            <span title="<?php echo __('Comments','job-board-manager'); ?>" application-id="<?php echo $application_id; ?>" class="comments"><i class="far fa-comments"></i></span>
                         </div>
 
                         <div current-rate="<?php echo $application_rating; ?>" application_id="<?php echo $application_id; ?>" title="<?php echo sprintf(__('Job poster ratings: %s','job-board-manager'), $application_rating); ?>"  class="application-rate star">
@@ -212,8 +238,69 @@ $current_user_job_ids =job_ids_by_user();
 
                         </div>
                     </div>
+
                     <div class="card-body">
                         <div class="applicant-content"><?php echo $content; ?></div>
+
+                        <div class="application-comments">
+                            <div class="replies"><?php echo __('Conversations','job-board-manager'); ?></div>
+
+                            <div class="comment-list">
+                                <?php
+                                $args = array(
+                                    'post_id' => $application_id, // use post_id, not post_ID
+                                    //'count' => true //return only the count
+                                    'number' => 5,
+
+                                );
+                                $comments = get_comments($args);
+
+
+                                if(!empty($comments)):
+                                    foreach ($comments as $comment){
+                                        $user_id = $comment->user_id;
+                                        $comment_content = $comment->comment_content;
+                                        $comment_date = $comment->comment_date;
+
+
+                                        $comment_author = get_user_by("ID", $user_id);
+
+                                        //echo '<pre>'.var_export($current_user_job_ids, true).'</pre>';
+
+                                        ?>
+                                        <div class="comment">
+                                            <div class="comment-author"><?php echo $comment_author->display_name; ?></div>
+                                            <div class="comment-date"><?php echo $comment_date; ?></div>
+
+                                            <div class="comment-content"><?php echo $comment_content; ?></div>
+
+                                        </div>
+                                        <?php
+                                    }
+                                else:
+                                    ?>
+                                    <div class="comment no-comment"><?php echo __('No reply yet. ','job-board-manager'); ?></div>
+
+                                <?php
+                                endif;
+
+
+                                ?>
+
+                            </div>
+                            <div class="comment-form-wrap">
+                                <div class="write-reply"><?php echo __('Write a reply','job-board-manager'); ?></div>
+
+                                <form method="post" action="#">
+                                    <textarea class="comment-text" name="comment_text"></textarea>
+                                    <input class="comment-submit" type="submit" value="Submit" >
+                                    <input class="comment-submit-hidden" name="comment_submit_hidden" type="hidden" value="Y" >
+                                    <input class="comment-application-id" name="application_id" type="hidden" value="<?php echo $application_id; ?>" >
+                                </form>
+                            </div>
+                        </div>
+
+
                         <div title="<?php echo __('Applicant name','job-board-manager'); ?>" class="applicant-name"><i class="fas fa-user-graduate"></i> <?php echo $applicant_name; ?></div>
                         <div class="applicant-assets">
                             <?php if(!empty($job_bm_am_user_email)):?>

@@ -1,5 +1,28 @@
 jQuery(document).ready(function($) {
 
+
+	$(document).on('click', '.job-bm-my-applications .application-card .comments', function(){
+		var application_id = $(this).attr('application-id');
+
+
+
+		if($(this).hasClass('active')){
+			$(this).removeClass('active');
+			$('.application-card-'+application_id+' .application-comments').fadeOut();
+		}else{
+			$(this).addClass('active');
+			$('.application-card-'+application_id+' .application-comments').fadeIn();
+		}
+
+
+	})
+
+
+
+
+
+
+
 	$(document).on('click', '.job-bm-my-applications .application-card .trash', function(){
 
 		var application_id = $(this).attr('application-id');

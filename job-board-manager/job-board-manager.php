@@ -29,43 +29,46 @@ class JobBoardManager{
 
 
 		// Class
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings-tabs.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-application.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta-job-hook.php');
+        require_once( job_bm_plugin_dir . 'includes/class-settings-tabs.php');
+		require_once( job_bm_plugin_dir . 'includes/class-post-types.php');
+        require_once( job_bm_plugin_dir . 'includes/class-post-meta-application.php');
+        require_once( job_bm_plugin_dir . 'includes/class-post-meta-job.php');
+        require_once( job_bm_plugin_dir . 'includes/class-post-meta-job-hook.php');
+        require_once( job_bm_plugin_dir . 'includes/class-support-help.php');
 
 
 
 
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-functions.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-roles.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-emails.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-error-log.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/class-application.php');
+		require_once( job_bm_plugin_dir . 'includes/class-functions.php');
+		require_once( job_bm_plugin_dir . 'includes/class-roles.php');
+		require_once( job_bm_plugin_dir . 'includes/class-settings.php');
+		require_once( job_bm_plugin_dir . 'includes/class-emails.php');
+		require_once( job_bm_plugin_dir . 'includes/class-error-log.php');
+        require_once( job_bm_plugin_dir . 'includes/class-application.php');
 
 		// ShortCodes
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-submit.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-edit.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-dashboard.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-jobs.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-job-archive.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-my-applications.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/shortcodes/class-shortcodes-applications.php');
+		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-submit.php');
+		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-edit.php');
+		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-dashboard.php');
+		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-jobs.php');
+		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-archive.php');
+        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-applications.php');
+        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-applications.php');
 
-		require_once( plugin_dir_path( __FILE__ ) . 'templates/job-single/job-single-hook.php');
+
+
+		require_once( job_bm_plugin_dir . 'templates/job-single/job-single-hook.php');
 
 		//Functions
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-crons.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-applications.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions.php');
-		//require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-reports.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/account-registration.php');
-		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-emails.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-settings.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-count.php');
-        require_once( plugin_dir_path( __FILE__ ) . 'includes/functions/functions-welcome.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-crons.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-applications.php');
+		require_once( job_bm_plugin_dir . 'includes/functions/functions.php');
+		//require_once( job_bm_plugin_dir . 'includes/functions/functions-reports.php');
+		require_once( job_bm_plugin_dir . 'includes/functions/account-registration.php');
+		require_once( job_bm_plugin_dir . 'includes/functions/functions-emails.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-settings.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');
 
 
 
@@ -224,6 +227,7 @@ class JobBoardManager{
         wp_register_style('settings-tabs', job_bm_plugin_url.'assets/admin/css/settings-tabs.css');
         wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
         wp_register_style('welcome-tabs', job_bm_plugin_url.'assets/admin/css/welcome-tabs.css');
+        wp_register_style('job-bm-addons', job_bm_plugin_url.'assets/admin/css/addons.css');
 
 
 

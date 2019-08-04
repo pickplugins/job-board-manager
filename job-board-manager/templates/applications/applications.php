@@ -156,12 +156,12 @@ if(isset($_POST['comment_submit_hidden'])){
 
         //$meta_query['relation'] = 'OR';
 
-    //        $meta_query[] = array(
-    //            'key' => 'application_trash',
-    //            'value' => 'yes',
-    //            'compare' => 'NOT EXISTS',
-    //            'type' => 'CHAR',
-    //        );
+//            $meta_query[] = array(
+//                'key' => 'application_trash',
+//                'value' => 'yes',
+//                'compare' => '!=',
+//                'type' => 'CHAR',
+//            );
 
 
         $meta_query['relation'] = 'OR';
@@ -247,13 +247,13 @@ if(isset($_POST['comment_submit_hidden'])){
                 //var_dump($job_bm_am_job_id);
 
                 ?>
-                <div class="application-card">
+                <div class="application-card application-card-<?php echo $application_id; ?>">
                     <div class="card-top">
                         <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                         <div class="application-action">
                             <span title="<?php echo $application_hired_text; ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
                             <span title="<?php echo __('Trash','job-board-manager'); ?>" class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
-                            <span title="<?php echo __('Comments','job-board-manager'); ?>" class="comments"><i class="far fa-comments"></i></span>
+                            <span application-id="<?php echo $application_id; ?>" title="<?php echo __('Comments','job-board-manager'); ?>" class="comments"><i class="far fa-comments"></i></span>
                         </div>
 
                         <div current-rate="<?php echo $application_rating; ?>" application_id="<?php echo $application_id; ?>" title="<?php echo __('Ratings','job-board-manager'); ?>"  class="application-rate star">
@@ -277,14 +277,15 @@ if(isset($_POST['comment_submit_hidden'])){
                     </div>
                     <div class="card-body">
                         <div class="applicant-content"><?php echo $content; ?></div>
-                        <div class="applicant-comments">
+                        <div class="application-comments">
 
+                            <div class="replies"><?php echo __('Conversations','job-board-manager'); ?></div>
                             <div class="comment-list">
                                 <?php
                                 $args = array(
                                     'post_id' => $application_id, // use post_id, not post_ID
                                     //'count' => true //return only the count
-                                    'number' => '2',
+                                    'number' => 5,
 
                                 );
                                 $comments = get_comments($args);
@@ -315,16 +316,15 @@ if(isset($_POST['comment_submit_hidden'])){
 
                             </div>
                             <div class="comment-form-wrap">
+                                <div class="write-reply"><?php echo __('Write a reply','job-board-manager'); ?></div>
+
                                 <form method="post" action="#">
                                     <textarea class="comment-text" name="comment_text"></textarea>
                                     <input class="comment-submit" type="submit" value="Submit" >
                                     <input class="comment-submit-hidden" name="comment_submit_hidden" type="hidden" value="Y" >
-                                    <input class="comment-application-id" name="application_id" type="hidden"
-                                           value="<?php echo $application_id; ?>" >
-
+                                    <input class="comment-application-id" name="application_id" type="hidden" value="<?php echo $application_id; ?>" >
                                 </form>
                             </div>
-
                         </div>
 
                         <div title="<?php echo __('Applicant name','job-board-manager'); ?>" class="applicant-name"><i class="fas fa-user-graduate"></i> <?php echo $applicant_name; ?></div>

@@ -70,64 +70,70 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
 
                 $nonce = sanitize_text_field($_POST['_wpnonce']);
 
+
                 if(wp_verify_nonce( $nonce, 'job_bm_nonce' ) && $_POST['job_bm_hidden'] == 'Y') {
 
 
                     do_action('job_bm_welcome_submit', $_POST);
 
-
                     ?>
-                    <div class="updated notice  is-dismissible"><p><strong><?php _e('Changes Saved.', 'job-board-manager' ); ?></strong></p></div>
 
                     <?php
+
+
                 }
-            }
-            ?>
-            <div class="welcome-tabs">
-                <ul class="tab-navs">
+            }else{
+                ?>
+                <div class="welcome-tabs">
+                    <ul class="tab-navs">
+                        <?php
+                        foreach ($job_bm_settings_tab as $tab){
+                            $id = $tab['id'];
+                            $title = $tab['title'];
+                            $active = $tab['active'];
+                            $data_visible = isset($tab['data_visible']) ? $tab['data_visible'] : '';
+                            $hidden = isset($tab['hidden']) ? $tab['hidden'] : false;
+                            ?>
+                            <li <?php if(!empty($data_visible)):  ?> data_visible="<?php echo $data_visible; ?>" <?php endif; ?> class="tab-nav <?php if($hidden) echo 'hidden';?> <?php if($active) echo 'active';?>" data-id="<?php echo $id; ?>"><?php echo $title; ?></li>
+                            <?php
+                        }
+                        ?>
+                    </ul>
                     <?php
                     foreach ($job_bm_settings_tab as $tab){
                         $id = $tab['id'];
                         $title = $tab['title'];
                         $active = $tab['active'];
-                        $data_visible = isset($tab['data_visible']) ? $tab['data_visible'] : '';
-                        $hidden = isset($tab['hidden']) ? $tab['hidden'] : false;
                         ?>
-                        <li <?php if(!empty($data_visible)):  ?> data_visible="<?php echo $data_visible; ?>" <?php endif; ?> class="tab-nav <?php if($hidden) echo 'hidden';?> <?php if($active) echo 'active';?>" data-id="<?php echo $id; ?>"><?php echo $title; ?></li>
+
+                        <div class="tab-content <?php if($active) echo 'active';?>" id="<?php echo $id; ?>">
+
+                            <?php
+                            do_action('job_bm_welcome_tabs_content_'.$id, $tab);
+                            ?>
+                        </div>
                         <?php
                     }
                     ?>
-                </ul>
-                <?php
-                foreach ($job_bm_settings_tab as $tab){
-                    $id = $tab['id'];
-                    $title = $tab['title'];
-                    $active = $tab['active'];
-                    ?>
 
-                    <div class="tab-content <?php if($active) echo 'active';?>" id="<?php echo $id; ?>">
+                    <div class="next-prev">
+                        <div class="prev"><span>&longleftarrow; Previous</span></div>
+                        <div class="next"><span>Next &longrightarrow;</span></div>
 
-                        <?php
-                        do_action('job_bm_welcome_tabs_content_'.$id, $tab);
-                        ?>
                     </div>
-                    <?php
-                }
-                ?>
 
-                <div class="next-prev">
-                    <div class="prev"><span>&longleftarrow; Previous</span></div>
-                    <div class="next"><span>Next &longrightarrow;</span></div>
+
 
                 </div>
 
 
 
-            </div>
+                <div class="clear clearfix"></div>
+                <?Php
 
+            }
+            ?>
 
-
-            <div class="clear clearfix"></div>
 
 		</form>
 </div>

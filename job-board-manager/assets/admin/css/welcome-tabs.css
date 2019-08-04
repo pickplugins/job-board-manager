@@ -286,3 +286,34 @@ text-align: center;
 .welcome-tabs .field-input .CodeMirror{
     background: #f1f1f1;
 }
+
+.welcome-tabs .addon-list{}
+.welcome-tabs .addon-list .item{
+    display: inline-block;
+    width: 215px;
+    overflow: hidden;
+    padding: 15px 20px;
+}
+.welcome-tabs .addon-list .thumb-wrap{
+
+}
+.welcome-tabs .addon-list .thumb-wrap img{
+    width: 100%;
+}
+
+
+.welcome-tabs .addon-list .addon-title{
+    margin: 10px 0;
+    font-size: 17px;
+}
+.welcome-tabs .addon-list .addon-link a{
+    text-decoration: none;
+}
+
+.welcome-tabs .addon-list .addon-link{}
+
+
+
+
+
+

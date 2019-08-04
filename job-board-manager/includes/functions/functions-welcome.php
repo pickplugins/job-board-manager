@@ -333,6 +333,10 @@ add_action('job_bm_welcome_tabs_content_done', 'job_bm_welcome_tabs_content_done
 if(!function_exists('job_bm_welcome_tabs_content_done')) {
     function job_bm_welcome_tabs_content_done($tab){
 
+        $hidden = isset($_POST['job_bm_hidden']) ? $_POST['job_bm_hidden'] : '';
+
+        //var_dump($hidden);
+
         ?>
         <div class="section">
 
@@ -340,7 +344,7 @@ if(!function_exists('job_bm_welcome_tabs_content_done')) {
             <p style="text-align: center">You can review settings by clicking next and previous button</p>
             <div class="submit-wrap">
                 <?php wp_nonce_field( 'job_bm_nonce' ); ?>
-                <input class="button" type="submit" name="Submit" value="<?php _e('Save Settings','job-board-manager' ); ?>" />
+                <input class="button" type="submit" name="submit" value="<?php _e('Save Settings','job-board-manager' ); ?>" />
             </div>
 
 
@@ -352,6 +356,70 @@ if(!function_exists('job_bm_welcome_tabs_content_done')) {
 }
 
 
+add_action('job_bm_welcome_submit', 'job_bm_welcome_submit_after_html');
+
+if(!function_exists('job_bm_welcome_submit_after_html')) {
+    function job_bm_welcome_submit_after_html($form_data){
+
+        $job_bm_job_submit_page_id           = get_option('job_bm_job_submit_page_id');
+        $job_bm_job_submit_page_url                 = get_permalink($job_bm_job_submit_page_id);
+
+        $class_job_bm_support_help = new class_job_bm_support_help();
+        $addons_list = $class_job_bm_support_help->addons_list();
+
+        ?>
+        <div class="welcome-tabs">
+            <div class="tab-content active" style="text-align: center">
+                <h3 ><i class="far fa-thumbs-up"></i> Great, All looks good.</h3>
+                <p>You have successfully completed welcome setup <br>and you are almost ready to start your job site, go and visit created pages.</p>
+                <p>
+                    <a class="button" target="_blank" href="<?php echo esc_url($job_bm_job_submit_page_url); ?>">Post a job</a>
+                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url('edit.php?post_type=job&page=job_bm_settings')); ?>">Check settings</a>
+                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url()); ?>">Go dashboard</a>
+
+                </p>
+
+                <h5>Write a reviews</h5>
+                <p>We spend most of our work hours to build WordPress plugin, <br>we expect your few minutes to provide your wise feedback and suggestions. and give us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+                <p><a class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Write a reviews </a></p>
+
+                <h5>Download some add-ons</h5>
+
+                <div class="addon-list">
+
+                    <?php
+
+                    if(!empty($addons_list)):
+                        foreach ($addons_list as $addon):
+                            $addon_title = $addon['title'];
+                            $addon_link = $addon['item_link'];
+                            $addon_thumb = $addon['thumb'];
+
+                            ?>
+                            <div class="item">
+                                <div class="thumb-wrap">
+                                    <img src="<?php echo $addon_thumb;?>">
+                                </div>
+                                <div class="addon-title"><?php echo $addon_title;?></div>
+                                <div class="addon-link button"><a href="<?php echo $addon_link;?>">Download</a> </div>
+                            </div>
+                            <?php
+                        endforeach;
+                    endif;
+
+                    ?>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <?php
+
+
+    }
+}
 
 
 add_action('job_bm_welcome_submit', 'job_bm_welcome_submit');
@@ -479,7 +547,6 @@ if(!function_exists('job_bm_welcome_submit')) {
 
     }
 }
-
 
 
 

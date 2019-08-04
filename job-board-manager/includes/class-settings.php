@@ -21,9 +21,18 @@ class class_job_bm_settings{
 	
 	public function admin_menu() {
 
-		add_submenu_page( 'edit.php?post_type=job', __( 'Settings', 'job-board-manager' ), __( 'Settings', 'job-board-manager' ), 'manage_options', 'job_bm_settings', array( $this, 'settings_page' ) );
+        $job_bm_welcome           = get_option('job_bm_welcome');
 
-        add_submenu_page( 'edit.php?post_type=job', __( 'Welcome', 'job-board-manager' ), __( 'Welcome', 'job-board-manager' ), 'manage_options', 'job_bm_welcome', array( $this, 'job_bm_welcome' ) );
+
+        add_submenu_page( 'edit.php?post_type=job', __( 'Settings', 'job-board-manager' ), __( 'Settings', 'job-board-manager' ), 'manage_options', 'job_bm_settings', array( $this, 'settings_page' ) );
+
+        if(empty($job_bm_welcome)):
+            add_submenu_page( 'edit.php?post_type=job', __( 'Welcome', 'job-board-manager' ), __( 'Welcome', 'job-board-manager' ), 'manage_options', 'job_bm_welcome', array( $this, 'job_bm_welcome' ) );
+        endif;
+
+        add_submenu_page( 'edit.php?post_type=job', __( 'Add-ons', 'job-board-manager' ), __( 'Add-ons', 'job-board-manager' ), 'manage_options', 'job_bm_addons', array( $this, 'job_bm_addons' ) );
+
+
 
 		do_action( 'job_bm_action_admin_menus' );
 		
@@ -43,7 +52,12 @@ class class_job_bm_settings{
 		
 		include( 'menu/welcome.php' );
 		}
-	
+
+    public function job_bm_addons(){
+
+        include( 'menu/addons.php' );
+    }
+
 	public function emails_templates(){
 		
 		include( 'menu/emails-templates.php' );

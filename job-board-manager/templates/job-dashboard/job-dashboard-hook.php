@@ -157,7 +157,6 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
 
             $user_job_count = job_bm_user_job_count();
             $user_application_count = job_bm_user_application_count();
-            $user_application_hired_count = job_bm_user_application_hired_count();
             $user_application_received_count = job_bm_user_application_received_count();
 
 
@@ -170,11 +169,6 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
             <div class="user-stats">
                 <div class="">
                     <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo $user_job_count; ?></span>
-                </div>
-
-                <div class="">
-                    <span><?php echo __('Total hire by:', 'job-board-manager'); ?></span> <span><?php echo
-                        $user_application_hired_count; ?></span>
                 </div>
 
                 <div class="">

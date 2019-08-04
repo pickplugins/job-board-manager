@@ -30,6 +30,13 @@
     cursor: pointer;
 }
 
+
+.job-bm-my-applications .application-action .comments.active{
+    background: #737373;
+    color: #fff;
+
+}
+
 .job-bm-my-applications .application-link{
     min-width: 45px;
     display: inline-block;
@@ -121,3 +128,70 @@
     vertical-align: top;
     text-align: right;
 }
+
+
+
+
+
+.job-bm-my-applications .comment-form-wrap .comment-text{
+    width: 94%;
+    margin: 0 auto;
+    display: block;
+
+}
+
+
+
+.job-bm-my-applications .comment-form-wrap .comment-submit{
+    width: 98%;
+    margin: 10px auto;
+    display: block;
+
+}
+.job-bm-my-applications .application-comments{
+    display: none;
+}
+
+.job-bm-my-applications .write-reply{
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.job-bm-my-applications .replies{
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #ddd;
+    font-size: 15px;
+}
+.job-bm-my-applications .comment-author{
+    font-weight: bold;
+    float: left;}
+
+.job-bm-my-applications .comment-date{
+    float: right;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+.job-bm-my-applications .comment-content{
+    display: block;
+    clear: both;
+    background: #eaeaea;
+    padding: 010px;
+    border-radius: 30px;
+    border-top-left-radius: 0;
+}
+.job-bm-my-applications .comment-list .comment{
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
