@@ -646,14 +646,16 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
     function job_bm_settings_tabs_content_email($tab){
 
         $settings_tabs_field = new settings_tabs_field();
-
+        $class_job_bm_emails = new class_job_bm_emails();
+        $templates_data_default = $class_job_bm_emails->job_bm_email_templates_data();
 
         $job_bm_logo_url = get_option('job_bm_logo_url');
         $job_bm_from_email = get_option('job_bm_from_email');
+        $templates_data = get_option( 'job_bm_email_templates_data', $templates_data_default );
 
-
-
-
+//        $job_bm_test_option = get_option('job_bm_test_option');
+//
+//        var_dump($job_bm_test_option);
 
 
         ?>
@@ -692,11 +694,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
             $settings_tabs_field->generate_field($args);
 
 
-            $class_job_bm_emails = new class_job_bm_emails();
-            $templates_data_default = $class_job_bm_emails->job_bm_email_templates_data();
 
-
-            $templates_data = get_option( 'job_bm_email_templates_data', $templates_data_default );
 
 
 

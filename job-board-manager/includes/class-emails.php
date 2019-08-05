@@ -11,8 +11,6 @@ class class_job_bm_emails{
 	
 	public function __construct(){
 
-		//add_action('add_meta_boxes', array($this, 'meta_boxes_job'));
-		//add_action('save_post', array($this, 'meta_boxes_job_save'));
 
 		}
 
@@ -27,26 +25,25 @@ class class_job_bm_emails{
 		$email_to = isset($email_data['email_to']) ? $email_data['email_to'] : '';
         $email_bcc = isset($email_data['email_bcc']) ? $email_data['email_bcc'] : '';
 
-		$email_from = isset($email_data['email_from']) ? $email_data['email_from'] : '';
-		$email_from_name = isset($email_data['email_from_name']) ? $email_data['email_from_name'] : '';
+		$email_from = isset($email_data['email_from']) ? $email_data['email_from'] : get_option('admin_email');
+		$email_from_name = isset($email_data['email_from_name']) ? $email_data['email_from_name'] : get_bloginfo('name');
 		$subject = isset($email_data['subject']) ? $email_data['subject'] : '';
 		$email_body = isset($email_data['html']) ? $email_data['html'] : '';
-		$attachments = isset($email_data['attachments']) ? $email_data['attachments'] : array();
+		$attachments = isset($email_data['attachments']) ? $email_data['attachments'] : '';
 					
 
-		$headers = "";
-		$headers .= "From: ".$email_from_name." ".$email_from." \r\n";
-
-		if(!empty($email_bcc)){
-            $headers .= 'Bcc: '.$email_bcc.'' . "\r\n";
+		$headers = array();
+		$headers[] = "From: ".$email_from_name." <".$email_from.">";
+		$headers[] = "MIME-Version: 1.0";
+		$headers[] = "Content-Type: text/html; charset=UTF-8";
+        if(!empty($email_bcc)){
+            $headers[] = "Bcc: ".$email_bcc;
         }
-
-		$headers .= "MIME-Version: 1.0\r\n";
-		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        $headers = apply_filters('job_bm_mail_headers', $headers);
 
 		$status = wp_mail($email_to, $subject, $email_body, $headers, $attachments);
-		
-		return $status;
+
+        return $status;
 		
 		}	
 		

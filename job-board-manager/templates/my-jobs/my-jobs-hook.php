@@ -138,11 +138,11 @@ endif;
 add_action('job_bm_my_jobs_loop','job_bm_my_jobs_loop_wrap_start');
 
 if(!function_exists('job_bm_my_jobs_loop_wrap_start')){
-    function job_bm_my_jobs_loop_wrap_start(){
+    function job_bm_my_jobs_loop_wrap_start($job_id){
 
 
         ?>
-        <div class="my-job-card">
+        <div class="my-job-card my-job-card-<?php echo $job_id; ?>">
 
 
 

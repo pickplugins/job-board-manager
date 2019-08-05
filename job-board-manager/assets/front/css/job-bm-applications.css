@@ -17,6 +17,12 @@
 
 
 }
+
+.job-bm-applications .application-trash{
+    opacity: 0.3;
+}
+
+
 .job-bm-applications .application-action{
     display: inline-block;
 }

@@ -101,6 +101,9 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 04/08/2019 - add - email notification "Job Edited" added
     * 04/08/2019 - add - email notification "Job featured" added
     * 04/08/2019 - add - email notification "Job trashed" added
+    * 04/08/2019 - add - filter hook job_bm_mail_headers added
+
+
 
 
 	= 2.1.5 =

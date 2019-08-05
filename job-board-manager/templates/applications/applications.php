@@ -156,39 +156,36 @@ if(isset($_POST['comment_submit_hidden'])){
 			}
 
 
-        //$meta_query['relation'] = 'OR';
-
-//            $meta_query[] = array(
-//                'key' => 'application_trash',
-//                'value' => 'yes',
-//                'compare' => '!=',
-//                'type' => 'CHAR',
-//            );
-
-
         $meta_query['relation'] = 'OR';
 
-			foreach ($current_user_job_ids as $job_id){
-                $meta_query[] = array(
+			$i=0;
+
+        if(!empty($current_user_job_ids))
+        foreach ($current_user_job_ids as $job_id){
+
+            $meta_query[] = array(
+
+                'relation'=>'AND',
+
+                array(
                     'key'	 	=> 'job_bm_am_job_id',
                     'value'	  	=> $job_id,
                     'compare' 	=> '=',
-                );
-            }
+                ),
+                array(
+                    'key' => 'application_trash',
+                    'value'	  	=> 'yes',
+                    'compare' 	=> 'NOT EXISTS',
+                    'type' => 'CHAR',
+                )
+            );
 
 
 
+            $i++;
+        }
 
 
-    //    $meta_query[] = array(
-    //        'key'	 	=> 'job_bm_am_job_id',
-    //        'compare' 	=> 'EXISTS',
-    //    );
-
-
-
-
-        //echo '<pre>'.var_export(($current_user_job_ids), true).'</pre>';
 
 
         $wp_query_args['post_type'] = 'application';
@@ -201,6 +198,7 @@ if(isset($_POST['comment_submit_hidden'])){
 
         //echo '<pre>'.var_export(($wp_query_args), true).'</pre>';
 
+        //return;
 
         $wp_query = new WP_Query($wp_query_args);
 
@@ -249,7 +247,7 @@ if(isset($_POST['comment_submit_hidden'])){
                 //var_dump($job_bm_am_job_id);
 
                 ?>
-                <div class="application-card application-card-<?php echo $application_id; ?>">
+                <div class="application-card application-card-<?php echo $application_id; ?> <?php if($application_trash =='yes') echo 'application-trash'; ?>">
                     <div class="card-top">
                         <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
                         <div class="application-action">
@@ -293,26 +291,33 @@ if(isset($_POST['comment_submit_hidden'])){
                                 $comments = get_comments($args);
 
 
-                                foreach ($comments as $comment){
-                                    $user_id = $comment->user_id;
-                                    $comment_content = $comment->comment_content;
-                                    $comment_date = $comment->comment_date;
+                                if(!empty($comments)):
+                                    foreach ($comments as $comment){
+                                        $user_id = $comment->user_id;
+                                        $comment_content = $comment->comment_content;
+                                        $comment_date = $comment->comment_date;
 
 
-                                    $comment_author = get_user_by("ID", $user_id);
+                                        $comment_author = get_user_by("ID", $user_id);
 
-                                    //echo '<pre>'.var_export($current_user_job_ids, true).'</pre>';
+                                        //echo '<pre>'.var_export($current_user_job_ids, true).'</pre>';
 
+                                        ?>
+                                        <div class="comment">
+                                            <div class="comment-author"><?php echo $comment_author->display_name; ?></div>
+                                            <div class="comment-date"><?php echo $comment_date; ?></div>
+
+                                            <div class="comment-content"><?php echo $comment_content; ?></div>
+
+                                        </div>
+                                        <?php
+                                    }
+                                else:
                                     ?>
-                                    <div class="comment">
-                                        <div class="comment-author"><?php echo $comment_author->display_name; ?></div>
-                                        <div class="comment-date"><?php echo $comment_date; ?></div>
+                                    <div class="comment no-comment"><?php echo __('No reply yet. ','job-board-manager'); ?></div>
 
-                                        <div class="comment-content"><?php echo $comment_content; ?></div>
-
-                                    </div>
-                                    <?php
-                                }
+                                <?php
+                                endif;
 
                                 ?>
 

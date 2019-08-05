@@ -12,6 +12,7 @@ function job_ids_by_user($user_id=0){
     $wp_query = new WP_Query(
         array (
             'post_type' => 'job',
+            'post_status' => 'publish',
             'orderby' => 'date',
             'order' => 'DESC',
             'author' => $user_id,
@@ -198,6 +199,9 @@ if(!function_exists('job_bm_show_pending_number')){
 				if(wp_trash_post($job_id)){
 					$html.=	'<i class="fa fa-check"></i> '.__('Job Deleted.','job-board-manager');
 					$response['is_deleted'] = 'yes';
+
+					do_action('job_bm_job_trash', $job_id);
+
 					}
 				else{
 					$html.=	'<i class="fa fa-exclamation-circle"></i> '.__('Something going wrong.','job-board-manager');

@@ -28,7 +28,8 @@ jQuery(document).ready(function($) {
 							$(this).html('<i class="far fa-trash-alt"></i>');
 
 							if(is_deleted=='yes'){
-                                $(this).parent().parent().fadeOut(2000);
+                                $('.my-job-card-'+job_id).fadeOut(2000);
+								job_bm_notice('success', 'Job deleted');
 							}
 
 						}
