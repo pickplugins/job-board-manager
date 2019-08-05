@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Awesome Job Board Manager.
-Version: 2.1.5
+Version: 2.1.7
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.5' );
+		define('job_bm_plugin_version', '2.1.7' );
 
 
 		// Class
@@ -54,6 +54,7 @@ class JobBoardManager{
 		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-archive.php');
         require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-applications.php');
         require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-applications.php');
+        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-registration-form.php');
 
 
 
@@ -63,7 +64,6 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-crons.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-applications.php');
 		require_once( job_bm_plugin_dir . 'includes/functions/functions.php');
-		require_once( job_bm_plugin_dir . 'includes/functions/account-registration.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-settings.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');
@@ -136,7 +136,8 @@ class JobBoardManager{
 
         wp_schedule_event(time(), $job_bm_experied_check_recurrance, 'job_bm_cron_expired_check');
 
-		
+        do_action( 'job_bm_activation' );
+
 	}
 
     function job_bm_cron_expired_check_deactivation() {
@@ -188,6 +189,7 @@ class JobBoardManager{
         wp_register_style('job-bm-my-applications', job_bm_plugin_url.'assets/front/css/my-applications.css');
 
         wp_register_style('job-bm-notice', job_bm_plugin_url.'assets/front/css/job-bm-notice.css');
+        wp_register_style('job-bm-registration-form', job_bm_plugin_url.'assets/front/css/registration-form.css');
 
 
 

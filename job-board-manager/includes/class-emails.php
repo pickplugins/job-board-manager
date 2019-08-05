@@ -87,6 +87,142 @@ class class_job_bm_emails{
                 'email_from'=>$admin_email,
                 'email_from_name'=> $site_name,
                 'enable'=> 'yes',
+            ),
+
+            'application_new_comment'=>array(
+                'name'=>__('Application new Comment', 'job-board-manager'),
+                'description'=>__('Notification email for when new comment posted on application.', 'job-board-manager'),
+                'subject'=>__('Comment on application - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_new_comment'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+            'application_not_hire'=>array(
+                'name'=>__('Application hire removed', 'job-board-manager'),
+                'description'=>__('Notification email for application hire removed.', 'job-board-manager'),
+                'subject'=>__('Application hire removed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_not_hire'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+            'application_rate'=>array(
+                'name'=>__('Application rated', 'job-board-manager'),
+                'description'=>__('Notification email for application rated.', 'job-board-manager'),
+                'subject'=>__('Application rated - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_rate'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+            'application_submitted'=>array(
+                'name'=>__('Application submitted', 'job-board-manager'),
+                'description'=>__('Notification email for application submitted.', 'job-board-manager'),
+                'subject'=>__('Application submitted - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_submitted'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+
+            'application_trash'=>array(
+                'name'=>__('Application trashed', 'job-board-manager'),
+                'description'=>__('Notification email for application trashed.', 'job-board-manager'),
+                'subject'=>__('Application trashed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['application_trash'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+
+
+            'job_edited'=>array(
+                'name'=>__('Job edited', 'job-board-manager'),
+                'description'=>__('Notification email for admin when user edited job.', 'job-board-manager'),
+                'subject'=>__('Job Edited - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_edited'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+
+            'job_featured'=>array(
+                'name'=>__('Job featured', 'job-board-manager'),
+                'description'=>__('Notification email for admin featured a job.', 'job-board-manager'),
+                'subject'=>__('Job featured - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_featured'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+            'job_published'=>array(
+                'name'=>__('Job published', 'job-board-manager'),
+                'description'=>__('Notification email for admin published a job.', 'job-board-manager'),
+                'subject'=>__('Job published - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_published'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+
+            'job_submitted'=>array(
+                'name'=>__('Job submitted', 'job-board-manager'),
+                'description'=>__('Notification email for user submitted job.', 'job-board-manager'),
+                'subject'=>__('Job Submitted - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_submitted'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+
+            'job_trash'=>array(
+                'name'=>__('Job trashed', 'job-board-manager'),
+                'description'=>__('Notification email for trash job.', 'job-board-manager'),
+                'subject'=>__('Job trashed - {site_url}', 'job-board-manager'),
+                'html'=>$templates_data_html['job_trash'],
+                'email_to'=>$admin_email,
+                'email_from'=>$admin_email,
+                'email_from_name'=> $site_name,
+                'enable'=> 'yes',
+            ),
+			
+			
+
+		);
+		
+		$templates_data = apply_filters('job_bm_email_templates_data', $templates_data);
+		
+		return $templates_data;
+
+		}
+		
+
+
+	public function email_templates_parameters(){
+
+
+
+        $parameters = array(
+
+            'application_hire'=>array(
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
@@ -105,229 +241,226 @@ class class_job_bm_emails{
                     '{job_edit_url}'  => 'Job admin post edit URL',
                     '{job_author_id}'  => 'Job post author ID',
                     '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
 
             ),
 
             'application_new_comment'=>array(
-                'name'=>__('Application new Comment', 'job-board-manager'),
-                'description'=>__('Notification email for when new comment posted on application.', 'job-board-manager'),
-                'subject'=>__('Comment on application - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['application_new_comment'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{comment_id}'  => 'Comment ID',
+                    '{comment_author_email}'  => 'Comment author email',
+                    '{comment_content}'  => 'Comment content',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
             'application_not_hire'=>array(
-                'name'=>__('Application hire removed', 'job-board-manager'),
-                'description'=>__('Notification email for application hire removed.', 'job-board-manager'),
-                'subject'=>__('Application hire removed - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['application_not_hire'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
             'application_rate'=>array(
-                'name'=>__('Application rated', 'job-board-manager'),
-                'description'=>__('Notification email for application rated.', 'job-board-manager'),
-                'subject'=>__('Application rated - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['application_rate'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
             'application_submitted'=>array(
-                'name'=>__('Application submitted', 'job-board-manager'),
-                'description'=>__('Notification email for application submitted.', 'job-board-manager'),
-                'subject'=>__('Application submitted - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['application_submitted'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
 
             'application_trash'=>array(
-                'name'=>__('Application trashed', 'job-board-manager'),
-                'description'=>__('Notification email for application trashed.', 'job-board-manager'),
-                'subject'=>__('Application trashed - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['application_trash'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{application_id}'  => 'Application post ID',
+                    '{application_title}'  => 'Application post title',
+                    '{application_url}'  => 'Application post URL',
+                    '{application_edit_url}'  => 'Application admin post edit URL',
+                    '{application_author_id}'  => 'Application post author ID',
+                    '{application_author_name}'  => 'Application post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
 
 
             'job_edited'=>array(
-                'name'=>__('Job edited', 'job-board-manager'),
-                'description'=>__('Notification email for admin when user edited job.', 'job-board-manager'),
-                'subject'=>__('Job Edited - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['job_edited'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
 
             'job_featured'=>array(
-                'name'=>__('Job featured', 'job-board-manager'),
-                'description'=>__('Notification email for admin featured a job.', 'job-board-manager'),
-                'subject'=>__('Job featured - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['job_featured'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
             'job_published'=>array(
-                'name'=>__('Job published', 'job-board-manager'),
-                'description'=>__('Notification email for admin published a job.', 'job-board-manager'),
-                'subject'=>__('Job published - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['job_published'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
 
             'job_submitted'=>array(
-                'name'=>__('Job submitted', 'job-board-manager'),
-                'description'=>__('Notification email for user submitted job.', 'job-board-manager'),
-                'subject'=>__('Job Submitted - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['job_submitted'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
 
             'job_trash'=>array(
-                'name'=>__('Job trashed', 'job-board-manager'),
-                'description'=>__('Notification email for trash job.', 'job-board-manager'),
-                'subject'=>__('Job trashed - {site_url}', 'job-board-manager'),
-                'html'=>$templates_data_html['job_trash'],
-                'email_to'=>$admin_email,
-                'email_from'=>$admin_email,
-                'email_from_name'=> $site_name,
-                'enable'=> 'yes',
+
                 'parameters'=> array(
                     '{site_url}'=>'Website Home URL',
                     '{site_description}'=>'Website tagline',
                     '{site_logo_url}'=>'Logo url',
-                    '{user_name}'=> 'User display name',
-                    '{user_avatar}'=> 'User avatar',
+
+                    '{job_id}'  => 'Job ID',
+                    '{job_title}'  => 'Job Title',
+                    '{job_url}'  => 'Job post URL',
+                    '{job_edit_url}'  => 'Job admin post edit URL',
+                    '{job_author_id}'  => 'Job post author ID',
+                    '{job_author_name}'  => 'Job post author name',
+
+                    '{current_user_id}'  => 'Logged-in user ID',
+                    '{current_user_name}'  => 'Logged-in user display name',
+                    '{current_user_avatar}'  =>'Logged-in user avatar',
                 ),
             ),
-			
-			
-
-		);
-		
-		$templates_data = apply_filters('job_bm_email_templates_data', $templates_data);
-		
-		return $templates_data;
-
-		}
-		
 
 
-	public function job_bm_email_templates_parameters(){
-		
-		
-			$parameters['site_parameter'] = array(
-												'title'=>__('Site Parameters', 'job-board-manager'),
-												'parameters'=>array('{site_name}','{site_description}','{site_url}','{site_logo_url}'),										
-												);
-												
-			$parameters['user_parameter'] = array(
-												'title'=>__('Users Parameters', 'job-board-manager'),
-												'parameters'=>array('{user_name}','{user_avatar}','{user_email}'),										
-												);	
-												
-			$parameters['job_parameter'] = array(
-												'title'=>__('Job Parameters', 'job-board-manager'),
-												'parameters'=>array('{job_id}','{job_edit_url}','{job_title}','{job_shortcontent}','{job_url}'),										
-												);										
-																					
-			$parameters['job_application'] = array(
-												'title'=>__('Job application', 'job-board-manager'),
-												'parameters'=>array('{appliction_content}','{appliction_url}'),										
-												);																
+
+        );
 		
 												
 			$parameters = apply_filters('job_bm_emails_templates_param',$parameters);

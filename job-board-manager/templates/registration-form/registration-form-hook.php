@@ -1,0 +1,219 @@
+<?php
+if ( ! defined('ABSPATH')) exit;  // if direct access
+
+
+add_action('job_bm_registration_form','job_bm_registration_form_field_username');
+function job_bm_registration_form_field_username(){
+
+    $username = isset($_POST['username']) ? sanitize_user($_POST['username']) : "";
+
+
+    ?>
+    <p>
+        <label for="username"><?php echo __('Username','job-board-manager');  ?> <br>
+            <input type="text" name="username" value="<?php echo $username;  ?>">
+        </label>
+    </p>
+    <?php
+}
+
+add_action('job_bm_registration_form','job_bm_registration_form_field_password');
+function job_bm_registration_form_field_password(){
+
+    $password = isset($_POST['password']) ? esc_attr($_POST['password']) : "";
+
+
+    ?>
+    <p>
+        <label for="password"><?php echo __('Password','job-board-manager'); ?> <br>
+            <input type="password" name="password" value="<?php echo $password; ?>">
+        </label>
+    </p>
+    <?php
+}
+
+
+add_action('job_bm_registration_form','job_bm_registration_form_field_email');
+function job_bm_registration_form_field_email(){
+
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
+
+
+
+    ?>
+    <p>
+        <label for="email"><?php echo __('Email','job-board-manager'); ?> <br>
+            <input type="text" name="email" value="<?php echo $email;  ?>">
+        </label>
+    </p>
+    <?php
+}
+
+add_action('job_bm_registration_form','job_bm_registration_form_field_recaptcha');
+function job_bm_registration_form_field_recaptcha(){
+
+    $job_bm_registration_recaptcha		= get_option('job_bm_registration_recaptcha');
+    $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
+
+    if($job_bm_registration_recaptcha != 'yes'){
+        return;
+    }
+
+    ?>
+    <p>
+        <label for="email">
+            <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
+            <script src="https://www.google.com/recaptcha/api.js"></script>
+        </label>
+    </p>
+    <?php
+}
+
+
+
+
+
+
+add_action('job_bm_registration_submit', 'job_bm_registration_submit_data');
+
+function job_bm_registration_submit_data($post_data){
+
+    $job_bm_registration_recaptcha		    = get_option('job_bm_registration_recaptcha');
+
+
+    $username = isset($post_data['username']) ? sanitize_user($post_data['username']) : "";
+    $password = isset($post_data['password']) ? esc_attr($post_data['password']) : "";
+    $email = isset($post_data['email']) ? sanitize_email($post_data['email']) : "";
+
+
+    $error = new WP_Error();
+
+    if(empty($post_data['username'])){
+        $error->add( 'username', __( 'ERROR: username is empty.', 'job-board-manager' ) );
+    }
+
+    if ( strlen( $username ) < 4 ) {
+        $error->add('username_short', __('ERROR: At least 4 characters is required','job-board-manager'));
+    }
+
+    if ( username_exists( $username ) )
+        $error->add('username_exist',__( 'ERROR: username already exists!','job-board-manager'));
+
+    if ( !validate_username( $username ) ) {
+        $error->add('username_invalid', __('ERROR: username is not valid','job-board-manager'));
+    }
+
+
+    if(empty($post_data['password'])){
+        $error->add( 'password_em[ty', __( 'ERROR: password is empty.', 'job-board-manager' ) );
+    }
+
+    if ( strlen( $password ) < 5 ) {
+        $error->add('password_short', __('ERROR: Password length must be greater than 5','job-board-manager'));
+    }
+
+
+
+    if(empty($post_data['email'])){
+        $error->add( 'email', __( 'ERROR: email is empty.', 'job-board-manager' ) );
+    }
+
+    if ( !is_email( $email ) ) {
+        $error->add('email_invalid', __('ERROR: Email is not valid','job-board-manager'));
+    }
+
+    if ( email_exists( $email ) ) {
+        $error->add('email_exist', __('ERROR: Email Already in use','job-board-manager'));
+    }
+
+
+    if(empty($post_data['g-recaptcha-response']) && $job_bm_registration_recaptcha =='yes'){
+
+        $error->add( 'g-recaptcha-response', __( 'ERROR: reCaptcha test failed.', 'job-board-manager' ) );
+    }
+
+
+
+    if(! isset( $_POST['job_bm_registration_nonce'] ) || ! wp_verify_nonce( $_POST['job_bm_registration_nonce'], 'job_bm_registration_nonce' ) ){
+
+        $error->add( '_wpnonce', __( 'ERROR: security test failed.', 'job-board-manager' ) );
+    }
+
+
+
+    $errors = apply_filters( 'job_bm_registration_errors', $error, $post_data );
+
+
+
+
+
+
+    if ( !$error->has_errors() ) {
+
+
+
+
+        $userdata = array(
+            'user_login'	=> 	$username,
+            'user_email' 	=> 	$email,
+            'user_pass' 	=> 	$password,
+
+        );
+        $user = wp_insert_user( $userdata );
+
+        if(! is_wp_error( $user )){
+            do_action('job_bm_registration_completed', $user);
+        }
+
+
+
+
+
+    }
+    else{
+
+        $error_messages = $error->get_error_messages();
+
+        ?>
+        <div class="errors">
+            <?php
+
+            if(!empty($error_messages))
+                foreach ($error_messages as $message){
+                    ?>
+                    <div class="job-bm-error"><?php echo $message; ?></div>
+                    <?php
+                }
+            ?>
+        </div>
+        <?php
+    }
+}
+
+
+
+
+
+
+
+add_action('job_bm_registration_completed','job_bm_registration_completed_thanku');
+function job_bm_registration_completed_thanku($user){
+
+    ?>
+    <div class="user-created success">
+        <?php echo apply_filters('job_bm_registration_thank_you', _e('Thanks for creating account.', 'job-board-manager')); ?>
+    </div>
+    <?php
+
+}
+
+
+
+
+
+
+
+
+
+
+

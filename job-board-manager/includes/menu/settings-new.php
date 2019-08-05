@@ -99,6 +99,9 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     $job_bm_job_submit_page_id = isset($_POST['job_bm_job_submit_page_id']) ?  sanitize_text_field($_POST['job_bm_job_submit_page_id']) : '';
                     $job_bm_job_edit_page_id = isset($_POST['job_bm_job_edit_page_id']) ?  sanitize_text_field($_POST['job_bm_job_edit_page_id']) : '';
                     $job_bm_registration_enable = isset($_POST['job_bm_registration_enable']) ?  sanitize_text_field($_POST['job_bm_registration_enable']) : '';
+                    $job_bm_registration_recaptcha = isset($_POST['job_bm_registration_recaptcha']) ?  sanitize_text_field($_POST['job_bm_registration_recaptcha']) : '';
+
+
                     $job_bm_login_enable = isset($_POST['job_bm_login_enable']) ?  sanitize_text_field($_POST['job_bm_login_enable']) : '';
                     $job_bm_account_required_post_job = isset($_POST['job_bm_account_required_post_job']) ?  sanitize_text_field($_POST['job_bm_account_required_post_job']) : '';
                     $job_bm_reCAPTCHA_enable = isset($_POST['job_bm_reCAPTCHA_enable']) ?  sanitize_text_field($_POST['job_bm_reCAPTCHA_enable']) : '';
@@ -141,6 +144,9 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     update_option('job_bm_archive_page_id', $job_bm_archive_page_id);
                     update_option('job_bm_job_submit_page_id', $job_bm_job_submit_page_id);
                     update_option('job_bm_job_edit_page_id', $job_bm_job_edit_page_id);
+                    update_option('job_bm_registration_enable', $job_bm_registration_enable);
+                    update_option('job_bm_registration_recaptcha', $job_bm_registration_recaptcha);
+
                     update_option('job_bm_login_enable', $job_bm_login_enable);
                     update_option('job_bm_account_required_post_job', $job_bm_account_required_post_job);
                     update_option('job_bm_reCAPTCHA_enable', $job_bm_reCAPTCHA_enable);

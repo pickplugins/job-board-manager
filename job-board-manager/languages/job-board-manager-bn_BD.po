@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-07-31 10:16+0600\n"
-"PO-Revision-Date: 2019-07-31 10:16+0600\n"
+"POT-Creation-Date: 2019-08-05 23:59+0600\n"
+"PO-Revision-Date: 2019-08-06 00:01+0600\n"
 "Last-Translator: \n"
 "Language-Team: pickplugins <support@pickplugins.com>\n"
 "Language: en\n"
@@ -16,57 +16,189 @@ msgstr ""
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
-#: includes/class-emails.php:67
-msgid "New Job Submitted"
-msgstr "নতুন কাজ জমা হয়েছে"
+#: includes/class-emails.php:82
+#, fuzzy
+#| msgid "Application"
+msgid "Application hire"
+msgstr "আবেদন"
 
-#: includes/class-emails.php:68
-msgid "Notification email for admin when user submitted job."
+#: includes/class-emails.php:83
+msgid "Notification email for when application hired."
 msgstr ""
 
-#: includes/class-emails.php:69
-msgid "New Job Submitted - {site_url}"
+#: includes/class-emails.php:84
+#, fuzzy
+#| msgid "Job application"
+msgid "Your application hired - {site_url}"
+msgstr "জব আবেদন"
+
+#: includes/class-emails.php:93
+#, fuzzy
+#| msgid "Application Info"
+msgid "Application new Comment"
+msgstr "আবেদন তথ্য"
+
+#: includes/class-emails.php:94
+msgid "Notification email for when new comment posted on application."
+msgstr ""
+
+#: includes/class-emails.php:95
+msgid "Comment on application - {site_url}"
+msgstr ""
+
+#: includes/class-emails.php:104
+#, fuzzy
+#| msgid "Application Info"
+msgid "Application hire removed"
+msgstr "আবেদন তথ্য"
+
+#: includes/class-emails.php:105
+msgid "Notification email for application hire removed."
+msgstr ""
+
+#: includes/class-emails.php:106
+#, fuzzy
+#| msgid "Application Info"
+msgid "Application hire removed - {site_url}"
+msgstr "আবেদন তথ্য"
+
+#: includes/class-emails.php:115
+#, fuzzy
+#| msgid "Application"
+msgid "Application rated"
+msgstr "আবেদন"
+
+#: includes/class-emails.php:116
+msgid "Notification email for application rated."
+msgstr ""
+
+#: includes/class-emails.php:117
+#, fuzzy
+#| msgid "Application"
+msgid "Application rated - {site_url}"
+msgstr "আবেদন"
+
+#: includes/class-emails.php:126
+#, fuzzy
+#| msgid "Application"
+msgid "Application submitted"
+msgstr "আবেদন"
+
+#: includes/class-emails.php:127
+#, fuzzy
+#| msgid "Notify email new job submit ?"
+msgid "Notification email for application submitted."
+msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
+
+#: includes/class-emails.php:128
+#, fuzzy
+#| msgid "New Job Submitted - {site_url}"
+msgid "Application submitted - {site_url}"
 msgstr "নতুন কাজ জমা হয়েছে  - {site_url}"
 
-#: includes/class-emails.php:77
-msgid "New Job Published"
+#: includes/class-emails.php:138
+#, fuzzy
+#| msgid "Application"
+msgid "Application trashed"
+msgstr "আবেদন"
+
+#: includes/class-emails.php:139
+msgid "Notification email for application trashed."
+msgstr ""
+
+#: includes/class-emails.php:140
+#, fuzzy
+#| msgid "Application"
+msgid "Application trashed - {site_url}"
+msgstr "আবেদন"
+
+#: includes/class-emails.php:151
+#, fuzzy
+#| msgid "Job Edit"
+msgid "Job edited"
+msgstr "কাজ সম্পাদনা"
+
+#: includes/class-emails.php:152
+#, fuzzy
+#| msgid "Notify email to admin when new job published."
+msgid "Notification email for admin when user edited job."
+msgstr "নতুন কাজ প্রকাশ হলে এডমিন কে মেইল করুন"
+
+#: includes/class-emails.php:153
+#, fuzzy
+#| msgid "New Job Submitted - {site_url}"
+msgid "Job Edited - {site_url}"
+msgstr "নতুন কাজ জমা হয়েছে  - {site_url}"
+
+#: includes/class-emails.php:163
+#, fuzzy
+#| msgid "Featured:"
+msgid "Job featured"
+msgstr "ফিচার্ডঃ"
+
+#: includes/class-emails.php:164
+#, fuzzy
+#| msgid "Notify email to admin when new job published."
+msgid "Notification email for admin featured a job."
+msgstr "নতুন কাজ প্রকাশ হলে এডমিন কে মেইল করুন"
+
+#: includes/class-emails.php:165
+#, fuzzy
+#| msgid "New Job Submitted - {site_url}"
+msgid "Job featured - {site_url}"
+msgstr "নতুন কাজ জমা হয়েছে  - {site_url}"
+
+#: includes/class-emails.php:174
+#, fuzzy
+#| msgid "New Job Published"
+msgid "Job published"
 msgstr "নতুন কাজ প্রকাশ হয়েছে"
 
-#: includes/class-emails.php:78
-msgid "Notification email for admin when someone published job."
-msgstr ""
+#: includes/class-emails.php:175
+#, fuzzy
+#| msgid "Notify email to admin when new job published."
+msgid "Notification email for admin published a job."
+msgstr "নতুন কাজ প্রকাশ হলে এডমিন কে মেইল করুন"
 
-#: includes/class-emails.php:79
-msgid "New Job Published - {site_url}"
+#: includes/class-emails.php:176
+#, fuzzy
+#| msgid "New Job Published - {site_url}"
+msgid "Job published - {site_url}"
 msgstr "নতুন কাজ প্রকাশ হয়েছে - {site_url}"
 
-#: includes/class-emails.php:87
-msgid "New Job Approved"
-msgstr "নতুন কাজ অনুমোদন পেয়েছে"
+#: includes/class-emails.php:186
+#, fuzzy
+#| msgid "New Job Submitted"
+msgid "Job submitted"
+msgstr "নতুন কাজ জমা হয়েছে"
 
-#: includes/class-emails.php:88
-msgid "Notification email for job poster when admin published job."
+#: includes/class-emails.php:187
+#, fuzzy
+#| msgid "Notify email new job submit ?"
+msgid "Notification email for user submitted job."
+msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
+
+#: includes/class-emails.php:188
+#, fuzzy
+#| msgid "New Job Submitted - {site_url}"
+msgid "Job Submitted - {site_url}"
+msgstr "নতুন কাজ জমা হয়েছে  - {site_url}"
+
+#: includes/class-emails.php:197
+#, fuzzy
+#| msgid "Job status"
+msgid "Job trashed"
+msgstr "কাজের অবস্থা"
+
+#: includes/class-emails.php:198
+msgid "Notification email for trash job."
 msgstr ""
 
-#: includes/class-emails.php:89
-msgid "New Job Approved - {site_url}"
-msgstr ""
-
-#: includes/class-emails.php:119
-msgid "Site Parameters"
-msgstr "সাইট প্যারামিটার"
-
-#: includes/class-emails.php:124
-msgid "Users Parameters"
-msgstr "ব্যবহারকারী প্যারামিটার"
-
-#: includes/class-emails.php:129
-msgid "Job Parameters"
-msgstr "জব প্যারামিটার"
-
-#: includes/class-emails.php:134
-msgid "Job application"
-msgstr "জব আবেদন"
+#: includes/class-emails.php:199
+#, fuzzy
+#| msgid "New Job Published - {site_url}"
+msgid "Job trashed - {site_url}"
+msgstr "নতুন কাজ প্রকাশ হয়েছে - {site_url}"
 
 #: includes/class-functions.php:16
 msgid "Full Time"
@@ -164,14 +296,12 @@ msgstr "৫০,০০১-৮০,০০০"
 msgid "80,001-1,00,000"
 msgstr "৮০,০০১-১,০০,০০০"
 
-#: includes/class-functions.php:98 includes/functions/functions.php:313
-#: includes/functions/functions.php:334
+#: includes/class-functions.php:98 includes/functions/functions.php:345
+#: includes/functions/functions.php:366
 msgid "None"
 msgstr "কোনটি নয়"
 
 #: includes/class-functions.php:99
-#, fuzzy
-#| msgid "Email"
 msgid "By Email"
 msgstr "ইমেইল"
 
@@ -215,96 +345,95 @@ msgstr ""
 msgid "How to add/remove job types"
 msgstr ""
 
-#: includes/class-functions.php:295
+#: includes/class-functions.php:295 includes/functions/functions-welcome.php:463
 msgid "Job Archive"
 msgstr "কাজের লিস্ট"
 
-#: includes/class-functions.php:300
+#: includes/class-functions.php:300 includes/functions/functions-welcome.php:483
 msgid "Job Submit"
 msgstr "কাজ জমা দিন"
 
-#: includes/class-functions.php:305
+#: includes/class-functions.php:305 includes/functions/functions-welcome.php:504
 msgid "Job Edit"
 msgstr "কাজ সম্পাদনা"
 
-#: includes/class-functions.php:310
+#: includes/class-functions.php:310 includes/functions/functions-welcome.php:525
 msgid "Job Dashboard"
 msgstr ""
 
 #: includes/class-post-meta-application.php:23
-#, fuzzy
-#| msgid "Application"
 msgid "Application data"
 msgstr "আবেদন"
 
-#: includes/class-post-meta-application.php:72
+#: includes/class-post-meta-application.php:75
 #: includes/functions/functions-settings.php:317
 #: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1060
-#: templates/applications/applications.php:198
+#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-welcome.php:132
+#: templates/applications/applications.php:255
+#: templates/my-applications/my-applications.php:218
 msgid "Trash"
 msgstr "ট্রাশ"
 
-#: includes/class-post-meta-application.php:73
-#, fuzzy
-#| msgid "Application"
+#: includes/class-post-meta-application.php:76
 msgid "Application trash"
 msgstr "আবেদন"
 
-#: includes/class-post-meta-application.php:86
-#: includes/class-post-meta-application.php:87
+#: includes/class-post-meta-application.php:89
+#: includes/class-post-meta-application.php:90
 msgid "User id"
 msgstr ""
 
-#: includes/class-post-meta-application.php:100
-#: includes/class-post-meta-application.php:101
-#: templates/applications/applications.php:223
+#: includes/class-post-meta-application.php:103
+#: includes/class-post-meta-application.php:104
+#: templates/applications/applications.php:337
+#: templates/my-applications/my-applications.php:304
 #, fuzzy
 #| msgid "Application"
 msgid "Applicant name"
 msgstr "আবেদন"
 
-#: includes/class-post-meta-application.php:113
+#: includes/class-post-meta-application.php:116
 #, fuzzy
 #| msgid "Apply via email :"
 msgid "Applicant email"
 msgstr "ইমেল দিয়ে আবেদন"
 
-#: includes/class-post-meta-application.php:114
+#: includes/class-post-meta-application.php:117
 #, fuzzy
 #| msgid "Username or email address"
 msgid "Applicant email address"
 msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
 
-#: includes/class-post-meta-application.php:127
+#: includes/class-post-meta-application.php:130
 #, fuzzy
 #| msgid "Job id."
 msgid "Job id"
 msgstr "কাজের নাম্বার"
 
-#: includes/class-post-meta-application.php:128
+#: includes/class-post-meta-application.php:131
 #, fuzzy
 #| msgid "Application Info"
 msgid "Application job id"
 msgstr "আবেদন তথ্য"
 
-#: includes/class-post-meta-application.php:141
+#: includes/class-post-meta-application.php:144
 #, fuzzy
 #| msgid "Application Info"
 msgid "Application method"
 msgstr "আবেদন তথ্য"
 
-#: includes/class-post-meta-application.php:142
-#: includes/class-post-meta-application.php:155
-#: includes/class-post-meta-application.php:169
+#: includes/class-post-meta-application.php:145
+#: includes/class-post-meta-application.php:158
+#: includes/class-post-meta-application.php:172
 msgid "Application method used by user."
 msgstr ""
 
-#: includes/class-post-meta-application.php:154
+#: includes/class-post-meta-application.php:157
 msgid "Attachment url"
 msgstr ""
 
-#: includes/class-post-meta-application.php:168
+#: includes/class-post-meta-application.php:171
 msgid "Resume id "
 msgstr ""
 
@@ -405,6 +534,7 @@ msgstr "সর্বোচ্ছ বেতন, উদাঃ ১২০০"
 
 #: includes/class-post-meta-job-hook.php:325
 #: includes/functions/functions-settings.php:193
+#: includes/functions/functions-welcome.php:199
 #, fuzzy
 #| msgid "Salary currency ?"
 msgid "Salary currency"
@@ -513,16 +643,19 @@ msgstr "কাজের লেভেল নির্বাচন করুন"
 #: includes/functions/functions-settings.php:348
 #: includes/functions/functions-settings.php:431
 #: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:570
-#: includes/functions/functions-settings.php:585
-#: includes/functions/functions-settings.php:599
-#: includes/functions/functions-settings.php:614
-#: includes/functions/functions-settings.php:795
-#: includes/functions/functions-settings.php:800
-#: includes/functions/functions-settings.php:1045
-#: includes/functions/functions-settings.php:1145
-#: includes/functions/functions-settings.php:1159
-#: templates/applications/applications-hook.php:102
+#: includes/functions/functions-settings.php:572
+#: includes/functions/functions-settings.php:587
+#: includes/functions/functions-settings.php:603
+#: includes/functions/functions-settings.php:617
+#: includes/functions/functions-settings.php:632
+#: includes/functions/functions-settings.php:784
+#: includes/functions/functions-settings.php:1069
+#: includes/functions/functions-settings.php:1169
+#: includes/functions/functions-settings.php:1183
+#: includes/functions/functions-welcome.php:117
+#: includes/functions/functions-welcome.php:146
+#: includes/functions/functions-welcome.php:161
+#: includes/functions/functions-welcome.php:176
 msgid "No"
 msgstr "না"
 
@@ -533,16 +666,19 @@ msgstr "না"
 #: includes/functions/functions-settings.php:348
 #: includes/functions/functions-settings.php:431
 #: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:570
-#: includes/functions/functions-settings.php:585
-#: includes/functions/functions-settings.php:599
-#: includes/functions/functions-settings.php:614
+#: includes/functions/functions-settings.php:572
+#: includes/functions/functions-settings.php:587
+#: includes/functions/functions-settings.php:603
+#: includes/functions/functions-settings.php:617
+#: includes/functions/functions-settings.php:632
 #: includes/functions/functions-settings.php:783
-#: includes/functions/functions-settings.php:788
-#: includes/functions/functions-settings.php:1045
-#: includes/functions/functions-settings.php:1145
-#: includes/functions/functions-settings.php:1159
-#: templates/applications/applications-hook.php:99
+#: includes/functions/functions-settings.php:1069
+#: includes/functions/functions-settings.php:1169
+#: includes/functions/functions-settings.php:1183
+#: includes/functions/functions-welcome.php:117
+#: includes/functions/functions-welcome.php:146
+#: includes/functions/functions-welcome.php:161
+#: includes/functions/functions-welcome.php:176
 msgid "Yes"
 msgstr "হা"
 
@@ -597,7 +733,6 @@ msgid "Add %s"
 msgstr "যুক্ত করুন %s"
 
 #: includes/class-post-types.php:40 includes/class-post-types.php:173
-#: templates/applications/applications-hook.php:130
 msgid "Edit"
 msgstr "সম্পাদনা"
 
@@ -685,10 +820,8 @@ msgstr "কাজের ট্যাগ সমুহ"
 msgid "Application"
 msgstr "আবেদন"
 
-#: includes/class-post-types.php:161
-#: templates/applications/applications-hook.php:15
-#: templates/applications/applications.php:22
-#: templates/job-dashboard/job-dashboard-hook.php:44
+#: includes/class-post-types.php:161 templates/applications/applications.php:58
+#: templates/job-dashboard/job-dashboard-hook.php:98
 #, fuzzy
 #| msgid "Application"
 msgid "Applications"
@@ -716,72 +849,21 @@ msgstr ""
 msgid "Add"
 msgstr "যুক্ত করুন %s"
 
-#: includes/class-settings.php:24
+#: includes/class-settings.php:27
 msgid "Settings"
 msgstr "সেটিংস"
 
-#: includes/functions/account-registration.php:39
-msgid "Username"
-msgstr "ইউসারনেম"
-
-#: includes/functions/account-registration.php:45
-#: templates/job-dashboard/job-dashboard-hook.php:235
-msgid "Password"
-msgstr "পাসোয়ার্ড"
-
-#: includes/functions/account-registration.php:51
-#: templates/applications/applications.php:226
-msgid "Email"
-msgstr "ইমেইল"
-
-#: includes/functions/account-registration.php:56
-#: templates/job-dashboard/job-dashboard-hook.php:208
-msgid "Register"
-msgstr "রেজিস্টার"
-
-#: includes/functions/account-registration.php:68
-msgid "Required form field is missing"
-msgstr "অবশ্যক তথ্য এড়িয়ে গেসেন"
-
-#: includes/functions/account-registration.php:72
-msgid "Username too short. At least 4 characters is required"
-msgstr "ইউসারনেম খুবই সংক্ষিপ্ত"
-
-#: includes/functions/account-registration.php:76
-msgid "Sorry, that username already exists!"
-msgstr "দুঃখিত, এই ইউসারনেম আগেই ব্যবহার করা হয়েছে"
-
-#: includes/functions/account-registration.php:79
-msgid "Sorry, the username you entered is not valid"
-msgstr "দুঃখিত, ইউসারনেম টি সুযুক্তিপূর্ণ নয়"
-
-#: includes/functions/account-registration.php:83
-msgid "Password length must be greater than 5"
-msgstr "পাসওর্য়াড অবশ্যই ৫ অক্ষরের বেশি হতে হবে"
-
-#: includes/functions/account-registration.php:87
-msgid "Email is not valid"
-msgstr "ইমেইল টি সঠিক নয়"
-
-#: includes/functions/account-registration.php:91
-msgid "Email Already in use"
-msgstr "ইমেইল আগেই ব্যবহার করা হয়েছে"
-
-#: includes/functions/account-registration.php:102
+#: includes/class-settings.php:30
 #, fuzzy
-#| msgid "ERROR"
-msgid "ERROR:"
-msgstr "ভুল দেখাছে"
-
-#: includes/functions/account-registration.php:121
-msgid "Registration complete."
-msgstr "রেজিষ্ট্রেশন সম্পুর্ন হয়েছে"
+#| msgid "welcome"
+msgid "Welcome"
+msgstr "স্বাগতম"
 
 #: includes/functions/functions-crons.php:9
 msgid ""
-"This plugin <b style=\"text-decoration: underline\">Job Board Manager - "
-"Expired check</b> no longer need, please deactivate. functionality added <b "
-"style=\"text-decoration: underline\">Job Board Manager</b> itself."
+"This plugin <b style=\"text-decoration: underline\">Job Board Manager - Expired "
+"check</b> no longer need, please deactivate. functionality added <b style="
+"\"text-decoration: underline\">Job Board Manager</b> itself."
 msgstr ""
 
 #: includes/functions/functions-reports.php:93
@@ -807,12 +889,14 @@ msgid "Choose option for archive."
 msgstr ""
 
 #: includes/functions/functions-settings.php:34
+#: includes/functions/functions-welcome.php:97
 #, fuzzy
 #| msgid "Job edit page id"
 msgid "Job per page"
 msgstr "কাজ সম্পাদনা পেইজ আইডি"
 
 #: includes/functions/functions-settings.php:35
+#: includes/functions/functions-welcome.php:98
 msgid "Set custom number of job per page on job archive"
 msgstr ""
 
@@ -863,54 +947,63 @@ msgid "Choose option for pages."
 msgstr "কাজের ধরন নির্বাচন করুন"
 
 #: includes/functions/functions-settings.php:134
+#: includes/functions/functions-welcome.php:256
 msgid "Dashboard page"
 msgstr ""
 
 #: includes/functions/functions-settings.php:135
+#: includes/functions/functions-welcome.php:257
 msgid ""
 "Choose the page for dashboard page, where the shortcode "
 "<code>[job_bm_dashboard]</code> used."
 msgstr ""
 
 #: includes/functions/functions-settings.php:149
+#: includes/functions/functions-welcome.php:271
 #, fuzzy
 #| msgid "Job Archive"
 msgid "Job archive page"
 msgstr "কাজের লিস্ট"
 
 #: includes/functions/functions-settings.php:150
+#: includes/functions/functions-welcome.php:272
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list])"
 msgid ""
-"Choose the page for job archive page, where the shortcode <code>[job_list]</"
-"code> used."
+"Choose the page for job archive page, where the shortcode "
+"<code>[job_bm_archive]</code> used."
 msgstr "আরকাইভ পেইজ যেখানে সর্টকোডটি আছে [job_list]"
 
 #: includes/functions/functions-settings.php:163
+#: includes/functions/functions-welcome.php:285
 #, fuzzy
 #| msgid "Job submission page id"
 msgid "Job submission page"
 msgstr "নতুন কাজ জমা পেইজ আইডি"
 
 #: includes/functions/functions-settings.php:164
+#: includes/functions/functions-welcome.php:286
 msgid ""
 "Choose the page for job submission page, where the shortcode "
 "<code>[job_submit_form]</code> used."
 msgstr ""
 
 #: includes/functions/functions-settings.php:178
+#: includes/functions/functions-welcome.php:300
 msgid "Job edit page"
 msgstr ""
 
 #: includes/functions/functions-settings.php:179
+#: includes/functions/functions-welcome.php:301
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list])"
 msgid ""
-"Choose the page for job edit page, where the shortcode "
-"<code>[job_bm_job_edit]</code> used."
+"Choose the page for job edit page, where the shortcode <code>[job_bm_job_edit]</"
+"code> used."
 msgstr "আরকাইভ পেইজ যেখানে সর্টকোডটি আছে [job_list]"
 
 #: includes/functions/functions-settings.php:194
+#: includes/functions/functions-welcome.php:200
 msgid "Salary currency display on job page."
 msgstr "বেতন এর মুদ্রা কাজের পেজ এ দেখান"
 
@@ -925,12 +1018,14 @@ msgid "Choose option for posting."
 msgstr ""
 
 #: includes/functions/functions-settings.php:252
+#: includes/functions/functions-welcome.php:111
 #, fuzzy
 #| msgid "Account Required ?"
 msgid "Account required"
 msgstr "একাউন্ট আবশ্যক"
 
 #: includes/functions/functions-settings.php:253
+#: includes/functions/functions-welcome.php:112
 msgid "Account required to post job."
 msgstr "কাজ জমাদানের জন্যে একাউন্ট আবশ্যক"
 
@@ -969,37 +1064,43 @@ msgid ""
 "reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
-"রিক্যাপচা গোপন কী দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/"
-"recaptcha\">google.com/reCAPTCHA</a>  এবং আপনার গোপন কী বুঝে নিন"
+"রিক্যাপচা গোপন কী দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/recaptcha"
+"\">google.com/reCAPTCHA</a>  এবং আপনার গোপন কী বুঝে নিন"
 
 #: includes/functions/functions-settings.php:311
+#: includes/functions/functions-welcome.php:126
 msgid "Submitted job status"
 msgstr "জমাকৃত কাজের অবস্থা"
 
 #: includes/functions/functions-settings.php:312
+#: includes/functions/functions-welcome.php:127
 msgid "Choose job status for newly submitted jobs."
 msgstr ""
 
 #: includes/functions/functions-settings.php:317
 #: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1060
+#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-welcome.php:132
 msgid "Draft"
 msgstr "খসড়া"
 
 #: includes/functions/functions-settings.php:317
 #: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1060
+#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-welcome.php:132
 msgid "Pending"
 msgstr "অপেক্ষমান"
 
 #: includes/functions/functions-settings.php:317
 #: includes/functions/functions-settings.php:446
+#: includes/functions/functions-welcome.php:132
 msgid "Published"
 msgstr "প্রকাশিত"
 
 #: includes/functions/functions-settings.php:317
 #: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1060
+#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-welcome.php:132
 msgid "Private"
 msgstr "গোপন"
 
@@ -1056,12 +1157,14 @@ msgid "Customize the job edit."
 msgstr "- ইমেইল টেমপ্লেট"
 
 #: includes/functions/functions-settings.php:425
+#: includes/functions/functions-welcome.php:140
 #, fuzzy
 #| msgid "Allowed Files"
 msgid "Allow edit jobs"
 msgstr "অনুমিত ফাইল সমুহ"
 
 #: includes/functions/functions-settings.php:426
+#: includes/functions/functions-welcome.php:141
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user edit their own jobs"
@@ -1097,317 +1200,443 @@ msgstr "নতুন কাজ জমা দানের জন্যে নো�
 msgid "Notify admin when new job edited."
 msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
 
-#: includes/functions/functions-settings.php:521
+#: includes/functions/functions-settings.php:523
 msgid "Dashboard settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:522
+#: includes/functions/functions-settings.php:524
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize the dashboard."
 msgstr "- ইমেইল টেমপ্লেট"
 
-#: includes/functions/functions-settings.php:532
+#: includes/functions/functions-settings.php:534
 msgid "Redirect after login"
 msgstr ""
 
-#: includes/functions/functions-settings.php:533
+#: includes/functions/functions-settings.php:535
 msgid "Redirect other link after logged."
 msgstr ""
 
-#: includes/functions/functions-settings.php:547
+#: includes/functions/functions-settings.php:549
 msgid "Redirect after logged out"
 msgstr ""
 
-#: includes/functions/functions-settings.php:548
+#: includes/functions/functions-settings.php:550
 msgid "Redirect other link after logged out."
 msgstr ""
 
-#: includes/functions/functions-settings.php:564
+#: includes/functions/functions-settings.php:566
 #, fuzzy
 #| msgid "Registration enable ?"
 msgid "Registration enable"
 msgstr "রেজিস্ট্রেশন সক্রিয়"
 
-#: includes/functions/functions-settings.php:565
+#: includes/functions/functions-settings.php:567
 #, fuzzy
 #| msgid "Registration enable on my account page "
 msgid "Registration enable on dashboard page."
 msgstr "একাউন্ট পেইজ এ রেজিস্ট্রেশন সক্রিয়"
 
-#: includes/functions/functions-settings.php:579
+#: includes/functions/functions-settings.php:581
+#, fuzzy
+#| msgid "Registration enable ?"
+msgid "Registration reCAPTCHA enable"
+msgstr "রেজিস্ট্রেশন সক্রিয়"
+
+#: includes/functions/functions-settings.php:582
+#, fuzzy
+#| msgid "Enable reCAPTCHA to protect spam."
+msgid "Enable reCAPTCHA on registration."
+msgstr "স্প্যাম প্রতিরোধ করার জন্যে রিক্যাপচা সক্রিয়"
+
+#: includes/functions/functions-settings.php:597
 #, fuzzy
 #| msgid "Login enable ?"
 msgid "Login enable"
 msgstr "লগিন সক্রিয়"
 
-#: includes/functions/functions-settings.php:580
+#: includes/functions/functions-settings.php:598
 #, fuzzy
 #| msgid "Login enable on my account page "
 msgid "Login enable on dashboard page."
 msgstr "একাউন্ট পেইজ এ লগিন সক্রিয়"
 
-#: includes/functions/functions-settings.php:593
+#: includes/functions/functions-settings.php:611
+#: includes/functions/functions-welcome.php:155
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "Allow delete jobs"
 msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
 
-#: includes/functions/functions-settings.php:594
+#: includes/functions/functions-settings.php:612
+#: includes/functions/functions-welcome.php:156
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user delete their own jobs"
 msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন"
 
-#: includes/functions/functions-settings.php:608
+#: includes/functions/functions-settings.php:626
+#: includes/functions/functions-welcome.php:170
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "Allow delete application"
 msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
 
-#: includes/functions/functions-settings.php:609
+#: includes/functions/functions-settings.php:627
+#: includes/functions/functions-welcome.php:171
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user delete their own application"
 msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন"
 
-#: includes/functions/functions-settings.php:661
+#: includes/functions/functions-settings.php:683
 #, fuzzy
 #| msgid " Settings"
 msgid "Email settings"
 msgstr "সেটিংস"
 
-#: includes/functions/functions-settings.php:662
+#: includes/functions/functions-settings.php:684
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize email settings."
 msgstr "- ইমেইল টেমপ্লেট"
 
-#: includes/functions/functions-settings.php:669
+#: includes/functions/functions-settings.php:691
 #, fuzzy
 #| msgid "Email Logo URL"
 msgid "Email logo"
 msgstr "ইমেইল লোগো ঠিকানা"
 
-#: includes/functions/functions-settings.php:670
+#: includes/functions/functions-settings.php:692
 msgid "Email logo URL to display on mail."
 msgstr "লোগো ঠিকানা ইমেইল এ দেখানোর জন্যে"
 
-#: includes/functions/functions-settings.php:684
+#: includes/functions/functions-settings.php:706
 msgid "From email address"
 msgstr ""
 
-#: includes/functions/functions-settings.php:685
+#: includes/functions/functions-settings.php:707
 #, fuzzy
 #| msgid "Username or email address"
 msgid "Write from email address."
 msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
 
-#: includes/functions/functions-settings.php:775
-msgid "Enable ?"
+#: includes/functions/functions-settings.php:750
+msgid "Click to expand"
+msgstr ""
+
+#: includes/functions/functions-settings.php:758
+#, fuzzy
+#| msgid "Enable ?"
+msgid "Enable"
 msgstr "সচল ?"
 
-#: includes/functions/functions-settings.php:808
-msgid "Email To:"
+#: includes/functions/functions-settings.php:764
+msgid "Disabled"
+msgstr ""
+
+#: includes/functions/functions-settings.php:780
+#, fuzzy
+#| msgid "Enable ?"
+msgid "Enable?"
+msgstr "সচল ?"
+
+#: includes/functions/functions-settings.php:786
+msgid "Enable or disable this email notification."
+msgstr ""
+
+#: includes/functions/functions-settings.php:792
+#, fuzzy
+#| msgid "Email To:"
+msgid "Email To(Bcc)"
 msgstr "প্রাপক"
 
-#: includes/functions/functions-settings.php:812
-msgid "Email from name:"
+#: includes/functions/functions-settings.php:795
+msgid "Email send to(copy)"
+msgstr ""
+
+#: includes/functions/functions-settings.php:800
+#, fuzzy
+#| msgid "Email from name:"
+msgid "Email from name"
 msgstr "প্রেরক এর নামঃ"
 
-#: includes/functions/functions-settings.php:816
-msgid "Email from:"
+#: includes/functions/functions-settings.php:803
+#, fuzzy
+#| msgid "Email from name:"
+msgid "Email send from name"
+msgstr "প্রেরক এর নামঃ"
+
+#: includes/functions/functions-settings.php:808
+#, fuzzy
+#| msgid "Email from:"
+msgid "Email from"
 msgstr "প্রেরকঃ"
 
-#: includes/functions/functions-settings.php:820
-msgid "Email Subject:"
+#: includes/functions/functions-settings.php:811
+#, fuzzy
+#| msgid "Email from:"
+msgid "Email send from"
+msgstr "প্রেরকঃ"
+
+#: includes/functions/functions-settings.php:816
+#, fuzzy
+#| msgid "Email Subject:"
+msgid "Email Subject"
 msgstr "ইমেইল শিরনামঃ"
 
-#: includes/functions/functions-settings.php:828
-msgid "Email Body:"
+#: includes/functions/functions-settings.php:819
+#, fuzzy
+#| msgid "Email Subject:"
+msgid "Write email subject"
+msgstr "ইমেইল শিরনামঃ"
+
+#: includes/functions/functions-settings.php:824
+#, fuzzy
+#| msgid "Email Body:"
+msgid "Email Body"
 msgstr "ইমেইল বিস্তারিতঃ "
 
-#: includes/functions/functions-settings.php:857
+#: includes/functions/functions-settings.php:831
+#, fuzzy
+#| msgid "Username or email address"
+msgid "Write email body"
+msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
+
+#: includes/functions/functions-settings.php:836
+#, fuzzy
+#| msgid "Job Parameters"
+msgid "Parameter"
+msgstr "জব প্যারামিটার"
+
+#: includes/functions/functions-settings.php:854
+msgid "Available parameter for this email template"
+msgstr ""
+
+#: includes/functions/functions-settings.php:881
 #, fuzzy
 #| msgid "Emails Templates"
 msgid "Email templates"
 msgstr "ইমেইল টেম্পলেট গুলো"
 
-#: includes/functions/functions-settings.php:858
+#: includes/functions/functions-settings.php:882
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize email templates."
 msgstr "- ইমেইল টেমপ্লেট"
 
-#: includes/functions/functions-settings.php:909
+#: includes/functions/functions-settings.php:933
 #, fuzzy
 #| msgid "Settings"
 msgid "Style settings"
 msgstr "সেটিংস"
 
-#: includes/functions/functions-settings.php:910
+#: includes/functions/functions-settings.php:934
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize the style."
 msgstr "- ইমেইল টেমপ্লেট"
 
-#: includes/functions/functions-settings.php:917
+#: includes/functions/functions-settings.php:941
 #, fuzzy
 #| msgid "Featured job area background color."
 msgid "Featured job background color"
 msgstr "ফিচার্ড কাজের ব্যাকগ্রাউন্ড রঙ "
 
-#: includes/functions/functions-settings.php:918
+#: includes/functions/functions-settings.php:942
 msgid "Choose custom background color featured job."
 msgstr ""
 
-#: includes/functions/functions-settings.php:932
+#: includes/functions/functions-settings.php:956
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Job type background color"
 msgstr "কাজের ধরন ব্যাকগ্রাউন্ড রঙ "
 
-#: includes/functions/functions-settings.php:933
+#: includes/functions/functions-settings.php:957
 msgid "Job types area background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:945
+#: includes/functions/functions-settings.php:969
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Job type text color"
 msgstr "কাজের ধরন ব্যাকগ্রাউন্ড রঙ "
 
-#: includes/functions/functions-settings.php:946
+#: includes/functions/functions-settings.php:970
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Job types area text color."
 msgstr "কাজের ধরন ব্যাকগ্রাউন্ড রঙ "
 
-#: includes/functions/functions-settings.php:960
+#: includes/functions/functions-settings.php:984
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Job status background color"
 msgstr "কাজের অবস্থা ব্যাকগ্রাউন্ড রঙ"
 
-#: includes/functions/functions-settings.php:961
+#: includes/functions/functions-settings.php:985
 msgid "Job status area background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:974
+#: includes/functions/functions-settings.php:998
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Job status text color"
 msgstr "কাজের অবস্থা ব্যাকগ্রাউন্ড রঙ"
 
-#: includes/functions/functions-settings.php:975
+#: includes/functions/functions-settings.php:999
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Job status area text color."
 msgstr "কাজের অবস্থা ব্যাকগ্রাউন্ড রঙ"
 
-#: includes/functions/functions-settings.php:1031
-#: includes/functions/functions-settings.php:1131
+#: includes/functions/functions-settings.php:1055
+#: includes/functions/functions-settings.php:1155
 #, fuzzy
 #| msgid "Job expiry date"
 msgid "Job expire settings"
 msgstr "মেয়াদ-শেষ"
 
-#: includes/functions/functions-settings.php:1032
-#: includes/functions/functions-settings.php:1132
+#: includes/functions/functions-settings.php:1056
+#: includes/functions/functions-settings.php:1156
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize job expire settings."
 msgstr "- ইমেইল টেমপ্লেট"
 
-#: includes/functions/functions-settings.php:1039
+#: includes/functions/functions-settings.php:1063
 msgid "Enable job expiry"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1040
+#: includes/functions/functions-settings.php:1064
 msgid "You can enable or disable job expiry."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1054
+#: includes/functions/functions-settings.php:1078
 #, fuzzy
 #| msgid "Submitted job status"
 msgid "Expired jobs status"
 msgstr "জমাকৃত কাজের অবস্থা"
 
-#: includes/functions/functions-settings.php:1055
+#: includes/functions/functions-settings.php:1079
 msgid "Set post status for expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1060
+#: includes/functions/functions-settings.php:1084
 msgid "Publish"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1069
+#: includes/functions/functions-settings.php:1093
 msgid "Expired check recurrence"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1070
+#: includes/functions/functions-settings.php:1094
 msgid "Set recurrence for checking expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1075
+#: includes/functions/functions-settings.php:1099
 msgid "Hourly"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1075
+#: includes/functions/functions-settings.php:1099
 msgid "Twicedaily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1075
+#: includes/functions/functions-settings.php:1099
 msgid "Daily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:1108
 #, fuzzy
 #| msgid "Expire date:"
 msgid "Expire days"
 msgstr "মেয়াদ শেষ"
 
-#: includes/functions/functions-settings.php:1085
+#: includes/functions/functions-settings.php:1109
 msgid "Set custom value for expire in."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1139
+#: includes/functions/functions-settings.php:1163
 msgid "Login required for application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1140
+#: includes/functions/functions-settings.php:1164
 msgid "Login is required or not for submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1153
+#: includes/functions/functions-settings.php:1177
 #, fuzzy
 #| msgid "reCaptcha"
 msgid "Enable recaptcha"
 msgstr "রিক্যাপচা"
 
-#: includes/functions/functions-settings.php:1154
+#: includes/functions/functions-settings.php:1178
 msgid "Enable recaptcha on submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1168
+#: includes/functions/functions-settings.php:1192
+#: includes/functions/functions-welcome.php:185
 #, fuzzy
-#| msgid "Apply Method ?"
-msgid "Apply method"
-msgstr "আবেদনের পদ্ধতি ?"
+#| msgid "Application Info"
+msgid "Application methods"
+msgstr "আবেদন তথ্য"
 
-#: includes/functions/functions-settings.php:1169
-msgid "Choose aplication method on job post."
+#: includes/functions/functions-settings.php:1193
+#: includes/functions/functions-welcome.php:186
+#, fuzzy
+#| msgid "Application Info"
+msgid "Choose application method on job post."
+msgstr "আবেদন তথ্য"
+
+#: includes/functions/functions-welcome.php:19
+msgid "<b>Job Board Manager</b> has redesigned, please review <a href=\""
 msgstr ""
 
-#: includes/functions/functions.php:183 includes/functions/functions.php:210
+#: includes/functions/functions-welcome.php:89
+#, fuzzy
+#| msgid "General options."
+msgid "General settings"
+msgstr "সাধারন অপশন"
+
+#: includes/functions/functions-welcome.php:90
+#, fuzzy
+#| msgid "General options."
+msgid "Choose some general option."
+msgstr "সাধারন অপশন"
+
+#: includes/functions/functions-welcome.php:237
+msgid "-- Create new page --"
+msgstr ""
+
+#: includes/functions/functions-welcome.php:247
+#, fuzzy
+#| msgid "#Create Pages"
+msgid "Create pages"
+msgstr "পেজ তৈরী করুন"
+
+#: includes/functions/functions-welcome.php:248
+msgid ""
+"You can create some basic pages or choose from existing. please choose <b>-- "
+"Create new page --</b> to create."
+msgstr ""
+
+#: includes/functions/functions-welcome.php:347
+#, fuzzy
+#| msgid "Settings"
+msgid "Save Settings"
+msgstr "সেটিংস"
+
+#: includes/functions/functions.php:212 includes/functions/functions.php:242
 msgid "You are not authorized to delete this job."
 msgstr "আপনার এই কাজ টি মুছে ফেলার অধিকার নাই"
 
-#: includes/functions/functions.php:199
+#: includes/functions/functions.php:228
 msgid "Job Deleted."
 msgstr "কাজটি মুছে ফেলা হয়েছে"
 
-#: includes/functions/functions.php:203
+#: includes/functions/functions.php:235
 msgid "Something going wrong."
 msgstr "কিছু একটা ভুল দেখাচ্ছে"
 
@@ -1491,13 +1720,36 @@ msgstr "আবেদন"
 msgid "%s Settings"
 msgstr "সেটিংস"
 
-#: includes/menu/settings-new.php:186
+#: includes/menu/settings-new.php:192
 msgid "Changes Saved."
 msgstr "পরিবর্তন গুলো সংরক্ষন হয়েছে"
 
-#: includes/menu/settings-new.php:226
+#: includes/menu/settings-new.php:232
 msgid "Save Changes"
 msgstr "পরিবর্তন গুলো সংরক্ষন হয়েছে"
+
+#: includes/menu/welcome.php:13
+#, fuzzy, php-format
+#| msgid "welcome"
+msgid "%s Welcome"
+msgstr "স্বাগতম"
+
+#: includes/menu/welcome.php:20
+#, php-format
+msgid "%s General"
+msgstr ""
+
+#: includes/menu/welcome.php:28
+#, fuzzy, php-format
+#| msgid "#Create Pages"
+msgid "%s Create Pages"
+msgstr "পেজ তৈরী করুন"
+
+#: includes/menu/welcome.php:38
+#, fuzzy, php-format
+#| msgid "Reset Done"
+msgid "%s Done"
+msgstr "রিসেট সম্পুর্ন হয়েছে"
 
 #: includes/shortcodes/class-shortcodes-job-edit.php:31
 #, fuzzy, php-format
@@ -1518,121 +1770,210 @@ msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">ল�
 msgid "Sorry! you are not authorized to edit this job."
 msgstr "এই কাজ সম্পাদন করার অধিকার নাই"
 
-#: includes/shortcodes/class-shortcodes-job-submit.php:31
+#: includes/shortcodes/class-shortcodes-job-submit.php:32
 #, php-format
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
 
-#: templates/applications/applications-hook.php:108
-#: templates/my-jobs/my-jobs-hook.php:174
-msgid "Job id."
-msgstr "কাজের নাম্বার"
-
-#: templates/applications/applications-hook.php:108
-#: templates/my-jobs/my-jobs-hook.php:225
-#, fuzzy
-#| msgid "Job id."
-msgid "Job link."
-msgstr "কাজের নাম্বার"
-
-#: templates/applications/applications-hook.php:113
-#: templates/my-jobs/my-jobs-hook.php:227
-msgid "Published:"
-msgstr "প্রকাশিতঃ"
-
-#: templates/applications/applications-hook.php:114
-#: templates/my-jobs/my-jobs-hook.php:228
-msgid "Publish Status:"
-msgstr "প্রকাশ অবস্থাঃ"
-
-#: templates/applications/applications-hook.php:117
-#: templates/my-jobs/my-jobs-hook.php:235
-msgid "Job Status:"
-msgstr "কাজের অবস্থাঃ"
-
-#: templates/applications/applications-hook.php:119
-#: templates/my-jobs/my-jobs-hook.php:229
-msgid "Featured:"
-msgstr "ফিচার্ডঃ"
-
-#: templates/applications/applications-hook.php:122
-#: templates/my-jobs/my-jobs-hook.php:244
-msgid "Job Type:"
-msgstr "কাজের ধরন"
-
-#: templates/applications/applications-hook.php:125
-#: templates/my-jobs/my-jobs-hook.php:251
-msgid "Job Level:"
-msgstr "কাজের লেভেলঃ"
-
-#: templates/applications/applications-hook.php:134
-#: templates/my-applications/my-applications.php:123
-msgid "Delete"
-msgstr "মুছে ফেলুন"
-
-#: templates/applications/applications-hook.php:163
-#: templates/my-applications/my-applications.php:152
-msgid "No job found posted by you."
-msgstr "আপনার কোন জব নাই"
-
-#: templates/applications/applications-hook.php:171
+#: templates/applications/applications.php:25
 #, php-format
-msgid "Please <a href=\"%s\">login</a> to see your job list."
-msgstr "কাজের লিস্ট দেখতে দয়া করে <a href=\"%s\">লগিন</a> করুন"
+msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
+msgstr ""
 
-#: templates/applications/applications.php:186
+#: templates/applications/applications.php:241
+#: templates/my-applications/my-applications.php:204
 msgid "Anonymous"
 msgstr ""
 
-#: templates/applications/applications.php:195
-#: templates/my-applications/my-applications.php:103
+#: templates/applications/applications.php:242
+#: templates/my-applications/my-applications.php:209
+#, fuzzy
+#| msgid "Expired"
+msgid "Hired"
+msgstr "মেয়াদোত্তীর্ণ"
+
+#: templates/applications/applications.php:242
+msgid "Hire"
+msgstr ""
+
+#: templates/applications/applications.php:252
+#: templates/my-applications/my-applications.php:215
 #, fuzzy
 #| msgid "Application"
 msgid "Application ID."
 msgstr "আবেদন"
 
-#: templates/applications/applications.php:197
-msgid "Hire"
-msgstr ""
-
-#: templates/applications/applications.php:199
+#: templates/applications/applications.php:256
+#: templates/my-applications/my-applications.php:219
 msgid "Comments"
 msgstr ""
 
-#: templates/applications/applications.php:202
+#: templates/applications/applications.php:259
 #, fuzzy
 #| msgid "Settings"
 msgid "Ratings"
 msgstr "সেটিংস"
 
-#: templates/applications/applications.php:230
+#: templates/applications/applications.php:282
+#: templates/my-applications/my-applications.php:246
+#, fuzzy
+#| msgid "General options."
+msgid "Conversations"
+msgstr "সাধারন অপশন"
+
+#: templates/applications/applications.php:317
+#: templates/my-applications/my-applications.php:282
+msgid "No reply yet. "
+msgstr ""
+
+#: templates/applications/applications.php:326
+#: templates/my-applications/my-applications.php:292
+msgid "Write a reply"
+msgstr ""
+
+#: templates/applications/applications.php:340
+#: templates/my-applications/my-applications.php:307
+#: templates/registration-form/registration-form-hook.php:45
+msgid "Email"
+msgstr "ইমেইল"
+
+#: templates/applications/applications.php:344
+#: templates/my-applications/my-applications.php:311
 msgid "Attachment"
 msgstr ""
 
-#: templates/applications/applications.php:234
+#: templates/applications/applications.php:348
+#: templates/my-applications/my-applications.php:315
 msgid "Resume"
 msgstr ""
 
-#: templates/applications/applications.php:239
+#: templates/applications/applications.php:353
+#: templates/my-applications/my-applications.php:320
 msgid "Date"
 msgstr ""
 
-#: templates/applications/applications.php:240
+#: templates/applications/applications.php:354
+#: templates/my-applications/my-applications.php:321
 msgid "Job link"
 msgstr ""
 
-#: templates/applications/applications.php:266
+#: templates/applications/applications.php:381
+#: templates/my-applications/my-applications.php:348
 #, fuzzy, php-format
 #| msgid "Job application"
 msgid "%s No application found."
 msgstr "জব আবেদন"
 
-#: templates/applications/applications.php:270
-#: templates/my-applications/my-applications.php:160
+#: templates/applications/applications.php:385
+#: templates/my-applications/my-applications.php:352
 #, fuzzy, php-format
 #| msgid "Please <a href=\"%s\">login</a> to see your job list."
 msgid "Please <a href=\"%s\">login</a> to see your application list."
 msgstr "কাজের লিস্ট দেখতে দয়া করে <a href=\"%s\">লগিন</a> করুন"
+
+#: templates/emails-templates/application_hire.php:11
+#, fuzzy, php-format
+#| msgid "Job application"
+msgid "%s has hired your application"
+msgstr "জব আবেদন"
+
+#: templates/emails-templates/application_hire.php:20
+#, fuzzy, php-format
+#| msgid "Job type:"
+msgid "Job: %s"
+msgstr "কাজের ধরনঃ"
+
+#: templates/emails-templates/application_hire.php:21
+#, fuzzy, php-format
+#| msgid "Application"
+msgid "Application: %s"
+msgstr "আবেদন"
+
+#: templates/emails-templates/application_hire.php:26
+#: templates/emails-templates/application_not_hire.php:25
+#: templates/emails-templates/application_rate.php:25
+#: templates/emails-templates/application_submitted.php:25
+#: templates/emails-templates/application_trash.php:25
+#, fuzzy
+#| msgid "Application"
+msgid "View Application"
+msgstr "আবেদন"
+
+#: templates/emails-templates/application_new_comment.php:14
+#, fuzzy, php-format
+#| msgid "Can user delete jobs ?"
+msgid "%s has commented on application"
+msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
+
+#: templates/emails-templates/application_new_comment.php:26
+msgid "View Comment"
+msgstr ""
+
+#: templates/emails-templates/application_not_hire.php:14
+#, fuzzy, php-format
+#| msgid "Job application"
+msgid "%s Your application removed from hire."
+msgstr "জব আবেদন"
+
+#: templates/emails-templates/application_rate.php:14
+#, fuzzy, php-format
+#| msgid "Application"
+msgid "%s has rated application"
+msgstr "আবেদন"
+
+#: templates/emails-templates/application_submitted.php:14
+#, fuzzy, php-format
+#| msgid "Can user delete jobs ?"
+msgid "%s has submitted an application"
+msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
+
+#: templates/emails-templates/application_trash.php:14
+#, fuzzy, php-format
+#| msgid "Job application"
+msgid "%s has trashed application"
+msgstr "জব আবেদন"
+
+#: templates/emails-templates/job_edited.php:14
+#, php-format
+msgid "%s has edited job"
+msgstr ""
+
+#: templates/emails-templates/job_edited.php:25
+#: templates/emails-templates/job_featured.php:25
+#: templates/emails-templates/job_published.php:21
+#, fuzzy
+#| msgid "View %s"
+msgid "View Job"
+msgstr "দেখুন %s"
+
+#: templates/emails-templates/job_featured.php:14
+#, fuzzy, php-format
+#| msgid "Featured Job"
+msgid "%s has featured job"
+msgstr "ফিচার্ড কাজ"
+
+#: templates/emails-templates/job_published.php:10
+#, fuzzy, php-format
+#| msgid "Can user edit published jobs"
+msgid "%s has published a job"
+msgstr "ব্যবহার কারীগন কাজ সম্পাদন করতে পারবেন"
+
+#: templates/emails-templates/job_submitted.php:11
+#, php-format
+msgid "%s has submitted a job"
+msgstr ""
+
+#: templates/emails-templates/job_submitted.php:22
+#: templates/emails-templates/job_trash.php:25
+#, fuzzy
+#| msgid "Edit %s"
+msgid "Edit Job"
+msgstr "সম্পাদনা %s"
+
+#: templates/emails-templates/job_trash.php:14
+#, php-format
+msgid "%s has trashed job"
+msgstr ""
 
 #: templates/job-archive/job-archive-hook.php:44
 #, fuzzy
@@ -1642,7 +1983,7 @@ msgstr "শব্দঃ"
 
 #: templates/job-archive/job-archive-hook.php:76
 #: templates/job-edit/job-edit-hook.php:632
-#: templates/job-single/job-single-hook.php:570
+#: templates/job-single/job-single-hook.php:592
 #: templates/job-submit/job-submit-hook.php:605
 msgid "Submit"
 msgstr "জমা দিন"
@@ -1655,66 +1996,77 @@ msgid "Posted %s ago"
 msgstr "প্রতি পেজ সংখ্যা"
 
 #: templates/job-dashboard/job-dashboard-hook.php:32
+msgid ""
+"you are using plain permalink, please go <b>Permalink Settings</b> and update."
+msgstr ""
+
+#: templates/job-dashboard/job-dashboard-hook.php:86
 #, fuzzy
 #| msgid "Job Account"
 msgid "Account"
 msgstr "কাজের একাউন্ট"
 
-#: templates/job-dashboard/job-dashboard-hook.php:36
+#: templates/job-dashboard/job-dashboard-hook.php:90
 msgid "My jobs"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:40
+#: templates/job-dashboard/job-dashboard-hook.php:94
 #, fuzzy
 #| msgid "Job application"
 msgid "My applications"
 msgstr "জব আবেদন"
 
-#: templates/job-dashboard/job-dashboard-hook.php:49
+#: templates/job-dashboard/job-dashboard-hook.php:103
 #, fuzzy
 #| msgid "Logout"
 msgid "Logout!"
 msgstr "লগআউট"
 
-#: templates/job-dashboard/job-dashboard-hook.php:113
+#: templates/job-dashboard/job-dashboard-hook.php:166
 #, fuzzy, php-format
 #| msgid "Welcome"
 msgid "Welcome! %s"
 msgstr "স্বাগতম"
 
-#: templates/job-dashboard/job-dashboard-hook.php:118
+#: templates/job-dashboard/job-dashboard-hook.php:171
 msgid "Total job post:"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:122
-msgid "Total hire by:"
-msgstr ""
-
-#: templates/job-dashboard/job-dashboard-hook.php:126
+#: templates/job-dashboard/job-dashboard-hook.php:175
 #, fuzzy
 #| msgid "Application"
 msgid "Application submit:"
 msgstr "আবেদন"
 
-#: templates/job-dashboard/job-dashboard-hook.php:130
+#: templates/job-dashboard/job-dashboard-hook.php:179
 #, fuzzy
 #| msgid "Application Info"
 msgid "Application received:"
 msgstr "আবেদন তথ্য"
 
-#: templates/job-dashboard/job-dashboard-hook.php:222
+#: templates/job-dashboard/job-dashboard-hook.php:257
+#: templates/registration-form/registration-form.php:25
+msgid "Register"
+msgstr "রেজিস্টার"
+
+#: templates/job-dashboard/job-dashboard-hook.php:271
 msgid "Login"
 msgstr "লগিন"
 
-#: templates/job-dashboard/job-dashboard-hook.php:234
+#: templates/job-dashboard/job-dashboard-hook.php:283
 msgid "Username or email address"
 msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
 
-#: templates/job-dashboard/job-dashboard-hook.php:236
+#: templates/job-dashboard/job-dashboard-hook.php:284
+#: templates/registration-form/registration-form-hook.php:28
+msgid "Password"
+msgstr "পাসোয়ার্ড"
+
+#: templates/job-dashboard/job-dashboard-hook.php:285
 msgid "Remember Me"
 msgstr "আমাকে মনে রখুন"
 
-#: templates/job-dashboard/job-dashboard-hook.php:237
+#: templates/job-dashboard/job-dashboard-hook.php:286
 msgid "Log In"
 msgstr "লগিন"
 
@@ -1779,6 +2131,7 @@ msgstr ""
 
 #: templates/job-edit/job-edit-hook.php:731
 #: templates/job-submit/job-submit-hook.php:704
+#: templates/registration-form/registration-form-hook.php:132
 #, fuzzy
 #| msgid "reCaptcha test."
 msgid "ERROR: reCaptcha test failed."
@@ -1786,6 +2139,7 @@ msgstr "রিক্যাপচা পরীক্ষা"
 
 #: templates/job-edit/job-edit-hook.php:737
 #: templates/job-submit/job-submit-hook.php:715
+#: templates/registration-form/registration-form-hook.php:139
 msgid "ERROR: security test failed."
 msgstr ""
 
@@ -1858,71 +2212,77 @@ msgstr "বেতনঃ"
 msgid "Apply for job"
 msgstr "এই কাজে আবেদন করুন"
 
-#: templates/job-single/job-single-hook.php:336
+#: templates/job-single/job-single-hook.php:322
+msgid ""
+"Sorry! \n"
+"                            application is not available."
+msgstr ""
+
+#: templates/job-single/job-single-hook.php:345
 #, fuzzy, php-format
 #| msgid "Please <a href=\"%s\">login</a> to submit job."
 msgid "Please <a href=\"%s\">login</a> to submit application"
 msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
 
-#: templates/job-single/job-single-hook.php:411
+#: templates/job-single/job-single-hook.php:422
 #, fuzzy
 #| msgid "Application"
 msgid "ERROR: Applicant name is empty."
 msgstr "আবেদন"
 
-#: templates/job-single/job-single-hook.php:416
+#: templates/job-single/job-single-hook.php:427
 msgid "ERROR: Email is empty."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:421
+#: templates/job-single/job-single-hook.php:432
 #, fuzzy
 #| msgid "ERROR"
 msgid "ERROR: "
 msgstr "ভুল দেখাছে"
 
-#: templates/job-single/job-single-hook.php:428
+#: templates/job-single/job-single-hook.php:439
 #, fuzzy
 #| msgid "reCaptcha test."
 msgid "ERROR: reCaptcha test failed"
 msgstr "রিক্যাপচা পরীক্ষা"
 
-#: templates/job-single/job-single-hook.php:469
+#: templates/job-single/job-single-hook.php:485
 #, fuzzy
 #| msgid "Job application"
 msgid "Your application has sent."
 msgstr "জব আবেদন"
 
-#: templates/job-single/job-single-hook.php:475
+#: templates/job-single/job-single-hook.php:491
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "You already sent an application."
 msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
 
-#: templates/job-single/job-single-hook.php:523
+#: templates/job-single/job-single-hook.php:544
 msgid "Your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:526
+#: templates/job-single/job-single-hook.php:547
 msgid "Write your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:531
+#: templates/job-single/job-single-hook.php:552
 #, fuzzy
 #| msgid "Contact email"
 msgid "Your email"
 msgstr "যোগাযোগ ইমেইল"
 
-#: templates/job-single/job-single-hook.php:534
+#: templates/job-single/job-single-hook.php:555
 #, fuzzy
 #| msgid "Username or email address"
 msgid "Write your email address"
 msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
 
-#: templates/job-single/job-single-hook.php:539
+#: templates/job-single/job-single-hook.php:560
 msgid "Message"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:542
+#: templates/job-single/job-single-hook.php:564
 msgid "Write your message"
 msgstr ""
 
@@ -1949,25 +2309,25 @@ msgid ""
 "ERROR: Please <a target=\"_blank\" href=\"%s\">login</a> to submit question."
 msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
 
-#: templates/job-submit/job-submit-hook.php:845
+#: templates/job-submit/job-submit-hook.php:843
 msgid "Thanks for submit your job, we will review soon."
 msgstr ""
 
-#: templates/my-applications/my-applications.php:18
+#: templates/my-applications/my-applications.php:48
 #, fuzzy
 #| msgid "Application"
-msgid "My Application"
+msgid "My Applications"
 msgstr "আবেদন"
 
-#: templates/my-applications/my-applications.php:106
-#, fuzzy
-#| msgid "Job id."
-msgid "Job link:"
-msgstr "কাজের নাম্বার"
-
-#: templates/my-applications/my-applications.php:109
-msgid "Date:"
+#: templates/my-applications/my-applications.php:209
+msgid "Not hired"
 msgstr ""
+
+#: templates/my-applications/my-applications.php:222
+#, fuzzy, php-format
+#| msgid "Job posting last 7 days."
+msgid "Job poster ratings: %s"
+msgstr "গত ৭ দিনের কাজ"
 
 #: templates/my-jobs/my-jobs-hook.php:10
 msgid "My Jobs"
@@ -1984,6 +2344,10 @@ msgstr "আপনার কোন জব নাই"
 #| msgid "Please <a href=\"%s\">login</a> to see your job list."
 msgid "Please <a href=\"%s\">login</a> to see your jobs."
 msgstr "কাজের লিস্ট দেখতে দয়া করে <a href=\"%s\">লগিন</a> করুন"
+
+#: templates/my-jobs/my-jobs-hook.php:174
+msgid "Job id."
+msgstr "কাজের নাম্বার"
 
 #: templates/my-jobs/my-jobs-hook.php:175
 #, fuzzy
@@ -2013,11 +2377,148 @@ msgstr "জব আবেদন"
 msgid "Total hired."
 msgstr ""
 
+#: templates/my-jobs/my-jobs-hook.php:225
+#, fuzzy
+#| msgid "Job id."
+msgid "Job link."
+msgstr "কাজের নাম্বার"
+
+#: templates/my-jobs/my-jobs-hook.php:227
+msgid "Published:"
+msgstr "প্রকাশিতঃ"
+
+#: templates/my-jobs/my-jobs-hook.php:228
+msgid "Publish Status:"
+msgstr "প্রকাশ অবস্থাঃ"
+
+#: templates/my-jobs/my-jobs-hook.php:229
+msgid "Featured:"
+msgstr "ফিচার্ডঃ"
+
+#: templates/my-jobs/my-jobs-hook.php:235
+msgid "Job Status:"
+msgstr "কাজের অবস্থাঃ"
+
+#: templates/my-jobs/my-jobs-hook.php:244
+msgid "Job Type:"
+msgstr "কাজের ধরন"
+
+#: templates/my-jobs/my-jobs-hook.php:251
+msgid "Job Level:"
+msgstr "কাজের লেভেলঃ"
+
 #: templates/my-jobs/my-jobs-hook.php:256
 #, fuzzy
 #| msgid "Application"
 msgid "Applications:"
 msgstr "আবেদন"
+
+#: templates/registration-form/registration-form-hook.php:13
+msgid "Username"
+msgstr "ইউসারনেম"
+
+#: templates/registration-form/registration-form-hook.php:92
+#, fuzzy
+#| msgid "Application"
+msgid "ERROR: username is empty."
+msgstr "আবেদন"
+
+#: templates/registration-form/registration-form-hook.php:96
+#, fuzzy
+#| msgid "Username too short. At least 4 characters is required"
+msgid "ERROR: At least 4 characters is required"
+msgstr "ইউসারনেম খুবই সংক্ষিপ্ত"
+
+#: templates/registration-form/registration-form-hook.php:100
+#, fuzzy
+#| msgid "Sorry, that username already exists!"
+msgid "ERROR: username already exists!"
+msgstr "দুঃখিত, এই ইউসারনেম আগেই ব্যবহার করা হয়েছে"
+
+#: templates/registration-form/registration-form-hook.php:103
+#, fuzzy
+#| msgid "Email is not valid"
+msgid "ERROR: username is not valid"
+msgstr "ইমেইল টি সঠিক নয়"
+
+#: templates/registration-form/registration-form-hook.php:108
+#, fuzzy
+#| msgid "Application"
+msgid "ERROR: password is empty."
+msgstr "আবেদন"
+
+#: templates/registration-form/registration-form-hook.php:112
+#, fuzzy
+#| msgid "Password length must be greater than 5"
+msgid "ERROR: Password length must be greater than 5"
+msgstr "পাসওর্য়াড অবশ্যই ৫ অক্ষরের বেশি হতে হবে"
+
+#: templates/registration-form/registration-form-hook.php:118
+#, fuzzy
+#| msgid "Contact email"
+msgid "ERROR: email is empty."
+msgstr "যোগাযোগ ইমেইল"
+
+#: templates/registration-form/registration-form-hook.php:122
+#, fuzzy
+#| msgid "Email is not valid"
+msgid "ERROR: Email is not valid"
+msgstr "ইমেইল টি সঠিক নয়"
+
+#: templates/registration-form/registration-form-hook.php:126
+#, fuzzy
+#| msgid "Email Already in use"
+msgid "ERROR: Email Already in use"
+msgstr "ইমেইল আগেই ব্যবহার করা হয়েছে"
+
+#: templates/registration-form/registration-form-hook.php:204
+msgid "Thanks for creating account."
+msgstr ""
+
+#~ msgid "New Job Approved"
+#~ msgstr "নতুন কাজ অনুমোদন পেয়েছে"
+
+#~ msgid "Site Parameters"
+#~ msgstr "সাইট প্যারামিটার"
+
+#~ msgid "Users Parameters"
+#~ msgstr "ব্যবহারকারী প্যারামিটার"
+
+#~ msgid "Job application"
+#~ msgstr "জব আবেদন"
+
+#~ msgid "Required form field is missing"
+#~ msgstr "অবশ্যক তথ্য এড়িয়ে গেসেন"
+
+#~ msgid "Sorry, the username you entered is not valid"
+#~ msgstr "দুঃখিত, ইউসারনেম টি সুযুক্তিপূর্ণ নয়"
+
+#, fuzzy
+#~| msgid "ERROR"
+#~ msgid "ERROR:"
+#~ msgstr "ভুল দেখাছে"
+
+#~ msgid "Registration complete."
+#~ msgstr "রেজিষ্ট্রেশন সম্পুর্ন হয়েছে"
+
+#, fuzzy
+#~| msgid "Apply Method ?"
+#~ msgid "Apply method"
+#~ msgstr "আবেদনের পদ্ধতি ?"
+
+#~ msgid "Delete"
+#~ msgstr "মুছে ফেলুন"
+
+#~ msgid "No job found posted by you."
+#~ msgstr "আপনার কোন জব নাই"
+
+#~ msgid "Please <a href=\"%s\">login</a> to see your job list."
+#~ msgstr "কাজের লিস্ট দেখতে দয়া করে <a href=\"%s\">লগিন</a> করুন"
+
+#, fuzzy
+#~| msgid "Job id."
+#~ msgid "Job link:"
+#~ msgstr "কাজের নাম্বার"
 
 #~ msgid "Want to get featured listing ?"
 #~ msgstr "ফিচার্ড লিস্টে যুক্ত করতে চান ?"
@@ -2104,9 +2605,6 @@ msgstr "আবেদন"
 
 #~ msgid "Options"
 #~ msgstr "অপশন"
-
-#~ msgid "General options."
-#~ msgstr "সাধারন অপশন"
 
 #~ msgid "Post Per Page"
 #~ msgstr "প্রতি পেজ সংখ্যা"
@@ -2238,9 +2736,6 @@ msgstr "আবেদন"
 #~ msgid "Update Done"
 #~ msgstr "হালনাগাত সম্পুর্ন হয়েছে"
 
-#~ msgid "Reset Done"
-#~ msgstr "রিসেট সম্পুর্ন হয়েছে"
-
 #~ msgid "Job list post per page"
 #~ msgstr "প্রতি পেইজ এ কাজের সংখ্যা"
 
@@ -2267,9 +2762,6 @@ msgstr "আবেদন"
 
 #~ msgid "Can user edit jobs ?"
 #~ msgstr "ব্যবহার কারীগন কাজ সম্পাদন করতে পারবেন ?"
-
-#~ msgid "Can user edit published jobs"
-#~ msgstr "ব্যবহার কারীগন কাজ সম্পাদন করতে পারবেন"
 
 #~ msgid "Notify email new job submit ?"
 #~ msgstr "নতুন কাজ জমা দানের জন্যে নোটিফিকেশন ইমেইল"
@@ -2378,8 +2870,8 @@ msgstr "আবেদন"
 #~ msgstr "লোড হচ্ছে..."
 
 #~ msgid ""
-#~ "You are not authorized to edit this job, please go <a href=\"%s"
-#~ "\"><b>account page</b></a> to see your jobs."
+#~ "You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
+#~ "page</b></a> to see your jobs."
 #~ msgstr ""
 #~ "এই কাজটি সম্পাদনা করার অধিকার নাই, দয়া করে <a href=\"%s\"><b>একাউন্ট</b></a> "
 #~ "যান আপনার কাজ গুলো দেখার জন্যে"
@@ -2469,10 +2961,8 @@ msgstr "আবেদন"
 #~ msgstr "কোম্পানী ওয়েবসাইট, উদাঃ http://pickplugins.com"
 
 #~ msgid ""
-#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-"
-#~ "wanted"
-#~ msgstr ""
-#~ "কাজের অফিসিয়াল লিংক, উদাঃ http://pickplugins.com/jobs/developer-wanted"
+#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-wanted"
+#~ msgstr "কাজের অফিসিয়াল লিংক, উদাঃ http://pickplugins.com/jobs/developer-wanted"
 
 #~ msgid "Job Responsibilities"
 #~ msgstr "কাজের দায়িত্ব"
@@ -2561,9 +3051,6 @@ msgstr "আবেদন"
 #~ msgid " - Job Importer"
 #~ msgstr "জব ইম্পোর্টার"
 
-#~ msgid "welcome"
-#~ msgstr "স্বাগতম"
-
 #~ msgid "Options Saved"
 #~ msgstr "অপশন সংরক্ষন হয়েছে"
 
@@ -2584,9 +3071,6 @@ msgstr "আবেদন"
 
 #~ msgid "#General Options"
 #~ msgstr "# সাধারন অপশন"
-
-#~ msgid "#Create Pages"
-#~ msgstr "পেজ তৈরী করুন"
 
 #~ msgid "Step 2: Create Pages"
 #~ msgstr "ধাপ ২ - পেজ তৈরী করুন"

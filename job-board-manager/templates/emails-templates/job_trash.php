@@ -11,12 +11,12 @@ ob_start();
 
 
             <div class="content" style="padding: 10px 0 40px;">
-                <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;"><?php echo sprintf(__('%s has trashed job', 'job-board-manager'), '<b>{job_author_name}</b>'); ?></p>
+                <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;"><?php echo sprintf(__('%s has trashed job', 'job-board-manager'), '<b>{current_user_name}</b>'); ?></p>
                 <table width="100%" cellspacing="0" cellpadding="0">
                     <tbody>
                     <tr>
                         <td class="user_avatar" valign="top" width="80">
-                            <div style="width: 60px; height: 60px; background: #ddd; text-align: center; word-wrap: break-word; margin-right:20px">{job_author_avatar}</div>
+                            <div style="width: 60px; height: 60px; background: #ddd; text-align: center; word-wrap: break-word; margin-right:20px">{current_user_avatar}</div>
                         </td>
                         <td valign="top">
                             <div style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;">

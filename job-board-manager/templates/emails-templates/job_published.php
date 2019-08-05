@@ -7,17 +7,17 @@ ob_start();
         <div style="width: 600px; margin: 0 auto;">
             <div class="header" style="border-bottom: 1px solid #ddd; padding: 20px 0; text-align: center;"><img src="{site_logo_url}"/></div>
             <div class="content" style="padding: 10px 0 40px;">
-                <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;"><?php echo __('{user_name} has published a job', 'job-board-manager'); ?></p>
+                <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;"><?php echo sprintf(__('%s has published a job', 'job-board-manager'), '<b>{current_user_name}</b>'); ?></p>
                 <table width="100%" cellspacing="0" cellpadding="0">
                     <tbody>
                     <tr>
                         <td class="user_avatar" valign="top" width="80">
-                            <div style="width: 60px; height: 60px; background: #ddd; text-align: center; word-wrap: break-word; margin-right:20px">{user_avatar}</div>
+                            <div style="width: 60px; height: 60px; background: #ddd; text-align: center; word-wrap: break-word; margin-right:20px">{current_user_avatar}</div>
                         </td>
                         <td valign="top">
                             <p style="font-size: 14px; line-height: 20px; color: #333; font-family: Arial, sans-serif;">
                                 <a style="text-decoration: none; color: #51b3ff;font-size:15px;" href="{job_url}">{job_title}</a>
-                                {job_content}</p>
+                            </p>
                             <div style="padding: 10px 0 0;"><a class="btn" style="color: #fff; border-radius: 3px; text-decoration: none; background-color: #51b3ff; padding: 10px 20px; font-size: 14px; font-family: Arial, sans-serif;" href="{job_url}"><?php echo __('View Job', 'job-board-manager'); ?></a></div>
                         </td>
                     </tr>

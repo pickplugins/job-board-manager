@@ -508,6 +508,8 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
         $job_bm_redirect_login = get_option('job_bm_redirect_login');
         $job_bm_redirect_logout = get_option('job_bm_redirect_logout');
         $job_bm_registration_enable = get_option('job_bm_registration_enable');
+        $job_bm_registration_recaptcha = get_option('job_bm_registration_recaptcha');
+
         $job_bm_login_enable = get_option('job_bm_login_enable');
         $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
         $job_bm_can_user_delete_application = get_option('job_bm_can_user_delete_application');
@@ -571,6 +573,22 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
             );
 
             $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_registration_recaptcha',
+                //'parent'		=> '',
+                'title'		=> __('Registration reCAPTCHA enable','job-board-manager'),
+                'details'	=> __('Enable reCAPTCHA on registration.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_registration_recaptcha,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
 
 
             $args = array(
@@ -648,6 +666,8 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
         $settings_tabs_field = new settings_tabs_field();
         $class_job_bm_emails = new class_job_bm_emails();
         $templates_data_default = $class_job_bm_emails->job_bm_email_templates_data();
+        $email_templates_parameters = $class_job_bm_emails->email_templates_parameters();
+
 
         $job_bm_logo_url = get_option('job_bm_logo_url');
         $job_bm_from_email = get_option('job_bm_from_email');
@@ -655,7 +675,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
 //        $job_bm_test_option = get_option('job_bm_test_option');
 //
-//        var_dump($job_bm_test_option);
+       //var_dump($templates_data);
 
 
         ?>
@@ -710,6 +730,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
 
 
+            if(!empty($templates_data))
             foreach($templates_data as $key=>$templates){
 
                 $email_to = isset($templates['email_to']) ? $templates['email_to'] : '';
@@ -718,7 +739,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                 $enable = isset($templates['enable']) ? $templates['enable'] : '';
                 $description = isset($templates['description']) ? $templates['description'] : '';
 
-                $parameters = isset($templates_data_default[$key]['parameters']) ? $templates_data_default[$key]['parameters'] : array();
+                $parameters = isset($email_templates_parameters[$key]['parameters']) ? $email_templates_parameters[$key]['parameters'] : array();
 
 
                 //var_dump($parameters);
