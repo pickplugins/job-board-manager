@@ -96,8 +96,9 @@ class class_job_bm_functions{
 
 		$apply_method_list = array(
 		    'none'=>__('None', 'job-board-manager'),
-            'direct_email'=>__('By Email', 'job-board-manager')
+            'direct_email'=>sprintf(__('%s By Email', 'job-board-manager'),'<i class="fas fa-envelope-open-text"></i>')
         );
+
 		$apply_method_list = apply_filters('job_bm_application_methods', $apply_method_list);
 
 		return $apply_method_list;
