@@ -195,7 +195,14 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                 }
             }
             ?>
-            <div class="settings-tabs vertical">
+            <div class="settings-tabs vertical has-right-panel">
+
+                <div class="settings-tabs-right-panel">
+                    <?php
+                    do_action('job_bm_settings_tabs_right_panel');
+                    ?>
+                </div>
+
                 <ul class="tab-navs">
                     <?php
                     foreach ($job_bm_settings_tab as $tab){
@@ -210,6 +217,9 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     }
                     ?>
                 </ul>
+
+
+
                 <?php
                 foreach ($job_bm_settings_tab as $tab){
                     $id = $tab['id'];
@@ -225,7 +235,9 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     <?php
                 }
                 ?>
+
             </div>
+
             <div class="clear clearfix"></div>
             <p class="submit">
                 <?php wp_nonce_field( 'job_bm_nonce' ); ?>

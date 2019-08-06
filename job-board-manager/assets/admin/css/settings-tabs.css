@@ -89,7 +89,21 @@
     display: block;
 }
 
+.settings-tabs.has-right-panel{
 
+}
+
+.settings-tabs.has-right-panel .tab-content {
+    margin-right: 280px;
+}
+
+
+.settings-tabs-right-panel{
+    width: 250px;
+    float: right;
+    padding: 15px;
+    border-left: 1px solid #ddd;
+}
 
 /*horizontal*/
 
@@ -226,6 +240,18 @@
         margin-left: 0px;
     }
     .settings-tabs .setting-field .description{}
+
+    .settings-tabs-right-panel {
+        width: 95%;
+        float: none;
+        padding: 15px;
+        border-left: 1px solid #ddd;
+    }
+
+
+    .settings-tabs.has-right-panel .tab-content {
+        margin-right: 0px;
+    }
 
 }
 

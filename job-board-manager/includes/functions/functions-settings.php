@@ -1129,6 +1129,30 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
 }
 
 
+add_action('job_bm_settings_tabs_right_panel', 'job_bm_settings_tabs_right_panel');
+
+if(!function_exists('job_bm_settings_tabs_right_panel')) {
+    function job_bm_settings_tabs_right_panel(){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something helpful, please help us by providing your feedback and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+
+        <?php
+
+    }
+}
+
+
 
 add_action('job_bm_settings_tabs_content_applications', 'job_bm_settings_tabs_content_applications');
 
