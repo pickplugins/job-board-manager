@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 
 
-	$(document).on('click', '.job-bm-applications .application-card .comments', function(){
+	$(document).on('click', '.application-single .application-card .comments', function(){
 		var application_id = $(this).attr('application-id');
 
 
@@ -17,7 +17,7 @@ jQuery(document).ready(function($) {
 
 	})
 
-		$(document).on('click', '.job-bm-applications .application-card .hire', function(){
+		$(document).on('click', '.application-single .application-card .hire', function(){
 
 			var application_id = $(this).attr('application-id');
 
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
 		})
 
 
-	$(document).on('click', '.job-bm-applications .application-card .trash', function(){
+	$(document).on('click', '.application-single .application-card .trash', function(){
 
 		var application_id = $(this).attr('application-id');
 
@@ -75,13 +75,16 @@ jQuery(document).ready(function($) {
 
 					if(trash =='no'){
 
+						$('.application-card-'+application_id).removeClass('application-trash');
+
 						$(this).removeClass('trashed');
-						$(this).fadeIn();
+						//$(this).fadeIn();
 
 						job_bm_notice('fail', message);
 					}else{
 						$(this).addClass('trashed');
-						$(this).parent().parent().parent().fadeOut();
+						//$(this).parent().parent().parent().fadeOut();
+						$('.application-card-'+application_id).addClass('application-trash');
 						job_bm_notice('fail', message);
 					}
 
@@ -96,7 +99,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$(document).on('mouseover','.job-bm-applications .star i',function(){
+	$(document).on('mouseover','.application-single .star i',function(){
 
 		data_count = $(this).attr('data-count');
 
@@ -130,7 +133,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$(document).on('mouseout','.job-bm-applications .star i',function(){
+	$(document).on('mouseout','.application-single .star i',function(){
 
 		current_rate = $(this).parent().attr('current-rate');
 		current_rate_int = Math.floor(current_rate);
@@ -176,7 +179,7 @@ jQuery(document).ready(function($) {
 
 
 
-	$(document).on('click','.job-bm-applications .star i',function(){
+	$(document).on('click','.application-single .star i',function(){
 		data_count = $(this).attr('data-count');
 		application_id = $(this).parent().attr('application_id');
 
@@ -222,6 +225,13 @@ jQuery(document).ready(function($) {
 					job_bm_notice('fail', message);
 
 				}
+
+
+				//console.log(data);
+
+
+
+
 
 
 

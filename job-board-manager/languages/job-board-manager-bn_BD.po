@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-05 23:59+0600\n"
-"PO-Revision-Date: 2019-08-06 00:01+0600\n"
+"POT-Creation-Date: 2019-08-06 11:43+0600\n"
+"PO-Revision-Date: 2019-08-06 11:43+0600\n"
 "Last-Translator: \n"
 "Language-Team: pickplugins <support@pickplugins.com>\n"
 "Language: en\n"
@@ -370,8 +370,9 @@ msgstr "আবেদন"
 #: includes/functions/functions-settings.php:446
 #: includes/functions/functions-settings.php:1084
 #: includes/functions/functions-welcome.php:132
-#: templates/applications/applications.php:255
-#: templates/my-applications/my-applications.php:218
+#: templates/application-single/application-single-hook.php:189
+#: templates/applications/applications.php:257
+#: templates/my-applications/my-applications.php:219
 msgid "Trash"
 msgstr "ট্রাশ"
 
@@ -386,8 +387,9 @@ msgstr ""
 
 #: includes/class-post-meta-application.php:103
 #: includes/class-post-meta-application.php:104
-#: templates/applications/applications.php:337
-#: templates/my-applications/my-applications.php:304
+#: templates/application-single/application-single-hook.php:271
+#: templates/applications/applications.php:339
+#: templates/my-applications/my-applications.php:305
 #, fuzzy
 #| msgid "Application"
 msgid "Applicant name"
@@ -859,11 +861,54 @@ msgstr "সেটিংস"
 msgid "Welcome"
 msgstr "স্বাগতম"
 
+#: includes/functions/functions-applications.php:27
+#, fuzzy
+#| msgid "Application"
+msgid "Application not hired"
+msgstr "আবেদন"
+
+#: includes/functions/functions-applications.php:34
+#, fuzzy
+#| msgid "Application"
+msgid "Application hired"
+msgstr "আবেদন"
+
+#: includes/functions/functions-applications.php:42
+#: includes/functions/functions-applications.php:96
+#, fuzzy
+#| msgid "You are not authorized to delete this job."
+msgid "You are not authorized to do this."
+msgstr "আপনার এই কাজ টি মুছে ফেলার অধিকার নাই"
+
+#: includes/functions/functions-applications.php:82
+#, fuzzy
+#| msgid "Application"
+msgid "Application not trashed."
+msgstr "আবেদন"
+
+#: includes/functions/functions-applications.php:90
+#, fuzzy
+#| msgid "Application"
+msgid "Application trashed."
+msgstr "আবেদন"
+
+#: includes/functions/functions-applications.php:136
+#, fuzzy
+#| msgid "Job update successfully."
+msgid "Rate successful."
+msgstr "কাজটি সফল ভাবে হালনাগাদ হয়েছে"
+
+#: includes/functions/functions-applications.php:141
+#, fuzzy
+#| msgid "Can user delete jobs ?"
+msgid "You cant rate this application."
+msgstr "ব্যবহার কারীগন কাজ মুছে দিতে পারবেন ?"
+
 #: includes/functions/functions-crons.php:9
 msgid ""
-"This plugin <b style=\"text-decoration: underline\">Job Board Manager - Expired "
-"check</b> no longer need, please deactivate. functionality added <b style="
-"\"text-decoration: underline\">Job Board Manager</b> itself."
+"This plugin <b style=\"text-decoration: underline\">Job Board Manager - "
+"Expired check</b> no longer need, please deactivate. functionality added <b "
+"style=\"text-decoration: underline\">Job Board Manager</b> itself."
 msgstr ""
 
 #: includes/functions/functions-reports.php:93
@@ -998,8 +1043,8 @@ msgstr ""
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list])"
 msgid ""
-"Choose the page for job edit page, where the shortcode <code>[job_bm_job_edit]</"
-"code> used."
+"Choose the page for job edit page, where the shortcode "
+"<code>[job_bm_job_edit]</code> used."
 msgstr "আরকাইভ পেইজ যেখানে সর্টকোডটি আছে [job_list]"
 
 #: includes/functions/functions-settings.php:194
@@ -1064,8 +1109,8 @@ msgid ""
 "reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
-"রিক্যাপচা গোপন কী দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/recaptcha"
-"\">google.com/reCAPTCHA</a>  এবং আপনার গোপন কী বুঝে নিন"
+"রিক্যাপচা গোপন কী দয়া করে এই লিঙ্কে যান <a href=\"https://www.google.com/"
+"recaptcha\">google.com/reCAPTCHA</a>  এবং আপনার গোপন কী বুঝে নিন"
 
 #: includes/functions/functions-settings.php:311
 #: includes/functions/functions-welcome.php:126
@@ -1775,97 +1820,120 @@ msgstr "এই কাজ সম্পাদন করার অধিকার �
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
 
-#: templates/applications/applications.php:25
-#, php-format
-msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
+#: templates/application-single/application-single-hook.php:76
+msgid "This is preview of application, please do not share link."
 msgstr ""
 
-#: templates/applications/applications.php:241
-#: templates/my-applications/my-applications.php:204
+#: templates/application-single/application-single-hook.php:89
+#: templates/application-single/application-single.php:31
+msgid "Sorry! you dont have permission to access this application."
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:127
+#: templates/applications/applications.php:243
+#: templates/my-applications/my-applications.php:205
 msgid "Anonymous"
 msgstr ""
 
-#: templates/applications/applications.php:242
-#: templates/my-applications/my-applications.php:209
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
+#: templates/my-applications/my-applications.php:210
 #, fuzzy
 #| msgid "Expired"
 msgid "Hired"
 msgstr "মেয়াদোত্তীর্ণ"
 
-#: templates/applications/applications.php:242
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
 msgid "Hire"
 msgstr ""
 
-#: templates/applications/applications.php:252
-#: templates/my-applications/my-applications.php:215
+#: templates/application-single/application-single-hook.php:186
+#: templates/applications/applications.php:254
+#: templates/my-applications/my-applications.php:216
 #, fuzzy
 #| msgid "Application"
 msgid "Application ID."
 msgstr "আবেদন"
 
-#: templates/applications/applications.php:256
-#: templates/my-applications/my-applications.php:219
+#: templates/application-single/application-single-hook.php:190
+#: templates/applications/applications.php:258
+#: templates/my-applications/my-applications.php:220
 msgid "Comments"
 msgstr ""
 
-#: templates/applications/applications.php:259
+#: templates/application-single/application-single-hook.php:193
+#: templates/applications/applications.php:261
 #, fuzzy
 #| msgid "Settings"
 msgid "Ratings"
 msgstr "সেটিংস"
 
-#: templates/applications/applications.php:282
-#: templates/my-applications/my-applications.php:246
+#: templates/application-single/application-single-hook.php:216
+#: templates/applications/applications.php:284
+#: templates/my-applications/my-applications.php:247
 #, fuzzy
 #| msgid "General options."
 msgid "Conversations"
 msgstr "সাধারন অপশন"
 
-#: templates/applications/applications.php:317
-#: templates/my-applications/my-applications.php:282
+#: templates/application-single/application-single-hook.php:251
+#: templates/applications/applications.php:319
+#: templates/my-applications/my-applications.php:283
 msgid "No reply yet. "
 msgstr ""
 
-#: templates/applications/applications.php:326
-#: templates/my-applications/my-applications.php:292
+#: templates/application-single/application-single-hook.php:260
+#: templates/applications/applications.php:328
+#: templates/my-applications/my-applications.php:293
 msgid "Write a reply"
 msgstr ""
 
-#: templates/applications/applications.php:340
-#: templates/my-applications/my-applications.php:307
+#: templates/application-single/application-single-hook.php:274
+#: templates/applications/applications.php:342
+#: templates/my-applications/my-applications.php:308
 #: templates/registration-form/registration-form-hook.php:45
 msgid "Email"
 msgstr "ইমেইল"
 
-#: templates/applications/applications.php:344
-#: templates/my-applications/my-applications.php:311
+#: templates/application-single/application-single-hook.php:278
+#: templates/applications/applications.php:346
+#: templates/my-applications/my-applications.php:312
 msgid "Attachment"
 msgstr ""
 
-#: templates/applications/applications.php:348
-#: templates/my-applications/my-applications.php:315
+#: templates/application-single/application-single-hook.php:282
+#: templates/applications/applications.php:350
+#: templates/my-applications/my-applications.php:316
 msgid "Resume"
 msgstr ""
 
-#: templates/applications/applications.php:353
-#: templates/my-applications/my-applications.php:320
+#: templates/application-single/application-single-hook.php:287
+#: templates/applications/applications.php:355
+#: templates/my-applications/my-applications.php:321
 msgid "Date"
 msgstr ""
 
-#: templates/applications/applications.php:354
-#: templates/my-applications/my-applications.php:321
+#: templates/application-single/application-single-hook.php:288
+#: templates/applications/applications.php:356
+#: templates/my-applications/my-applications.php:322
 msgid "Job link"
 msgstr ""
 
-#: templates/applications/applications.php:381
-#: templates/my-applications/my-applications.php:348
+#: templates/applications/applications.php:25
+#, php-format
+msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
+msgstr ""
+
+#: templates/applications/applications.php:383
+#: templates/my-applications/my-applications.php:349
 #, fuzzy, php-format
 #| msgid "Job application"
 msgid "%s No application found."
 msgstr "জব আবেদন"
 
-#: templates/applications/applications.php:385
-#: templates/my-applications/my-applications.php:352
+#: templates/applications/applications.php:387
+#: templates/my-applications/my-applications.php:353
 #, fuzzy, php-format
 #| msgid "Please <a href=\"%s\">login</a> to see your job list."
 msgid "Please <a href=\"%s\">login</a> to see your application list."
@@ -2319,11 +2387,11 @@ msgstr ""
 msgid "My Applications"
 msgstr "আবেদন"
 
-#: templates/my-applications/my-applications.php:209
+#: templates/my-applications/my-applications.php:210
 msgid "Not hired"
 msgstr ""
 
-#: templates/my-applications/my-applications.php:222
+#: templates/my-applications/my-applications.php:223
 #, fuzzy, php-format
 #| msgid "Job posting last 7 days."
 msgid "Job poster ratings: %s"
@@ -2848,9 +2916,6 @@ msgstr ""
 #~ msgid "missing"
 #~ msgstr "বাদ গেছে"
 
-#~ msgid "Job update successfully."
-#~ msgstr "কাজটি সফল ভাবে হালনাগাদ হয়েছে"
-
 #~ msgid "Cancel"
 #~ msgstr "বাতিল"
 
@@ -2870,8 +2935,8 @@ msgstr ""
 #~ msgstr "লোড হচ্ছে..."
 
 #~ msgid ""
-#~ "You are not authorized to edit this job, please go <a href=\"%s\"><b>account "
-#~ "page</b></a> to see your jobs."
+#~ "You are not authorized to edit this job, please go <a href=\"%s"
+#~ "\"><b>account page</b></a> to see your jobs."
 #~ msgstr ""
 #~ "এই কাজটি সম্পাদনা করার অধিকার নাই, দয়া করে <a href=\"%s\"><b>একাউন্ট</b></a> "
 #~ "যান আপনার কাজ গুলো দেখার জন্যে"
@@ -2961,8 +3026,10 @@ msgstr ""
 #~ msgstr "কোম্পানী ওয়েবসাইট, উদাঃ http://pickplugins.com"
 
 #~ msgid ""
-#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-wanted"
-#~ msgstr "কাজের অফিসিয়াল লিংক, উদাঃ http://pickplugins.com/jobs/developer-wanted"
+#~ "Job Link at Company Website, ex: http://pickplugins.com/jobs/developer-"
+#~ "wanted"
+#~ msgstr ""
+#~ "কাজের অফিসিয়াল লিংক, উদাঃ http://pickplugins.com/jobs/developer-wanted"
 
 #~ msgid "Job Responsibilities"
 #~ msgstr "কাজের দায়িত্ব"

@@ -2,32 +2,42 @@
 /* CSS Document */
 
 
-.job-bm-applications{
+
+.application-single{
 
 
 }
-.job-bm-applications a{
+
+.application-single .preview-notice{
+    background: #ffefbf;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-left: 3px solid #fdc51c;
+}
+
+
+.application-single a{
     text-decoration: none;
 
 
 }
 .application-search{}
 
-.job-bm-applications .single{
+.application-single .single{
 
 
 }
 
-.job-bm-applications .application-trash{
+.application-single .application-trash{
     opacity: 0.3;
 }
 
 
-.job-bm-applications .application-action{
+.application-single .application-action{
     display: inline-block;
 }
 
-.job-bm-applications .application-action span{
+.application-single .application-action span{
     display: inline-block;
     margin: 0 2px;
     padding: 0 7px;
@@ -37,75 +47,89 @@
 }
 
 
-.job-bm-applications .application-action .comments.active{
+.application-single .application-action .comments.active{
     background: #737373;
     color: #fff;
 
 }
+.application-single .comment-author-avatar{
+    display: inline-block;
+    /* float: left; */
+    border-radius: 5px;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.application-single .comment-author-avatar img{
+
+    width: 100%;
+    height: auto;
+}
 
 
-.job-bm-applications .application-link{
+.application-single .application-link{
     min-width: 45px;
     display: inline-block;
     color: #fff !important;
     text-decoration: none;
 }
-
-
-.job-bm-applications .job-link{
+.application-single .job-link{
     display: block;
     text-decoration: none;
 }
-.job-bm-applications .application-card{
+.application-single .application-card{
     margin: 0;
     border-bottom: 1px dashed #ddd;
     padding: 20px 0;
 }
-.job-bm-applications .card-top{
+.application-single .card-top{
     background: #42b591a8;
     padding: 10px 10px;
 }
-.job-bm-applications .card-body{
+.application-single .card-body{
     padding: 10px;
     background: #f5f5f5;
 }
-.job-bm-applications .card-bottom{
+.application-single .card-bottom{
     padding: 5px 10px;
     background: antiquewhite;
 }
 
-.job-bm-applications .application-rate{
+.application-single .application-rate{
     float: right;
     color: #ffd601e8;
     font-size: 17px;
     line-height: 20px;
 }
 
-.job-bm-applications .application-rate i{
+.application-single .application-rate i{
     cursor: pointer;
 }
 
 
-.job-bm-applications .paginate {
+.application-single .paginate {
     margin: 30px 0;
     text-align: center;
 }
-.job-bm-applications .paginate .page-numbers,
-.job-bm-applications .paginate .page-numbers {
+.application-single .paginate .page-numbers,
+.application-single .paginate .page-numbers {
     color: #999;
     font-size: 17px;
     padding: 7px 13px;
     text-decoration: none;
 }
 
-.job-bm-applications .paginate .current {
+.application-single .paginate .current {
     border: medium none;
 }
-.job-bm-applications .applicant-content{
+.application-single .applicant-content{
     margin-bottom: 20px;
 }
 
-.job-bm-applications .applicant-name{
+.application-single .applicant-name{
     font-weight: bold;
     /* margin-top: 15px; */
     width: 48%;
@@ -114,24 +138,24 @@
 }
 
 
-.job-bm-applications .hire{
+.application-single .hire{
 
     margin-left: 15px;
 }
 
 
-.job-bm-applications .hire.hired, .job-bm-applications .hire:hover{
+.application-single .hire.hired, .application-single .hire:hover{
     background: #FF9800;
     color: #fff;
 }
 
-.job-bm-applications .application-action span.trashed, .job-bm-applications .application-action .trash:hover{
+.application-single .application-action span.trashed, .application-single .application-action .trash:hover{
     background: #f96767;
     color: #fff;
 }
 
 
-.job-bm-applications .applicant-assets{
+.application-single .applicant-assets{
     display: inline-block;
     width: 48%;
     vertical-align: top;
@@ -139,7 +163,7 @@
 }
 
 
-.job-bm-applications .comment-form-wrap .comment-text{
+.application-single .comment-form-wrap .comment-text{
     width: 94%;
     margin: 0 auto;
     display: block;
@@ -148,46 +172,49 @@
 
 
 
-.job-bm-applications .comment-form-wrap .comment-submit{
+.application-single .comment-form-wrap .comment-submit{
     width: 98%;
     margin: 10px auto;
     display: block;
 
 }
-.job-bm-applications .application-comments{
+.application-single .application-comments{
     display: none;
 }
 
-.job-bm-applications .write-reply{
+.application-single .write-reply{
     font-weight: bold;
     margin-bottom: 15px;
 }
 
-.job-bm-applications .replies{
+.application-single .replies{
     font-weight: bold;
     margin-bottom: 15px;
     border-bottom: 1px dashed #ddd;
     font-size: 15px;
 }
 
-.job-bm-applications .comment-author{
+.application-single .comment-author{
     font-weight: bold;
-    float: left;}
+    /* float: left; */
+    display: inline-block;
+}
 
-.job-bm-applications .comment-date{
+.application-single .comment-date{
     float: right;
     margin-bottom: 10px;
     font-style: italic;
 }
-.job-bm-applications .comment-content{
+.application-single .comment-content{
     display: block;
     clear: both;
     background: #eaeaea;
     padding: 010px;
     border-radius: 30px;
     border-top-left-radius: 0;
+    margin-top: 15px;
 }
-.job-bm-applications .comment-list .comment{
+.application-single .comment-list .comment{
     font-size: 12px;
     margin-bottom: 10px;
     padding-bottom: 10px;

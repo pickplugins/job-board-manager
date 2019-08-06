@@ -182,6 +182,7 @@ if(isset($_POST['comment_submit_hidden'])){
 		    while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
                 $application_id = get_the_ID();
+                $application_url = get_permalink($application_id);
                 $job_title = get_the_title();
                 $post_date = get_the_date('Y-m-d');
 
@@ -212,7 +213,7 @@ if(isset($_POST['comment_submit_hidden'])){
                 ?>
                 <div class="application-card application-card-<?php echo $application_id; ?>">
                     <div class="card-top">
-                        <span class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" >#<?php echo $application_id; ?></span>
+                        <a class="application-link" title="<?php echo __('Application ID.', 'job-board-manager'); ?>" class="" target="_blank" href="<?php echo $application_url; ?>" >#<?php echo $application_id; ?> </a>
                         <div class="application-action">
                             <span title="<?php  echo $application_hired_text; ?>" class="hire <?php if($application_hired =='yes') echo 'hired'; ?>" application-id="<?php echo $application_id; ?>"><i class="fas fa-medal"></i></span>
                             <span title="<?php echo __('Trash','job-board-manager'); ?>" class="trash <?php if($application_trash =='yes') echo 'trashed'; ?>" application-id="<?php echo $application_id; ?>"><i class="far fa-trash-alt" ></i></span>
@@ -327,6 +328,7 @@ if(isset($_POST['comment_submit_hidden'])){
 			endwhile;
 			
 			?>
+            </div>
             <div class="paginate">
             <?php
 			$big = 999999999; // need an unlikely integer
@@ -355,13 +357,13 @@ if(isset($_POST['comment_submit_hidden'])){
 	?>
 
 
-        </div>
+
         <style type="text/css">
-            .job-bm-application-list .paginate .page-numbers.current{
+            .job-bm-my-applications .paginate .page-numbers.current{
                 background: <?php echo $job_bm_pagination_active_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }
-            .job-bm-application-list .paginate a.page-numbers{
+            .job-bm-my-applications .paginate a.page-numbers{
                 background: <?php echo $job_bm_pagination_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }

@@ -2,8 +2,8 @@
 /*
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
-Description: Awesome Job Board Manager.
-Version: 2.1.7
+Description: Advance job board manager for your site.
+Version: 2.1.8
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.7' );
+		define('job_bm_plugin_version', '2.1.8' );
 
 
 		// Class
@@ -59,6 +59,8 @@ class JobBoardManager{
 
 
 		require_once( job_bm_plugin_dir . 'templates/job-single/job-single-hook.php');
+        require_once( job_bm_plugin_dir . 'templates/application-single/application-single-hook.php');
+
 
 		//Functions
         require_once( job_bm_plugin_dir . 'includes/functions/functions-crons.php');
@@ -183,6 +185,8 @@ class JobBoardManager{
         wp_register_style('job_bm_job_archive', job_bm_plugin_url.'assets/front/css/job-archive.css');
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
         wp_register_style('job_bm_job_single', job_bm_plugin_url.'assets/front/css/job-single-new.css');
+        wp_register_style('job_bm_application_single', job_bm_plugin_url.'assets/front/css/job-bm-application.css');
+
         wp_register_style('job-bm-dashboard', job_bm_plugin_url.'assets/front/css/job-bm-dashboard.css');
         wp_register_style('job-bm-my-jobs', job_bm_plugin_url.'assets/front/css/job-bm-my-jobs.css');
         wp_register_style('job-bm-applications', job_bm_plugin_url.'assets/front/css/job-bm-applications.css');
@@ -199,6 +203,7 @@ class JobBoardManager{
         wp_register_script('job-bm-applications', job_bm_plugin_url.'assets/front/js/scripts-applications.js');
         wp_register_script('scripts-my-applications', job_bm_plugin_url.'assets/front/js/scripts-my-applications.js');
         wp_register_script('job-bm-notice', job_bm_plugin_url.'assets/front/js/scripts-notice.js');
+        wp_register_script('job-bm-application-single', job_bm_plugin_url.'assets/front/js/scripts-application-single.js');
 
 
 

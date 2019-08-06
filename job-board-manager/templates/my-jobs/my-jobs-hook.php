@@ -320,11 +320,11 @@ if(!function_exists('job_bm_my_jobs_style')){
 
         ?>
         <style type="text/css">
-            .job-list .paginate .page-numbers.current{
+            .job-bm-my-jobs .paginate .page-numbers.current{
                 background: <?php echo $job_bm_pagination_active_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }
-            .job-list .paginate a.page-numbers{
+            .job-bm-my-jobs .paginate a.page-numbers{
                 background: <?php echo $job_bm_pagination_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }

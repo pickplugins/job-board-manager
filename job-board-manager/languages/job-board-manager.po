@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-05 23:57+0600\n"
-"PO-Revision-Date: 2019-08-05 23:57+0600\n"
+"POT-Creation-Date: 2019-08-06 11:42+0600\n"
+"PO-Revision-Date: 2019-08-06 11:43+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -322,8 +322,9 @@ msgstr ""
 #: includes/functions/functions-settings.php:446
 #: includes/functions/functions-settings.php:1084
 #: includes/functions/functions-welcome.php:132
-#: templates/applications/applications.php:255
-#: templates/my-applications/my-applications.php:218
+#: templates/application-single/application-single-hook.php:189
+#: templates/applications/applications.php:257
+#: templates/my-applications/my-applications.php:219
 msgid "Trash"
 msgstr ""
 
@@ -338,8 +339,9 @@ msgstr ""
 
 #: includes/class-post-meta-application.php:103
 #: includes/class-post-meta-application.php:104
-#: templates/applications/applications.php:337
-#: templates/my-applications/my-applications.php:304
+#: templates/application-single/application-single-hook.php:271
+#: templates/applications/applications.php:339
+#: templates/my-applications/my-applications.php:305
 msgid "Applicant name"
 msgstr ""
 
@@ -734,6 +736,35 @@ msgstr ""
 
 #: includes/class-settings.php:30
 msgid "Welcome"
+msgstr ""
+
+#: includes/functions/functions-applications.php:27
+msgid "Application not hired"
+msgstr ""
+
+#: includes/functions/functions-applications.php:34
+msgid "Application hired"
+msgstr ""
+
+#: includes/functions/functions-applications.php:42
+#: includes/functions/functions-applications.php:96
+msgid "You are not authorized to do this."
+msgstr ""
+
+#: includes/functions/functions-applications.php:82
+msgid "Application not trashed."
+msgstr ""
+
+#: includes/functions/functions-applications.php:90
+msgid "Application trashed."
+msgstr ""
+
+#: includes/functions/functions-applications.php:136
+msgid "Rate successful."
+msgstr ""
+
+#: includes/functions/functions-applications.php:141
+msgid "You cant rate this application."
 msgstr ""
 
 #: includes/functions/functions-crons.php:9
@@ -1477,88 +1508,111 @@ msgstr ""
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr ""
 
+#: templates/application-single/application-single-hook.php:76
+msgid "This is preview of application, please do not share link."
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:89
+#: templates/application-single/application-single.php:31
+msgid "Sorry! you dont have permission to access this application."
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:127
+#: templates/applications/applications.php:243
+#: templates/my-applications/my-applications.php:205
+msgid "Anonymous"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
+#: templates/my-applications/my-applications.php:210
+msgid "Hired"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
+msgid "Hire"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:186
+#: templates/applications/applications.php:254
+#: templates/my-applications/my-applications.php:216
+msgid "Application ID."
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:190
+#: templates/applications/applications.php:258
+#: templates/my-applications/my-applications.php:220
+msgid "Comments"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:193
+#: templates/applications/applications.php:261
+msgid "Ratings"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:216
+#: templates/applications/applications.php:284
+#: templates/my-applications/my-applications.php:247
+msgid "Conversations"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:251
+#: templates/applications/applications.php:319
+#: templates/my-applications/my-applications.php:283
+msgid "No reply yet. "
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:260
+#: templates/applications/applications.php:328
+#: templates/my-applications/my-applications.php:293
+msgid "Write a reply"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:274
+#: templates/applications/applications.php:342
+#: templates/my-applications/my-applications.php:308
+#: templates/registration-form/registration-form-hook.php:45
+msgid "Email"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:278
+#: templates/applications/applications.php:346
+#: templates/my-applications/my-applications.php:312
+msgid "Attachment"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:282
+#: templates/applications/applications.php:350
+#: templates/my-applications/my-applications.php:316
+msgid "Resume"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:287
+#: templates/applications/applications.php:355
+#: templates/my-applications/my-applications.php:321
+msgid "Date"
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:288
+#: templates/applications/applications.php:356
+#: templates/my-applications/my-applications.php:322
+msgid "Job link"
+msgstr ""
+
 #: templates/applications/applications.php:25
 #, php-format
 msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
 msgstr ""
 
-#: templates/applications/applications.php:241
-#: templates/my-applications/my-applications.php:204
-msgid "Anonymous"
-msgstr ""
-
-#: templates/applications/applications.php:242
-#: templates/my-applications/my-applications.php:209
-msgid "Hired"
-msgstr ""
-
-#: templates/applications/applications.php:242
-msgid "Hire"
-msgstr ""
-
-#: templates/applications/applications.php:252
-#: templates/my-applications/my-applications.php:215
-msgid "Application ID."
-msgstr ""
-
-#: templates/applications/applications.php:256
-#: templates/my-applications/my-applications.php:219
-msgid "Comments"
-msgstr ""
-
-#: templates/applications/applications.php:259
-msgid "Ratings"
-msgstr ""
-
-#: templates/applications/applications.php:282
-#: templates/my-applications/my-applications.php:246
-msgid "Conversations"
-msgstr ""
-
-#: templates/applications/applications.php:317
-#: templates/my-applications/my-applications.php:282
-msgid "No reply yet. "
-msgstr ""
-
-#: templates/applications/applications.php:326
-#: templates/my-applications/my-applications.php:292
-msgid "Write a reply"
-msgstr ""
-
-#: templates/applications/applications.php:340
-#: templates/my-applications/my-applications.php:307
-#: templates/registration-form/registration-form-hook.php:45
-msgid "Email"
-msgstr ""
-
-#: templates/applications/applications.php:344
-#: templates/my-applications/my-applications.php:311
-msgid "Attachment"
-msgstr ""
-
-#: templates/applications/applications.php:348
-#: templates/my-applications/my-applications.php:315
-msgid "Resume"
-msgstr ""
-
-#: templates/applications/applications.php:353
-#: templates/my-applications/my-applications.php:320
-msgid "Date"
-msgstr ""
-
-#: templates/applications/applications.php:354
-#: templates/my-applications/my-applications.php:321
-msgid "Job link"
-msgstr ""
-
-#: templates/applications/applications.php:381
-#: templates/my-applications/my-applications.php:348
+#: templates/applications/applications.php:383
+#: templates/my-applications/my-applications.php:349
 #, php-format
 msgid "%s No application found."
 msgstr ""
 
-#: templates/applications/applications.php:385
-#: templates/my-applications/my-applications.php:352
+#: templates/applications/applications.php:387
+#: templates/my-applications/my-applications.php:353
 #, php-format
 msgid "Please <a href=\"%s\">login</a> to see your application list."
 msgstr ""
@@ -1948,11 +2002,11 @@ msgstr ""
 msgid "My Applications"
 msgstr ""
 
-#: templates/my-applications/my-applications.php:209
+#: templates/my-applications/my-applications.php:210
 msgid "Not hired"
 msgstr ""
 
-#: templates/my-applications/my-applications.php:222
+#: templates/my-applications/my-applications.php:223
 #, php-format
 msgid "Job poster ratings: %s"
 msgstr ""

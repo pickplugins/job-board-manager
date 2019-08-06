@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.7
+	Stable tag: 2.1.8
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,19 +26,33 @@
 **Advance Job Archive**
 
 You can display list of jobs via shortcode `[job_bm_archive]` you can display job list by filtering query arguments via filter hook, this can help you to build external search form to apply form data to filter jobs. you can also remove existing job list elements and add your own elements via action hook.
+`
+[job_bm_archive]
+`
+
 
 **Advance Dashboard**
 
 This plugin has account dashboard is based on tabs and content, you can display any where via shortcode `[job_bm_dashboard]`, tabs can be added via filter hooks and tab content can be displayed via action hook based on each tab. you can display custom code or HTML via action hook.
+`
+[job_bm_dashboard]
+`
+
 
 **Job Submit form**
 
 you can display job submit form via shortcode `[job_submit_form]` anywhere, you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data. you can also remove existing input field by `remove_action` hook.
+`
+[job_submit_form]
+`
 
 
 **Job Edit form**
 
 Allow, user to edit their own job after publish the job, you can display job edit form any where via shortcode `[job_bm_job_edit]` you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data.
+`
+[job_bm_job_edit]
+`
 
 
 **Application**
@@ -47,7 +61,10 @@ User can apply for the jobs, job poster can see application from dashboard, can 
 
 **Custom Registration Form**
 
-You can add custom input fields under registration forms and validated data and save under user meta field. you can also remove existing input field by `remove_action` hook. there is default registration form under dahsboard for no looged-in user, also you can display registration form via shrotcode to anywhere, you can use following shortcode to display user registration form `[job_bm_registration_form]`
+You can add custom input fields under registration forms and validated data and save under user meta field. you can also remove existing input field by `remove_action` hook. there is default registration form under dahsboard for no looged-in user, also you can display registration form via shrotcode to anywhere, you can use following shortcode to display user registration form
+`
+[job_bm_registration_form]
+`
 
 
 **Translation**
@@ -55,12 +72,6 @@ You can add custom input fields under registration forms and validated data and 
 Please contribute here [https://translate.wordpress.org/projects/wp-plugins/job-board-manager/](https://translate.wordpress.org/projects/wp-plugins/job-board-manager/)
 
 
-Contributors 
-
-* [Italian, Criss Seregni](http://www.agendadelvolo.info)
-* [German, Britta Skulima](http://www.deardesign.de)
-* [Portuguese, Susana Araújo](http://www.epochmultimedia.com/)
-* [French, Amaury Bargibant](#)
 
 == Installation ==
 
@@ -90,6 +101,17 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+	= 2.1.8 =
+    * 06/08/2019 - add - single application page added.
+    * 06/08/2019 - add - action hook job_bm_before_single_application added.
+    * 06/08/2019 - add - action hook job_bm_single_application_main added.
+    * 06/08/2019 - add - action hook job_bm_single_application_main_no_access added.
+    * 06/08/2019 - add - action hook job_bm_after_single_application added.
+    * 06/08/2019 - add - application linked under my application and applications navs.
+    * 06/08/2019 - fix - application received count issue fixed.
+
 
 
 	= 2.1.7 =

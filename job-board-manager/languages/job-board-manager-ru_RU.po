@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-05 23:59+0600\n"
-"PO-Revision-Date: 2019-08-06 00:00+0600\n"
+"POT-Creation-Date: 2019-08-06 11:43+0600\n"
+"PO-Revision-Date: 2019-08-06 11:43+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -414,8 +414,9 @@ msgstr "Заявка"
 #: includes/functions/functions-settings.php:446
 #: includes/functions/functions-settings.php:1084
 #: includes/functions/functions-welcome.php:132
-#: templates/applications/applications.php:255
-#: templates/my-applications/my-applications.php:218
+#: templates/application-single/application-single-hook.php:189
+#: templates/applications/applications.php:257
+#: templates/my-applications/my-applications.php:219
 msgid "Trash"
 msgstr "Ерунда"
 
@@ -432,8 +433,9 @@ msgstr ""
 
 #: includes/class-post-meta-application.php:103
 #: includes/class-post-meta-application.php:104
-#: templates/applications/applications.php:337
-#: templates/my-applications/my-applications.php:304
+#: templates/application-single/application-single-hook.php:271
+#: templates/applications/applications.php:339
+#: templates/my-applications/my-applications.php:305
 #, fuzzy
 #| msgid "Application"
 msgid "Applicant name"
@@ -904,6 +906,49 @@ msgstr "Настройки"
 #| msgid "welcome"
 msgid "Welcome"
 msgstr "добро пожаловать"
+
+#: includes/functions/functions-applications.php:27
+#, fuzzy
+#| msgid "Application"
+msgid "Application not hired"
+msgstr "Заявка"
+
+#: includes/functions/functions-applications.php:34
+#, fuzzy
+#| msgid "Application"
+msgid "Application hired"
+msgstr "Заявка"
+
+#: includes/functions/functions-applications.php:42
+#: includes/functions/functions-applications.php:96
+#, fuzzy
+#| msgid "You are not authorized to delete this job."
+msgid "You are not authorized to do this."
+msgstr "Вы не имеете права удалять эту работу."
+
+#: includes/functions/functions-applications.php:82
+#, fuzzy
+#| msgid "Application"
+msgid "Application not trashed."
+msgstr "Заявка"
+
+#: includes/functions/functions-applications.php:90
+#, fuzzy
+#| msgid "Application"
+msgid "Application trashed."
+msgstr "Заявка"
+
+#: includes/functions/functions-applications.php:136
+#, fuzzy
+#| msgid "Job Submitted successfully."
+msgid "Rate successful."
+msgstr "Работа представлена успешно."
+
+#: includes/functions/functions-applications.php:141
+#, fuzzy
+#| msgid "Can user delete jobs ?"
+msgid "You cant rate this application."
+msgstr "Может ли пользователь удалить вакансии?"
 
 #: includes/functions/functions-crons.php:9
 msgid ""
@@ -1841,97 +1886,120 @@ msgstr "Вы не имеете права редактировать эту ра
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr ""
 
-#: templates/applications/applications.php:25
-#, php-format
-msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
+#: templates/application-single/application-single-hook.php:76
+msgid "This is preview of application, please do not share link."
 msgstr ""
 
-#: templates/applications/applications.php:241
-#: templates/my-applications/my-applications.php:204
+#: templates/application-single/application-single-hook.php:89
+#: templates/application-single/application-single.php:31
+msgid "Sorry! you dont have permission to access this application."
+msgstr ""
+
+#: templates/application-single/application-single-hook.php:127
+#: templates/applications/applications.php:243
+#: templates/my-applications/my-applications.php:205
 msgid "Anonymous"
 msgstr ""
 
-#: templates/applications/applications.php:242
-#: templates/my-applications/my-applications.php:209
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
+#: templates/my-applications/my-applications.php:210
 #, fuzzy
 #| msgid "Expired"
 msgid "Hired"
 msgstr "Истекший"
 
-#: templates/applications/applications.php:242
+#: templates/application-single/application-single-hook.php:128
+#: templates/applications/applications.php:244
 msgid "Hire"
 msgstr ""
 
-#: templates/applications/applications.php:252
-#: templates/my-applications/my-applications.php:215
+#: templates/application-single/application-single-hook.php:186
+#: templates/applications/applications.php:254
+#: templates/my-applications/my-applications.php:216
 #, fuzzy
 #| msgid "Application"
 msgid "Application ID."
 msgstr "Заявка"
 
-#: templates/applications/applications.php:256
-#: templates/my-applications/my-applications.php:219
+#: templates/application-single/application-single-hook.php:190
+#: templates/applications/applications.php:258
+#: templates/my-applications/my-applications.php:220
 msgid "Comments"
 msgstr ""
 
-#: templates/applications/applications.php:259
+#: templates/application-single/application-single-hook.php:193
+#: templates/applications/applications.php:261
 #, fuzzy
 #| msgid "Settings"
 msgid "Ratings"
 msgstr "Настройки"
 
-#: templates/applications/applications.php:282
-#: templates/my-applications/my-applications.php:246
+#: templates/application-single/application-single-hook.php:216
+#: templates/applications/applications.php:284
+#: templates/my-applications/my-applications.php:247
 #, fuzzy
 #| msgid "general Options."
 msgid "Conversations"
 msgstr "Генеральные опции"
 
-#: templates/applications/applications.php:317
-#: templates/my-applications/my-applications.php:282
+#: templates/application-single/application-single-hook.php:251
+#: templates/applications/applications.php:319
+#: templates/my-applications/my-applications.php:283
 msgid "No reply yet. "
 msgstr ""
 
-#: templates/applications/applications.php:326
-#: templates/my-applications/my-applications.php:292
+#: templates/application-single/application-single-hook.php:260
+#: templates/applications/applications.php:328
+#: templates/my-applications/my-applications.php:293
 msgid "Write a reply"
 msgstr ""
 
-#: templates/applications/applications.php:340
-#: templates/my-applications/my-applications.php:307
+#: templates/application-single/application-single-hook.php:274
+#: templates/applications/applications.php:342
+#: templates/my-applications/my-applications.php:308
 #: templates/registration-form/registration-form-hook.php:45
 msgid "Email"
 msgstr "Email"
 
-#: templates/applications/applications.php:344
-#: templates/my-applications/my-applications.php:311
+#: templates/application-single/application-single-hook.php:278
+#: templates/applications/applications.php:346
+#: templates/my-applications/my-applications.php:312
 msgid "Attachment"
 msgstr ""
 
-#: templates/applications/applications.php:348
-#: templates/my-applications/my-applications.php:315
+#: templates/application-single/application-single-hook.php:282
+#: templates/applications/applications.php:350
+#: templates/my-applications/my-applications.php:316
 msgid "Resume"
 msgstr ""
 
-#: templates/applications/applications.php:353
-#: templates/my-applications/my-applications.php:320
+#: templates/application-single/application-single-hook.php:287
+#: templates/applications/applications.php:355
+#: templates/my-applications/my-applications.php:321
 msgid "Date"
 msgstr ""
 
-#: templates/applications/applications.php:354
-#: templates/my-applications/my-applications.php:321
+#: templates/application-single/application-single-hook.php:288
+#: templates/applications/applications.php:356
+#: templates/my-applications/my-applications.php:322
 msgid "Job link"
 msgstr ""
 
-#: templates/applications/applications.php:381
-#: templates/my-applications/my-applications.php:348
+#: templates/applications/applications.php:25
+#, php-format
+msgid "%s You haven't posted any jobs, please <a href=\"%s\">post a job</a>"
+msgstr ""
+
+#: templates/applications/applications.php:383
+#: templates/my-applications/my-applications.php:349
 #, fuzzy, php-format
 #| msgid "Job application"
 msgid "%s No application found."
 msgstr "Заявка на работу"
 
-#: templates/applications/applications.php:385
-#: templates/my-applications/my-applications.php:352
+#: templates/applications/applications.php:387
+#: templates/my-applications/my-applications.php:353
 #, fuzzy, php-format
 #| msgid "Please login to see your job list."
 msgid "Please <a href=\"%s\">login</a> to see your application list."
@@ -2379,11 +2447,11 @@ msgstr ""
 msgid "My Applications"
 msgstr "Заявка"
 
-#: templates/my-applications/my-applications.php:209
+#: templates/my-applications/my-applications.php:210
 msgid "Not hired"
 msgstr ""
 
-#: templates/my-applications/my-applications.php:222
+#: templates/my-applications/my-applications.php:223
 #, fuzzy, php-format
 #| msgid "Job posting last 7 days."
 msgid "Job poster ratings: %s"
@@ -3020,9 +3088,6 @@ msgstr ""
 
 #~ msgid "Share this job"
 #~ msgstr "Установить ссылку на эту работу"
-
-#~ msgid "Job Submitted successfully."
-#~ msgstr "Работа представлена успешно."
 
 #~ msgid "Submission status:"
 #~ msgstr "Статус Подача конкурсных предложений:"
