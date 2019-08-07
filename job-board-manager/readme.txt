@@ -30,14 +30,12 @@ You can display list of jobs via shortcode `[job_bm_archive]` you can display jo
 [job_bm_archive]
 `
 
-
 **Advance Dashboard**
 
 This plugin has account dashboard is based on tabs and content, you can display any where via shortcode `[job_bm_dashboard]`, tabs can be added via filter hooks and tab content can be displayed via action hook based on each tab. you can display custom code or HTML via action hook.
 `
 [job_bm_dashboard]
 `
-
 
 **Job Submit form**
 
@@ -46,18 +44,12 @@ you can display job submit form via shortcode `[job_submit_form]` anywhere, you 
 [job_submit_form]
 `
 
-
 **Job Edit form**
 
 Allow, user to edit their own job after publish the job, you can display job edit form any where via shortcode `[job_bm_job_edit]` you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data.
 `
 [job_bm_job_edit]
 `
-
-
-**Application**
-
-User can apply for the jobs, job poster can see application from dashboard, can give star ratings, make trash, hire applicant, and communicate via email, application also display resume or attachment if available.
 
 **Custom Registration Form**
 
@@ -66,6 +58,21 @@ You can add custom input fields under registration forms and validated data and 
 [job_bm_registration_form]
 `
 
+**Application**
+
+User can apply for the jobs, job poster can see application from dashboard, can give star ratings, make trash, hire applicant, and communicate via email, application also display resume or attachment if available.
+
+**Application Methods**
+
+You can display multiple application method for each jobs, You can also add custom application methods via filter and action hooks.
+
+**Job Expiry**
+
+This one is must have feature for job board plugin, so we included plugin itself, you can check if any job passed certain days and marked as them as expired, you can also trash or draft them so people will not able to see or access.
+
+**Notification Mail**
+
+There is 11 ready notification email templates added plugin itself, each action has different notification email, you can also add custom email notification and templates by action and filter hook.
 
 **Translation**
 
@@ -101,6 +108,12 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+	= 2.1.10 =
+    * 07/08/2019 - remove - Option removed "Notify email on job submit"
+    * 07/08/2019 - remove - Option removed "Notify email on job published"
+
 
 	= 2.1.9 =
     * 07/08/2019 - add - help section added on settings page.

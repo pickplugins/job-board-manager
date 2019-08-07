@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-07 00:47+0600\n"
-"PO-Revision-Date: 2019-08-07 00:47+0600\n"
+"POT-Creation-Date: 2019-08-07 08:10+0600\n"
+"PO-Revision-Date: 2019-08-07 08:10+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -319,9 +319,9 @@ msgid "Application data"
 msgstr ""
 
 #: includes/class-post-meta-application.php:75
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 #: templates/application-single/application-single-hook.php:189
 #: templates/applications/applications.php:257
@@ -532,21 +532,19 @@ msgid "Choose job as featured"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:545
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:572
-#: includes/functions/functions-settings.php:587
-#: includes/functions/functions-settings.php:603
-#: includes/functions/functions-settings.php:617
-#: includes/functions/functions-settings.php:632
-#: includes/functions/functions-settings.php:784
-#: includes/functions/functions-settings.php:1069
-#: includes/functions/functions-settings.php:1193
-#: includes/functions/functions-settings.php:1207
+#: includes/functions/functions-settings.php:256
+#: includes/functions/functions-settings.php:271
+#: includes/functions/functions-settings.php:396
+#: includes/functions/functions-settings.php:448
+#: includes/functions/functions-settings.php:537
+#: includes/functions/functions-settings.php:552
+#: includes/functions/functions-settings.php:568
+#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:749
+#: includes/functions/functions-settings.php:1034
+#: includes/functions/functions-settings.php:1158
+#: includes/functions/functions-settings.php:1172
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -555,21 +553,19 @@ msgid "No"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:545
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:572
-#: includes/functions/functions-settings.php:587
-#: includes/functions/functions-settings.php:603
-#: includes/functions/functions-settings.php:617
-#: includes/functions/functions-settings.php:632
-#: includes/functions/functions-settings.php:783
-#: includes/functions/functions-settings.php:1069
-#: includes/functions/functions-settings.php:1193
-#: includes/functions/functions-settings.php:1207
+#: includes/functions/functions-settings.php:256
+#: includes/functions/functions-settings.php:271
+#: includes/functions/functions-settings.php:396
+#: includes/functions/functions-settings.php:448
+#: includes/functions/functions-settings.php:537
+#: includes/functions/functions-settings.php:552
+#: includes/functions/functions-settings.php:568
+#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:748
+#: includes/functions/functions-settings.php:1034
+#: includes/functions/functions-settings.php:1158
+#: includes/functions/functions-settings.php:1172
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -890,461 +886,445 @@ msgstr ""
 msgid "Salary currency display on job page."
 msgstr ""
 
-#: includes/functions/functions-settings.php:244
+#: includes/functions/functions-settings.php:242
 msgid "Job posting settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:245
+#: includes/functions/functions-settings.php:243
 msgid "Choose option for posting."
 msgstr ""
 
-#: includes/functions/functions-settings.php:252
+#: includes/functions/functions-settings.php:250
 #: includes/functions/functions-welcome.php:111
 msgid "Account required"
 msgstr ""
 
-#: includes/functions/functions-settings.php:253
+#: includes/functions/functions-settings.php:251
 #: includes/functions/functions-welcome.php:112
 msgid "Account required to post job."
 msgstr ""
 
-#: includes/functions/functions-settings.php:267
+#: includes/functions/functions-settings.php:265
 msgid "reCAPTCHA enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:268
+#: includes/functions/functions-settings.php:266
 msgid "Enable reCAPTCHA to protect spam."
 msgstr ""
 
-#: includes/functions/functions-settings.php:283
+#: includes/functions/functions-settings.php:281
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: includes/functions/functions-settings.php:284
+#: includes/functions/functions-settings.php:282
 msgid ""
 "reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
 
-#: includes/functions/functions-settings.php:297
+#: includes/functions/functions-settings.php:295
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: includes/functions/functions-settings.php:298
+#: includes/functions/functions-settings.php:296
 msgid ""
 "reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
 
-#: includes/functions/functions-settings.php:311
+#: includes/functions/functions-settings.php:309
 #: includes/functions/functions-welcome.php:126
 msgid "Submitted job status"
 msgstr ""
 
-#: includes/functions/functions-settings.php:312
+#: includes/functions/functions-settings.php:310
 #: includes/functions/functions-welcome.php:127
 msgid "Choose job status for newly submitted jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Draft"
 msgstr ""
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Pending"
 msgstr ""
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
 #: includes/functions/functions-welcome.php:132
 msgid "Published"
 msgstr ""
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Private"
 msgstr ""
 
 #: includes/functions/functions-settings.php:327
-msgid "Notify email on job submit"
-msgstr ""
-
-#: includes/functions/functions-settings.php:328
-msgid "Notify admin when new job submitted."
-msgstr ""
-
-#: includes/functions/functions-settings.php:342
-msgid "Notify email on job published"
-msgstr ""
-
-#: includes/functions/functions-settings.php:343
-msgid "Notify email to admin when new job published."
-msgstr ""
-
-#: includes/functions/functions-settings.php:362
-#: includes/functions/functions-settings.php:455
+#: includes/functions/functions-settings.php:420
 msgid "-- Job Preview --"
 msgstr ""
 
-#: includes/functions/functions-settings.php:363
-#: includes/functions/functions-settings.php:456
+#: includes/functions/functions-settings.php:328
+#: includes/functions/functions-settings.php:421
 msgid "-- Job Link --"
 msgstr ""
 
-#: includes/functions/functions-settings.php:368
+#: includes/functions/functions-settings.php:333
 msgid "Redirect after job submit"
 msgstr ""
 
-#: includes/functions/functions-settings.php:369
+#: includes/functions/functions-settings.php:334
 msgid "Redirect other link after job submitted"
 msgstr ""
 
-#: includes/functions/functions-settings.php:416
+#: includes/functions/functions-settings.php:381
 msgid "Job edit settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:417
+#: includes/functions/functions-settings.php:382
 msgid "Customize the job edit."
 msgstr ""
 
-#: includes/functions/functions-settings.php:425
+#: includes/functions/functions-settings.php:390
 #: includes/functions/functions-welcome.php:140
 msgid "Allow edit jobs"
 msgstr ""
 
-#: includes/functions/functions-settings.php:426
+#: includes/functions/functions-settings.php:391
 #: includes/functions/functions-welcome.php:141
 msgid "Allow user edit their own jobs"
 msgstr ""
 
-#: includes/functions/functions-settings.php:440
+#: includes/functions/functions-settings.php:405
 msgid "Edited job status"
 msgstr ""
 
-#: includes/functions/functions-settings.php:441
+#: includes/functions/functions-settings.php:406
 msgid "Choose job status for newly edited jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:462
+#: includes/functions/functions-settings.php:427
 msgid "Redirect after job edit"
 msgstr ""
 
-#: includes/functions/functions-settings.php:463
+#: includes/functions/functions-settings.php:428
 msgid "Redirect other link after job edited"
 msgstr ""
 
-#: includes/functions/functions-settings.php:477
+#: includes/functions/functions-settings.php:442
 msgid "Notify email on job edited"
 msgstr ""
 
-#: includes/functions/functions-settings.php:478
+#: includes/functions/functions-settings.php:443
 msgid "Notify admin when new job edited."
 msgstr ""
 
-#: includes/functions/functions-settings.php:523
+#: includes/functions/functions-settings.php:488
 msgid "Dashboard settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:524
+#: includes/functions/functions-settings.php:489
 msgid "Customize the dashboard."
 msgstr ""
 
-#: includes/functions/functions-settings.php:534
+#: includes/functions/functions-settings.php:499
 msgid "Redirect after login"
 msgstr ""
 
-#: includes/functions/functions-settings.php:535
+#: includes/functions/functions-settings.php:500
 msgid "Redirect other link after logged."
 msgstr ""
 
-#: includes/functions/functions-settings.php:549
+#: includes/functions/functions-settings.php:514
 msgid "Redirect after logged out"
 msgstr ""
 
-#: includes/functions/functions-settings.php:550
+#: includes/functions/functions-settings.php:515
 msgid "Redirect other link after logged out."
 msgstr ""
 
-#: includes/functions/functions-settings.php:566
+#: includes/functions/functions-settings.php:531
 msgid "Registration enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:567
+#: includes/functions/functions-settings.php:532
 msgid "Registration enable on dashboard page."
 msgstr ""
 
-#: includes/functions/functions-settings.php:581
+#: includes/functions/functions-settings.php:546
 msgid "Registration reCAPTCHA enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:547
 msgid "Enable reCAPTCHA on registration."
 msgstr ""
 
-#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:562
 msgid "Login enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:598
+#: includes/functions/functions-settings.php:563
 msgid "Login enable on dashboard page."
 msgstr ""
 
-#: includes/functions/functions-settings.php:611
+#: includes/functions/functions-settings.php:576
 #: includes/functions/functions-welcome.php:155
 msgid "Allow delete jobs"
 msgstr ""
 
-#: includes/functions/functions-settings.php:612
+#: includes/functions/functions-settings.php:577
 #: includes/functions/functions-welcome.php:156
 msgid "Allow user delete their own jobs"
 msgstr ""
 
-#: includes/functions/functions-settings.php:626
+#: includes/functions/functions-settings.php:591
 #: includes/functions/functions-welcome.php:170
 msgid "Allow delete application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:627
+#: includes/functions/functions-settings.php:592
 #: includes/functions/functions-welcome.php:171
 msgid "Allow user delete their own application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:683
+#: includes/functions/functions-settings.php:648
 msgid "Email settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:684
+#: includes/functions/functions-settings.php:649
 msgid "Customize email settings."
 msgstr ""
 
-#: includes/functions/functions-settings.php:691
+#: includes/functions/functions-settings.php:656
 msgid "Email logo"
 msgstr ""
 
-#: includes/functions/functions-settings.php:692
+#: includes/functions/functions-settings.php:657
 msgid "Email logo URL to display on mail."
 msgstr ""
 
-#: includes/functions/functions-settings.php:706
+#: includes/functions/functions-settings.php:671
 msgid "From email address"
 msgstr ""
 
-#: includes/functions/functions-settings.php:707
+#: includes/functions/functions-settings.php:672
 msgid "Write from email address."
 msgstr ""
 
-#: includes/functions/functions-settings.php:750
+#: includes/functions/functions-settings.php:715
 msgid "Click to expand"
 msgstr ""
 
-#: includes/functions/functions-settings.php:758
+#: includes/functions/functions-settings.php:723
 msgid "Enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:764
+#: includes/functions/functions-settings.php:729
 msgid "Disabled"
 msgstr ""
 
-#: includes/functions/functions-settings.php:780
+#: includes/functions/functions-settings.php:745
 msgid "Enable?"
 msgstr ""
 
-#: includes/functions/functions-settings.php:786
+#: includes/functions/functions-settings.php:751
 msgid "Enable or disable this email notification."
 msgstr ""
 
-#: includes/functions/functions-settings.php:792
+#: includes/functions/functions-settings.php:757
 msgid "Email To(Bcc)"
 msgstr ""
 
-#: includes/functions/functions-settings.php:795
+#: includes/functions/functions-settings.php:760
 msgid "Email send to(copy)"
 msgstr ""
 
-#: includes/functions/functions-settings.php:800
+#: includes/functions/functions-settings.php:765
 msgid "Email from name"
 msgstr ""
 
-#: includes/functions/functions-settings.php:803
+#: includes/functions/functions-settings.php:768
 msgid "Email send from name"
 msgstr ""
 
-#: includes/functions/functions-settings.php:808
+#: includes/functions/functions-settings.php:773
 msgid "Email from"
 msgstr ""
 
-#: includes/functions/functions-settings.php:811
+#: includes/functions/functions-settings.php:776
 msgid "Email send from"
 msgstr ""
 
-#: includes/functions/functions-settings.php:816
+#: includes/functions/functions-settings.php:781
 msgid "Email Subject"
 msgstr ""
 
-#: includes/functions/functions-settings.php:819
+#: includes/functions/functions-settings.php:784
 msgid "Write email subject"
 msgstr ""
 
-#: includes/functions/functions-settings.php:824
+#: includes/functions/functions-settings.php:789
 msgid "Email Body"
 msgstr ""
 
-#: includes/functions/functions-settings.php:831
+#: includes/functions/functions-settings.php:796
 msgid "Write email body"
 msgstr ""
 
-#: includes/functions/functions-settings.php:836
+#: includes/functions/functions-settings.php:801
 msgid "Parameter"
 msgstr ""
 
-#: includes/functions/functions-settings.php:854
+#: includes/functions/functions-settings.php:819
 msgid "Available parameter for this email template"
 msgstr ""
 
-#: includes/functions/functions-settings.php:881
+#: includes/functions/functions-settings.php:846
 msgid "Email templates"
 msgstr ""
 
-#: includes/functions/functions-settings.php:882
+#: includes/functions/functions-settings.php:847
 msgid "Customize email templates."
 msgstr ""
 
-#: includes/functions/functions-settings.php:933
+#: includes/functions/functions-settings.php:898
 msgid "Style settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:934
+#: includes/functions/functions-settings.php:899
 msgid "Customize the style."
 msgstr ""
 
-#: includes/functions/functions-settings.php:941
+#: includes/functions/functions-settings.php:906
 msgid "Featured job background color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:942
+#: includes/functions/functions-settings.php:907
 msgid "Choose custom background color featured job."
 msgstr ""
 
-#: includes/functions/functions-settings.php:956
+#: includes/functions/functions-settings.php:921
 msgid "Job type background color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:957
+#: includes/functions/functions-settings.php:922
 msgid "Job types area background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:969
+#: includes/functions/functions-settings.php:934
 msgid "Job type text color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:970
+#: includes/functions/functions-settings.php:935
 msgid "Job types area text color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:984
+#: includes/functions/functions-settings.php:949
 msgid "Job status background color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:985
+#: includes/functions/functions-settings.php:950
 msgid "Job status area background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:998
+#: includes/functions/functions-settings.php:963
 msgid "Job status text color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:999
+#: includes/functions/functions-settings.php:964
 msgid "Job status area text color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1055
-#: includes/functions/functions-settings.php:1179
+#: includes/functions/functions-settings.php:1020
+#: includes/functions/functions-settings.php:1144
 msgid "Job expire settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1056
-#: includes/functions/functions-settings.php:1180
+#: includes/functions/functions-settings.php:1021
+#: includes/functions/functions-settings.php:1145
 msgid "Customize job expire settings."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1063
+#: includes/functions/functions-settings.php:1028
 msgid "Enable job expiry"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1064
+#: includes/functions/functions-settings.php:1029
 msgid "You can enable or disable job expiry."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1078
+#: includes/functions/functions-settings.php:1043
 msgid "Expired jobs status"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1079
+#: includes/functions/functions-settings.php:1044
 msgid "Set post status for expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:1049
 msgid "Publish"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1093
+#: includes/functions/functions-settings.php:1058
 msgid "Expired check recurrence"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1094
+#: includes/functions/functions-settings.php:1059
 msgid "Set recurrence for checking expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Hourly"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Twicedaily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Daily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1108
+#: includes/functions/functions-settings.php:1073
 msgid "Expire days"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1109
+#: includes/functions/functions-settings.php:1074
 msgid "Set custom value for expire in."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1187
+#: includes/functions/functions-settings.php:1152
 msgid "Login required for application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1188
+#: includes/functions/functions-settings.php:1153
 msgid "Login is required or not for submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1201
+#: includes/functions/functions-settings.php:1166
 msgid "Enable recaptcha"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1202
+#: includes/functions/functions-settings.php:1167
 msgid "Enable recaptcha on submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1216
+#: includes/functions/functions-settings.php:1181
 #: includes/functions/functions-welcome.php:185
 msgid "Application methods"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1217
+#: includes/functions/functions-settings.php:1182
 #: includes/functions/functions-welcome.php:186
 msgid "Choose application method on job post."
 msgstr ""
@@ -1460,11 +1440,11 @@ msgstr ""
 msgid "%s Settings"
 msgstr ""
 
-#: includes/menu/settings-new.php:192
+#: includes/menu/settings-new.php:188
 msgid "Changes Saved."
 msgstr ""
 
-#: includes/menu/settings-new.php:244
+#: includes/menu/settings-new.php:240
 msgid "Save Changes"
 msgstr ""
 

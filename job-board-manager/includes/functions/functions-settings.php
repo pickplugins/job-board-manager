@@ -233,8 +233,6 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
         $job_bm_reCAPTCHA_secret_key = get_option('job_bm_reCAPTCHA_secret_key');
         $job_bm_submitted_job_status = get_option('job_bm_submitted_job_status');
         $job_bm_redirect_preview_link = get_option('job_bm_redirect_preview_link');
-        $job_bm_notify_email_job_submit = get_option('job_bm_notify_email_job_submit');
-        $job_bm_notify_email_job_publish = get_option('job_bm_notify_email_job_publish');
 
 
 
@@ -318,39 +316,6 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
             );
 
             $settings_tabs_field->generate_field($args);
-
-
-
-            $args = array(
-                'id'		=> 'job_bm_notify_email_job_submit',
-                //'parent'		=> '',
-                'title'		=> __('Notify email on job submit','job-board-manager'),
-                'details'	=> __('Notify admin when new job submitted.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_notify_email_job_submit,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-            $args = array(
-                'id'		=> 'job_bm_notify_email_job_publish',
-                //'parent'		=> '',
-                'title'		=> __('Notify email on job published','job-board-manager'),
-                'details'	=> __('Notify email to admin when new job published.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_notify_email_job_publish,
-                'default'		=> 'no',
-                'args'		=> array( 'no'=>__('No','job-board-manager'), 'yes'=>__('Yes','job-board-manager'), ),
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
 
 
 
