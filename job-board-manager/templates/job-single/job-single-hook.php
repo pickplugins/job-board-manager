@@ -378,6 +378,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
                     active: <?php echo $active_id; ?>,
                     collapsible: true,
                     icons : false,
+                    heightStyle : 'content',
                 });
             } );
         </script>

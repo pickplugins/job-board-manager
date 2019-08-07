@@ -1141,8 +1141,8 @@ if(!function_exists('job_bm_settings_tabs_content_applications')) {
 
         ?>
         <div class="section">
-            <div class="section-title"><?php echo __('Job expire settings', 'job-board-manager'); ?></div>
-            <p class="description section-description"><?php echo __('Customize job expire settings.', 'job-board-manager'); ?></p>
+            <div class="section-title"><?php echo __('Job application settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize job application settings.', 'job-board-manager'); ?></p>
 
             <?php
 

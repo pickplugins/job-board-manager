@@ -195,6 +195,7 @@ class JobBoardManager{
         wp_register_style('job-bm-notice', job_bm_plugin_url.'assets/front/css/job-bm-notice.css');
         wp_register_style('job-bm-registration-form', job_bm_plugin_url.'assets/front/css/registration-form.css');
 
+        wp_register_style('job-bm-media-upload', job_bm_plugin_url.'assets/front/css/media-upload.css');
 
 
         // Register CSS & Style
@@ -204,6 +205,7 @@ class JobBoardManager{
         wp_register_script('scripts-my-applications', job_bm_plugin_url.'assets/front/js/scripts-my-applications.js');
         wp_register_script('job-bm-notice', job_bm_plugin_url.'assets/front/js/scripts-notice.js');
         wp_register_script('job-bm-application-single', job_bm_plugin_url.'assets/front/js/scripts-application-single.js');
+        wp_register_script('job-bm-media-upload', job_bm_plugin_url.'assets/front/js/scripts-media-upload.js');
 
 
 

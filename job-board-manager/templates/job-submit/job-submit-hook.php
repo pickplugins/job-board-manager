@@ -525,7 +525,7 @@ function job_bm_job_submit_form_company_logo(){
     $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : job_bm_plugin_url."assets/front/images/placeholder.png";
 
     ?>
-    <div class="form-field-wrap ">
+    <div class="form-field-wrap job-bm-media-upload">
         <div class="field-title"><?php esc_html_e('Company logo','job-board-manager'); ?></div>
         <div class="field-input">
             <div class="media-preview-wrap" style="">

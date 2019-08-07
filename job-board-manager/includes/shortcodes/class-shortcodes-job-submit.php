@@ -43,7 +43,8 @@ class class_job_bm_shortcodes_job_submit{
         // CSS & JS for sob submission form
         wp_enqueue_style('job-bm-job-submit');
         wp_enqueue_script('job-bm-job-submit');
-
+        wp_enqueue_script('job-bm-media-upload');
+        wp_enqueue_style('job-bm-media-upload');
         // For media uploader in front-end
         wp_enqueue_media();
         wp_enqueue_style('common');
