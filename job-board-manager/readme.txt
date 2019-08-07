@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.9
+	Stable tag: 2.1.10
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -111,8 +111,10 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 	= 2.1.10 =
-    * 07/08/2019 - remove - Option removed "Notify email on job submit"
-    * 07/08/2019 - remove - Option removed "Notify email on job published"
+    * 07/08/2019 - remove - Option removed "Notify email on job submit", move to email template settings
+    * 07/08/2019 - remove - Option removed "Notify email on job published" move to email template settings
+    * 07/08/2019 - update - filter hook "job_bm_application_submit_errors" alter by job_bm_application_submit_errors_$id
+
 
 
 	= 2.1.9 =

@@ -399,6 +399,8 @@ add_action('job_bm_application_methods_form_direct_email','job_bm_application_me
 
 function job_bm_application_methods_form_direct_email($job_id){
 
+    $application_method = 'direct_email';
+
     $job_bm_apply_enable_recaptcha		= get_option('job_bm_apply_enable_recaptcha');
     $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
     if ( is_user_logged_in() ) {
@@ -411,7 +413,7 @@ function job_bm_application_methods_form_direct_email($job_id){
 
     $class_job_bm_applications = new class_job_bm_applications();
 
-    if(!empty($_POST)){
+    if(!empty($_POST) && $_POST['application_method'] == 'direct_email'){
 
         //var_dump($_POST);
 
@@ -440,7 +442,7 @@ function job_bm_application_methods_form_direct_email($job_id){
             $error->add( 'recaptcha', __( 'ERROR: reCaptcha test failed', 'job-board-manager' ) );
         }
 
-        $errors = apply_filters( 'job_bm_application_submit_errors', $error, $_POST );
+        $errors = apply_filters( 'job_bm_application_submit_errors_'.$application_method, $error, $_POST );
 
 
         if ( !$error->has_errors() ) {

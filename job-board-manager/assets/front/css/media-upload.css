@@ -3,8 +3,18 @@
 
 
 .job-bm-media-upload .media-preview-wrap{
-  width: 130px;margin-bottom: 10px;/* background: #eee; */padding: 0;text-align: center;box-shadow: none;line-height: normal;display: inline-block;vertical-align: middle;margin-right: 10px;
-}
+  width: 130px;
+  margin-bottom: 10px;
+  background: #d6d6d6;
+  padding: 8px;
+  text-align: center;
+  box-shadow: none;
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 4px;
+  color: #a5a5a5;}
 
 
 .job-bm-media-upload .media-upload, .job-bm-media-upload .media-clear{
@@ -17,7 +27,9 @@
   background: #f1f1f1;
 }
 
-
+.job-bm-media-upload .media-title{
+  margin: 0px 0 10px 0px;
+}
 
 
 

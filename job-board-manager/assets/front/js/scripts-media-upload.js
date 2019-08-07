@@ -12,9 +12,9 @@ jQuery(document).ready(function($) {
 		}
 		//Extend the wp.media object
 		side_uploader = wp.media.frames.file_frame = wp.media({
-			title: 'Choose Image',
+			title: 'Choose file',
 			button: {
-				text: 'Choose Image'
+				text: 'Choose file'
 			},
 			multiple: false
 		});
@@ -22,13 +22,29 @@ jQuery(document).ready(function($) {
 		side_uploader.on('select', function() {
 			attachment = side_uploader.state().get('selection').first().toJSON();
 
+			console.log(attachment);
+
 			attachmentId = attachment.id;
 			src_url = attachment.url;
-			//console.log(attachment);
+			subtype = attachment.subtype;
+			mime = attachment.mime;
+			filename = attachment.filename;
+
+
 
 			$(this_).prev().val(src_url);
 
-			$(this_).parent().children('.media-preview-wrap').children('img').attr('src',src_url);
+			if(mime == "image/jpeg" || mime == "image/png"){
+				$(this_).parent().children('.media-preview-wrap').html('<img class="media-preview" src="'+src_url+'" />');
+			}else{
+				$(this_).parent().children('.media-preview-wrap').html(filename);
+			}
+
+
+
+
+
+
 
 		});
 
