@@ -183,6 +183,7 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     update_option('job_bm_job_expiry_days', $job_bm_job_expiry_days);
 
 
+                    do_action('job_bm_settings_save');
 
                     ?>
                     <div class="updated notice  is-dismissible"><p><strong><?php _e('Changes Saved.', 'job-board-manager' ); ?></strong></p></div>

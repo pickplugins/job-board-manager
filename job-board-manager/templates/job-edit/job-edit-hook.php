@@ -6,9 +6,8 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_title', 0);
 
-function job_bm_job_edit_form_title(){
+function job_bm_job_edit_form_title($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_post = get_post($job_id);
 
     $post_title = isset($_POST['post_title']) ? sanitize_text_field($_POST['post_title']) : $job_post->post_title;
@@ -30,9 +29,8 @@ function job_bm_job_edit_form_title(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_content', 10);
 
-function job_bm_job_edit_form_content(){
+function job_bm_job_edit_form_content($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_post = get_post($job_id);
 
     $field_id = 'post_content';
@@ -66,9 +64,8 @@ function job_bm_job_edit_form_content(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_categories', 20);
 
-function job_bm_job_edit_form_categories(){
+function job_bm_job_edit_form_categories($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_categories = get_the_terms($job_id, 'job_category');
 
     $job_category_id = isset($job_categories[0]->term_id) ? $job_categories[0]->term_id : '';
@@ -124,7 +121,7 @@ function job_bm_job_edit_form_categories(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_job_info_title', 30);
 
 
-function job_bm_job_edit_form_job_info_title(){
+function job_bm_job_edit_form_job_info_title($job_id){
 
 
     ?>
@@ -149,9 +146,8 @@ function job_bm_job_edit_form_job_info_title(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_total_vacancies', 30);
 
 
-function job_bm_job_edit_form_total_vacancies(){
+function job_bm_job_edit_form_total_vacancies($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_total_vacancies = get_post_meta($job_id,'job_bm_total_vacancies', true);
 
     $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : $job_bm_total_vacancies;
@@ -174,12 +170,11 @@ function job_bm_job_edit_form_total_vacancies(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_job_type', 30);
 
-function job_bm_job_edit_form_job_type(){
+function job_bm_job_edit_form_job_type($job_id){
 
     $class_job_bm_functions = new class_job_bm_functions();
     $job_type_list = $class_job_bm_functions->job_type_list();
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_job_type = get_post_meta($job_id,'job_bm_job_type', true);
 
     $job_bm_job_type = isset($_POST['job_bm_job_type']) ? sanitize_text_field($_POST['job_bm_job_type']) : $job_bm_job_type;
@@ -217,12 +212,11 @@ function job_bm_job_edit_form_job_type(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_job_level', 30);
 
-function job_bm_job_edit_form_job_level(){
+function job_bm_job_edit_form_job_level($job_id){
 
     $class_job_bm_functions = new class_job_bm_functions();
     $job_level_list = $class_job_bm_functions->job_level_list();
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_job_level = get_post_meta($job_id,'job_bm_job_level', true);
 
     $job_bm_job_level = isset($_POST['job_bm_job_level']) ? sanitize_text_field($_POST['job_bm_job_level']) : $job_bm_job_level;
@@ -262,9 +256,8 @@ function job_bm_job_edit_form_job_level(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_years_experience', 30);
 
-function job_bm_job_edit_form_years_experience(){
+function job_bm_job_edit_form_years_experience($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_years_experience = get_post_meta($job_id,'job_bm_years_experience', true);
 
     $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : $job_bm_years_experience;
@@ -290,12 +283,11 @@ function job_bm_job_edit_form_years_experience(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_type', 30);
 
-function job_bm_job_edit_form_salary_type(){
+function job_bm_job_edit_form_salary_type($job_id){
 
     $class_job_bm_functions = new class_job_bm_functions();
     $salary_type_list = $class_job_bm_functions->salary_type_list();
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
 
     $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : $job_bm_salary_type;
@@ -334,9 +326,8 @@ function job_bm_job_edit_form_salary_type(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_fixed', 30);
 
-function job_bm_job_edit_form_salary_fixed(){
+function job_bm_job_edit_form_salary_fixed($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
     $job_bm_salary_fixed = get_post_meta($job_id,'job_bm_salary_fixed', true);
 
@@ -357,9 +348,8 @@ function job_bm_job_edit_form_salary_fixed(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_min', 30);
 
 
-function job_bm_job_edit_form_salary_min(){
+function job_bm_job_edit_form_salary_min($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
     $job_bm_salary_min = get_post_meta($job_id,'job_bm_salary_min', true);
 
@@ -381,9 +371,8 @@ function job_bm_job_edit_form_salary_min(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_max', 30);
 
-function job_bm_job_edit_form_salary_max(){
+function job_bm_job_edit_form_salary_max($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
     $job_bm_salary_max = get_post_meta($job_id,'job_bm_salary_max', true);
 
@@ -405,9 +394,8 @@ function job_bm_job_edit_form_salary_max(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_contact_email', 30);
 
 
-function job_bm_job_edit_form_contact_email(){
+function job_bm_job_edit_form_contact_email($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_contact_email = get_post_meta($job_id,'job_bm_contact_email', true);
 
     $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : $job_bm_contact_email;
@@ -428,7 +416,7 @@ function job_bm_job_edit_form_contact_email(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_company_info', 40);
 
 
-function job_bm_job_edit_form_company_info(){
+function job_bm_job_edit_form_company_info($job_id){
 
 
     ?>
@@ -447,9 +435,8 @@ function job_bm_job_edit_form_company_info(){
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_company_name', 45);
 
 
-function job_bm_job_edit_form_company_name(){
+function job_bm_job_edit_form_company_name($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_company_name = get_post_meta($job_id,'job_bm_company_name', true);
 
     $job_bm_company_name = isset($_POST['job_bm_company_name']) ? sanitize_text_field($_POST['job_bm_company_name']) : $job_bm_company_name;
@@ -470,9 +457,8 @@ function job_bm_job_edit_form_company_name(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_location', 45);
 
-function job_bm_job_edit_form_location(){
+function job_bm_job_edit_form_location($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_location = get_post_meta($job_id,'job_bm_location', true);
 
     $job_bm_location = isset($_POST['job_bm_location']) ? sanitize_text_field($_POST['job_bm_location']) : $job_bm_location;
@@ -492,9 +478,8 @@ function job_bm_job_edit_form_location(){
 
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_address', 45);
-function job_bm_job_edit_form_address(){
+function job_bm_job_edit_form_address($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_address = get_post_meta($job_id,'job_bm_address', true);
 
     $job_bm_address = isset($_POST['job_bm_address']) ? sanitize_text_field($_POST['job_bm_address']) : $job_bm_address;
@@ -515,9 +500,8 @@ function job_bm_job_edit_form_address(){
 
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_company_website', 45);
-function job_bm_job_edit_form_company_website(){
+function job_bm_job_edit_form_company_website($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_company_website = get_post_meta($job_id,'job_bm_company_website', true);
 
     $job_bm_company_website = isset($_POST['job_bm_company_website']) ? sanitize_text_field($_POST['job_bm_company_website']) : $job_bm_company_website;
@@ -538,9 +522,8 @@ function job_bm_job_edit_form_company_website(){
 
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_company_logo', 45);
-function job_bm_job_edit_form_company_logo(){
+function job_bm_job_edit_form_company_logo($job_id){
 
-    $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
     $job_bm_company_logo = get_post_meta($job_id,'job_bm_company_logo', true);
 
     //var_dump($job_bm_company_logo);
@@ -577,7 +560,7 @@ function job_bm_job_edit_form_company_logo(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_recaptcha', 60);
 
-function job_bm_job_edit_form_recaptcha(){
+function job_bm_job_edit_form_recaptcha($job_id){
 
     $job_bm_reCAPTCHA_enable		= get_option('job_bm_reCAPTCHA_enable');
     $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
@@ -604,7 +587,7 @@ function job_bm_job_edit_form_recaptcha(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_nonce' );
 
-function job_bm_job_edit_form_nonce(){
+function job_bm_job_edit_form_nonce($job_id){
 
     ?>
     <div class="form-field-wrap">
@@ -623,7 +606,7 @@ function job_bm_job_edit_form_nonce(){
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_submit', 90);
 
-function job_bm_job_edit_form_submit(){
+function job_bm_job_edit_form_submit($job_id){
 
     ?>
     <div class="form-field-wrap">
@@ -643,7 +626,7 @@ function job_bm_job_edit_form_submit(){
 
 add_action('job_bm_job_edit_data', 'job_bm_job_edit_data');
 
-function job_bm_job_edit_data($post_data){
+function job_bm_job_edit_data($job_id, $post_data){
 
     $job_bm_reCAPTCHA_enable		    = get_option('job_bm_reCAPTCHA_enable', 'no');
     $job_bm_edited_job_status 		    = get_option('job_bm_edited_job_status', 'pending' );
@@ -750,7 +733,6 @@ function job_bm_job_edit_data($post_data){
 
         $allowed_html = array();
 
-        $job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
         $post_title = isset($post_data['post_title']) ? $post_data['post_title'] :'';
         $post_content = isset($post_data['post_content']) ? wp_kses($post_data['post_content'], $allowed_html) : "";
 
@@ -794,7 +776,7 @@ function job_bm_job_edit_data($post_data){
 
 add_action('job_bm_job_edited', 'job_bm_job_edited_save_data', 90, 2);
 
-function job_bm_job_edited_save_data($job_ID, $post_data){
+function job_bm_job_edited_save_data($job_id, $post_data){
 
     $user_id = get_current_user_id();
 
@@ -816,28 +798,28 @@ function job_bm_job_edited_save_data($job_ID, $post_data){
 
 
 
-    wp_set_post_terms( $job_ID, $job_category, 'job_category' );
+    wp_set_post_terms( $job_id, $job_category, 'job_category' );
 
 
-    update_post_meta($job_ID, 'job_bm_total_vacancies', $job_bm_total_vacancies);
-    update_post_meta($job_ID, 'job_bm_job_type', $job_bm_job_type);
-    update_post_meta($job_ID, 'job_bm_job_level', $job_bm_job_level);
-    update_post_meta($job_ID, 'job_bm_years_experience', $job_bm_years_experience);
-    update_post_meta($job_ID, 'job_bm_salary_type', $job_bm_salary_type);
-    update_post_meta($job_ID, 'job_bm_salary_fixed', $job_bm_salary_fixed);
-    update_post_meta($job_ID, 'job_bm_salary_min', $job_bm_salary_min);
-    update_post_meta($job_ID, 'job_bm_salary_max', $job_bm_salary_max);
-    update_post_meta($job_ID, 'job_bm_contact_email', $job_bm_contact_email);
+    update_post_meta($job_id, 'job_bm_total_vacancies', $job_bm_total_vacancies);
+    update_post_meta($job_id, 'job_bm_job_type', $job_bm_job_type);
+    update_post_meta($job_id, 'job_bm_job_level', $job_bm_job_level);
+    update_post_meta($job_id, 'job_bm_years_experience', $job_bm_years_experience);
+    update_post_meta($job_id, 'job_bm_salary_type', $job_bm_salary_type);
+    update_post_meta($job_id, 'job_bm_salary_fixed', $job_bm_salary_fixed);
+    update_post_meta($job_id, 'job_bm_salary_min', $job_bm_salary_min);
+    update_post_meta($job_id, 'job_bm_salary_max', $job_bm_salary_max);
+    update_post_meta($job_id, 'job_bm_contact_email', $job_bm_contact_email);
 
-    update_post_meta($job_ID, 'job_bm_company_name', $job_bm_company_name);
-    update_post_meta($job_ID, 'job_bm_location', $job_bm_location);
-    update_post_meta($job_ID, 'job_bm_address', $job_bm_address);
-    update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
+    update_post_meta($job_id, 'job_bm_company_name', $job_bm_company_name);
+    update_post_meta($job_id, 'job_bm_location', $job_bm_location);
+    update_post_meta($job_id, 'job_bm_address', $job_bm_address);
+    update_post_meta($job_id, 'job_bm_company_logo', $job_bm_company_logo);
 
 
-    update_post_meta($job_ID, 'job_bm_job_status', 'open');
-    update_post_meta($job_ID, 'job_bm_expire_date', '');
-    update_post_meta($job_ID, 'job_bm_featured', 'no');
+    update_post_meta($job_id, 'job_bm_job_status', 'open');
+    update_post_meta($job_id, 'job_bm_expire_date', '');
+    update_post_meta($job_id, 'job_bm_featured', 'no');
 
 
 }
@@ -851,7 +833,7 @@ function job_bm_job_edited_save_data($job_ID, $post_data){
 
 add_action('job_bm_job_edited', 'job_bm_job_edited_message', 80, 2);
 
-function job_bm_job_edited_message($job_ID, $post_data){
+function job_bm_job_edited_message($job_id, $post_data){
 
     ?>
     <div class="job-submitted success">
@@ -870,7 +852,7 @@ function job_bm_job_edited_message($job_ID, $post_data){
 
 add_action('job_bm_job_edited', 'job_bm_job_edited_redirect', 99999, 2);
 
-function job_bm_job_edited_redirect($job_ID, $post_data){
+function job_bm_job_edited_redirect($job_id, $post_data){
 
     $job_bm_edited_redirect_link 	= get_option('job_bm_edited_redirect_link');
 
@@ -880,10 +862,10 @@ function job_bm_job_edited_redirect($job_ID, $post_data){
     if(!empty($job_bm_edited_redirect_link)):
 
         if($job_bm_edited_redirect_link =='job_preview'){
-            $redirect_page_url = get_preview_post_link($job_ID);
+            $redirect_page_url = get_preview_post_link($job_id);
         }
         elseif($job_bm_edited_redirect_link =='job_link'){
-            $redirect_page_url = get_permalink($job_ID);
+            $redirect_page_url = get_permalink($job_id);
         }
         else{
             $job_bm_job_login_page_id 	= get_option('job_bm_job_login_page_id');
