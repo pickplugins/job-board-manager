@@ -84,27 +84,37 @@ if(!function_exists('job_bm_dashboard_logged_in')){
 
         $tabs['account'] =array(
             'title'=>__('Account', 'job-board-manager'),
+            'priority'=>1,
         );
 
         $tabs['my_jobs'] =array(
             'title'=>__('My jobs', 'job-board-manager'),
+            'priority'=>2,
         );
 
         $tabs['my_applications'] =array(
             'title'=>__('My applications', 'job-board-manager'),
+            'priority'=>3,
         );
 
         $tabs['applications'] =array(
             'title'=>__('Applications', 'job-board-manager'),
+            'priority'=>4,
         );
 
 
         $tabs['logout'] =array(
             'title'=>__('Logout!', 'job-board-manager'),
             'link'=> wp_logout_url(get_permalink($job_bm_redirect_logout)),
+            'priority'=>99,
         );
 
         $dashboard_tabs = apply_filters('job_bm_dashboard_tabs', $tabs);
+
+        $tabs_sorted = array();
+        foreach ($dashboard_tabs as $page_key => $tab) $tabs_sorted[$page_key] = isset( $tab['priority'] ) ? $tab['priority'] : 0;
+        array_multisort($tabs_sorted, SORT_ASC, $dashboard_tabs);
+
         $current_tabs = isset($_GET['tabs']) ? sanitize_text_field($_GET['tabs']) : 'account';
 
 
