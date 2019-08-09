@@ -6,8 +6,16 @@ add_action('job_bm_my_jobs','job_bm_my_jobs_title');
 if(!function_exists('job_bm_my_jobs_title')):
 
     function job_bm_my_jobs_title(){
+
+        $job_bm_job_submit_page_id                       = get_option( 'job_bm_job_submit_page_id' );
+        $job_bm_job_submit_page_url          = get_permalink($job_bm_job_submit_page_id);
+
+
         ?>
-            <div class="nav-head"><?php echo __('My Jobs', 'job-board-manager'); ?></div>
+            <div class="nav-head">
+                <?php echo __('My Jobs', 'job-board-manager'); ?>
+                <a target="_blank" title="<?php echo __('Add Job', 'job-board-manager'); ?>" class="add-job" href="<?php echo $job_bm_job_submit_page_url; ?>"><?php echo sprintf(__('%s Add Job'),'<i class="far fa-plus-square"></i>')?></a>
+            </div>
         <?php
 
     }
