@@ -258,7 +258,7 @@ if(!function_exists('job_bm_show_pending_number')){
 		}
 
 	add_action('wp_ajax_job_bm_ajax_delete_job_by_id', 'job_bm_ajax_delete_job_by_id');
-	add_action('wp_ajax_nopriv_job_bm_ajax_delete_job_by_id', 'job_bm_ajax_delete_job_by_id');
+	//add_action('wp_ajax_nopriv_job_bm_ajax_delete_job_by_id', 'job_bm_ajax_delete_job_by_id');
 
 	
 
