@@ -155,12 +155,16 @@ if(!function_exists('job_bm_job_archive_loop_items')):
             <div class="clear"></div>
             <div class="job-meta">
 
+                <?php if(isset($job_type_list[$job_bm_job_type])):?>
                 <span class="meta-item job_type <?php echo $job_bm_job_type; ?>"><i class="fas
                 fa-briefcase"></i>  <?php echo
                     $job_type_list[$job_bm_job_type]; ?></span>
+                <?php endif; ?>
 
+                <?php if(isset($job_status_list[$job_bm_job_status])):?>
                 <span class=" meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
             fa-traffic-light"></i> <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+                <?php endif; ?>
 
 
                 <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>

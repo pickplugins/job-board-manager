@@ -103,7 +103,17 @@
     float: right;
     padding: 15px;
     border-left: 1px solid #ddd;
+    background: #fff;
 }
+
+.settings-tabs-right-panel .right-panel-content{
+    display: none;
+}
+
+.settings-tabs-right-panel .right-panel-content.active{
+    display: block;
+}
+
 
 /*horizontal*/
 
@@ -241,17 +251,17 @@
     }
     .settings-tabs .setting-field .description{}
 
-    .settings-tabs-right-panel {
-        width: 95%;
-        float: none;
-        padding: 15px;
-        border-left: 1px solid #ddd;
-    }
+    /*.settings-tabs-right-panel {*/
+    /*    width: 95%;*/
+    /*    float: none;*/
+    /*    padding: 15px;*/
+    /*    border-left: 1px solid #ddd;*/
+    /*}*/
 
 
-    .settings-tabs.has-right-panel .tab-content {
-        margin-right: 0px;
-    }
+    /*.settings-tabs.has-right-panel .tab-content {*/
+    /*    margin-right: 0px;*/
+    /*}*/
 
 }
 

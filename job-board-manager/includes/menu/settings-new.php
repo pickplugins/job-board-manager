@@ -196,7 +196,21 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
 
                 <div class="settings-tabs-right-panel">
                     <?php
-                    do_action('job_bm_settings_tabs_right_panel');
+                    foreach ($job_bm_settings_tab as $tab) {
+                        $id = $tab['id'];
+                        $active = $tab['active'];
+
+                        ?>
+                        <div class="right-panel-content <?php if($active) echo 'active';?> right-panel-content-<?php echo $id; ?>">
+                            <?php
+
+                            do_action('job_bm_settings_tabs_right_panel_'.$id);
+                            ?>
+
+                        </div>
+                        <?php
+
+                    }
                     ?>
                 </div>
 
@@ -228,7 +242,10 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                         <?php
                         do_action('job_bm_settings_tabs_content_'.$id, $tab);
                         ?>
+
+
                     </div>
+
                     <?php
                 }
                 ?>

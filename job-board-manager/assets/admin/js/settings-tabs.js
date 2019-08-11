@@ -15,8 +15,10 @@ jQuery(document).ready(function($){
         //console.log(id);
 
         $(this).parent().parent().children('.tab-content').removeClass('active');
-
         $(this).parent().parent().children('.tab-content#'+id).addClass('active');
+
+        $(this).parent().parent().children('.settings-tabs-right-panel').children('.right-panel-content').removeClass('active');
+        $(this).parent().parent().children('.settings-tabs-right-panel').children('.right-panel-content-'+id).addClass('active');
 
 
 	})

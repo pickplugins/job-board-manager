@@ -18,6 +18,7 @@ if(!function_exists('job_bm_settings_tabs_content_archive')) {
         $job_bm_pagination_bg_color = get_option('job_bm_pagination_bg_color');
         $job_bm_pagination_active_bg_color = get_option('job_bm_pagination_active_bg_color');
         $job_bm_pagination_text_color = get_option('job_bm_pagination_text_color');
+        $job_bm_salary_currency = get_option('job_bm_salary_currency');
 
 
 
@@ -85,7 +86,18 @@ if(!function_exists('job_bm_settings_tabs_content_archive')) {
 
 
 
+            $args = array(
+                'id'		=> 'job_bm_salary_currency',
+                //'parent'		=> '',
+                'title'		=> __('Salary currency','job-board-manager'),
+                'details'	=> __('Salary currency display on job page.','job-board-manager'),
+                'type'		=> 'text',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_salary_currency,
+                'default'		=> '',
+            );
 
+            $settings_tabs_field->generate_field($args);
 
 
 
@@ -116,7 +128,6 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
         $job_bm_job_submit_page_id = get_option('job_bm_job_submit_page_id');
         $job_bm_job_edit_page_id = get_option('job_bm_job_edit_page_id');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
-        $job_bm_salary_currency = get_option('job_bm_salary_currency');
 
 
 
@@ -187,18 +198,7 @@ if(!function_exists('job_bm_settings_tabs_content_pages')) {
             $settings_tabs_field->generate_field($args);
 
 
-            $args = array(
-                'id'		=> 'job_bm_salary_currency',
-                //'parent'		=> '',
-                'title'		=> __('Salary currency','job-board-manager'),
-                'details'	=> __('Salary currency display on job page.','job-board-manager'),
-                'type'		=> 'text',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_salary_currency,
-                'default'		=> '',
-            );
 
-            $settings_tabs_field->generate_field($args);
 
 
 
@@ -1094,10 +1094,10 @@ if(!function_exists('job_bm_settings_tabs_content_expiry')) {
 }
 
 
-add_action('job_bm_settings_tabs_right_panel', 'job_bm_settings_tabs_right_panel');
+add_action('job_bm_settings_tabs_right_panel_archive', 'job_bm_settings_tabs_right_panel');
 
 if(!function_exists('job_bm_settings_tabs_right_panel')) {
-    function job_bm_settings_tabs_right_panel(){
+    function job_bm_settings_tabs_right_panel($id){
 
         ?>
         <h3>Help & Support</h3>
@@ -1108,14 +1108,34 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
         <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
 
         <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something helpful, please help us by providing your feedback and five star reviews on plugin page.</p>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
         <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+        <p><code>[job_bm_applications]</code> <br> Display list of applications.</p>
+        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end.</p>
+        <p><code>[job_bm_archive]</code> <br> Display job archive on front-end.</p>
+        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end.</p>
+        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end.</p>
+        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications.</p>
+        <p><code>[job_bm_my_jobs]</code> <br> Display logged-in user submitted jobs.</p>
+        <p><code>[job_bm_registration_form]</code> <br> Display register form on front-end.</p>
+
+
 
 
         <?php
 
     }
 }
+
+
+
+
+
+
+
 
 
 

@@ -165,9 +165,9 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
 
             //var_dump(job_bm_user_job_count());
 
-            $user_job_count = job_bm_user_job_count();
-            $user_application_count = job_bm_user_application_count();
-            $user_application_received_count = job_bm_user_application_received_count();
+            //$user_job_count = job_bm_user_job_count();
+            //$user_application_count = job_bm_user_application_count();
+            //$user_application_received_count = job_bm_user_application_received_count();
 
 
 
@@ -177,16 +177,16 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
             </div>
 
             <div class="user-stats">
-                <div class="">
-                    <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo $user_job_count; ?></span>
-                </div>
+<!--                <div class="">-->
+<!--                    <span>--><?php //echo __('Total job post:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_job_count; ?><!--</span>-->
+<!--                </div>-->
+
+<!--                <div class="">-->
+<!--                    <span>--><?php //echo __('Application submit:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_application_count; ?><!--</span>-->
+<!--                </div>-->
 
                 <div class="">
-                    <span><?php echo __('Application submit:', 'job-board-manager'); ?></span> <span><?php echo $user_application_count; ?></span>
-                </div>
-
-                <div class="">
-                    <span><?php echo __('Application received:', 'job-board-manager'); ?></span> <span><?php echo $user_application_received_count; ?></span>
+<!--                    <span>--><?php //echo __('Application received:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_application_received_count; ?><!--</span>-->
                 </div>
 
 
