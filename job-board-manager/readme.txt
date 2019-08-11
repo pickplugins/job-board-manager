@@ -114,7 +114,6 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 07/08/2019 - remove - Option removed "Notify email on job submit", move to email template settings
     * 07/08/2019 - remove - Option removed "Notify email on job published" move to email template settings
     * 07/08/2019 - update - filter hook "job_bm_application_submit_errors" alter by job_bm_application_submit_errors_$id
-
     * 07/08/2019 - add - action hook "job_bm_settings_save" added
 
 

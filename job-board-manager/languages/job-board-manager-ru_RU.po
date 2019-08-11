@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-07 00:48+0600\n"
-"PO-Revision-Date: 2019-08-07 00:48+0600\n"
+"POT-Creation-Date: 2019-08-11 13:05+0600\n"
+"PO-Revision-Date: 2019-08-11 13:05+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -410,9 +410,9 @@ msgid "Application data"
 msgstr "Заявка"
 
 #: includes/class-post-meta-application.php:75
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 #: templates/application-single/application-single-hook.php:189
 #: templates/applications/applications.php:257
@@ -486,7 +486,7 @@ msgid "Resume id "
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:15
-#: templates/job-edit/job-edit-hook.php:132
+#: templates/job-edit/job-edit-hook.php:129
 #: templates/job-single/job-single-hook.php:223
 #: templates/job-submit/job-submit-hook.php:127
 #, fuzzy
@@ -581,7 +581,7 @@ msgid "Maximum salary amount, ex: 1000"
 msgstr "Зарплата мак., например: 1000"
 
 #: includes/class-post-meta-job-hook.php:325
-#: includes/functions/functions-settings.php:193
+#: includes/functions/functions-settings.php:92
 #: includes/functions/functions-welcome.php:199
 #, fuzzy
 #| msgid "Salary currency ?"
@@ -685,21 +685,19 @@ msgid "Choose job as featured"
 msgstr "Выберите тип вакансии."
 
 #: includes/class-post-meta-job-hook.php:545
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:572
-#: includes/functions/functions-settings.php:587
-#: includes/functions/functions-settings.php:603
-#: includes/functions/functions-settings.php:617
-#: includes/functions/functions-settings.php:632
-#: includes/functions/functions-settings.php:784
-#: includes/functions/functions-settings.php:1069
-#: includes/functions/functions-settings.php:1193
-#: includes/functions/functions-settings.php:1207
+#: includes/functions/functions-settings.php:256
+#: includes/functions/functions-settings.php:271
+#: includes/functions/functions-settings.php:396
+#: includes/functions/functions-settings.php:448
+#: includes/functions/functions-settings.php:537
+#: includes/functions/functions-settings.php:552
+#: includes/functions/functions-settings.php:568
+#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:749
+#: includes/functions/functions-settings.php:1034
+#: includes/functions/functions-settings.php:1178
+#: includes/functions/functions-settings.php:1192
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -708,21 +706,19 @@ msgid "No"
 msgstr "Нет"
 
 #: includes/class-post-meta-job-hook.php:545
-#: includes/functions/functions-settings.php:258
-#: includes/functions/functions-settings.php:273
-#: includes/functions/functions-settings.php:333
-#: includes/functions/functions-settings.php:348
-#: includes/functions/functions-settings.php:431
-#: includes/functions/functions-settings.php:483
-#: includes/functions/functions-settings.php:572
-#: includes/functions/functions-settings.php:587
-#: includes/functions/functions-settings.php:603
-#: includes/functions/functions-settings.php:617
-#: includes/functions/functions-settings.php:632
-#: includes/functions/functions-settings.php:783
-#: includes/functions/functions-settings.php:1069
-#: includes/functions/functions-settings.php:1193
-#: includes/functions/functions-settings.php:1207
+#: includes/functions/functions-settings.php:256
+#: includes/functions/functions-settings.php:271
+#: includes/functions/functions-settings.php:396
+#: includes/functions/functions-settings.php:448
+#: includes/functions/functions-settings.php:537
+#: includes/functions/functions-settings.php:552
+#: includes/functions/functions-settings.php:568
+#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:748
+#: includes/functions/functions-settings.php:1034
+#: includes/functions/functions-settings.php:1178
+#: includes/functions/functions-settings.php:1192
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -869,7 +865,7 @@ msgid "Application"
 msgstr "Заявка"
 
 #: includes/class-post-types.php:161 templates/applications/applications.php:58
-#: templates/job-dashboard/job-dashboard-hook.php:98
+#: templates/job-dashboard/job-dashboard-hook.php:101
 #, fuzzy
 #| msgid "Application"
 msgid "Applications"
@@ -882,7 +878,7 @@ msgid "Add New"
 msgstr "Добавить новую %s"
 
 #: includes/class-settings-tabs.php:146 includes/class-settings-tabs.php:226
-#: templates/job-edit/job-edit-hook.php:563
+#: templates/job-edit/job-edit-hook.php:546
 #: templates/job-submit/job-submit-hook.php:536
 msgid "Upload"
 msgstr ""
@@ -906,6 +902,10 @@ msgstr "Настройки"
 #| msgid "welcome"
 msgid "Welcome"
 msgstr "добро пожаловать"
+
+#: includes/class-settings.php:35
+msgid "Add-ons"
+msgstr ""
 
 #: includes/functions/functions-applications.php:27
 #, fuzzy
@@ -969,94 +969,99 @@ msgstr "Заявки:"
 msgid "Go"
 msgstr "Идти"
 
-#: includes/functions/functions-settings.php:26
+#: includes/functions/functions-settings.php:27
 #, fuzzy
 #| msgid "Archive Page"
 msgid "Archive settings"
 msgstr "Архив страниц"
 
-#: includes/functions/functions-settings.php:27
+#: includes/functions/functions-settings.php:28
 msgid "Choose option for archive."
 msgstr ""
 
-#: includes/functions/functions-settings.php:34
+#: includes/functions/functions-settings.php:35
 #: includes/functions/functions-welcome.php:97
 #, fuzzy
 #| msgid "Job edit page id"
 msgid "Job per page"
 msgstr "Работа редактировать идентификатор страницы"
 
-#: includes/functions/functions-settings.php:35
+#: includes/functions/functions-settings.php:36
 #: includes/functions/functions-welcome.php:98
 msgid "Set custom number of job per page on job archive"
 msgstr ""
 
-#: includes/functions/functions-settings.php:48
+#: includes/functions/functions-settings.php:49
 #, fuzzy
 #| msgid "Featured job area background color."
 msgid "Pagination background color"
 msgstr "Особая область задания цвета фона."
 
-#: includes/functions/functions-settings.php:49
+#: includes/functions/functions-settings.php:50
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Choose pagination custom background color."
 msgstr "Работа область состояния цвет фона"
 
-#: includes/functions/functions-settings.php:61
+#: includes/functions/functions-settings.php:62
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Pagination active background color"
 msgstr "Типы вакансий площадь цвет фона"
 
-#: includes/functions/functions-settings.php:62
+#: includes/functions/functions-settings.php:63
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Choose pagination active custom background color."
 msgstr "Работа область состояния цвет фона"
 
-#: includes/functions/functions-settings.php:75
+#: includes/functions/functions-settings.php:76
 #, fuzzy
 #| msgid "Pagination"
 msgid "Pagination text color"
 msgstr "Нумерация страниц"
 
-#: includes/functions/functions-settings.php:76
+#: includes/functions/functions-settings.php:77
 msgid "Choose pagination custom text color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:126
+#: includes/functions/functions-settings.php:93
+#: includes/functions/functions-welcome.php:200
+msgid "Salary currency display on job page."
+msgstr "Зарплатный дисплей валют на странице работы."
+
+#: includes/functions/functions-settings.php:137
 #, fuzzy
 #| msgid " Settings"
 msgid "Pages settings"
 msgstr "Настройки"
 
-#: includes/functions/functions-settings.php:127
+#: includes/functions/functions-settings.php:138
 #, fuzzy
 #| msgid "Options for pages."
 msgid "Choose option for pages."
 msgstr "Варианты страниц."
 
-#: includes/functions/functions-settings.php:134
+#: includes/functions/functions-settings.php:145
 #: includes/functions/functions-welcome.php:256
 msgid "Dashboard page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:135
+#: includes/functions/functions-settings.php:146
 #: includes/functions/functions-welcome.php:257
 msgid ""
 "Choose the page for dashboard page, where the shortcode "
 "<code>[job_bm_dashboard]</code> used."
 msgstr ""
 
-#: includes/functions/functions-settings.php:149
+#: includes/functions/functions-settings.php:160
 #: includes/functions/functions-welcome.php:271
 #, fuzzy
 #| msgid "Job Archive"
 msgid "Job archive page"
 msgstr "Архив вакансий"
 
-#: includes/functions/functions-settings.php:150
+#: includes/functions/functions-settings.php:161
 #: includes/functions/functions-welcome.php:272
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list]."
@@ -1067,14 +1072,14 @@ msgstr ""
 "Архив страница списка вакансий страница, на которой размещены в шорт-код "
 "[job_list]."
 
-#: includes/functions/functions-settings.php:163
+#: includes/functions/functions-settings.php:174
 #: includes/functions/functions-welcome.php:285
 #, fuzzy
 #| msgid "Job submission page id"
 msgid "Job submission page"
 msgstr "Работа представления страницы ID"
 
-#: includes/functions/functions-settings.php:164
+#: includes/functions/functions-settings.php:175
 #: includes/functions/functions-welcome.php:286
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list]."
@@ -1085,12 +1090,12 @@ msgstr ""
 "Архив страница списка вакансий страница, на которой размещены в шорт-код "
 "[job_list]."
 
-#: includes/functions/functions-settings.php:178
+#: includes/functions/functions-settings.php:189
 #: includes/functions/functions-welcome.php:300
 msgid "Job edit page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:179
+#: includes/functions/functions-settings.php:190
 #: includes/functions/functions-welcome.php:301
 #, fuzzy
 #| msgid "Archive page job list page where placed the short-code [job_list]."
@@ -1101,603 +1106,585 @@ msgstr ""
 "Архив страница списка вакансий страница, на которой размещены в шорт-код "
 "[job_list]."
 
-#: includes/functions/functions-settings.php:194
-#: includes/functions/functions-welcome.php:200
-msgid "Salary currency display on job page."
-msgstr "Зарплатный дисплей валют на странице работы."
-
-#: includes/functions/functions-settings.php:244
+#: includes/functions/functions-settings.php:242
 #, fuzzy
 #| msgid "Job posting last 7 days."
 msgid "Job posting settings"
 msgstr "Работа проводки за последние 7 дней."
 
-#: includes/functions/functions-settings.php:245
+#: includes/functions/functions-settings.php:243
 msgid "Choose option for posting."
 msgstr ""
 
-#: includes/functions/functions-settings.php:252
+#: includes/functions/functions-settings.php:250
 #: includes/functions/functions-welcome.php:111
 #, fuzzy
 #| msgid "Account Required ?"
 msgid "Account required"
 msgstr "Аккаунт Обязательно?"
 
-#: includes/functions/functions-settings.php:253
+#: includes/functions/functions-settings.php:251
 #: includes/functions/functions-welcome.php:112
 msgid "Account required to post job."
 msgstr "Аккаунт требуется,чтобы размещать работу."
 
-#: includes/functions/functions-settings.php:267
+#: includes/functions/functions-settings.php:265
 msgid "reCAPTCHA enable"
 msgstr ""
 
-#: includes/functions/functions-settings.php:268
+#: includes/functions/functions-settings.php:266
 msgid "Enable reCAPTCHA to protect spam."
 msgstr ""
 
-#: includes/functions/functions-settings.php:283
+#: includes/functions/functions-settings.php:281
 msgid "reCAPTCHA site key"
 msgstr ""
 
-#: includes/functions/functions-settings.php:284
+#: includes/functions/functions-settings.php:282
 msgid ""
 "reCAPTCHA site key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
 
-#: includes/functions/functions-settings.php:297
+#: includes/functions/functions-settings.php:295
 msgid "reCAPTCHA secret key"
 msgstr ""
 
-#: includes/functions/functions-settings.php:298
+#: includes/functions/functions-settings.php:296
 msgid ""
 "reCAPTCHA secret key, please go <a href=\"https://www.google.com/recaptcha"
 "\">google.com/reCAPTCHA</a> and register your site to get site key."
 msgstr ""
 
-#: includes/functions/functions-settings.php:311
+#: includes/functions/functions-settings.php:309
 #: includes/functions/functions-welcome.php:126
 msgid "Submitted job status"
 msgstr "Представлено состояние задания"
 
-#: includes/functions/functions-settings.php:312
+#: includes/functions/functions-settings.php:310
 #: includes/functions/functions-welcome.php:127
 msgid "Choose job status for newly submitted jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Draft"
 msgstr "Проект"
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Pending"
 msgstr "в ожидании"
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
 #: includes/functions/functions-welcome.php:132
 msgid "Published"
 msgstr "опубликованный"
 
-#: includes/functions/functions-settings.php:317
-#: includes/functions/functions-settings.php:446
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:315
+#: includes/functions/functions-settings.php:411
+#: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
 msgid "Private"
 msgstr "Частный"
 
 #: includes/functions/functions-settings.php:327
-#, fuzzy
-#| msgid "Notify email new job submit ?"
-msgid "Notify email on job submit"
-msgstr "Уведомить по электронной почте новое задание представить?"
-
-#: includes/functions/functions-settings.php:328
-msgid "Notify admin when new job submitted."
-msgstr "Уведомить администратора при представлении нового задания."
-
-#: includes/functions/functions-settings.php:342
-#, fuzzy
-#| msgid "Notify email new job publish ?"
-msgid "Notify email on job published"
-msgstr ""
-"Поставить в известность по электронной почте новое задание опубликовано?"
-
-#: includes/functions/functions-settings.php:343
-msgid "Notify email to admin when new job published."
-msgstr ""
-"Уведомить по электронной почте администратору, когда новая работа "
-"опубликована."
-
-#: includes/functions/functions-settings.php:362
-#: includes/functions/functions-settings.php:455
+#: includes/functions/functions-settings.php:420
 msgid "-- Job Preview --"
 msgstr ""
 
-#: includes/functions/functions-settings.php:363
-#: includes/functions/functions-settings.php:456
+#: includes/functions/functions-settings.php:328
+#: includes/functions/functions-settings.php:421
 #, fuzzy
 #| msgid "Job Link"
 msgid "-- Job Link --"
 msgstr "Ссылка"
 
-#: includes/functions/functions-settings.php:368
+#: includes/functions/functions-settings.php:333
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect after job submit"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:369
+#: includes/functions/functions-settings.php:334
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect other link after job submitted"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:416
+#: includes/functions/functions-settings.php:381
 #, fuzzy
 #| msgid "Job edit page id"
 msgid "Job edit settings"
 msgstr "Работа редактировать идентификатор страницы"
 
-#: includes/functions/functions-settings.php:417
+#: includes/functions/functions-settings.php:382
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize the job edit."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:425
+#: includes/functions/functions-settings.php:390
 #: includes/functions/functions-welcome.php:140
 #, fuzzy
 #| msgid "Allowed Files"
 msgid "Allow edit jobs"
 msgstr "Разрешенные файлы"
 
-#: includes/functions/functions-settings.php:426
+#: includes/functions/functions-settings.php:391
 #: includes/functions/functions-welcome.php:141
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user edit their own jobs"
 msgstr "Может ли пользователь удалить свои собственные рабочие места"
 
-#: includes/functions/functions-settings.php:440
+#: includes/functions/functions-settings.php:405
 #, fuzzy
 #| msgid "Submitted job status"
 msgid "Edited job status"
 msgstr "Представлено состояние задания"
 
-#: includes/functions/functions-settings.php:441
+#: includes/functions/functions-settings.php:406
 msgid "Choose job status for newly edited jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:462
+#: includes/functions/functions-settings.php:427
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect after job edit"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:463
+#: includes/functions/functions-settings.php:428
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect other link after job edited"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:477
+#: includes/functions/functions-settings.php:442
 #, fuzzy
 #| msgid "Notify email new job submit ?"
 msgid "Notify email on job edited"
 msgstr "Уведомить по электронной почте новое задание представить?"
 
-#: includes/functions/functions-settings.php:478
+#: includes/functions/functions-settings.php:443
 #, fuzzy
 #| msgid "Notify admin when new job submitted."
 msgid "Notify admin when new job edited."
 msgstr "Уведомить администратора при представлении нового задания."
 
-#: includes/functions/functions-settings.php:523
+#: includes/functions/functions-settings.php:488
 msgid "Dashboard settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:524
+#: includes/functions/functions-settings.php:489
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize the dashboard."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:534
+#: includes/functions/functions-settings.php:499
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect after login"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:535
+#: includes/functions/functions-settings.php:500
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect other link after logged."
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:549
+#: includes/functions/functions-settings.php:514
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect after logged out"
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:550
+#: includes/functions/functions-settings.php:515
 #, fuzzy
 #| msgid "Redirect preview link after job submit ?"
 msgid "Redirect other link after logged out."
 msgstr ""
 "Перенаправление Предварительный ссылку после выполнения задания представить?"
 
-#: includes/functions/functions-settings.php:566
+#: includes/functions/functions-settings.php:531
 #, fuzzy
 #| msgid "Registration enable ?"
 msgid "Registration enable"
 msgstr "Регистрацию разрешить?"
 
-#: includes/functions/functions-settings.php:567
+#: includes/functions/functions-settings.php:532
 #, fuzzy
 #| msgid "Registration enable on my account page."
 msgid "Registration enable on dashboard page."
 msgstr "Регистрация разрешить на моей странице учетной записи."
 
-#: includes/functions/functions-settings.php:581
+#: includes/functions/functions-settings.php:546
 #, fuzzy
 #| msgid "Registration enable ?"
 msgid "Registration reCAPTCHA enable"
 msgstr "Регистрацию разрешить?"
 
-#: includes/functions/functions-settings.php:582
+#: includes/functions/functions-settings.php:547
 msgid "Enable reCAPTCHA on registration."
 msgstr ""
 
-#: includes/functions/functions-settings.php:597
+#: includes/functions/functions-settings.php:562
 #, fuzzy
 #| msgid "Login enable ?"
 msgid "Login enable"
 msgstr "Вход включить?"
 
-#: includes/functions/functions-settings.php:598
+#: includes/functions/functions-settings.php:563
 #, fuzzy
 #| msgid "Login enable on my account page."
 msgid "Login enable on dashboard page."
 msgstr "Вход включить на моей странице учетной записи."
 
-#: includes/functions/functions-settings.php:611
+#: includes/functions/functions-settings.php:576
 #: includes/functions/functions-welcome.php:155
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "Allow delete jobs"
 msgstr "Может ли пользователь удалить вакансии?"
 
-#: includes/functions/functions-settings.php:612
+#: includes/functions/functions-settings.php:577
 #: includes/functions/functions-welcome.php:156
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user delete their own jobs"
 msgstr "Может ли пользователь удалить свои собственные рабочие места"
 
-#: includes/functions/functions-settings.php:626
+#: includes/functions/functions-settings.php:591
 #: includes/functions/functions-welcome.php:170
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "Allow delete application"
 msgstr "Может ли пользователь удалить вакансии?"
 
-#: includes/functions/functions-settings.php:627
+#: includes/functions/functions-settings.php:592
 #: includes/functions/functions-welcome.php:171
 #, fuzzy
 #| msgid "Can user delete their own jobs"
 msgid "Allow user delete their own application"
 msgstr "Может ли пользователь удалить свои собственные рабочие места"
 
-#: includes/functions/functions-settings.php:683
+#: includes/functions/functions-settings.php:648
 #, fuzzy
 #| msgid " Settings"
 msgid "Email settings"
 msgstr "Настройки"
 
-#: includes/functions/functions-settings.php:684
+#: includes/functions/functions-settings.php:649
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize email settings."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:691
+#: includes/functions/functions-settings.php:656
 #, fuzzy
 #| msgid "Email Logo URL"
 msgid "Email logo"
 msgstr "E-mail URL логотипа"
 
-#: includes/functions/functions-settings.php:692
+#: includes/functions/functions-settings.php:657
 msgid "Email logo URL to display on mail."
 msgstr "E-mail URL логотипа для отображения на почту."
 
-#: includes/functions/functions-settings.php:706
+#: includes/functions/functions-settings.php:671
 msgid "From email address"
 msgstr ""
 
-#: includes/functions/functions-settings.php:707
+#: includes/functions/functions-settings.php:672
 #, fuzzy
 #| msgid "From Email Address."
 msgid "Write from email address."
 msgstr "От адреса электронной почты."
 
-#: includes/functions/functions-settings.php:750
+#: includes/functions/functions-settings.php:715
 msgid "Click to expand"
 msgstr ""
 
-#: includes/functions/functions-settings.php:758
+#: includes/functions/functions-settings.php:723
 #, fuzzy
 #| msgid "Enable ?"
 msgid "Enable"
 msgstr "Включить ?"
 
-#: includes/functions/functions-settings.php:764
+#: includes/functions/functions-settings.php:729
 msgid "Disabled"
 msgstr ""
 
-#: includes/functions/functions-settings.php:780
+#: includes/functions/functions-settings.php:745
 #, fuzzy
 #| msgid "Enable ?"
 msgid "Enable?"
 msgstr "Включить ?"
 
-#: includes/functions/functions-settings.php:786
+#: includes/functions/functions-settings.php:751
 msgid "Enable or disable this email notification."
 msgstr ""
 
-#: includes/functions/functions-settings.php:792
+#: includes/functions/functions-settings.php:757
 #, fuzzy
 #| msgid "Email To:"
 msgid "Email To(Bcc)"
 msgstr "E-mail кому:"
 
-#: includes/functions/functions-settings.php:795
+#: includes/functions/functions-settings.php:760
 msgid "Email send to(copy)"
 msgstr ""
 
-#: includes/functions/functions-settings.php:800
+#: includes/functions/functions-settings.php:765
 #, fuzzy
 #| msgid "Email from name:"
 msgid "Email from name"
 msgstr "Электронное письмо от имени:"
 
-#: includes/functions/functions-settings.php:803
+#: includes/functions/functions-settings.php:768
 #, fuzzy
 #| msgid "Email from name:"
 msgid "Email send from name"
 msgstr "Электронное письмо от имени:"
 
-#: includes/functions/functions-settings.php:808
+#: includes/functions/functions-settings.php:773
 #, fuzzy
 #| msgid "Email from:"
 msgid "Email from"
 msgstr "Электронная почта от:"
 
-#: includes/functions/functions-settings.php:811
+#: includes/functions/functions-settings.php:776
 #, fuzzy
 #| msgid "Email from:"
 msgid "Email send from"
 msgstr "Электронная почта от:"
 
-#: includes/functions/functions-settings.php:816
+#: includes/functions/functions-settings.php:781
 #, fuzzy
 #| msgid "Email Subject:"
 msgid "Email Subject"
 msgstr "Тема письма:"
 
-#: includes/functions/functions-settings.php:819
+#: includes/functions/functions-settings.php:784
 #, fuzzy
 #| msgid "Email Subject:"
 msgid "Write email subject"
 msgstr "Тема письма:"
 
-#: includes/functions/functions-settings.php:824
+#: includes/functions/functions-settings.php:789
 #, fuzzy
 #| msgid "Email Body:"
 msgid "Email Body"
 msgstr "Email сообщение:"
 
-#: includes/functions/functions-settings.php:831
+#: includes/functions/functions-settings.php:796
 #, fuzzy
 #| msgid "From Email Address."
 msgid "Write email body"
 msgstr "От адреса электронной почты."
 
-#: includes/functions/functions-settings.php:836
+#: includes/functions/functions-settings.php:801
 #, fuzzy
 #| msgid "Job Parameters"
 msgid "Parameter"
 msgstr " Параметры работы"
 
-#: includes/functions/functions-settings.php:854
+#: includes/functions/functions-settings.php:819
 msgid "Available parameter for this email template"
 msgstr ""
 
-#: includes/functions/functions-settings.php:881
+#: includes/functions/functions-settings.php:846
 #, fuzzy
 #| msgid "Emails Templates"
 msgid "Email templates"
 msgstr "Электронные письма Шаблоны"
 
-#: includes/functions/functions-settings.php:882
+#: includes/functions/functions-settings.php:847
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize email templates."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:933
+#: includes/functions/functions-settings.php:898
 #, fuzzy
 #| msgid "Settings"
 msgid "Style settings"
 msgstr "Настройки"
 
-#: includes/functions/functions-settings.php:934
+#: includes/functions/functions-settings.php:899
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize the style."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:941
+#: includes/functions/functions-settings.php:906
 #, fuzzy
 #| msgid "Featured job area background color."
 msgid "Featured job background color"
 msgstr "Особая область задания цвета фона."
 
-#: includes/functions/functions-settings.php:942
+#: includes/functions/functions-settings.php:907
 msgid "Choose custom background color featured job."
 msgstr ""
 
-#: includes/functions/functions-settings.php:956
+#: includes/functions/functions-settings.php:921
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Job type background color"
 msgstr "Типы вакансий площадь цвет фона"
 
-#: includes/functions/functions-settings.php:957
+#: includes/functions/functions-settings.php:922
 msgid "Job types area background color."
 msgstr "Типы вакансий площадь цвет фона."
 
-#: includes/functions/functions-settings.php:969
+#: includes/functions/functions-settings.php:934
 #, fuzzy
 #| msgid "Job types area background color"
 msgid "Job type text color"
 msgstr "Типы вакансий площадь цвет фона"
 
-#: includes/functions/functions-settings.php:970
+#: includes/functions/functions-settings.php:935
 #, fuzzy
 #| msgid "Job types area background color."
 msgid "Job types area text color."
 msgstr "Типы вакансий площадь цвет фона."
 
-#: includes/functions/functions-settings.php:984
+#: includes/functions/functions-settings.php:949
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Job status background color"
 msgstr "Работа область состояния цвет фона"
 
-#: includes/functions/functions-settings.php:985
+#: includes/functions/functions-settings.php:950
 msgid "Job status area background color."
 msgstr "Состояние вакансии площадь цвет фона."
 
-#: includes/functions/functions-settings.php:998
+#: includes/functions/functions-settings.php:963
 #, fuzzy
 #| msgid "Job status area background color"
 msgid "Job status text color"
 msgstr "Работа область состояния цвет фона"
 
-#: includes/functions/functions-settings.php:999
+#: includes/functions/functions-settings.php:964
 #, fuzzy
 #| msgid "Job status area background color."
 msgid "Job status area text color."
 msgstr "Состояние вакансии площадь цвет фона."
 
-#: includes/functions/functions-settings.php:1055
-#: includes/functions/functions-settings.php:1179
+#: includes/functions/functions-settings.php:1020
 #, fuzzy
 #| msgid "Job expiry date"
 msgid "Job expire settings"
 msgstr "Срок годности вакансии"
 
-#: includes/functions/functions-settings.php:1056
-#: includes/functions/functions-settings.php:1180
+#: includes/functions/functions-settings.php:1021
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize job expire settings."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:1063
+#: includes/functions/functions-settings.php:1028
 msgid "Enable job expiry"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1064
+#: includes/functions/functions-settings.php:1029
 msgid "You can enable or disable job expiry."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1078
+#: includes/functions/functions-settings.php:1043
 #, fuzzy
 #| msgid "Submitted job status"
 msgid "Expired jobs status"
 msgstr "Представлено состояние задания"
 
-#: includes/functions/functions-settings.php:1079
+#: includes/functions/functions-settings.php:1044
 msgid "Set post status for expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1084
+#: includes/functions/functions-settings.php:1049
 msgid "Publish"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1093
+#: includes/functions/functions-settings.php:1058
 msgid "Expired check recurrence"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1094
+#: includes/functions/functions-settings.php:1059
 msgid "Set recurrence for checking expired jobs."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Hourly"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Twicedaily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1099
+#: includes/functions/functions-settings.php:1064
 msgid "Daily"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1108
+#: includes/functions/functions-settings.php:1073
 #, fuzzy
 #| msgid "Expire date:"
 msgid "Expire days"
 msgstr "Актуально до:"
 
-#: includes/functions/functions-settings.php:1109
+#: includes/functions/functions-settings.php:1074
 msgid "Set custom value for expire in."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1187
+#: includes/functions/functions-settings.php:1164
+#, fuzzy
+#| msgid "Job posting last 7 days."
+msgid "Job application settings"
+msgstr "Работа проводки за последние 7 дней."
+
+#: includes/functions/functions-settings.php:1165
+#, fuzzy
+#| msgid " - Emails Templates"
+msgid "Customize job application settings."
+msgstr "- Шаблоны сообщений электронной почты"
+
+#: includes/functions/functions-settings.php:1172
 msgid "Login required for application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1188
+#: includes/functions/functions-settings.php:1173
 msgid "Login is required or not for submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1201
+#: includes/functions/functions-settings.php:1186
 #, fuzzy
 #| msgid "Enable apply methods"
 msgid "Enable recaptcha"
 msgstr "Включить применять методы"
 
-#: includes/functions/functions-settings.php:1202
+#: includes/functions/functions-settings.php:1187
 msgid "Enable recaptcha on submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1216
+#: includes/functions/functions-settings.php:1201
 #: includes/functions/functions-welcome.php:185
 #, fuzzy
 #| msgid "Application Info"
 msgid "Application methods"
 msgstr "Информация о заявке"
 
-#: includes/functions/functions-settings.php:1217
+#: includes/functions/functions-settings.php:1202
 #: includes/functions/functions-welcome.php:186
 #, fuzzy
 #| msgid "Application Info"
@@ -1832,11 +1819,11 @@ msgstr "Заявка"
 msgid "%s Settings"
 msgstr "Настройки"
 
-#: includes/menu/settings-new.php:192
+#: includes/menu/settings-new.php:189
 msgid "Changes Saved."
 msgstr "Изменения сохранены."
 
-#: includes/menu/settings-new.php:244
+#: includes/menu/settings-new.php:258
 msgid "Save Changes"
 msgstr "Сохранить изменения"
 
@@ -2115,13 +2102,13 @@ msgid "Keyword"
 msgstr "Ключевое слово:"
 
 #: templates/job-archive/job-archive-hook.php:76
-#: templates/job-edit/job-edit-hook.php:632
-#: templates/job-single/job-single-hook.php:592
+#: templates/job-edit/job-edit-hook.php:615
+#: templates/job-single/job-single-hook.php:595
 #: templates/job-submit/job-submit-hook.php:605
 msgid "Submit"
 msgstr "Отправить"
 
-#: templates/job-archive/job-archive-hook.php:168
+#: templates/job-archive/job-archive-hook.php:172
 #: templates/job-single/job-single-hook.php:74
 #, fuzzy, php-format
 #| msgid "Post Per Page"
@@ -2140,142 +2127,126 @@ msgstr ""
 msgid "Account"
 msgstr "Учетные записи о вакансиях"
 
-#: templates/job-dashboard/job-dashboard-hook.php:90
+#: templates/job-dashboard/job-dashboard-hook.php:91
 msgid "My jobs"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:94
+#: templates/job-dashboard/job-dashboard-hook.php:96
 #, fuzzy
 #| msgid "Job application"
 msgid "My applications"
 msgstr "Заявка на работу"
 
-#: templates/job-dashboard/job-dashboard-hook.php:103
+#: templates/job-dashboard/job-dashboard-hook.php:107
 #, fuzzy
 #| msgid "Logout"
 msgid "Logout!"
 msgstr "Выйти"
 
-#: templates/job-dashboard/job-dashboard-hook.php:166
+#: templates/job-dashboard/job-dashboard-hook.php:176
 #, fuzzy, php-format
 #| msgid "Welcome"
 msgid "Welcome! %s"
 msgstr "Добро пожаловать"
 
-#: templates/job-dashboard/job-dashboard-hook.php:171
-msgid "Total job post:"
-msgstr ""
-
-#: templates/job-dashboard/job-dashboard-hook.php:175
-#, fuzzy
-#| msgid "Application"
-msgid "Application submit:"
-msgstr "Заявка"
-
-#: templates/job-dashboard/job-dashboard-hook.php:179
-#, fuzzy
-#| msgid "Application Info"
-msgid "Application received:"
-msgstr "Информация о заявке"
-
-#: templates/job-dashboard/job-dashboard-hook.php:257
+#: templates/job-dashboard/job-dashboard-hook.php:267
 #: templates/registration-form/registration-form.php:25
 msgid "Register"
 msgstr "Регистрация"
 
-#: templates/job-dashboard/job-dashboard-hook.php:271
+#: templates/job-dashboard/job-dashboard-hook.php:281
 msgid "Login"
 msgstr "Авторизоваться"
 
-#: templates/job-dashboard/job-dashboard-hook.php:283
+#: templates/job-dashboard/job-dashboard-hook.php:293
 msgid "Username or email address"
 msgstr "Имя пользователя или адрес электронной почты"
 
-#: templates/job-dashboard/job-dashboard-hook.php:284
+#: templates/job-dashboard/job-dashboard-hook.php:294
 #: templates/registration-form/registration-form-hook.php:28
 msgid "Password"
 msgstr "Пароль"
 
-#: templates/job-dashboard/job-dashboard-hook.php:285
+#: templates/job-dashboard/job-dashboard-hook.php:295
 msgid "Remember Me"
 msgstr "Запомни меня"
 
-#: templates/job-dashboard/job-dashboard-hook.php:286
+#: templates/job-dashboard/job-dashboard-hook.php:296
 msgid "Log In"
 msgstr "Авторизоваться"
 
-#: templates/job-edit/job-edit-hook.php:668
+#: templates/job-edit/job-edit-hook.php:651
 #: templates/job-submit/job-submit-hook.php:641
 msgid "ERROR: Job title is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:673
+#: templates/job-edit/job-edit-hook.php:656
 #: templates/job-submit/job-submit-hook.php:646
 msgid "ERROR: Job details is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:678
+#: templates/job-edit/job-edit-hook.php:661
 #: templates/job-submit/job-submit-hook.php:651
 #, fuzzy
 #| msgid "Total Vacancies"
 msgid "ERROR: Total vacancies is empty."
 msgstr "Всего вакансий"
 
-#: templates/job-edit/job-edit-hook.php:684
+#: templates/job-edit/job-edit-hook.php:667
 #: templates/job-submit/job-submit-hook.php:657
 msgid "ERROR: Salary fixed is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:690
+#: templates/job-edit/job-edit-hook.php:673
 #: templates/job-submit/job-submit-hook.php:663
 msgid "ERROR: Salary minimum is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:694
+#: templates/job-edit/job-edit-hook.php:677
 #: templates/job-submit/job-submit-hook.php:667
 msgid "ERROR: Salary maximum is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:705
+#: templates/job-edit/job-edit-hook.php:688
 #: templates/job-submit/job-submit-hook.php:678
 #, fuzzy
 #| msgid "Contact email"
 msgid "ERROR: Contact email is empty."
 msgstr "Почта для связи "
 
-#: templates/job-edit/job-edit-hook.php:710
+#: templates/job-edit/job-edit-hook.php:693
 #: templates/job-submit/job-submit-hook.php:683
 msgid "ERROR: Company name is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:715
+#: templates/job-edit/job-edit-hook.php:698
 #: templates/job-submit/job-submit-hook.php:688
 msgid "ERROR: Location is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:721
+#: templates/job-edit/job-edit-hook.php:704
 #: templates/job-submit/job-submit-hook.php:694
 msgid "ERROR: Address is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:726
+#: templates/job-edit/job-edit-hook.php:709
 #: templates/job-submit/job-submit-hook.php:699
 msgid "ERROR: Company logo is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:731
+#: templates/job-edit/job-edit-hook.php:714
 #: templates/job-submit/job-submit-hook.php:704
 #: templates/registration-form/registration-form-hook.php:132
 msgid "ERROR: reCaptcha test failed."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:737
+#: templates/job-edit/job-edit-hook.php:720
 #: templates/job-submit/job-submit-hook.php:715
 #: templates/registration-form/registration-form-hook.php:139
 msgid "ERROR: security test failed."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:858
+#: templates/job-edit/job-edit-hook.php:840
 msgid "Thanks for update job."
 msgstr ""
 
@@ -2355,61 +2326,61 @@ msgstr ""
 msgid "Please <a href=\"%s\">login</a> to submit application"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:422
+#: templates/job-single/job-single-hook.php:425
 #, fuzzy
 #| msgid "Application"
 msgid "ERROR: Applicant name is empty."
 msgstr "Заявка"
 
-#: templates/job-single/job-single-hook.php:427
+#: templates/job-single/job-single-hook.php:430
 msgid "ERROR: Email is empty."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:432
+#: templates/job-single/job-single-hook.php:435
 msgid "ERROR: "
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:439
+#: templates/job-single/job-single-hook.php:442
 msgid "ERROR: reCaptcha test failed"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:485
+#: templates/job-single/job-single-hook.php:488
 #, fuzzy
 #| msgid "Job application"
 msgid "Your application has sent."
 msgstr "Заявка на работу"
 
-#: templates/job-single/job-single-hook.php:491
+#: templates/job-single/job-single-hook.php:494
 #, fuzzy
 #| msgid "Can user delete jobs ?"
 msgid "You already sent an application."
 msgstr "Может ли пользователь удалить вакансии?"
 
-#: templates/job-single/job-single-hook.php:544
+#: templates/job-single/job-single-hook.php:547
 msgid "Your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:547
+#: templates/job-single/job-single-hook.php:550
 msgid "Write your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:552
+#: templates/job-single/job-single-hook.php:555
 #, fuzzy
 #| msgid "Contact email"
 msgid "Your email"
 msgstr "Почта для связи "
 
-#: templates/job-single/job-single-hook.php:555
+#: templates/job-single/job-single-hook.php:558
 #, fuzzy
 #| msgid "From Email Address."
 msgid "Write your email address"
 msgstr "От адреса электронной почты."
 
-#: templates/job-single/job-single-hook.php:560
+#: templates/job-single/job-single-hook.php:563
 msgid "Message"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:564
+#: templates/job-single/job-single-hook.php:567
 msgid "Write your message"
 msgstr ""
 
@@ -2456,85 +2427,96 @@ msgstr ""
 msgid "Job poster ratings: %s"
 msgstr "Работа проводки за последние 7 дней."
 
-#: templates/my-jobs/my-jobs-hook.php:10
+#: templates/my-jobs/my-jobs-hook.php:16
 msgid "My Jobs"
 msgstr "Мои вакансии"
 
-#: templates/my-jobs/my-jobs-hook.php:113
+#: templates/my-jobs/my-jobs-hook.php:17
+#, fuzzy
+#| msgid "Edit %s"
+msgid "Add Job"
+msgstr "Редактировать %s"
+
+#: templates/my-jobs/my-jobs-hook.php:17
+#, php-format
+msgid "%s Add Job"
+msgstr ""
+
+#: templates/my-jobs/my-jobs-hook.php:121
 #, fuzzy, php-format
 #| msgid "No job found posted by you."
 msgid "%s No job found posted by you."
 msgstr "Никакая работа  отправленная вами не найдена."
 
-#: templates/my-jobs/my-jobs-hook.php:123
+#: templates/my-jobs/my-jobs-hook.php:131
 #, fuzzy, php-format
 #| msgid "Please login to see your job list."
 msgid "Please <a href=\"%s\">login</a> to see your jobs."
 msgstr "Пожалуйста, войдите, чтобы увидеть список вакансий."
 
-#: templates/my-jobs/my-jobs-hook.php:174
+#: templates/my-jobs/my-jobs-hook.php:182
 msgid "Job id."
 msgstr "ID вакансии."
 
-#: templates/my-jobs/my-jobs-hook.php:175
+#: templates/my-jobs/my-jobs-hook.php:183
 #, fuzzy
 #| msgid "Job Edit"
 msgid "Job edit."
 msgstr "Редактировать вакансию"
 
-#: templates/my-jobs/my-jobs-hook.php:176
+#: templates/my-jobs/my-jobs-hook.php:184
 #, fuzzy
 #| msgid "Job Status"
 msgid "Job trash."
 msgstr "Статус вакансии"
 
-#: templates/my-jobs/my-jobs-hook.php:177
+#: templates/my-jobs/my-jobs-hook.php:185
 #, fuzzy
 #| msgid "Featured Job"
 msgid "Featured job."
 msgstr "Рекомендуемые вакансии"
 
-#: templates/my-jobs/my-jobs-hook.php:178
+#: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Job application"
 msgid "Total application."
 msgstr "Заявка на работу"
 
-#: templates/my-jobs/my-jobs-hook.php:179
+#: templates/my-jobs/my-jobs-hook.php:187
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:225
+#: templates/my-jobs/my-jobs-hook.php:233
 #, fuzzy
 #| msgid "Job id."
 msgid "Job link."
 msgstr "ID вакансии."
 
-#: templates/my-jobs/my-jobs-hook.php:227
+#: templates/my-jobs/my-jobs-hook.php:235
 msgid "Published:"
 msgstr "Опубликовано:"
 
-#: templates/my-jobs/my-jobs-hook.php:228
+#: templates/my-jobs/my-jobs-hook.php:236
 msgid "Publish Status:"
 msgstr "Статус публикации:"
 
-#: templates/my-jobs/my-jobs-hook.php:229
+#: templates/my-jobs/my-jobs-hook.php:237
 msgid "Featured:"
 msgstr "Рекомендуемые:"
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:243
 msgid "Job Status:"
 msgstr "Рабочий статус:"
 
-#: templates/my-jobs/my-jobs-hook.php:244
+#: templates/my-jobs/my-jobs-hook.php:252
 msgid "Job Type:"
 msgstr "Тип вакансии:"
 
-#: templates/my-jobs/my-jobs-hook.php:251
+#: templates/my-jobs/my-jobs-hook.php:259
 msgid "Job Level:"
 msgstr "Уровень работы:"
 
-#: templates/my-jobs/my-jobs-hook.php:256
+#: templates/my-jobs/my-jobs-hook.php:264
 #, fuzzy
 #| msgid "Application"
 msgid "Applications:"
@@ -2602,6 +2584,35 @@ msgstr "Этот электронный адрес уже занят"
 #: templates/registration-form/registration-form-hook.php:204
 msgid "Thanks for creating account."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Notify email new job submit ?"
+#~ msgid "Notify email on job submit"
+#~ msgstr "Уведомить по электронной почте новое задание представить?"
+
+#~ msgid "Notify admin when new job submitted."
+#~ msgstr "Уведомить администратора при представлении нового задания."
+
+#, fuzzy
+#~| msgid "Notify email new job publish ?"
+#~ msgid "Notify email on job published"
+#~ msgstr ""
+#~ "Поставить в известность по электронной почте новое задание опубликовано?"
+
+#~ msgid "Notify email to admin when new job published."
+#~ msgstr ""
+#~ "Уведомить по электронной почте администратору, когда новая работа "
+#~ "опубликована."
+
+#, fuzzy
+#~| msgid "Application"
+#~ msgid "Application submit:"
+#~ msgstr "Заявка"
+
+#, fuzzy
+#~| msgid "Application Info"
+#~ msgid "Application received:"
+#~ msgstr "Информация о заявке"
 
 #~ msgid "New Job Approved"
 #~ msgstr "Новая работа утверждена"

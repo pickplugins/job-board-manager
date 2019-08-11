@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-07 08:10+0600\n"
-"PO-Revision-Date: 2019-08-07 08:10+0600\n"
+"POT-Creation-Date: 2019-08-11 13:04+0600\n"
+"PO-Revision-Date: 2019-08-11 13:05+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -381,7 +381,7 @@ msgid "Resume id "
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:15
-#: templates/job-edit/job-edit-hook.php:132
+#: templates/job-edit/job-edit-hook.php:129
 #: templates/job-single/job-single-hook.php:223
 #: templates/job-submit/job-submit-hook.php:127
 msgid "Job Information"
@@ -452,7 +452,7 @@ msgid "Maximum salary amount, ex: 1000"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:325
-#: includes/functions/functions-settings.php:193
+#: includes/functions/functions-settings.php:92
 #: includes/functions/functions-welcome.php:199
 msgid "Salary currency"
 msgstr ""
@@ -543,8 +543,8 @@ msgstr ""
 #: includes/functions/functions-settings.php:597
 #: includes/functions/functions-settings.php:749
 #: includes/functions/functions-settings.php:1034
-#: includes/functions/functions-settings.php:1158
-#: includes/functions/functions-settings.php:1172
+#: includes/functions/functions-settings.php:1178
+#: includes/functions/functions-settings.php:1192
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -564,8 +564,8 @@ msgstr ""
 #: includes/functions/functions-settings.php:597
 #: includes/functions/functions-settings.php:748
 #: includes/functions/functions-settings.php:1034
-#: includes/functions/functions-settings.php:1158
-#: includes/functions/functions-settings.php:1172
+#: includes/functions/functions-settings.php:1178
+#: includes/functions/functions-settings.php:1192
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -705,7 +705,7 @@ msgid "Application"
 msgstr ""
 
 #: includes/class-post-types.php:161 templates/applications/applications.php:58
-#: templates/job-dashboard/job-dashboard-hook.php:98
+#: templates/job-dashboard/job-dashboard-hook.php:101
 msgid "Applications"
 msgstr ""
 
@@ -714,7 +714,7 @@ msgid "Add New"
 msgstr ""
 
 #: includes/class-settings-tabs.php:146 includes/class-settings-tabs.php:226
-#: templates/job-edit/job-edit-hook.php:563
+#: templates/job-edit/job-edit-hook.php:546
 #: templates/job-submit/job-submit-hook.php:536
 msgid "Upload"
 msgstr ""
@@ -733,6 +733,10 @@ msgstr ""
 
 #: includes/class-settings.php:30
 msgid "Welcome"
+msgstr ""
+
+#: includes/class-settings.php:35
+msgid "Add-ons"
 msgstr ""
 
 #: includes/functions/functions-applications.php:27
@@ -783,107 +787,107 @@ msgstr ""
 msgid "Go"
 msgstr ""
 
-#: includes/functions/functions-settings.php:26
+#: includes/functions/functions-settings.php:27
 msgid "Archive settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:27
+#: includes/functions/functions-settings.php:28
 msgid "Choose option for archive."
 msgstr ""
 
-#: includes/functions/functions-settings.php:34
+#: includes/functions/functions-settings.php:35
 #: includes/functions/functions-welcome.php:97
 msgid "Job per page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:35
+#: includes/functions/functions-settings.php:36
 #: includes/functions/functions-welcome.php:98
 msgid "Set custom number of job per page on job archive"
 msgstr ""
 
-#: includes/functions/functions-settings.php:48
+#: includes/functions/functions-settings.php:49
 msgid "Pagination background color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:49
+#: includes/functions/functions-settings.php:50
 msgid "Choose pagination custom background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:61
+#: includes/functions/functions-settings.php:62
 msgid "Pagination active background color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:62
+#: includes/functions/functions-settings.php:63
 msgid "Choose pagination active custom background color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:75
+#: includes/functions/functions-settings.php:76
 msgid "Pagination text color"
 msgstr ""
 
-#: includes/functions/functions-settings.php:76
+#: includes/functions/functions-settings.php:77
 msgid "Choose pagination custom text color."
 msgstr ""
 
-#: includes/functions/functions-settings.php:126
+#: includes/functions/functions-settings.php:93
+#: includes/functions/functions-welcome.php:200
+msgid "Salary currency display on job page."
+msgstr ""
+
+#: includes/functions/functions-settings.php:137
 msgid "Pages settings"
 msgstr ""
 
-#: includes/functions/functions-settings.php:127
+#: includes/functions/functions-settings.php:138
 msgid "Choose option for pages."
 msgstr ""
 
-#: includes/functions/functions-settings.php:134
+#: includes/functions/functions-settings.php:145
 #: includes/functions/functions-welcome.php:256
 msgid "Dashboard page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:135
+#: includes/functions/functions-settings.php:146
 #: includes/functions/functions-welcome.php:257
 msgid ""
 "Choose the page for dashboard page, where the shortcode "
 "<code>[job_bm_dashboard]</code> used."
 msgstr ""
 
-#: includes/functions/functions-settings.php:149
+#: includes/functions/functions-settings.php:160
 #: includes/functions/functions-welcome.php:271
 msgid "Job archive page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:150
+#: includes/functions/functions-settings.php:161
 #: includes/functions/functions-welcome.php:272
 msgid ""
 "Choose the page for job archive page, where the shortcode "
 "<code>[job_bm_archive]</code> used."
 msgstr ""
 
-#: includes/functions/functions-settings.php:163
+#: includes/functions/functions-settings.php:174
 #: includes/functions/functions-welcome.php:285
 msgid "Job submission page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:164
+#: includes/functions/functions-settings.php:175
 #: includes/functions/functions-welcome.php:286
 msgid ""
 "Choose the page for job submission page, where the shortcode "
 "<code>[job_submit_form]</code> used."
 msgstr ""
 
-#: includes/functions/functions-settings.php:178
+#: includes/functions/functions-settings.php:189
 #: includes/functions/functions-welcome.php:300
 msgid "Job edit page"
 msgstr ""
 
-#: includes/functions/functions-settings.php:179
+#: includes/functions/functions-settings.php:190
 #: includes/functions/functions-welcome.php:301
 msgid ""
 "Choose the page for job edit page, where the shortcode "
 "<code>[job_bm_job_edit]</code> used."
-msgstr ""
-
-#: includes/functions/functions-settings.php:194
-#: includes/functions/functions-welcome.php:200
-msgid "Salary currency display on job page."
 msgstr ""
 
 #: includes/functions/functions-settings.php:242
@@ -1246,12 +1250,10 @@ msgid "Job status area text color."
 msgstr ""
 
 #: includes/functions/functions-settings.php:1020
-#: includes/functions/functions-settings.php:1144
 msgid "Job expire settings"
 msgstr ""
 
 #: includes/functions/functions-settings.php:1021
-#: includes/functions/functions-settings.php:1145
 msgid "Customize job expire settings."
 msgstr ""
 
@@ -1303,28 +1305,36 @@ msgstr ""
 msgid "Set custom value for expire in."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1152
+#: includes/functions/functions-settings.php:1164
+msgid "Job application settings"
+msgstr ""
+
+#: includes/functions/functions-settings.php:1165
+msgid "Customize job application settings."
+msgstr ""
+
+#: includes/functions/functions-settings.php:1172
 msgid "Login required for application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1153
+#: includes/functions/functions-settings.php:1173
 msgid "Login is required or not for submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1166
+#: includes/functions/functions-settings.php:1186
 msgid "Enable recaptcha"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1167
+#: includes/functions/functions-settings.php:1187
 msgid "Enable recaptcha on submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1181
+#: includes/functions/functions-settings.php:1201
 #: includes/functions/functions-welcome.php:185
 msgid "Application methods"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1182
+#: includes/functions/functions-settings.php:1202
 #: includes/functions/functions-welcome.php:186
 msgid "Choose application method on job post."
 msgstr ""
@@ -1440,11 +1450,11 @@ msgstr ""
 msgid "%s Settings"
 msgstr ""
 
-#: includes/menu/settings-new.php:188
+#: includes/menu/settings-new.php:189
 msgid "Changes Saved."
 msgstr ""
 
-#: includes/menu/settings-new.php:240
+#: includes/menu/settings-new.php:258
 msgid "Save Changes"
 msgstr ""
 
@@ -1690,13 +1700,13 @@ msgid "Keyword"
 msgstr ""
 
 #: templates/job-archive/job-archive-hook.php:76
-#: templates/job-edit/job-edit-hook.php:632
-#: templates/job-single/job-single-hook.php:592
+#: templates/job-edit/job-edit-hook.php:615
+#: templates/job-single/job-single-hook.php:595
 #: templates/job-submit/job-submit-hook.php:605
 msgid "Submit"
 msgstr ""
 
-#: templates/job-archive/job-archive-hook.php:168
+#: templates/job-archive/job-archive-hook.php:172
 #: templates/job-single/job-single-hook.php:74
 #, php-format
 msgid "Posted %s ago"
@@ -1712,129 +1722,117 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:90
+#: templates/job-dashboard/job-dashboard-hook.php:91
 msgid "My jobs"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:94
+#: templates/job-dashboard/job-dashboard-hook.php:96
 msgid "My applications"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:103
+#: templates/job-dashboard/job-dashboard-hook.php:107
 msgid "Logout!"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:166
+#: templates/job-dashboard/job-dashboard-hook.php:176
 #, php-format
 msgid "Welcome! %s"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:171
-msgid "Total job post:"
-msgstr ""
-
-#: templates/job-dashboard/job-dashboard-hook.php:175
-msgid "Application submit:"
-msgstr ""
-
-#: templates/job-dashboard/job-dashboard-hook.php:179
-msgid "Application received:"
-msgstr ""
-
-#: templates/job-dashboard/job-dashboard-hook.php:257
+#: templates/job-dashboard/job-dashboard-hook.php:267
 #: templates/registration-form/registration-form.php:25
 msgid "Register"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:271
+#: templates/job-dashboard/job-dashboard-hook.php:281
 msgid "Login"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:283
+#: templates/job-dashboard/job-dashboard-hook.php:293
 msgid "Username or email address"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:284
+#: templates/job-dashboard/job-dashboard-hook.php:294
 #: templates/registration-form/registration-form-hook.php:28
 msgid "Password"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:285
+#: templates/job-dashboard/job-dashboard-hook.php:295
 msgid "Remember Me"
 msgstr ""
 
-#: templates/job-dashboard/job-dashboard-hook.php:286
+#: templates/job-dashboard/job-dashboard-hook.php:296
 msgid "Log In"
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:668
+#: templates/job-edit/job-edit-hook.php:651
 #: templates/job-submit/job-submit-hook.php:641
 msgid "ERROR: Job title is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:673
+#: templates/job-edit/job-edit-hook.php:656
 #: templates/job-submit/job-submit-hook.php:646
 msgid "ERROR: Job details is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:678
+#: templates/job-edit/job-edit-hook.php:661
 #: templates/job-submit/job-submit-hook.php:651
 msgid "ERROR: Total vacancies is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:684
+#: templates/job-edit/job-edit-hook.php:667
 #: templates/job-submit/job-submit-hook.php:657
 msgid "ERROR: Salary fixed is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:690
+#: templates/job-edit/job-edit-hook.php:673
 #: templates/job-submit/job-submit-hook.php:663
 msgid "ERROR: Salary minimum is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:694
+#: templates/job-edit/job-edit-hook.php:677
 #: templates/job-submit/job-submit-hook.php:667
 msgid "ERROR: Salary maximum is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:705
+#: templates/job-edit/job-edit-hook.php:688
 #: templates/job-submit/job-submit-hook.php:678
 msgid "ERROR: Contact email is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:710
+#: templates/job-edit/job-edit-hook.php:693
 #: templates/job-submit/job-submit-hook.php:683
 msgid "ERROR: Company name is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:715
+#: templates/job-edit/job-edit-hook.php:698
 #: templates/job-submit/job-submit-hook.php:688
 msgid "ERROR: Location is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:721
+#: templates/job-edit/job-edit-hook.php:704
 #: templates/job-submit/job-submit-hook.php:694
 msgid "ERROR: Address is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:726
+#: templates/job-edit/job-edit-hook.php:709
 #: templates/job-submit/job-submit-hook.php:699
 msgid "ERROR: Company logo is empty."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:731
+#: templates/job-edit/job-edit-hook.php:714
 #: templates/job-submit/job-submit-hook.php:704
 #: templates/registration-form/registration-form-hook.php:132
 msgid "ERROR: reCaptcha test failed."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:737
+#: templates/job-edit/job-edit-hook.php:720
 #: templates/job-submit/job-submit-hook.php:715
 #: templates/registration-form/registration-form-hook.php:139
 msgid "ERROR: security test failed."
 msgstr ""
 
-#: templates/job-edit/job-edit-hook.php:858
+#: templates/job-edit/job-edit-hook.php:840
 msgid "Thanks for update job."
 msgstr ""
 
@@ -1904,51 +1902,51 @@ msgstr ""
 msgid "Please <a href=\"%s\">login</a> to submit application"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:422
+#: templates/job-single/job-single-hook.php:425
 msgid "ERROR: Applicant name is empty."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:427
+#: templates/job-single/job-single-hook.php:430
 msgid "ERROR: Email is empty."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:432
+#: templates/job-single/job-single-hook.php:435
 msgid "ERROR: "
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:439
+#: templates/job-single/job-single-hook.php:442
 msgid "ERROR: reCaptcha test failed"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:485
+#: templates/job-single/job-single-hook.php:488
 msgid "Your application has sent."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:491
+#: templates/job-single/job-single-hook.php:494
 msgid "You already sent an application."
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:544
+#: templates/job-single/job-single-hook.php:547
 msgid "Your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:547
+#: templates/job-single/job-single-hook.php:550
 msgid "Write your name"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:552
+#: templates/job-single/job-single-hook.php:555
 msgid "Your email"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:555
+#: templates/job-single/job-single-hook.php:558
 msgid "Write your email address"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:560
+#: templates/job-single/job-single-hook.php:563
 msgid "Message"
 msgstr ""
 
-#: templates/job-single/job-single-hook.php:564
+#: templates/job-single/job-single-hook.php:567
 msgid "Write your message"
 msgstr ""
 
@@ -1991,73 +1989,82 @@ msgstr ""
 msgid "Job poster ratings: %s"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:10
+#: templates/my-jobs/my-jobs-hook.php:16
 msgid "My Jobs"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:113
+#: templates/my-jobs/my-jobs-hook.php:17
+msgid "Add Job"
+msgstr ""
+
+#: templates/my-jobs/my-jobs-hook.php:17
+#, php-format
+msgid "%s Add Job"
+msgstr ""
+
+#: templates/my-jobs/my-jobs-hook.php:121
 #, php-format
 msgid "%s No job found posted by you."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:123
+#: templates/my-jobs/my-jobs-hook.php:131
 #, php-format
 msgid "Please <a href=\"%s\">login</a> to see your jobs."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:174
+#: templates/my-jobs/my-jobs-hook.php:182
 msgid "Job id."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:175
+#: templates/my-jobs/my-jobs-hook.php:183
 msgid "Job edit."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:176
+#: templates/my-jobs/my-jobs-hook.php:184
 msgid "Job trash."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:177
+#: templates/my-jobs/my-jobs-hook.php:185
 msgid "Featured job."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:178
+#: templates/my-jobs/my-jobs-hook.php:186
 msgid "Total application."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:179
+#: templates/my-jobs/my-jobs-hook.php:187
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:225
+#: templates/my-jobs/my-jobs-hook.php:233
 msgid "Job link."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:227
+#: templates/my-jobs/my-jobs-hook.php:235
 msgid "Published:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:228
+#: templates/my-jobs/my-jobs-hook.php:236
 msgid "Publish Status:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:229
+#: templates/my-jobs/my-jobs-hook.php:237
 msgid "Featured:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:243
 msgid "Job Status:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:244
+#: templates/my-jobs/my-jobs-hook.php:252
 msgid "Job Type:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:251
+#: templates/my-jobs/my-jobs-hook.php:259
 msgid "Job Level:"
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:256
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Applications:"
 msgstr ""
 

@@ -1113,14 +1113,14 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
         <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
 
         <h3>Shortcodes</h3>
-        <p><code>[job_bm_applications]</code> <br> Display list of applications.</p>
-        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end.</p>
-        <p><code>[job_bm_archive]</code> <br> Display job archive on front-end.</p>
-        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end.</p>
-        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end.</p>
-        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications.</p>
-        <p><code>[job_bm_my_jobs]</code> <br> Display logged-in user submitted jobs.</p>
-        <p><code>[job_bm_registration_form]</code> <br> Display register form on front-end.</p>
+        <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
+        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+        <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
+        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
+        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
+        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>
+        <p><code>[job_bm_my_jobs]</code> <br> Display logged-in user submitted jobs. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_jobs">Demo</a></p>
+        <p><code>[job_bm_registration_form]</code> <br> Display register form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
 
 
 
