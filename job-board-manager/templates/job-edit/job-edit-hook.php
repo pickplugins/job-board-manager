@@ -624,7 +624,7 @@ function job_bm_job_edit_form_submit($job_id){
 
 /* Process the submitted data  */
 
-add_action('job_bm_job_edit_data', 'job_bm_job_edit_data');
+add_action('job_bm_job_edit_data', 'job_bm_job_edit_data',90,2);
 
 function job_bm_job_edit_data($job_id, $post_data){
 

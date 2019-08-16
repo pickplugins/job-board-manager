@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.10
+	Stable tag: 2.1.11
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ This plugin has account dashboard is based on tabs and content, you can display 
 
 you can display job submit form via shortcode `[job_submit_form]` anywhere, you can add custom input fields via action hook and validated form data and sanitize before saving on database, and you can also display custom error message before submit form data. you can also remove existing input field by `remove_action` hook.
 `
-[job_submit_form]
+[job_bm_job_submit]
 `
 
 **Job Edit form**
@@ -90,13 +90,13 @@ Please contribute here [https://translate.wordpress.org/projects/wp-plugins/job-
 
 == Screenshots ==
 
-1. Screenshot 1
-2. Screenshot 2
-3. Screenshot 3
-4. Screenshot 4
-5. Screenshot 5
-6. Screenshot 6
-7. Screenshot 7
+1. Job archive display
+2. Job Single page display
+3. Dashboard - My jobs
+4. Dashboard - Applications
+5. Dashboard - My Applications
+6. Job Submit Form
+7. Application Conversation
 
 
 == Frequently Asked Questions ==
@@ -108,6 +108,10 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+	= 2.1.11 =
+    * 16/08/2019 - fix - job edit issue fixed
 
 
 	= 2.1.10 =
