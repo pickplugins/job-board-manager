@@ -2,6 +2,22 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
+add_action('job_bm_registration_form','job_bm_registration_form_field_email');
+function job_bm_registration_form_field_email(){
+
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
+
+
+
+    ?>
+    <p>
+        <label for="email"><?php echo __('Email','job-board-manager'); ?> <br>
+            <input type="text" name="email" value="<?php echo $email;  ?>">
+        </label>
+    </p>
+    <?php
+}
+
 add_action('job_bm_registration_form','job_bm_registration_form_field_username');
 function job_bm_registration_form_field_username(){
 
@@ -33,21 +49,31 @@ function job_bm_registration_form_field_password(){
 }
 
 
-add_action('job_bm_registration_form','job_bm_registration_form_field_email');
-function job_bm_registration_form_field_email(){
+add_action('job_bm_registration_form','job_bm_registration_form_field_role');
+function job_bm_registration_form_field_role(){
 
-    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
+    $role = isset($_POST['role']) ? sanitize_text_field($_POST['role']) : "";
 
 
+    var_dump(get_role( 'job_poster' ));
 
     ?>
     <p>
-        <label for="email"><?php echo __('Email','job-board-manager'); ?> <br>
-            <input type="text" name="email" value="<?php echo $email;  ?>">
+        <label for="role"><?php echo __('Join as','job-board-manager'); ?> <br>
+            <select name="role">
+                <option <?php selected( $role, 'job_poster'); ?> value="job_poster"><?php echo __('Job Poster', 'job-board-manager');
+                ?></option>
+                <option <?php selected( $role, 'job_seeker'); ?> value="job_seeker"><?php echo __('Job Seeker', 'job-board-manager'); ?></option>
+
+            </select>
         </label>
     </p>
     <?php
 }
+
+
+
+
 
 add_action('job_bm_registration_form','job_bm_registration_form_field_recaptcha');
 function job_bm_registration_form_field_recaptcha(){
@@ -84,6 +110,7 @@ function job_bm_registration_submit_data($post_data){
     $username = isset($post_data['username']) ? sanitize_user($post_data['username']) : "";
     $password = isset($post_data['password']) ? esc_attr($post_data['password']) : "";
     $email = isset($post_data['email']) ? sanitize_email($post_data['email']) : "";
+    $role = isset($post_data['role']) ? sanitize_text_field($post_data['role']) : "job_poster";
 
 
     $error = new WP_Error();
@@ -157,6 +184,8 @@ function job_bm_registration_submit_data($post_data){
             'user_login'	=> 	$username,
             'user_email' 	=> 	$email,
             'user_pass' 	=> 	$password,
+            'role' 	=> 	$role,
+
 
         );
         $user = wp_insert_user( $userdata );

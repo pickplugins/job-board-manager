@@ -82,7 +82,7 @@
 }
 
 
-.job-bm-dashboard input[type="text"],  .job-bm-dashboard input[type="password"]{
+.job-bm-dashboard input[type="text"],  .job-bm-dashboard input[type="password"], .job-bm-dashboard select{
 
     width: 230px;
 }
