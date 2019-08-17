@@ -478,6 +478,25 @@ function job_bm_metabox_job_content_company_info_logo($job_id){
     $job_bm_company_logo = !empty($job_bm_company_logo) ? $job_bm_company_logo : job_bm_plugin_url."assets/front/images/placeholder.png";
 
 
+    if(is_serialized($job_bm_company_logo)){
+
+        $job_bm_company_logo = unserialize($job_bm_company_logo);
+        if(!empty($job_bm_company_logo[0])){
+            $job_bm_company_logo = $job_bm_company_logo[0];
+            $job_bm_company_logo = wp_get_attachment_url($job_bm_company_logo);
+
+            if($job_bm_company_logo == false){
+                $job_bm_company_logo =job_bm_plugin_url."assets/front/images/placeholder.png";
+
+            }
+
+        }
+        else{
+            $job_bm_company_logo = job_bm_plugin_url."assets/front/images/placeholder.png";
+        }
+    }
+
+
     $args = array(
         'id'		=> 'job_bm_company_logo',
         //'parent'		=> '',

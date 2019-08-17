@@ -31,7 +31,7 @@ add_filter( 'the_content', 'job_bm_post_type_template_application' );
 
 
 
-function my_plugin_comment_template( $comment_template ) {
+function job_bm_application_comment_template( $comment_template ) {
     global $post;
 
     if ( !( is_singular() && ( have_comments() || 'open' == $post->comment_status ) ) ) {
@@ -42,7 +42,7 @@ function my_plugin_comment_template( $comment_template ) {
     }
 }
 
-add_filter( "comments_template", "my_plugin_comment_template", 99 );
+add_filter( "comments_template", "job_bm_application_comment_template", 99 );
 
 
 

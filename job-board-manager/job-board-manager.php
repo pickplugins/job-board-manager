@@ -138,9 +138,40 @@ class JobBoardManager{
 
         wp_schedule_event(time(), $job_bm_experied_check_recurrance, 'job_bm_cron_expired_check');
 
-        add_role( 'job_seeker', 'Job Seeker', array( 'read' => true, 'edit_posts' => true ) );
-        add_role( 'job_poster', 'Job Poster', array( 'read' => true, 'edit_posts' => true, 'upload_files' => true ) );
-        add_role( 'job_manager', 'Job Manager', array( 'read' => true, 'edit_posts' => true, 'upload_files' => true) );
+        remove_role( 'job_seeker' );
+        remove_role( 'job_poster' );
+        remove_role( 'job_manager' );
+
+
+        add_role( 'job_seeker', 'Job Seeker',   array(
+            'read' => true,
+            'create_job' => true,
+            'edit_job' => true,
+            'delete_job' => true,
+            'upload_files' => true,
+            )
+        );
+        add_role( 'job_poster', 'Job Poster',   array(
+            'read' => true,
+            'create_job' => true,
+            'edit_job' => true,
+            'delete_job' => true,
+            'upload_files' => true,
+            )
+        );
+        add_role( 'job_manager', 'Job Manager', array(
+            'read' => true,
+            'create_job' => true,
+            'edit_job' => true,
+            'delete_job' => true,
+            'upload_files' => true,
+            'create_others_job' => true,
+            'edit_others_job' => true,
+            'delete_others_job' => true,
+            )
+        );
+
+
 
 
 
