@@ -5,6 +5,10 @@
 
 }
 
+.job-list a {
+    text-decoration: none;
+}
+
 .job-list .search-input {
 	margin-bottom: 25px;
 	background: #f2f2f2;

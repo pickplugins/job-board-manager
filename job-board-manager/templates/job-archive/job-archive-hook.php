@@ -150,7 +150,10 @@ if(!function_exists('job_bm_job_archive_loop_items')):
             </div>
 
             <div title="" class="title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
-            <div class="company-name"><?php echo $job_bm_company_name; ?></div>
+
+            <?php if(!empty($job_bm_location)): ?>
+            <div class="company-name"><?php echo apply_filters('job_bm_job_archive_loop_item_company', $job_bm_company_name); ?></div>
+            <?php endif; ?>
 
             <div class="clear"></div>
             <div class="job-meta">
@@ -167,7 +170,9 @@ if(!function_exists('job_bm_job_archive_loop_items')):
                 <?php endif; ?>
 
 
-                <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+                <?php if(!empty($job_bm_location)): ?>
+                <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo apply_filters('job_bm_job_archive_loop_item_location', $job_bm_location); ?></span>
+                <?php endif; ?>
 
                 <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
 

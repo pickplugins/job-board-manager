@@ -109,6 +109,10 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.12 =
+    * 17/08/2019 - add - added filter hook 'job_bm_job_archive_loop_item_company'
+    * 17/08/2019 - add - added filter hook 'job_bm_job_archive_loop_item_location'
+
 
 	= 2.1.11 =
     * 16/08/2019 - fix - job edit issue fixed

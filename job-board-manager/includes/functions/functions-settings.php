@@ -1134,7 +1134,211 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
 
 
 
+add_action('job_bm_settings_tabs_right_panel_archive', 'job_bm_settings_tabs_right_panel');
 
+if(!function_exists('job_bm_settings_tabs_right_panel')) {
+    function job_bm_settings_tabs_right_panel($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+        <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
+        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+        <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
+        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
+        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
+        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>
+        <p><code>[job_bm_my_jobs]</code> <br> Display logged-in user submitted jobs. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_jobs">Demo</a></p>
+        <p><code>[job_bm_registration_form]</code> <br> Display register form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
+
+
+
+
+add_action('job_bm_settings_tabs_right_panel_pages', 'job_bm_settings_tabs_right_pages');
+add_action('job_bm_settings_tabs_right_panel_email', 'job_bm_settings_tabs_right_pages');
+add_action('job_bm_settings_tabs_right_panel_style', 'job_bm_settings_tabs_right_pages');
+add_action('job_bm_settings_tabs_right_panel_expiry', 'job_bm_settings_tabs_right_pages');
+
+if(!function_exists('job_bm_settings_tabs_right_pages')) {
+    function job_bm_settings_tabs_right_pages($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+        <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
+        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+        <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
+        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
+        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
+        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>
+        <p><code>[job_bm_my_jobs]</code> <br> Display logged-in user submitted jobs. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_jobs">Demo</a></p>
+        <p><code>[job_bm_registration_form]</code> <br> Display register form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
+
+
+
+
+
+add_action('job_bm_settings_tabs_right_panel_job_submit', 'job_bm_settings_tabs_right_job_submit');
+
+if(!function_exists('job_bm_settings_tabs_right_job_submit')) {
+    function job_bm_settings_tabs_right_job_submit($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+
+        <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
+
+
+add_action('job_bm_settings_tabs_right_panel_job_edit', 'job_bm_settings_tabs_right_panel_job_edit');
+
+if(!function_exists('job_bm_settings_tabs_right_panel_job_edit')) {
+    function job_bm_settings_tabs_right_panel_job_edit($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+
+        <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
+
+add_action('job_bm_settings_tabs_right_panel_dashboard', 'job_bm_settings_tabs_right_panel_dashboard');
+
+if(!function_exists('job_bm_settings_tabs_right_panel_dashboard')) {
+    function job_bm_settings_tabs_right_panel_dashboard($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+
+        <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
+
+
+
+
+add_action('job_bm_settings_tabs_right_panel_applications', 'job_bm_settings_tabs_right_panel_applications');
+
+if(!function_exists('job_bm_settings_tabs_right_panel_applications')) {
+    function job_bm_settings_tabs_right_panel_applications($id){
+
+        ?>
+        <h3>Help & Support</h3>
+        <p>Please read documentation for customize Job Board Manger</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+
+        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+
+        <h3>Write Reviews</h3>
+        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
+            and five star reviews on plugin page.</p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+
+        <h3>Shortcodes</h3>
+        <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
+        <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>
+
+
+
+
+        <?php
+
+    }
+}
 
 
 
