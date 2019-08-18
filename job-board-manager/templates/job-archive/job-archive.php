@@ -1,18 +1,19 @@
 <?php
-/*
-* @Author 		PickPlugins
-* Copyright: 	2016 PickPlugins.com
-*/
-
 if ( ! defined('ABSPATH')) exit;  // if direct access 
+
+
+    $company_name = isset($atts['company_name']) ? $atts['company_name'] : '';
+    $per_page = isset($atts['per_page']) ? $atts['per_page'] : '';
+
+
 
 	$job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
 	$job_bm_login_enable = get_option('job_bm_login_enable');	
 	$job_bm_registration_enable = get_option('job_bm_registration_enable');
 	$date_format = get_option( 'date_format' );
-	$job_bm_list_per_page = get_option('job_bm_list_per_page');
-	$job_bm_hide_expired_job_inlist = get_option('job_bm_hide_expired_job_inlist');
+	$job_bm_list_per_page = get_option('job_bm_list_per_page', 10);
 
+    $job_bm_list_per_page = !empty($per_page) ? $per_page : $job_bm_list_per_page;
 
 
 	$job_bm_archive_page_id = get_option('job_bm_archive_page_id');
@@ -29,16 +30,14 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	
 	if(empty($permalink_structure)){ $permalink_joint = '&'; }
 	else{ $permalink_joint = '?'; }
-	 
-	if(empty($job_bm_list_per_page)){$job_bm_list_per_page = 10; }
-	
+
 	if ( get_query_var('paged') ) {$paged = get_query_var('paged');} 
 	elseif ( get_query_var('page') ) {$paged = get_query_var('page');} 
 	else {$paged = 1;}
 
 
 
-$keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : '';
+    $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : '';
 
 
 
@@ -219,18 +218,18 @@ $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : 
         <div class="job-list">
         <?php
 
-        do_action('job_bm_job_archive_loop_before', $wp_query);
+        do_action('job_bm_job_archive_loop_before', $wp_query, $atts);
 
         if ( $wp_query->have_posts() ) :
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
             $job_id = get_the_ID();
 
-            do_action('job_bm_job_archive_loop', $job_id);
+            do_action('job_bm_job_archive_loop', $job_id, $atts);
 
 
         endwhile;
-            do_action('job_bm_job_archive_loop_after', $wp_query);
+            do_action('job_bm_job_archive_loop_after', $wp_query, $atts);
             wp_reset_query();
         else:
 

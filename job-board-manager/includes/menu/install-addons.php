@@ -14,9 +14,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
     <?php
 
     $pluginSlugs = array(
-        'contact-form-7',
-        'simple-cache',
-        'codepress-admin-columns',
+        'job-board-manager-locations',
     );
     //require_once(dirname(__FILE__) . '/wp-load.php');
     require_once(ABSPATH . 'wp-admin/includes/plugin-install.php');

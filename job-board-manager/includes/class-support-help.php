@@ -24,6 +24,8 @@ class class_job_bm_support_help{
             'widgets'=>array(	'title'=>'Widgets',
                 'content'=>'Widgets for Job Board Manager.',
                 'item_link'=>'https://wordpress.org/plugins/job-board-manager-widgets/',
+                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-widgets.zip',
+                'wp_org_slug'=>'job-board-manager-widgets',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/widgets.png',
             ),
 
@@ -36,14 +38,18 @@ class class_job_bm_support_help{
 
             'company-profile'=>array(	'title'=>'Company Profile',
                 'content'=>'Addon for creating company profile.',
-                'item_link'=>'http://www.pickplugins.com/item/job-board-manager-company-profile/',
+                'item_link'=>'https://wordpress.org/plugins/job-board-manager-company-profile/',
+                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-company-profile.zip',
+                'wp_org_slug'=>'job-board-manager-company-profile',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/company-profile.png',
             ),
 
             'locations'=>array(	'title'=>'Locations',
                 'price'=>'15',
                 'content'=>'Awesome location single page and display job list under any location via single page.',
-                'item_link'=>'http://www.pickplugins.com/item/job-board-manager-locations/',
+                'item_link'=>'https://wordpress.org/plugins/job-board-manager-locations/',
+                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-locations.zip',
+                'wp_org_slug'=>'job-board-manager-locations',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/locations.png',
             ),
 

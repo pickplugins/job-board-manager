@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.11
+	Stable tag: 2.1.13
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,9 +109,14 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.13 =
+    * 18/08/2019 - fix - var_dump string output issue fixed
+
 	= 2.1.12 =
     * 17/08/2019 - add - added filter hook 'job_bm_job_archive_loop_item_company'
     * 17/08/2019 - add - added filter hook 'job_bm_job_archive_loop_item_location'
+    * 18/08/2019 - add - added some shortcode [job_bm_archive] attributes
+
 
 
 	= 2.1.11 =

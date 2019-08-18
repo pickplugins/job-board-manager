@@ -18,6 +18,15 @@ class class_job_bm_shortcodes_job_archive{
 
 	public function job_bm_job_archive_display($atts, $content = null ) {
 
+        $atts = shortcode_atts(
+            array(
+                'display_search' => 'yes',
+                'display_pagination' => 'yes',
+                'company_name' => '',
+                'per_page' => '',
+            ), $atts);
+
+        $display_search = $atts['display_search'];
 
         include( job_bm_plugin_dir . 'templates/job-archive/job-archive-hook.php');
 

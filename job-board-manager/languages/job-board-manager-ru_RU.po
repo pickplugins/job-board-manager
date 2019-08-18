@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-11 13:05+0600\n"
-"PO-Revision-Date: 2019-08-11 13:05+0600\n"
+"POT-Creation-Date: 2019-08-18 00:16+0600\n"
+"PO-Revision-Date: 2019-08-18 00:16+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
@@ -414,7 +414,7 @@ msgstr "Заявка"
 #: includes/functions/functions-settings.php:411
 #: includes/functions/functions-settings.php:1049
 #: includes/functions/functions-welcome.php:132
-#: templates/application-single/application-single-hook.php:189
+#: templates/application-single/application-single-hook.php:188
 #: templates/applications/applications.php:257
 #: templates/my-applications/my-applications.php:219
 msgid "Trash"
@@ -433,7 +433,7 @@ msgstr ""
 
 #: includes/class-post-meta-application.php:103
 #: includes/class-post-meta-application.php:104
-#: templates/application-single/application-single-hook.php:277
+#: templates/application-single/application-single-hook.php:276
 #: templates/applications/applications.php:339
 #: templates/my-applications/my-applications.php:305
 #, fuzzy
@@ -495,86 +495,118 @@ msgid "Job Information"
 msgstr "Детальнее"
 
 #: includes/class-post-meta-job-hook.php:42
+#: templates/job-edit/job-edit-hook.php:157
+#: templates/job-submit/job-submit-hook.php:153
 #, fuzzy
 #| msgid "Total Vacancies"
 msgid "Total vacancies"
 msgstr "Всего вакансий"
 
 #: includes/class-post-meta-job-hook.php:43
+#: templates/job-edit/job-edit-hook.php:160
+#: templates/job-submit/job-submit-hook.php:156
 #, fuzzy
 #| msgid "Total number of vacancies."
 msgid "Total number of vacancies"
 msgstr "Общее количество вакансий."
 
 #: includes/class-post-meta-job-hook.php:74
+#: templates/job-edit/job-edit-hook.php:185
+#: templates/job-submit/job-submit-hook.php:179
 #, fuzzy
 #| msgid "Job type:"
 msgid "Job type"
 msgstr "Тип вакансии:"
 
 #: includes/class-post-meta-job-hook.php:75
+#: templates/job-edit/job-edit-hook.php:202
+#: templates/job-submit/job-submit-hook.php:196
 #, fuzzy
 #| msgid "Select job status."
 msgid "Select job type."
 msgstr "Выберите статус вакансии"
 
 #: includes/class-post-meta-job-hook.php:101
+#: templates/job-edit/job-edit-hook.php:227
+#: templates/job-submit/job-submit-hook.php:219
 #, fuzzy
 #| msgid "Job Level"
 msgid "Job level"
 msgstr "Уровень работы"
 
 #: includes/class-post-meta-job-hook.php:102
+#: templates/job-edit/job-edit-hook.php:244
+#: templates/job-submit/job-submit-hook.php:236
 #, fuzzy
 #| msgid "Select job status."
 msgid "Select job level."
 msgstr "Выберите статус вакансии"
 
 #: includes/class-post-meta-job-hook.php:133
+#: templates/job-edit/job-edit-hook.php:267
+#: templates/job-submit/job-submit-hook.php:257
 #, fuzzy
 #| msgid "Years of Experience"
 msgid "Years of experience"
 msgstr "Годы опыта"
 
 #: includes/class-post-meta-job-hook.php:134
+#: templates/job-edit/job-edit-hook.php:270
+#: templates/job-submit/job-submit-hook.php:260
 msgid "Years of experience must have."
 msgstr " Должен иметь многолетний опыт"
 
 #: includes/class-post-meta-job-hook.php:165
+#: templates/job-edit/job-edit-hook.php:298
+#: templates/job-submit/job-submit-hook.php:286
 #, fuzzy
 #| msgid "Salary Type: "
 msgid "Salary type"
 msgstr " Тип зарплаты:"
 
 #: includes/class-post-meta-job-hook.php:166
+#: templates/job-edit/job-edit-hook.php:315
+#: templates/job-submit/job-submit-hook.php:303
 #, fuzzy
 #| msgid "Salary Type: "
 msgid "Select salary type."
 msgstr " Тип зарплаты:"
 
 #: includes/class-post-meta-job-hook.php:250
+#: templates/job-edit/job-edit-hook.php:338
+#: templates/job-submit/job-submit-hook.php:324
 msgid "Fixed salary"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:251
+#: templates/job-edit/job-edit-hook.php:341
+#: templates/job-submit/job-submit-hook.php:327
 msgid "Salary fixed, ex: 1200"
 msgstr "Зарплата фиксированная, например: 1200"
 
 #: includes/class-post-meta-job-hook.php:275
+#: templates/job-edit/job-edit-hook.php:360
+#: templates/job-submit/job-submit-hook.php:344
 msgid "Minimum salary"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:276
+#: templates/job-edit/job-edit-hook.php:363
+#: templates/job-submit/job-submit-hook.php:347
 #, fuzzy
 #| msgid "Salary Max, ex: 1000"
 msgid "Minimum salary amount, ex: 5000"
 msgstr "Зарплата мак., например: 1000"
 
 #: includes/class-post-meta-job-hook.php:300
+#: templates/job-edit/job-edit-hook.php:383
+#: templates/job-submit/job-submit-hook.php:365
 msgid "Maximum salary"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:301
+#: templates/job-edit/job-edit-hook.php:386
+#: templates/job-submit/job-submit-hook.php:368
 #, fuzzy
 #| msgid "Salary Max, ex: 1000"
 msgid "Maximum salary amount, ex: 1000"
@@ -583,28 +615,35 @@ msgstr "Зарплата мак., например: 1000"
 #: includes/class-post-meta-job-hook.php:325
 #: includes/functions/functions-settings.php:92
 #: includes/functions/functions-welcome.php:199
+#: templates/job-submit/job-submit-hook.php:385
 #, fuzzy
 #| msgid "Salary currency ?"
 msgid "Salary currency"
 msgstr "Валюта зарплаты?"
 
 #: includes/class-post-meta-job-hook.php:326
+#: templates/job-submit/job-submit-hook.php:388
 #, fuzzy
 #| msgid "Salary currency ?"
 msgid "Write salary currency, ex: $"
 msgstr "Валюта зарплаты?"
 
 #: includes/class-post-meta-job-hook.php:348
+#: templates/job-edit/job-edit-hook.php:405
+#: templates/job-submit/job-submit-hook.php:411
 msgid "Contact email"
 msgstr "Почта для связи "
 
 #: includes/class-post-meta-job-hook.php:349
+#: templates/job-edit/job-edit-hook.php:408
+#: templates/job-submit/job-submit-hook.php:414
 #, fuzzy
 #| msgid "Contact email"
 msgid "Write your contact email"
 msgstr "Почта для связи "
 
 #: includes/class-post-meta-job-hook.php:368
+#: templates/job-edit/job-edit-hook.php:424
 #: templates/job-submit/job-submit-hook.php:430
 #, fuzzy
 #| msgid "Company Information details"
@@ -612,79 +651,98 @@ msgid "Company Information"
 msgstr "Информация о компании подробнее"
 
 #: includes/class-post-meta-job-hook.php:387
+#: templates/job-edit/job-edit-hook.php:446
+#: templates/job-submit/job-submit-hook.php:450
 #, fuzzy
 #| msgid "Company Name"
 msgid "Company name"
 msgstr "Название компании"
 
 #: includes/class-post-meta-job-hook.php:388
+#: templates/job-edit/job-edit-hook.php:449
+#: templates/job-submit/job-submit-hook.php:453
 #, fuzzy
 #| msgid "Display Company Name"
 msgid "Write your company name"
 msgstr "Показать название компании"
 
 #: includes/class-post-meta-job-hook.php:411
-#: templates/job-archive/job-archive-hook.php:50
+#: templates/job-archive/job-archive-hook.php:55
+#: templates/job-edit/job-edit-hook.php:468
+#: templates/job-submit/job-submit-hook.php:470
 msgid "Location"
 msgstr "Место нахождения"
 
 #: includes/class-post-meta-job-hook.php:412
+#: templates/job-submit/job-submit-hook.php:473
 msgid "Write company location, use city or state. ex: New Work"
 msgstr ""
 
 #: includes/class-post-meta-job-hook.php:435
+#: templates/job-edit/job-edit-hook.php:489
+#: templates/job-submit/job-submit-hook.php:489
 msgid "Address"
 msgstr "Адрес"
 
 #: includes/class-post-meta-job-hook.php:436
+#: templates/job-edit/job-edit-hook.php:492
+#: templates/job-submit/job-submit-hook.php:492
 #, fuzzy
 #| msgid "From Email Address."
 msgid "Write company address"
 msgstr "От адреса электронной почты."
 
 #: includes/class-post-meta-job-hook.php:458
+#: templates/job-edit/job-edit-hook.php:511
+#: templates/job-submit/job-submit-hook.php:509
 #, fuzzy
 #| msgid "Company Website"
 msgid "Company website"
 msgstr "Веб-сайт компании"
 
 #: includes/class-post-meta-job-hook.php:459
+#: templates/job-edit/job-edit-hook.php:514
+#: templates/job-submit/job-submit-hook.php:512
 #, fuzzy
 #| msgid "Company Website"
 msgid "Write company website"
 msgstr "Веб-сайт компании"
 
-#: includes/class-post-meta-job-hook.php:484
+#: includes/class-post-meta-job-hook.php:503
+#: templates/job-edit/job-edit-hook.php:539
+#: templates/job-submit/job-submit-hook.php:529
 #, fuzzy
 #| msgid "Company Logo"
 msgid "Company logo"
 msgstr "Логотип компании"
 
-#: includes/class-post-meta-job-hook.php:485
+#: includes/class-post-meta-job-hook.php:504
+#: templates/job-edit/job-edit-hook.php:549
+#: templates/job-submit/job-submit-hook.php:539
 #, fuzzy
 #| msgid "Upload company logo."
 msgid "Upload company logo"
 msgstr "Загрузить логотип компании."
 
-#: includes/class-post-meta-job-hook.php:514
+#: includes/class-post-meta-job-hook.php:533
 msgid "Job status"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:515
+#: includes/class-post-meta-job-hook.php:534
 msgid "Select job status."
 msgstr "Выберите статус вакансии"
 
-#: includes/class-post-meta-job-hook.php:540
+#: includes/class-post-meta-job-hook.php:559
 msgid "Featured job"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:541
+#: includes/class-post-meta-job-hook.php:560
 #, fuzzy
 #| msgid "Choose job type."
 msgid "Choose job as featured"
 msgstr "Выберите тип вакансии."
 
-#: includes/class-post-meta-job-hook.php:545
+#: includes/class-post-meta-job-hook.php:564
 #: includes/functions/functions-settings.php:256
 #: includes/functions/functions-settings.php:271
 #: includes/functions/functions-settings.php:396
@@ -696,8 +754,8 @@ msgstr "Выберите тип вакансии."
 #: includes/functions/functions-settings.php:597
 #: includes/functions/functions-settings.php:749
 #: includes/functions/functions-settings.php:1034
-#: includes/functions/functions-settings.php:1178
-#: includes/functions/functions-settings.php:1192
+#: includes/functions/functions-settings.php:1382
+#: includes/functions/functions-settings.php:1396
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -705,7 +763,7 @@ msgstr "Выберите тип вакансии."
 msgid "No"
 msgstr "Нет"
 
-#: includes/class-post-meta-job-hook.php:545
+#: includes/class-post-meta-job-hook.php:564
 #: includes/functions/functions-settings.php:256
 #: includes/functions/functions-settings.php:271
 #: includes/functions/functions-settings.php:396
@@ -717,8 +775,8 @@ msgstr "Нет"
 #: includes/functions/functions-settings.php:597
 #: includes/functions/functions-settings.php:748
 #: includes/functions/functions-settings.php:1034
-#: includes/functions/functions-settings.php:1178
-#: includes/functions/functions-settings.php:1192
+#: includes/functions/functions-settings.php:1382
+#: includes/functions/functions-settings.php:1396
 #: includes/functions/functions-welcome.php:117
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
@@ -726,11 +784,11 @@ msgstr "Нет"
 msgid "Yes"
 msgstr "Да"
 
-#: includes/class-post-meta-job-hook.php:571
+#: includes/class-post-meta-job-hook.php:590
 msgid "Expiry date"
 msgstr ""
 
-#: includes/class-post-meta-job-hook.php:572
+#: includes/class-post-meta-job-hook.php:591
 #, fuzzy
 #| msgid "Job expiry date"
 msgid "Choose custom job expiry date"
@@ -903,7 +961,7 @@ msgstr "Настройки"
 msgid "Welcome"
 msgstr "добро пожаловать"
 
-#: includes/class-settings.php:35
+#: includes/class-settings.php:33
 msgid "Add-ons"
 msgstr ""
 
@@ -1647,44 +1705,44 @@ msgstr "Актуально до:"
 msgid "Set custom value for expire in."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1164
+#: includes/functions/functions-settings.php:1368
 #, fuzzy
 #| msgid "Job posting last 7 days."
 msgid "Job application settings"
 msgstr "Работа проводки за последние 7 дней."
 
-#: includes/functions/functions-settings.php:1165
+#: includes/functions/functions-settings.php:1369
 #, fuzzy
 #| msgid " - Emails Templates"
 msgid "Customize job application settings."
 msgstr "- Шаблоны сообщений электронной почты"
 
-#: includes/functions/functions-settings.php:1172
+#: includes/functions/functions-settings.php:1376
 msgid "Login required for application"
 msgstr ""
 
-#: includes/functions/functions-settings.php:1173
+#: includes/functions/functions-settings.php:1377
 msgid "Login is required or not for submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1186
+#: includes/functions/functions-settings.php:1390
 #, fuzzy
 #| msgid "Enable apply methods"
 msgid "Enable recaptcha"
 msgstr "Включить применять методы"
 
-#: includes/functions/functions-settings.php:1187
+#: includes/functions/functions-settings.php:1391
 msgid "Enable recaptcha on submit application."
 msgstr ""
 
-#: includes/functions/functions-settings.php:1201
+#: includes/functions/functions-settings.php:1405
 #: includes/functions/functions-welcome.php:185
 #, fuzzy
 #| msgid "Application Info"
 msgid "Application methods"
 msgstr "Информация о заявке"
 
-#: includes/functions/functions-settings.php:1202
+#: includes/functions/functions-settings.php:1406
 #: includes/functions/functions-welcome.php:186
 #, fuzzy
 #| msgid "Application Info"
@@ -1740,6 +1798,18 @@ msgstr "Работа удаляется."
 #: includes/functions/functions.php:239
 msgid "Something going wrong."
 msgstr "Что-то происходит не так."
+
+#: includes/menu/addons.php:13
+#, fuzzy
+#| msgid " - Addons"
+msgid "Ready Add-ons"
+msgstr "- плагины"
+
+#: includes/menu/addons.php:33
+#, fuzzy
+#| msgid "Add more"
+msgid "Read more"
+msgstr "Добавить больше"
 
 #: includes/menu/help.php:27
 msgid "Ask any question"
@@ -1873,21 +1943,21 @@ msgstr "Вы не имеете права редактировать эту ра
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:76
+#: templates/application-single/application-single-hook.php:75
 msgid "This is preview of application, please do not share link."
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:89
+#: templates/application-single/application-single-hook.php:88
 msgid "Sorry! you dont have permission to access this application."
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:127
+#: templates/application-single/application-single-hook.php:126
 #: templates/applications/applications.php:243
 #: templates/my-applications/my-applications.php:205
 msgid "Anonymous"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:128
+#: templates/application-single/application-single-hook.php:127
 #: templates/applications/applications.php:244
 #: templates/my-applications/my-applications.php:210
 #, fuzzy
@@ -1895,12 +1965,12 @@ msgstr ""
 msgid "Hired"
 msgstr "Истекший"
 
-#: templates/application-single/application-single-hook.php:128
+#: templates/application-single/application-single-hook.php:127
 #: templates/applications/applications.php:244
 msgid "Hire"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:186
+#: templates/application-single/application-single-hook.php:185
 #: templates/applications/applications.php:254
 #: templates/my-applications/my-applications.php:216
 #, fuzzy
@@ -1908,20 +1978,20 @@ msgstr ""
 msgid "Application ID."
 msgstr "Заявка"
 
-#: templates/application-single/application-single-hook.php:190
+#: templates/application-single/application-single-hook.php:189
 #: templates/applications/applications.php:258
 #: templates/my-applications/my-applications.php:220
 msgid "Comments"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:193
+#: templates/application-single/application-single-hook.php:192
 #: templates/applications/applications.php:261
 #, fuzzy
 #| msgid "Settings"
 msgid "Ratings"
 msgstr "Настройки"
 
-#: templates/application-single/application-single-hook.php:216
+#: templates/application-single/application-single-hook.php:215
 #: templates/applications/applications.php:284
 #: templates/my-applications/my-applications.php:247
 #, fuzzy
@@ -1929,44 +1999,44 @@ msgstr "Настройки"
 msgid "Conversations"
 msgstr "Генеральные опции"
 
-#: templates/application-single/application-single-hook.php:257
+#: templates/application-single/application-single-hook.php:256
 #: templates/applications/applications.php:319
 #: templates/my-applications/my-applications.php:283
 msgid "No reply yet. "
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:266
+#: templates/application-single/application-single-hook.php:265
 #: templates/applications/applications.php:328
 #: templates/my-applications/my-applications.php:293
 msgid "Write a reply"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:280
+#: templates/application-single/application-single-hook.php:279
 #: templates/applications/applications.php:342
 #: templates/my-applications/my-applications.php:308
-#: templates/registration-form/registration-form-hook.php:45
+#: templates/registration-form/registration-form-hook.php:14
 msgid "Email"
 msgstr "Email"
 
-#: templates/application-single/application-single-hook.php:284
+#: templates/application-single/application-single-hook.php:283
 #: templates/applications/applications.php:346
 #: templates/my-applications/my-applications.php:312
 msgid "Attachment"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:288
+#: templates/application-single/application-single-hook.php:287
 #: templates/applications/applications.php:350
 #: templates/my-applications/my-applications.php:316
 msgid "Resume"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:293
+#: templates/application-single/application-single-hook.php:292
 #: templates/applications/applications.php:355
 #: templates/my-applications/my-applications.php:321
 msgid "Date"
 msgstr ""
 
-#: templates/application-single/application-single-hook.php:294
+#: templates/application-single/application-single-hook.php:293
 #: templates/applications/applications.php:356
 #: templates/my-applications/my-applications.php:322
 msgid "Job link"
@@ -2095,20 +2165,20 @@ msgstr "Редактировать %s"
 msgid "%s has trashed job"
 msgstr ""
 
-#: templates/job-archive/job-archive-hook.php:44
+#: templates/job-archive/job-archive-hook.php:49
 #, fuzzy
 #| msgid "Keyword:"
 msgid "Keyword"
 msgstr "Ключевое слово:"
 
-#: templates/job-archive/job-archive-hook.php:76
+#: templates/job-archive/job-archive-hook.php:81
 #: templates/job-edit/job-edit-hook.php:615
 #: templates/job-single/job-single-hook.php:595
 #: templates/job-submit/job-submit-hook.php:605
 msgid "Submit"
 msgstr "Отправить"
 
-#: templates/job-archive/job-archive-hook.php:172
+#: templates/job-archive/job-archive-hook.php:182
 #: templates/job-single/job-single-hook.php:74
 #, fuzzy, php-format
 #| msgid "Post Per Page"
@@ -2163,7 +2233,7 @@ msgid "Username or email address"
 msgstr "Имя пользователя или адрес электронной почты"
 
 #: templates/job-dashboard/job-dashboard-hook.php:294
-#: templates/registration-form/registration-form-hook.php:28
+#: templates/registration-form/registration-form-hook.php:44
 msgid "Password"
 msgstr "Пароль"
 
@@ -2174,6 +2244,60 @@ msgstr "Запомни меня"
 #: templates/job-dashboard/job-dashboard-hook.php:296
 msgid "Log In"
 msgstr "Авторизоваться"
+
+#: templates/job-edit/job-edit-hook.php:17
+#: templates/job-submit/job-submit-hook.php:16
+#, fuzzy
+#| msgid "Job Title"
+msgid "Job title"
+msgstr "Название работы"
+
+#: templates/job-edit/job-edit-hook.php:20
+#: templates/job-submit/job-submit-hook.php:19
+#, fuzzy
+#| msgid "Contact email"
+msgid "Write your job title"
+msgstr "Почта для связи "
+
+#: templates/job-edit/job-edit-hook.php:43
+#: templates/job-submit/job-submit-hook.php:40
+#, fuzzy
+#| msgid "Job Descriptions"
+msgid "Job description"
+msgstr "Должностные инструкции"
+
+#: templates/job-edit/job-edit-hook.php:53
+#: templates/job-submit/job-submit-hook.php:50
+#, fuzzy
+#| msgid "Contact email"
+msgid "Write your job details."
+msgstr "Почта для связи "
+
+#: templates/job-edit/job-edit-hook.php:92
+#: templates/job-submit/job-submit-hook.php:90
+#, fuzzy
+#| msgid "Job Category"
+msgid "Job category"
+msgstr "Тип деятельности"
+
+#: templates/job-edit/job-edit-hook.php:109
+#: templates/job-submit/job-submit-hook.php:107
+#, fuzzy
+#| msgid "Select Job Category."
+msgid "Select job category."
+msgstr "Выберите отрасль"
+
+#: templates/job-edit/job-edit-hook.php:471
+#, fuzzy
+#| msgid "From Email Address."
+msgid "Write company location"
+msgstr "От адреса электронной почты."
+
+#: templates/job-edit/job-edit-hook.php:578
+#: templates/job-single/job-single-hook.php:580
+#: templates/job-submit/job-submit-hook.php:568
+msgid "Please prove you are human."
+msgstr ""
 
 #: templates/job-edit/job-edit-hook.php:651
 #: templates/job-submit/job-submit-hook.php:641
@@ -2236,13 +2360,13 @@ msgstr ""
 
 #: templates/job-edit/job-edit-hook.php:714
 #: templates/job-submit/job-submit-hook.php:704
-#: templates/registration-form/registration-form-hook.php:132
+#: templates/registration-form/registration-form-hook.php:159
 msgid "ERROR: reCaptcha test failed."
 msgstr ""
 
 #: templates/job-edit/job-edit-hook.php:720
 #: templates/job-submit/job-submit-hook.php:715
-#: templates/registration-form/registration-form-hook.php:139
+#: templates/registration-form/registration-form-hook.php:166
 msgid "ERROR: security test failed."
 msgstr ""
 
@@ -2522,66 +2646,82 @@ msgstr "Уровень работы:"
 msgid "Applications:"
 msgstr "Заявка"
 
-#: templates/registration-form/registration-form-hook.php:13
+#: templates/registration-form/registration-form-hook.php:29
 msgid "Username"
 msgstr "Имя пользователя"
 
-#: templates/registration-form/registration-form-hook.php:92
+#: templates/registration-form/registration-form-hook.php:62
+msgid "Join as"
+msgstr ""
+
+#: templates/registration-form/registration-form-hook.php:64
+#, fuzzy
+#| msgid "Job Post"
+msgid "Job Poster"
+msgstr "Работа сообщение"
+
+#: templates/registration-form/registration-form-hook.php:66
+#, fuzzy
+#| msgid "Job Deleted."
+msgid "Job Seeker"
+msgstr "Работа удаляется."
+
+#: templates/registration-form/registration-form-hook.php:119
 #, fuzzy
 #| msgid "Application"
 msgid "ERROR: username is empty."
 msgstr "Заявка"
 
-#: templates/registration-form/registration-form-hook.php:96
+#: templates/registration-form/registration-form-hook.php:123
 #, fuzzy
 #| msgid "Username too short. At least 4 characters is required"
 msgid "ERROR: At least 4 characters is required"
 msgstr ""
 "Имя пользователя слишком короткое. По крайней мере, 4-х символов требуется"
 
-#: templates/registration-form/registration-form-hook.php:100
+#: templates/registration-form/registration-form-hook.php:127
 #, fuzzy
 #| msgid "Sorry, that username already exists!"
 msgid "ERROR: username already exists!"
 msgstr "К сожалению, это имя пользователя уже существует!"
 
-#: templates/registration-form/registration-form-hook.php:103
+#: templates/registration-form/registration-form-hook.php:130
 #, fuzzy
 #| msgid "Email is not valid"
 msgid "ERROR: username is not valid"
 msgstr "Email не является допустимым"
 
-#: templates/registration-form/registration-form-hook.php:108
+#: templates/registration-form/registration-form-hook.php:135
 #, fuzzy
 #| msgid "Application"
 msgid "ERROR: password is empty."
 msgstr "Заявка"
 
-#: templates/registration-form/registration-form-hook.php:112
+#: templates/registration-form/registration-form-hook.php:139
 #, fuzzy
 #| msgid "Password length must be greater than 5"
 msgid "ERROR: Password length must be greater than 5"
 msgstr "Длина пароля должна быть больше 5"
 
-#: templates/registration-form/registration-form-hook.php:118
+#: templates/registration-form/registration-form-hook.php:145
 #, fuzzy
 #| msgid "Contact email"
 msgid "ERROR: email is empty."
 msgstr "Почта для связи "
 
-#: templates/registration-form/registration-form-hook.php:122
+#: templates/registration-form/registration-form-hook.php:149
 #, fuzzy
 #| msgid "Email is not valid"
 msgid "ERROR: Email is not valid"
 msgstr "Email не является допустимым"
 
-#: templates/registration-form/registration-form-hook.php:126
+#: templates/registration-form/registration-form-hook.php:153
 #, fuzzy
 #| msgid "Email Already in use"
 msgid "ERROR: Email Already in use"
 msgstr "Этот электронный адрес уже занят"
 
-#: templates/registration-form/registration-form-hook.php:204
+#: templates/registration-form/registration-form-hook.php:233
 msgid "Thanks for creating account."
 msgstr ""
 
@@ -2677,17 +2817,11 @@ msgstr ""
 #~ msgid "Download"
 #~ msgstr "Скачать"
 
-#~ msgid " - Addons"
-#~ msgstr "- плагины"
-
 #~ msgid " - Emails Templates"
 #~ msgstr "- Шаблоны сообщений электронной почты"
 
 #~ msgid "Reset"
 #~ msgstr "Сброс"
-
-#~ msgid "Job Post"
-#~ msgstr "Работа сообщение"
 
 #~ msgid "Nothing to Save"
 #~ msgstr "Ничто не сэкономить"
@@ -2706,14 +2840,8 @@ msgstr ""
 #~ msgid "Write awesome title here"
 #~ msgstr "Написать удивительное название здесь"
 
-#~ msgid "Job Title"
-#~ msgstr "Название работы"
-
 #~ msgid "Job title here"
 #~ msgstr "Должность"
-
-#~ msgid "Job Descriptions"
-#~ msgstr "Должностные инструкции"
 
 #~ msgid "Write job descriptions here"
 #~ msgstr "Описания должностных функций;"
@@ -2723,9 +2851,6 @@ msgstr ""
 
 #~ msgid "Job Featured Image, uplaod single image only"
 #~ msgstr "Рекомендуемое одно изображение"
-
-#~ msgid "Select Job Category."
-#~ msgstr "Выберите отрасль"
 
 #~ msgid "Job Information details."
 #~ msgstr "Детальнее"
@@ -3030,9 +3155,6 @@ msgstr ""
 
 #~ msgid "Remove"
 #~ msgstr "Удалить"
-
-#~ msgid "Add more"
-#~ msgstr "Добавить больше"
 
 #~ msgid "Drop files here"
 #~ msgstr "Перетащите сюда файлы"

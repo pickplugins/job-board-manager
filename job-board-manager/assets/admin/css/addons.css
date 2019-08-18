@@ -4,6 +4,9 @@
 
 
 .addon-list{}
+.addon-list a{
+    text-decoration: none;
+}
 .addon-list .item{
     display: inline-block;
     width: 280px;
@@ -12,7 +15,12 @@
     background: #fff;
     margin: 15px;
     box-shadow: 0 0 3px 0px rgba(193, 193, 193, 0.5);
+    vertical-align: top;
 }
+
+.addon-list .addon-title{}
+
+
 .addon-list .thumb-wrap{
 
 }

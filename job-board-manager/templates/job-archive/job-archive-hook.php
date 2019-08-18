@@ -7,10 +7,15 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-add_action('job_bm_job_archive_loop_before', 'job_bm_job_archive_before_search');
+add_action('job_bm_job_archive_loop_before', 'job_bm_job_archive_before_search', 90, 2);
 
 if(!function_exists('job_bm_job_archive_before_search')){
-    function job_bm_job_archive_before_search($wp_query){
+    function job_bm_job_archive_before_search($wp_query, $atts){
+
+        $display_search = $atts['display_search'];
+
+
+        if($display_search == 'no') return;
 
 
         $job_bm_archive_page_id = get_option('job_bm_archive_page_id');
@@ -87,10 +92,10 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
 
 
-add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_items');
+add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_items', 90, 2);
 
 if(!function_exists('job_bm_job_archive_loop_items')):
-    function job_bm_job_archive_loop_items($job_id){
+    function job_bm_job_archive_loop_items($job_id, $atts){
 
 
         $class_job_bm_functions = new class_job_bm_functions();
@@ -205,10 +210,14 @@ endif;
 
 
 
-add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_pagination',1,90);
+add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_pagination',90, 2);
 
 if(!function_exists('job_bm_job_archive_after_pagination')){
-    function job_bm_job_archive_after_pagination($wp_query){
+    function job_bm_job_archive_after_pagination($wp_query, $atts){
+
+        $display_pagination = $atts['display_pagination'];
+
+        if($display_pagination == 'no') return;
 
         if ( get_query_var('paged') ) {$paged = get_query_var('paged');}
         elseif ( get_query_var('page') ) {$paged = get_query_var('page');}
@@ -238,10 +247,10 @@ if(!function_exists('job_bm_job_archive_after_pagination')){
 
 
 
-add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_style',1,90);
+add_action('job_bm_job_archive_loop_after', 'job_bm_job_archive_after_style',90,2);
 
 if(!function_exists('job_bm_job_archive_after_style')){
-    function job_bm_job_archive_after_style($wp_query){
+    function job_bm_job_archive_after_style($wp_query, $atts){
 
         $job_bm_featured_bg_color = get_option('job_bm_featured_bg_color');
         $job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');

@@ -55,7 +55,7 @@ function job_bm_registration_form_field_role(){
     $role = isset($_POST['role']) ? sanitize_text_field($_POST['role']) : "";
 
 
-    var_dump(get_role( 'job_manager' ));
+    //var_dump(get_role( 'job_manager' ));
 
     ?>
     <p>
