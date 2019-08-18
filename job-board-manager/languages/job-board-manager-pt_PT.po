@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-18 00:16+0600\n"
-"PO-Revision-Date: 2019-08-18 00:16+0600\n"
+"POT-Creation-Date: 2019-08-18 23:46+0600\n"
+"PO-Revision-Date: 2019-08-18 23:46+0600\n"
 "Last-Translator: \n"
 "Language-Team: pickplugins <support@pickplugins.com>\n"
 "Language: pt_PT\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
@@ -725,6 +725,7 @@ msgstr "Selecione nível de emprego"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "No"
 msgstr "Não"
 
@@ -746,6 +747,7 @@ msgstr "Não"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Yes"
 msgstr "Sim"
 
@@ -1740,17 +1742,11 @@ msgstr "Emprego Apagado."
 msgid "Something going wrong."
 msgstr "Alguma coisa correu mal."
 
-#: includes/menu/addons.php:13
+#: includes/menu/addons.php:19
 #, fuzzy
 #| msgid " - Addons"
 msgid "Ready Add-ons"
 msgstr "- Módulos adicionais"
-
-#: includes/menu/addons.php:33
-#, fuzzy
-#| msgid "Add more"
-msgid "Read more"
-msgstr "Adicionar"
 
 #: includes/menu/help.php:27
 msgid "Ask any question"
@@ -2541,6 +2537,12 @@ msgstr "Estado do Emprego"
 msgid "Featured job."
 msgstr "Vaga em Destaque"
 
+#: templates/my-jobs/my-jobs-hook.php:185
+#, fuzzy
+#| msgid "Featured:"
+msgid "Not featured"
+msgstr "Destaque:"
+
 #: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Job application"
@@ -2551,37 +2553,37 @@ msgstr "Candidatura de Emprego"
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:233
+#: templates/my-jobs/my-jobs-hook.php:238
 #, fuzzy
 #| msgid "Job id."
 msgid "Job link."
 msgstr "Identificação do Emprego."
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:240
 msgid "Published:"
 msgstr "Publicado:"
 
-#: templates/my-jobs/my-jobs-hook.php:236
+#: templates/my-jobs/my-jobs-hook.php:241
 msgid "Publish Status:"
 msgstr "Estado de Publicação:"
 
-#: templates/my-jobs/my-jobs-hook.php:237
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Featured:"
 msgstr "Destaque:"
 
-#: templates/my-jobs/my-jobs-hook.php:243
+#: templates/my-jobs/my-jobs-hook.php:248
 msgid "Job Status:"
 msgstr "Estado Emprego:"
 
-#: templates/my-jobs/my-jobs-hook.php:252
+#: templates/my-jobs/my-jobs-hook.php:257
 msgid "Job Type:"
 msgstr "Tipo de Emprego:"
 
-#: templates/my-jobs/my-jobs-hook.php:259
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Job Level:"
 msgstr "Nível de Emprego:"
 
-#: templates/my-jobs/my-jobs-hook.php:264
+#: templates/my-jobs/my-jobs-hook.php:269
 #, fuzzy
 #| msgid "Job application"
 msgid "Applications:"
@@ -2664,6 +2666,11 @@ msgstr "Este Email já está a ser utilizado"
 #: templates/registration-form/registration-form-hook.php:233
 msgid "Thanks for creating account."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Add more"
+#~ msgid "Read more"
+#~ msgstr "Adicionar"
 
 #, fuzzy
 #~| msgid "Notify email new job submit ?"

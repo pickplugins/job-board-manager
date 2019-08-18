@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-18 00:16+0600\n"
-"PO-Revision-Date: 2019-08-18 00:16+0600\n"
+"POT-Creation-Date: 2019-08-18 23:46+0600\n"
+"PO-Revision-Date: 2019-08-18 23:47+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru_RU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
@@ -760,6 +760,7 @@ msgstr "Выберите тип вакансии."
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "No"
 msgstr "Нет"
 
@@ -781,6 +782,7 @@ msgstr "Нет"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Yes"
 msgstr "Да"
 
@@ -1799,17 +1801,11 @@ msgstr "Работа удаляется."
 msgid "Something going wrong."
 msgstr "Что-то происходит не так."
 
-#: includes/menu/addons.php:13
+#: includes/menu/addons.php:19
 #, fuzzy
 #| msgid " - Addons"
 msgid "Ready Add-ons"
 msgstr "- плагины"
-
-#: includes/menu/addons.php:33
-#, fuzzy
-#| msgid "Add more"
-msgid "Read more"
-msgstr "Добавить больше"
 
 #: includes/menu/help.php:27
 msgid "Ask any question"
@@ -2600,6 +2596,12 @@ msgstr "Статус вакансии"
 msgid "Featured job."
 msgstr "Рекомендуемые вакансии"
 
+#: templates/my-jobs/my-jobs-hook.php:185
+#, fuzzy
+#| msgid "Featured:"
+msgid "Not featured"
+msgstr "Рекомендуемые:"
+
 #: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Job application"
@@ -2610,37 +2612,37 @@ msgstr "Заявка на работу"
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:233
+#: templates/my-jobs/my-jobs-hook.php:238
 #, fuzzy
 #| msgid "Job id."
 msgid "Job link."
 msgstr "ID вакансии."
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:240
 msgid "Published:"
 msgstr "Опубликовано:"
 
-#: templates/my-jobs/my-jobs-hook.php:236
+#: templates/my-jobs/my-jobs-hook.php:241
 msgid "Publish Status:"
 msgstr "Статус публикации:"
 
-#: templates/my-jobs/my-jobs-hook.php:237
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Featured:"
 msgstr "Рекомендуемые:"
 
-#: templates/my-jobs/my-jobs-hook.php:243
+#: templates/my-jobs/my-jobs-hook.php:248
 msgid "Job Status:"
 msgstr "Рабочий статус:"
 
-#: templates/my-jobs/my-jobs-hook.php:252
+#: templates/my-jobs/my-jobs-hook.php:257
 msgid "Job Type:"
 msgstr "Тип вакансии:"
 
-#: templates/my-jobs/my-jobs-hook.php:259
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Job Level:"
 msgstr "Уровень работы:"
 
-#: templates/my-jobs/my-jobs-hook.php:264
+#: templates/my-jobs/my-jobs-hook.php:269
 #, fuzzy
 #| msgid "Application"
 msgid "Applications:"
@@ -2724,6 +2726,11 @@ msgstr "Этот электронный адрес уже занят"
 #: templates/registration-form/registration-form-hook.php:233
 msgid "Thanks for creating account."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Add more"
+#~ msgid "Read more"
+#~ msgstr "Добавить больше"
 
 #, fuzzy
 #~| msgid "Notify email new job submit ?"

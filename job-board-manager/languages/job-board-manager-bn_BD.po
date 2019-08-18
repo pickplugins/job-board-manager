@@ -1,20 +1,21 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
-"POT-Creation-Date: 2019-08-18 00:15+0600\n"
-"PO-Revision-Date: 2019-08-18 00:15+0600\n"
+"POT-Creation-Date: 2019-08-18 23:44+0600\n"
+"PO-Revision-Date: 2019-08-18 23:44+0600\n"
 "Last-Translator: \n"
 "Language-Team: pickplugins <support@pickplugins.com>\n"
-"Language: en\n"
+"Language: bn_BD\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
-"X-Poedit-SearchPath-0: includes\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: templates\n"
+"X-Poedit-SearchPath-2: includes\n"
 
 #: includes/class-emails.php:82
 #, fuzzy
@@ -119,8 +120,6 @@ msgid "Job edited"
 msgstr "কাজ সম্পাদনা"
 
 #: includes/class-emails.php:152
-#, fuzzy
-#| msgid "Notify email to admin when new job published."
 msgid "Notification email for admin when user edited job."
 msgstr "নতুন কাজ প্রকাশ হলে এডমিন কে মেইল করুন"
 
@@ -302,10 +301,9 @@ msgid "None"
 msgstr "কোনটি নয়"
 
 #: includes/class-functions.php:99
-#, fuzzy, php-format
-#| msgid "By Email"
+#, php-format
 msgid "%s By Email"
-msgstr "ইমেইল"
+msgstr "%s ইমেইল এর মাধ্যমে"
 
 #: includes/class-functions.php:178 includes/class-post-types.php:28
 msgid "Jobs"
@@ -716,6 +714,7 @@ msgstr "কাজের লেভেল নির্বাচন করুন"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "No"
 msgstr "না"
 
@@ -737,6 +736,7 @@ msgstr "না"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Yes"
 msgstr "হা"
 
@@ -1735,17 +1735,11 @@ msgstr "কাজটি মুছে ফেলা হয়েছে"
 msgid "Something going wrong."
 msgstr "কিছু একটা ভুল দেখাচ্ছে"
 
-#: includes/menu/addons.php:13
+#: includes/menu/addons.php:19
 #, fuzzy
 #| msgid " - Addons"
 msgid "Ready Add-ons"
 msgstr "- এডওন্স"
-
-#: includes/menu/addons.php:33
-#, fuzzy
-#| msgid "Load more"
-msgid "Read more"
-msgstr "আরো দেখান"
 
 #: includes/menu/help.php:27
 msgid "Ask any question"
@@ -1881,6 +1875,18 @@ msgstr "এই কাজ সম্পাদন করার অধিকার �
 #, php-format
 msgid "Please <a href=\"%s\">login</a> to submit job."
 msgstr "কাজ জমা দানের জন্যে <a href=\"%s\">লগিন</a> করুন"
+
+#: job-board-manager.php:27
+#, fuzzy
+#| msgid "Job Board Manager - Create a job."
+msgid "Job Board Manager"
+msgstr "Job Board Manager - নতুন কাজ তৈরি করুন"
+
+#: job-board-manager.php:128
+#, fuzzy
+#| msgid "#General Options"
+msgid "General jobs."
+msgstr "# সাধারন অপশন"
 
 #: templates/application-single/application-single-hook.php:75
 msgid "This is preview of application, please do not share link."
@@ -2185,22 +2191,16 @@ msgstr "লগিন"
 
 #: templates/job-edit/job-edit-hook.php:17
 #: templates/job-submit/job-submit-hook.php:16
-#, fuzzy
-#| msgid "Job Title"
 msgid "Job title"
 msgstr "কাজের শিরোনাম"
 
 #: templates/job-edit/job-edit-hook.php:20
 #: templates/job-submit/job-submit-hook.php:19
-#, fuzzy
-#| msgid "Contact email"
 msgid "Write your job title"
 msgstr "যোগাযোগ ইমেইল"
 
 #: templates/job-edit/job-edit-hook.php:43
 #: templates/job-submit/job-submit-hook.php:40
-#, fuzzy
-#| msgid "Job Descriptions"
 msgid "Job description"
 msgstr "কাজের বিবরণ"
 
@@ -2213,21 +2213,15 @@ msgstr "যোগাযোগ ইমেইল"
 
 #: templates/job-edit/job-edit-hook.php:92
 #: templates/job-submit/job-submit-hook.php:90
-#, fuzzy
-#| msgid "Job Category"
 msgid "Job category"
 msgstr "কাজের বিভাগ"
 
 #: templates/job-edit/job-edit-hook.php:109
 #: templates/job-submit/job-submit-hook.php:107
-#, fuzzy
-#| msgid "Select Job Category."
 msgid "Select job category."
 msgstr "কাজের বিভাগ নির্বাচন করুন"
 
 #: templates/job-edit/job-edit-hook.php:471
-#, fuzzy
-#| msgid "Username or email address"
 msgid "Write company location"
 msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
 
@@ -2427,43 +2421,39 @@ msgstr "ব্যবহার কারীগন কাজ মুছে দি�
 
 #: templates/job-single/job-single-hook.php:547
 msgid "Your name"
-msgstr ""
+msgstr "আপনার নাম"
 
 #: templates/job-single/job-single-hook.php:550
 msgid "Write your name"
-msgstr ""
+msgstr "আপনার নাম লিখুন"
 
 #: templates/job-single/job-single-hook.php:555
-#, fuzzy
-#| msgid "Contact email"
 msgid "Your email"
-msgstr "যোগাযোগ ইমেইল"
+msgstr "আপনার ইমেইল"
 
 #: templates/job-single/job-single-hook.php:558
-#, fuzzy
-#| msgid "Username or email address"
 msgid "Write your email address"
-msgstr "ইউসারনেম অথবা ইমেইল এড্রেস"
+msgstr "আপনার ইমেল ঠিকানা লিখুন"
 
 #: templates/job-single/job-single-hook.php:563
 msgid "Message"
-msgstr ""
+msgstr "বার্তা"
 
 #: templates/job-single/job-single-hook.php:567
 msgid "Write your message"
-msgstr ""
+msgstr "আপনার বার্তা লিখুন"
 
 #: templates/job-submit/job-submit-hook.php:326
 msgid "50000"
-msgstr ""
+msgstr "৫০০০০"
 
 #: templates/job-submit/job-submit-hook.php:346
 msgid "5000"
-msgstr ""
+msgstr "৫০০০"
 
 #: templates/job-submit/job-submit-hook.php:367
 msgid "10000"
-msgstr ""
+msgstr "১০০০০"
 
 #: templates/job-submit/job-submit-hook.php:387
 msgid "$"
@@ -2509,7 +2499,7 @@ msgstr "সম্পাদনা %s"
 #: templates/my-jobs/my-jobs-hook.php:17
 #, php-format
 msgid "%s Add Job"
-msgstr ""
+msgstr "%s কাজ দিন"
 
 #: templates/my-jobs/my-jobs-hook.php:121
 #, fuzzy, php-format
@@ -2545,6 +2535,12 @@ msgstr "কাজের অবস্থা"
 msgid "Featured job."
 msgstr "ফিচার্ড কাজ"
 
+#: templates/my-jobs/my-jobs-hook.php:185
+#, fuzzy
+#| msgid "Featured:"
+msgid "Not featured"
+msgstr "ফিচার্ডঃ"
+
 #: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Job application"
@@ -2555,37 +2551,37 @@ msgstr "জব আবেদন"
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:233
+#: templates/my-jobs/my-jobs-hook.php:238
 #, fuzzy
 #| msgid "Job id."
 msgid "Job link."
 msgstr "কাজের নাম্বার"
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:240
 msgid "Published:"
 msgstr "প্রকাশিতঃ"
 
-#: templates/my-jobs/my-jobs-hook.php:236
+#: templates/my-jobs/my-jobs-hook.php:241
 msgid "Publish Status:"
 msgstr "প্রকাশ অবস্থাঃ"
 
-#: templates/my-jobs/my-jobs-hook.php:237
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Featured:"
 msgstr "ফিচার্ডঃ"
 
-#: templates/my-jobs/my-jobs-hook.php:243
+#: templates/my-jobs/my-jobs-hook.php:248
 msgid "Job Status:"
 msgstr "কাজের অবস্থাঃ"
 
-#: templates/my-jobs/my-jobs-hook.php:252
+#: templates/my-jobs/my-jobs-hook.php:257
 msgid "Job Type:"
 msgstr "কাজের ধরন"
 
-#: templates/my-jobs/my-jobs-hook.php:259
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Job Level:"
 msgstr "কাজের লেভেলঃ"
 
-#: templates/my-jobs/my-jobs-hook.php:264
+#: templates/my-jobs/my-jobs-hook.php:269
 #, fuzzy
 #| msgid "Application"
 msgid "Applications:"
@@ -2597,19 +2593,15 @@ msgstr "ইউসারনেম"
 
 #: templates/registration-form/registration-form-hook.php:62
 msgid "Join as"
-msgstr ""
+msgstr "যেভাবে যোগ দিতে চান"
 
 #: templates/registration-form/registration-form-hook.php:64
-#, fuzzy
-#| msgid "Job Post"
 msgid "Job Poster"
-msgstr "কাজ প্রকাশ"
+msgstr "কাজ দাতা"
 
 #: templates/registration-form/registration-form-hook.php:66
-#, fuzzy
-#| msgid "Job Deleted."
 msgid "Job Seeker"
-msgstr "কাজটি মুছে ফেলা হয়েছে"
+msgstr "কাজ প্রার্থী"
 
 #: templates/registration-form/registration-form-hook.php:119
 #, fuzzy
@@ -2668,6 +2660,11 @@ msgstr "ইমেইল আগেই ব্যবহার করা হয়ে�
 #: templates/registration-form/registration-form-hook.php:233
 msgid "Thanks for creating account."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Load more"
+#~ msgid "Read more"
+#~ msgstr "আরো দেখান"
 
 #, fuzzy
 #~| msgid "Application"
@@ -3266,9 +3263,6 @@ msgstr ""
 
 #~ msgid "Step 1: Save Options"
 #~ msgstr "ধাপ ১ - সাধারন অপশন"
-
-#~ msgid "#General Options"
-#~ msgstr "# সাধারন অপশন"
 
 #~ msgid "Step 2: Create Pages"
 #~ msgstr "ধাপ ২ - পেজ তৈরী করুন"

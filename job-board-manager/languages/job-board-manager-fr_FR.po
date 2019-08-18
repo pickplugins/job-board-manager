@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Job Board Manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-18 00:15+0600\n"
-"PO-Revision-Date: 2019-08-18 00:15+0600\n"
+"POT-Creation-Date: 2019-08-18 23:45+0600\n"
+"PO-Revision-Date: 2019-08-18 23:45+0600\n"
 "Last-Translator: Amaury <amaury.bargibant@premiumpeers.com>\n"
 "Language-Team: French (France)\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
@@ -751,6 +751,7 @@ msgstr "Choisissez votre type de mission"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "No"
 msgstr "Non"
 
@@ -772,6 +773,7 @@ msgstr "Non"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Yes"
 msgstr "Oui"
 
@@ -1814,17 +1816,11 @@ msgstr "Mission supprimée."
 msgid "Something going wrong."
 msgstr "Une erreur s'est produite."
 
-#: includes/menu/addons.php:13
+#: includes/menu/addons.php:19
 #, fuzzy
 #| msgid " - Addons"
 msgid "Ready Add-ons"
 msgstr "- Addons"
-
-#: includes/menu/addons.php:33
-#, fuzzy
-#| msgid "Load more"
-msgid "Read more"
-msgstr "Afficher plus"
 
 #: includes/menu/help.php:27
 msgid "Ask any question"
@@ -2633,6 +2629,12 @@ msgstr "Statut de la mission"
 msgid "Featured job."
 msgstr "Mission mise en avant"
 
+#: templates/my-jobs/my-jobs-hook.php:185
+#, fuzzy
+#| msgid "Featured:"
+msgid "Not featured"
+msgstr "Mise en avant :"
+
 #: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Job application"
@@ -2643,37 +2645,37 @@ msgstr "Candidatures"
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:233
+#: templates/my-jobs/my-jobs-hook.php:238
 #, fuzzy
 #| msgid "Job link"
 msgid "Job link."
 msgstr "Lien vers la mission"
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:240
 msgid "Published:"
 msgstr "Publiée :"
 
-#: templates/my-jobs/my-jobs-hook.php:236
+#: templates/my-jobs/my-jobs-hook.php:241
 msgid "Publish Status:"
 msgstr "Statut de publication :"
 
-#: templates/my-jobs/my-jobs-hook.php:237
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Featured:"
 msgstr "Mise en avant :"
 
-#: templates/my-jobs/my-jobs-hook.php:243
+#: templates/my-jobs/my-jobs-hook.php:248
 msgid "Job Status:"
 msgstr "Statut de la mission : "
 
-#: templates/my-jobs/my-jobs-hook.php:252
+#: templates/my-jobs/my-jobs-hook.php:257
 msgid "Job Type:"
 msgstr "Type de mission : "
 
-#: templates/my-jobs/my-jobs-hook.php:259
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Job Level:"
 msgstr "Niveau de la mission : "
 
-#: templates/my-jobs/my-jobs-hook.php:264
+#: templates/my-jobs/my-jobs-hook.php:269
 #, fuzzy
 #| msgid "Application"
 msgid "Applications:"
@@ -2756,6 +2758,11 @@ msgstr "Adresse email déjà utilisée"
 #: templates/registration-form/registration-form-hook.php:233
 msgid "Thanks for creating account."
 msgstr ""
+
+#, fuzzy
+#~| msgid "Load more"
+#~ msgid "Read more"
+#~ msgstr "Afficher plus"
 
 #, fuzzy
 #~| msgid "Notify email new job submit ?"

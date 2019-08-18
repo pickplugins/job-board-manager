@@ -577,7 +577,7 @@ function job_bm_application_methods_form_direct_email($job_id){
                 <div class="field-input">
                     <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
                     <script src="https://www.google.com/recaptcha/api.js"></script>
-                    <p class="field-details"><?php esc_html_e('Please prove you are human.','job-board-manager'); ?></p>
+                    <p class="field-details"><?php _e('Please prove you are human.','job-board-manager'); ?></p>
 
                 </div>
             </div>
@@ -592,7 +592,7 @@ function job_bm_application_methods_form_direct_email($job_id){
         <div class="form-field-wrap">
             <div class="field-title"></div>
             <div class="field-input">
-                <input placeholder="" type="submit"  name="<?php echo __('Submit','job-board-manager'); ?>">
+                <input placeholder="" type="submit"  value="<?php echo __('Submit','job-board-manager'); ?>">
                 <p class="field-details"></p>
             </div>
         </div>

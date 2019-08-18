@@ -91,6 +91,9 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                 . "\n";
         }
     }
+
+
+
     foreach ($pluginSlugs as $pluginSlug) {
         sswInstallActivatePlugin($pluginSlug);
     }

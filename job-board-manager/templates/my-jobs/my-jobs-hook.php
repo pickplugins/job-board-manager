@@ -14,7 +14,7 @@ if(!function_exists('job_bm_my_jobs_title')):
         ?>
             <div class="nav-head">
                 <?php echo __('My Jobs', 'job-board-manager'); ?>
-                <a target="_blank" title="<?php echo __('Add Job', 'job-board-manager'); ?>" class="add-job" href="<?php echo $job_bm_job_submit_page_url; ?>"><?php echo sprintf(__('%s Add Job'),'<i class="far fa-plus-square"></i>')?></a>
+                <a target="_blank" title="<?php echo __('Add Job', 'job-board-manager'); ?>" class="add-job" href="<?php echo $job_bm_job_submit_page_url; ?>"><?php echo sprintf(__('%s Add Job', 'job-board-manager'),'<i class="far fa-plus-square"></i>')?></a>
             </div>
         <?php
 
@@ -182,7 +182,7 @@ if(!function_exists('job_bm_my_jobs_loop_header')){
                 <span class="job-id" title="<?php echo __('Job id.', 'job-board-manager'); ?>">#<?php echo $job_id; ?></span>
                 <a class="job-edit" title="<?php echo __('Job edit.', 'job-board-manager'); ?>" href="<?php echo $job_bm_job_edit_page_url; ?>?job_id=<?php echo $job_id; ?>" target="_blank"><i class="fas fa-pencil-alt"></i></a>
                 <span class="job-delete delete-job" job-id="<?php echo $job_id; ?>" title="<?php echo __('Job trash.', 'job-board-manager'); ?>"><i class="far fa-trash-alt"></i></span>
-                <span class="job-featured <?php echo $featured_class; ?>" title="<?php echo ($featured=='yes') ?  __('Featured job.', 'job-board-manager') : 'Not featured'; ?>"><i class="fas fa-star"></i></span>
+                <span class="job-featured <?php echo $featured_class; ?>" title="<?php echo ($featured=='yes') ?  __('Featured job.', 'job-board-manager') : __('Not featured', 'job-board-manager'); ?>"><i class="fas fa-star"></i></span>
                 <span class="job-application" title="<?php echo __('Total application.', 'job-board-manager'); ?>"><i class="fas fa-user-clock"></i> <?php echo $application_count; ?></span>
                 <span class="job-hired" title="<?php echo __('Total hired.', 'job-board-manager'); ?>"><i class="fas fa-user-tie"></i> <?php echo $application_hired_count; ?></span>
 
@@ -227,14 +227,19 @@ if(!function_exists('job_bm_my_jobs_loop_body')){
         $job_type       = get_post_meta($job_id, 'job_bm_job_type',true);
         $job_label = get_post_meta($job_id, 'job_bm_job_level',true);
 
+        $get_post_stati = get_post_statuses();
+
+        //var_dump($get_post_stati);
+
+
         ?>
         <div class="card-body">
 
             <a title="<?php echo __('Job link.', 'job-board-manager'); ?>" class="job-link meta" href="<?php echo get_permalink($job_id); ?>"><i class="fas fa-external-link-square-alt"></i> <?php echo $job_title; ?></a>
 
             <span class="post-date meta"><b><?php echo __('Published:', 'job-board-manager'); ?></b> <?php echo date_i18n($date_format,strtotime($post_date)); ?></span>
-            <span class="publish-status meta"><b><?php echo __('Publish Status:', 'job-board-manager'); ?></b> <?php echo $publish_status; ?></span>
-            <span class="featured meta"><b><?php echo __('Featured:', 'job-board-manager'); ?></b> <?php echo $featured; ?></span>
+            <span class="publish-status meta"><b><?php echo __('Publish Status:', 'job-board-manager'); ?></b> <?php echo $get_post_stati[$publish_status]; ?></span>
+            <span class="featured meta"><b><?php echo __('Featured:', 'job-board-manager'); ?></b> <?php if($featured == 'yes'){echo __('Yes', 'job-board-manager'); }  else{ echo __('No', 'job-board-manager'); } ?></span>
             <?php
 
 

@@ -14,10 +14,10 @@ function job_bm_job_edit_form_title($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Job title','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Job title','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="" type="text" value="<?php echo $post_title; ?>" name="post_title">
-            <p class="field-details"><?php esc_html_e('Write your job title','job-board-manager');
+            <p class="field-details"><?php _e('Write your job title','job-board-manager');
             ?></p>
         </div>
     </div>
@@ -40,7 +40,7 @@ function job_bm_job_edit_form_content($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Job description','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Job description','job-board-manager'); ?></div>
         <div class="field-input">
             <?php
             ob_start();
@@ -50,7 +50,7 @@ function job_bm_job_edit_form_content($job_id){
 
             ?>
 
-            <p class="field-details"><?php esc_html_e('Write your job details.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Write your job details.','job-board-manager'); ?></p>
 
         </div>
     </div>
@@ -89,7 +89,7 @@ function job_bm_job_edit_form_categories($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Job category','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Job category','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_category">
                 <?php
@@ -106,7 +106,7 @@ function job_bm_job_edit_form_categories($job_id){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select job category.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Select job category.','job-board-manager'); ?></p>
 
         </div>
     </div>
@@ -154,10 +154,10 @@ function job_bm_job_edit_form_total_vacancies($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Total vacancies','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Total vacancies','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="3" type="text" value="<?php echo $job_bm_total_vacancies; ?>" name="job_bm_total_vacancies">
-            <p class="field-details"><?php esc_html_e('Total number of vacancies','job-board-manager');
+            <p class="field-details"><?php _e('Total number of vacancies','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -182,7 +182,7 @@ function job_bm_job_edit_form_job_type($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Job type','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Job type','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_job_type" >
                 <?php
@@ -199,7 +199,7 @@ function job_bm_job_edit_form_job_type($job_id){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select job type.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Select job type.','job-board-manager'); ?></p>
 
         </div>
     </div>
@@ -224,7 +224,7 @@ function job_bm_job_edit_form_job_level($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Job level','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Job level','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_job_level" >
                 <?php
@@ -241,7 +241,7 @@ function job_bm_job_edit_form_job_level($job_id){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select job level.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Select job level.','job-board-manager'); ?></p>
 
         </div>
     </div>
@@ -264,10 +264,10 @@ function job_bm_job_edit_form_years_experience($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Years of experience','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Years of experience','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="5" type="text" value="<?php echo $job_bm_years_experience; ?>" name="job_bm_years_experience">
-            <p class="field-details"><?php esc_html_e('Years of experience must have.','job-board-manager');
+            <p class="field-details"><?php _e('Years of experience must have.','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -295,7 +295,7 @@ function job_bm_job_edit_form_salary_type($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Salary type','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Salary type','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_salary_type" >
                 <?php
@@ -312,7 +312,7 @@ function job_bm_job_edit_form_salary_type($job_id){
                 endif;
                 ?>
             </select>
-            <p class="field-details"><?php esc_html_e('Select salary type.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Select salary type.','job-board-manager'); ?></p>
 
         </div>
     </div>
@@ -335,10 +335,10 @@ function job_bm_job_edit_form_salary_fixed($job_id){
 
     ?>
     <div class="form-field-wrap salary_fixed" <?php if($job_bm_salary_type =='fixed'): ?> style="display: block" <?php endif; ?>>
-        <div class="field-title"><?php esc_html_e('Fixed salary','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Fixed salary','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="50000" type="text" value="<?php echo $job_bm_salary_fixed; ?>" name="job_bm_salary_fixed">
-            <p class="field-details"><?php esc_html_e('Salary fixed, ex: 1200','job-board-manager');
+            <p class="field-details"><?php _e('Salary fixed, ex: 1200','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -357,10 +357,10 @@ function job_bm_job_edit_form_salary_min($job_id){
 
     ?>
     <div class="form-field-wrap salary_min" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
-        <div class="field-title"><?php esc_html_e('Minimum salary','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Minimum salary','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="5000" type="text" value="<?php echo $job_bm_salary_min; ?>" name="job_bm_salary_min">
-            <p class="field-details"><?php esc_html_e('Minimum salary amount, ex: 5000','job-board-manager');
+            <p class="field-details"><?php _e('Minimum salary amount, ex: 5000','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -380,10 +380,10 @@ function job_bm_job_edit_form_salary_max($job_id){
 
     ?>
     <div class="form-field-wrap salary_max" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
-        <div class="field-title"><?php esc_html_e('Maximum salary','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Maximum salary','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="10000" type="text" value="<?php echo $job_bm_salary_max; ?>" name="job_bm_salary_max">
-            <p class="field-details"><?php esc_html_e('Maximum salary amount, ex: 1000','job-board-manager');
+            <p class="field-details"><?php _e('Maximum salary amount, ex: 1000','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -402,10 +402,10 @@ function job_bm_job_edit_form_contact_email($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Contact email','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Contact email','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="contact@company.com" type="email" value="<?php echo $job_bm_contact_email; ?>" name="job_bm_contact_email">
-            <p class="field-details"><?php esc_html_e('Write your contact email','job-board-manager');
+            <p class="field-details"><?php _e('Write your contact email','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -421,7 +421,7 @@ function job_bm_job_edit_form_company_info($job_id){
 
     ?>
     <div class="form-field-wrap ">
-        <div class="field-separator"><?php esc_html_e('Company Information','job-board-manager'); ?></div>
+        <div class="field-separator"><?php _e('Company Information','job-board-manager'); ?></div>
     </div>
     <?php
 }
@@ -443,10 +443,10 @@ function job_bm_job_edit_form_company_name($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Company name','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Company name','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="Google Inc" type="text" value="<?php echo $job_bm_company_name; ?>" name="job_bm_company_name">
-            <p class="field-details"><?php esc_html_e('Write your company name','job-board-manager');
+            <p class="field-details"><?php _e('Write your company name','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -465,10 +465,10 @@ function job_bm_job_edit_form_location($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Location','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Location','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="Mountain View" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
-            <p class="field-details"><?php esc_html_e('Write company location','job-board-manager');
+            <p class="field-details"><?php _e('Write company location','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -486,10 +486,10 @@ function job_bm_job_edit_form_address($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Address','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Address','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="1600 Amphitheatre Parkway, Mountain View, CA" type="text" value="<?php echo $job_bm_address; ?>" name="job_bm_address">
-            <p class="field-details"><?php esc_html_e('Write company address','job-board-manager');
+            <p class="field-details"><?php _e('Write company address','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -508,10 +508,10 @@ function job_bm_job_edit_form_company_website($job_id){
 
     ?>
     <div class="form-field-wrap">
-        <div class="field-title"><?php esc_html_e('Company website','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Company website','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="http://domain.com" type="text" value="<?php echo $job_bm_company_website; ?>" name="job_bm_company_website">
-            <p class="field-details"><?php esc_html_e('Write company website','job-board-manager');
+            <p class="field-details"><?php _e('Write company website','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -536,7 +536,7 @@ function job_bm_job_edit_form_company_logo($job_id){
 
     ?>
     <div class="form-field-wrap ">
-        <div class="field-title"><?php esc_html_e('Company logo','job-board-manager'); ?></div>
+        <div class="field-title"><?php _e('Company logo','job-board-manager'); ?></div>
         <div class="field-input">
             <div class="media-preview-wrap" style="">
                 <img class="media-preview" src="<?php echo $job_bm_company_logo; ?>" style="width:100%;box-shadow: none;"/>
@@ -546,7 +546,7 @@ function job_bm_job_edit_form_company_logo($job_id){
             <span class="media-upload " id=""><?php echo __('Upload','job-board-manager');?></span>
 <!--            <span class="media-clear" id="">--><?php //echo __('Clear','job-board-manager');?><!--</span>-->
 
-            <p class="field-details"><?php esc_html_e('Upload company logo','job-board-manager');
+            <p class="field-details"><?php _e('Upload company logo','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -575,7 +575,7 @@ function job_bm_job_edit_form_recaptcha($job_id){
         <div class="field-input">
             <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
             <script src="https://www.google.com/recaptcha/api.js"></script>
-            <p class="field-details"><?php esc_html_e('Please prove you are human.','job-board-manager'); ?></p>
+            <p class="field-details"><?php _e('Please prove you are human.','job-board-manager'); ?></p>
 
         </div>
     </div>

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plugins - Job Board Manager\n"
-"POT-Creation-Date: 2019-08-18 00:15+0600\n"
-"PO-Revision-Date: 2019-08-18 00:15+0600\n"
+"POT-Creation-Date: 2019-08-18 23:46+0600\n"
+"PO-Revision-Date: 2019-08-18 23:46+0600\n"
 "Last-Translator: \n"
 "Language-Team: PickPlugins <support@pickplugins.com>\n"
 "Language: it\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __;_e;esc_html_e\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: includes\n"
 "X-Poedit-SearchPath-1: templates\n"
 
@@ -702,6 +702,7 @@ msgstr ""
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "No"
 msgstr "no"
 
@@ -723,6 +724,7 @@ msgstr "no"
 #: includes/functions/functions-welcome.php:146
 #: includes/functions/functions-welcome.php:161
 #: includes/functions/functions-welcome.php:176
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Yes"
 msgstr "si"
 
@@ -1603,12 +1605,8 @@ msgstr ""
 msgid "Something going wrong."
 msgstr ""
 
-#: includes/menu/addons.php:13
+#: includes/menu/addons.php:19
 msgid "Ready Add-ons"
-msgstr ""
-
-#: includes/menu/addons.php:33
-msgid "Read more"
 msgstr ""
 
 #: includes/menu/help.php:27
@@ -2388,6 +2386,12 @@ msgstr "STATO OFFERTA"
 msgid "Featured job."
 msgstr "IN PRIMO PIANO"
 
+#: templates/my-jobs/my-jobs-hook.php:185
+#, fuzzy
+#| msgid "Featured:"
+msgid "Not featured"
+msgstr "in evidenza:"
+
 #: templates/my-jobs/my-jobs-hook.php:186
 #, fuzzy
 #| msgid "Qualifications"
@@ -2398,37 +2402,37 @@ msgstr "QUALIFICHE"
 msgid "Total hired."
 msgstr ""
 
-#: templates/my-jobs/my-jobs-hook.php:233
+#: templates/my-jobs/my-jobs-hook.php:238
 #, fuzzy
 #| msgid "Job link"
 msgid "Job link."
 msgstr "LINK OFFERTA SUL PROPRIO SITO INTERNET"
 
-#: templates/my-jobs/my-jobs-hook.php:235
+#: templates/my-jobs/my-jobs-hook.php:240
 msgid "Published:"
 msgstr "pubblicata:"
 
-#: templates/my-jobs/my-jobs-hook.php:236
+#: templates/my-jobs/my-jobs-hook.php:241
 msgid "Publish Status:"
 msgstr "stato:"
 
-#: templates/my-jobs/my-jobs-hook.php:237
+#: templates/my-jobs/my-jobs-hook.php:242
 msgid "Featured:"
 msgstr "in evidenza:"
 
-#: templates/my-jobs/my-jobs-hook.php:243
+#: templates/my-jobs/my-jobs-hook.php:248
 msgid "Job Status:"
 msgstr "attualmente:"
 
-#: templates/my-jobs/my-jobs-hook.php:252
+#: templates/my-jobs/my-jobs-hook.php:257
 msgid "Job Type:"
 msgstr "contratto:"
 
-#: templates/my-jobs/my-jobs-hook.php:259
+#: templates/my-jobs/my-jobs-hook.php:264
 msgid "Job Level:"
 msgstr "esperienza:"
 
-#: templates/my-jobs/my-jobs-hook.php:264
+#: templates/my-jobs/my-jobs-hook.php:269
 #, fuzzy
 #| msgid "Application info"
 msgid "Applications:"
