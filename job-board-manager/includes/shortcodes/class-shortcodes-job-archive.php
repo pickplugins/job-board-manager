@@ -23,6 +23,7 @@ class class_job_bm_shortcodes_job_archive{
                 'display_search' => 'yes',
                 'display_pagination' => 'yes',
                 'company_name' => '',
+                'location' => '',
                 'per_page' => '',
             ), $atts);
 

@@ -3,6 +3,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
     $company_name = isset($atts['company_name']) ? $atts['company_name'] : '';
+    $location = isset($atts['location']) ? $atts['location'] : '';
     $per_page = isset($atts['per_page']) ? $atts['per_page'] : '';
 
 
