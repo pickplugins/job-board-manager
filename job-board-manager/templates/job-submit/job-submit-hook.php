@@ -5,7 +5,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 /* Display question title field */
 
-add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_title', 0);
+add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_title', 5);
 
 function job_bm_job_submit_form_title(){
 

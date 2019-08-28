@@ -78,6 +78,12 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
             </div>
 
+            <?php
+
+            do_action('job_bm_job_archive_search_form');
+
+            ?>
+
             <input type="submit" value="<?php echo __('Submit', 'job-board-manager'); ?>" />
 
         </form> <!-- .search-input -->
@@ -272,14 +278,14 @@ if(!function_exists('job_bm_job_archive_after_style')){
             if(!empty($job_bm_job_type_bg_color)){
                 foreach($job_bm_job_type_bg_color as $job_type_key=>$job_type_color){
 
-                    echo '.job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.'}';
+                    echo '.job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.' !important;}';
                 }
             }
 
             if(!empty($job_bm_job_type_text_color)){
                 foreach($job_bm_job_type_text_color as $job_type_key=>$job_type_color){
 
-                    echo '.job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.'}';
+                    echo '.job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.' !important;}';
                 }
             }
 
@@ -287,13 +293,13 @@ if(!function_exists('job_bm_job_archive_after_style')){
 
             if(!empty($job_bm_job_status_bg_color)){
                 foreach($job_bm_job_status_bg_color as $job_status_key=>$job_status_color){
-                    echo '.job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.'}';
+                    echo '.job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.' !important;}';
                 }
             }
 
             if(!empty($job_bm_job_status_text_color)){
                 foreach($job_bm_job_status_text_color as $job_status_key=>$job_status_color){
-                    echo '.job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.'}';
+                    echo '.job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.' !important}';
                 }
             }
 

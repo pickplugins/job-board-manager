@@ -5,6 +5,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
     $company_name = isset($atts['company_name']) ? $atts['company_name'] : '';
     $location = isset($atts['location']) ? $atts['location'] : '';
     $per_page = isset($atts['per_page']) ? $atts['per_page'] : '';
+    $cat_ids = isset($atts['cat_ids']) ? $atts['cat_ids'] : '';
 
 
 
@@ -106,7 +107,22 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                 );
 		}
 
-	
+
+    if(!empty($cat_ids)){
+
+        $cat_ids = explode(',', $cat_ids);
+
+        //var_dump($job_category);
+
+        $tax_query[] = array(
+            'taxonomy' => 'job_category',
+            'field'    => 'term_id',
+            'terms'    => $cat_ids,
+            //'operator'    => '',
+        );
+    }
+
+
 	
 	
 
@@ -199,7 +215,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
             'post_type' => 'job',
             'post_status' => 'publish',
             's' => $keywords,
-            'orderby' => 'Date',
+            'orderby' => 'date',
             'meta_query' => $meta_query,
             'tax_query' => $tax_query,
             'order' => 'DESC',
@@ -222,13 +238,16 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
         do_action('job_bm_job_archive_loop_before', $wp_query, $atts);
 
         if ( $wp_query->have_posts() ) :
+            $count = 1;
+
         while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
             $job_id = get_the_ID();
-
+            $atts['loop_count'] = $count;
             do_action('job_bm_job_archive_loop', $job_id, $atts);
 
 
+            $count++;
         endwhile;
             do_action('job_bm_job_archive_loop_after', $wp_query, $atts);
             wp_reset_query();
@@ -244,4 +263,5 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
         ?>
 
-	</div>	
+	</div>
+

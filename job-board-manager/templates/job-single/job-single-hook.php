@@ -100,9 +100,13 @@ add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_description', 
 if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 	function job_bm_template_single_job_description() {
 
+
+	    global $post;
+	    $job_id =get_the_id();
+
 	    ?>
         <div class="single-job-details">
-            <div itemprop="description" class="description"><?php echo wpautop(do_shortcode(get_the_content(get_the_id()))); ?></div>
+            <div itemprop="description" class="description"><?php echo wpautop(do_shortcode($post->post_content)); ?></div>
         </div>
         <?php
 
@@ -114,7 +118,7 @@ if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 
 
 
-add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_company', 20 );
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_company', 25 );
 if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
     function job_bm_single_job_main_company() {
 
@@ -332,29 +336,33 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
                         $method_name = isset($apply_method_list[$method]) ? $apply_method_list[$method] : '';
 
-                        //echo '<pre>'.var_export($method, true).'</pre>';
+                        //echo '<pre>'.var_export($method_name, true).'</pre>';
 
-                        ?>
-                        <div id="<?php echo 'apply-method-'.$method; ?>" class="method-header "><div class="method-name"><?php echo $method_name; ?></div></div>
-                        <div class="method-form ">
-
-                            <?php
-
-                            if(!is_user_logged_in() && $job_bm_login_required_on_apply =='yes'){
-
-                                $login_required = apply_filters('job_bm_application_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit application','job-board-manager'), $job_bm_job_login_page_url));
-                                echo $login_required;
-
-                            }else{
-                                do_action('job_bm_application_methods_form_'.$method, $job_id);
-                            }
-
-
-
+                        if(!empty($method_name)):
                             ?>
+                            <div id="<?php echo 'apply-method-'.$method; ?>" class="method-header "><div class="method-name"><?php echo $method_name; ?></div></div>
+                            <div class="method-form ">
 
-                        </div>
+                                <?php
+
+                                if(!is_user_logged_in() && $job_bm_login_required_on_apply =='yes'){
+
+                                    $login_required = apply_filters('job_bm_application_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit application','job-board-manager'), $job_bm_job_login_page_url));
+                                    echo $login_required;
+
+                                }else{
+                                    do_action('job_bm_application_methods_form_'.$method, $job_id);
+                                }
+
+
+
+                                ?>
+
+                            </div>
                         <?php
+                        endif;
+
+
 
 
                         $i++;

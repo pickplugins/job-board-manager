@@ -25,6 +25,7 @@ class class_job_bm_shortcodes_job_archive{
                 'company_name' => '',
                 'location' => '',
                 'per_page' => '',
+                'cat_ids' => '',
             ), $atts);
 
         $display_search = $atts['display_search'];

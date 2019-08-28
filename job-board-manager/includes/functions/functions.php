@@ -6,7 +6,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-
 function job_bm_activation_update_email_templates(){
 
     $class_job_bm_emails = new class_job_bm_emails();
@@ -18,9 +17,6 @@ function job_bm_activation_update_email_templates(){
         update_option('job_bm_email_templates_data', $templates_data);
         update_option('job_bm_email_temp_data_update', 'done');
     }
-
-
-
 }
 
 add_action('job_bm_activation', 'job_bm_activation_update_email_templates');

@@ -1297,10 +1297,13 @@ class settings_tabs_field{
         if(!empty($args)):
 
             foreach ($args as $arg_key => $arg):
+
+                $item_value = isset($value[$arg_key]) ? $value[$arg_key] : $arg;
+
                 ?>
             <div class="">
                 <span><?php echo $arg_key; ?></span>
-                <input name="<?php echo $field_name; ?>[<?php echo $arg_key; ?>]" id="<?php echo $arg_key.'-'.$css_id; ?>"  value="<?php echo $arg; ?>" />
+                <input name="<?php echo $field_name; ?>[<?php echo $arg_key; ?>]" id="<?php echo $arg_key.'-'.$css_id; ?>"  value="<?php echo $item_value; ?>" />
                 <script>jQuery(document).ready(function($) { $("#<?php echo $arg_key.'-'.$css_id; ?>").wpColorPicker();});</script>
             </div>
 

@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Advance job board manager for your site.
-Version: 2.1.14
+Version: 2.1.18
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,11 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.14' );
+		define('job_bm_plugin_version', '2.1.18' );
+
+
+
+
 
 
 		// Class
@@ -35,6 +39,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/class-post-meta-job.php');
         require_once( job_bm_plugin_dir . 'includes/class-post-meta-job-hook.php');
         require_once( job_bm_plugin_dir . 'includes/class-support-help.php');
+        require_once( job_bm_plugin_dir . 'includes/class-job-data.php');
 
 
 
@@ -62,10 +67,11 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'templates/application-single/application-single-hook.php');
 
 
-		//Functions
+
+        //Functions
         require_once( job_bm_plugin_dir . 'includes/functions/functions-crons.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-applications.php');
-		require_once( job_bm_plugin_dir . 'includes/functions/functions.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-settings.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');

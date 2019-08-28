@@ -4,7 +4,6 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 add_action('job_bm_my_jobs','job_bm_my_jobs_title');
 
 if(!function_exists('job_bm_my_jobs_title')):
-
     function job_bm_my_jobs_title(){
 
         $job_bm_job_submit_page_id                       = get_option( 'job_bm_job_submit_page_id' );

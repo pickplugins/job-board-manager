@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.14
+	Stable tag: 2.1.18
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,21 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.18 =
+    * 29/08/2019 - fix - color saving issue under Style settings issue fixed.
+
+	= 2.1.17 =
+    * 24/08/2019 - fix - email templates settings save issue fixed.
+    * 24/08/2019 - fix - add-on link issue fixed.
+
+	= 2.1.16 =
+    * 24/08/2019 - add - added new action hook job_bm_job_archive_search_form
+    * 24/08/2019 - add - added cat_ids attr on job archive shortcode.
+
+	= 2.1.15 =
+    * 22/08/2019 - add - added class class_get_job_data for extract job data.
+    * 22/08/2019 - add - added location attr on job archive shortcode.
 
 	= 2.1.14 =
     * 19/08/2019 - fix - missing translation issue fixed

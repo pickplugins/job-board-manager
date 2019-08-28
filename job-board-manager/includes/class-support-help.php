@@ -94,7 +94,6 @@ class class_job_bm_support_help{
 
 
             'job-list-ads'=>array(	'title'=>'Job List Ads',
-
                 'content'=>'Display ads/custom html content inside job list.',
                 'item_link'=>'http://www.pickplugins.com/item/job-board-manager-job-list-ads/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/job-list-ads.png',
@@ -102,30 +101,26 @@ class class_job_bm_support_help{
 
 
             'search'=>array(	'title'=>'Search & Filter',
-
                 'content'=>'Search & filter job by different input.',
                 'item_link'=>'http://www.pickplugins.com/item/job-board-manager-search/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/search.png',
             ),
 
             'job-feed'=>array(	'title'=>'Job Feed',
-
                 'content'=>'Display jobs by followed companies, like social feed, once you follow any company job published from these company will display as like social feed.',
                 'item_link'=>'http://www.pickplugins.com/item/job-board-manager-job-feed/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/job-feed.png',
             ),
 
             'report-job'=>array(	'title'=>'Report Job',
-
                 'content'=>'add functionality to report/flag/moderate  a job.',
                 'item_link'=>'http://www.pickplugins.com/item/job-board-manager-report-job/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/report-job.png',
             ),
 
             'related-jobs'=>array(	'title'=>'Related Jobs',
-
                 'content'=>'Display related jobs under single job page.',
-                'item_link'=>'http://www.pickplugins.com/item/job-board-manager-report-job/',
+                'item_link'=>'https://www.pickplugins.com/item/job-board-manager-related-jobs/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/related-jobs.png',
             ),
 

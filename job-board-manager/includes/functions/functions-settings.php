@@ -636,7 +636,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
         $job_bm_logo_url = get_option('job_bm_logo_url');
         $job_bm_from_email = get_option('job_bm_from_email');
-        $templates_data = get_option( 'job_bm_email_templates_data', $templates_data_default );
+        $templates_data_saved = get_option( 'job_bm_email_templates_data', $templates_data_default );
 
 //        $job_bm_test_option = get_option('job_bm_test_option');
 //
@@ -695,19 +695,22 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
 
 
-            if(!empty($templates_data))
-            foreach($templates_data as $key=>$templates){
+            if(!empty($templates_data_default))
+            foreach($templates_data_default as $key=>$templates){
 
-                $email_to = isset($templates['email_to']) ? $templates['email_to'] : '';
-                $email_from = isset($templates['email_from']) ? $templates['email_from'] : '';
-                $email_from_name = isset($templates['email_from_name']) ? $templates['email_from_name'] : '';
-                $enable = isset($templates['enable']) ? $templates['enable'] : '';
-                $description = isset($templates['description']) ? $templates['description'] : '';
+                $templates_data_display = isset($templates_data_saved[$key]) ? $templates_data_saved[$key] : $templates;
+
+
+                $email_to = isset($templates_data_display['email_to']) ? $templates_data_display['email_to'] : '';
+                $email_from = isset($templates_data_display['email_from']) ? $templates_data_display['email_from'] : '';
+                $email_from_name = isset($templates_data_display['email_from_name']) ? $templates_data_display['email_from_name'] : '';
+                $enable = isset($templates_data_display['enable']) ? $templates_data_display['enable'] : '';
+                $description = isset($templates_data_display['description']) ? $templates_data_display['description'] : '';
 
                 $parameters = isset($email_templates_parameters[$key]['parameters']) ? $email_templates_parameters[$key]['parameters'] : array();
 
 
-                //var_dump($parameters);
+                //echo '<pre>'.var_export($enable).'</pre>';
 
                 ?>
                 <div class="item template <?php echo $key; ?>">
