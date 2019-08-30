@@ -98,10 +98,93 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
 
 
-add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_items', 90, 2);
+add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_company_logo', 10, 2);
 
-if(!function_exists('job_bm_job_archive_loop_items')):
-    function job_bm_job_archive_loop_items($job_id, $atts){
+if(!function_exists('job_bm_job_archive_loop_item_company_logo')):
+    function job_bm_job_archive_loop_item_company_logo($job_id, $atts){
+
+        $job_bm_default_company_logo = get_option('job_bm_default_company_logo');
+        $job_bm_company_logo = get_post_meta($job_id,'job_bm_company_logo', true);
+
+
+        if(!empty($job_bm_company_logo)){
+
+            if(is_serialized($job_bm_company_logo)){
+
+                $job_bm_company_logo = unserialize($job_bm_company_logo);
+                if(!empty($job_bm_company_logo[0])){
+                    $job_bm_company_logo = $job_bm_company_logo[0];
+                    $job_bm_company_logo = wp_get_attachment_url($job_bm_company_logo);
+                }
+                else{
+                    $job_bm_company_logo = $job_bm_default_company_logo;
+
+                }
+            }
+
+        }
+        else{
+            $job_bm_company_logo = $job_bm_default_company_logo;
+
+        }
+
+
+        ?>
+        <div class="company_logo">
+            <img src="<?php echo $job_bm_company_logo; ?>" />
+        </div>
+
+        <?php
+
+
+
+    }
+endif;
+
+
+
+add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_title', 20, 2);
+
+if(!function_exists('job_bm_job_archive_loop_item_title')):
+    function job_bm_job_archive_loop_item_title($job_id, $atts){
+
+
+        ?>
+        <div class="title">
+            <a href="<?php echo get_permalink($job_id); ?>"><?php echo get_the_title($job_id); ?></a>
+        </div>
+        <?php
+
+    }
+endif;
+
+
+
+
+add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_company_name', 30, 2);
+
+if(!function_exists('job_bm_job_archive_loop_item_company_name')):
+    function job_bm_job_archive_loop_item_company_name($job_id, $atts){
+
+
+        $job_bm_company_name = get_post_meta($job_id, 'job_bm_company_name', true);
+
+        if(!empty($job_bm_company_name)): ?>
+            <div class="company-name"><?php echo apply_filters('job_bm_job_archive_loop_item_company', $job_bm_company_name); ?></div>
+        <?php
+        endif;
+    }
+endif;
+
+
+
+
+
+
+add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_meta', 40, 2);
+
+if(!function_exists('job_bm_job_archive_loop_item_meta')):
+    function job_bm_job_archive_loop_item_meta($job_id, $atts){
 
 
         $class_job_bm_functions = new class_job_bm_functions();
@@ -112,105 +195,78 @@ if(!function_exists('job_bm_job_archive_loop_items')):
         $job_type_list = $class_job_bm_functions->job_type_list();
         $job_level_list = $class_job_bm_functions->job_level_list();
 
-        $job_bm_company_name = get_post_meta(get_the_ID(), 'job_bm_company_name', true);
-
-        $job_bm_default_company_logo = get_option('job_bm_default_company_logo');
-
         $job_bm_job_type = get_post_meta($job_id, 'job_bm_job_type', true);
         $job_bm_job_status = get_post_meta($job_id, 'job_bm_job_status', true);
-
         $job_bm_location = get_post_meta($job_id, 'job_bm_location', true);
 
-        $job_bm_featured = get_post_meta(get_the_ID(), 'job_bm_featured', true);
-        $job_bm_company_logo = get_post_meta(get_the_ID(),'job_bm_company_logo', true);
 
-        $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
-        $category = get_the_terms($job_id, 'job_category');
 
+        $meta_items = array();
+
+
+        ob_start();
+
+        if(isset($job_type_list[$job_bm_job_type])):?>
+            <span class="meta-item job_type <?php echo $job_bm_job_type; ?>"><i class="fas
+               fa-briefcase"></i>  <?php echo $job_type_list[$job_bm_job_type]; ?></span>
+        <?php endif;
+
+        $meta_items['job_type'] = ob_get_clean();
+
+        ob_start();
+
+        if(isset($job_status_list[$job_bm_job_status])):?>
+            <span class=" meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
+            fa-traffic-light"></i> <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+        <?php endif;
+
+        $meta_items['job_status'] = ob_get_clean();
+
+
+        ob_start();
+
+        if(!empty($job_bm_location)): ?>
+            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo apply_filters('job_bm_job_archive_loop_item_location', $job_bm_location); ?></span>
+        <?php endif;
+
+        $meta_items['location'] = ob_get_clean();
+
+
+        ob_start();
 
         ?>
-        <div class="single <?php echo $featured_class; ?>">
+        <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
+        <?php
 
+        $meta_items['date'] = ob_get_clean();
+
+
+        $meta_items = apply_filters('job_bm_job_archive_loop_meta', $meta_items);
+
+        ?>
+
+        <div class="clear"></div>
+        <div class="job-meta">
             <?php
 
-            if(!empty($job_bm_company_logo)){
+            if(!empty($meta_items)):
+                foreach ($meta_items as $item):
 
-                if(is_serialized($job_bm_company_logo)){
+                    echo $item;
 
-                    $job_bm_company_logo = unserialize($job_bm_company_logo);
-                    if(!empty($job_bm_company_logo[0])){
-                        $job_bm_company_logo = $job_bm_company_logo[0];
-                        $job_bm_company_logo = wp_get_attachment_url($job_bm_company_logo);
-                    }
-                    else{
-                        $job_bm_company_logo = $job_bm_default_company_logo;
-
-                    }
-                }
-
-            }
-            else{
-                $job_bm_company_logo = $job_bm_default_company_logo;
-
-            }
+                endforeach;
+            endif;
 
 
             ?>
-            <div class="company_logo">
-                <img src="<?php echo $job_bm_company_logo; ?>" />
-            </div>
-
-            <div title="" class="title"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></div>
-
-            <?php if(!empty($job_bm_location)): ?>
-            <div class="company-name"><?php echo apply_filters('job_bm_job_archive_loop_item_company', $job_bm_company_name); ?></div>
-            <?php endif; ?>
-
-            <div class="clear"></div>
-            <div class="job-meta">
-
-                <?php if(isset($job_type_list[$job_bm_job_type])):?>
-                <span class="meta-item job_type <?php echo $job_bm_job_type; ?>"><i class="fas
-                fa-briefcase"></i>  <?php echo
-                    $job_type_list[$job_bm_job_type]; ?></span>
-                <?php endif; ?>
-
-                <?php if(isset($job_status_list[$job_bm_job_status])):?>
-                <span class=" meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
-            fa-traffic-light"></i> <?php echo $job_status_list[$job_bm_job_status]; ?></span>
-                <?php endif; ?>
-
-
-                <?php if(!empty($job_bm_location)): ?>
-                <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo apply_filters('job_bm_job_archive_loop_item_location', $job_bm_location); ?></span>
-                <?php endif; ?>
-
-                <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
-
-                <?php
-
-                if(!empty($category[0]->name)):
-                    ?>
-
-<!--                    <span class=" meta-item"><i class="fas fa-code-branch"></i> --><?php //echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?><!--</span>-->
-
-                <?php
-                endif;
-
-                ?>
-
-
-            </div>
-
         </div>
+
         <?php
 
 
 
     }
 endif;
-
-
 
 
 
@@ -273,19 +329,19 @@ if(!function_exists('job_bm_job_archive_after_style')){
         <style type="text/css">
             <?php
 
-            echo '.job-list .single.featured{background:'.$job_bm_featured_bg_color.'}';
+            echo '.job-bm-archive .job-list .single.featured{background:'.$job_bm_featured_bg_color.'}';
 
             if(!empty($job_bm_job_type_bg_color)){
                 foreach($job_bm_job_type_bg_color as $job_type_key=>$job_type_color){
 
-                    echo '.job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.' !important;}';
+                    echo '.job-bm-archive .job-list .job_type.'.$job_type_key.'{background:'.$job_type_color.' !important;}';
                 }
             }
 
             if(!empty($job_bm_job_type_text_color)){
                 foreach($job_bm_job_type_text_color as $job_type_key=>$job_type_color){
 
-                    echo '.job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.' !important;}';
+                    echo '.job-bm-archive .job-list .job_type.'.$job_type_key.'{color:'.$job_type_color.' !important;}';
                 }
             }
 
@@ -293,13 +349,13 @@ if(!function_exists('job_bm_job_archive_after_style')){
 
             if(!empty($job_bm_job_status_bg_color)){
                 foreach($job_bm_job_status_bg_color as $job_status_key=>$job_status_color){
-                    echo '.job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.' !important;}';
+                    echo '.job-bm-archive .job-list .job_status.'.$job_status_key.'{background:'.$job_status_color.' !important;}';
                 }
             }
 
             if(!empty($job_bm_job_status_text_color)){
                 foreach($job_bm_job_status_text_color as $job_status_key=>$job_status_color){
-                    echo '.job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.' !important}';
+                    echo '.job-bm-archive .job-list .job_status.'.$job_status_key.'{color:'.$job_status_color.' !important}';
                 }
             }
 
@@ -309,11 +365,11 @@ if(!function_exists('job_bm_job_archive_after_style')){
 
             ?>
 
-            .job-list .paginate .page-numbers.current{
+            .job-bm-archive .paginate .page-numbers.current{
                 background: <?php echo $job_bm_pagination_active_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }
-            .job-list .paginate a.page-numbers{
+            .job-bm-archive .paginate a.page-numbers{
                 background: <?php echo $job_bm_pagination_bg_color; ?>;
                 color: <?php echo $job_bm_pagination_text_color; ?> ;
             }

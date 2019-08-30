@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.2
-	Stable tag: 2.1.18
+	Stable tag: 2.1.19
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,11 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.18 =
+    * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_class
+    * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_meta
+
 
 	= 2.1.18 =
     * 29/08/2019 - fix - color saving issue under Style settings issue fixed.

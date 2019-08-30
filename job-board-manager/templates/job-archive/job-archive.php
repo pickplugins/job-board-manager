@@ -231,37 +231,55 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
         $wp_query = new WP_Query($query_args);
 
-        ?>
-        <div class="job-list">
-        <?php
+        
 
-        do_action('job_bm_job_archive_loop_before', $wp_query, $atts);
+?>
+        <div class="job-bm-archive">
+            <?php
 
-        if ( $wp_query->have_posts() ) :
-            $count = 1;
+            do_action('job_bm_job_archive_loop_before', $wp_query, $atts);
 
-        while ( $wp_query->have_posts() ) : $wp_query->the_post();
+            if ( $wp_query->have_posts() ) :
+                $count = 1;
 
-            $job_id = get_the_ID();
-            $atts['loop_count'] = $count;
-            do_action('job_bm_job_archive_loop', $job_id, $atts);
+                ?>
+                <div class="job-list">
+                    <?php
+                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
+
+                        $job_id = get_the_ID();
+                        $atts['loop_count'] = $count;
+
+                        $job_bm_featured = get_post_meta($job_id, 'job_bm_featured', true);
+                        $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
+
+                        ?>
+                        <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '.$featured_class); ?>">
+                            <?php
+
+                            do_action('job_bm_job_archive_loop', $job_id, $atts);
+
+                            ?>
+                        </div>
+                        <?php
 
 
-            $count++;
-        endwhile;
-            do_action('job_bm_job_archive_loop_after', $wp_query, $atts);
-            wp_reset_query();
-        else:
 
-            do_action('job_bm_job_archive_loop_no_post');
+                        $count++;
+                    endwhile;
 
-        endif;
+                    ?>
+                </div>
+                <?php
+                do_action('job_bm_job_archive_loop_after', $wp_query, $atts);
+                wp_reset_query();
+            else:
 
+                do_action('job_bm_job_archive_loop_no_post');
 
+            endif;
 
+            ?>
 
-
-        ?>
-
-	</div>
+        </div>
 

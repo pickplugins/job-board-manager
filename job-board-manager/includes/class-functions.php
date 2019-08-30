@@ -47,7 +47,7 @@ class class_job_bm_functions{
 	public function job_level_list(){
 
 		$job_level_list = array(
-		    'any'=>__('Any', 'job-board-manager'),
+		    ''=>__('All', 'job-board-manager'),
             'entry_level'=>__('Entry level', 'job-board-manager'),
             'mid_level'=>__('Mid level', 'job-board-manager'),
             'top_level'=>__('Top level', 'job-board-manager')
