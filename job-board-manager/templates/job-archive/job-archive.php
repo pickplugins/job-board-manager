@@ -231,7 +231,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
         $wp_query = new WP_Query($query_args);
 
-        
+
 
 ?>
         <div class="job-bm-archive">

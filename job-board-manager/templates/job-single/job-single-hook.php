@@ -55,6 +55,9 @@ add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_meta_start', 10 );
 if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
     function job_bm_single_job_main_meta_start() {
 
+        $meta_items = array();
+
+
         $post_id = get_the_id();
 
         $job_bm_location = get_post_meta($post_id, 'job_bm_location', true);
@@ -62,25 +65,71 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
         $post_date = get_the_date();
         $post_id = get_the_id();
         $category = get_the_terms($post_id, 'job_category');
+
+
+
+        ob_start();
+
+        ?>
+        <?php if($job_bm_featured =='yes'):?>
+            <span class=" meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured','job-board-manager'); ?></span>
+        <?php endif; ?>
+        <?php
+
+        $meta_items['featured'] = ob_get_clean();
+
+
+        ob_start();
+
+        ?>
+        <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+
+        <?php
+
+        $meta_items['location'] = ob_get_clean();
+
+        ob_start();
+
+        ?>
+        <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
+        <?php
+
+        $meta_items['post_date'] = ob_get_clean();
+
+        ob_start();
+
+        if(!empty($category[0]->name)):
+
+            $term_id = $category[0]->term_id;
+
+            $term_url = get_term_link($term_id);
+
+            ?>
+
+            <span class="job-category meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="'.$term_url.'">'.$category[0]->name.'</a>' )?></span>
+
+        <?php
+        endif;
+
+        $meta_items['job_category'] = ob_get_clean();
+
+
+        $meta_items = apply_filters('job_bm_single_job_meta', $meta_items);
+
+
         ?>
         <div class="job-meta-top">
 
-            <?php if($job_bm_featured =='yes'):?>
-                <span class=" meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured','job-board-manager'); ?></span>
-            <?php endif; ?>
 
-            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
-
-            <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
 
             <?php
 
-            if(!empty($category[0]->name)):
-                ?>
+            if(!empty($meta_items)):
+                foreach ($meta_items as $item):
 
-                <span class="job-category meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="#">'.$category[0]->name.'</a>' )?></span>
+                    echo $item;
 
-            <?php
+                endforeach;
             endif;
 
             ?>
@@ -190,6 +239,8 @@ add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_info', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
     function job_bm_single_job_main_job_info() {
 
+        $meta_items = array();
+
 
         $class_job_bm_functions = new class_job_bm_functions();
         $salary_currency = get_option( 'job_bm_salary_currency');
@@ -222,33 +273,67 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         $post_date = get_the_date();
         $post_id = get_the_id();
         $category = get_the_terms($post_id, 'job_category');
-        ?>
-        <div class="job-meta-info">
-            <h2><?php echo __('Job Information','job-board-manager'); ?></h2>
 
+
+        ob_start();
+            ?>
             <?php if(isset($job_status_list[$job_bm_job_status])):?>
-            <span class=" meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas 
-            fa-traffic-light"></i>', $job_status_list[$job_bm_job_status])?></span>
+                <span class=" meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas 
+                fa-traffic-light"></i>', $job_status_list[$job_bm_job_status])?></span>
             <?php endif; ?>
+            <?php
 
+        $meta_items['job_status'] = ob_get_clean();
+
+
+
+        ob_start();
+            ?>
             <?php if($job_bm_total_vacancies):?>
                 <span class=" meta-item"><?php echo sprintf(__('%s No of vacancies: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_bm_total_vacancies)?></span>
             <?php endif; ?>
+            <?php
 
+        $meta_items['total_vacancies'] = ob_get_clean();
+
+
+
+
+        ob_start();
+            ?>
             <?php if(isset($job_type_list[$job_bm_job_type])):?>
                 <span class=" meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-swatchbook"></i>', $job_type_list[$job_bm_job_type])?></span>
             <?php endif; ?>
+            <?php
 
+        $meta_items['job_type'] = ob_get_clean();
+
+
+
+        ob_start();
+            ?>
             <?php if(isset($job_level_list[$job_bm_job_level])):?>
                 <span class=" meta-item"><?php echo sprintf(__('%s Job level: %s','job-board-manager'),'<i class="fas fa-users"></i>', $job_level_list[$job_bm_job_level])?></span>
             <?php endif; ?>
+            <?php
 
+        $meta_items['job_level'] = ob_get_clean();
+
+
+
+        ob_start();
+            ?>
             <?php if($job_bm_years_experience):?>
                 <span class=" meta-item"><?php echo sprintf(__('%s Years of experience: %s',
                         'job-board-manager'),'<i class="fas fa-crosshairs"></i>', $job_bm_years_experience)?></span>
             <?php endif; ?>
-
             <?php
+
+        $meta_items['years_experience'] = ob_get_clean();
+
+
+        ob_start();
+
             if($job_bm_salary_type == 'fixed'):
                 $salary_html = $job_bm_salary_currency.$job_bm_salary_fixed;
             elseif($job_bm_salary_type == 'negotiable'):
@@ -262,7 +347,29 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
             <?php if($job_bm_salary_fixed):?>
                 <span class="meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html)?></span>
-            <?php endif; ?>
+            <?php endif;
+
+        $meta_items['job_salary'] = ob_get_clean();
+
+
+        $meta_items = apply_filters('job_bm_single_job_infos', $meta_items);
+
+
+        ?>
+        <div class="job-meta-info">
+            <h2><?php echo __('Job Information','job-board-manager'); ?></h2>
+
+            <?php
+
+            if(!empty($meta_items)):
+                foreach ($meta_items as $item):
+
+                    echo $item;
+
+                endforeach;
+            endif;
+
+            ?>
 
 
 

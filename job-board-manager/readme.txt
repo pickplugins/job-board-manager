@@ -112,6 +112,11 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 	= 2.1.18 =
     * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_class
     * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_meta
+    * 31/08/2019 - fix - job category link on single job meta
+    * 31/08/2019 - add - added new filter hook job_bm_single_job_meta
+    * 31/08/2019 - add - added new filter hook job_bm_single_job_infos
+
+
 
 
 	= 2.1.18 =
