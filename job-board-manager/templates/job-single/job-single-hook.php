@@ -25,6 +25,7 @@ function job_bmpost_type_template_job($content) {
 }
 add_filter( 'the_content', 'job_bmpost_type_template_job' );
 
+add_filter( 'the_excerpt', 'job_bmpost_type_template_job' );
 
 
 

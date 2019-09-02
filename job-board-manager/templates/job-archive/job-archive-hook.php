@@ -211,6 +211,7 @@ if(!function_exists('job_bm_job_archive_loop_item_meta')):
                fa-briefcase"></i>  <?php echo $job_type_list[$job_bm_job_type]; ?></span>
         <?php endif;
 
+
         $meta_items['job_type'] = ob_get_clean();
 
         ob_start();
