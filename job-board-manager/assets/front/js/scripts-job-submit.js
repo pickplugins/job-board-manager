@@ -8,27 +8,34 @@ jQuery(document).ready(function($) {
 		var salary_type = $(this).val();
 		//alert(salary_type);
 
-		if(salary_type=='fixed'){
+        if(salary_type=='fixed'){
 
-			$('.salary_fixed').fadeIn();
-			$('.salary_min').fadeOut();
-			$('.salary_max').fadeOut();
+            $('.salary_fixed').fadeIn();
+            $('.salary_duration').fadeIn();
+            $('.salary_currency').fadeIn();
+
+            $('.salary_min').fadeOut();
+            $('.salary_max').fadeOut();
 
 
-		}
-		else if(salary_type=='min-max'){
+        }
+        else if(salary_type=='min-max'){
 
-			$('.salary_fixed').fadeOut();
-			$('.salary_min').fadeIn();
-			$('.salary_max').fadeIn();
+            $('.salary_min').fadeIn();
+            $('.salary_max').fadeIn();
+            $('.salary_duration').fadeIn();
+            $('.salary_currency').fadeIn();
 
-		}
-		else{
-			$('.salary_fixed').fadeOut();
-			$('.salary_min').fadeOut();
-			$('.salary_max').fadeOut();
+            $('.salary_fixed').fadeOut();
 
-		}
+        }
+        else{
+            $('.salary_fixed').fadeOut();
+            $('.salary_min').fadeOut();
+            $('.salary_max').fadeOut();
+            $('.salary_duration').fadeOut();
+            $('.salary_currency').fadeOut();
+        }
 
 	})
 

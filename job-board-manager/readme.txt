@@ -109,12 +109,14 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
-	= 2.1.18 =
+	= 2.1.19 =
     * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_class
     * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_meta
     * 31/08/2019 - fix - job category link on single job meta
     * 31/08/2019 - add - added new filter hook job_bm_single_job_meta
     * 31/08/2019 - add - added new filter hook job_bm_single_job_infos
+    * 03/09/2019 - add - added input field salary duration added on job submission, job edit.
+    * 03/09/2019 - add - missing input field job_bm_salary_currency added on job edit shortcode.
 
 
 

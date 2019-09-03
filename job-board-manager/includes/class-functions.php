@@ -70,8 +70,26 @@ class class_job_bm_functions{
 
 		return $salary_type_list;
 
-		}	
-	
+		}
+
+
+    public function salary_duration_list(){
+
+        $salary_type_list = array(
+            'hour'=>__('Per Hour', 'job-board-manager'),
+            'day'=>__('Per Day', 'job-board-manager'),
+            'week'=>__('Per Week', 'job-board-manager'),
+            'month'=>__('Per Month', 'job-board-manager'),
+            'year'=>__('Per Yer', 'job-board-manager'),
+
+
+        );
+        $salary_type_list = apply_filters('job_bm_salary_durations', $salary_type_list);
+
+        return $salary_type_list;
+
+    }
+
 	public function salary_range_list(){
 
 		$salary_range_list = array(

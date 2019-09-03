@@ -289,6 +289,7 @@ function job_bm_job_edit_form_salary_type($job_id){
     $salary_type_list = $class_job_bm_functions->salary_type_list();
 
     $job_bm_salary_type = get_post_meta($job_id,'job_bm_salary_type', true);
+    $job_bm_salary_type = !empty($job_bm_salary_type) ? $job_bm_salary_type : 'negotiable';
 
     $job_bm_salary_type = isset($_POST['job_bm_salary_type']) ? sanitize_text_field($_POST['job_bm_salary_type']) : $job_bm_salary_type;
 
@@ -316,6 +317,38 @@ function job_bm_job_edit_form_salary_type($job_id){
 
         </div>
     </div>
+
+
+    <style type="text/css">
+
+        <?php
+
+        if($job_bm_salary_type =='negotiable'){
+            ?>
+        .salary_max, .salary_min, .salary_fixed, .salary_duration, .salary_currency{
+            display: none;
+        }
+        <?php
+        }elseif ($job_bm_salary_type =='fixed'){
+            ?>
+            .salary_max, .salary_min, .salary_duration, .salary_currency{
+                display: none;
+            }
+            <?php
+        }elseif ($job_bm_salary_type =='min-max'){
+            ?>
+            .salary_fixed{
+                display: none;
+            }
+            <?php
+        }
+
+
+
+        ?>
+
+    </style>
+
     <?php
 }
 
@@ -389,6 +422,73 @@ function job_bm_job_edit_form_salary_max($job_id){
     </div>
     <?php
 }
+
+
+add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_duration', 30);
+
+function job_bm_job_edit_form_salary_duration(){
+
+    $class_job_bm_functions = new class_job_bm_functions();
+    $salary_duration_list = $class_job_bm_functions->salary_duration_list();
+
+    $job_bm_salary_duration = isset($_POST['job_bm_salary_duration']) ? sanitize_text_field($_POST['job_bm_salary_duration']) : "month";
+
+
+    ?>
+    <div class="form-field-wrap salary_duration">
+        <div class="field-title"><?php _e('Salary duration','job-board-manager'); ?></div>
+        <div class="field-input">
+            <select name="job_bm_salary_duration" >
+                <?php
+                if(!empty($salary_duration_list)):
+                    foreach ($salary_duration_list as $salary_duration => $salary_duration_name){
+
+                        $selected = ($job_bm_salary_duration == $salary_duration) ? 'selected' : '';
+
+                        ?>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_duration); ?>"><?php echo esc_html
+                            ($salary_duration_name); ?></option>
+                        <?php
+                    }
+                endif;
+                ?>
+            </select>
+            <p class="field-details"><?php _e('Select salary duration.','job-board-manager'); ?></p>
+
+        </div>
+    </div>
+    <?php
+}
+
+
+
+
+add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_salary_currency', 30);
+
+function job_bm_job_edit_form_salary_currency($job_id){
+
+    $job_bm_salary_currency = get_post_meta($job_id,'job_bm_salary_currency', true);
+
+
+    $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ? sanitize_text_field($_POST['job_bm_salary_currency']) : $job_bm_salary_currency;
+
+    ?>
+    <div class="form-field-wrap salary_currency" >
+        <div class="field-title"><?php _e('Salary currency','job-board-manager'); ?></div>
+        <div class="field-input">
+            <input placeholder="<?php echo __('$','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <p class="field-details"><?php _e('Write salary currency, ex: $','job-board-manager');
+                ?></p>
+        </div>
+    </div>
+    <?php
+}
+
+
+
+
+
+
 
 
 add_action('job_bm_job_edit_form', 'job_bm_job_edit_form_contact_email', 30);
@@ -789,6 +889,10 @@ function job_bm_job_edited_save_data($job_id, $post_data){
     $job_bm_salary_fixed = isset($post_data['job_bm_salary_fixed']) ? sanitize_text_field($post_data['job_bm_salary_fixed']) : "";
     $job_bm_salary_min = isset($post_data['job_bm_salary_min']) ? sanitize_text_field($post_data['job_bm_salary_min']) : "";
     $job_bm_salary_max = isset($post_data['job_bm_salary_max']) ? sanitize_text_field($post_data['job_bm_salary_max']) : "";
+    $job_bm_salary_duration = isset($post_data['job_bm_salary_duration']) ? sanitize_text_field($post_data['job_bm_salary_duration']) : "";
+
+    $job_bm_salary_currency = isset($post_data['job_bm_salary_currency']) ? sanitize_text_field($post_data['job_bm_salary_currency']) : "";
+
     $job_bm_contact_email = isset($post_data['job_bm_contact_email']) ? sanitize_text_field($post_data['job_bm_contact_email']) : "";
     $job_bm_company_name = isset($post_data['job_bm_company_name']) ? sanitize_text_field($post_data['job_bm_company_name']) : "";
     $job_bm_location = isset($post_data['job_bm_location']) ? sanitize_text_field($post_data['job_bm_location']) : "";
@@ -809,6 +913,8 @@ function job_bm_job_edited_save_data($job_id, $post_data){
     update_post_meta($job_id, 'job_bm_salary_fixed', $job_bm_salary_fixed);
     update_post_meta($job_id, 'job_bm_salary_min', $job_bm_salary_min);
     update_post_meta($job_id, 'job_bm_salary_max', $job_bm_salary_max);
+    update_post_meta($job_id, 'job_bm_salary_duration', $job_bm_salary_duration);
+    update_post_meta($job_id, 'job_bm_salary_currency', $job_bm_salary_currency);
     update_post_meta($job_id, 'job_bm_contact_email', $job_bm_contact_email);
 
     update_post_meta($job_id, 'job_bm_company_name', $job_bm_company_name);

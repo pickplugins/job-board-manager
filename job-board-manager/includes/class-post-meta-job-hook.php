@@ -176,14 +176,12 @@ function job_bm_meta_box_salary_type($job_id){
     <script>
         jQuery(document).ready(function($) {
 
-            $('#job_bm_salary_fixed').parent().parent().fadeOut();
-            $('#job_bm_salary_min').parent().parent().fadeOut();
-            $('#job_bm_salary_max').parent().parent().fadeOut();
 
             <?php
             if($job_bm_salary_type == 'fixed'):
                 ?>
                 $('#job_bm_salary_fixed').parent().parent().fadeIn();
+                $('#job_bm_salary_duration').parent().parent().fadeIn();
                 $('#job_bm_salary_min').parent().parent().fadeOut();
                 $('#job_bm_salary_max').parent().parent().fadeOut();
                 <?php
@@ -192,6 +190,7 @@ function job_bm_meta_box_salary_type($job_id){
                 ?>
                 $('#job_bm_salary_min').parent().parent().fadeIn();
                 $('#job_bm_salary_max').parent().parent().fadeIn();
+                $('#job_bm_salary_duration').parent().parent().fadeIn();
                 $('#job_bm_salary_fixed').parent().parent().fadeOut();
                 <?php
             else:
@@ -199,6 +198,8 @@ function job_bm_meta_box_salary_type($job_id){
                 $('#job_bm_salary_fixed').parent().parent().fadeOut();
                 $('#job_bm_salary_min').parent().parent().fadeOut();
                 $('#job_bm_salary_max').parent().parent().fadeOut();
+                $('#job_bm_salary_duration').parent().parent().fadeOut();
+                $('#job_bm_salary_currency').parent().parent().fadeOut();
                 <?php
             endif;
             ?>
@@ -210,19 +211,24 @@ function job_bm_meta_box_salary_type($job_id){
                 if(salary_type=='fixed'){
 
                     $('#job_bm_salary_fixed').parent().parent().fadeIn();
+                    $('#job_bm_salary_duration').parent().parent().fadeIn();
                     $('#job_bm_salary_min').parent().parent().fadeOut();
                     $('#job_bm_salary_max').parent().parent().fadeOut();
+
                 }
                 else if(salary_type=='min-max'){
 
                     $('#job_bm_salary_min').parent().parent().fadeIn();
                     $('#job_bm_salary_max').parent().parent().fadeIn();
+                    $('#job_bm_salary_duration').parent().parent().fadeIn();
                     $('#job_bm_salary_fixed').parent().parent().fadeOut();
                 }
                 else{
                     $('#job_bm_salary_fixed').parent().parent().fadeOut();
                     $('#job_bm_salary_min').parent().parent().fadeOut();
                     $('#job_bm_salary_max').parent().parent().fadeOut();
+                    $('#job_bm_salary_duration').parent().parent().fadeOut();
+                    $('#job_bm_salary_currency').parent().parent().fadeOut();
                 }
 
             })
@@ -308,6 +314,37 @@ function job_bm_meta_box_job_salary_max($job_id){
     $settings_tabs_field->generate_field($args);
 
 }
+
+
+
+
+add_action('job_bm_metabox_job_content_job_info','job_bm_meta_box_salary_duration');
+
+function job_bm_meta_box_salary_duration($job_id){
+
+    $settings_tabs_field = new settings_tabs_field();
+    $class_job_bm_functions = new class_job_bm_functions();
+    $salary_duration_list = $class_job_bm_functions->salary_duration_list();
+
+    $job_bm_salary_duration = get_post_meta($job_id, 'job_bm_salary_duration', true);
+
+    $args = array(
+        'id'		=> 'job_bm_salary_duration',
+        //'parent'		=> '',
+        'title'		=> __('Salary duration','job-board-manager'),
+        'details'	=> __('Select salary duration.','job-board-manager'),
+        'type'		=> 'select',
+        'value'		=> $job_bm_salary_duration,
+        'default'		=> '',
+        'args'		=> $salary_duration_list,
+    );
+
+    $settings_tabs_field->generate_field($args);
+
+
+}
+
+
 
 
 
@@ -636,10 +673,13 @@ function job_bm_meta_box_save_job($job_id){
     $job_bm_salary_max = isset($_POST['job_bm_salary_max']) ? sanitize_text_field($_POST['job_bm_salary_max']) : '';
     update_post_meta($job_id, 'job_bm_salary_max', $job_bm_salary_max);
 
-    $job_bm_salary_currency = isset($_POST['job_bm_salary_max']) ? sanitize_text_field($_POST['job_bm_salary_currency']) : '';
+    $job_bm_salary_duration = isset($_POST['job_bm_salary_duration']) ? sanitize_text_field($_POST['job_bm_salary_duration']) : '';
+    update_post_meta($job_id, 'job_bm_salary_duration', $job_bm_salary_duration);
+
+    $job_bm_salary_currency = isset($_POST['job_bm_salary_currency']) ? sanitize_text_field($_POST['job_bm_salary_currency']) : '';
     update_post_meta($job_id, 'job_bm_salary_currency', $job_bm_salary_currency);
 
-    $job_bm_contact_email = isset($_POST['job_bm_salary_max']) ? sanitize_text_field($_POST['job_bm_contact_email']) : '';
+    $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : '';
     update_post_meta($job_id, 'job_bm_contact_email', $job_bm_contact_email);
 
 

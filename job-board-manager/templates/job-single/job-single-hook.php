@@ -251,6 +251,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         $job_status_list = $class_job_bm_functions->job_status_list();
         $job_type_list = $class_job_bm_functions->job_type_list();
         $job_level_list = $class_job_bm_functions->job_level_list();
+        $salary_duration_list = $class_job_bm_functions->salary_duration_list();
 
 
         $post_id = get_the_id();
@@ -267,6 +268,9 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
         $job_bm_salary_currency = get_post_meta($post_id, 'job_bm_salary_currency', true);
         $job_bm_job_status = get_post_meta($post_id, 'job_bm_job_status', true);
+        $job_bm_salary_duration = get_post_meta($post_id, 'job_bm_salary_duration', true);
+
+        $job_bm_salary_duration = !empty($job_bm_salary_duration) ? $job_bm_salary_duration : 'month';
 
 
         $job_bm_salary_currency = !empty($job_bm_salary_currency) ? $job_bm_salary_currency : $salary_currency;
@@ -344,10 +348,12 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
             endif;
 
+        $salary_duration = isset($salary_duration_list[$job_bm_salary_duration]) ? $salary_duration_list[$job_bm_salary_duration] : '';
+
             ?>
 
             <?php if($job_bm_salary_fixed):?>
-                <span class="meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html)?></span>
+                <span class="meta-item"><?php echo sprintf(__('%s Salary: %s / %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html, $salary_duration)?></span>
             <?php endif;
 
         $meta_items['job_salary'] = ob_get_clean();
