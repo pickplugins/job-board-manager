@@ -40,6 +40,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/class-post-meta-job-hook.php');
         require_once( job_bm_plugin_dir . 'includes/class-support-help.php');
         require_once( job_bm_plugin_dir . 'includes/class-job-data.php');
+        //require_once( job_bm_plugin_dir . 'includes/class-user.php');
 
 
 
