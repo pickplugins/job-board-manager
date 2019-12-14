@@ -114,6 +114,8 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 	= 2.1.29 =
     * 06/12/2019 - fix - single job wrapper id echo issue fixed
     * 06/12/2019 - fix - array to string convert issue on single job for job categories.
+    * 15/12/2019 - add - display job on single tag page.
+
 
 	= 2.1.28 =
     * 05/10/2019 - add - filter hook job_bm_job_import_query_args added

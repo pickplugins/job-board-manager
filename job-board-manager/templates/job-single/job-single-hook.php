@@ -762,7 +762,54 @@ function job_bm_application_methods_form_direct_email($job_id){
 }
 
 
+add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_tags', 90 );
 
+if ( ! function_exists( 'job_bm_template_single_job_tags' ) ) {
+    function job_bm_template_single_job_tags(){
+
+
+        global $post;
+        $job_id =get_the_id();
+        $tags = get_the_terms($job_id, 'job_tag');
+
+        if(!empty($tags)):
+            ?>
+            <div class="single-job-tags">
+                 <span class="tag-title"><?php echo sprintf(__('%s Job tags:', 'job-board-manager'),'<i class="fas fa-tags"></i>'); ?></span>
+                <?php
+
+                $tags_total = count($tags);
+                $term_sepa = ', ';
+                $tag_count = 1;
+                foreach ($tags as $tag):
+
+                    $term_id = isset($tag->term_id) ? $tag->term_id : '';
+                    $term_name = isset($tag->name) ? $tag->name : '';
+                    $term_count = isset($tag->count) ? $tag->count : '';
+
+                    $term_url = get_term_link($term_id, 'job_tag');
+                    ?>
+                    <a class="tag-link" href="<?php echo $term_url; ?>"><?php echo $term_name; ?></a>
+                    <?php
+
+                    if($tags_total > $tag_count) {
+                        ?>
+                        <span class="tag-separator"><?php echo $term_sepa; ?></span>
+                        <?php
+                    }
+
+                    $tag_count++;
+                endforeach;
+                ?>
+            </div>
+        <?php
+        endif;
+
+
+
+
+    }
+}
 
 
 

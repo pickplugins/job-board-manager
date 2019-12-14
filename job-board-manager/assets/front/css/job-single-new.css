@@ -276,8 +276,13 @@
 
 
 
+.single-job-tags{
+  margin: 30px 0;
+}
+.single-job-tags .tag-title{}
+.single-job-tags .tag-link{}
 
-
+.single-job-tags .tag-separator{}
 
 
 @media only screen and (max-width: 768px ) {
