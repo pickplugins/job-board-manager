@@ -484,6 +484,7 @@ function job_bm_job_featured_send_email($job_id){
     $job_bm_logo_url = wp_get_attachment_url($job_bm_logo_url);
     $job_bm_from_email = get_option('job_bm_from_email', $admin_email);
 
+    $job_bm_featured = get_post_meta($job_id, 'job_bm_featured', true);
 
     $email_data = array();
     $class_job_bm_emails = new class_job_bm_emails();
@@ -494,7 +495,7 @@ function job_bm_job_featured_send_email($job_id){
     $enable = isset($job_bm_email_templates_data['job_featured']['enable']) ? $job_bm_email_templates_data['job_featured']['enable'] : 'no';
 
 
-    if($enable == 'yes'):
+    if($enable == 'yes' && $job_bm_featured == 'yes'):
 
         $email_to = isset($job_bm_email_templates_data['job_featured']['email_to']) ? $job_bm_email_templates_data['job_featured']['email_to'] : '';
         $email_from_name = isset($job_bm_email_templates_data['job_featured']['email_from_name']) ? $job_bm_email_templates_data['job_featured']['email_from_name'] : $site_name;
@@ -505,6 +506,7 @@ function job_bm_job_featured_send_email($job_id){
         $job_data = get_post($job_id);
         $job_author_data = get_user_by('ID', $job_data->post_author);
         $job_author_email = get_post_meta($job_id, 'job_bm_contact_email', true);
+
 
 
 
@@ -605,7 +607,7 @@ function job_bm_job_published_send_email($job_id){
             '{job_url}'  => get_permalink($job_id),
             '{job_edit_url}'  => get_admin_url().'post.php?post='.$job_id.'&action=edit',
             '{job_author_id}'  => $job_data->author_id,
-            '{job_author_name}'  => $job_author_data->display_name,
+            '{job_author_name}'  => isset($job_author_data->display_name) ? $job_author_data->display_name : '',
             '{job_author_avatar}'  => get_avatar( $job_data->author_id, 60 ),
 
             '{current_user_id}'  => $current_user->ID,
@@ -692,7 +694,7 @@ function job_bm_job_submitted_send_email($job_id, $post_data){
             '{job_url}'  => get_permalink($job_id),
             '{job_edit_url}'  => get_admin_url().'post.php?post='.$job_id.'&action=edit',
             '{job_author_id}'  => $job_data->author_id,
-            '{job_author_name}'  => $job_author_data->display_name,
+            '{job_author_name}'  => isset($job_author_data->display_name) ? $job_author_data->display_name : '',
             '{job_author_avatar}'  => get_avatar( $job_data->author_id, 60 ),
 
             '{current_user_id}'  => $current_user->ID,

@@ -10,6 +10,11 @@
   margin-bottom: 30px;
   border-left: 3px solid #fdc51c;
 }
+.job-single .job-preview-notice .edit-link{
+  float: right;
+}
+
+
 
 .job-single .job-meta-top{
   margin-bottom: 30px;

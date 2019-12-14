@@ -1,9 +1,6 @@
 <?php
 
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -64,10 +61,18 @@ class class_job_bm_shortcodes_job_edit{
 
         wp_enqueue_style('job-bm-job-submit');
         wp_enqueue_script('job-bm-job-submit');
-
+        wp_enqueue_script('job-bm-media-upload');
+        wp_enqueue_style('job-bm-media-upload');
         // For media uploader in front-end
         wp_enqueue_media();
-        wp_enqueue_style('common');
+
+        ?>
+        <style type="text/css">
+            .screen-reader-text{
+                display: none;
+            }
+        </style>
+        <?php
 
 		return ob_get_clean();
 		

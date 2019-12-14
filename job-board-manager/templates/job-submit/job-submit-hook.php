@@ -3,6 +3,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
+
 /* Display question title field */
 
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_title', 5);
@@ -12,7 +13,7 @@ function job_bm_job_submit_form_title(){
     $post_title = isset($_POST['post_title']) ? sanitize_text_field($_POST['post_title']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php echo __('Job title','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="" type="text" value="<?php echo $post_title; ?>" name="post_title">
@@ -31,12 +32,11 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_content', 10);
 function job_bm_job_submit_form_content(){
 
     $field_id = 'post_content';
-    $allowed_html = apply_filters('job_bm_job_submit_allowed_html_tags', array());
-    $post_content = isset($_POST['post_content']) ? wp_kses($_POST['post_content'], $allowed_html) : "";
+    $post_content = isset($_POST['post_content']) ? wp_kses_post($_POST['post_content']) : "";
 
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Job description','job-board-manager'); ?></div>
         <div class="field-input">
             <?php
@@ -146,10 +146,10 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_total_vacancies', 3
 
 function job_bm_job_submit_form_total_vacancies(){
 
-    $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : "";
+    $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : 1;
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Total vacancies','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="3" type="text" value="<?php echo $job_bm_total_vacancies; ?>" name="job_bm_total_vacancies">
@@ -250,7 +250,7 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_years_experience', 
 
 function job_bm_job_submit_form_years_experience(){
 
-    $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : "";
+    $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : 1;
 
     ?>
     <div class="form-field-wrap">
@@ -453,8 +453,8 @@ function job_bm_job_submit_form_salary_currency(){
     <div class="form-field-wrap salary_currency" >
         <div class="field-title"><?php _e('Salary currency','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('$','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
-            <p class="field-details"><?php _e('Write salary currency, ex: $','job-board-manager');
+            <input placeholder="<?php echo __('USD','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <p class="field-details"><?php _e('Write salary currency, ex: USD','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -473,10 +473,21 @@ add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_contact_email', 30)
 
 function job_bm_job_submit_form_contact_email(){
 
-    $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : "";
+    $job_bm_job_submit_create_account = get_option('job_bm_job_submit_create_account');
+    $job_bm_job_submit_generate_username = get_option('job_bm_job_submit_generate_username');
+
+
+    global $current_user;
+
+    $logged_user_email =  isset($current_user->user_email) ? $current_user->user_email : '';
+    //var_dump($current_user->user_email);
+
+    $job_bm_contact_email = isset($_POST['job_bm_contact_email']) ? sanitize_text_field($_POST['job_bm_contact_email']) : $logged_user_email;
+    $job_bm_username = isset($_POST['job_bm_username']) ? sanitize_text_field($_POST['job_bm_username']) : '';
+    $job_bm_create_account = isset($_POST['job_bm_create_account']) ? sanitize_text_field($_POST['job_bm_create_account']) : '';
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Contact email','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="contact@company.com" type="email" value="<?php echo $job_bm_contact_email; ?>" name="job_bm_contact_email">
@@ -484,6 +495,44 @@ function job_bm_job_submit_form_contact_email(){
                 ?></p>
         </div>
     </div>
+
+    <?php
+
+    if(!is_user_logged_in() && $job_bm_job_submit_create_account == 'yes'):
+        ?>
+        <div class="form-field-wrap">
+            <div class="field-title"></div>
+            <div class="field-input">
+                <label><input type="checkbox" <?php if($job_bm_create_account) echo 'checked'; ?>  value="1" name="job_bm_create_account"> <?php echo __('Create account?'); ?></label>
+                <p class="field-details"></p>
+                <input style="display: <?php if($job_bm_create_account) echo 'block'; else echo 'none'; ?>" placeholder="username" type="text" value="<?php echo $job_bm_username; ?>" name="job_bm_username">
+
+            </div>
+        </div>
+
+    <script>
+        jQuery(document).ready(function($) {
+            $(document).on('change', '.job-bm-job-submit input[name="job_bm_create_account"]', function(){
+
+                if($(this).attr("checked") ){
+                    $('input[name="job_bm_username"]').fadeIn();
+                }else{
+                    $('input[name="job_bm_username"]').fadeOut();
+                }
+
+
+
+            })
+        })
+    </script>
+
+        <?php
+    endif;
+
+    ?>
+
+
+
     <?php
 }
 
@@ -515,7 +564,7 @@ function job_bm_job_submit_form_company_name(){
     $job_bm_company_name = isset($_POST['job_bm_company_name']) ? sanitize_text_field($_POST['job_bm_company_name']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Company name','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="" type="text" value="<?php echo $job_bm_company_name; ?>" name="job_bm_company_name">
@@ -535,7 +584,7 @@ function job_bm_job_submit_form_location(){
     $job_bm_location = isset($_POST['job_bm_location']) ? sanitize_text_field($_POST['job_bm_location']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Location','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="New York" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
@@ -554,7 +603,7 @@ function job_bm_job_submit_form_address(){
     $job_bm_address = isset($_POST['job_bm_address']) ? sanitize_text_field($_POST['job_bm_address']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is_required">
         <div class="field-title"><?php _e('Address','job-board-manager'); ?></div>
         <div class="field-input">
             <input placeholder="4549 Godfrey Road" type="text" value="<?php echo $job_bm_address; ?>" name="job_bm_address">
@@ -571,7 +620,7 @@ function job_bm_job_submit_form_address(){
 add_action('job_bm_job_submit_form', 'job_bm_job_submit_form_company_website', 45);
 function job_bm_job_submit_form_company_website(){
 
-    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? sanitize_text_field($_POST['job_bm_company_website']) : "";
+    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? esc_url_raw($_POST['job_bm_company_website']) : "";
 
     ?>
     <div class="form-field-wrap">
@@ -597,20 +646,39 @@ function job_bm_job_submit_form_company_logo(){
     <div class="form-field-wrap job-bm-media-upload">
         <div class="field-title"><?php _e('Company logo','job-board-manager'); ?></div>
         <div class="field-input">
-            <div class="media-preview-wrap" style="">
-                <img class="media-preview" src="<?php echo $job_bm_company_logo; ?>" style="width:100%;box-shadow: none;"/>
-            </div>
 
-            <input placeholder="" type="text" value="<?php echo $job_bm_company_logo; ?>" name="job_bm_company_logo">
-            <span class="media-upload " id=""><?php echo __('Upload','job-board-manager');?></span>
-<!--            <span class="media-clear" id="">--><?php //echo __('Clear','job-board-manager');?><!--</span>-->
 
-            <p class="field-details"><?php _e('Upload company logo','job-board-manager');
-                ?></p>
+            <?php
+
+            if(is_user_logged_in()):
+                ?>
+                <div class="media-preview-wrap" style="">
+                    <img class="media-preview" src="<?php echo $job_bm_company_logo; ?>" style="width:100%;box-shadow: none;"/>
+                </div>
+
+                <input placeholder="" type="text" value="<?php echo $job_bm_company_logo; ?>" name="job_bm_company_logo">
+
+
+                <span class="media-upload " id=""><?php echo __('Upload','job-board-manager');?></span>
+                <p class="field-details"><?php _e('Upload company logo','job-board-manager'); ?></p>
+                <?php
+            else:
+
+                ?>
+                <input type="file" name="job_bm_company_logo"  multiple="false" />
+
+
+                <p class="field-details"><?php echo __('Choose image to upload company logo, you can use logo url.','job-board-manager'); ?></p>
+                <?php
+
+            endif;
+
+            ?>
         </div>
     </div>
     <?php
 }
+
 
 
 
@@ -624,7 +692,7 @@ function job_bm_job_submit_form_recaptcha(){
     $job_bm_reCAPTCHA_enable		= get_option('job_bm_reCAPTCHA_enable');
     $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
 
-    if($job_bm_reCAPTCHA_enable != 'yes'){
+    if(empty($job_bm_reCAPTCHA_site_key) || $job_bm_reCAPTCHA_enable != 'yes'){
         return;
     }
 
@@ -721,18 +789,18 @@ function job_bm_job_submit_data($post_data){
     }
 
 
-    if(($post_data['job_bm_salary_type'] == 'fixed')){
+    if((isset($post_data['job_bm_salary_type']) && $post_data['job_bm_salary_type'] == 'fixed')){
         if(empty($post_data['job_bm_salary_fixed'])){
             $error->add( 'job_bm_salary_fixed', __( 'ERROR: Salary fixed is empty.', 'job-board-manager' ) );
         }
     }
 
-    if(($post_data['job_bm_salary_type'] == 'min-max')){
+    if((isset($post_data['job_bm_salary_type']) && $post_data['job_bm_salary_type'] == 'min-max')){
         if(empty($post_data['job_bm_salary_min'])){
             $error->add( 'job_bm_salary_min', __( 'ERROR: Salary minimum is empty.', 'job-board-manager' ) );
         }
 
-        if(empty($post_data['job_bm_salary_max'])){
+        if(isset($post_data['job_bm_salary_max']) && empty($post_data['job_bm_salary_max'])){
             $error->add( 'job_bm_salary_max', __( 'ERROR: Salary maximum is empty.', 'job-board-manager' ) );
         }
 
@@ -743,9 +811,39 @@ function job_bm_job_submit_data($post_data){
 
 
     if(empty($post_data['job_bm_contact_email'])){
-
         $error->add( 'job_bm_contact_email', __( 'ERROR: Contact email is empty.', 'job-board-manager' ) );
+
     }
+
+    if ( !is_email( $post_data['job_bm_contact_email'] ) ) {
+        $error->add('email_invalid', __('ERROR: Email is not valid','job-board-manager'));
+    }
+
+
+    if(isset($post_data['job_bm_create_account'])){
+
+        $email = isset($post_data['job_bm_contact_email']) ? sanitize_email($post_data['job_bm_contact_email']) : '';
+        if ( email_exists( $email ) ) {
+            $error->add('email_exists', __('ERROR: User already registered with this email.','job-board-manager'));
+        }
+
+        if(empty($post_data['job_bm_username'])){
+            $error->add( 'username_exist', __( 'ERROR: username is empty.', 'job-board-manager' ) );
+
+        }
+
+        if ( username_exists( $post_data['job_bm_username'] ) ){
+            $error->add('username_exist',__( 'ERROR: username already exists!','job-board-manager'));
+        }
+
+        if ( strlen( $post_data['job_bm_username'] ) < 4 ) {
+            $error->add('username_short', __('ERROR: username at least 4 characters is required','job-board-manager'));
+        }
+
+
+    }
+
+
 
     if(empty($post_data['job_bm_company_name'])){
 
@@ -763,9 +861,22 @@ function job_bm_job_submit_data($post_data){
         $error->add( 'job_bm_address', __( 'ERROR: Address is empty.', 'job-board-manager' ) );
     }
 
-    if(empty($post_data['job_bm_company_logo'])){
 
-        $error->add( 'job_bm_company_logo', __( 'ERROR: Company logo is empty.', 'job-board-manager' ) );
+    if ( !is_user_logged_in() && !empty($_FILES['job_bm_company_logo']['name']) ) {
+        // These files need to be included as dependencies when on the front end.
+        require_once( ABSPATH . 'wp-admin/includes/image.php' );
+        require_once( ABSPATH . 'wp-admin/includes/file.php' );
+        require_once( ABSPATH . 'wp-admin/includes/media.php' );
+
+        $attachment_id = media_handle_upload( 'job_bm_company_logo', 0 );
+
+
+
+        if( is_wp_error( $attachment_id )){
+            $error->add( 'company_logo', __( 'ERROR: Sorry, this file type is not permitted for security reasons.', 'job-board-manager-resume-manager' ) );
+        }else{
+            $post_data['company_logo_id'] = $attachment_id;
+        }
     }
 
     if(empty($post_data['g-recaptcha-response']) && $job_bm_reCAPTCHA_enable =='yes'){
@@ -785,6 +896,31 @@ function job_bm_job_submit_data($post_data){
     }
 
 
+    if(isset($post_data['job_bm_create_account'])){
+
+        $username = isset($post_data['job_bm_username']) ? sanitize_user($post_data['job_bm_username']) : "";
+        $password = wp_generate_password(8);
+        $email = isset($post_data['job_bm_contact_email']) ? sanitize_email($post_data['job_bm_contact_email']) : "";
+
+        if(!empty($username) && !empty($email)){
+
+            $userdata = array(
+                'user_login'	=> 	$username,
+                'user_email' 	=> 	$email,
+                'user_pass' 	=> 	$password,
+                'role' 	=> 	'job_poster',
+            );
+
+            $user_id = wp_insert_user( $userdata );
+
+            if( is_wp_error( $user_id )){
+                $error->add( 'account_create', __( 'ERROR: Something is wrong when creating account.', 'job-board-manager-resume-manager' ) );
+            }
+        }
+
+    }
+
+
 
     $errors = apply_filters( 'job_bm_job_submit_errors', $error, $post_data );
 
@@ -795,11 +931,8 @@ function job_bm_job_submit_data($post_data){
 
     if ( !$error->has_errors() ) {
 
-        $allowed_html = array();
-
         $post_title = isset($post_data['post_title']) ? $post_data['post_title'] :'';
-        $post_content = isset($post_data['post_content']) ? wp_kses($post_data['post_content'], $allowed_html) : "";
-
+        $post_content = isset($post_data['post_content']) ? wp_kses_post($post_data['post_content']) : "";
 
         $job_ID = wp_insert_post(
             array(
@@ -812,6 +945,11 @@ function job_bm_job_submit_data($post_data){
         );
 
         do_action('job_bm_job_submitted', $job_ID, $post_data);
+
+
+
+
+
 
     }
     else{
@@ -843,6 +981,9 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
 
     $user_id = get_current_user_id();
 
+    $company_logo_id = isset($post_data['company_logo_id']) ? sanitize_text_field($post_data['company_logo_id']) : "";
+
+
     $job_category = isset($post_data['job_category']) ? sanitize_text_field($post_data['job_category']) : "";
     $job_bm_total_vacancies = isset($post_data['job_bm_total_vacancies']) ? sanitize_text_field($post_data['job_bm_total_vacancies']) : "";
     $job_bm_job_type = isset($post_data['job_bm_job_type']) ? sanitize_text_field($post_data['job_bm_job_type']) : "";
@@ -858,7 +999,8 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
     $job_bm_company_name = isset($post_data['job_bm_company_name']) ? sanitize_text_field($post_data['job_bm_company_name']) : "";
     $job_bm_location = isset($post_data['job_bm_location']) ? sanitize_text_field($post_data['job_bm_location']) : "";
     $job_bm_address = isset($post_data['job_bm_address']) ? sanitize_text_field($post_data['job_bm_address']) : "";
-    $job_bm_company_logo = isset($post_data['job_bm_company_logo']) ? sanitize_text_field($post_data['job_bm_company_logo']) : "";
+    $job_bm_company_website = isset($post_data['job_bm_company_website']) ? esc_url_raw($post_data['job_bm_company_website']) : "";
+
 
 
 
@@ -881,7 +1023,20 @@ function job_bm_job_submitted_save_data($job_ID, $post_data){
     update_post_meta($job_ID, 'job_bm_company_name', $job_bm_company_name);
     update_post_meta($job_ID, 'job_bm_location', $job_bm_location);
     update_post_meta($job_ID, 'job_bm_address', $job_bm_address);
-    update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
+    update_post_meta($job_ID, 'job_bm_company_website', $job_bm_company_website);
+
+
+
+    if(is_user_logged_in()){
+        $job_bm_company_logo = isset($post_data['job_bm_company_logo']) ? sanitize_text_field($post_data['job_bm_company_logo']) : "";
+        update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
+    }else{
+
+        $job_bm_company_logo = wp_get_attachment_url($company_logo_id);
+        update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
+    }
+
+
 
 
     update_post_meta($job_ID, 'job_bm_job_status', 'open');

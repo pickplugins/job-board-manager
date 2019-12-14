@@ -34,8 +34,7 @@ function job_bm_job_edit_form_content($job_id){
     $job_post = get_post($job_id);
 
     $field_id = 'post_content';
-    $allowed_html = apply_filters('job_bm_job_edit_allowed_html_tags', array());
-    $post_content = isset($_POST['post_content']) ? wp_kses($_POST['post_content'], $allowed_html) : $job_post->post_content;
+    $post_content = isset($_POST['post_content']) ? wp_kses_post($_POST['post_content']) : $job_post->post_content;
 
 
     ?>
@@ -476,8 +475,8 @@ function job_bm_job_edit_form_salary_currency($job_id){
     <div class="form-field-wrap salary_currency" >
         <div class="field-title"><?php _e('Salary currency','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('$','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
-            <p class="field-details"><?php _e('Write salary currency, ex: $','job-board-manager');
+            <input placeholder="<?php echo __('USD','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <p class="field-details"><?php _e('Write salary currency, ex: USD','job-board-manager');
                 ?></p>
         </div>
     </div>
@@ -604,7 +603,7 @@ function job_bm_job_edit_form_company_website($job_id){
 
     $job_bm_company_website = get_post_meta($job_id,'job_bm_company_website', true);
 
-    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? sanitize_text_field($_POST['job_bm_company_website']) : $job_bm_company_website;
+    $job_bm_company_website = isset($_POST['job_bm_company_website']) ? esc_url_raw($_POST['job_bm_company_website']) : $job_bm_company_website;
 
     ?>
     <div class="form-field-wrap">
@@ -635,7 +634,7 @@ function job_bm_job_edit_form_company_logo($job_id){
     $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : $job_bm_company_logo;
 
     ?>
-    <div class="form-field-wrap ">
+    <div class="form-field-wrap job-bm-media-upload">
         <div class="field-title"><?php _e('Company logo','job-board-manager'); ?></div>
         <div class="field-input">
             <div class="media-preview-wrap" style="">
@@ -644,10 +643,7 @@ function job_bm_job_edit_form_company_logo($job_id){
 
             <input placeholder="" type="text" value="<?php echo $job_bm_company_logo; ?>" name="job_bm_company_logo">
             <span class="media-upload " id=""><?php echo __('Upload','job-board-manager');?></span>
-<!--            <span class="media-clear" id="">--><?php //echo __('Clear','job-board-manager');?><!--</span>-->
-
-            <p class="field-details"><?php _e('Upload company logo','job-board-manager');
-                ?></p>
+            <p class="field-details"><?php _e('Upload company logo','job-board-manager'); ?></p>
         </div>
     </div>
     <?php
@@ -762,18 +758,18 @@ function job_bm_job_edit_data($job_id, $post_data){
     }
 
 
-    if(($post_data['job_bm_salary_type'] == 'fixed')){
+    if((isset($post_data['job_bm_salary_type']) && $post_data['job_bm_salary_type'] == 'fixed')){
         if(empty($post_data['job_bm_salary_fixed'])){
             $error->add( 'job_bm_salary_fixed', __( 'ERROR: Salary fixed is empty.', 'job-board-manager' ) );
         }
     }
 
-    if(($post_data['job_bm_salary_type'] == 'min-max')){
+    if((isset($post_data['job_bm_salary_type']) && $post_data['job_bm_salary_type'] == 'min-max')){
         if(empty($post_data['job_bm_salary_min'])){
             $error->add( 'job_bm_salary_min', __( 'ERROR: Salary minimum is empty.', 'job-board-manager' ) );
         }
 
-        if(empty($post_data['job_bm_salary_max'])){
+        if( isset($post_data['job_bm_salary_max']) && empty($post_data['job_bm_salary_max'])){
             $error->add( 'job_bm_salary_max', __( 'ERROR: Salary maximum is empty.', 'job-board-manager' ) );
         }
 
@@ -831,10 +827,8 @@ function job_bm_job_edit_data($job_id, $post_data){
 
     if ( !$error->has_errors() ) {
 
-        $allowed_html = array();
-
         $post_title = isset($post_data['post_title']) ? $post_data['post_title'] :'';
-        $post_content = isset($post_data['post_content']) ? wp_kses($post_data['post_content'], $allowed_html) : "";
+        $post_content = isset($post_data['post_content']) ? wp_kses_post($post_data['post_content']) : "";
 
 
         wp_update_post(
@@ -898,6 +892,7 @@ function job_bm_job_edited_save_data($job_id, $post_data){
     $job_bm_location = isset($post_data['job_bm_location']) ? sanitize_text_field($post_data['job_bm_location']) : "";
     $job_bm_address = isset($post_data['job_bm_address']) ? sanitize_text_field($post_data['job_bm_address']) : "";
     $job_bm_company_logo = isset($post_data['job_bm_company_logo']) ? sanitize_text_field($post_data['job_bm_company_logo']) : "";
+    $job_bm_company_website = isset($post_data['job_bm_company_website']) ? esc_url_raw($post_data['job_bm_company_website']) : "";
 
 
 
@@ -920,6 +915,8 @@ function job_bm_job_edited_save_data($job_id, $post_data){
     update_post_meta($job_id, 'job_bm_company_name', $job_bm_company_name);
     update_post_meta($job_id, 'job_bm_location', $job_bm_location);
     update_post_meta($job_id, 'job_bm_address', $job_bm_address);
+    update_post_meta($job_id, 'job_bm_company_website', $job_bm_company_website);
+
     update_post_meta($job_id, 'job_bm_company_logo', $job_bm_company_logo);
 
 

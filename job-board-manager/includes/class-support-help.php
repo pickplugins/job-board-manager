@@ -14,13 +14,6 @@ class class_job_bm_support_help{
 
         $addons_data_new = array(
 
-
-//            'expired-check'=>array(	'title'=>'Expired check',
-//                'content'=>' Job Board Manager add-on for check expired job. ',
-//                'item_link'=>'https://wordpress.org/plugins/job-board-manager-expired-check/',
-//                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/expired-check.png',
-//            ),
-
             'widgets'=>array(	'title'=>'Widgets',
                 'content'=>'Widgets for Job Board Manager.',
                 'item_link'=>'https://wordpress.org/plugins/job-board-manager-widgets/',
@@ -28,13 +21,6 @@ class class_job_bm_support_help{
                 'wp_org_slug'=>'job-board-manager-widgets',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/widgets.png',
             ),
-
-//            'breadcrumb'=>array(	'title'=>'Breadcrumb',
-//                'content'=>'Breadcrumb for Job Board Manager.',
-//                'item_link'=>'https://wordpress.org/plugins/job-board-manager-breadcrumb/',
-//                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/breadcrumb.png',
-//            ),
-
 
             'company-profile'=>array(	'title'=>'Company Profile',
                 'content'=>'Addon for creating company profile.',

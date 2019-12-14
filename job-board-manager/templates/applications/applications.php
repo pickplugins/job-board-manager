@@ -36,9 +36,6 @@ if(isset($_POST['comment_submit_hidden'])){
 
     $data = array(
         'comment_post_ID' => $application_id,
-//        'comment_author' => '',
-//        'comment_author_email' => '',
-//        'comment_author_url' => '',
         'comment_content' => $comment_text,
         'user_id' => $userid,
         'comment_date' => $time,
@@ -57,96 +54,20 @@ if(isset($_POST['comment_submit_hidden'])){
 
 <div class="nav-head"><?php echo __('Applications', 'job-board-manager'); ?></div>
 <div class="job-bm-application-list job-bm-applications">
-<!--    <form class="application-search" method="get" action="--><?php //echo $_SERVER['HTTP_REFERER'];?><!--">-->
-<!---->
-<!--        --><?php
-//        $wp_query = new WP_Query(
-//            array (
-//                'post_type' => 'job',
-//                'orderby' => 'date',
-//                'order' => 'DESC',
-//                'author' => $userid,
-//                'posts_per_page' => 10,
-//
-//            ) );
-//
-//        ?>
-<!---->
-<!--        <div class="">-->
-<!--            <select name="job_id">-->
-<!--                <option value="">Select job</option>-->
-<!---->
-<!---->
-<!--                --><?php
-//
-//                if ( $wp_query->have_posts() ) :
-//
-//                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
-//
-//                        $job_id = get_the_id();
-//
-//                        ?>
-<!--                        <option value="--><?php //echo $job_id; ?><!--">--><?php //echo get_the_title(); ?><!--</option>-->
-<!--                    --><?php
-//
-//                    endwhile;
-//
-//                    wp_reset_query();
-//
-//                else:
-//
-//
-//                endif;
-//
-//                ?>
-<!---->
-<!---->
-<!--            </select>-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label><input name="hired" type="checkbox"> Hired</label>-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <label><input name="trashed" type="checkbox"> Trashed</label>-->
-<!--        </div>-->
-<!---->
-<!--        <div>-->
-<!--            <select name="star_count">-->
-<!--                <option value="">Star Count</option>-->
-<!--                <option value="1">1</option>-->
-<!--                <option value="2">2</option>-->
-<!--                <option value="3">3</option>-->
-<!--                <option value="4">4</option>-->
-<!--                <option value="5">5</option>-->
-<!---->
-<!---->
-<!---->
-<!--            </select>-->
-<!--        </div>-->
-<!---->
-<!---->
-<!--        <input type="submit" value="Submit">-->
-<!---->
-<!--    </form>-->
 
     <?php
 
 	if ( is_user_logged_in() ){
 
         $meta_query = array();
-		$job_bm_list_per_page           = get_option('job_bm_list_per_page');
+		$job_bm_list_per_page           = get_option('job_bm_list_per_page', 10);
 		$job_bm_job_type_bg_color       = get_option('job_bm_job_type_bg_color');
 		$job_bm_job_status_bg_color     = get_option('job_bm_job_status_bg_color');
 		$job_bm_featured_bg_color       = get_option('job_bm_featured_bg_color');
 		$job_bm_job_edit_page_id        = get_option('job_bm_job_edit_page_id');
 		$job_bm_job_edit_page_url       = get_permalink($job_bm_job_edit_page_id);
 
-		if(empty($job_bm_list_per_page)){
-			$job_bm_list_per_page = 10;
-			}
-		
+
 			if ( get_query_var('paged') ) {
 				$paged = get_query_var('paged');
 			} elseif ( get_query_var('page') ) {
@@ -160,32 +81,48 @@ if(isset($_POST['comment_submit_hidden'])){
 
 			$i=0;
 
-        if(!empty($current_user_job_ids))
-        foreach ($current_user_job_ids as $job_id){
+//        if(!empty($current_user_job_ids))
+//        foreach ($current_user_job_ids as $job_id){
+//
+//            $meta_query[] = array(
 
-            $meta_query[] = array(
+//                'relation'=>'OR',
 
-                'relation'=>'AND',
-
-                array(
-                    'key'	 	=> 'job_bm_am_job_id',
-                    'value'	  	=> $job_id,
-                    'compare' 	=> '=',
-                ),
-                array(
-                    'key' => 'application_trash',
-                    'value'	  	=> 'yes',
-                    'compare' 	=> 'NOT EXISTS',
-                    'type' => 'CHAR',
-                )
-            );
-
-
-
-            $i++;
-        }
+//                array(
+//                    'key'	 	=> 'job_bm_am_job_id',
+//                    'value'	  	=> $job_id,
+//                    'compare' 	=> '=',
+//                ),
+//                array(
+//                    'key' => 'application_trash',
+//                    'value'	  	=> 'yes',
+//                    'compare' 	=> 'NOT EXISTS',
+//                    'type' => 'CHAR',
+//                )
+//            );
+//
+//
+//
+//            $i++;
+//        }
 
 
+        $meta_query[] = array(
+            array(
+                'key'	 	=> 'job_bm_am_job_id',
+                'value'	  	=> $current_user_job_ids,
+                'compare' 	=> 'IN',
+            ),
+            array(
+                'key' => 'application_trash',
+                'value'	  	=> 'yes',
+                'compare' 	=> 'NOT EXISTS',
+                'type' => 'CHAR',
+            )
+
+        );
+
+        //var_dump($current_user_job_ids);
 
 
         $wp_query_args['post_type'] = 'application';

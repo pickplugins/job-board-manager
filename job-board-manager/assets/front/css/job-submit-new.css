@@ -26,6 +26,7 @@
 
 .job-bm-job-submit .form-field-wrap{}
 .job-bm-job-submit .form-field-wrap input[type="email"],
+.job-bm-job-submit .form-field-wrap .range-slider,
 .job-bm-job-submit .form-field-wrap input[type="text"], .job-bm-job-submit .form-field-wrap textarea, .job-bm-job-submit .form-field-wrap select{
   width: 91%;
 }

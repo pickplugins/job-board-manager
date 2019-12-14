@@ -1,9 +1,6 @@
 <?php
 
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -30,50 +27,43 @@ class class_job_bm_settings{
             add_submenu_page( 'edit.php?post_type=job', __( 'Welcome', 'job-board-manager' ), __( 'Welcome', 'job-board-manager' ), 'manage_options', 'job_bm_welcome', array( $this, 'job_bm_welcome' ) );
         endif;
 
-        add_submenu_page( 'edit.php?post_type=job', __( 'Add-ons', 'job-board-manager' ), __( 'Add-ons', 'job-board-manager' ), 'manage_options', 'job_bm_addons', array( $this, 'job_bm_addons' ) );
 
-        //add_submenu_page( 'edit.php?post_type=job', __( 'install Add-ons', 'job-board-manager' ), __( 'install Add-ons', 'job-board-manager' ), 'manage_options', 'install_addons', array( $this, 'install_addons' ) );
+        add_submenu_page( 'edit.php?post_type=job', __( 'Stats', 'job-board-manager' ), __( 'Stats', 'job-board-manager' ), 'manage_options', 'job_bm_stats', array( $this, 'stats' ) );
+
+        add_submenu_page( 'edit.php?post_type=job', __( 'Add-ons', 'job-board-manager' ), __( 'Add-ons', 'job-board-manager' ), 'manage_options', 'job_bm_addons', array( $this, 'job_bm_addons' ) );
 
 
 
 		do_action( 'job_bm_action_admin_menus' );
 		
 	}
-	
+
+
 	public function settings_page(){
 		
 		include( 'menu/settings-new.php' );
 		}
-	
-	public function help_page(){
-		
-		include( 'menu/help.php' );
-		}	
+
 
 	public function job_bm_welcome(){
 		
 		include( 'menu/welcome.php' );
 		}
 
+    public function stats(){
+
+        include( 'menu/stats.php' );
+    }
+
     public function job_bm_addons(){
 
         include( 'menu/addons.php' );
     }
 
-	public function emails_templates(){
-		
-		include( 'menu/emails-templates.php' );
-		}	
 
-	
-	public function install_addons(){
-		
-		include( 'menu/install-addons.php' );
-		}	
-	
-	
 
-	}
+
+}
 
 
 new class_job_bm_settings();

@@ -1,9 +1,6 @@
 <?php
 
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -22,6 +19,7 @@ class class_job_bm_shortcodes_job_archive{
             array(
                 'display_search' => 'yes',
                 'display_pagination' => 'yes',
+                'keywords' => '',
                 'company_name' => '',
                 'location' => '',
                 'per_page' => '',

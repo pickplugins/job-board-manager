@@ -1,8 +1,5 @@
 <?php
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 	
@@ -233,6 +230,9 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
         $job_bm_reCAPTCHA_secret_key = get_option('job_bm_reCAPTCHA_secret_key');
         $job_bm_submitted_job_status = get_option('job_bm_submitted_job_status');
         $job_bm_redirect_preview_link = get_option('job_bm_redirect_preview_link');
+        $job_bm_restrict_media_file = get_option('job_bm_restrict_media_file');
+        $job_bm_job_submit_create_account = get_option('job_bm_job_submit_create_account');
+        $job_bm_job_submit_generate_username = get_option('job_bm_job_submit_generate_username');
 
 
 
@@ -343,10 +343,47 @@ if(!function_exists('job_bm_settings_tabs_content_job_submit')) {
 
 
 
+            $args = array(
+                'id'		=> 'job_bm_restrict_media_file',
+                //'parent'		=> '',
+                'title'		=> __('Restrict media uploader files','job-board-manager'),
+                'details'	=> __('Restricted media uploader file only logged-in user.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_restrict_media_file,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
 
+            $settings_tabs_field->generate_field($args);
 
+            $args = array(
+                'id'		=> 'job_bm_job_submit_create_account',
+                //'parent'		=> '',
+                'title'		=> __('Allow user create account','job-board-manager'),
+                'details'	=> __('Allow user create account on job submit.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_job_submit_create_account,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
 
+            $settings_tabs_field->generate_field($args);
 
+            $args = array(
+                'id'		=> 'job_bm_job_submit_generate_username',
+                //'parent'		=> '',
+                'title'		=> __('Allow user create username','job-board-manager'),
+                'details'	=> __('Allow user create username on job submit.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_job_submit_generate_username,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
 
 
             ?>
@@ -474,10 +511,16 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
         $job_bm_redirect_logout = get_option('job_bm_redirect_logout');
         $job_bm_registration_enable = get_option('job_bm_registration_enable');
         $job_bm_registration_recaptcha = get_option('job_bm_registration_recaptcha');
+        $job_bm_redirect_after_signup = get_option('job_bm_redirect_after_signup');
+        $job_bm_auto_login_after_signup = get_option('job_bm_auto_login_after_signup');
+
+
 
         $job_bm_login_enable = get_option('job_bm_login_enable');
         $job_bm_can_user_delete_jobs = get_option('job_bm_can_user_delete_jobs');
         $job_bm_can_user_delete_application = get_option('job_bm_can_user_delete_application');
+
+
 
 
         $page_list = job_bm_page_list_id();
@@ -490,85 +533,6 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
 
             <?php
 
-
-
-
-            $args = array(
-                'id'		=> 'job_bm_redirect_login',
-                //'parent'		=> '',
-                'title'		=> __('Redirect after login','job-board-manager'),
-                'details'	=> __('Redirect other link after logged.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_redirect_login,
-                'default'		=> '',
-                'args'		=> $page_list,
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-            $args = array(
-                'id'		=> 'job_bm_redirect_logout',
-                //'parent'		=> '',
-                'title'		=> __('Redirect after logged out','job-board-manager'),
-                'details'	=> __('Redirect other link after logged out.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_redirect_logout,
-                'default'		=> '',
-                'args'		=> $page_list,
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-
-
-            $args = array(
-                'id'		=> 'job_bm_registration_enable',
-                //'parent'		=> '',
-                'title'		=> __('Registration enable','job-board-manager'),
-                'details'	=> __('Registration enable on dashboard page.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_registration_enable,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-            $args = array(
-                'id'		=> 'job_bm_registration_recaptcha',
-                //'parent'		=> '',
-                'title'		=> __('Registration reCAPTCHA enable','job-board-manager'),
-                'details'	=> __('Enable reCAPTCHA on registration.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_registration_recaptcha,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
-
-
-
-            $args = array(
-                'id'		=> 'job_bm_login_enable',
-                //'parent'		=> '',
-                'title'		=> __('Login enable','job-board-manager'),
-                'details'	=> __('Login enable on dashboard page.','job-board-manager'),
-                'type'		=> 'select',
-                //'multiple'		=> true,
-                'value'		=> $job_bm_login_enable,
-                'default'		=> '',
-                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
-            );
-
-            $settings_tabs_field->generate_field($args);
 
             $args = array(
                 'id'		=> 'job_bm_can_user_delete_jobs',
@@ -605,6 +569,155 @@ if(!function_exists('job_bm_settings_tabs_content_dashboard')) {
             ?>
 
         </div>
+
+
+        <div class="section">
+            <div class="section-title"><?php echo __('Login settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize the login settings.', 'job-board-manager'); ?></p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_login_enable',
+                //'parent'		=> '',
+                'title'		=> __('Login enable','job-board-manager'),
+                'details'	=> __('Login enable on dashboard page.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_login_enable,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_redirect_login',
+                //'parent'		=> '',
+                'title'		=> __('Redirect after login','job-board-manager'),
+                'details'	=> __('Redirect other link after logged.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_redirect_login,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_redirect_logout',
+                //'parent'		=> '',
+                'title'		=> __('Redirect after logged out','job-board-manager'),
+                'details'	=> __('Redirect other link after logged out.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_redirect_logout,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+
+
+            ?>
+
+        </div>
+
+
+        <div class="section">
+            <div class="section-title"><?php echo __('Registration settings', 'job-board-manager'); ?></div>
+            <p class="description section-description"><?php echo __('Customize the registration settings.', 'job-board-manager'); ?></p>
+
+            <?php
+
+            $args = array(
+                'id'		=> 'job_bm_registration_enable',
+                //'parent'		=> '',
+                'title'		=> __('Registration enable','job-board-manager'),
+                'details'	=> __('Registration enable on dashboard page.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_registration_enable,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+            $args = array(
+                'id'		=> 'job_bm_registration_recaptcha',
+                //'parent'		=> '',
+                'title'		=> __('Registration reCAPTCHA enable','job-board-manager'),
+                'details'	=> __('Enable reCAPTCHA on registration.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_registration_recaptcha,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+
+            $args = array(
+                'id'		=> 'job_bm_auto_login_after_signup',
+                //'parent'		=> '',
+                'title'		=> __('Auto Login after registration','job-board-manager'),
+                'details'	=> __('New user will automatically logged-in after registration.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_auto_login_after_signup,
+                'default'		=> '',
+                'args'		=> array( 'yes'=>__('Yes','job-board-manager'), 'no'=>__('No','job-board-manager'),),
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+            $args = array(
+                'id'		=> 'job_bm_redirect_after_signup',
+                //'parent'		=> '',
+                'title'		=> __('Redirect after registration','job-board-manager'),
+                'details'	=> __('Redirect other link after registration complete.','job-board-manager'),
+                'type'		=> 'select',
+                //'multiple'		=> true,
+                'value'		=> $job_bm_redirect_after_signup,
+                'default'		=> '',
+                'args'		=> $page_list,
+            );
+
+            $settings_tabs_field->generate_field($args);
+
+
+
+
+
+
+
+
+            ?>
+
+        </div>
+
+
+
+
+
+
         <?php
 
 
@@ -1103,19 +1216,18 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
     function job_bm_settings_tabs_right_panel($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
         <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
         <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
         <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
@@ -1143,19 +1255,18 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
     function job_bm_settings_tabs_right_panel($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
         <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
         <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
         <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
@@ -1185,19 +1296,18 @@ if(!function_exists('job_bm_settings_tabs_right_pages')) {
     function job_bm_settings_tabs_right_pages($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
         <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
         <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
         <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
@@ -1225,19 +1335,18 @@ if(!function_exists('job_bm_settings_tabs_right_job_submit')) {
     function job_bm_settings_tabs_right_job_submit($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
 
         <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
 
@@ -1256,19 +1365,18 @@ if(!function_exists('job_bm_settings_tabs_right_panel_job_edit')) {
     function job_bm_settings_tabs_right_panel_job_edit($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
 
         <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
 
@@ -1286,19 +1394,18 @@ if(!function_exists('job_bm_settings_tabs_right_panel_dashboard')) {
     function job_bm_settings_tabs_right_panel_dashboard($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
 
         <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
 
@@ -1319,19 +1426,18 @@ if(!function_exists('job_bm_settings_tabs_right_panel_applications')) {
     function job_bm_settings_tabs_right_panel_applications($id){
 
         ?>
-        <h3>Help & Support</h3>
-        <p>Please read documentation for customize Job Board Manger</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard">Documentation</a>
+        <h3><?php echo __('Help & Support','job-board-manager'); ?></h3>
+        <p><?php echo __('Please read documentation for customize Job Board Manger','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/documentation/job-board-manager/?ref=dashboard"><?php echo __('Documentation','job-board-manager'); ?></a>
 
-        <p>If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.</p>
-        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard">Create Ticket</a>
+        <p><?php echo __('If you found any issue could not manage to solve yourself, please let us know and post your issue on forum.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://www.pickplugins.com/forum/?ref=dashboard"><?php echo __('Create Ticket','job-board-manager'); ?></a>
 
-        <h3>Write Reviews</h3>
-        <p>If you found Job Board Manger help you to build something useful, please help us by providing your feedback
-            and five star reviews on plugin page.</p>
-        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Rate Us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></a>
+        <h3><?php echo __('Write Reviews','job-board-manager'); ?></h3>
+        <p><?php echo __('If you found Job Board Manger help you to build something useful, please help us by providing your feedback and five star reviews on plugin page.','job-board-manager'); ?></p>
+        <a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo sprintf(__('Rate Us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></a>
 
-        <h3>Shortcodes</h3>
+        <h3><?php echo __('Shortcodes','job-board-manager'); ?></h3>
         <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
         <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>
 

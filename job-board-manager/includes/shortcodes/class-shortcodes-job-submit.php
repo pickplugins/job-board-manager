@@ -1,9 +1,6 @@
 <?php
 
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -40,15 +37,31 @@ class class_job_bm_shortcodes_job_submit{
 		ob_start();
         include( job_bm_plugin_dir . 'templates/job-submit/job-submit.php');
 
+
+
+
+
         // CSS & JS for sob submission form
         wp_enqueue_style('job-bm-job-submit');
         wp_enqueue_script('job-bm-job-submit');
+        wp_localize_script('job-bm-job-submit', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
+
+
         wp_enqueue_script('job-bm-media-upload');
         wp_enqueue_style('job-bm-media-upload');
+
+
         // For media uploader in front-end
         wp_enqueue_media();
-        wp_enqueue_style('common');
+        //wp_enqueue_style('media-views');
 
+        ?>
+        <style type="text/css">
+            .screen-reader-text{
+                display: none;
+            }
+        </style>
+        <?php
 
 		return ob_get_clean();
 		

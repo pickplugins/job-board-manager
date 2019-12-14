@@ -20,7 +20,7 @@ class class_job_bm_post_meta_application{
 	
 	public function job_bm_post_meta_application($post_type){
 
-            add_meta_box('metabox-application-data',__('Application data', 'job-board-manager'), array($this, 'meta_box_application_data'), 'application', 'normal', 'high');
+            add_meta_box('metabox-application-data', __('Application data', 'job-board-manager'), array($this, 'meta_box_application_data'), 'application', 'normal', 'high');
 
 		}
 

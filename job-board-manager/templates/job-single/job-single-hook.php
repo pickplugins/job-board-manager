@@ -7,7 +7,7 @@ function job_bmpost_type_template_job($content) {
 
 	global $post;
 
-	if ($post->post_type == 'job'){
+	if (is_singular('job') && $post->post_type == 'job'){
 
 		ob_start();
 		include( job_bm_plugin_dir . 'templates/job-single/job-single.php');
@@ -40,10 +40,34 @@ add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_preview', 5 );
 if ( ! function_exists( 'job_bm_single_job_main_preview' ) ) {
     function job_bm_single_job_main_preview(){
 
+        $job_bm_job_edit_page_id    = get_option('job_bm_job_edit_page_id');
+        $job_bm_job_edit_page_url   = get_permalink($job_bm_job_edit_page_id);
+
+        $job_id = get_the_id();
+
         if(is_preview()):
+
+
             ?>
-            <div class="job-preview-notice"><?php echo __('This is preview of your job, please do not share link.','job-board-manager'); ?></div>
+            <div class="job-preview-notice">
+
+                <?php
+                ob_start();
+                ?>
+                <?php echo __('This is preview of your job, please do not share link.','job-board-manager'); ?>
+                <a href="<?php echo $job_bm_job_edit_page_url; ?>?job_id=<?php echo $job_id; ?>" class="edit-link"><?php echo sprintf(__('%s Edit','job-board-manager'), '<i class="far fa-edit"></i>') ?></a>
+                <?php
+                $preview_text = ob_get_clean();
+                echo apply_filters('job_bm_single_job_preview_html', $preview_text);
+
+
+                ?>
+            </div>
         <?php
+
+
+
+
         endif;
 
     }
@@ -69,50 +93,55 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
 
 
 
-        ob_start();
+
 
         ?>
-        <?php if($job_bm_featured =='yes'):?>
+        <?php if($job_bm_featured =='yes'):
+            ob_start();
+            ?>
             <span class=" meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured','job-board-manager'); ?></span>
-        <?php endif; ?>
+        <?php
+            $meta_items['featured'] = ob_get_clean();
+        endif; ?>
         <?php
 
-        $meta_items['featured'] = ob_get_clean();
+
+
+
+
+
+        if(!empty($job_bm_location)):
+            ob_start();
+            ?>
+            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+            <?php
+            $meta_items['location'] = ob_get_clean();
+        endif;
+
+
 
 
         ob_start();
-
-        ?>
-        <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
-
-        <?php
-
-        $meta_items['location'] = ob_get_clean();
-
-        ob_start();
-
         ?>
         <span class="job-post-date meta-item"><i class="far fa-calendar-alt"></i> <?php echo sprintf(__('Posted %s ago','job-board-manager'), human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ) )?></span>
         <?php
-
         $meta_items['post_date'] = ob_get_clean();
 
-        ob_start();
+
 
         if(!empty($category[0]->name)):
-
+            ob_start();
             $term_id = $category[0]->term_id;
 
             $term_url = get_term_link($term_id);
 
             ?>
-
             <span class="job-category meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="'.$term_url.'">'.$category[0]->name.'</a>' )?></span>
-
-        <?php
+            <?php
+            $meta_items['job_category'] = ob_get_clean();
         endif;
 
-        $meta_items['job_category'] = ob_get_clean();
+
 
 
         $meta_items = apply_filters('job_bm_single_job_meta', $meta_items);
@@ -204,7 +233,7 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
         ?>
         <div class="job-meta-company">
-            <h2><?php echo __('About Company','job-board-manager'); ?></h2>
+            <h3><?php echo __('About Company','job-board-manager'); ?></h3>
             <div class="company-logo">
                 <img src="<?php echo $job_bm_company_logo; ?>">
             </div>
@@ -339,14 +368,19 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
         ob_start();
 
-            if($job_bm_salary_type == 'fixed'):
-                $salary_html = $job_bm_salary_currency.$job_bm_salary_fixed;
-            elseif($job_bm_salary_type == 'negotiable'):
-                $salary_html = __('Negotiable', 'job-board-manager');
-            elseif($job_bm_salary_type == 'min-max'):
-                $salary_html = $job_bm_salary_currency.$job_bm_salary_min.' - '.$job_bm_salary_currency.$job_bm_salary_max;
 
-            endif;
+        $salary_html = '';
+
+        if($job_bm_salary_type == 'fixed'):
+            $salary_html = $job_bm_salary_currency.$job_bm_salary_fixed;
+        elseif($job_bm_salary_type == 'negotiable'):
+            $salary_html = __('Negotiable', 'job-board-manager');
+        elseif($job_bm_salary_type == 'min-max'):
+            $salary_html = $job_bm_salary_currency.$job_bm_salary_min.' - '.$job_bm_salary_currency.$job_bm_salary_max;
+        else:
+            $salary_html = apply_filters('job_bm_single_job_salary_html_'.$job_bm_salary_type, $post_id);
+
+        endif;
 
         $salary_duration = isset($salary_duration_list[$job_bm_salary_duration]) ? $salary_duration_list[$job_bm_salary_duration] : '';
 
@@ -364,7 +398,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
         ?>
         <div class="job-meta-info">
-            <h2><?php echo __('Job Information','job-board-manager'); ?></h2>
+            <h3><?php echo __('Job Information','job-board-manager'); ?></h3>
 
             <?php
 
@@ -416,7 +450,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
         ?>
         <div class="job-apply">
-            <h2><?php echo __('Apply for job','job-board-manager'); ?></h2>
+            <h3><?php echo __('Apply for job','job-board-manager'); ?></h3>
 
 
             <div class="apply-methods">
@@ -535,7 +569,7 @@ function job_bm_application_methods_form_direct_email($job_id){
 
     $class_job_bm_applications = new class_job_bm_applications();
 
-    if(!empty($_POST) && $_POST['application_method'] == 'direct_email'){
+    if(isset($_POST['application_method']) && $_POST['application_method'] == 'direct_email'){
 
         //var_dump($_POST);
 
@@ -733,7 +767,140 @@ function job_bm_application_methods_form_direct_email($job_id){
 
 
 
+add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_schema', 30 );
+if ( ! function_exists( 'job_bm_single_job_main_job_schema' ) ) {
+    function job_bm_single_job_main_job_schema() {
+        $job_id = get_the_id();
+        $job_bm_JobData = new job_bm_JobData($job_id);
+        $job_excerpt = get_the_content($job_id);
+        $job_categories = $job_bm_JobData->get_categories('name',',');
 
+        $job_categories = !empty($job_categories) ? $job_categories : 'General';
+
+        $job_type = $job_bm_JobData->get_job_type();
+        $job_location = $job_bm_JobData->get_location();
+        $job_address = $job_bm_JobData->get_address();
+
+        $job_publish_date = $job_bm_JobData->get_publish_date();
+        $job_expire_date = $job_bm_JobData->get_expire_date();
+
+        $job_years_experience = $job_bm_JobData->get_years_experience();
+        $job_company_name = $job_bm_JobData->get_company_name();
+
+        $job_salary_currency = $job_bm_JobData->get_salary_currency();
+        $job_salary_type = $job_bm_JobData->get_salary_type();
+        $job_salary_minimum = $job_bm_JobData->get_salary_minimum();
+        $job_salary_maximum = $job_bm_JobData->get_salary_maximum();
+        $job_salary_fixed = $job_bm_JobData->get_salary_fixed();
+
+
+
+
+        $job_title = get_the_title();
+
+
+
+        $schemaJobPosting = array();
+
+
+        $schemaJobPosting['@context'] = '"http://schema.org"';
+        $schemaJobPosting['@type'] = '"JobPosting"';
+
+        $schemaJobPosting['datePosted'] = '"'.$job_publish_date.'"';
+        $schemaJobPosting['validThrough'] = '"'.$job_expire_date.'"';
+        $schemaJobPosting['employmentType'] = '"'.$job_type.'"';
+        $schemaJobPosting['experienceRequirements'] = '"'.$job_years_experience.'"';
+        $schemaJobPosting['hiringOrganization'] = '"'.$job_company_name.'"';
+        $schemaJobPosting['occupationalCategory'] ='"'. $job_categories.'"';
+        $schemaJobPosting['salaryCurrency'] = '"'.$job_salary_currency.'"';
+
+
+        if($job_salary_type == 'fixed'){
+
+            $schemaJobPosting['baseSalary'] = '{
+                        "@type": "Number",
+                        "currency": "'.$job_salary_currency.'",
+                        "price": "'.$job_salary_fixed.'"
+
+                    }';
+
+        }elseif ($job_salary_type == 'min-max'){
+
+            $schemaJobPosting['baseSalary'] = '{
+                        "@type": "MonetaryAmount",
+                        "currency": "'.$job_salary_currency.'",
+                        "minValue": "'.$job_salary_minimum.'",
+                        "maxValue": "'.$job_salary_maximum.'"
+                    }';
+
+        }elseif ($job_salary_type == 'negotiable'){
+
+            $schemaJobPosting['baseSalary'] = '{
+                        "@type": "PriceSpecification",
+                        "currency": "'.$job_salary_currency.'",
+                        "price": "'.$job_salary_type.'"
+
+                    }';
+
+        }
+
+
+
+
+
+
+
+        $schemaJobPosting['jobLocation'] = '{
+                    "@type": "Place",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "addressLocality": "'.$job_address.'",
+                        "streetAddress": "'.$job_address.'",
+                        "addressRegion": "'.$job_location.'",
+                        "postalCode": "'.$job_location.'"
+                    }
+                }';
+
+        $schemaJobPosting['title'] = '"'.$job_title.'"';
+        $schemaJobPosting['description'] = '"'.wp_strip_all_tags($job_excerpt, true).'"';
+
+
+        $schemaJobPosting = apply_filters('job_bm_schema_job_posting', $schemaJobPosting);
+
+        ?>
+        <script type="application/ld+json">
+            {
+            <?php
+
+            $itemCount = count($schemaJobPosting);
+
+            if(!empty($schemaJobPosting)):
+
+                $i = 1;
+                foreach ($schemaJobPosting as $itemIndex => $item):
+
+                    echo '"'.$itemIndex.'": '.$item.'';
+                    if($i < $itemCount){
+                        echo ',';
+                        echo '
+                        ';
+                    }
+
+                    $i++;
+                endforeach;
+            endif;
+
+
+            ?>
+
+
+
+            }
+        </script>
+        <?php
+
+    }
+}
 
 
 

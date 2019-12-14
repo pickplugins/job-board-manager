@@ -49,7 +49,7 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
 
 
 
-
+wp_enqueue_style('font-awesome-5');
 
 
 
@@ -117,8 +117,8 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     ?>
 
                     <div class="next-prev">
-                        <div class="prev"><span>&longleftarrow; Previous</span></div>
-                        <div class="next"><span>Next &longrightarrow;</span></div>
+                        <div class="prev"><span><?php echo sprintf(__('%s Previous','job-board-manager'),'&longleftarrow;')?></span></div>
+                        <div class="next"><span><?php echo sprintf(__('Next %s','job-board-manager'),'&longrightarrow;')?></span></div>
 
                     </div>
 

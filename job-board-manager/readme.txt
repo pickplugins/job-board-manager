@@ -3,8 +3,8 @@
 	Donate link: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=wordpress.org
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 5.2
-	Stable tag: 2.1.19
+	Tested up to: 5.3
+	Stable tag: 2.1.29
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,64 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+
+	= 2.1.29 =
+    * 06/12/2019 - fix - single job wrapper id echo issue fixed
+    * 06/12/2019 - fix - array to string convert issue on single job for job categories.
+
+	= 2.1.28 =
+    * 05/10/2019 - add - filter hook job_bm_job_import_query_args added
+    * 24/10/2019 - fix - company website not save issue fixed.
+    * 24/10/2019 - fix - missing translate string issue fixed.
+    * 24/10/2019 - fix - empty recapctha site key issue fixed.
+
+
+	= 2.1.27 =
+    * 05/10/2019 - add - filter hook job_bm_schema_job_posting added
+    * 05/10/2019 - fix - currency field hidden issue fixed.
+    * 05/10/2019 - remove - filter hook job_bm_job_submit_allowed_html_tags removed
+
+
+
+
+	= 2.1.26 =
+    * 22/09/2019 - add - filter hook job_bm_single_job_salary_html_$salary_type added
+    * 22/09/2019 - add - non-logged user will see file input on job submit form instead of media uploader.
+
+
+	= 2.1.25 =
+    * 19/09/2019 - fix - function show_current_user_attachment rename to job_bm_show_current_user_attachments
+
+	= 2.1.24 =
+    * 19/09/2019 - add - job submit form - set default Total vacancies 1
+    * 19/09/2019 - add - job submit form - set default Contact email to logged-in user email
+    * 19/09/2019 - add - job submit form - set default Years of experience 1
+    * 19/09/2019 - add - Add edit link to job preview page.
+    * 13/09/2019 - add - filter hook job_bm_single_job_preview_html added
+    * 13/09/2019 - fix - job edit media uploader not working issue fixed.
+    * 13/09/2019 - add - media uploader - restricted media file for logged-in user.
+    * 13/09/2019 - add - allow user create account job submission
+
+
+	= 2.1.23 =
+    * 15/09/2019 - add - add stats menu to display job post and application post by date.
+    * 15/09/2019 - add - filter hook job_bm_stats_tabs added
+    * 15/09/2019 - add - action hook job_bm_stats_tabs_content_ added
+
+
+	= 2.1.22 =
+    * 13/09/2019 - add - filter hook job_bm_my_jobs_add_job_link_attr added
+    * 13/09/2019 - remove - remove common.css from job submit and job edit form.
+
+
+	= 2.1.21 =
+    * 10/09/2019 - add - auto login after registration success.
+    * 10/09/2019 - add - Redirect on custom page after registration success.
+
+	= 2.1.20 =
+    * 09/09/2019 - update - submit text update to search on job archive search form
 
 	= 2.1.19 =
     * 30/08/2019 - add - added new filter hook job_bm_job_archive_loop_class

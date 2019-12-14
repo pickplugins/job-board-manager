@@ -2,7 +2,13 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access
 
 ?>
+
+
+
 <div class="job-bm-job-submit">
+
+    <div id="paypal-button-container"></div>
+
     <?php
     if(!empty($_POST)){
         do_action('job_bm_job_submit_data', $_POST);

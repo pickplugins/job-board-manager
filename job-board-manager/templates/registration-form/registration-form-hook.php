@@ -81,7 +81,7 @@ function job_bm_registration_form_field_recaptcha(){
     $job_bm_registration_recaptcha		= get_option('job_bm_registration_recaptcha');
     $job_bm_reCAPTCHA_site_key		        = get_option('job_bm_reCAPTCHA_site_key');
 
-    if($job_bm_registration_recaptcha != 'yes'){
+    if($job_bm_registration_recaptcha != 'yes' || empty($job_bm_reCAPTCHA_site_key)){
         return;
     }
 
@@ -100,9 +100,13 @@ function job_bm_registration_form_field_recaptcha(){
 
 
 
-add_action('job_bm_registration_submit', 'job_bm_registration_submit_data');
+add_action('init', 'job_bm_registration_submit_data');
 
 function job_bm_registration_submit_data($post_data){
+
+    if(empty($_POST)) return;
+
+    $post_data = $_POST;
 
     $job_bm_registration_recaptcha		    = get_option('job_bm_registration_recaptcha');
 
@@ -113,7 +117,11 @@ function job_bm_registration_submit_data($post_data){
     $role = isset($post_data['role']) ? sanitize_text_field($post_data['role']) : "job_poster";
 
 
-    $error = new WP_Error();
+    //$error = new WP_Error();
+    $error = job_bm_register_errors();
+
+
+
 
     if(empty($post_data['username'])){
         $error->add( 'username', __( 'ERROR: username is empty.', 'job-board-manager' ) );
@@ -132,7 +140,7 @@ function job_bm_registration_submit_data($post_data){
 
 
     if(empty($post_data['password'])){
-        $error->add( 'password_em[ty', __( 'ERROR: password is empty.', 'job-board-manager' ) );
+        $error->add( 'password_empty', __( 'ERROR: password is empty.', 'job-board-manager' ) );
     }
 
     if ( strlen( $password ) < 5 ) {
@@ -171,10 +179,6 @@ function job_bm_registration_submit_data($post_data){
     $errors = apply_filters( 'job_bm_registration_errors', $error, $post_data );
 
 
-
-
-
-
     if ( !$error->has_errors() ) {
 
 
@@ -188,27 +192,114 @@ function job_bm_registration_submit_data($post_data){
 
 
         );
-        $user = wp_insert_user( $userdata );
 
-        if(! is_wp_error( $user )){
-            do_action('job_bm_registration_completed', $user);
+        $user_id = wp_insert_user( $userdata );
+
+        if(! is_wp_error( $user_id )){
+
+            do_action('job_bm_registration_completed', $user_id);
+
         }
 
+    }
+
+}
 
 
 
+add_action('job_bm_registration_submit','job_bm_registration_submit_errors');
+function job_bm_registration_submit_errors($post_data){
+
+    job_bm_show_register_errors();
+
+}
+
+
+
+add_action('job_bm_registration_submit','job_bm_registration_completed_thanku');
+function job_bm_registration_completed_thanku($post_data){
+
+
+    $error = job_bm_register_errors();
+
+    if(empty($error->errors)):
+        ?>
+        <div class="user-created success">
+            <?php echo apply_filters('job_bm_registration_thank_you', _e('Thanks for creating account.', 'job-board-manager')); ?>
+        </div>
+        <?php
+    endif;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+add_action('job_bm_registration_completed', 'job_bm_registration_completed_auto_login', 80);
+
+function job_bm_registration_completed_auto_login($user_id){
+
+    $job_bm_auto_login_after_signup 	= get_option('job_bm_auto_login_after_signup','yes');
+
+    if($job_bm_auto_login_after_signup =='yes'){
+        wp_set_current_user($user_id);
+        wp_set_auth_cookie($user_id);
 
     }
-    else{
 
-        $error_messages = $error->get_error_messages();
+
+
+}
+
+add_action('job_bm_registration_completed', 'job_bm_registration_completed_redirect', 99);
+
+function job_bm_registration_completed_redirect($user){
+
+    $job_bm_redirect_after_signup 	= get_option('job_bm_redirect_after_signup');
+    $redirect_page_url 					= get_permalink($job_bm_redirect_after_signup);
+
+
+    if(!empty($job_bm_redirect_after_signup)):
+
+        wp_redirect($redirect_page_url); exit;
+
+    endif;
+
+
+}
+
+
+
+
+
+
+
+
+function job_bm_register_errors(){
+    static $wp_error;
+    return isset($wp_error) ? $wp_error : ($wp_error = new WP_Error(null, null, null));
+}
+
+function job_bm_show_register_errors() {
+    if($codes = job_bm_register_errors()->get_error_codes()) {
+
 
         ?>
         <div class="errors">
             <?php
 
-            if(!empty($error_messages))
-                foreach ($error_messages as $message){
+            if(!empty($codes))
+                foreach ($codes as $code){
+                    $message = job_bm_register_errors()->get_error_message($code);
                     ?>
                     <div class="job-bm-error"><?php echo $message; ?></div>
                     <?php
@@ -216,33 +307,7 @@ function job_bm_registration_submit_data($post_data){
             ?>
         </div>
         <?php
+
+
     }
 }
-
-
-
-
-
-
-
-add_action('job_bm_registration_completed','job_bm_registration_completed_thanku');
-function job_bm_registration_completed_thanku($user){
-
-    ?>
-    <div class="user-created success">
-        <?php echo apply_filters('job_bm_registration_thank_you', _e('Thanks for creating account.', 'job-board-manager')); ?>
-    </div>
-    <?php
-
-}
-
-
-
-
-
-
-
-
-
-
-

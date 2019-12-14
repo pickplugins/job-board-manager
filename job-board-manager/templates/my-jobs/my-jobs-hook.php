@@ -13,13 +13,26 @@ if(!function_exists('job_bm_my_jobs_title')):
         ?>
             <div class="nav-head">
                 <?php echo __('My Jobs', 'job-board-manager'); ?>
-                <a target="_blank" title="<?php echo __('Add Job', 'job-board-manager'); ?>" class="add-job" href="<?php echo $job_bm_job_submit_page_url; ?>"><?php echo sprintf(__('%s Add Job', 'job-board-manager'),'<i class="far fa-plus-square"></i>')?></a>
+                <a  <?php echo apply_filters('job_bm_my_jobs_add_job_link_attr', ''); ?> title="<?php echo __('Add Job', 'job-board-manager'); ?>" class="add-job" href="<?php echo $job_bm_job_submit_page_url; ?>"><?php echo sprintf(__('%s Add Job', 'job-board-manager'),'<i class="far fa-plus-square"></i>')?></a>
             </div>
         <?php
 
     }
 
 endif;
+
+
+//add_filter('job_bm_my_jobs_add_job_link_attr','job_bm_my_jobs_add_job_link_attr_target');
+//
+//function job_bm_my_jobs_add_job_link_attr_target($html){
+//
+//
+//    $html .= 'target="_blank"';
+//
+//    return $html;
+//
+//}
+
 
 
 add_action('job_bm_my_jobs','job_bm_my_jobs_list');

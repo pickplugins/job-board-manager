@@ -1,7 +1,7 @@
 <?php
 if ( ! defined('ABSPATH')) exit;  // if direct access
 
-function sample_admin_notice__error() {
+function job_bm_expired_check_plugin() {
 
     $active_plugins = get_option('active_plugins');
 
@@ -15,7 +15,7 @@ function sample_admin_notice__error() {
 
 
 }
-add_action( 'admin_notices', 'sample_admin_notice__error' );
+add_action( 'admin_notices', 'job_bm_expired_check_plugin' );
 
 
 
@@ -32,7 +32,7 @@ function job_bm_cron_daily_expired_check() {
     $job_expiry_days 		= empty( $job_expiry_days ) ? '30' : $job_expiry_days;
 
     $experied_jobs = get_posts( array(
-        'posts_per_page' => -1,
+        'posts_per_page' => 100,
         'post_type' => 'job',
         'meta_query' => array(
             array(

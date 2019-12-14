@@ -2,6 +2,7 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
 
+    $keywords = isset($atts['keywords']) ? $atts['keywords'] : '';
     $company_name = isset($atts['company_name']) ? $atts['company_name'] : '';
     $location = isset($atts['location']) ? $atts['location'] : '';
     $per_page = isset($atts['per_page']) ? $atts['per_page'] : '';
@@ -13,9 +14,10 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 	$job_bm_login_enable = get_option('job_bm_login_enable');	
 	$job_bm_registration_enable = get_option('job_bm_registration_enable');
 	$date_format = get_option( 'date_format' );
-	$job_bm_list_per_page = get_option('job_bm_list_per_page', 10);
+	$job_bm_list_per_page = (int) get_option('job_bm_list_per_page', 10);
 
-    $job_bm_list_per_page = !empty($per_page) ? $per_page : $job_bm_list_per_page;
+
+    $job_bm_list_per_page = !empty($per_page) ? (int)$per_page : (int)$job_bm_list_per_page;
 
 
 	$job_bm_archive_page_id = get_option('job_bm_archive_page_id');
@@ -39,7 +41,8 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
-    $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : '';
+
+    $keywords = isset($_GET['keywords']) ? sanitize_text_field($_GET['keywords']) : $keywords;
 
 
 
@@ -207,8 +210,8 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                     'compare' => '=',
                 );
 
-            }
 
+        }
 
 
         $query_args = array (
@@ -225,61 +228,64 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
         );
 
 
-        $query_args = apply_filters('job_bm_job_archive_query_args',$query_args);
+        $query_args = apply_filters('job_bm_job_archive_query_args', $query_args);
 
-
+        $atts['query_args'] = $query_args;
 
         $wp_query = new WP_Query($query_args);
 
+        $wp_query = apply_filters('job_bm_job_archive_wp_query', $wp_query, $atts);
 
+        //echo '<pre>'.var_export($wp_query, true).'</pre>';
 
 ?>
         <div class="job-bm-archive">
             <?php
 
             do_action('job_bm_job_archive_loop_before', $wp_query, $atts);
+            ?>
+            <div class="job-list">
+                <?php
+                // action hook top the loop
+                do_action('job_bm_job_archive_loop_top', $wp_query, $atts);
 
             if ( $wp_query->have_posts() ) :
                 $count = 1;
 
-                ?>
-                <div class="job-list">
-                    <?php
-                    while ( $wp_query->have_posts() ) : $wp_query->the_post();
+                while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
-                        $job_id = get_the_ID();
-                        $atts['loop_count'] = $count;
+                    $job_id = get_the_ID();
+                    $atts['loop_count'] = $count;
 
-                        $job_bm_featured = get_post_meta($job_id, 'job_bm_featured', true);
-                        $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
-
-                        ?>
-                        <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '.$featured_class); ?>">
-                            <?php
-
-                            do_action('job_bm_job_archive_loop', $job_id, $atts);
-
-                            ?>
-                        </div>
-                        <?php
-
-
-
-                        $count++;
-                    endwhile;
+                    $job_bm_featured = get_post_meta($job_id, 'job_bm_featured', true);
+                    $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
 
                     ?>
+                    <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '.$featured_class); ?>">
+                        <?php
+                        // action hook for loop
+                        do_action('job_bm_job_archive_loop', $job_id, $atts);
+                        ?>
+                    </div>
+                    <?php
+
+                    $count++;
+                endwhile;
+
+                // action hook bottom the loop
+                do_action('job_bm_job_archive_loop_bottom', $wp_query, $atts);
+
+                ?>
                 </div>
                 <?php
                 do_action('job_bm_job_archive_loop_after', $wp_query, $atts);
                 wp_reset_query();
             else:
 
-                do_action('job_bm_job_archive_loop_no_post');
+                do_action('job_bm_job_archive_loop_no_post', $wp_query, $atts);
 
             endif;
 
             ?>
 
         </div>
-

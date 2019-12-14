@@ -1,9 +1,6 @@
 <?php
 
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
+
 
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
@@ -23,7 +20,7 @@ class class_job_bm_shortcodes_registration_form{
 				), $atts);
 
 
-        include( job_bm_plugin_dir . 'templates/registration-form/registration-form-hook.php');
+
 
 
         ob_start();

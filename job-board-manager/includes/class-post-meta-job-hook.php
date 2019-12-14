@@ -182,6 +182,7 @@ function job_bm_meta_box_salary_type($job_id){
                 ?>
                 $('#job_bm_salary_fixed').parent().parent().fadeIn();
                 $('#job_bm_salary_duration').parent().parent().fadeIn();
+                $('#job_bm_salary_currency').parent().parent().fadeIn();
                 $('#job_bm_salary_min').parent().parent().fadeOut();
                 $('#job_bm_salary_max').parent().parent().fadeOut();
                 <?php
@@ -191,6 +192,7 @@ function job_bm_meta_box_salary_type($job_id){
                 $('#job_bm_salary_min').parent().parent().fadeIn();
                 $('#job_bm_salary_max').parent().parent().fadeIn();
                 $('#job_bm_salary_duration').parent().parent().fadeIn();
+                $('#job_bm_salary_currency').parent().parent().fadeIn();
                 $('#job_bm_salary_fixed').parent().parent().fadeOut();
                 <?php
             else:
@@ -212,6 +214,7 @@ function job_bm_meta_box_salary_type($job_id){
 
                     $('#job_bm_salary_fixed').parent().parent().fadeIn();
                     $('#job_bm_salary_duration').parent().parent().fadeIn();
+                    $('#job_bm_salary_currency').parent().parent().fadeIn();
                     $('#job_bm_salary_min').parent().parent().fadeOut();
                     $('#job_bm_salary_max').parent().parent().fadeOut();
 
@@ -221,6 +224,7 @@ function job_bm_meta_box_salary_type($job_id){
                     $('#job_bm_salary_min').parent().parent().fadeIn();
                     $('#job_bm_salary_max').parent().parent().fadeIn();
                     $('#job_bm_salary_duration').parent().parent().fadeIn();
+                    $('#job_bm_salary_currency').parent().parent().fadeIn();
                     $('#job_bm_salary_fixed').parent().parent().fadeOut();
                 }
                 else{
@@ -360,11 +364,11 @@ function job_bm_meta_box_job_salary_currency($job_id){
         'id'		=> 'job_bm_salary_currency',
         //'parent'		=> '',
         'title'		=> __('Salary currency','job-board-manager'),
-        'details'	=> __('Write salary currency, ex: $','job-board-manager'),
+        'details'	=> __('Write salary currency, ex: USD','job-board-manager'),
         'type'		=> 'text',
         'value'		=> $job_bm_salary_currency,
         'default'		=> '',
-        'placeholder'		=> '$',
+        'placeholder'		=> 'USD',
     );
 
     $settings_tabs_field->generate_field($args);

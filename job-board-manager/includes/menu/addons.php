@@ -15,7 +15,6 @@ $install_slug = isset($_GET['install_slug']) ? sanitize_text_field($_GET['instal
 
 ?>
 <div class="wrap">
-	<div id="icon-tools" class="icon32"><br></div>
     <h2><?php echo __('Ready Add-ons','job-board-manager'); ?></h2>
 
 

@@ -1,41 +1,5 @@
 <?php
-/*
-* @Author 		pickplugins
-* Copyright: 	2015 pickplugins
-*/
-
 if ( ! defined('ABSPATH')) exit;  // if direct access 
-
-
-
-function job_bm_review_new_settings() {
-
-    $job_bm_review_settings = get_option('job_bm_review_settings');
-
-    var_dump($job_bm_review_settings);
-
-    if(empty($job_bm_review_settings)):
-        $class = 'notice notice-error';
-        $message = __( '<b>Job Board Manager</b> has redesigned, please review <a href="'.admin_url('edit.php?post_type=job&page=job_bm_settings').'">settings</a> .', 'job-board-manager' );
-
-        printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), ( $message ) );
-    endif;
-
-
-
-
-
-}
-//add_action( 'admin_notices', 'job_bm_review_new_settings' );
-
-
-
-
-
-
-
-
-
 
 
 
@@ -47,15 +11,16 @@ if(!function_exists('job_bm_welcome_tabs_content_start')) {
     function job_bm_welcome_tabs_content_start($tab){
 
 
+
         ?>
 
-        <h2>Welcome to Job Board Manager Setup</h2>
-        <p>Thanks for choosing Job Board Manager for your job site, Please go step by step and choose some options to get started.</p>
-        <p>If you have any issue during setup please contact us for help and you can post on our forum by creating support tickets.</p>
-        <p><a target="_blank" class="button" href="https://www.pickplugins.com/forum/">Create Ticket</a></p>
+        <h2><?php echo __('Welcome to Job Board Manager Setup', 'job-board-manager'); ?></h2>
+        <p><?php echo __('Thanks for choosing Job Board Manager for your job site, Please go step by step and choose some options to get started.', 'job-board-manager'); ?></p>
+        <p><?php echo __('If you have any issue during setup please contact us for help and you can post on our forum by creating support tickets.', 'job-board-manager'); ?></p>
+        <p><a target="_blank" class="button" href="https://www.pickplugins.com/forum/"><?php echo __('Create Ticket', 'job-board-manager'); ?></a></p>
 
-        <p>We spend thousand hours to build this plugin for you, continuously updating, fixing bugs, add new features, creating add-ons, solving user issues and many more. we do live by creating plugin like Job Board Manager, we hope your wise feedback and reviews on plugin page. Give us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-        <p><a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Write a reviews</a></p>
+        <p><?php echo sprintf(__('We spend thousand hours to build this plugin for you, continuously updating, fixing bugs, add new features, creating add-ons, solving user issues and many more. we do live by creating plugin like Job Board Manager, we hope your wise feedback and reviews on plugin page. Give us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>')?> </p>
+        <p><a target="_blank" class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo __('Write a reviews', 'job-board-manager'); ?></a></p>
     <?php
 
 
@@ -340,8 +305,8 @@ if(!function_exists('job_bm_welcome_tabs_content_done')) {
         ?>
         <div class="section">
 
-            <h3 style="text-align: center" class="">Click to save settings.</h3>
-            <p style="text-align: center">You can review settings by clicking next and previous button</p>
+            <h3 style="text-align: center" class=""><?php echo __('Click to save settings.', 'job-board-manager'); ?></h3>
+            <p style="text-align: center"><?php echo __('You can review settings by clicking next and previous button', 'job-board-manager'); ?></p>
             <div class="submit-wrap">
                 <?php wp_nonce_field( 'job_bm_nonce' ); ?>
                 <input class="button" type="submit" name="submit" value="<?php _e('Save Settings','job-board-manager' ); ?>" />
@@ -370,20 +335,20 @@ if(!function_exists('job_bm_welcome_submit_after_html')) {
         ?>
         <div class="welcome-tabs">
             <div class="tab-content active" style="text-align: center">
-                <h3 ><i class="far fa-thumbs-up"></i> Great, All looks good.</h3>
-                <p>You have successfully completed welcome setup <br>and you are almost ready to start your job site, go and visit created pages.</p>
+                <h3 ><?php echo sprintf(__('%s Great, All looks good.','job-board-manager' ), '<i class="far fa-thumbs-up"></i>') ; ?></h3>
+                <p><?php echo __('You have successfully completed welcome setup <br>and you are almost ready to start your job site, go and visit created pages.','job-board-manager'); ?></p>
                 <p>
-                    <a class="button" target="_blank" href="<?php echo esc_url($job_bm_job_submit_page_url); ?>">Post a job</a>
-                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url('edit.php?post_type=job&page=job_bm_settings')); ?>">Check settings</a>
-                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url()); ?>">Go dashboard</a>
+                    <a class="button" target="_blank" href="<?php echo esc_url($job_bm_job_submit_page_url); ?>"><?php echo __('Post a job','job-board-manager'); ?></a>
+                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url('edit.php?post_type=job&page=job_bm_settings')); ?>"><?php echo __('Check settings','job-board-manager'); ?></a>
+                    <a class="button" target="_blank" href="<?php echo esc_url(admin_url()); ?>"><?php echo __('Go dashboard','job-board-manager'); ?></a>
 
                 </p>
 
-                <h5>Write a reviews</h5>
-                <p>We spend most of our work hours to build WordPress plugin, <br>we expect your few minutes to provide your wise feedback and suggestions. and give us <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                <p><a class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post">Write a reviews </a></p>
+                <h5><?php echo __('Write a reviews','job-board-manager'); ?></h5>
+                <p><?php echo sprintf(__('We spend most of our work hours to build WordPress plugin, <br>we expect your few minutes to provide your wise feedback and suggestions. and give us %s','job-board-manager'),'<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'); ?></p>
+                <p><a class="button" href="https://wordpress.org/support/plugin/job-board-manager/reviews/#new-post"><?php echo __('Write a reviews','job-board-manager'); ?> </a></p>
 
-                <h5>Download some add-ons</h5>
+                <h5><?php echo __('Download some add-ons','job-board-manager'); ?></h5>
 
                 <div class="addon-list">
 
@@ -401,7 +366,7 @@ if(!function_exists('job_bm_welcome_submit_after_html')) {
                                     <img src="<?php echo $addon_thumb;?>">
                                 </div>
                                 <div class="addon-title"><?php echo $addon_title;?></div>
-                                <div class="addon-link button"><a href="<?php echo $addon_link;?>">Download</a> </div>
+                                <div class="addon-link button"><a href="<?php echo $addon_link;?>"><?php echo __('Download','job-board-manager'); ?></a> </div>
                             </div>
                             <?php
                         endforeach;

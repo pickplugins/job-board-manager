@@ -2,11 +2,6 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access 
 
 
-
-
-
-
-
 add_action('job_bm_job_archive_loop_before', 'job_bm_job_archive_before_search', 90, 2);
 
 if(!function_exists('job_bm_job_archive_before_search')){
@@ -39,11 +34,18 @@ if(!function_exists('job_bm_job_archive_before_search')){
         }
 
 
+        if(!empty($_GET['job_bm_job_archive_search_hidden'])){
+            do_action('job_bm_job_archive_search_submit_data', $_GET);
+        }
+
+
         //echo '<pre>'.var_export($job_type_list, true).'</pre>';
 
         ?>
 
         <form class="search-input" method="get" action="<?php echo $job_bm_archive_page_url; ?>">
+
+            <input type="hidden" name="job_bm_job_archive_search_hidden" class="" value="Y">
 
             <div class="option half">
                 <input placeholder="<?php echo __('Keyword', 'job-board-manager'); ?>" name="keywords" type="search" value="<?php if(!empty($_GET['keywords'])) echo sanitize_text_field($_GET['keywords']) ?>" />
@@ -84,7 +86,7 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
             ?>
 
-            <input type="submit" value="<?php echo __('Submit', 'job-board-manager'); ?>" />
+            <input type="submit" value="<?php echo __('Search', 'job-board-manager'); ?>" />
 
         </form> <!-- .search-input -->
         <?php
@@ -103,7 +105,7 @@ add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_company_logo
 if(!function_exists('job_bm_job_archive_loop_item_company_logo')):
     function job_bm_job_archive_loop_item_company_logo($job_id, $atts){
 
-        $job_bm_default_company_logo = get_option('job_bm_default_company_logo');
+        $job_bm_default_company_logo = get_option('job_bm_company_logo');
         $job_bm_company_logo = get_post_meta($job_id,'job_bm_company_logo', true);
 
 
@@ -131,7 +133,7 @@ if(!function_exists('job_bm_job_archive_loop_item_company_logo')):
 
         ?>
         <div class="company_logo">
-            <img src="<?php echo $job_bm_company_logo; ?>" />
+            <img src="<?php echo apply_filters('job_bm_job_archive_loop_item_company_logo', $job_bm_company_logo); ?>" />
         </div>
 
         <?php
@@ -151,7 +153,7 @@ if(!function_exists('job_bm_job_archive_loop_item_title')):
 
         ?>
         <div class="title">
-            <a href="<?php echo get_permalink($job_id); ?>"><?php echo get_the_title($job_id); ?></a>
+            <a <?php echo apply_filters('job_bm_job_archive_loop_item_link_attr', '') ; ?> href="<?php echo apply_filters('job_bm_job_archive_loop_item_link', get_permalink($job_id)) ; ?>"><?php echo get_the_title($job_id); ?></a>
         </div>
         <?php
 
@@ -257,8 +259,6 @@ if(!function_exists('job_bm_job_archive_loop_item_meta')):
 
                 endforeach;
             endif;
-
-
             ?>
         </div>
 
@@ -306,6 +306,24 @@ if(!function_exists('job_bm_job_archive_after_pagination')){
 
     }
 }
+
+
+
+
+
+
+add_action('job_bm_job_archive_loop_no_post', 'job_bm_job_archive_loop_no_post_text',90,2);
+
+if(!function_exists('job_bm_job_archive_loop_no_post_text')){
+    function job_bm_job_archive_loop_no_post_text($wp_query, $atts){
+
+        ?>
+        <div class=""><?php echo apply_filters('job_bm_job_archive_loop_no_post_text', __('Sorry, No jobs found.', 'job-board-manager')); ?></div>
+        <?php
+
+    }
+}
+
 
 
 

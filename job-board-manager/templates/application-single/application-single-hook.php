@@ -7,7 +7,7 @@ function job_bm_post_type_template_application($content) {
 
 	global $post;
 
-	if ($post->post_type == 'application'){
+	if (is_singular('application') &&  $post->post_type == 'application'){
 
 		ob_start();
 		include( job_bm_plugin_dir . 'templates/application-single/application-single.php');
@@ -34,7 +34,7 @@ add_filter( 'the_content', 'job_bm_post_type_template_application' );
 function job_bm_application_comment_template( $comment_template ) {
     global $post;
 
-    if($post->post_type == 'application'){ // assuming there is a post type called business
+    if(is_singular('application') && $post->post_type == 'application'){ // assuming there is a post type called business
         return job_bm_plugin_dir . 'templates/application-single/application-single-comments.php';
     }else{
         return $comment_template;
@@ -301,17 +301,3 @@ if ( ! function_exists( 'job_bm_single_application_main_card' ) ) {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

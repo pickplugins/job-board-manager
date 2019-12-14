@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Advance job board manager for your site.
-Version: 2.1.19
+Version: 2.1.28
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,12 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.19' );
-
-
-
-
-
+		define('job_bm_plugin_version', '2.1.28' );
 
 		// Class
         require_once( job_bm_plugin_dir . 'includes/class-settings-tabs.php');
@@ -46,11 +41,11 @@ class JobBoardManager{
 
 
 		require_once( job_bm_plugin_dir . 'includes/class-functions.php');
-		require_once( job_bm_plugin_dir . 'includes/class-roles.php');
 		require_once( job_bm_plugin_dir . 'includes/class-settings.php');
 		require_once( job_bm_plugin_dir . 'includes/class-emails.php');
 		require_once( job_bm_plugin_dir . 'includes/class-error-log.php');
         require_once( job_bm_plugin_dir . 'includes/class-application.php');
+        require_once( job_bm_plugin_dir . 'includes/class-import.php');
 
 		// ShortCodes
 		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-submit.php');
@@ -62,6 +57,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-applications.php');
         require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-registration-form.php');
 
+        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-payment.php');
 
 
 		require_once( job_bm_plugin_dir . 'templates/job-single/job-single-hook.php');
@@ -77,7 +73,14 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-count.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-welcome.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-notification-email.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-stats.php');
 
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-payments.php');
+
+
+
+
+        include( job_bm_plugin_dir . 'templates/registration-form/registration-form-hook.php');
 
 
         add_action( 'activated_plugin', array( $this, 'redirect_welcome' ));
@@ -129,7 +132,7 @@ class JobBoardManager{
 		if(empty($job_category_terms)){
 			
 				wp_insert_term(
-				  'General', // the term 
+                    __('General', 'job-board-manager'), // the term
 				  'job_category', // the taxonomy
 				  array(
 					'description'=> __('General jobs.', 'job-board-manager'),
@@ -150,7 +153,7 @@ class JobBoardManager{
         remove_role( 'job_manager' );
 
 
-        add_role( 'job_seeker', 'Job Seeker',   array(
+        add_role( 'job_seeker', __('Job Seeker', 'job-board-manager'),   array(
             'read' => true,
             'create_job' => true,
             'edit_job' => true,
@@ -158,7 +161,7 @@ class JobBoardManager{
             'upload_files' => true,
             )
         );
-        add_role( 'job_poster', 'Job Poster',   array(
+        add_role( 'job_poster', __('Job Poster', 'job-board-manager'),   array(
             'read' => true,
             'create_job' => true,
             'edit_job' => true,
@@ -166,7 +169,7 @@ class JobBoardManager{
             'upload_files' => true,
             )
         );
-        add_role( 'job_manager', 'Job Manager', array(
+        add_role( 'job_manager', __('Job Manager', 'job-board-manager'), array(
             'read' => true,
             'create_job' => true,
             'edit_job' => true,
@@ -250,10 +253,12 @@ class JobBoardManager{
         wp_register_script('job-bm-notice', job_bm_plugin_url.'assets/front/js/scripts-notice.js');
         wp_register_script('job-bm-application-single', job_bm_plugin_url.'assets/front/js/scripts-application-single.js');
         wp_register_script('job-bm-media-upload', job_bm_plugin_url.'assets/front/js/scripts-media-upload.js');
+        wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
 
 
 
-		}
+
+    }
 
 	public function job_bm_admin_scripts(){
 
@@ -273,6 +278,10 @@ class JobBoardManager{
         wp_register_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
         wp_register_script('welcome-tabs', job_bm_plugin_url.'assets/admin/js/welcome-tabs.js');
 
+        wp_register_script('chart.js', 'https://cdn.jsdelivr.net/npm/chart.js' , array( 'jquery' ),'', false);
+        wp_register_script('select2.min', plugins_url( 'assets/admin/js/select2.min.js' , __FILE__ ) , array( 'jquery' ));
+
+
 
         // Register CSS & Style
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
@@ -280,6 +289,9 @@ class JobBoardManager{
         wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
         wp_register_style('welcome-tabs', job_bm_plugin_url.'assets/admin/css/welcome-tabs.css');
         wp_register_style('job-bm-addons', job_bm_plugin_url.'assets/admin/css/addons.css');
+
+        wp_register_style('select2.min', job_bm_plugin_url.'assets/admin/css/select2.min.css');
+
 
 
 
@@ -291,6 +303,8 @@ class JobBoardManager{
             wp_enqueue_style( 'settings-tabs' );
             wp_enqueue_script( 'wp-color-picker' );
             wp_enqueue_style( 'wp-color-picker' );
+
+
 
 
 

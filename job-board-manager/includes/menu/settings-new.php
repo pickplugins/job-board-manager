@@ -56,7 +56,7 @@ $job_bm_settings_tab[] = array(
 
 $job_bm_settings_tab[] = array(
     'id' => 'expiry',
-    'title' => sprintf(__('%s Expiry','job-board-manager'),'<i class="fas fa-calendar-alt"></i>'),
+    'title' => sprintf(__('%s Expiry','job-board-manager'),'<i class="fas fa-calendar-day"></i>'),
     'priority' => 8,
     'active' => false,
 );
@@ -117,6 +117,12 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     $job_bm_job_edit_notify_email = isset($_POST['job_bm_job_edit_notify_email']) ?  sanitize_text_field($_POST['job_bm_job_edit_notify_email']) : '';
                     $job_bm_redirect_login = isset($_POST['job_bm_redirect_login']) ?  sanitize_text_field($_POST['job_bm_redirect_login']) : '';
                     $job_bm_redirect_logout = isset($_POST['job_bm_redirect_logout']) ?  sanitize_text_field($_POST['job_bm_redirect_logout']) : '';
+
+                    $job_bm_redirect_after_signup = isset($_POST['job_bm_redirect_after_signup']) ?  sanitize_text_field($_POST['job_bm_redirect_after_signup']) : '';
+                    $job_bm_auto_login_after_signup = isset($_POST['job_bm_auto_login_after_signup']) ?  sanitize_text_field($_POST['job_bm_auto_login_after_signup']) : '';
+
+
+
                     $job_bm_logo_url = isset($_POST['job_bm_logo_url']) ?  sanitize_text_field($_POST['job_bm_logo_url']) : '';
                     $job_bm_from_email = isset($_POST['job_bm_from_email']) ?  sanitize_text_field($_POST['job_bm_from_email']) : '';
                     $job_bm_featured_bg_color = isset($_POST['job_bm_featured_bg_color']) ?  sanitize_text_field($_POST['job_bm_featured_bg_color']) : '';
@@ -160,6 +166,11 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
                     update_option('job_bm_job_edit_notify_email', $job_bm_job_edit_notify_email);
                     update_option('job_bm_redirect_login', $job_bm_redirect_login);
                     update_option('job_bm_redirect_logout', $job_bm_redirect_logout);
+
+                    update_option('job_bm_redirect_after_signup', $job_bm_redirect_after_signup);
+                    update_option('job_bm_auto_login_after_signup', $job_bm_auto_login_after_signup);
+
+
                     update_option('job_bm_logo_url', $job_bm_logo_url);
                     update_option('job_bm_from_email', $job_bm_from_email);
                     update_option('job_bm_featured_bg_color', $job_bm_featured_bg_color);
@@ -181,6 +192,16 @@ array_multisort($tabs_sorted, SORT_ASC, $job_bm_settings_tab);
 
                     $job_bm_job_expiry_days = isset($_POST['job_bm_job_expiry_days']) ?  sanitize_text_field($_POST['job_bm_job_expiry_days']) : '';
                     update_option('job_bm_job_expiry_days', $job_bm_job_expiry_days);
+
+                    $job_bm_restrict_media_file = isset($_POST['job_bm_restrict_media_file']) ?  sanitize_text_field($_POST['job_bm_restrict_media_file']) : '';
+                    update_option('job_bm_restrict_media_file', $job_bm_restrict_media_file);
+
+                    $job_bm_job_submit_create_account = isset($_POST['job_bm_job_submit_create_account']) ?  sanitize_text_field($_POST['job_bm_job_submit_create_account']) : '';
+                    update_option('job_bm_job_submit_create_account', $job_bm_job_submit_create_account);
+
+                    $job_bm_job_submit_generate_username = isset($_POST['job_bm_job_submit_generate_username']) ?  sanitize_text_field($_POST['job_bm_job_submit_generate_username']) : '';
+                    update_option('job_bm_job_submit_generate_username', $job_bm_job_submit_generate_username);
+
 
 
                     do_action('job_bm_settings_save');
