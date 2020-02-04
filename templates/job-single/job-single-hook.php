@@ -211,7 +211,7 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
         $job_bm_company_website = get_post_meta(get_the_ID(), 'job_bm_company_website', true);
 
 
-        $job_bm_default_company_logo = get_option('job_bm_default_company_logo');
+        $job_bm_default_company_logo = get_option('job_bm_company_logo');
         if(!empty($job_bm_company_logo)){
 
             if(is_serialized($job_bm_company_logo)){
@@ -233,22 +233,26 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
         ?>
         <div class="job-meta-company">
-            <h3><?php echo __('About Company','job-board-manager'); ?></h3>
-            <div class="company-logo">
-                <img src="<?php echo $job_bm_company_logo; ?>">
-            </div>
-
             <?php if($job_bm_company_name):?>
-            <div class="company-name"><?php echo $job_bm_company_name; ?></div>
+                <h3><?php echo __('About Company','job-board-manager'); ?></h3>
+            <?php endif; ?>
+
+            <?php if($job_bm_company_logo):?>
+                <div class="company-logo">
+                    <img src="<?php echo $job_bm_company_logo; ?>">
+                </div>
+            <?php endif; ?>
+            <?php if($job_bm_company_name):?>
+                <div class="company-name"><?php echo $job_bm_company_name; ?></div>
             <?php endif; ?>
 
             <?php if($job_bm_address):?>
-            <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
+                <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
             <?php endif; ?>
 
 
             <?php if($job_bm_company_website):?>
-            <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>"><?php echo __('Website','job-board-manager'); ?></a> </div>
+                <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>"><?php echo __('Website','job-board-manager'); ?></a> </div>
             <?php endif; ?>
 
 
@@ -795,7 +799,7 @@ function job_bm_application_methods_form_external_website($job_id){
         <input type="hidden" name="application_method" value="external_website">
 
         <div class="form-field-wrap">
-            <p><?php echo sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_bm_job_link); ?>  </p>
+            <p><?php echo apply_filters('job_bm_application_method_external_website_text', sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_bm_job_link)); ?>  </p>
         </div>
 
     </form>

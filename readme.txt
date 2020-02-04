@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.3
-	Stable tag: 2.1.34
+	Stable tag: 2.1.35
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,8 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.35 =
+    * 2020-02-04 - add - filter hook for application mehtod "External website" text
 
 	= 2.1.34 =
     * 2020-02-02 - add - added new application method "External website"
