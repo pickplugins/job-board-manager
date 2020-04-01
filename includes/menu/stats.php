@@ -129,7 +129,7 @@ array_multisort($tabs_sorted, SORT_ASC, $stats_tabs);
     }
 
     .date-range{
-        padding: 0 20px;
+        padding: 15px 20px;
         margin-bottom:15px ;
     }
     .date-range a{

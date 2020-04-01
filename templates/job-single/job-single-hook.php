@@ -221,14 +221,9 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
                     $job_bm_company_logo = $job_bm_company_logo[0];
                     $job_bm_company_logo = wp_get_attachment_url($job_bm_company_logo);
                 }
-                else{
-                    $job_bm_company_logo = $job_bm_default_company_logo;
-                }
+
             }
 
-        }
-        else{
-            $job_bm_company_logo = $job_bm_default_company_logo;
         }
 
         ?>

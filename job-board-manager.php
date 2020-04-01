@@ -266,32 +266,29 @@ class JobBoardManager{
        //echo '<pre>'.var_export($screen, true).'</pre>';
 
 		wp_enqueue_script('jquery');
-		//wp_enqueue_script('jquery-ui-core');
-		//wp_enqueue_script('jquery-ui-sortable');
-		//wp_enqueue_script('jquery-ui-datepicker');
-        //wp_enqueue_media();
 
-		wp_enqueue_script('job_bm_admin_js', plugins_url( '/assets/admin/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
+		wp_enqueue_script('job_bm_admin_js', job_bm_plugin_url. '/assets/admin/js/scripts.js', array( 'jquery' ));
 		wp_localize_script('job_bm_admin_js', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
 
 		// Register Scripts
-        wp_register_script('settings-tabs', plugins_url( 'assets/admin/js/settings-tabs.js' , __FILE__ ) , array( 'jquery' ));
         wp_register_script('welcome-tabs', job_bm_plugin_url.'assets/admin/js/welcome-tabs.js');
-
-        wp_register_script('chart.js', 'https://cdn.jsdelivr.net/npm/chart.js' , array( 'jquery' ),'', false);
-        wp_register_script('select2.min', plugins_url( 'assets/admin/js/select2.min.js' , __FILE__ ) , array( 'jquery' ));
-
+        wp_register_script('chart.js', job_bm_plugin_url. 'assets/admin/js/chart.js', array( 'jquery' ));
+        wp_register_script('select2.min', job_bm_plugin_url. 'assets/admin/js/select2.min.js', array( 'jquery' ));
 
 
         // Register CSS & Style
         wp_register_style('font-awesome-5', job_bm_plugin_url.'assets/global/css/font-awesome-5.css');
-        wp_register_style('settings-tabs', job_bm_plugin_url.'assets/admin/css/settings-tabs.css');
         wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
         wp_register_style('welcome-tabs', job_bm_plugin_url.'assets/admin/css/welcome-tabs.css');
         wp_register_style('job-bm-addons', job_bm_plugin_url.'assets/admin/css/addons.css');
         wp_register_style('select2.min', job_bm_plugin_url.'assets/admin/css/select2.min.css');
 
 
+        wp_register_script('settings-tabs', job_bm_plugin_url.'assets/settings-tabs/settings-tabs.js', array( 'jquery' ));
+        wp_register_style('settings-tabs', job_bm_plugin_url.'assets/settings-tabs/settings-tabs.css');
+
+        $settings_tabs_field = new settings_tabs_field();
+        $settings_tabs_field->admin_scripts();
 
     }
 	

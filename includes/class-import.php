@@ -14,7 +14,7 @@ class class_job_bm_import {
 	public function insert_job_data($job_data){
 
         $post_title = isset($job_data['post_title'] )? sanitize_text_field($job_data['post_title']) : '';
-        $post_content = isset($job_data['post_content']) ? wp_kses($job_data['post_content']) : '';
+        $post_content = isset($job_data['post_content']) ? wp_kses_post($job_data['post_content']) : '';
 
         $taxonomy = isset($job_data['taxonomy']) ? $job_data['taxonomy'] : '';
         $taxonomy_terms = isset($job_data['taxonomy_terms']) ? $job_data['taxonomy_terms'] : '';
