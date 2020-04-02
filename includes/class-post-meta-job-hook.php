@@ -44,7 +44,7 @@ function job_bm_meta_box_job_total_vacancies($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_total_vacancies,
         'default'		=> '',
-        'placeholder'		=> '',
+        'placeholder'		=> '5',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -135,7 +135,7 @@ function job_bm_meta_box_job_years_experience($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_years_experience,
         'default'		=> '',
-        'placeholder'		=> '',
+        'placeholder'		=> '5',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -277,7 +277,7 @@ add_action('job_bm_metabox_job_content_job_info','job_bm_meta_box_job_salary_min
 function job_bm_meta_box_job_salary_min($job_id){
 
     $settings_tabs_field = new settings_tabs_field();
-    $job_bm_salary_min = get_post_meta($job_id, 'job_bm_salary_fixed', true);
+    $job_bm_salary_min = get_post_meta($job_id, 'job_bm_salary_min', true);
 
     $args = array(
         'id'		=> 'job_bm_salary_min',
@@ -308,7 +308,7 @@ function job_bm_meta_box_job_salary_max($job_id){
         'id'		=> 'job_bm_salary_max',
         //'parent'		=> '',
         'title'		=> __('Maximum salary','job-board-manager'),
-        'details'	=> __('Maximum salary amount, ex: 1000','job-board-manager'),
+        'details'	=> __('Maximum salary amount, ex: 10000','job-board-manager'),
         'type'		=> 'text',
         'value'		=> $job_bm_salary_max,
         'default'		=> '',
@@ -430,7 +430,7 @@ function job_bm_metabox_job_content_company_info_company_name($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_company_name,
         'default'		=> '',
-        'placeholder'		=> '',
+        'placeholder'		=> 'Company name',
     );
 
     $settings_tabs_field->generate_field($args);
@@ -501,7 +501,7 @@ function job_bm_metabox_job_content_company_info_website($job_id){
         'type'		=> 'text',
         'value'		=> $job_bm_company_website,
         'default'		=> '',
-        'placeholder'		=> 'http://companywebsite',
+        'placeholder'		=> 'http://companywebsite.com',
     );
 
     $settings_tabs_field->generate_field($args);

@@ -13,19 +13,26 @@ class class_job_bm_support_help{
     public function addons_list($addons_data = array()){
 
         $addons_data_new = array(
+            'xml-feed'=>array(	'title'=>'XML Feed',
+                'content'=>'It will automatically fetch jobs from 3rd party jobs site.',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-widgets',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-xml-feed',
+                'wp_org_slug'=>'job-board-manager-xml-feed',
+                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/xml-feed.png',
+            ),
 
             'widgets'=>array(	'title'=>'Widgets',
                 'content'=>'Widgets for Job Board Manager.',
-                'item_link'=>'https://wordpress.org/plugins/job-board-manager-widgets/',
-                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-widgets.zip',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-widgets',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-widgets',
                 'wp_org_slug'=>'job-board-manager-widgets',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/widgets.png',
             ),
 
             'company-profile'=>array(	'title'=>'Company Profile',
                 'content'=>'Addon for creating company profile.',
-                'item_link'=>'https://wordpress.org/plugins/job-board-manager-company-profile/',
-                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-company-profile.zip',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-company-profile',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-company-profile',
                 'wp_org_slug'=>'job-board-manager-company-profile',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/company-profile.png',
             ),
@@ -33,14 +40,27 @@ class class_job_bm_support_help{
             'locations'=>array(	'title'=>'Locations',
                 'price'=>'15',
                 'content'=>'Awesome location single page and display job list under any location via single page.',
-                'item_link'=>'https://wordpress.org/plugins/job-board-manager-locations/',
-                'zip_link'=>'https://downloads.wordpress.org/plugin/job-board-manager-locations.zip',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-locations',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-locations',
                 'wp_org_slug'=>'job-board-manager-locations',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/locations.png',
             ),
 
+            'related-jobs'=>array(	'title'=>'Related Jobs',
+                'content'=>'Display related jobs under single job page.',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-related-jobs',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-related-jobs',
+                'wp_org_slug'=>'job-board-manager-related-jobs',
+                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/related-jobs.png',
+            ),
 
-
+            'report-job'=>array(	'title'=>'Report Job',
+                'content'=>'add functionality to report/flag/moderate  a job.',
+                'item_link'=>'https://github.com/pickplugins/job-board-manager-report-job',
+                'zip_link'=>'https://github.com/pickplugins/job-board-manager-report-job',
+                'wp_org_slug'=>'job-board-manager-report-job',
+                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/report-job.png',
+            ),
 
             'saved-jobs'=>array(	'title'=>'Saved Jobs',
                 'content'=>'Allow visitors to save job link as bookmarks to thier account.',
@@ -51,7 +71,6 @@ class class_job_bm_support_help{
 
 
             'application-manager'=>array('title'=>'Application Manager',
-
                 'content'=>'Manage application for every job.',
                 'item_link'=>'http://www.pickplugins.com/item/job-board-manager-application-manager/',
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/application-manager.png',
@@ -98,17 +117,9 @@ class class_job_bm_support_help{
                 'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/job-feed.png',
             ),
 
-            'report-job'=>array(	'title'=>'Report Job',
-                'content'=>'add functionality to report/flag/moderate  a job.',
-                'item_link'=>'http://www.pickplugins.com/item/job-board-manager-report-job/',
-                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/report-job.png',
-            ),
 
-            'related-jobs'=>array(	'title'=>'Related Jobs',
-                'content'=>'Display related jobs under single job page.',
-                'item_link'=>'https://www.pickplugins.com/item/job-board-manager-related-jobs/',
-                'thumb'=>job_bm_plugin_url.'assets/admin/images/addons/related-jobs.png',
-            ),
+
+
 
 
 
