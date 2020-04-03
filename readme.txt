@@ -115,6 +115,7 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
     * 2020-04-02 - add - display featured job at top on job archive.
     * 2020-04-02 - add - salary added to job archive.
     * 2020-04-02 - add - rename "job_bm_JobData" to "job_bm_job_data"
+    * 2020-04-02 - add - job xml page template added.
 
 
 	= 2.1.36 =

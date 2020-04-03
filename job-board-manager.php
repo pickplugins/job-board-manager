@@ -76,6 +76,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-stats.php');
 
         require_once( job_bm_plugin_dir . 'includes/functions/functions-payments.php');
+        require_once( job_bm_plugin_dir . 'includes/functions/functions-page-templates.php');
 
 
 
