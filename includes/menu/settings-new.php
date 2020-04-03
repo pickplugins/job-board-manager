@@ -18,6 +18,8 @@ $job_bm_settings_tab[] = array(
     'active' => false,
 );
 
+
+
 $job_bm_settings_tab[] = array(
     'id' => 'job_submit',
     'title' => sprintf(__('%s Job Submit','job-board-manager'),'<i class="fas fa-pencil-ruler"></i>'),

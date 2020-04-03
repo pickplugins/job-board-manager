@@ -213,6 +213,20 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
         }
 
+        $sticky_jobs = get_option( 'sticky_jobs' );
+
+        $featured_query_args = array (
+            'post_type' => 'job',
+            'post_status' => 'publish',
+            'orderby' => 'date',
+            'order' => 'DESC',
+            'posts_per_page' => -1,
+            'post__in' => $sticky_jobs,
+        );
+
+        //echo '<pre>'.var_export($sticky_jobs, true).'</pre>';
+        //echo '<pre>'.var_export($featured_query_args, true).'</pre>';
+
 
         $query_args = array (
             'post_type' => 'job',
@@ -223,20 +237,24 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
             'tax_query' => $tax_query,
             'order' => 'DESC',
             'posts_per_page' => $job_bm_list_per_page,
+            'post__not_in' => $sticky_jobs,
             'paged' => $paged,
-
         );
 
 
         $query_args = apply_filters('job_bm_job_archive_query_args', $query_args);
 
+
         $atts['query_args'] = $query_args;
+
+        $featured_query = new WP_Query($featured_query_args);
 
         $wp_query = new WP_Query($query_args);
 
         $wp_query = apply_filters('job_bm_job_archive_wp_query', $wp_query, $atts);
 
-        //echo '<pre>'.var_export($wp_query, true).'</pre>';
+
+
 
 ?>
         <div class="job-bm-archive">
@@ -248,6 +266,34 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                 <?php
                 // action hook top the loop
                 do_action('job_bm_job_archive_loop_top', $wp_query, $atts);
+
+
+
+
+                if ( $featured_query->have_posts() && $paged ==1 && !empty($sticky_jobs)) :
+                    $count = 1;
+
+                    while ( $featured_query->have_posts() ) : $featured_query->the_post();
+
+                        $job_id = get_the_ID();
+                        $atts['loop_count'] = $count;
+
+                        $job_bm_featured = get_post_meta($job_id, 'job_bm_featured', true);
+                        $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
+
+                        ?>
+                        <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '.$featured_class); ?>">
+                            <?php
+                            // action hook for loop
+                            do_action('job_bm_job_archive_loop', $job_id, $atts);
+                            ?>
+                        </div>
+                        <?php
+
+                        $count++;
+                    endwhile;
+                endif;
+
 
             if ( $wp_query->have_posts() ) :
                 $count = 1;
@@ -261,7 +307,7 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
                     $featured_class = ($job_bm_featured=='yes') ? 'featured' :'';
 
                     ?>
-                    <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '.$featured_class); ?>">
+                    <div class="<?php echo apply_filters('job_bm_job_archive_loop_class','single '); ?>">
                         <?php
                         // action hook for loop
                         do_action('job_bm_job_archive_loop', $job_id, $atts);

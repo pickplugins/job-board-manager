@@ -763,6 +763,27 @@ function job_bm_meta_box_save_job($job_id){
     $job_bm_featured = isset($_POST['job_bm_featured']) ? sanitize_text_field($_POST['job_bm_featured']) : '';
     update_post_meta($job_id, 'job_bm_featured', $job_bm_featured);
 
+
+    if($job_bm_featured == 'yes'){
+
+        $sticky_jobs = get_option( 'sticky_jobs', array() );
+        if(!in_array($job_id, $sticky_jobs)){
+            $sticky_jobs = array_merge($sticky_jobs, array($job_id));
+            update_option('sticky_jobs', $sticky_jobs);
+        }
+    }else{
+        $sticky_jobs = get_option( 'sticky_jobs', array() );
+        $key = array_search($job_id, $sticky_jobs);
+        if (false !== $key) {
+            unset($sticky_jobs[$key]);
+        }
+        update_option('sticky_jobs', $sticky_jobs);
+    }
+
+
+
+
+
     $job_bm_expire_date = isset($_POST['job_bm_expire_date']) ? sanitize_text_field($_POST['job_bm_expire_date']) : '';
     update_post_meta($job_id, 'job_bm_expire_date', $job_bm_expire_date);
 

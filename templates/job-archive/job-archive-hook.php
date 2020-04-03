@@ -188,52 +188,48 @@ add_action('job_bm_job_archive_loop', 'job_bm_job_archive_loop_item_meta', 40, 2
 if(!function_exists('job_bm_job_archive_loop_item_meta')):
     function job_bm_job_archive_loop_item_meta($job_id, $atts){
 
+        $job_bm_job_data = new job_bm_job_data($job_id);
 
-        $class_job_bm_functions = new class_job_bm_functions();
-
-
-        $salary_type_list = $class_job_bm_functions->salary_type_list();
-        $job_status_list = $class_job_bm_functions->job_status_list();
-        $job_type_list = $class_job_bm_functions->job_type_list();
-        $job_level_list = $class_job_bm_functions->job_level_list();
-
-        $job_bm_job_type = get_post_meta($job_id, 'job_bm_job_type', true);
-        $job_bm_job_status = get_post_meta($job_id, 'job_bm_job_status', true);
-        $job_bm_location = get_post_meta($job_id, 'job_bm_location', true);
+        $salary_html = $job_bm_job_data->get_salary_html();
+        $job_salary_duration = $job_bm_job_data->get_salary_duration();
+        $job_location = $job_bm_job_data->get_location();
+        $job_status = $job_bm_job_data->get_job_status();
+        $job_type = $job_bm_job_data->get_job_type();
 
 
+        //echo '<pre>'.var_export($job_type, true).'</pre>';
 
         $meta_items = array();
 
 
         ob_start();
 
-        if(isset($job_type_list[$job_bm_job_type])):?>
-            <span class="meta-item job_type <?php echo $job_bm_job_type; ?>"><i class="fas
-               fa-briefcase"></i>  <?php echo $job_type_list[$job_bm_job_type]; ?></span>
-        <?php endif;
+        if(!empty($job_type['type'])):
+            ?>
+            <span class="meta-item job_type <?php echo $job_type['type']; ?>"><i class="fas
+               fa-briefcase"></i>  <?php echo $job_type['type_name']; ?></span>
+            <?php
+        endif;
 
 
         $meta_items['job_type'] = ob_get_clean();
 
         ob_start();
 
-        if(isset($job_status_list[$job_bm_job_status])):?>
-            <span class=" meta-item job_status <?php echo $job_bm_job_status; ?>"><i class="fas
-            fa-traffic-light"></i> <?php echo $job_status_list[$job_bm_job_status]; ?></span>
+        if(!empty($job_status['status'])):?>
+            <span class=" meta-item job_status <?php echo $job_status['status']; ?>"><i class="fas
+            fa-traffic-light"></i> <?php echo $job_status['status_name']; ?></span>
         <?php endif;
 
         $meta_items['job_status'] = ob_get_clean();
 
-
-        ob_start();
-
-        if(!empty($job_bm_location)): ?>
-            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo apply_filters('job_bm_job_archive_loop_item_location', $job_bm_location); ?></span>
-        <?php endif;
-
-        $meta_items['location'] = ob_get_clean();
-
+        if(!empty($job_location)):
+            ob_start();
+            ?>
+            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo apply_filters('job_bm_job_archive_loop_item_location', $job_location); ?></span>
+            <?php
+            $meta_items['location'] = ob_get_clean();
+        endif;
 
         ob_start();
 
@@ -242,6 +238,18 @@ if(!function_exists('job_bm_job_archive_loop_item_meta')):
         <?php
 
         $meta_items['date'] = ob_get_clean();
+
+
+        if(!empty($salary_html)){
+            ob_start();
+            ?>
+            <span class="job-salary meta-item"><i class="fas fa-pizza-slice"></i> <?php echo sprintf(__('Salary: %s','job-board-manager'), $salary_html )?></span>
+            <?php
+
+            $meta_items['salary'] = ob_get_clean();
+        }
+
+
 
 
         $meta_items = apply_filters('job_bm_job_archive_loop_meta', $meta_items);

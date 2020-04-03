@@ -38,12 +38,10 @@ add_filter( 'the_excerpt', 'job_bmpost_type_template_job' );
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_preview', 5 );
 if ( ! function_exists( 'job_bm_single_job_main_preview' ) ) {
-    function job_bm_single_job_main_preview(){
+    function job_bm_single_job_main_preview($job_id){
 
         $job_bm_job_edit_page_id    = get_option('job_bm_job_edit_page_id');
         $job_bm_job_edit_page_url   = get_permalink($job_bm_job_edit_page_id);
-
-        $job_id = get_the_id();
 
         if(is_preview()):
 
@@ -78,48 +76,32 @@ if ( ! function_exists( 'job_bm_single_job_main_preview' ) ) {
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_meta_start', 10 );
 if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
-    function job_bm_single_job_main_meta_start() {
+    function job_bm_single_job_main_meta_start($job_id) {
 
         $meta_items = array();
+        $job_bm_job_data = new job_bm_job_data($job_id);
+
+        $job_location = $job_bm_job_data->get_location();
+        $job_is_featured = $job_bm_job_data->is_featured();
+        $job_categories = $job_bm_job_data->get_categories('link', ', ');
+        $job_publish_date = $job_bm_job_data->get_publish_date();
 
 
-        $post_id = get_the_id();
-
-        $job_bm_location = get_post_meta($post_id, 'job_bm_location', true);
-        $job_bm_featured = get_post_meta($post_id, 'job_bm_featured', true);
-        $post_date = get_the_date();
-        $post_id = get_the_id();
-        $category = get_the_terms($post_id, 'job_category');
-
-
-
-
-
-        ?>
-        <?php if($job_bm_featured =='yes'):
+        if($job_is_featured =='yes'):
             ob_start();
             ?>
             <span class=" meta-item featured"><i class="far fa-star"></i>  <?php echo __('Featured','job-board-manager'); ?></span>
-        <?php
+            <?php
             $meta_items['featured'] = ob_get_clean();
-        endif; ?>
-        <?php
+        endif;
 
-
-
-
-
-
-        if(!empty($job_bm_location)):
+        if(!empty($job_location)):
             ob_start();
             ?>
-            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_bm_location; ?></span>
+            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i>  <?php echo $job_location; ?></span>
             <?php
             $meta_items['location'] = ob_get_clean();
         endif;
-
-
-
 
         ob_start();
         ?>
@@ -129,14 +111,10 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
 
 
 
-        if(!empty($category[0]->name)):
+        if(!empty($job_categories)):
             ob_start();
-            $term_id = $category[0]->term_id;
-
-            $term_url = get_term_link($term_id);
-
             ?>
-            <span class="job-category meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), '<a href="'.$term_url.'">'.$category[0]->name.'</a>' )?></span>
+            <span class="job-category meta-item"><i class="fas fa-code-branch"></i> <?php echo sprintf(__('Posted on %s','job-board-manager'), $job_categories )?></span>
             <?php
             $meta_items['job_category'] = ob_get_clean();
         endif;
@@ -177,11 +155,10 @@ if ( ! function_exists( 'job_bm_single_job_main_meta_start' ) ) {
 add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_description', 20 );
 
 if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
-	function job_bm_template_single_job_description() {
+	function job_bm_template_single_job_description($job_id) {
 
 
 	    global $post;
-	    $job_id =get_the_id();
 
 	    ?>
         <div class="single-job-details">
@@ -199,55 +176,42 @@ if ( ! function_exists( 'job_bm_template_single_job_description' ) ) {
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_company', 25 );
 if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
-    function job_bm_single_job_main_company() {
+    function job_bm_single_job_main_company($job_id) {
 
 
+        $job_bm_job_data = new job_bm_job_data($job_id);
+
+        $job_address = $job_bm_job_data->get_address();
+        $job_company_name = $job_bm_job_data->get_company_name();
+        $job_company_website = $job_bm_job_data->get_company_website();
+        $job_company_logo = $job_bm_job_data->get_company_logo();
 
 
-
-        $job_bm_address = get_post_meta(get_the_ID(), 'job_bm_address', true);
-        $job_bm_company_name = get_post_meta(get_the_ID(), 'job_bm_company_name', true);
-        $job_bm_company_logo = get_post_meta(get_the_ID(), 'job_bm_company_logo', true);
-        $job_bm_company_website = get_post_meta(get_the_ID(), 'job_bm_company_website', true);
-
-
-        $job_bm_default_company_logo = get_option('job_bm_company_logo');
-        if(!empty($job_bm_company_logo)){
-
-            if(is_serialized($job_bm_company_logo)){
-
-                $job_bm_company_logo = unserialize($job_bm_company_logo);
-                if(!empty($job_bm_company_logo[0])){
-                    $job_bm_company_logo = $job_bm_company_logo[0];
-                    $job_bm_company_logo = wp_get_attachment_url($job_bm_company_logo);
-                }
-
-            }
-
-        }
 
         ?>
         <div class="job-meta-company">
-            <?php if($job_bm_company_name):?>
+            <?php
+            if(!empty($job_company_name)):
+                ?>
                 <h3><?php echo __('About Company','job-board-manager'); ?></h3>
             <?php endif; ?>
 
-            <?php if($job_bm_company_logo):?>
+            <?php if($job_company_logo):?>
                 <div class="company-logo">
-                    <img src="<?php echo $job_bm_company_logo; ?>">
+                    <img src="<?php echo $job_company_logo; ?>">
                 </div>
             <?php endif; ?>
-            <?php if($job_bm_company_name):?>
-                <div class="company-name"><?php echo $job_bm_company_name; ?></div>
+            <?php if(!empty($job_company_name)):?>
+                <div class="company-name"><?php echo $job_company_name; ?></div>
             <?php endif; ?>
 
-            <?php if($job_bm_address):?>
-                <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_bm_address; ?></div>
+            <?php if(!empty($job_address)):?>
+                <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_address; ?></div>
             <?php endif; ?>
 
 
-            <?php if($job_bm_company_website):?>
-                <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_bm_company_website; ?>"><?php echo __('Website','job-board-manager'); ?></a> </div>
+            <?php if(!empty($job_company_website['host'])):?>
+                <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_company_website['main_url']; ?>"><?php echo $job_company_website['host']; ?></a> </div>
             <?php endif; ?>
 
 
@@ -266,157 +230,84 @@ if ( ! function_exists( 'job_bm_single_job_main_company' ) ) {
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_info', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
-    function job_bm_single_job_main_job_info() {
+    function job_bm_single_job_main_job_info($job_id) {
 
         $meta_items = array();
 
-
-        $class_job_bm_functions = new class_job_bm_functions();
-        $salary_currency = get_option( 'job_bm_salary_currency');
-
-
-        $salary_type_list = $class_job_bm_functions->salary_type_list();
-        $job_status_list = $class_job_bm_functions->job_status_list();
-        $job_type_list = $class_job_bm_functions->job_type_list();
-        $job_level_list = $class_job_bm_functions->job_level_list();
-        $salary_duration_list = $class_job_bm_functions->salary_duration_list();
+        $job_bm_job_data = new job_bm_job_data($job_id);
+        $job_status = $job_bm_job_data->get_job_status();
+        $job_total_vacancies = $job_bm_job_data->get_total_vacancies();
+        $job_type = $job_bm_job_data->get_job_type();
+        $job_level = $job_bm_job_data->get_job_level();
+        $job_years_experience = $job_bm_job_data->get_years_experience();
+        $job_salary_html = $job_bm_job_data->get_salary_html();
 
 
-        $post_id = get_the_id();
-
-        $job_bm_total_vacancies = get_post_meta($post_id, 'job_bm_total_vacancies', true);
-        $job_bm_job_level = get_post_meta($post_id, 'job_bm_job_level', true);
-        $job_bm_job_type = get_post_meta($post_id, 'job_bm_job_type', true);
-        $job_bm_years_experience = get_post_meta($post_id, 'job_bm_years_experience', true);
-        $job_bm_salary_type = get_post_meta($post_id, 'job_bm_salary_type', true);
-
-        $job_bm_salary_fixed = get_post_meta($post_id, 'job_bm_salary_fixed', true);
-        $job_bm_salary_min = get_post_meta($post_id, 'job_bm_salary_min', true);
-        $job_bm_salary_max = get_post_meta($post_id, 'job_bm_salary_max', true);
-
-        $job_bm_salary_currency = get_post_meta($post_id, 'job_bm_salary_currency', true);
-        $job_bm_job_status = get_post_meta($post_id, 'job_bm_job_status', true);
-        $job_bm_salary_duration = get_post_meta($post_id, 'job_bm_salary_duration', true);
-
-        $job_bm_salary_duration = !empty($job_bm_salary_duration) ? $job_bm_salary_duration : 'month';
-
-
-        $job_bm_salary_currency = !empty($job_bm_salary_currency) ? $job_bm_salary_currency : $salary_currency;
-
-        $post_date = get_the_date();
-        $post_id = get_the_id();
-        $category = get_the_terms($post_id, 'job_category');
-
-
-        ob_start();
+        if(isset($job_status['status_name'])):
+            ob_start();
             ?>
-            <?php if(isset($job_status_list[$job_bm_job_status])):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas 
-                fa-traffic-light"></i>', $job_status_list[$job_bm_job_status])?></span>
-            <?php endif; ?>
+            <span class=" meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas fa-traffic-light"></i>', $job_status['status_name']); ?></span>
             <?php
-
-        $meta_items['job_status'] = ob_get_clean();
-
-
-
-        ob_start();
-            ?>
-            <?php if($job_bm_total_vacancies):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s No of vacancies: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_bm_total_vacancies)?></span>
-            <?php endif; ?>
-            <?php
-
-        $meta_items['total_vacancies'] = ob_get_clean();
-
-
-
-
-        ob_start();
-            ?>
-            <?php if(isset($job_type_list[$job_bm_job_type])):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-swatchbook"></i>', $job_type_list[$job_bm_job_type])?></span>
-            <?php endif; ?>
-            <?php
-
-        $meta_items['job_type'] = ob_get_clean();
-
-
-
-        ob_start();
-            ?>
-            <?php if(isset($job_level_list[$job_bm_job_level])):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Job level: %s','job-board-manager'),'<i class="fas fa-users"></i>', $job_level_list[$job_bm_job_level])?></span>
-            <?php endif; ?>
-            <?php
-
-        $meta_items['job_level'] = ob_get_clean();
-
-
-
-        ob_start();
-            ?>
-            <?php if($job_bm_years_experience):?>
-                <span class=" meta-item"><?php echo sprintf(__('%s Years of experience: %s',
-                        'job-board-manager'),'<i class="fas fa-crosshairs"></i>', $job_bm_years_experience)?></span>
-            <?php endif; ?>
-            <?php
-
-        $meta_items['years_experience'] = ob_get_clean();
-
-
-        ob_start();
-
-
-        $salary_html = '';
-
-        if($job_bm_salary_type == 'fixed'):
-            $salary_html = $job_bm_salary_currency.$job_bm_salary_fixed;
-        elseif($job_bm_salary_type == 'negotiable'):
-            $salary_html = __('Negotiable', 'job-board-manager');
-        elseif($job_bm_salary_type == 'min-max'):
-            $salary_html = $job_bm_salary_currency.$job_bm_salary_min.' - '.$job_bm_salary_currency.$job_bm_salary_max;
-        else:
-            $salary_html = apply_filters('job_bm_single_job_salary_html_'.$job_bm_salary_type, $post_id);
-
+            $meta_items['job_status'] = ob_get_clean();
         endif;
 
-        $salary_duration = isset($salary_duration_list[$job_bm_salary_duration]) ? $salary_duration_list[$job_bm_salary_duration] : '';
-
+        if($job_total_vacancies):
+            ob_start();
             ?>
+            <span class=" meta-item"><?php echo sprintf(__('%s No of vacancies: %s','job-board-manager'),'<i class="fas fa-user-friends"></i>', $job_total_vacancies)?></span>
+            <?php
+            $meta_items['total_vacancies'] = ob_get_clean();
+        endif;
 
-            <?php if($job_bm_salary_fixed):?>
-                <span class="meta-item"><?php echo sprintf(__('%s Salary: %s / %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $salary_html, $salary_duration)?></span>
-            <?php endif;
+        if(!empty($job_type['type'])):
+            ob_start();
+            ?>
+                <span class=" meta-item"><?php echo sprintf(__('%s Job type: %s','job-board-manager'),'<i class="fas fa-swatchbook"></i>', $job_type['type_name'])?></span>
+            <?php
+            $meta_items['job_type'] = ob_get_clean();
+        endif;
 
-        $meta_items['job_salary'] = ob_get_clean();
+        if(!empty($job_level['level'])):
+            ob_start();
+            ?>
+            <span class=" meta-item"><?php echo sprintf(__('%s Job level: %s','job-board-manager'),'<i class="fas fa-users"></i>', $job_level['level_name'])?></span>
+            <?php
+            $meta_items['job_level'] = ob_get_clean();
+        endif;
+
+        if($job_years_experience):
+            ob_start();
+            ?>
+            <span class=" meta-item"><?php echo sprintf(__('%s Years of experience: %s', 'job-board-manager'),'<i class="fas fa-crosshairs"></i>', $job_years_experience)?></span>
+            <?php
+            $meta_items['years_experience'] = ob_get_clean();
+        endif;
+
+
+        if(!empty($job_salary_html)):
+            ob_start();
+                ?>
+                <span class="meta-item"><?php echo sprintf(__('%s Salary: %s','job-board-manager'),'<i class="fas fa-pizza-slice"></i>', $job_salary_html); ?></span>
+                <?php
+            $meta_items['job_salary'] = ob_get_clean();
+        endif;
 
 
         $meta_items = apply_filters('job_bm_single_job_infos', $meta_items);
 
-
         ?>
         <div class="job-meta-info">
             <h3><?php echo __('Job Information','job-board-manager'); ?></h3>
-
             <?php
 
             if(!empty($meta_items)):
                 foreach ($meta_items as $item):
-
                     echo $item;
-
                 endforeach;
             endif;
-
             ?>
-
-
-
         </div>
         <?php
-
-
     }
 }
 
@@ -426,54 +317,30 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_apply', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
-    function job_bm_single_job_main_job_apply() {
+    function job_bm_single_job_main_job_apply($job_id) {
 
         $class_job_bm_functions = new class_job_bm_functions();
+        $apply_method_list = $class_job_bm_functions->apply_method_list();
 
-        $sections = array();
-        $job_post_data = get_post(get_the_ID());
-        $job_bm_contact_email = get_post_meta(get_the_ID(), 'job_bm_contact_email', true);
-        $job_bm_job_status = get_post_meta(get_the_ID(), 'job_bm_job_status', true);
-        $job_bm_application_methods = get_post_meta(get_the_ID(), 'job_bm_application_methods', true);
-
-        $job_bm_application_methods = !empty($job_bm_application_methods) ? $job_bm_application_methods : get_option('job_bm_application_methods', array('direct_email'));
-
+        $job_bm_job_data = new job_bm_job_data($job_id);
+        $job_application_methods = $job_bm_job_data->get_application_methods();
 
         $job_bm_login_required_on_apply = get_option('job_bm_login_required_on_apply', 'yes');
         $job_bm_job_login_page_id = get_option('job_bm_job_login_page_id');
         $job_bm_job_login_page_url = get_permalink($job_bm_job_login_page_id);
 
-
-
-
-        $job_id = get_the_id();
-
-
         $application_method_id = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : '';
-
-        //var_dump($application_method_id);
 
         ?>
         <div class="job-apply">
             <h3><?php echo __('Apply for job','job-board-manager'); ?></h3>
-
-
             <div class="apply-methods">
-
                 <?php
-
-                $apply_method_list = $class_job_bm_functions->apply_method_list();
-
-
-
-                if(!empty($job_bm_application_methods)):
-
+                if(!empty($job_application_methods)):
                     $active_id = 9999;
                     $i = 0;
 
-                    foreach ($job_bm_application_methods as $method):
-
-
+                    foreach ($job_application_methods as $method):
                         if($method == 'none'){
                             ?>
                             <div class=""><?php echo apply_filters('job_bm_application_method_none_text', __('Sorry! 
@@ -489,50 +356,28 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
 
                         $method_name = isset($apply_method_list[$method]) ? $apply_method_list[$method] : '';
 
-                        //echo '<pre>'.var_export($method_name, true).'</pre>';
-
                         if(!empty($method_name)):
                             ?>
                             <div id="<?php echo 'apply-method-'.$method; ?>" class="method-header "><div class="method-name"><?php echo $method_name; ?></div></div>
                             <div class="method-form ">
-
                                 <?php
-
                                 if(!is_user_logged_in() && $job_bm_login_required_on_apply =='yes'){
-
                                     $login_required = apply_filters('job_bm_application_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit application','job-board-manager'), $job_bm_job_login_page_url));
                                     echo $login_required;
-
                                 }else{
                                     do_action('job_bm_application_methods_form_'.$method, $job_id);
                                 }
-
-
-
                                 ?>
-
                             </div>
                         <?php
                         endif;
 
-
-
-
                         $i++;
                     endforeach;
                 endif;
-
-
                 ?>
-
-
             </div>
-
-
-
-
         </div>
-
         <script>
             jQuery( function($) {
                 $( ".apply-methods" ).accordion({
@@ -543,12 +388,8 @@ if ( ! function_exists( 'job_bm_single_job_main_job_apply' ) ) {
                 });
             } );
         </script>
-
-
         <div class="clear"></div>
         <?php
-
-
     }
 }
 
@@ -609,7 +450,7 @@ function job_bm_application_methods_form_direct_email($job_id){
         if ( !$error->has_errors() ) {
 
             $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
-            $email = isset($_POST['application_email']) ? sanitize_text_field($_POST['application_email']) : "";
+            $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : "";
             $post_content = isset($_POST['application_message']) ? wp_kses($_POST['application_message'], array()) : "";
             $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
 
@@ -696,7 +537,7 @@ function job_bm_application_methods_form_direct_email($job_id){
 
     $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : $current_user_name;
     $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : $current_user_email;
-    $application_message = isset($_POST['application_message']) ? wp_kses($_POST['application_message'], array()) : "";
+    $application_message = isset($_POST['application_message']) ? wp_kses_post($_POST['application_message']) : "";
 
 
     ?>
@@ -786,7 +627,10 @@ function job_bm_application_methods_form_external_website($job_id){
     global $current_user;
 
     $class_job_bm_applications = new class_job_bm_applications();
-    $job_bm_job_link = get_post_meta($job_id, 'job_bm_job_link', true);
+
+
+    $job_bm_job_data = new job_bm_job_data($job_id);
+    $job_link= $job_bm_job_data->get_job_link();
 
     ?>
     <form method="post" action="#apply-method-external_website" class="apply-method-form">
@@ -794,7 +638,7 @@ function job_bm_application_methods_form_external_website($job_id){
         <input type="hidden" name="application_method" value="external_website">
 
         <div class="form-field-wrap">
-            <p><?php echo apply_filters('job_bm_application_method_external_website_text', sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_bm_job_link)); ?>  </p>
+            <p><?php echo apply_filters('job_bm_application_method_external_website_text', sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_link)); ?>  </p>
         </div>
 
     </form>
@@ -808,11 +652,10 @@ function job_bm_application_methods_form_external_website($job_id){
 add_action( 'job_bm_single_job_main', 'job_bm_template_single_job_tags', 90 );
 
 if ( ! function_exists( 'job_bm_template_single_job_tags' ) ) {
-    function job_bm_template_single_job_tags(){
+    function job_bm_template_single_job_tags($job_id){
 
 
         global $post;
-        $job_id =get_the_id();
         $tags = get_the_terms($job_id, 'job_tag');
 
         if(!empty($tags)):
@@ -859,29 +702,29 @@ if ( ! function_exists( 'job_bm_template_single_job_tags' ) ) {
 
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_job_schema', 30 );
 if ( ! function_exists( 'job_bm_single_job_main_job_schema' ) ) {
-    function job_bm_single_job_main_job_schema() {
-        $job_id = get_the_id();
-        $job_bm_JobData = new job_bm_JobData($job_id);
+    function job_bm_single_job_main_job_schema($job_id) {
+
+        $job_bm_job_data = new job_bm_job_data($job_id);
         $job_excerpt = get_the_content($job_id);
-        $job_categories = $job_bm_JobData->get_categories('name',',');
+        $job_categories = $job_bm_job_data->get_categories('name',',');
 
         $job_categories = !empty($job_categories) ? $job_categories : 'General';
 
-        $job_type = $job_bm_JobData->get_job_type();
-        $job_location = $job_bm_JobData->get_location();
-        $job_address = $job_bm_JobData->get_address();
+        $job_type = $job_bm_job_data->get_job_type();
+        $job_location = $job_bm_job_data->get_location();
+        $job_address = $job_bm_job_data->get_address();
 
-        $job_publish_date = $job_bm_JobData->get_publish_date();
-        $job_expire_date = $job_bm_JobData->get_expire_date();
+        $job_publish_date = $job_bm_job_data->get_publish_date();
+        $job_expire_date = $job_bm_job_data->get_expire_date();
 
-        $job_years_experience = $job_bm_JobData->get_years_experience();
-        $job_company_name = $job_bm_JobData->get_company_name();
+        $job_years_experience = $job_bm_job_data->get_years_experience();
+        $job_company_name = $job_bm_job_data->get_company_name();
 
-        $job_salary_currency = $job_bm_JobData->get_salary_currency();
-        $job_salary_type = $job_bm_JobData->get_salary_type();
-        $job_salary_minimum = $job_bm_JobData->get_salary_minimum();
-        $job_salary_maximum = $job_bm_JobData->get_salary_maximum();
-        $job_salary_fixed = $job_bm_JobData->get_salary_fixed();
+        $job_salary_currency = $job_bm_job_data->get_salary_currency();
+        $job_salary_type = $job_bm_job_data->get_salary_type();
+        $job_salary_minimum = $job_bm_job_data->get_salary_minimum();
+        $job_salary_maximum = $job_bm_job_data->get_salary_maximum();
+        $job_salary_fixed = $job_bm_job_data->get_salary_fixed();
 
 
 
@@ -898,7 +741,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_schema' ) ) {
 
         $schemaJobPosting['datePosted'] = '"'.$job_publish_date.'"';
         $schemaJobPosting['validThrough'] = '"'.$job_expire_date.'"';
-        $schemaJobPosting['employmentType'] = '"'.$job_type.'"';
+        $schemaJobPosting['employmentType'] = '"'.$job_type['type_name'].'"';
         $schemaJobPosting['experienceRequirements'] = '"'.$job_years_experience.'"';
         $schemaJobPosting['hiringOrganization'] = '"'.$job_company_name.'"';
         $schemaJobPosting['occupationalCategory'] ='"'. $job_categories.'"';
@@ -1002,7 +845,7 @@ if ( ! function_exists( 'job_bm_single_job_main_job_schema' ) ) {
 add_action( 'job_bm_single_job_main', 'job_bm_single_job_main_css', 90 );
 
 if ( ! function_exists( 'job_bm_single_job_main_css' ) ) {
-	function job_bm_single_job_main_css() {
+	function job_bm_single_job_main_css($job_id) {
 
         $job_bm_job_type_bg_color = get_option('job_bm_job_type_bg_color');
         $job_bm_job_status_bg_color = get_option('job_bm_job_status_bg_color');

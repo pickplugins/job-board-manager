@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.3
-	Stable tag: 2.1.36
+	Stable tag: 2.1.37
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,14 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+	= 2.1.37 =
+    * 2020-04-02 - add - update add-on list.
+    * 2020-04-02 - fix - minimum salary saving issue fixed.
+    * 2020-04-02 - add - display featured job at top on job archive.
+    * 2020-04-02 - add - salary added to job archive.
+    * 2020-04-02 - add - rename "job_bm_JobData" to "job_bm_job_data"
+
 
 	= 2.1.36 =
     * 2020-04-02 - add - xml feed scraper add-on listed.

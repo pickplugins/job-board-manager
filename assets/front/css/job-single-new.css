@@ -23,7 +23,7 @@
 .job-single .job-meta-top .meta-item{
   margin: 5px 10px;
   font-size: 16px;
-  display: inline-block;
+  display: inline;
 }
 .job-single .job-meta-top .featured{
   background: #fff8bf;
