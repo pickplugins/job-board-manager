@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 5.3
-	Stable tag: 2.1.37
+	Stable tag: 2.1.38
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -108,6 +108,13 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+	= 2.1.38 =
+     * 2020-04-02 - add - job expire in added on job archive meta list.
+     * 2020-04-02 - add - job expire in added on job single meta list.
+     * 2020-04-02 - add - job Publish date added on job single meta list.
+
 
 	= 2.1.37 =
     * 2020-04-02 - add - update add-on list.

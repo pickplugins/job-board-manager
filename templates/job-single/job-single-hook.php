@@ -241,9 +241,13 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
         $job_level = $job_bm_job_data->get_job_level();
         $job_years_experience = $job_bm_job_data->get_years_experience();
         $job_salary_html = $job_bm_job_data->get_salary_html();
+        $job_expire_in = $job_bm_job_data->get_expire_in();
+        $job_publish_date = $job_bm_job_data->get_publish_date('d M Y');
 
 
-        if(isset($job_status['status_name'])):
+        //var_dump($job_status['status_name']);
+
+        if(!empty($job_status['status_name'])):
             ob_start();
             ?>
             <span class=" meta-item"><?php echo sprintf(__('%s Status: %s','job-board-manager'),'<i class="fas fa-traffic-light"></i>', $job_status['status_name']); ?></span>
@@ -291,6 +295,27 @@ if ( ! function_exists( 'job_bm_single_job_main_job_info' ) ) {
                 <?php
             $meta_items['job_salary'] = ob_get_clean();
         endif;
+
+
+        if(!empty($job_publish_date)):
+            ob_start();
+            ?>
+            <span class="meta-item"><?php echo sprintf(__('%s Publish date: %s','job-board-manager'),'<i class="far fa-calendar-alt"></i>', $job_publish_date); ?></span>
+            <?php
+            $meta_items['publish_date'] = ob_get_clean();
+        endif;
+
+
+        if(!empty($job_expire_in)):
+            ob_start();
+            ?>
+            <span class="meta-item"><?php echo sprintf(__('%s Expire in: %s','job-board-manager'),'<i class="far fa-calendar-check"></i>', $job_expire_in); ?></span>
+            <?php
+            $meta_items['expire_in'] = ob_get_clean();
+        endif;
+
+
+
 
 
         $meta_items = apply_filters('job_bm_single_job_infos', $meta_items);

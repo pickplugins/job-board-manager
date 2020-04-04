@@ -61,6 +61,22 @@ add_action('job_bm_dashboard', 'job_bm_dashboard');
 if(!function_exists('job_bm_dashboard')){
     function job_bm_dashboard(){
 
+        global $current_user;
+        $switch_user_role = isset($_GET['switch_user_role']) ? sanitize_text_field($_GET['switch_user_role']) : '';
+
+        if($switch_user_role == 'job_poster' ){
+
+            $u = new WP_User( $current_user->ID );
+            $u->remove_role( 'job_seeker' );
+            $u->add_role( 'job_poster' );
+
+        }elseif ($switch_user_role == 'job_seeker'){
+            $u = new WP_User( $current_user->ID );
+            $u->remove_role( 'job_poster' );
+            $u->add_role( 'job_seeker' );
+        }
+
+
         if (is_user_logged_in() ):
             do_action('job_bm_dashboard_logged_in');
         else:
@@ -81,26 +97,39 @@ if(!function_exists('job_bm_dashboard_logged_in')){
         $job_bm_account_page_id = get_option('job_bm_account_page_id');
         $job_bm_account_page_url = get_permalink($job_bm_account_page_id);
 
+        global $current_user;
+
+        $user_roles = $current_user->roles;
+        $user_role = array_shift($user_roles);
+
+        //var_dump($user_role);
 
         $tabs['account'] =array(
             'title'=>__('Account', 'job-board-manager'),
             'priority'=>1,
         );
 
-        $tabs['my_jobs'] =array(
-            'title'=>__('My jobs', 'job-board-manager'),
-            'priority'=>2,
-        );
+        if($user_role == 'job_poster' || $user_role == 'administrator'){
+            $tabs['my_jobs'] =array(
+                'title'=>__('My jobs', 'job-board-manager'),
+                'priority'=>2,
+            );
 
-        $tabs['my_applications'] =array(
-            'title'=>__('My applications', 'job-board-manager'),
-            'priority'=>3,
-        );
+            $tabs['applications'] =array(
+                'title'=>__('Applications', 'job-board-manager'),
+                'priority'=>4,
+            );
+        }
 
-        $tabs['applications'] =array(
-            'title'=>__('Applications', 'job-board-manager'),
-            'priority'=>4,
-        );
+        if($user_role == 'job_seeker' || $user_role == 'administrator'){
+            $tabs['my_applications'] =array(
+                'title'=>__('My applications', 'job-board-manager'),
+                'priority'=>3,
+            );
+        }
+
+
+
 
 
         $tabs['logout'] =array(
@@ -161,32 +190,61 @@ if(!function_exists('job_bm_dashboard_tabs_content_account')){
 
         if(is_user_logged_in()){
 
+            $job_bm_account_page_id = get_option('job_bm_account_page_id');
+            $job_bm_account_page_url = get_permalink($job_bm_account_page_id);
+
             global $current_user;
+
+            $user_roles = $current_user->roles;
+            $user_role = array_shift($user_roles);
+
 
             //var_dump(job_bm_user_job_count());
 
-            //$user_job_count = job_bm_user_job_count();
-            //$user_application_count = job_bm_user_application_count();
-            //$user_application_received_count = job_bm_user_application_received_count();
+            $user_job_count = job_bm_user_job_count();
+            $user_application_count = job_bm_user_application_count();
+            $user_application_received_count = job_bm_user_application_received_count();
 
 
 
             ?>
-            <div class="welcome">
+            <p class="welcome">
                 <?php echo sprintf(__('Welcome! %s', 'job-board-manager'), '<strong>'.$current_user->display_name.'</strong>'); ?>
-            </div>
+            </p>
+
+            <?php
+
+            if($user_role == 'job_poster'){
+                ?>
+                <p class="">Switch as <a href="<?php echo $job_bm_account_page_url; ?>?switch_user_role=job_seeker">job seeker</a> </p>
+                <?php
+            }elseif($user_role == 'job_seeker'){
+                ?>
+                <p class="">Switch as <a href="<?php echo $job_bm_account_page_url; ?>?switch_user_role=job_poster">job poster</a> </p>
+                <?php
+            }else{
+                ?>
+                <p class="">
+                    <div class="">Switch as <a href="<?php echo $job_bm_account_page_url; ?>?switch_user_role=job_seeker">job seeker</a></div>
+                    <div class="">Switch as <a href="<?php echo $job_bm_account_page_url; ?>?switch_user_role=job_poster">job poster</a></div>
+
+                </p>
+                <?php
+            }
+            ?>
+
 
             <div class="user-stats">
-<!--                <div class="">-->
-<!--                    <span>--><?php //echo __('Total job post:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_job_count; ?><!--</span>-->
-<!--                </div>-->
-
-<!--                <div class="">-->
-<!--                    <span>--><?php //echo __('Application submit:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_application_count; ?><!--</span>-->
-<!--                </div>-->
+                <div class="">
+                    <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo $user_job_count; ?></span>
+                </div>
 
                 <div class="">
-<!--                    <span>--><?php //echo __('Application received:', 'job-board-manager'); ?><!--</span> <span>--><?php //echo $user_application_received_count; ?><!--</span>-->
+                    <span><?php echo __('Application submit:', 'job-board-manager'); ?></span> <span><?php echo $user_application_count; ?></span>
+                </div>
+
+                <div class="">
+                    <span><?php echo __('Application received:', 'job-board-manager'); ?></span> <span><?php echo $user_application_received_count; ?></span>
                 </div>
 
 

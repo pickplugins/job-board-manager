@@ -195,6 +195,8 @@ if(!function_exists('job_bm_job_archive_loop_item_meta')):
         $job_location = $job_bm_job_data->get_location();
         $job_status = $job_bm_job_data->get_job_status();
         $job_type = $job_bm_job_data->get_job_type();
+        $job_expire_date = $job_bm_job_data->get_expire_date();
+        $job_expire_in = $job_bm_job_data->get_expire_in();
 
 
         //echo '<pre>'.var_export($job_type, true).'</pre>';
@@ -249,6 +251,15 @@ if(!function_exists('job_bm_job_archive_loop_item_meta')):
             $meta_items['salary'] = ob_get_clean();
         }
 
+        if(!empty($job_expire_in)):
+            ob_start();
+
+            ?>
+            <span class="job-post-date meta-item"><i class="far fa-calendar-check"></i> <?php echo sprintf(__('Expire in %s','job-board-manager'), $job_expire_in )?></span>
+            <?php
+
+            $meta_items['expire'] = ob_get_clean();
+        endif;
 
 
 

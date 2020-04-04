@@ -189,8 +189,6 @@ function job_bm_registration_submit_data($post_data){
             'user_email' 	=> 	$email,
             'user_pass' 	=> 	$password,
             'role' 	=> 	$role,
-
-
         );
 
         $user_id = wp_insert_user( $userdata );

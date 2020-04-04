@@ -313,6 +313,35 @@ class job_bm_job_data{
         return $expire_date;
     }
 
+    public function get_expire_in(){
+
+        $publish_date = $this->get_publish_date();
+        $expire_date = $this->get_expire_date();
+
+        $gmt_offset = get_option('gmt_offset');
+        $current_date = date('Y-m-d', strtotime('+'.$gmt_offset.' hour'));
+
+        $expire_date_str = strtotime($expire_date);
+        $current_date_str = strtotime($current_date);
+
+        $days = '';
+        //var_dump($expire_date);
+        //var_dump($current_date);
+
+        //var_dump($expire_date_str);
+        //var_dump($current_date_str);
+
+        if( $expire_date_str > $current_date_str){
+            $days = human_time_diff( $current_date_str, $expire_date_str );
+        }
+
+
+
+        return $days;
+    }
+
+
+
 
     public function get_tags($return = 'link', $separator = ','){
 
