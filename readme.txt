@@ -114,6 +114,7 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
      * 2020-04-02 - add - job expire in added on job archive meta list.
      * 2020-04-02 - add - job expire in added on job single meta list.
      * 2020-04-02 - add - job Publish date added on job single meta list.
+     * 2020-04-02 - add - application method External website empty link text added.
 
 
 	= 2.1.37 =

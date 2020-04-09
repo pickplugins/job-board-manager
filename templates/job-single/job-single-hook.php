@@ -663,7 +663,17 @@ function job_bm_application_methods_form_external_website($job_id){
         <input type="hidden" name="application_method" value="external_website">
 
         <div class="form-field-wrap">
-            <p><?php echo apply_filters('job_bm_application_method_external_website_text', sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_link)); ?>  </p>
+            <p>
+                <?php
+
+                if(!empty($job_link)){
+                    echo apply_filters('job_bm_application_method_external_website_text', sprintf(__('Please go following link to apply on their website <a href="%s">Click to see job details</a>.','job-board-manager'), $job_link));
+                }else{
+                    echo apply_filters('job_bm_application_method_external_website_no_link', __('Sorry! job link is not available right now. this might be temporary, please check back later.','job-board-manager'));
+                }
+
+                ?>
+            </p>
         </div>
 
     </form>
