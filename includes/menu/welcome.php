@@ -63,7 +63,7 @@ wp_enqueue_style('font-awesome-5');
 <div class="wrap">
 	<div id="icon-tools" class="icon32"><br></div>
     <h2></h2>
-		<form  method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+		<form  method="post" action="<?php echo str_replace( '%7E', '~', esc_url_raw($_SERVER['REQUEST_URI'])); ?>">
 	        <input type="hidden" name="job_bm_hidden" value="Y">
             <?php
             if(!empty($_POST['job_bm_hidden'])){

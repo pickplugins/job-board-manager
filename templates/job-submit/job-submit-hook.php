@@ -13,10 +13,10 @@ function job_bm_job_submit_form_title(){
     $post_title = isset($_POST['post_title']) ? sanitize_text_field($_POST['post_title']) : "";
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-title is_required">
         <div class="field-title"><?php echo __('Job title','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $post_title; ?>" name="post_title">
+            <input placeholder="" type="text" value="<?php echo esc_attr($post_title); ?>" name="post_title">
             <p class="field-details"><?php _e('Write your job title','job-board-manager');
             ?></p>
         </div>
@@ -36,7 +36,7 @@ function job_bm_job_submit_form_content(){
 
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-description is_required">
         <div class="field-title"><?php _e('Job description','job-board-manager'); ?></div>
         <div class="field-input">
             <?php
@@ -86,7 +86,7 @@ function job_bm_job_submit_form_categories(){
     }
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap job-category">
         <div class="field-title"><?php _e('Job category','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_category" >
@@ -97,8 +97,7 @@ function job_bm_job_submit_form_categories(){
                         $selected = ($job_category == $term_id) ? 'selected' : '';
 
                         ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html
-                            ($term_name); ?></option>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html($term_name); ?></option>
                         <?php
                     }
                 endif;
@@ -123,7 +122,7 @@ function job_bm_job_submit_form_job_info_title(){
 
 
     ?>
-    <div class="form-field-wrap ">
+    <div class="form-field-wrap job-info">
         <div class="field-separator"><?php echo __('Job Information','job-board-manager'); ?></div>
     </div>
     <?php
@@ -149,10 +148,10 @@ function job_bm_job_submit_form_total_vacancies(){
     $job_bm_total_vacancies = isset($_POST['job_bm_total_vacancies']) ? sanitize_text_field($_POST['job_bm_total_vacancies']) : 1;
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-total-vacancies is_required">
         <div class="field-title"><?php _e('Total vacancies','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="3" type="text" value="<?php echo $job_bm_total_vacancies; ?>" name="job_bm_total_vacancies">
+            <input placeholder="3" type="text" value="<?php echo esc_attr($job_bm_total_vacancies); ?>" name="job_bm_total_vacancies">
             <p class="field-details"><?php _e('Total number of vacancies','job-board-manager');
                 ?></p>
         </div>
@@ -175,7 +174,7 @@ function job_bm_job_submit_form_job_type(){
 
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap job-type">
         <div class="field-title"><?php _e('Job type','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_job_type" >
@@ -186,8 +185,7 @@ function job_bm_job_submit_form_job_type(){
                         $selected = ($job_bm_job_type == $job_type) ? 'selected' : '';
 
                         ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_type); ?>"><?php echo esc_html
-                            ($job_type_name); ?></option>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_type); ?>"><?php echo esc_html($job_type_name); ?></option>
                         <?php
                     }
                 endif;
@@ -215,7 +213,7 @@ function job_bm_job_submit_form_job_level(){
 
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap job-level">
         <div class="field-title"><?php _e('Job level','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_job_level" >
@@ -226,8 +224,7 @@ function job_bm_job_submit_form_job_level(){
                         $selected = ($job_bm_job_level == $job_level) ? 'selected' : '';
 
                         ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_level); ?>"><?php echo esc_html
-                            ($job_level_name); ?></option>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_level); ?>"><?php echo esc_html($job_level_name); ?></option>
                         <?php
                     }
                 endif;
@@ -253,10 +250,10 @@ function job_bm_job_submit_form_years_experience(){
     $job_bm_years_experience = isset($_POST['job_bm_years_experience']) ? sanitize_text_field($_POST['job_bm_years_experience']) : 1;
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap -job-years-experience">
         <div class="field-title"><?php _e('Years of experience','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="5" type="text" value="<?php echo $job_bm_years_experience; ?>" name="job_bm_years_experience">
+            <input placeholder="5" type="text" value="<?php echo esc_attr($job_bm_years_experience); ?>" name="job_bm_years_experience">
             <p class="field-details"><?php _e('Years of experience must have.','job-board-manager');
                 ?></p>
         </div>
@@ -282,7 +279,7 @@ function job_bm_job_submit_form_salary_type(){
 
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap job-salary-type">
         <div class="field-title"><?php _e('Salary type','job-board-manager'); ?></div>
         <div class="field-input">
             <select name="job_bm_salary_type" >
@@ -293,8 +290,7 @@ function job_bm_job_submit_form_salary_type(){
                         $selected = ($job_bm_salary_type == $salary_type) ? 'selected' : '';
 
                         ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_type); ?>"><?php echo esc_html
-                            ($salary_type_name); ?></option>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_type); ?>"><?php echo esc_html($salary_type_name); ?></option>
                         <?php
                     }
                 endif;
@@ -355,7 +351,7 @@ function job_bm_job_submit_form_salary_fixed(){
     <div class="form-field-wrap salary_fixed" <?php if($job_bm_salary_type =='fixed'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php _e('Fixed salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('50000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_fixed; ?>" name="job_bm_salary_fixed">
+            <input placeholder="<?php echo __('50000','job-board-manager'); ?>" type="text" value="<?php echo esc_attr($job_bm_salary_fixed); ?>" name="job_bm_salary_fixed">
             <p class="field-details"><?php _e('Salary fixed, ex: 1200','job-board-manager');
                 ?></p>
         </div>
@@ -375,7 +371,7 @@ function job_bm_job_submit_form_salary_min(){
     <div class="form-field-wrap salary_min" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php _e('Minimum salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('5000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_min; ?>" name="job_bm_salary_min">
+            <input placeholder="<?php echo __('5000','job-board-manager'); ?>" type="text" value="<?php echo esc_attr($job_bm_salary_min); ?>" name="job_bm_salary_min">
             <p class="field-details"><?php _e('Minimum salary amount, ex: 5000','job-board-manager');
                 ?></p>
         </div>
@@ -396,7 +392,7 @@ function job_bm_job_submit_form_salary_max(){
     <div class="form-field-wrap salary_max" <?php if($job_bm_salary_type =='min-max'): ?> style="display: block" <?php endif; ?>>
         <div class="field-title"><?php _e('Maximum salary','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('10000','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_max; ?>" name="job_bm_salary_max">
+            <input placeholder="<?php echo __('10000','job-board-manager'); ?>" type="text" value="<?php echo esc_attr($job_bm_salary_max); ?>" name="job_bm_salary_max">
             <p class="field-details"><?php _e('Maximum salary amount, ex: 1000','job-board-manager');
                 ?></p>
         </div>
@@ -427,8 +423,7 @@ function job_bm_job_submit_form_salary_duration(){
                         $selected = ($job_bm_salary_duration == $salary_duration) ? 'selected' : '';
 
                         ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_duration); ?>"><?php echo esc_html
-                            ($salary_duration_name); ?></option>
+                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_duration); ?>"><?php echo esc_html($salary_duration_name); ?></option>
                         <?php
                     }
                 endif;
@@ -453,7 +448,7 @@ function job_bm_job_submit_form_salary_currency(){
     <div class="form-field-wrap salary_currency" >
         <div class="field-title"><?php _e('Salary currency','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="<?php echo __('USD','job-board-manager'); ?>" type="text" value="<?php echo $job_bm_salary_currency; ?>" name="job_bm_salary_currency">
+            <input placeholder="<?php echo __('USD','job-board-manager'); ?>" type="text" value="<?php echo esc_attr($job_bm_salary_currency); ?>" name="job_bm_salary_currency">
             <p class="field-details"><?php _e('Write salary currency, ex: USD','job-board-manager');
                 ?></p>
         </div>
@@ -487,10 +482,10 @@ function job_bm_job_submit_form_contact_email(){
     $job_bm_create_account = isset($_POST['job_bm_create_account']) ? sanitize_text_field($_POST['job_bm_create_account']) : '';
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-contact-email is_required">
         <div class="field-title"><?php _e('Contact email','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="contact@company.com" type="email" value="<?php echo $job_bm_contact_email; ?>" name="job_bm_contact_email">
+            <input placeholder="contact@company.com" type="email" value="<?php echo esc_attr($job_bm_contact_email); ?>" name="job_bm_contact_email">
             <p class="field-details"><?php _e('Write your contact email','job-board-manager');
                 ?></p>
         </div>
@@ -500,12 +495,12 @@ function job_bm_job_submit_form_contact_email(){
 
     if(!is_user_logged_in() && $job_bm_job_submit_create_account == 'yes'):
         ?>
-        <div class="form-field-wrap">
+        <div class="form-field-wrap job-contact-email">
             <div class="field-title"></div>
             <div class="field-input">
                 <label><input type="checkbox" <?php if($job_bm_create_account) echo 'checked'; ?>  value="1" name="job_bm_create_account"> <?php echo __('Create account?'); ?></label>
                 <p class="field-details"></p>
-                <input style="display: <?php if($job_bm_create_account) echo 'block'; else echo 'none'; ?>" placeholder="username" type="text" value="<?php echo $job_bm_username; ?>" name="job_bm_username">
+                <input style="display: <?php if($job_bm_create_account) echo 'block'; else echo 'none'; ?>" placeholder="username" type="text" value="<?php echo esc_attr($job_bm_username); ?>" name="job_bm_username">
 
             </div>
         </div>
@@ -544,7 +539,7 @@ function job_bm_job_submit_form_company_info(){
 
 
     ?>
-    <div class="form-field-wrap ">
+    <div class="form-field-wrap company-info">
         <div class="field-separator"><?php echo __('Company Information','job-board-manager'); ?></div>
     </div>
     <?php
@@ -564,10 +559,10 @@ function job_bm_job_submit_form_company_name(){
     $job_bm_company_name = isset($_POST['job_bm_company_name']) ? sanitize_text_field($_POST['job_bm_company_name']) : "";
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap company-name is_required">
         <div class="field-title"><?php _e('Company name','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="" type="text" value="<?php echo $job_bm_company_name; ?>" name="job_bm_company_name">
+            <input placeholder="" type="text" value="<?php echo esc_attr($job_bm_company_name); ?>" name="job_bm_company_name">
             <p class="field-details"><?php _e('Write your company name','job-board-manager');
                 ?></p>
         </div>
@@ -584,10 +579,10 @@ function job_bm_job_submit_form_location(){
     $job_bm_location = isset($_POST['job_bm_location']) ? sanitize_text_field($_POST['job_bm_location']) : "";
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-location is_required">
         <div class="field-title"><?php _e('Location','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="New York" type="text" value="<?php echo $job_bm_location; ?>" name="job_bm_location">
+            <input placeholder="New York" type="text" value="<?php echo esc_attr($job_bm_location); ?>" name="job_bm_location">
             <p class="field-details"><?php _e('Write company location, use city or state. ex: New Work','job-board-manager');
                 ?></p>
         </div>
@@ -603,10 +598,10 @@ function job_bm_job_submit_form_address(){
     $job_bm_address = isset($_POST['job_bm_address']) ? sanitize_text_field($_POST['job_bm_address']) : "";
 
     ?>
-    <div class="form-field-wrap is_required">
+    <div class="form-field-wrap job-address is_required">
         <div class="field-title"><?php _e('Address','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="4549 Godfrey Road" type="text" value="<?php echo $job_bm_address; ?>" name="job_bm_address">
+            <input placeholder="4549 Godfrey Road" type="text" value="<?php echo esc_attr($job_bm_address); ?>" name="job_bm_address">
             <p class="field-details"><?php _e('Write company address','job-board-manager');
                 ?></p>
         </div>
@@ -623,10 +618,10 @@ function job_bm_job_submit_form_company_website(){
     $job_bm_company_website = isset($_POST['job_bm_company_website']) ? esc_url_raw($_POST['job_bm_company_website']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap company-website">
         <div class="field-title"><?php _e('Company website','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="http://companywebsite.com" type="text" value="<?php echo $job_bm_company_website; ?>" name="job_bm_company_website">
+            <input placeholder="http://companywebsite.com" type="text" value="<?php echo esc_url_raw($job_bm_company_website); ?>" name="job_bm_company_website">
             <p class="field-details"><?php _e('Write company website','job-board-manager');
                 ?></p>
         </div>
@@ -640,10 +635,10 @@ function job_bm_job_submit_form_job_link(){
     $job_bm_job_link = isset($_POST['job_bm_job_link']) ? esc_url_raw($_POST['job_bm_job_link']) : "";
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap job-link">
         <div class="field-title"><?php _e('Job link','job-board-manager'); ?></div>
         <div class="field-input">
-            <input placeholder="http://companywebsite.com/job-details" type="text" value="<?php echo $job_bm_job_link; ?>" name="job_bm_job_link">
+            <input placeholder="http://companywebsite.com/job-details" type="text" value="<?php echo esc_url_raw($job_bm_job_link); ?>" name="job_bm_job_link">
             <p class="field-details"><?php _e('Job link at company website','job-board-manager');
                 ?></p>
         </div>
@@ -658,7 +653,7 @@ function job_bm_job_submit_form_company_logo(){
     $job_bm_company_logo = isset($_POST['job_bm_company_logo']) ? sanitize_text_field($_POST['job_bm_company_logo']) : job_bm_plugin_url."assets/front/images/placeholder.png";
 
     ?>
-    <div class="form-field-wrap job-bm-media-upload">
+    <div class="form-field-wrap company-logo job-bm-media-upload">
         <div class="field-title"><?php _e('Company logo','job-board-manager'); ?></div>
         <div class="field-input">
 
@@ -671,7 +666,7 @@ function job_bm_job_submit_form_company_logo(){
                     <img class="media-preview" src="<?php echo $job_bm_company_logo; ?>" style="width:100%;box-shadow: none;"/>
                 </div>
 
-                <input placeholder="" type="text" value="<?php echo $job_bm_company_logo; ?>" name="job_bm_company_logo">
+                <input placeholder="" type="text" value="<?php echo esc_url_raw($job_bm_company_logo); ?>" name="job_bm_company_logo">
 
 
                 <span class="media-upload " id=""><?php echo __('Upload','job-board-manager');?></span>
@@ -712,11 +707,12 @@ function job_bm_job_submit_form_recaptcha(){
     }
 
     ?>
-    <div class="form-field-wrap">
+    <div class="form-field-wrap is-robot">
         <div class="field-title"></div>
         <div class="field-input">
             <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
-            <script src="https://www.google.com/recaptcha/api.js"></script>
+
+            <?php wp_enqueue_script('google-recaptcha'); ?>
             <p class="field-details"><?php _e('Please prove you are human.','job-board-manager'); ?></p>
 
         </div>

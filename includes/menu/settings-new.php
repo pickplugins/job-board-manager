@@ -90,7 +90,7 @@ wp_enqueue_style( 'wp-color-picker' );
 ?>
 <div class="wrap">
 	<div id="icon-tools" class="icon32"><br></div><h2><?php echo sprintf(__('%s Settings', 'job-board-manager'), job_bm_plugin_name)?></h2>
-		<form  method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
+		<form  method="post" action="<?php echo str_replace( '%7E', '~', esc_url_raw($_SERVER['REQUEST_URI'])); ?>">
 	        <input type="hidden" name="job_bm_hidden" value="Y">
             <?php
             if(!empty($_POST['job_bm_hidden'])){
@@ -121,13 +121,13 @@ wp_enqueue_style( 'wp-color-picker' );
                     $job_bm_reCAPTCHA_site_key = isset($_POST['job_bm_reCAPTCHA_site_key']) ?  sanitize_text_field($_POST['job_bm_reCAPTCHA_site_key']) : '';
                     $job_bm_reCAPTCHA_secret_key = isset($_POST['job_bm_reCAPTCHA_secret_key']) ?  sanitize_text_field($_POST['job_bm_reCAPTCHA_secret_key']) : '';
                     $job_bm_submitted_job_status = isset($_POST['job_bm_submitted_job_status']) ?  sanitize_text_field($_POST['job_bm_submitted_job_status']) : '';
-                    $job_bm_application_methods = isset($_POST['job_bm_application_methods']) ?  stripslashes_deep($_POST['job_bm_application_methods']) : array('none');
-                    $job_bm_apply_enable_recaptcha = isset($_POST['job_bm_apply_enable_recaptcha']) ?  stripslashes_deep($_POST['job_bm_apply_enable_recaptcha']) : '';
-                    $job_bm_login_required_on_apply = isset($_POST['job_bm_login_required_on_apply']) ?  stripslashes_deep($_POST['job_bm_login_required_on_apply']) : '';
+                    $job_bm_application_methods = isset($_POST['job_bm_application_methods']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_application_methods']) : array('none');
+                    $job_bm_apply_enable_recaptcha = isset($_POST['job_bm_apply_enable_recaptcha']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_apply_enable_recaptcha']) : '';
+                    $job_bm_login_required_on_apply = isset($_POST['job_bm_login_required_on_apply']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_login_required_on_apply']) : '';
                     $job_bm_redirect_preview_link = isset($_POST['job_bm_redirect_preview_link']) ?  sanitize_text_field($_POST['job_bm_redirect_preview_link']) : '';
                     $job_bm_edited_job_status = isset($_POST['job_bm_edited_job_status']) ?  sanitize_text_field($_POST['job_bm_edited_job_status']) : '';
                     $job_bm_edited_redirect_link = isset($_POST['job_bm_edited_redirect_link']) ?  sanitize_text_field($_POST['job_bm_edited_redirect_link']) : '';
-                    $job_bm_job_edit_notify_email = isset($_POST['job_bm_job_edit_notify_email']) ?  sanitize_text_field($_POST['job_bm_job_edit_notify_email']) : '';
+                    $job_bm_job_edit_notify_email = isset($_POST['job_bm_job_edit_notify_email']) ?  sanitize_email($_POST['job_bm_job_edit_notify_email']) : '';
                     $job_bm_redirect_login = isset($_POST['job_bm_redirect_login']) ?  sanitize_text_field($_POST['job_bm_redirect_login']) : '';
                     $job_bm_redirect_logout = isset($_POST['job_bm_redirect_logout']) ?  sanitize_text_field($_POST['job_bm_redirect_logout']) : '';
 
@@ -139,11 +139,11 @@ wp_enqueue_style( 'wp-color-picker' );
                     $job_bm_logo_url = isset($_POST['job_bm_logo_url']) ?  sanitize_text_field($_POST['job_bm_logo_url']) : '';
                     $job_bm_from_email = isset($_POST['job_bm_from_email']) ?  sanitize_text_field($_POST['job_bm_from_email']) : '';
                     $job_bm_featured_bg_color = isset($_POST['job_bm_featured_bg_color']) ?  sanitize_text_field($_POST['job_bm_featured_bg_color']) : '';
-                    $job_bm_job_type_bg_color = isset($_POST['job_bm_job_type_bg_color']) ?  stripslashes_deep($_POST['job_bm_job_type_bg_color']) : array();
-                    $job_bm_job_type_text_color = isset($_POST['job_bm_job_type_text_color']) ?  stripslashes_deep($_POST['job_bm_job_type_text_color']) : array();
-                    $job_bm_job_status_bg_color = isset($_POST['job_bm_job_status_bg_color']) ?  stripslashes_deep($_POST['job_bm_job_status_bg_color']) : array();
-                    $job_bm_job_status_text_color = isset($_POST['job_bm_job_status_text_color']) ?  stripslashes_deep($_POST['job_bm_job_status_text_color']) : array();
-                    $job_bm_email_templates_data = isset($_POST['job_bm_email_templates_data']) ?  stripslashes_deep($_POST['job_bm_email_templates_data']) : array();
+                    $job_bm_job_type_bg_color = isset($_POST['job_bm_job_type_bg_color']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_job_type_bg_color']) : array();
+                    $job_bm_job_type_text_color = isset($_POST['job_bm_job_type_text_color']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_job_type_text_color']) : array();
+                    $job_bm_job_status_bg_color = isset($_POST['job_bm_job_status_bg_color']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_job_status_bg_color']) : array();
+                    $job_bm_job_status_text_color = isset($_POST['job_bm_job_status_text_color']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_job_status_text_color']) : array();
+                    $job_bm_email_templates_data = isset($_POST['job_bm_email_templates_data']) ?  job_bm_recursive_sanitize_arr($_POST['job_bm_email_templates_data']) : array();
 
 
 

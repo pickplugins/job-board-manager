@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Advance job board manager for your site.
-Version: 2.1.38
+Version: 2.1.44
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -25,7 +25,7 @@ class JobBoardManager{
 		define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard' );
 		define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard' );
 		define('job_bm_plugin_name', __('Job Board Manager','job-board-manager') );
-		define('job_bm_plugin_version', '2.1.38' );
+		define('job_bm_plugin_version', '2.1.44' );
 
 		// Class
         require_once( job_bm_plugin_dir . 'includes/class-settings-tabs.php');
@@ -148,6 +148,8 @@ class JobBoardManager{
         $job_bm_experied_check_recurrance = get_option(  'job_bm_experied_check_recurrance','daily');
 
         wp_schedule_event(time(), $job_bm_experied_check_recurrance, 'job_bm_cron_expired_check');
+        wp_schedule_event(time(), $job_bm_experied_check_recurrance, 'job_bm_cron_update_expire_date');
+
 
         remove_role( 'job_seeker' );
         remove_role( 'job_poster' );
@@ -192,6 +194,8 @@ class JobBoardManager{
 
     function job_bm_cron_expired_check_deactivation() {
         wp_clear_scheduled_hook('job_bm_cron_expired_check');
+        wp_clear_scheduled_hook('job_bm_cron_update_expire_date');
+
     }
 
 	
@@ -255,6 +259,8 @@ class JobBoardManager{
         wp_register_script('job-bm-application-single', job_bm_plugin_url.'assets/front/js/scripts-application-single.js');
         wp_register_script('job-bm-media-upload', job_bm_plugin_url.'assets/front/js/scripts-media-upload.js');
         wp_register_style('jquery-ui', job_bm_plugin_url.'assets/global/css/jquery-ui.min.css');
+
+        wp_register_script('google-recaptcha', 'https://www.google.com/recaptcha/api.js');
 
 
 

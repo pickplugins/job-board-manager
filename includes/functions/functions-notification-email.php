@@ -5,6 +5,156 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 // Email notifications
 
 
+/*
+ * Send notification for application submitted.
+ * args:
+ * $application_id => application post ID
+ * $post_data => $_POST data
+ * */
+
+function job_bm_application_submitted_send_email($application_id, $post_data){
+
+
+
+    $email_data = array();
+    $class_job_bm_emails = new class_job_bm_emails();
+    $job_bm_email_templates_data_default = $class_job_bm_emails->job_bm_email_templates_data();
+    $job_bm_email_templates_data = get_option('job_bm_email_templates_data', $job_bm_email_templates_data_default);
+
+
+    $enable = isset($job_bm_email_templates_data['application_submitted']['enable']) ? $job_bm_email_templates_data['application_submitted']['enable'] : 'no';
+
+
+    if($enable == 'yes'):
+
+        global $current_user;
+
+        // Site information
+        $admin_email = get_option('admin_email');
+        $site_name = get_bloginfo('name');
+        $site_description = get_bloginfo('description');
+        $site_url = get_bloginfo('url');
+        $job_bm_logo_url = get_option('job_bm_logo_url');
+        $job_bm_logo_url = wp_get_attachment_url($job_bm_logo_url);
+        $job_bm_from_email = get_option('job_bm_from_email', $admin_email);
+
+        $email_to = isset($job_bm_email_templates_data['application_submitted']['email_to']) ? $job_bm_email_templates_data['application_submitted']['email_to'] : '';
+        $email_from_name = isset($job_bm_email_templates_data['application_submitted']['email_from_name']) ? $job_bm_email_templates_data['application_submitted']['email_from_name'] : $site_name;
+        $email_from = isset($job_bm_email_templates_data['application_submitted']['email_from']) ? $job_bm_email_templates_data['application_submitted']['email_from'] : $job_bm_from_email;
+        $email_subject = isset($job_bm_email_templates_data['application_submitted']['subject']) ? $job_bm_email_templates_data['application_submitted']['subject'] : '';
+        $email_html = isset($job_bm_email_templates_data['application_submitted']['html']) ? $job_bm_email_templates_data['application_submitted']['html'] : '';
+
+
+
+
+        $applicant_name = isset($post_data['applicant_name']) ? sanitize_text_field($post_data['applicant_name']) : '';
+        $application_email = isset($post_data['application_email']) ? sanitize_email($post_data['application_email']) : '';
+        $application_message = isset($post_data['application_message']) ? wp_kses_post($post_data['application_message']) : '';
+        $job_id = isset($post_data['job_id']) ? sanitize_text_field($post_data['job_id']) : '';
+
+
+
+
+
+        $job_data = get_post($job_id);
+        $job_author_id = isset($job_data->author_id) ? $job_data->author_id : '';
+        $job_post_title = isset($job_data->post_title) ? $job_data->post_title : '';
+        $job_post_content = isset($job_data->post_content) ? $job_data->post_content : '';
+        $job_author_id = isset($job_data->author_id) ? $job_data->author_id : '';
+        $job_author_avatar = get_avatar( $current_user->ID, 60 );
+        $job_url = get_permalink($job_id);
+        $job_edit_url = esc_url_raw(get_admin_url().'post.php?post='.$job_id.'&action=edit');
+
+
+        $job_author_data = get_user_by('ID', $job_id);
+        $job_author_name = isset($job_author_data->display_name) ? $job_author_data->display_name : __('Anonymous','');
+
+
+        $job_bm_contact_email = get_post_meta($job_id, 'job_bm_contact_email', true);
+        $job_author_email = isset($job_author_data->user_email) ? $job_author_data->user_email : '';
+        $job_author_email = !empty($job_bm_contact_email) ? $job_bm_contact_email : $job_author_email;
+
+
+        $application_data = get_post($application_id);
+        $application_post_title = isset($application_data->post_title) ? $application_data->post_title : '';
+        $application_author_avatar = get_avatar( $application_data->author_id, 60 );
+        $application_url = get_permalink($application_id);
+        $application_edit_url = esc_url_raw(get_admin_url().'post.php?post='.$application_id.'&action=edit');
+
+
+        $application_author_data = get_user_by('ID', $application_data->post_author);
+        $application_author_id = isset($application_data->author_id) ? $application_data->author_id : '';
+
+        $application_author_email = get_post_meta($application_id,'job_bm_am_user_email', true);
+        $application_author_email = !empty($application_email) ? $application_email : $application_author_email;
+
+        $application_author_name = isset($application_author_data->display_name) ? $application_author_data->display_name : __('Anonymous','');
+        $application_author_name = !empty($applicant_name) ? $applicant_name : $application_author_name;
+
+
+
+        $vars = array(
+            '{site_name}'=> $site_name,
+            '{site_description}' => $site_description,
+            '{site_url}' => $site_url,
+            '{site_logo_url}' => $job_bm_logo_url,
+
+            '{application_id}'  => $application_id,
+            '{application_title}'  => $application_post_title,
+            '{application_url}'  => $application_url,
+            '{application_edit_url}'  => $application_edit_url,
+            '{application_author_id}'  => $application_author_id,
+            '{application_author_name}'  => $application_author_name,
+            '{application_author_avatar}'  => $application_author_avatar,
+            '{application_message}'  => $application_message,
+
+            '{job_id}'  => $job_id,
+            '{job_title}'  => $job_post_title,
+            '{job_content}'  => $job_post_content,
+            '{job_url}'  => $job_url,
+            '{job_edit_url}'  => $job_edit_url,
+            '{job_author_id}'  => $job_author_id,
+            '{job_author_name}'  => $job_author_name,
+            '{job_author_avatar}'  => $job_author_avatar,
+
+            '{current_user_id}'  => $current_user->ID,
+            '{current_user_name}'  => $application_author_name,
+            '{current_user_avatar}'  => get_avatar( $current_user->ID, 60 ),
+        );
+
+
+        $email_data['email_to'] =  $application_author_email;
+        $email_data['email_bcc'] =  $email_to;
+        $email_data['email_from'] = $email_from ;
+        $email_data['email_from_name'] = $email_from_name;
+        $email_data['subject'] = strtr($email_subject, $vars);
+        $email_data['html'] = strtr($email_html, $vars);
+        $email_data['attachments'] = array();
+
+
+        $status = $class_job_bm_emails->job_bm_send_email($email_data);
+
+        $email_data['email_to'] =  $job_author_email;
+        $email_data['email_bcc'] =  $email_to;
+        $email_data['email_from'] = $email_from ;
+        $email_data['email_from_name'] = $email_from_name;
+        $email_data['subject'] = strtr($email_subject, $vars);
+        $email_data['html'] = strtr($email_html, $vars);
+        $email_data['attachments'] = array();
+
+
+        $status = $class_job_bm_emails->job_bm_send_email($email_data);
+
+
+
+    endif;
+
+
+}
+
+add_action('job_bm_application_submitted', 'job_bm_application_submitted_send_email', 99, 2);
+
+
 
 
 

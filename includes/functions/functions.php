@@ -3,6 +3,19 @@ if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
 
+function job_bm_recursive_sanitize_arr($array) {
+
+    foreach ( $array as $key => &$value ) {
+        if ( is_array( $value ) ) {
+            $value = job_bm_recursive_sanitize_arr($value);
+        }
+        else {
+            $value = sanitize_text_field( $value );
+        }
+    }
+
+    return $array;
+}
 
 
 

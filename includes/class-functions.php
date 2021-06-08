@@ -249,35 +249,18 @@ class class_job_bm_functions{
 							
 											array(
 												'question'=>__('Single job page showing 404 error', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/uGLEWq',
+												'answer_url'=>'https://pickplugins.com/documentation/job-board-manager/faq/single-job-page-showing-404-error/',
 					
 												),
-												
-											array(
-												'question'=>__('Single job page style broken, what should i do ?', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/JXRQQl',
-												),
-												
+
 											array(
 												'question'=>__('How can i change slug for Job ?', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/NsNqg3',
+												'answer_url'=>'https://pickplugins.com/documentation/job-board-manager/faq/how-can-i-change-slug-for-job/',
 												),												
 
 											array(
-												'question'=>__('How can remove any tabs on job submission form ?', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/ISsS8N',
-												),	
-
-
-											array(
-												'question'=>__('Remove input fields on job submission form.', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/WPdrEU',
-												),	
-
-
-											array(
 												'question'=>__('How to add/remove job types', 'job-board-manager'),
-												'answer_url'=>'https://goo.gl/S3mIW0',
+												'answer_url'=>'https://pickplugins.com/documentation/job-board-manager/filter-hooks/job_bm_job_type/',
 												),	
 
 

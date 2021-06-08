@@ -152,7 +152,7 @@ class class_job_bm_post_meta_job{
         if (!isset($_POST['job_nonce_check_value']))
             return $post_id;
 
-        $nonce = $_POST['job_nonce_check_value'];
+        $nonce = sanitize_text_field($_POST['job_nonce_check_value']);
 
         // Verify that the nonce is valid.
         if (!wp_verify_nonce($nonce, 'job_nonce_check'))
@@ -178,7 +178,7 @@ class class_job_bm_post_meta_job{
         /* OK, its safe for us to save the data now. */
 
         // Sanitize the user input.
-        //$job_bm_am_user_email = stripslashes_deep($_POST['job_bm_am_user_email']);
+        //$job_bm_am_user_email = job_bm_recursive_sanitize_arr($_POST['job_bm_am_user_email']);
 
 
         // Update the meta field.
@@ -194,3 +194,26 @@ class class_job_bm_post_meta_job{
 
 
 new class_job_bm_post_meta_job();
+
+
+
+function job_add_expire_date_column( $columns ) {
+    return array_merge( $columns,
+        array( 'expire_data' => __( 'Expire data', 'job' ) ) );
+}
+add_filter( 'manage_job_posts_columns' , 'job_add_expire_date_column' );
+
+
+function job_posts_expire_date_display( $column, $post_id ) {
+    if ($column == 'expire_data'){
+
+        $job_bm_expire_date = get_post_meta($post_id,'job_bm_expire_date',true);
+
+        echo $job_bm_expire_date;
+
+
+    }
+}
+
+add_action( 'manage_job_posts_custom_column' , 'job_posts_expire_date_display', 10, 2 );
+

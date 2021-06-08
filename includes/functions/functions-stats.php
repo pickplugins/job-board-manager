@@ -16,7 +16,7 @@ function job_bm_stats_tabs_content_job_posting_date($tab){
     wp_enqueue_script('jquery-ui-datepicker');
 
     $date_range = isset($_GET['date_range']) ? sanitize_text_field($_GET['date_range']) : '7_day';
-    $tab = isset($_GET['tab']) ? $_GET['tab'] : 'job_posting';
+    $tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'job_posting';
 
     $before_date = isset($_GET['before']) ? sanitize_text_field($_GET['before']):'';
     $after_date = isset($_GET['after']) ? sanitize_text_field($_GET['after']):'';
@@ -38,7 +38,7 @@ function job_bm_stats_tabs_content_job_posting_date($tab){
             <input size="8" title="<?php echo __('End date','job-board-manager'); ?>" type="text" class="job_bm_date" autocomplete="off" name="before" value="<?php echo $before_date; ?>" placeholder="<?php echo date('Y-m-d'); ?>" />
             <input type="hidden"  name="post_type" value="job" />
             <input type="hidden"  name="page" value="job_bm_stats" />
-            <input type="hidden"  name="tab" value="<?php echo $tab; ?>" />
+            <input type="hidden"  name="tab" value="<?php echo esc_attr($tab); ?>" />
             <input type="hidden"  name="date_range" value="custom" />
             <input class="button" value="<?php echo __('Submit','job-board-manager'); ?>" type="submit">
         </form>

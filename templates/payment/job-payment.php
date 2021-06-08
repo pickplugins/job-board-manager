@@ -2,7 +2,7 @@
 if ( ! defined('ABSPATH')) exit;  // if direct access
 
 
-$job_id = isset($_GET['job_id']) ? $_GET['job_id'] : '';
+$job_id = isset($_GET['job_id']) ? sanitize_text_field($_GET['job_id']) : '';
 
 
 

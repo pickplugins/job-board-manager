@@ -298,7 +298,7 @@ add_action('job_bm_welcome_tabs_content_done', 'job_bm_welcome_tabs_content_done
 if(!function_exists('job_bm_welcome_tabs_content_done')) {
     function job_bm_welcome_tabs_content_done($tab){
 
-        $hidden = isset($_POST['job_bm_hidden']) ? $_POST['job_bm_hidden'] : '';
+        $hidden = isset($_POST['job_bm_hidden']) ? sanitize_text_field($_POST['job_bm_hidden']) : '';
 
         //var_dump($hidden);
 

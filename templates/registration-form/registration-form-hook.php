@@ -12,7 +12,7 @@ function job_bm_registration_form_field_email(){
     ?>
     <p>
         <label for="email"><?php echo __('Email','job-board-manager'); ?> <br>
-            <input type="text" name="email" value="<?php echo $email;  ?>">
+            <input type="text" name="email" value="<?php echo esc_attr($email);  ?>">
         </label>
     </p>
     <?php
@@ -27,7 +27,7 @@ function job_bm_registration_form_field_username(){
     ?>
     <p>
         <label for="username"><?php echo __('Username','job-board-manager');  ?> <br>
-            <input type="text" name="username" value="<?php echo $username;  ?>">
+            <input type="text" name="username" value="<?php echo esc_attr($username);  ?>">
         </label>
     </p>
     <?php
@@ -42,7 +42,7 @@ function job_bm_registration_form_field_password(){
     ?>
     <p>
         <label for="password"><?php echo __('Password','job-board-manager'); ?> <br>
-            <input type="password" name="password" value="<?php echo $password; ?>">
+            <input type="password" name="password" value="<?php echo esc_attr($password); ?>">
         </label>
     </p>
     <?php
@@ -89,7 +89,9 @@ function job_bm_registration_form_field_recaptcha(){
     <p>
         <label for="email">
             <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
-            <script src="https://www.google.com/recaptcha/api.js"></script>
+            <?php wp_enqueue_script('google-recaptcha'); ?>
+
+
         </label>
     </p>
     <?php
@@ -106,15 +108,14 @@ function job_bm_registration_submit_data($post_data){
 
     if(empty($_POST)) return;
 
-    $post_data = $_POST;
 
     $job_bm_registration_recaptcha		    = get_option('job_bm_registration_recaptcha');
 
 
-    $username = isset($post_data['username']) ? sanitize_user($post_data['username']) : "";
-    $password = isset($post_data['password']) ? esc_attr($post_data['password']) : "";
-    $email = isset($post_data['email']) ? sanitize_email($post_data['email']) : "";
-    $role = isset($post_data['role']) ? sanitize_text_field($post_data['role']) : "job_poster";
+    $username = isset($_POST['username']) ? sanitize_user($_POST['username']) : "";
+    $password = isset($_POST['password']) ? esc_attr($_POST['password']) : "";
+    $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
+    $role = isset($_POST['role']) ? sanitize_text_field($_POST['role']) : "job_poster";
 
 
     //$error = new WP_Error();
@@ -123,7 +124,7 @@ function job_bm_registration_submit_data($post_data){
 
 
 
-    if(empty($post_data['username'])){
+    if(empty($_POST['username'])){
         $error->add( 'username', __( 'ERROR: username is empty.', 'job-board-manager' ) );
     }
 
@@ -139,7 +140,7 @@ function job_bm_registration_submit_data($post_data){
     }
 
 
-    if(empty($post_data['password'])){
+    if(empty($_POST['password'])){
         $error->add( 'password_empty', __( 'ERROR: password is empty.', 'job-board-manager' ) );
     }
 
@@ -149,7 +150,7 @@ function job_bm_registration_submit_data($post_data){
 
 
 
-    if(empty($post_data['email'])){
+    if(empty($_POST['email'])){
         $error->add( 'email', __( 'ERROR: email is empty.', 'job-board-manager' ) );
     }
 
@@ -162,7 +163,7 @@ function job_bm_registration_submit_data($post_data){
     }
 
 
-    if(empty($post_data['g-recaptcha-response']) && $job_bm_registration_recaptcha =='yes'){
+    if(empty($_POST['g-recaptcha-response']) && $job_bm_registration_recaptcha =='yes'){
 
         $error->add( 'g-recaptcha-response', __( 'ERROR: reCaptcha test failed.', 'job-board-manager' ) );
     }
@@ -176,7 +177,7 @@ function job_bm_registration_submit_data($post_data){
 
 
 
-    $errors = apply_filters( 'job_bm_registration_errors', $error, $post_data );
+    $errors = apply_filters( 'job_bm_registration_errors', $error, $_POST );
 
 
     if ( !$error->has_errors() ) {

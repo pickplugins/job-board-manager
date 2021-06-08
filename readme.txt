@@ -3,8 +3,8 @@
 	Donate link: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=wordpress.org
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 5.3
-	Stable tag: 2.1.38
+	Tested up to: 5.7
+	Stable tag: 2.1.44
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,28 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 == Changelog ==
 
+	= 2.1.44 =
+     * 2021-04-17 - fix - minor security issue updated
+     * 2021-04-17 - fix - update chart.js library
+     * 2021-04-17 - update - update settings framework
+
+
+	= 2.1.43 =
+     * 2021-04-13 - fix - security issue updated
+
+	= 2.1.42 =
+     * 2020-06-23 - fix - application message not saving issue fixed.
+
+
+	= 2.1.41 =
+     * 2020-06-13 - update - ajax based job application submission
+
+	= 2.1.40 =
+     * 2020-05-11 - add - notification mail for application submit.
+
+
+	= 2.1.39 =
+     * 2020-04-02 - add - cron to update expired date if missing.
 
 	= 2.1.38 =
      * 2020-04-02 - add - job expire in added on job archive meta list.

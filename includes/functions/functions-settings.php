@@ -852,15 +852,15 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
 
                         <?php echo $templates['name']; ?>
                     </div>
-                    <input type="hidden" name="job_bm_email_templates_data[<?php echo $key; ?>][name]" value="<?php echo $templates['name']; ?>" />
+                    <input type="hidden" name="job_bm_email_templates_data[<?php echo esc_attr($key); ?>][name]" value="<?php echo esc_attr($templates['name']); ?>" />
                     <div class="options">
-                        <div class="description"><?php echo $description; ?></div><br/><br/>
+                        <div class="description"><?php echo esc_html($description); ?></div><br/><br/>
 
 
                         <div class="setting-field">
                             <div class="field-lable"><?php echo __('Enable?', 'job-board-manager'); ?></div>
                             <div class="field-input">
-                                <select name="job_bm_email_templates_data[<?php echo $key; ?>][enable]" >
+                                <select name="job_bm_email_templates_data[<?php echo esc_attr($key); ?>][enable]" >
                                     <option <?php echo selected($enable,'yes'); ?> value="yes" ><?php echo __('Yes', 'job-board-manager'); ?></option>
                                     <option <?php echo selected($enable,'no'); ?>  value="no" ><?php echo __('No', 'job-board-manager'); ?></option>
                                 </select>
@@ -872,7 +872,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                         <div class="setting-field">
                             <div class="field-lable"><?php echo __('Email To(Bcc)', 'job-board-manager'); ?></div>
                             <div class="field-input">
-                                <input placeholder="hello_1@hello.com,hello_2@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_to]" value="<?php echo $email_to; ?>" />
+                                <input placeholder="hello_1@hello.com,hello_2@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_to]" value="<?php echo esc_attr($email_to); ?>" />
                                 <p class="description"><?php echo __('Email send to(copy)', 'job-board-manager'); ?></p>
                             </div>
                         </div>
@@ -880,7 +880,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                         <div class="setting-field">
                             <div class="field-lable"><?php echo __('Email from name', 'job-board-manager'); ?></div>
                             <div class="field-input">
-                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from_name]" value="<?php echo $email_from_name; ?>" />
+                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo esc_attr($key); ?>][email_from_name]" value="<?php echo esc_attr($email_from_name); ?>" />
                                 <p class="description"><?php echo __('Email send from name', 'job-board-manager'); ?></p>
                             </div>
                         </div>
@@ -888,7 +888,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                         <div class="setting-field">
                             <div class="field-lable"><?php echo __('Email from', 'job-board-manager'); ?></div>
                             <div class="field-input">
-                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][email_from]" value="<?php echo $email_from; ?>" />
+                                <input placeholder="hello_1@hello.com" type="text" name="job_bm_email_templates_data[<?php echo esc_attr($key); ?>][email_from]" value="<?php echo esc_attr($email_from); ?>" />
                                 <p class="description"><?php echo __('Email send from', 'job-board-manager'); ?></p>
                             </div>
                         </div>
@@ -896,7 +896,7 @@ if(!function_exists('job_bm_settings_tabs_content_email')) {
                         <div class="setting-field">
                             <div class="field-lable"><?php echo __('Email Subject', 'job-board-manager'); ?></div>
                             <div class="field-input">
-                                <input type="text" name="job_bm_email_templates_data[<?php echo $key; ?>][subject]" value="<?php echo $templates['subject']; ?>" />
+                                <input type="text" name="job_bm_email_templates_data[<?php echo esc_attr($key); ?>][subject]" value="<?php echo esc_attr($templates['subject']); ?>" />
                                 <p class="description"><?php echo __('Write email subject', 'job-board-manager'); ?></p>
                             </div>
                         </div>

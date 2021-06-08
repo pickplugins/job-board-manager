@@ -23,7 +23,7 @@ function job_bm_payment_methods(){
 
 function job_bm_ajax_payments(){
 
-    $paymentData = isset($_POST['paymentData']) ? $_POST['paymentData'] : array();
+    $paymentData = isset($_POST['paymentData']) ? job_bm_recursive_sanitize_arr($_POST['paymentData']) : array();
     //$paymentData = json_decode($paymentData);
 
     $transaction_id = isset($paymentData['transaction_id']) ? $paymentData['transaction_id'] : '';

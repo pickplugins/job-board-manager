@@ -788,7 +788,7 @@ function job_bm_meta_box_save_job($job_id){
     update_post_meta($job_id, 'job_bm_expire_date', $job_bm_expire_date);
 
 
-    $job_bm_application_methods = isset($_POST['job_bm_application_methods']) ? stripslashes_deep($_POST['job_bm_application_methods']) : '';
+    $job_bm_application_methods = isset($_POST['job_bm_application_methods']) ? job_bm_recursive_sanitize_arr($_POST['job_bm_application_methods']) : '';
     update_post_meta($job_id, 'job_bm_application_methods', $job_bm_application_methods);
 
 

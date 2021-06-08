@@ -296,7 +296,7 @@ if(isset($_POST['comment_submit_hidden'])){
                                     <textarea class="comment-text" name="comment_text"></textarea>
                                     <input class="comment-submit" type="submit" value="Submit" >
                                     <input class="comment-submit-hidden" name="comment_submit_hidden" type="hidden" value="Y" >
-                                    <input class="comment-application-id" name="application_id" type="hidden" value="<?php echo $application_id; ?>" >
+                                    <input class="comment-application-id" name="application_id" type="hidden" value="<?php echo esc_attr($application_id); ?>" >
                                 </form>
                             </div>
                         </div>

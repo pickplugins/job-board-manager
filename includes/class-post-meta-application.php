@@ -217,7 +217,7 @@ class class_job_bm_post_meta_application{
         if (!isset($_POST['application_nonce_check_value']))
             return $post_id;
 
-        $nonce = $_POST['application_nonce_check_value'];
+        $nonce = sanitize_text_field($_POST['application_nonce_check_value']);
 
         // Verify that the nonce is valid.
         if (!wp_verify_nonce($nonce, 'application_nonce_check'))
@@ -243,7 +243,7 @@ class class_job_bm_post_meta_application{
         /* OK, its safe for us to save the data now. */
 
         // Sanitize the user input.
-        //$job_bm_am_user_email = stripslashes_deep($_POST['job_bm_am_user_email']);
+        //$job_bm_am_user_email = job_bm_recursive_sanitize_arr($_POST['job_bm_am_user_email']);
 
 
         // Update the meta field.
@@ -252,7 +252,7 @@ class class_job_bm_post_meta_application{
         $application_trash = isset($_POST['application_trash']) ? sanitize_text_field($_POST['application_trash']) : '';
 		$user_id = isset($_POST['user_id']) ? sanitize_text_field($_POST['user_id']) : '';
         $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : '';
-		$job_bm_am_user_email = isset($_POST['job_bm_am_user_email']) ? sanitize_text_field($_POST['job_bm_am_user_email']) : '';
+		$job_bm_am_user_email = isset($_POST['job_bm_am_user_email']) ? sanitize_email($_POST['job_bm_am_user_email']) : '';
 		$job_bm_am_job_id = isset($_POST['job_bm_am_job_id']) ? sanitize_text_field($_POST['job_bm_am_job_id']) : '';
 		$job_bm_am_apply_method = isset($_POST['job_bm_am_apply_method']) ? sanitize_text_field($_POST['job_bm_am_apply_method']) : '';
 		$job_bm_am_attachment = isset($_POST['job_bm_am_attachment']) ?  sanitize_text_field($_POST['job_bm_am_attachment']) : '';

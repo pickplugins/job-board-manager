@@ -242,6 +242,36 @@ jQuery(document).ready(function($) {
 
 
 
+	$(document).on('submit', '.apply-method-form', function(event){
+
+		event.preventDefault();
+
+		form_data 	= $(this).serializeArray();
+		$(this).children('.apply-method-response').html('<i class="fas fa-spinner fa-spin"></i>');
+		//console.log(form_data);
+
+
+		$.ajax(
+			{
+				type: 'POST',
+				context: this,
+				url:job_bm_ajax.job_bm_ajaxurl,
+				data: {"action": "job_bm_ajax_application_submit", "form_data":form_data,},
+				success: function(data)
+				{
+					var data	= JSON.parse(data)
+					var html	= data['html'];
+
+					$('.apply-method-response').html(html);
+
+					//console.log(html);
+
+
+				}
+			});
+
+
+	})
 
 
 

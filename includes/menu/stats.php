@@ -11,7 +11,7 @@ wp_enqueue_script('chart.js');
 
 
 
-$tab = isset($_GET['tab']) ? $_GET['tab'] : 'job_posting';
+$tab = isset($_GET['tab']) ? sanitize_text_field($_GET['tab']) : 'job_posting';
 
 
 $stats_tabs = array();

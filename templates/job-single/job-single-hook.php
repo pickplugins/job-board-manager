@@ -15,6 +15,10 @@ function job_bmpost_type_template_job($content) {
         wp_enqueue_style('job_bm_job_single');
         wp_enqueue_style('font-awesome-5');
         wp_enqueue_script('jquery-ui-accordion');
+        wp_enqueue_script('job-bm-applications');
+        wp_localize_script('job-bm-applications', 'job_bm_ajax', array( 'job_bm_ajaxurl' => admin_url( 'admin-ajax.php')));
+
+
 
 		return ob_get_clean();
 	}
@@ -476,7 +480,7 @@ function job_bm_application_methods_form_direct_email($job_id){
 
             $applicant_name = isset($_POST['applicant_name']) ? sanitize_text_field($_POST['applicant_name']) : "";
             $email = isset($_POST['application_email']) ? sanitize_email($_POST['application_email']) : "";
-            $post_content = isset($_POST['application_message']) ? wp_kses($_POST['application_message'], array()) : "";
+            $post_content = isset($_POST['application_message']) ? wp_kses_post($_POST['application_message']) : "";
             $application_method = isset($_POST['application_method']) ? sanitize_text_field($_POST['application_method']) : "";
 
 
@@ -508,11 +512,12 @@ function job_bm_application_methods_form_direct_email($job_id){
                 update_post_meta($application_ID, 'job_bm_am_apply_method', $application_method);
 
 
+                $application_url = get_permalink($application_ID);
 
                 do_action('job_bm_application_submitted', $application_ID, $_POST);
 
                 ?>
-                <div class="success"><?php echo __('Your application has sent.','job-board-manager'); ?></div>
+                <div class="success"><?php echo sprintf(__('Your application has sent. see your application here <a href="%s">#%s</a>','job-board-manager'), $application_url, $application_ID); ?></div>
                 <?php
 
             }else{
@@ -566,14 +571,16 @@ function job_bm_application_methods_form_direct_email($job_id){
 
 
     ?>
+
     <form method="post" action="#apply-method-direct_email" class="apply-method-form">
 
         <input type="hidden" name="application_method" value="direct_email">
-
+        <input type="hidden" name="job_id" value="<?php echo esc_attr($job_id); ?>">
+        <div class="apply-method-response"></div>
         <div class="form-field-wrap">
             <div class="field-title"><?php echo __('Your name','job-board-manager'); ?></div>
             <div class="field-input">
-                <input placeholder="" type="text" value="<?php echo $applicant_name; ?>" name="applicant_name">
+                <input placeholder="" type="text" value="<?php echo esc_attr($applicant_name); ?>" name="applicant_name">
                 <p class="field-details"><?php echo __('Write your name','job-board-manager'); ?></p>
             </div>
         </div>
@@ -581,7 +588,7 @@ function job_bm_application_methods_form_direct_email($job_id){
         <div class="form-field-wrap">
             <div class="field-title"><?php echo __('Your email','job-board-manager'); ?></div>
             <div class="field-input">
-                <input placeholder="" type="text" value="<?php echo $email; ?>" name="application_email">
+                <input placeholder="" type="text" value="<?php echo esc_attr($email); ?>" name="application_email">
                 <p class="field-details"><?php echo __('Write your email address','job-board-manager'); ?></p>
             </div>
         </div>
@@ -603,7 +610,9 @@ function job_bm_application_methods_form_direct_email($job_id){
                 <div class="field-title"></div>
                 <div class="field-input">
                     <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
-                    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+                    <?php wp_enqueue_script('google-recaptcha'); ?>
+
                     <p class="field-details"><?php _e('Please prove you are human.','job-board-manager'); ?></p>
 
                 </div>

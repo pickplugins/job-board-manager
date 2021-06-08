@@ -23,7 +23,7 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
         if(!empty($_GET['job_type'])){
 
-            $job_type = stripslashes_deep($_GET['job_type']);
+            $job_type = job_bm_recursive_sanitize_arr($_GET['job_type']);
 
             if(!is_array($job_type)){
 
@@ -43,18 +43,18 @@ if(!function_exists('job_bm_job_archive_before_search')){
 
         ?>
 
-        <form class="search-input" method="get" action="<?php echo $job_bm_archive_page_url; ?>">
+        <form class="search-input" method="get" action="<?php echo esc_url_raw($job_bm_archive_page_url); ?>">
 
             <input type="hidden" name="job_bm_job_archive_search_hidden" class="" value="Y">
 
             <div class="option half">
-                <input placeholder="<?php echo __('Keyword', 'job-board-manager'); ?>" name="keywords" type="search" value="<?php if(!empty($_GET['keywords'])) echo sanitize_text_field($_GET['keywords']) ?>" />
+                <input placeholder="<?php echo __('Keyword', 'job-board-manager'); ?>" name="keywords" type="search" value="<?php if(!empty($_GET['keywords'])) echo esc_attr($_GET['keywords']) ?>" />
 
             </div>
 
             <div class="option half">
 
-                <input placeholder="<?php echo __('Location', 'job-board-manager'); ?>" name="locations" type="search" value="<?php if(!empty($_GET['locations'])) echo sanitize_text_field($_GET['locations']) ?>" />
+                <input placeholder="<?php echo __('Location', 'job-board-manager'); ?>" name="locations" type="search" value="<?php if(!empty($_GET['locations'])) echo esc_attr($_GET['locations']) ?>" />
             </div>
 
 
@@ -67,7 +67,7 @@ if(!function_exists('job_bm_job_archive_before_search')){
                     if(!empty($job_type_key)):
                         ?>
                         <label>
-                            <input type="checkbox" <?php if( !empty($job_type) && in_array($job_type_key, $job_type) ) echo 'checked'; ?>  name="job_type[]" value="<?php echo $job_type_key; ?>" /> <?php echo $job_type_name; ?>
+                            <input type="checkbox" <?php if( !empty($job_type) && in_array($job_type_key, $job_type) ) echo 'checked'; ?>  name="job_type[]" value="<?php echo esc_attr($job_type_key); ?>" /> <?php echo esc_html($job_type_name); ?>
                         </label>
                     <?php
                     endif;

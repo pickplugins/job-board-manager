@@ -15,7 +15,7 @@ do_action('job_bm_registration_form_before');
 
 
     ?>
-    <form action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+    <form action="<?php echo esc_url_raw($_SERVER['REQUEST_URI']); ?>" method="post">
         <?php
         do_action('job_bm_registration_form');
         ?>
