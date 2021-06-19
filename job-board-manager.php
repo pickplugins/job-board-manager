@@ -53,15 +53,16 @@ class JobBoardManager{
 		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-dashboard.php');
 		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-jobs.php');
 		require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-archive.php');
-        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-applications.php');
-        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-applications.php');
-        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-registration-form.php');
+    require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-my-applications.php');
+    require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-applications.php');
+    require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-registration-form.php');
 
-        require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-payment.php');
+    require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-payment.php');
+    require_once( job_bm_plugin_dir . 'includes/shortcodes/class-shortcodes-job-categories.php');
 
 
 		require_once( job_bm_plugin_dir . 'templates/job-single/job-single-hook.php');
-        require_once( job_bm_plugin_dir . 'templates/application-single/application-single-hook.php');
+    require_once( job_bm_plugin_dir . 'templates/application-single/application-single-hook.php');
 
 
 
@@ -78,6 +79,7 @@ class JobBoardManager{
         require_once( job_bm_plugin_dir . 'includes/functions/functions-payments.php');
         require_once( job_bm_plugin_dir . 'includes/functions/functions-page-templates.php');
 
+    require_once( job_bm_plugin_dir . 'includes/functions/functions-terms-edit.php');
 
 
 
