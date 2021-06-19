@@ -64,6 +64,7 @@ class JobBoardManager{
 		require_once( job_bm_plugin_dir . 'templates/job-single/job-single-hook.php');
     require_once( job_bm_plugin_dir . 'templates/application-single/application-single-hook.php');
 
+        require_once( job_bm_plugin_dir . 'templates/job-categories/job-categories-hook.php');
 
 
         //Functions

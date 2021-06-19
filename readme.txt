@@ -58,6 +58,15 @@ You can add custom input fields under registration forms and validated data and 
 [job_bm_registration_form]
 `
 
+**Job categories**
+
+Display job categories in grid view with thumbnail, title and job count. you can display popular job categories in this grid view.
+`
+[job_bm_job_categories]
+`
+
+
+
 **Application**
 
 User can apply for the jobs, job poster can see application from dashboard, can give star ratings, make trash, hire applicant, and communicate via email, application also display resume or attachment if available.

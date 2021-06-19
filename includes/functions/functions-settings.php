@@ -1231,6 +1231,8 @@ if(!function_exists('job_bm_settings_tabs_right_panel')) {
         <p><code>[job_bm_applications]</code> <br> Display list of applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=applications">Demo</a> </p>
         <p><code>[job_bm_dashboard]</code> <br> Display job dashboard on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/">Demo</a></p>
         <p><code>[job_bm_archive]</code> <br> Display job archive on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
+        <p><code>[job_bm_job_categories]</code> <br> Display job categories in grid view. <br><a href="http://www.pickplugins.com/demo/job-board-manager/">Demo</a></p>
+
         <p><code>[job_bm_job_edit]</code> <br> Display job edit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-edit/?job_id=4134">Demo</a></p>
         <p><code>[job_bm_job_submit]</code> <br> Display job submit form on front-end. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-submit/">Demo</a></p>
         <p><code>[job_bm_my_applications]</code> <br> Display logged-in user submitted applications. <br><a href="http://www.pickplugins.com/demo/job-board-manager/job-dashboard/?tabs=my_applications">Demo</a></p>

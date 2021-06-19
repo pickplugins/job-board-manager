@@ -8,6 +8,12 @@ add_action( 'job_category_edit_form_fields', 'edit_form_fields', 12 );
 add_action( 'edited_job_category', 'save_update_taxonomy', 12 );
 add_action( 'create_job_category', 'save_update_taxonomy', 12 );
 
+add_action( 'job_tag_add_form_fields', 'add_form_fields', 12 );
+add_action( 'job_tag_edit_form_fields', 'edit_form_fields', 12 );
+
+add_action( 'edited_job_tag', 'save_update_taxonomy', 12 );
+add_action( 'create_job_tag', 'save_update_taxonomy', 12 );
+
 
  function save_update_taxonomy($term_id){
 

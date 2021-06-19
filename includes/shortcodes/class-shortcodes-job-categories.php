@@ -20,8 +20,8 @@ class class_job_bm_shortcodes_job_categories{
           'enable_count' => true,
           'enable_link' => true,
 
-          'max_count' => 10,
-          'column_number' => 3,
+          'max_count' => 9,
+          'column_number' => '3|2|1',
 
 
 
@@ -39,24 +39,36 @@ class class_job_bm_shortcodes_job_categories{
       $enable_link = isset($atts['enable_link']) ? $atts['enable_link'] : true;
       $column_number = isset($atts['column_number']) ? $atts['column_number'] : 3;
 
+        $column_number = explode( '|', $column_number);
 
-        ob_start();
+        $column_number_lg = isset($column_number[0]) ? $column_number[0] : 3;
+        $column_number_md = isset($column_number[1]) ? $column_number[1] : 2;
+        $column_number_sm = isset($column_number[2]) ? $column_number[2] : 1;
 
 
 
-        do_action('job_bm_job_categories', $atts);
+    ob_start();
 
 
-      $terms = get_terms( array(
+
+    do_action('job_bm_job_categories', $atts);
+
+    $terms_query_args = array(
         'taxonomy' => 'job_category',
         'hide_empty' => false,
         'number' => $max_count
-      ) );
+    );
+
+    $terms_query_args = apply_filters('job_bm_job_categories_query_args', $terms_query_args, $atts);
+    $terms = get_terms( $terms_query_args );
 
       ?>
-      <div class="job-categories">
+      <div class="<?php echo apply_filters('job_bm_job_categories_wrapper_class','job-categories', $atts); ?>">
 
       <?php
+
+      do_action('job_bm_job_categories_top', $atts);
+
 
       if(!empty($terms)){
         foreach ($terms as $term){
@@ -71,20 +83,19 @@ class class_job_bm_shortcodes_job_categories{
 
           //var_dump($term_id);
 
+            $args = array('term_id' => $term_id, 'term' => $term,'atts' => $atts);
+
           ?>
           <div class="job-category">
 
             <?php if($enable_link): ?>
 
             <a href="<?php echo esc_url_raw($term_url); ?>">
-            <?php endif; ?>
+            <?php endif;
 
+            do_action('job_bm_job_categories_loop', $args);
 
-              <div class="job-category-thumb"><img src="<?php echo $term_thumb_url; ?>"> </div>
-              <div class="job-category-title"><?php echo $term_name; ?></div>
-              <div class="job-category-count">(<?php echo $term_count; ?>)</div>
-
-            <?php if($enable_link): ?>
+            if($enable_link): ?>
 
               </a>
             <?php endif; ?>
@@ -96,6 +107,7 @@ class class_job_bm_shortcodes_job_categories{
         }
       }
 
+      do_action('job_bm_job_categories_bottom', $atts);
 
       ?>
 
@@ -109,13 +121,20 @@ class class_job_bm_shortcodes_job_categories{
           column-gap: 20px;
         }
         .job-category{
-          padding: 15px 20px;
           margin-bottom: 20px;
           border: 1px solid #ddd;
+            -webkit-column-break-inside: avoid;
+            column-break-inside:avoid;
         }
+
+        .job-category a{
+            padding: 15px 20px;
+            display: block;
+        }
+
         .job-category-thumb{
           display: inline-block;
-          width: 60px;
+          width: 50px;
           vertical-align: middle;
           margin-right: 20px;
         }
@@ -127,6 +146,23 @@ class class_job_bm_shortcodes_job_categories{
           display: inline-block;
 
         }
+
+        @media only screen and ( min-width: 0px ) and ( max-width: 767px ) {
+            .job-categories{
+                columns: auto <?php echo $column_number_sm; ?>;
+            }
+        }
+        @media only screen and ( min-width: 768px ) and ( max-width: 1023px ) {
+            .job-categories{
+                columns: auto <?php echo $column_number_md; ?>;
+            }
+        }
+        @media only screen and (min-width: 1024px ){
+            .job-categories{
+                columns: auto <?php echo $column_number_lg; ?>;
+            }
+        }
+
       </style>
 
       <?php
