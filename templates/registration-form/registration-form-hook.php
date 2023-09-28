@@ -128,9 +128,6 @@ function job_bm_registration_submit_data($post_data)
     //$error = new WP_Error();
     $error = job_bm_register_errors();
 
-    if ($role == "job_poster") {
-        var_dump($role);
-    }
 
     if (!in_array($role, ['job_poster', 'job_seeker'])) {
         $error->add('role_error', __('ERROR: Sorry, you are not allowed to register.', 'job-board-manager'));
