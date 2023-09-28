@@ -123,19 +123,21 @@ function job_bm_registration_submit_data($post_data)
     $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
     $role = isset($_POST['role']) ? sanitize_text_field($_POST['role']) : "job_poster";
 
-    if ($role != "job_poster" || $role != "job_seeker") {
-    }
 
 
     //$error = new WP_Error();
     $error = job_bm_register_errors();
 
-
-
-
-    if ($role != "job_poster" || $role != "job_seeker") {
-        $error->add('role_error', __('ERROR: Sorry you are not allowed to register.', 'job-board-manager'));
+    if ($role == "job_poster") {
+        var_dump($role);
     }
+
+    if (!in_array($role, ['job_poster', 'job_seeker'])) {
+        $error->add('role_error', __('ERROR: Sorry, you are not allowed to register.', 'job-board-manager'));
+    }
+
+
+
 
     if (empty($_POST['username'])) {
         $error->add('username', __('ERROR: username is empty.', 'job-board-manager'));
