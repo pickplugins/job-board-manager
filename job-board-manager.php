@@ -3,7 +3,7 @@
 Plugin Name: Job Board Manager
 Plugin URI: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=dashboard
 Description: Advance job board manager for your site.
-Version: 2.1.56
+Version: 2.1.57
 Author: PickPlugins
 Text Domain: job-board-manager
 Domain Path: /languages
@@ -27,7 +27,7 @@ class JobBoardManager
         define('job_bm_demo_url', 'https://www.pickplugins.com/demo/job-board-manager/?ref=dashboard');
         define('job_bm_support', 'https://www.pickplugins.com/forum/?ref=dashboard');
         define('job_bm_plugin_name', __('Job Board Manager', 'job-board-manager'));
-        define('job_bm_plugin_version', '2.1.56');
+        define('job_bm_plugin_version', '2.1.57');
 
         // Class
         require_once(job_bm_plugin_dir . 'includes/class-settings-tabs.php');
