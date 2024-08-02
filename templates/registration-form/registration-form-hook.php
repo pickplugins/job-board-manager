@@ -39,7 +39,7 @@ add_action('job_bm_registration_form', 'job_bm_registration_form_field_password'
 function job_bm_registration_form_field_password()
 {
 
-    $password = isset($_POST['password']) ? esc_attr($_POST['password']) : "";
+    $password = isset($_POST['password']) ? sanitize_text_field($_POST['password']) : "";
 
 
 ?>
@@ -119,7 +119,7 @@ function job_bm_registration_submit_data($post_data)
 
 
     $username = isset($_POST['username']) ? sanitize_user($_POST['username']) : "";
-    $password = isset($_POST['password']) ? esc_attr($_POST['password']) : "";
+    $password = isset($_POST['password']) ? sanitize_text_field($_POST['password']) : "";
     $email = isset($_POST['email']) ? sanitize_email($_POST['email']) : "";
     $role = isset($_POST['role']) ? sanitize_text_field($_POST['role']) : "job_poster";
 

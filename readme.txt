@@ -3,8 +3,8 @@
 	Donate link: https://www.pickplugins.com/item/job-board-manager-create-job-site-for-wordpress/?ref=wordpress.org
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
-	Tested up to: 6.5
-	Stable tag: 2.1.57
+	Tested up to: 6.6
+	Stable tag: 2.1.58
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -20,12 +20,7 @@ function save_update_taxonomy($term_id)
 
 
 
-
-
-
-  $option_value = '';
-
-  $job_bm_thumb = isset($_POST['job_bm_thumb']) ? $_POST['job_bm_thumb'] : '';
+  $job_bm_thumb = isset($_POST['job_bm_thumb']) ? sanitize_text_field($_POST['job_bm_thumb']) : '';
 
   if (is_array($job_bm_thumb)) {
     $job_bm_thumb = serialize($job_bm_thumb);
