@@ -4,7 +4,7 @@
 	Tags:  Job Board Manager, Job Board, job portal, Job, Job Poster, job manager, job, job list, job listing, Job Listings, job lists, job management, job manager,
 	Requires at least: 4.1
 	Tested up to: 6.6
-	Stable tag: 2.1.58
+	Stable tag: 2.1.59
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,11 @@ Please go "Settings > Permalink Settings" and save again to reset permalink.
 
 
 == Changelog ==
+
+
+
+	= 2.1.59 =
+    * 2024-08-02 - fix - Minor security issue fixed.
 
 	= 2.1.57 =
     * 2024-05-05 - fix - compatibility with 6.5 issue checked
