@@ -103,7 +103,7 @@ function job_bm_job_edit_form_categories($job_id)
                         $selected = ($job_category == $term_id) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html($term_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html($term_name); ?></option>
                 <?php
                     }
                 endif;
@@ -710,7 +710,7 @@ function job_bm_job_edit_form_recaptcha($job_id)
     <div class="form-field-wrap">
         <div class="field-title"></div>
         <div class="field-input">
-            <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
+            <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($job_bm_reCAPTCHA_site_key); ?>"></div>
             <?php wp_enqueue_script('google-recaptcha'); ?>
 
 
@@ -898,7 +898,7 @@ function job_bm_job_edit_data($job_id, $post_data)
             if (!empty($error_messages))
                 foreach ($error_messages as $message) {
             ?>
-                <div class="job-bm-error"><?php echo $message; ?></div>
+                <div class="job-bm-error"><?php echo esc_url_raw($message); ?></div>
             <?php
                 }
             ?>
@@ -1019,7 +1019,7 @@ function job_bm_job_edited_redirect($job_id, $post_data)
     ?>
         <script>
             jQuery(document).ready(function($) {
-                window.location.href = '<?php echo $redirect_page_url; ?>';
+                window.location.href = '<?php echo esc_url_raw($redirect_page_url); ?>';
             })
         </script>
 <?php

@@ -158,8 +158,8 @@ if (!function_exists('job_bm_dashboard_logged_in')) {
 
             ?>
                 <li class="<?php if ($current_tabs == $tabs_key) echo 'current'; ?>">
-                    <a href="<?php echo $link; ?>">
-                        <?php echo $title; ?>
+                    <a href="<?php echo esc_url_raw($link); ?>">
+                        <?php echo esc_html($title); ?>
                     </a>
                 </li>
             <?php
@@ -238,15 +238,15 @@ if (!function_exists('job_bm_dashboard_tabs_content_account')) {
 
             <div class="user-stats">
                 <div class="">
-                    <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo $user_job_count; ?></span>
+                    <span><?php echo __('Total job post:', 'job-board-manager'); ?></span> <span><?php echo esc_html($user_job_count); ?></span>
                 </div>
 
                 <div class="">
-                    <span><?php echo __('Application submit:', 'job-board-manager'); ?></span> <span><?php echo $user_application_count; ?></span>
+                    <span><?php echo __('Application submit:', 'job-board-manager'); ?></span> <span><?php echo esc_html($user_application_count); ?></span>
                 </div>
 
                 <div class="">
-                    <span><?php echo __('Application received:', 'job-board-manager'); ?></span> <span><?php echo $user_application_received_count; ?></span>
+                    <span><?php echo __('Application received:', 'job-board-manager'); ?></span> <span><?php echo esc_html($user_application_received_count); ?></span>
                 </div>
 
 
@@ -282,7 +282,7 @@ if (!function_exists('job_bm_dashboard_tabs_content_logout')) {
     function job_bm_dashboard_tabs_content_logout()
     {
 
-        echo wp_logout_url();
+        echo esc_url_raw(wp_logout_url());
     }
 }
 

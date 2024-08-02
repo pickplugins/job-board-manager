@@ -57,10 +57,11 @@ if (!function_exists('job_bm_single_job_main_preview')) {
                 ob_start();
                 ?>
                 <?php echo __('This is preview of your job, please do not share link.', 'job-board-manager'); ?>
-                <a href="<?php echo $job_bm_job_edit_page_url; ?>?job_id=<?php echo $job_id; ?>" class="edit-link"><?php echo sprintf(__('%s Edit', 'job-board-manager'), '<i class="far fa-edit"></i>') ?></a>
+                <a href="<?php echo esc_url_raw($job_bm_job_edit_page_url); ?>?job_id=<?php echo esc_attr($job_id); ?>" class="edit-link"><?php echo sprintf(__('%s Edit', 'job-board-manager'), '<i class="far fa-edit"></i>') ?></a>
                 <?php
                 $preview_text = ob_get_clean();
-                echo apply_filters('job_bm_single_job_preview_html', $preview_text);
+                $preview_text = apply_filters('job_bm_single_job_preview_html', $preview_text);
+                echo wp_kses_post($preview_text);
 
 
                 ?>
@@ -102,7 +103,7 @@ if (!function_exists('job_bm_single_job_main_meta_start')) {
         if (!empty($job_location)) :
             ob_start();
         ?>
-            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo $job_location; ?></span>
+            <span class="job-location meta-item"><i class="fas fa-map-marker-alt"></i> <?php echo esc_html($job_location); ?></span>
         <?php
             $meta_items['location'] = ob_get_clean();
         endif;
@@ -139,7 +140,7 @@ if (!function_exists('job_bm_single_job_main_meta_start')) {
             if (!empty($meta_items)) :
                 foreach ($meta_items as $item) :
 
-                    echo $item;
+                    echo wp_kses_post($item);
 
                 endforeach;
             endif;
@@ -167,7 +168,7 @@ if (!function_exists('job_bm_template_single_job_description')) {
 
     ?>
         <div class="single-job-details">
-            <div itemprop="description" class="description"><?php echo wpautop(do_shortcode($post->post_content)); ?></div>
+            <div itemprop="description" class="description"><?php echo wpautop(do_shortcode(wp_kses_post($post->post_content))); ?></div>
         </div>
     <?php
 
@@ -204,20 +205,20 @@ if (!function_exists('job_bm_single_job_main_company')) {
 
             <?php if ($job_company_logo) : ?>
                 <div class="company-logo">
-                    <img src="<?php echo $job_company_logo; ?>">
+                    <img src="<?php echo esc_url_raw($job_company_logo); ?>">
                 </div>
             <?php endif; ?>
             <?php if (!empty($job_company_name)) : ?>
-                <div class="company-name"><?php echo $job_company_name; ?></div>
+                <div class="company-name"><?php echo wp_kses_post($job_company_name); ?></div>
             <?php endif; ?>
 
             <?php if (!empty($job_address)) : ?>
-                <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo $job_address; ?></div>
+                <div class="company-address"><i class="fas fa-map-marked-alt"></i> <?php echo wp_kses_post($job_address); ?></div>
             <?php endif; ?>
 
 
             <?php if (!empty($job_company_website['host'])) : ?>
-                <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo $job_company_website['main_url']; ?>"><?php echo $job_company_website['host']; ?></a> </div>
+                <div class="company-website"><i class="fas fa-link"></i> <a href="<?php echo esc_url_raw($job_company_website['main_url']); ?>"><?php echo esc_url_raw($job_company_website['host']); ?></a> </div>
             <?php endif; ?>
 
 
@@ -334,7 +335,7 @@ if (!function_exists('job_bm_single_job_main_job_info')) {
 
             if (!empty($meta_items)) :
                 foreach ($meta_items as $item) :
-                    echo $item;
+                    echo wp_kses_post($item);
                 endforeach;
             endif;
             ?>
@@ -391,14 +392,14 @@ if (!function_exists('job_bm_single_job_main_job_apply')) {
 
                         if (!empty($method_name)) :
                         ?>
-                            <div id="<?php echo 'apply-method-' . $method; ?>" class="method-header ">
-                                <div class="method-name"><?php echo $method_name; ?></div>
+                            <div id="<?php echo 'apply-method-' . esc_attr($method); ?>" class="method-header ">
+                                <div class="method-name"><?php echo wp_kses_post($method_name); ?></div>
                             </div>
                             <div class="method-form ">
                                 <?php
                                 if (!is_user_logged_in() && $job_bm_login_required_on_apply == 'yes') {
                                     $login_required = apply_filters('job_bm_application_login_required_text', sprintf(__('Please <a href="%s">login</a> to submit application', 'job-board-manager'), $job_bm_job_login_page_url));
-                                    echo $login_required;
+                                    echo wp_kses_post($login_required);
                                 } else {
                                     do_action('job_bm_application_methods_form_' . $method, $job_id);
                                 }
@@ -416,7 +417,7 @@ if (!function_exists('job_bm_single_job_main_job_apply')) {
         <script>
             jQuery(function($) {
                 $(".apply-methods").accordion({
-                    active: <?php echo $active_id; ?>,
+                    active: <?php echo esc_attr($active_id); ?>,
                     collapsible: true,
                     icons: false,
                     heightStyle: 'content',
@@ -546,7 +547,7 @@ function job_bm_application_methods_form_direct_email($job_id)
                 if (!empty($error_messages))
                     foreach ($error_messages as $message) {
                 ?>
-                    <div class="job-bm-error"><?php echo $message; ?></div>
+                    <div class="job-bm-error"><?php echo wp_kses_post($message); ?></div>
                 <?php
                     }
                 ?>
@@ -605,7 +606,7 @@ function job_bm_application_methods_form_direct_email($job_id)
             <div class="form-field-wrap">
                 <div class="field-title"></div>
                 <div class="field-input">
-                    <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
+                    <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($job_bm_reCAPTCHA_site_key); ?>"></div>
 
                     <?php wp_enqueue_script('google-recaptcha'); ?>
 
@@ -678,7 +679,7 @@ function job_bm_application_methods_form_external_website($job_id)
                 ?>
             <div>
                 <?php
-                    echo apply_filters('job_bm_application_method_external_website_button', sprintf(__('<a class="external_website_button" href="%s">Click to see job details</a>.', 'job-board-manager'), $job_link));
+                    echo apply_filters('job_bm_application_method_external_website_button', sprintf(__('<a class="external_website_button" href="%s">Click to see job details</a>.', 'job-board-manager'), esc_url_raw($job_link)));
                 ?>
             </div>
         <?php
@@ -725,12 +726,12 @@ if (!function_exists('job_bm_template_single_job_tags')) {
 
                     $term_url = get_term_link($term_id, 'job_tag');
                 ?>
-                    <a class="tag-link" href="<?php echo $term_url; ?>"><?php echo $term_name; ?></a>
+                    <a class="tag-link" href="<?php echo esc_url_raw($term_url); ?>"><?php echo wp_kses_post($term_name); ?></a>
                     <?php
 
                     if ($tags_total > $tag_count) {
                     ?>
-                        <span class="tag-separator"><?php echo $term_sepa; ?></span>
+                        <span class="tag-separator"><?php echo esc_html($term_sepa); ?></span>
                 <?php
                     }
 
@@ -786,37 +787,37 @@ if (!function_exists('job_bm_single_job_main_job_schema')) {
         $schemaJobPosting['@context'] = '"http://schema.org"';
         $schemaJobPosting['@type'] = '"JobPosting"';
 
-        $schemaJobPosting['datePosted'] = '"' . $job_publish_date . '"';
-        $schemaJobPosting['validThrough'] = '"' . $job_expire_date . '"';
-        $schemaJobPosting['employmentType'] = '"' . $job_type['type_name'] . '"';
-        $schemaJobPosting['experienceRequirements'] = '"' . $job_years_experience . '"';
-        $schemaJobPosting['hiringOrganization'] = '"' . $job_company_name . '"';
-        $schemaJobPosting['occupationalCategory'] = '"' . $job_categories . '"';
-        $schemaJobPosting['salaryCurrency'] = '"' . $job_salary_currency . '"';
+        $schemaJobPosting['datePosted'] = '"' . esc_attr($job_publish_date) . '"';
+        $schemaJobPosting['validThrough'] = '"' . esc_attr($job_expire_date) . '"';
+        $schemaJobPosting['employmentType'] = '"' . esc_attr($job_type['type_name']) . '"';
+        $schemaJobPosting['experienceRequirements'] = '"' . esc_attr($job_years_experience) . '"';
+        $schemaJobPosting['hiringOrganization'] = '"' . esc_attr($job_company_name) . '"';
+        $schemaJobPosting['occupationalCategory'] = '"' . esc_attr($job_categories) . '"';
+        $schemaJobPosting['salaryCurrency'] = '"' . esc_attr($job_salary_currency) . '"';
 
 
         if ($job_salary_type == 'fixed') {
 
             $schemaJobPosting['baseSalary'] = '{
                         "@type": "Number",
-                        "currency": "' . $job_salary_currency . '",
-                        "price": "' . $job_salary_fixed . '"
+                        "currency": "' . esc_attr($job_salary_currency) . '",
+                        "price": "' . esc_attr($job_salary_fixed) . '"
 
                     }';
         } elseif ($job_salary_type == 'min-max') {
 
             $schemaJobPosting['baseSalary'] = '{
                         "@type": "MonetaryAmount",
-                        "currency": "' . $job_salary_currency . '",
-                        "minValue": "' . $job_salary_minimum . '",
-                        "maxValue": "' . $job_salary_maximum . '"
+                        "currency": "' . esc_attr($job_salary_currency) . '",
+                        "minValue": "' . esc_attr($job_salary_minimum) . '",
+                        "maxValue": "' . esc_attr($job_salary_maximum) . '"
                     }';
         } elseif ($job_salary_type == 'negotiable') {
 
             $schemaJobPosting['baseSalary'] = '{
                         "@type": "PriceSpecification",
-                        "currency": "' . $job_salary_currency . '",
-                        "price": "' . $job_salary_type . '"
+                        "currency": "' . esc_attr($job_salary_currency) . '",
+                        "price": "' . esc_attr($job_salary_type) . '"
 
                     }';
         }
@@ -831,18 +832,18 @@ if (!function_exists('job_bm_single_job_main_job_schema')) {
                     "@type": "Place",
                     "address": {
                         "@type": "PostalAddress",
-                        "addressLocality": "' . $job_address . '",
-                        "streetAddress": "' . $job_address . '",
-                        "addressRegion": "' . $job_location . '",
-                        "postalCode": "' . $job_location . '"
+                        "addressLocality": "' . esc_attr($job_address) . '",
+                        "streetAddress": "' . esc_attr($job_address) . '",
+                        "addressRegion": "' . esc_attr($job_location) . '",
+                        "postalCode": "' . esc_attr($job_location) . '"
                     }
                 }';
 
-        $schemaJobPosting['title'] = '"' . $job_title . '"';
-        $schemaJobPosting['description'] = '"' . wp_strip_all_tags($job_excerpt, true) . '"';
+        $schemaJobPosting['title'] = '"' . esc_attr($job_title) . '"';
+        $schemaJobPosting['description'] = '"' . esc_attr(wp_strip_all_tags($job_excerpt, true)) . '"';
 
 
-        $schemaJobPosting = apply_filters('job_bm_schema_job_posting', $schemaJobPosting);
+        $schemaJobPosting = apply_filters('job_bm_schema_job_posting', esc_attr($schemaJobPosting));
 
         ?>
         <script type="application/ld+json">
@@ -856,7 +857,7 @@ if (!function_exists('job_bm_single_job_main_job_schema')) {
                     $i = 1;
                     foreach ($schemaJobPosting as $itemIndex => $item) :
 
-                        echo '"' . $itemIndex . '": ' . $item . '';
+                        echo '"' . esc_attr($itemIndex) . '": ' . esc_attr($item) . '';
                         if ($i < $itemCount) {
                             echo ',';
                             echo '
@@ -900,7 +901,7 @@ if (!function_exists('job_bm_single_job_main_css')) {
     ?>
         <style type="text/css">
             .job-single .meta-item.featured {
-                background: <?php echo $job_bm_featured_bg_color; ?> !important;
+                background: <?php echo esc_attr($job_bm_featured_bg_color); ?> !important;
             }
         </style>
 <?php

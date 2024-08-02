@@ -93,7 +93,7 @@ function job_bm_registration_form_field_recaptcha()
 ?>
     <p>
         <label for="email">
-            <div class="g-recaptcha" data-sitekey="<?php echo $job_bm_reCAPTCHA_site_key; ?>"></div>
+            <div class="g-recaptcha" data-sitekey="<?php echo esc_attr($job_bm_reCAPTCHA_site_key); ?>"></div>
             <?php wp_enqueue_script('google-recaptcha'); ?>
 
 
@@ -307,7 +307,7 @@ function job_bm_show_register_errors()
                 foreach ($codes as $code) {
                     $message = job_bm_register_errors()->get_error_message($code);
             ?>
-                <div class="job-bm-error"><?php echo $message; ?></div>
+                <div class="job-bm-error"><?php echo wp_kses_post($message); ?></div>
             <?php
                 }
             ?>

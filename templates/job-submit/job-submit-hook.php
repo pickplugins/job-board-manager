@@ -102,7 +102,7 @@ function job_bm_job_submit_form_categories()
                         $selected = ($job_category == $term_id) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html($term_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($term_id); ?>"><?php echo esc_html($term_name); ?></option>
                 <?php
                     }
                 endif;
@@ -193,7 +193,7 @@ function job_bm_job_submit_form_job_type()
                         $selected = ($job_bm_job_type == $job_type) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_type); ?>"><?php echo esc_html($job_type_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($job_type); ?>"><?php echo esc_html($job_type_name); ?></option>
                 <?php
                     }
                 endif;
@@ -233,7 +233,7 @@ function job_bm_job_submit_form_job_level()
                         $selected = ($job_bm_job_level == $job_level) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($job_level); ?>"><?php echo esc_html($job_level_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($job_level); ?>"><?php echo esc_html($job_level_name); ?></option>
                 <?php
                     }
                 endif;
@@ -301,7 +301,7 @@ function job_bm_job_submit_form_salary_type()
                         $selected = ($job_bm_salary_type == $salary_type) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_type); ?>"><?php echo esc_html($salary_type_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($salary_type); ?>"><?php echo esc_html($salary_type_name); ?></option>
                 <?php
                     }
                 endif;
@@ -443,7 +443,7 @@ function job_bm_job_submit_form_salary_duration()
                         $selected = ($job_bm_salary_duration == $salary_duration) ? 'selected' : '';
 
                 ?>
-                        <option <?php echo $selected; ?> value="<?php echo esc_attr($salary_duration); ?>"><?php echo esc_html($salary_duration_name); ?></option>
+                        <option <?php echo esc_attr($selected); ?> value="<?php echo esc_attr($salary_duration); ?>"><?php echo esc_html($salary_duration_name); ?></option>
                 <?php
                     }
                 endif;
@@ -693,7 +693,7 @@ function job_bm_job_submit_form_company_logo()
             if (is_user_logged_in()) :
             ?>
                 <div class="media-preview-wrap" style="">
-                    <img class="media-preview" src="<?php echo $job_bm_company_logo; ?>" style="width:100%;box-shadow: none;" />
+                    <img class="media-preview" src="<?php echo esc_url($job_bm_company_logo) ?>" style="width:100%;box-shadow: none;" />
                 </div>
 
                 <input placeholder="" type="text" value="<?php echo esc_url_raw($job_bm_company_logo); ?>" name="job_bm_company_logo">
@@ -997,7 +997,7 @@ function job_bm_job_submit_data($post_data)
             if (!empty($error_messages))
                 foreach ($error_messages as $message) {
             ?>
-                <div class="job-bm-error"><?php echo $message; ?></div>
+                <div class="job-bm-error"><?php echo wp_kses_post($message); ?></div>
             <?php
                 }
             ?>
@@ -1016,7 +1016,6 @@ function job_bm_job_submitted_save_data($job_ID, $post_data)
 
     $user_id = get_current_user_id();
 
-    $company_logo_id = isset($post_data['company_logo_id']) ? sanitize_text_field($post_data['company_logo_id']) : "";
 
 
     $job_category = isset($post_data['job_category']) ? sanitize_text_field($post_data['job_category']) : "";
@@ -1063,11 +1062,14 @@ function job_bm_job_submitted_save_data($job_ID, $post_data)
     update_post_meta($job_ID, 'job_bm_job_link', $job_bm_job_link);
 
 
-
     if (is_user_logged_in()) {
-        $job_bm_company_logo = isset($post_data['job_bm_company_logo']) ? sanitize_text_field($post_data['job_bm_company_logo']) : "";
+
+
+
+        $job_bm_company_logo = isset($post_data['job_bm_company_logo']) ? esc_url_raw($post_data['job_bm_company_logo']) : "";
         update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
     } else {
+        $company_logo_id = isset($post_data['company_logo_id']) ? sanitize_text_field($post_data['company_logo_id']) : "";
 
         $job_bm_company_logo = wp_get_attachment_url($company_logo_id);
         update_post_meta($job_ID, 'job_bm_company_logo', $job_bm_company_logo);
@@ -1139,7 +1141,7 @@ function job_bm_job_submitted_redirect($job_ID, $post_data)
     ?>
         <script>
             jQuery(document).ready(function($) {
-                window.location.href = '<?php echo $redirect_page_url; ?>';
+                window.location.href = '<?php echo esc_url_raw($redirect_page_url); ?>';
             })
         </script>
 <?php
